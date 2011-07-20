@@ -332,50 +332,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/com/lowagie/itext/2.0.7/itext-2.0.7-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: com.twitter:finagle-core:1.7.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/finagle-core/1.7.1/finagle-core-1.7.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/finagle-core/1.7.1/finagle-core-1.7.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/finagle-core/1.7.1/finagle-core-1.7.1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.twitter:util-collection:1.10.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-collection/1.10.1/util-collection-1.10.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-collection/1.10.1/util-collection-1.10.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-collection/1.10.1/util-collection-1.10.1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.twitter:util-core:1.10.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-core/1.10.1/util-core-1.10.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-core/1.10.1/util-core-1.10.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-core/1.10.1/util-core-1.10.1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.twitter:util-hashing:1.10.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-hashing/1.10.1/util-hashing-1.10.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-hashing/1.10.1/util-hashing-1.10.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/twitter/util-hashing/1.10.1/util-hashing-1.10.1-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: commons-collections:commons-collections:3.2.1">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar!/" />
@@ -555,6 +511,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/kevoree/extra/org.kevoree.extra.emf.library/2.6.0/org.kevoree.extra.emf.library-2.6.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.kevoree.extra:org.kevoree.extra.finagle:1.7.3-SNPASHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/kevoree/extra/org.kevoree.extra.finagle/1.7.3-SNPASHOT/org.kevoree.extra.finagle-1.7.3-SNPASHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/kevoree/extra/org.kevoree.extra.finagle/1.7.3-SNPASHOT/org.kevoree.extra.finagle-1.7.3-SNPASHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/kevoree/extra/org.kevoree.extra.finagle/1.7.3-SNPASHOT/org.kevoree.extra.finagle-1.7.3-SNPASHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.kevoree.extra:org.kevoree.extra.marshalling:1.2.0-SNAPSHOT">

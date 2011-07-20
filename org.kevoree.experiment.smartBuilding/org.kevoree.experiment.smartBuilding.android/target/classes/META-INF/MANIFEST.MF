@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Export-Package: org.kevoree.experiment.smartbuilding;uses:="org.kevore
+ e.framework,org.kevoree.framework.osgi,scala.reflect,scala,scala.coll
+ ection.immutable,org.kevoree.framework.port,scala.runtime,scala.actor
+ s,org.kevoree.framework.message"
+Built-By: ffouquet
+Build-Jdk: 1.6.0_24
+Bundle-Version: 1.2.0.SNAPSHOT
+Tool: Bnd-0.0.357
+Bundle-Name: Kevoree :: Experiment :: SmartBuilding :: Android
+Bnd-LastModified: 1308223056182
+Created-By: Apache Maven Bundle Plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.kevoree.experiment.smartBuilding.org.kevoree.
+ experiment.smartBuilding.android
+Import-Package: org.kevoree.experiment.smartbuilding,org.kevoree.frame
+ work,org.kevoree.framework.message,org.kevoree.framework.osgi,org.kev
+ oree.framework.port,scala,scala.actors,scala.collection.immutable,sca
+ la.reflect,scala.runtime
+

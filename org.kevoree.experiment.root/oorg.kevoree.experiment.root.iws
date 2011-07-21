@@ -75,7 +75,55 @@
     <favorites_list name="oorg.kevoree.experiment.root" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="ForkedGregServer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.server/src/main/java/org/greg/server/ForkedGregServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="110" column="50" selection-start="4200" selection-end="4200" vertical-scroll-proportion="-59.23077">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppPath.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/AppPath.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="20" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.server/src/main/java/org/kevoree/experiment/trace/server/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RGenerator.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/RGenerator.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="42" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TracePath.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/TracePath.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="45" selection-start="374" selection-end="374" vertical-scroll-proportion="0.35">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -85,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../org.kevoree.experiment.smartForest/src/main/java/org/kevoree/library/reasoner/ecj/dpa/AddBindingDPA.java" />
         <option value="$PROJECT_DIR$/../org.kevoree.experiment.smartForest/src/main/java/org/kevoree/library/reasoner/ecj/dpa/AddComponentDPA.java" />
         <option value="$PROJECT_DIR$/../org.kevoree.experiment.smartForest/src/main/java/org/kevoree/library/reasoner/ecj/dpa/AddForestMonitoringComponentDPA.java" />
         <option value="$PROJECT_DIR$/../org.kevoree.experiment.smartForest/src/main/java/org/kevoree/library/reasoner/ecj/dpa/MoveComponentDPA.java" />
@@ -98,9 +145,10 @@
         <option value="$PROJECT_DIR$/../org.kevoree.experiment.smartForest/src/main/java/org/kevoree/library/reasoner/ecj/KevoreeIndividual.java" />
         <option value="$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/pom.xml" />
         <option value="$PROJECT_DIR$/../org.kevoree.experiment.modelScript/src/main/scala/org/kevoree/experiment/modelScript/Configuration.scala" />
-        <option value="$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/TracePath.scala" />
         <option value="$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/RGenerator.scala" />
+        <option value="$PROJECT_DIR$/../org.kevoree.experiment.trace.server/src/main/java/org/greg/server/ForkedGregServer.java" />
         <option value="$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/AppPath.scala" />
+        <option value="$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/TracePath.scala" />
       </list>
     </option>
   </component>
@@ -117,6 +165,64 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Kevoree :: Experiment :: Trace :: GUI" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Kevoree :: Experiment :: Trace :: GUI" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Kevoree :: Experiment :: Root" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Kevoree :: Experiment :: Root" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Kevoree :: Experiment :: Library :: GossiperNettyLogger" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
     </treeState>
@@ -162,6 +268,94 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="oorg.kevoree.experiment.root" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oorg.kevoree.experiment.root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org.kevoree.experiment.trace.server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oorg.kevoree.experiment.root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org.kevoree.experiment.trace.server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oorg.kevoree.experiment.root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org.kevoree.experiment.trace.server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oorg.kevoree.experiment.root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org.kevoree.experiment.trace.server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -327,7 +521,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="org.kevoree.experiment.trace.gui" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59862" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -557,24 +757,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1920" height="874" extended-state="0" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18669131" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16301443" sideWeight="0.6663586" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16301443" sideWeight="0.5652174" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18546233" sideWeight="0.6663586" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22634271" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3336414" sideWeight="0.9944717" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18546233" sideWeight="0.5652174" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22550832" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4347826" sideWeight="0.9944717" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18669131" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -647,16 +847,6 @@
         <state line="18" column="89" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.33962265" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.server/src/main/java/org/greg/server/ForkedGregServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="18" selection-start="3203" selection-end="3203" vertical-scroll-proportion="-6.2288985" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.server/src/main/java/org/kevoree/experiment/trace/server/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.26775956" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.modelScript/src/main/scala/org/kevoree/experiment/modelScript/BootStrapApp.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="7" selection-start="52" selection-end="52" vertical-scroll-proportion="0.057377048" />
@@ -682,11 +872,6 @@
         <state line="29" column="71" selection-start="833" selection-end="840" vertical-scroll-proportion="0.5307557" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/RGenerator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="27" selection-start="402" selection-end="402" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/ScrollableChartPanel.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="6" selection-start="247" selection-end="247" vertical-scroll-proportion="0.2646048" />
@@ -694,14 +879,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/AppPath.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="30" selection-start="1468" selection-end="1469" vertical-scroll-proportion="0.15192308">
+        <state line="51" column="20" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.server/src/main/java/org/kevoree/experiment/trace/server/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="24" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.server/src/main/java/org/greg/server/ForkedGregServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="50" selection-start="4200" selection-end="4200" vertical-scroll-proportion="-59.23077">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/RGenerator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="42" selection-start="1793" selection-end="1793" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../org.kevoree.experiment.trace.gui/src/main/scala/org/kevoree/experiment/trace/gui/alg/TracePath.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="48" selection-start="2267" selection-end="2267" vertical-scroll-proportion="0.8173077">
+        <state line="10" column="45" selection-start="374" selection-end="374" vertical-scroll-proportion="0.35">
           <folding />
         </state>
       </provider>

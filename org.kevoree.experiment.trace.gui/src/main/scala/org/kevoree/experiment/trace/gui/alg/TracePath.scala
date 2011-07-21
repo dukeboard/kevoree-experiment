@@ -7,6 +7,24 @@ import org.kevoree.experiment.modelScript.NodePacket
 
 object TracePath {
 
+  def getAllPathFrom(nodeID: String, firstNodeVersion: Int, traces: Traces) : List[LinkedTrace] = {
+    var result : List[LinkedTrace] = List()
+    var firstIndex = firstNodeVersion
+    println(traces.getTraceCount)
+    var subResult = getPathFrom(nodeID,firstIndex,traces)
+
+    println("hehe")
+
+    while(!subResult.isEmpty){
+        result = result ++ List(subResult.get)
+        //NEXT ITERATION
+        firstIndex = firstIndex + 1
+        subResult = getPathFrom(nodeID,firstIndex,traces)
+    }
+    result
+  }
+
+
   //HELPER
   def stringToVectorClock(content: String): VectorClock = {
     val tmps = content.split(";")
@@ -71,6 +89,7 @@ object TracePath {
         val optimizedTraces = traces.slice(traces.indexOf(suc._2) + 1, traces.size + 1)
         result = LinkedTrace(trace, result.sucessors ++ List(buildLinkedFor(optimizedTraces, suc._2, suc._1._1, suc._1._2)))
     }
+    println("findSuc "+nodeID+":"+version)
     result
   }
 

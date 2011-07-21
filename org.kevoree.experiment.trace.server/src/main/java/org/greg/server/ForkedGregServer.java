@@ -166,10 +166,10 @@ public class ForkedGregServer {
             Trace.writeLine("Cannot create messages acceptor", e);
         }
 
-        int maxConcurrentClients = 16;
+        int maxConcurrentClients = 200;
         final Semaphore sem = new Semaphore(maxConcurrentClients);
 
-        Executor pool = Executors.newFixedThreadPool(16);
+        Executor pool = Executors.newFixedThreadPool(200);
 
         while (running) {
             try {
@@ -314,7 +314,7 @@ public class ForkedGregServer {
             Trace.writeLine("Failed to create calibration listener", e);
         }
 
-        Executor executor = Executors.newFixedThreadPool(16);
+        Executor executor = Executors.newFixedThreadPool(200);
 
         while (running) {
             final Socket client;

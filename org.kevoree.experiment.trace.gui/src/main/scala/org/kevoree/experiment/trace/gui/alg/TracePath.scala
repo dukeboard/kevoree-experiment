@@ -7,19 +7,15 @@ import org.kevoree.experiment.modelScript.NodePacket
 
 object TracePath {
 
-  def getAllPathFrom(nodeID: String, firstNodeVersion: Int, traces: Traces) : List[LinkedTrace] = {
-    var result : List[LinkedTrace] = List()
+  def getAllPathFrom(nodeID: String, firstNodeVersion: Int, traces: Traces): List[LinkedTrace] = {
+    var result: List[LinkedTrace] = List()
     var firstIndex = firstNodeVersion
-    println(traces.getTraceCount)
-    var subResult = getPathFrom(nodeID,firstIndex,traces)
-
-    println("hehe")
-
-    while(!subResult.isEmpty){
-        result = result ++ List(subResult.get)
-        //NEXT ITERATION
-        firstIndex = firstIndex + 1
-        subResult = getPathFrom(nodeID,firstIndex,traces)
+    var subResult = getPathFrom(nodeID, firstIndex, traces)
+    while (!subResult.isEmpty) {
+      result = result ++ List(subResult.get)
+      //NEXT ITERATION
+      firstIndex = firstIndex + 1
+      subResult = getPathFrom(nodeID, firstIndex, traces)
     }
     result
   }
@@ -28,28 +24,44 @@ object TracePath {
   //HELPER
   def stringToVectorClock(content: String): VectorClock = {
     val tmps = content.split(";")
-    var result = VectorClock(List(), "")
-    if (tmps.size >= 2) {
-      tmps(1).split(',').foreach {
-        entry =>
-          val values = entry.split(':')
-          if (values.size >= 2) {
-            val nodeID = values(0)
-            val nodeVersion = Integer.parseInt(values(1).trim)
-            result = VectorClock(result.entries.toList ++ List((nodeID, nodeVersion)), tmps(0))
-          }
+    var result = VectorClock(List(), "", 0l)
+
+    tmps.size match {
+      case 1 => {
+        tmps(0).split(',').foreach {
+          entry =>
+            val values = entry.split(':')
+            if (values.size >= 2) {
+              val nodeID = values(0)
+              val nodeVersion = Integer.parseInt(values(1).trim)
+              result = VectorClock(result.entries.toList ++ List((nodeID, nodeVersion)), "", 0l)
+            }
+        }
       }
-    } else {
-      tmps(0).split(',').foreach {
-        entry =>
-          val values = entry.split(':')
-          if (values.size >= 2) {
-            val nodeID = values(0)
-            val nodeVersion = Integer.parseInt(values(1).trim)
-            result = VectorClock(result.entries.toList ++ List((nodeID, nodeVersion)), "")
-          }
+      case 2 => {
+        tmps(1).split(',').foreach {
+          entry =>
+            val values = entry.split(':')
+            if (values.size >= 2) {
+              val nodeID = values(0)
+              val nodeVersion = Integer.parseInt(values(1).trim)
+              result = VectorClock(result.entries.toList ++ List((nodeID, nodeVersion)), tmps(0), 0l)
+            }
+        }
+      }
+      case 3 => {
+        tmps(1).split(',').foreach {
+          entry =>
+            val values = entry.split(':')
+            if (values.size >= 2) {
+              val nodeID = values(0)
+              val nodeVersion = Integer.parseInt(values(1).trim)
+              result = VectorClock(result.entries.toList ++ List((nodeID, nodeVersion)), tmps(0), java.lang.Long.parseLong(tmps(2)))
+            }
+        }
       }
     }
+
     result
   }
 
@@ -60,11 +72,11 @@ object TracePath {
     val sortedTraces = traces.getTraceList.toList.sortWith((x, y) => x.getTimestamp < y.getTimestamp)
 
     //SEARCH FOR FIRST TRACE OCCURENCE
-   /*   println("hihi"+sortedTraces.size)
-    sortedTraces.foreach{trace =>
-      println(trace.getClientId)
+    /*   println("hihi"+sortedTraces.size)
+ sortedTraces.foreach{trace =>
+   println(trace.getClientId)
 
-    }   */
+ }   */
 
     sortedTraces.find(trace => trace.getClientId == nodeID
       && stringToVectorClock(trace.getBody).containEntry(nodeID, nodeVersion)
@@ -81,16 +93,22 @@ object TracePath {
   /* Build recursively successor for trace with precise nodeID & Version  */
   protected def buildLinkedFor(traces: List[Trace], trace: Trace, nodeID: String, version: Int): LinkedTrace = {
 
-    val tracesWithoutTrace = traces.slice(traces.indexOf(trace) + 1, traces.size + 1)
-    val successors = lookForSuccessor(tracesWithoutTrace, nodeID, version)
-    var result = LinkedTrace(trace, List())
-    successors.foreach {
-      suc =>
-        val optimizedTraces = traces.slice(traces.indexOf(suc._2) + 1, traces.size + 1)
-        result = LinkedTrace(trace, result.sucessors ++ List(buildLinkedFor(optimizedTraces, suc._2, suc._1._1, suc._1._2)))
+    if (traces.isEmpty) {
+      LinkedTrace(trace, List())
+    } else {
+      val tracesWithoutTrace = traces.slice(traces.indexOf(trace) + 1, traces.indexOf(traces.last) + 1)
+      val successors = lookForSuccessor(tracesWithoutTrace, nodeID, version)
+      var result = LinkedTrace(trace, List())
+      successors.foreach {
+        suc =>
+          val optimizedTraces = traces.slice(traces.indexOf(suc._2) + 1, traces.indexOf(traces.last) + 1)
+          result = LinkedTrace(trace, result.sucessors ++ List(buildLinkedFor(optimizedTraces, suc._2, suc._1._1, suc._1._2)))
+      }
+
+      result
     }
-    println("findSuc "+nodeID+":"+version)
-    result
+
+
   }
 
   /* Look for direct successor of a precise version */
@@ -100,9 +118,7 @@ object TracePath {
     }
     val headVector = stringToVectorClock(traces.head.getBody)
     val containPrevious = headVector.containEntry(nodeID, version)
-
     val isFromSourceNode = headVector.source == nodeID
-
 
     // val previousTrace = findPreviousTrace(traces.head, traces, nodeID, version)
     // val alreadyNew  = isAlreadyNew(previousTrace, traces.head, nodeID, version)

@@ -13,14 +13,16 @@ object AppPath extends App {
 
   //var input: InputStream = this.getClass.getClassLoader.getResourceAsStream("./trace_out.concurrency.-notification")
 
- var input: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.root/trace_out"))
- //var input: InputStream = new FileInputStream(new File("/Users/ffouquet/Desktop/trace_out"))
+ //var input: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.root/trace_out"))
+ var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/trace_out_lazy"))
+ var inputNoLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Desktop/trace_out"))
 
 
+  var tracesLazy: TraceMessages.Traces = TraceMessages.Traces.parseFrom(inputLazy)
 
-  var traces: TraceMessages.Traces = TraceMessages.Traces.parseFrom(input)
   /*
   var linkedTrace = TracePath.getPathFrom("duke0", 3, traces)
+
   linkedTrace match {
     case Some(ltrace) => {
       println(ltrace.toString)
@@ -41,15 +43,15 @@ object AppPath extends App {
 
       saveChartToPDF(jchart, "trace_out.pdf", 600, 600)
 
-      RGenerator.generateFile(RGenerator.generatePropagationTimeScript(ltrace),"out.r")
+     // RGenerator.generateFile(RGenerator.generatePropagationTimeScript(ltrace),"out.r")
 
     }
     case None => println("Not found")
-  }  */
+  }
+     */
 
 
-
-  var allPath = TracePath.getAllPathFrom("duke0", 3, traces)
+  var allPath = TracePath.getAllPathFrom("paradent10rennesgrid5000fr0", 3, traces)
   RGenerator.generateFile(RGenerator.generatePropagationTimeScript(allPath),"outAll.r")
 
 

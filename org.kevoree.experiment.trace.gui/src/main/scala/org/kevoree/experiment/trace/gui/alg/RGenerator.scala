@@ -1,6 +1,7 @@
 package org.kevoree.experiment.trace.gui.alg
 
 import java.io.{File, FileWriter}
+import collection.mutable.HashMap
 
 /**
  * User: ffouquet
@@ -10,53 +11,69 @@ import java.io.{File, FileWriter}
 
 object RGenerator {
 
-  val scriptEnd = "\nlibrary(Hmisc)\nbpplot(propDelais,main=\"Downtime propagation delay\")"
+  val scriptEnd = "\nlibrary(Hmisc)\nbpplot(propDelais,main=\"Downtime propagation delay\")\nboxplot(propDelais, propDelais, names = c(\"a\", \"b\"), horizontal = TRUE, ylab = \"factors\", main = \"title\")"
 
-  def generatePropagationTimeScript(trace: LinkedTrace): String = {
-    var nodes: List[String] = List()
-    var diff: List[Long] = List()
+  def generatePropagationTimeScript(trace: LinkedTrace): List[Long] = {
+
+    val nodeVersion: HashMap[String, Int] = HashMap[String, Int]()
+    val nodeDiff: HashMap[String, Long] = HashMap[String, Long]()
+
     val firstTime = trace.trace.getTimestamp
-    nodes = nodes ++ List(trace.trace.getClientId)
-    diff = diff ++ List(0l)
+    val firstClientID = trace.trace.getClientId
+    nodeVersion.put(trace.trace.getClientId, TracePath.stringToVectorClock(trace.trace.getBody).versionForNode(trace.trace.getClientId).get)
+    nodeDiff.put(trace.trace.getClientId, 0)
+
     def recusiveCall(traces: List[LinkedTrace]) {
       traces.foreach {
         trace =>
-          if (!nodes.contains(trace.trace.getClientId)) {
-            nodes = nodes ++ List(trace.trace.getClientId)
-            val mili = ((trace.trace.getTimestamp - firstTime) / 1000000)
-            diff = diff ++ List(mili)
+
+          nodeVersion.get(trace.trace.getClientId) match {
+            case Some(nVersion) if (nVersion > TracePath.stringToVectorClock(trace.trace.getBody).versionForNode(firstClientID).get) => {
+              nodeVersion.put(trace.trace.getClientId, TracePath.stringToVectorClock(trace.trace.getBody).versionForNode(firstClientID).get)
+              val mili = ((trace.trace.getTimestamp - firstTime) / 1000000)
+              nodeDiff.put(trace.trace.getClientId, mili)
+
+              println(trace.trace.getClientId+"=>" + TracePath.stringToVectorClock(trace.trace.getBody).versionForNode(firstClientID).get)
+
+            }
+
+            case None => {
+              nodeVersion.put(trace.trace.getClientId, TracePath.stringToVectorClock(trace.trace.getBody).versionForNode(firstClientID).get)
+              val mili = ((trace.trace.getTimestamp - firstTime) / 1000000)
+              nodeDiff.put(trace.trace.getClientId, mili)
+
+              println(trace.trace.getClientId+"=>" + TracePath.stringToVectorClock(trace.trace.getBody).versionForNode(firstClientID).get)
+
+            }
+
+            case _ =>
           }
+
           recusiveCall(trace.sucessors)
       }
     }
-
     recusiveCall(trace.sucessors)
-    "nodeNames <- c(\"" + nodes.mkString("\",\"") + "\")" + "\npropDelais <- c(" + diff.mkString(",") + ")" + scriptEnd
-
+    nodeDiff.values.toList
   }
 
 
-  def generatePropagationTimeScript(traces: List[LinkedTrace]) : String = {
+  def generatePropagationTimeScript(traces: List[LinkedTrace]): String = {
     var diff: List[Long] = List()
-    def recusiveCall(traces: List[LinkedTrace],firstTime : Long) {
-      traces.foreach {
-        trace =>
-          val mili = ((trace.trace.getTimestamp - firstTime) / 1000000)
-          diff = diff ++ List(mili)
-          recusiveCall(trace.sucessors,firstTime)
-      }
-    }
+
     traces.foreach {
       trace =>
-        val firstTime = trace.trace.getTimestamp
-        diff = diff ++ List(0l)
-        recusiveCall(trace.sucessors,firstTime)
+        diff = diff ++ generatePropagationTimeScript(trace)
     }
+
+    var l = 0l
+    diff.foreach{dif => l = l + dif}
+    println("avg="+(l/diff.size))
+
     "propDelais <- c(" + diff.mkString(",") + ")" + "\n" + scriptEnd
   }
 
 
-  def generateFile(content: String,name:String) {
+  def generateFile(content: String, name: String) {
     val fwr = new FileWriter(new File(name))
     fwr.write(content)
     fwr.close()

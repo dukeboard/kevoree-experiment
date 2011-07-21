@@ -19,7 +19,8 @@ import com.twitter.finagle.builder.ClientBuilder
  * Time: 16:33
  */
 
-class LogAskForDataTCPActor (channelFragment: NettyGossipAbstractElement, requestSender: GossiperRequestSender, peerSelector : StrictGroupPeerSelector)
+class LogAskForDataTCPActor (channelFragment: NettyGossipAbstractElement, requestSender: GossiperRequestSender,
+  peerSelector: StrictGroupPeerSelector)
   extends AskForDataTCPActor(channelFragment, requestSender) {
   private val logger = LoggerFactory.getLogger(classOf[LogAskForDataTCPActor])
 
@@ -56,6 +57,7 @@ class LogAskForDataTCPActor (channelFragment: NettyGossipAbstractElement, reques
 
       client(messageBuilder.build) onSuccess {
         result =>
+          NetworkCommunicationCost.updateDataSizeReceived(result.getSerializedSize)
           println("Received result asynchronously: " + result)
           if (result.getContentClass.equals(classOf[VersionedModel].getName)) {
             requestSender.endGossipAction(result)

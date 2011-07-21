@@ -14,12 +14,13 @@ object AppPath extends App {
   //var input: InputStream = this.getClass.getClassLoader.getResourceAsStream("./trace_out.concurrency.-notification")
 
  //var input: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree/kevoree-experiment/org.kevoree.experiment.root/trace_out"))
- var input: InputStream = new FileInputStream(new File("/Users/ffouquet/Desktop/trace_out"))
+ var input: InputStream = new FileInputStream(new File("/home/edaubert/trace_out2"))
 
 
 
   var traces: TraceMessages.Traces = TraceMessages.Traces.parseFrom(input)
-  var linkedTrace = TracePath.getPathFrom("parapluie21rennesgrid5000fr0", 3, traces)
+  println(traces.getTraceCount)
+  var linkedTrace = TracePath.getPathFrom("duke0", 3, traces)
   linkedTrace match {
     case Some(ltrace) => {
       println(ltrace.toString)
@@ -30,9 +31,9 @@ object AppPath extends App {
       val jchart = chart.buildChart()
       //val chartPanel=new ChartScrollBar(0,jchart);
       val chartPanel = new ChartPanel(jchart)
-      val scroller = new JScrollBar(0, 0, 10, 0, 50)
+      //val scroller = new JScrollBar(0, 0, 10, 0, 50)
       //scroller.getModel.addChangeListener(scroller)
-      chartPanel.add(scroller)
+      //chartPanel.add(scroller)
       chartPanel.setOpaque(false);
       frame.add(chartPanel);
       frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)

@@ -8,7 +8,7 @@ import org.kevoree.experiment.modelScript.NodePacket
 object TracePath {
 
   //HELPER
-  def stringToVectorClock(content: String): VectorClock = {
+  def stringToVectorClock (content: String): VectorClock = {
     val tmps = content.split(";")
     var result = VectorClock(List(), "")
     if (tmps.size >= 2) {
@@ -37,21 +37,21 @@ object TracePath {
 
 
   //INIT SEARCH PATH
-  def getPathFrom(nodeID: String, nodeVersion: Int, traces: Traces): Option[LinkedTrace] = {
+  def getPathFrom (nodeID: String, nodeVersion: Int, traces: Traces): Option[LinkedTrace] = {
     import scala.collection.JavaConversions._
     val sortedTraces = traces.getTraceList.toList.sortWith((x, y) => x.getTimestamp < y.getTimestamp)
 
     //SEARCH FOR FIRST TRACE OCCURENCE
-   /*   println("hihi"+sortedTraces.size)
-    sortedTraces.foreach{trace =>
-      println(trace.getClientId)
+    /*   println("hihi"+sortedTraces.size)
+        sortedTraces.foreach{trace =>
+          println(trace.getClientId)
 
-    }   */
+        }   */
 
     sortedTraces.find(trace => trace.getClientId == nodeID
       && stringToVectorClock(trace.getBody).containEntry(nodeID, nodeVersion)
       && stringToVectorClock(trace.getBody).source != ""
-    ) match {
+                     ) match {
       case Some(traceRoot) => {
         val linkedtraceRoot = buildLinkedFor(sortedTraces, traceRoot, nodeID, nodeVersion)
         Some(linkedtraceRoot)
@@ -61,21 +61,22 @@ object TracePath {
   }
 
   /* Build recursively successor for trace with precise nodeID & Version  */
-  protected def buildLinkedFor(traces: List[Trace], trace: Trace, nodeID: String, version: Int): LinkedTrace = {
-
+  protected def buildLinkedFor (traces: List[Trace], trace: Trace, nodeID: String, version: Int): LinkedTrace = {
     val tracesWithoutTrace = traces.slice(traces.indexOf(trace) + 1, traces.size + 1)
     val successors = lookForSuccessor(tracesWithoutTrace, nodeID, version)
     var result = LinkedTrace(trace, List())
     successors.foreach {
       suc =>
+        println()
         val optimizedTraces = traces.slice(traces.indexOf(suc._2) + 1, traces.size + 1)
-        result = LinkedTrace(trace, result.sucessors ++ List(buildLinkedFor(optimizedTraces, suc._2, suc._1._1, suc._1._2)))
+        result = LinkedTrace(trace,
+                              result.sucessors ++ List(buildLinkedFor(optimizedTraces, suc._2, suc._1._1, suc._1._2)))
     }
     result
   }
 
   /* Look for direct successor of a precise version */
-  protected def lookForSuccessor(traces: List[Trace], nodeID: String, version: Int): List[((String, Int), Trace)] = {
+  protected def lookForSuccessor (traces: List[Trace], nodeID: String, version: Int): List[((String, Int), Trace)] = {
     if (traces.isEmpty) {
       return List()
     }
@@ -137,12 +138,13 @@ object TracePath {
    * the version for nodeId is equals to version
    *
    */
-  def isStable(traces: List[Trace], nodeId: String, version: Int, nbNodes: Int): Boolean = {
+  def isStable (traces: List[Trace], nodeId: String, version: Int, nbNodes: Int): Boolean = {
     val reverseTraces = traces.reverse
     var found: List[String] = List[String]()
     var i = 0
     while (found.size <= nbNodes && i < traces.size) {
-      if (TracePath.stringToVectorClock(reverseTraces(i).getBody).containEntry(nodeId, version) && !found.contains(reverseTraces(i).getClientId)) {
+      if (TracePath.stringToVectorClock(reverseTraces(i).getBody).containEntry(nodeId, version) &&
+        !found.contains(reverseTraces(i).getClientId)) {
         found = found ++ List(reverseTraces(i).getClientId)
       }
       i = i + 1

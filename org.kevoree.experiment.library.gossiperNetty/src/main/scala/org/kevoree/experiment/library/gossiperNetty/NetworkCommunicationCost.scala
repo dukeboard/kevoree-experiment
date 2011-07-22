@@ -11,24 +11,24 @@ object NetworkCommunicationCost extends actors.DaemonActor {
   private var dataSizeReceived = 0l;
   start()
 
-  case class STOP ()
+  case class STOP()
 
-  case class GETVALUEDATASIZERECEIVED ()
+  case class GETVALUEDATASIZERECEIVED()
 
-  case class UPDATEDATASIZERECEIVED (size: Long)
+  case class UPDATEDATASIZERECEIVED(size: Long)
 
-  case class REINITIALIZEDDATASIZERECEIVED ()
+  case class RAZ()
 
   def stop () {
     this ! STOP()
   }
 
   def updateDataSizeReceived (size: Long) {
-    this !? UPDATEDATASIZERECEIVED(size)
+    this ! UPDATEDATASIZERECEIVED(size)
   }
 
   def reinitializedDataSizeReceived () {
-    this !? REINITIALIZEDDATASIZERECEIVED()
+    this ! RAZ()
   }
 
   def getValue: Long = {
@@ -39,16 +39,16 @@ object NetworkCommunicationCost extends actors.DaemonActor {
   def act () {
     loop {
       react {
-        case STOP => {
+        case STOP() => {
           this.exit()
         }
         case UPDATEDATASIZERECEIVED(size) => {
           dataSizeReceived += size
         }
-        case REINITIALIZEDDATASIZERECEIVED => {
+        case RAZ() => {
           dataSizeReceived = 0
         }
-        case GETVALUEDATASIZERECEIVED => reply(dataSizeReceived)
+        case GETVALUEDATASIZERECEIVED() => reply(dataSizeReceived)
       }
     }
   }

@@ -29,7 +29,7 @@ class LogDataManagerForGroup (logClient: ForkedGregClient, nameInstance: scala.P
     }
     logMsg append ";"
     logMsg append NetworkCommunicationCost.getValue
-    NetworkCommunicationCost.reinitializedDataSizeReceived()
+    //NetworkCommunicationCost.reinitializedDataSizeReceived()
 
     LoggerFactory.getLogger(classOf[LogDataManagerForGroup]).debug("Send Trace =>" + logMsg.toString)
 

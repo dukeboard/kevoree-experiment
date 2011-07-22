@@ -39,7 +39,8 @@ import java.util.Map;
 
 public class KevoreeMultiIndividual extends KevoreeIndividual {
     public final static DPA[] MultipleDpas = {
-            new RemoveComponentDPA()
+            new RemoveComponentDPA(),
+            new AddForestMonitoringComponentDPA()
     };
 
     public Object clone() {

@@ -3,10 +3,12 @@ package org.kevoree.library.reasoner.ecj;
 import ec.EvolutionState;
 import ec.Individual;
 import ec.Problem;
+import ec.app.tutorial4.Y;
 import ec.multiobjective.MultiObjectiveFitness;
 import ec.simple.SimpleProblemForm;
 import org.kevoree.*;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,8 @@ public class MultiObjectiveKevoreeProblem extends Problem implements SimpleProbl
     public static final String tempSensor = "TempSensor";
     public static final String smokeSensor = "SmokeSensor";
     public static final String humiditySensor = "HumiditySensor";
+
+    private static double worseDensity = 0.0;
 
 
     public void evaluate(EvolutionState state, Individual ind,
@@ -23,10 +27,11 @@ public class MultiObjectiveKevoreeProblem extends Problem implements SimpleProbl
         if (!(ind instanceof KevoreeMultiIndividual))
             state.output.fatal("Whoa!  It's not a KevoreeIndividual!!!",null);
         KevoreeMultiIndividual ki = (KevoreeMultiIndividual)ind;
-        
+        if (worseDensity == 0.0)
+            worseDensity = evaluateWorseDensity(ki.myModel);
         
        // float[] newObjectives = {evaluateFunctionnality(ki, functionnalityValue, -functionnalityValue/4), evaluateCommunicationDelay(ki), evaluateUnusedHubs(ki), evaluateLoadBalancing(ki), evaluateUnusefullComponent(ki), evaluatearchitectureSize(ki)};
-        float[] newObjectives = {evaluatePrecision(ki.myModel), evaluateCPUConsumption(ki.myModel)};
+        float[] newObjectives = {evaluateDensity(ki.myModel), evaluateCPUConsumption(ki.myModel)};
         setFitness(state, ki, newObjectives);
     }
 
@@ -49,155 +54,12 @@ public class MultiObjectiveKevoreeProblem extends Problem implements SimpleProbl
         result = result / cpuConsumptions.length;
         return (float)(result);
     }
- // Will give a good score to architecture where all components are useful
-    private float evaluateUnusedHubs(KevoreeIndividual ki) {
-        float fitness = 100;
-        float ununsedHubs = 0;
-        float totalHubs = ki.myModel.getHubs().size();
-        for (Channel myChannel : ki.myModel.getHubs()) {
-            boolean contradictoryBinding = false;
-            boolean findOneBinding = false, isRequired = false;
-            for (MBinding myBinding : ki.myModel.getMBindings()) {
-                if (!findOneBinding && myBinding.getHub().equals(myChannel)){
-                    findOneBinding = true;
-                    if (isRequired(myBinding.getPort())){
-                        isRequired = true;
-                    } else {
-                        isRequired = false;
-                    }
-                    break;
-                } else
-                    if (findOneBinding && isRequired && !isRequired(myBinding.getPort())){
-                        contradictoryBinding = true;
-                    } else if (findOneBinding && !isRequired && isRequired(myBinding.getPort())){
-                        contradictoryBinding = true;
-                    } 
-                        
-            }
-            if (!findOneBinding || (findOneBinding && !contradictoryBinding)){
-                ununsedHubs++;
-            }
-        }
-        fitness = ununsedHubs;
-        return fitness;
-    }
-    
- // Will give a good score to small architecture
-    private float evaluatearchitectureSize(KevoreeIndividual ki) {
-        float fitness = 100;
-        float totalHubs = ki.myModel.getHubs().size();
-        float totalComponents = 0;
-        for (ContainerNode myNode : ki.myModel.getNodes()) {
-            totalComponents += myNode.getComponents().size();
-        }
-        float totalBindings = ki.myModel.getMBindings().size();
-        
-        fitness = totalHubs + totalComponents + totalBindings;
-        return fitness;
-    }
-    
-    // Will give a good score to architecture with few communications between components present on distributed nodes
-    private float evaluateCommunicationDelay(KevoreeIndividual ki) {
-        float numberOfInterNodesBindings = 0;
-        float totalNumberOfBindings = ki.myModel.getMBindings().size();
-        if (totalNumberOfBindings <= 1){
-            return 0;
-        }
-        for (MBinding myBinding : ki.myModel.getMBindings()) {
-            for (MBinding myBinding2 : ki.myModel.getMBindings()) {
-                if ((!myBinding.equals(myBinding2) && myBinding.getHub().equals(myBinding2.getHub()) && ((isRequired(myBinding.getPort()) && !isRequired(myBinding2.getPort())) || (!isRequired(myBinding.getPort()) && isRequired(myBinding2.getPort()))))){
-                    // test if the component  
-                    if (!myBinding.getPort().eContainer().eContainer().equals(myBinding2.getPort().eContainer().eContainer())){
-                        numberOfInterNodesBindings++;
-                    }
-                }
-            }
-        }
-        numberOfInterNodesBindings = numberOfInterNodesBindings/2;
-        if (numberOfInterNodesBindings == 0){
-            return 0;
-        }
-        
-        return numberOfInterNodesBindings;
-    }
-    
-    // return true if this port is a required port, false if it is a provided port.
-    private boolean isRequired(Port port) {
-        for (Port requiredPort : ((ComponentInstance)port.eContainer()).getRequired()) {
-            if (requiredPort.equals(port)){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // Will give a good score to architecture which emphasize load balancing on every available components
-    private float evaluateLoadBalancing(KevoreeIndividual ki) {
-        if (ki.myModel.getNodes().size() > 0) {
-            int[] myNodes = new int[ki.myModel.getNodes().size()];
-            int i = 0;
-            for (ContainerNode myNode : ki.myModel.getNodes()) {
-                myNodes[i] = myNode.getComponents().size();
-                i++;
-            }
-            int min = myNodes[0];
-            int max = myNodes[0];
-            for (int numberOfComponents : myNodes) {
-                if (min > numberOfComponents) {
-                    min = numberOfComponents;
-                }
-                if (max < numberOfComponents) {
-                    max = numberOfComponents;
-                }
-            }
-            if (max > 0) {
-                return max - min;
-            } else {
-                return 0;
-            }
-        }
-        return 0;
-    }
-    
-    // Will give a good score to architecture where all components are useful
-    private float evaluateUnusefullComponent(KevoreeIndividual ki) {
-        float fitness = 100;
-        float ununsedComponents = 0;
-        float totalComponents = 0;
-        for (ContainerNode myNode : ki.myModel.getNodes()) {
-            for (ComponentInstance myComponent : myNode.getComponents()) {
-                totalComponents ++;
-                boolean findOneBinding = false;
-                for (MBinding myBinding : ki.myModel.getMBindings()) {
-                    if (myBinding.getPort().eContainer().equals(myComponent)){
-                        findOneBinding = true;
-                        break;
-                    }
-                }
-                if (!findOneBinding){
-                    ununsedComponents++;
-                }
-            }
-        }
-        fitness = ununsedComponents;
-        return fitness;
-    }
 
     private void setFitness(EvolutionState state, KevoreeIndividual ki, float[] newObjectives) {
         if (!(ki.fitness instanceof MultiObjectiveFitness)) {
             state.output.fatal("Whoa!  It's not a MultiObjective!!!", null);
         }
-        ((MultiObjectiveFitness) ki.fitness).setObjectives(state, newObjectives); // the
-                                                                    // fitness
-                                                                    // is ideal
-                                                                    // if the
-                                                                    // fitness
-                                                                    // is
-                                                                    // superior
-                                                                    // or equal
-                                                                    // to 99 in
-                                                                    // this
-                                                                    // problem
+        ((MultiObjectiveFitness) ki.fitness).setObjectives(state, newObjectives);
         ki.evaluated = true;
     }
     
@@ -246,6 +108,68 @@ public class MultiObjectiveKevoreeProblem extends Problem implements SimpleProbl
 
     }
 
+    public static float evaluateDensity(ContainerRoot myModel){
+        double density = 0.0;
+        int size = myModel.getNodes().size();
+
+        for (int i=0; i<myModel.getNodes().size();i++){
+            ContainerNode myNode = myModel.getNodes().get(i);
+            if (!containsInstance(myNode, tempSensor)){
+                density += density(myModel, tempSensor, i);
+            }
+            if (!containsInstance(myNode, smokeSensor)){
+                density += density(myModel, smokeSensor, i);
+            }
+            if (!containsInstance(myNode, humiditySensor)){
+                density += density(myModel, humiditySensor, i);
+            }
+        }
+        return (float)Math.floor(density*100/worseDensity);
+
+    }
+
+    public static double density(ContainerRoot myModel, String myType, int indice){
+        double density = 0.0;
+        int i = indice/GeneticAlgorithm.forestWidth ;
+        int j = indice - (i*GeneticAlgorithm.forestWidth) ;
+
+        int minDiffI = -1, minDiffJ = -1, maxDiffI = 1, maxDiffJ = 1;
+        if (i == 0)
+            minDiffI = 0;
+        if (j == 0)
+            minDiffJ = 0;
+        if (i == GeneticAlgorithm.forestWidth-1)
+            maxDiffI = 0;
+        if (j == GeneticAlgorithm.forestWidth-1)
+            maxDiffJ = 0;
+
+        for (int k=minDiffI; k<=maxDiffI; k++){
+            for (int l=minDiffJ; l<=maxDiffJ; l++){
+                if (!(k==0 && l == 0))
+                    density += calculateInDirection(myModel, k,l, myType, indice);
+            }
+        }
+        return density;
+    }
+
+    public static double calculateInDirection(ContainerRoot myModel, int diffI, int diffJ, String myType, int indice){
+        int i = indice/GeneticAlgorithm.forestWidth ;
+        int j = indice - (i*GeneticAlgorithm.forestWidth) ;
+        if (i == 0 || i == GeneticAlgorithm.forestWidth-1 || j == 0 || j == GeneticAlgorithm.forestWidth-1){
+            return GeneticAlgorithm.forestWidth;
+        }
+        i += diffI;
+        j += diffJ;
+        int newIndice = i*GeneticAlgorithm.forestWidth+j;
+        ContainerNode myNode = myModel.getNodes().get(newIndice);
+        if (containsInstance(myNode, myType)){
+            return 1;
+        }
+        else {
+            return 1+calculateInDirection(myModel, diffI, diffJ, myType, newIndice);
+        }
+    }
+
     public static Integer[] getNeighbours(int indice, int size) {
         int width = (int)Math.sqrt((double)size);
         int i = indice/width;
@@ -271,6 +195,56 @@ public class MultiObjectiveKevoreeProblem extends Problem implements SimpleProbl
             }
         }
         return false;
+    }
+
+
+
+
+    private static float evaluateWorseDensity(ContainerRoot myModel){
+        double density = 0.0;
+        int size = myModel.getNodes().size();
+
+        for (int i=0; i<myModel.getNodes().size();i++){
+            density += 3*worseDensity(i);
+        }
+        return (float)Math.floor(density);
+
+    }
+
+    private static double worseDensity( int indice){
+        double density = 0.0;
+        int i = indice/GeneticAlgorithm.forestWidth ;
+        int j = indice - (i*GeneticAlgorithm.forestWidth) ;
+
+        int minDiffI = -1, minDiffJ = -1, maxDiffI = 1, maxDiffJ = 1;
+        if (i == 0)
+            minDiffI = 0;
+        if (j == 0)
+            minDiffJ = 0;
+        if (i == GeneticAlgorithm.forestWidth-1)
+            maxDiffI = 0;
+        if (j == GeneticAlgorithm.forestWidth-1)
+            maxDiffJ = 0;
+
+        for (int k=minDiffI; k<=maxDiffI; k++){
+            for (int l=minDiffJ; l<=maxDiffJ; l++){
+                if (!(k==0 && l == 0))
+                    density += calculateWorseInDirection(k,l, indice);
+            }
+        }
+        return density;
+    }
+
+    private static double calculateWorseInDirection(int diffI, int diffJ,  int indice){
+        int i = indice/GeneticAlgorithm.forestWidth ;
+        int j = indice - (i*GeneticAlgorithm.forestWidth) ;
+        if (i == 0 || i == GeneticAlgorithm.forestWidth-1 || j == 0 || j == GeneticAlgorithm.forestWidth-1){
+            return GeneticAlgorithm.forestWidth;
+        }
+        i += diffI;
+        j += diffJ;
+        int newIndice = i*GeneticAlgorithm.forestWidth+j;
+        return 1+calculateWorseInDirection(diffI, diffJ, newIndice);
     }
 
 }

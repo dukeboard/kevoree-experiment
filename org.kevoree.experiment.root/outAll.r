@@ -1,5 +1,7 @@
-propDelais <- c(11207,10823,10622,10967,10055,827,0,9951,10116,1398,199,31195,0,78,265,40482,9242,116,0,9128,9300,31428,31081,190,0,76,338)
+propDelais <- c(205,57,168,606,0,218,247,139,196,98,182,203,0,242,272,214,150,70,100,110,0,106,166,148)
+netSize <- c(114088,114088)
+
 
 library(Hmisc)
 bpplot(propDelais,main="Downtime propagation delay")
-#boxplot(propDelais, propDelais, names = c("a", "b"), horizontal = TRUE, ylab = "factors", main = "title")
+boxplot(propDelais, propDelais, names = c("a", "b"), horizontal = TRUE, ylab = "factors", main = "title")

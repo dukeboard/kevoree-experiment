@@ -33,7 +33,6 @@ public class GeneticAlgorithm {
     public static int forestWidth = 10;
     public static int generations = 500;
     public static int populations = 500;
-    public static final String frequencyAttribute = "frequency";
 
     public static String folderToStoreTempFile = "generated";
 
@@ -53,7 +52,7 @@ public class GeneticAlgorithm {
             url = classLoader.getResource("baseMyNodes.kev");
             path = URLDecoder.decode(url.toString(), "UTF-8");
         } catch (Exception e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
         ContainerRoot myModel = load(path);
         for (int i=0; i<forestWidth*forestWidth; i++){
@@ -109,7 +108,7 @@ public class GeneticAlgorithm {
             outputFile.close();
 
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
         copyFileToGeneratedDirectory("ec.params");
         copyFileToGeneratedDirectory("multiobjective.params");

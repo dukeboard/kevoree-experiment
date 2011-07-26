@@ -30,7 +30,6 @@ public class MultiObjectiveKevoreeProblem extends Problem implements SimpleProbl
         if (worseDensity == 0.0)
             worseDensity = evaluateWorseDensity(ki.myModel);
         
-       // float[] newObjectives = {evaluateFunctionnality(ki, functionnalityValue, -functionnalityValue/4), evaluateCommunicationDelay(ki), evaluateUnusedHubs(ki), evaluateLoadBalancing(ki), evaluateUnusefullComponent(ki), evaluatearchitectureSize(ki)};
         float[] newObjectives = {evaluateDensity(ki.myModel), evaluateCPUConsumption(ki.myModel)};
         setFitness(state, ki, newObjectives);
     }

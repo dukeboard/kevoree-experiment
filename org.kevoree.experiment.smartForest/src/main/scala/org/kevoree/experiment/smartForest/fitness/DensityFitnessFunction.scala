@@ -1,8 +1,7 @@
 package org.kevoree.experiment.smartForest.fitness
 
 import scala.collection.JavaConversions._
-import org.kevoree.library.reasoner.ecj.GeneticAlgorithm
-import org.kevoree.{NamedElement, ContainerNode, ContainerRoot}
+import org.kevoree.{ContainerNode, ContainerRoot}
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 
 /**
@@ -36,8 +35,7 @@ class DensityFitnessFunction extends FitnessFunction {
         densityV += density(model, humiditySensor, i)
       }
     }
-    java.lang.Math.floor(densityV).asInstanceOf[Float];
-//    java.lang.Math.floor(densityV * 100 / worseDensity).asInstanceOf[Float];
+    java.lang.Math.floor(densityV * 100 / worseDensity).asInstanceOf[Float];
   }
 
 

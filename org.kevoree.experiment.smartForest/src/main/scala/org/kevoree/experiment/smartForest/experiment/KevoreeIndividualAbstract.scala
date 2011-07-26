@@ -102,7 +102,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
   }
 
   override def clone: AnyRef = {
-    var ki: KevoreeIndividualAbstract = super.clone.asInstanceOf[KevoreeIndividualAbstract]
+    val ki: KevoreeIndividualAbstract = super.clone.asInstanceOf[KevoreeIndividualAbstract]
     ki.myModel = EcoreUtil.copy(myModel)
     ki.mutationDpas = mutationDpas
     ki.minMutationDpasNumber = minMutationDpasNumber
@@ -113,7 +113,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
     return ki
   }
 
-  override def equals(ind: AnyRef): Boolean = {
+  override def equals(ind: Any): Boolean = {
     if (!(ind.isInstanceOf[KevoreeIndividualAbstract])) {
       return false
     }

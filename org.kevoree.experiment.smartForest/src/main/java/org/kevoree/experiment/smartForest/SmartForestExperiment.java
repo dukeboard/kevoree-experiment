@@ -2,42 +2,22 @@ package org.kevoree.experiment.smartForest;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
-import ch.qos.logback.core.net.SyslogOutputStream;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMIResource;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.kevoree.ContainerNode;
 import org.kevoree.ContainerRoot;
-import org.kevoree.KevoreePackage;
-import org.kevoree.NamedElement;
 import org.kevoree.experiment.smartForest.model.Generator;
-import org.kevoree.framework.KevoreeXmiHelper;
-import org.kevoree.library.reasoner.ecj.App;
 import org.kevoree.library.reasoner.ecj.KevoreeMultipleGeneticAlgorithm;
-import org.kevoree.library.reasoner.ecj.KevoreeMultipleRepresentation;
-import org.kevoree.library.reasoner.ecj.MultiObjectiveKevoreeProblem;
-import org.kevoree.tools.marShell.ast.Script;
-import org.kevoree.tools.marShell.interpreter.KevsInterpreterAspects;
-import org.kevoree.tools.marShell.interpreter.KevsInterpreterContext;
-import org.kevoree.tools.marShell.parser.KevsParser;
 import org.kevoree.tools.marShell.parser.ParserUtil;
-import org.omg.CORBA.INITIALIZE;
+
 import org.slf4j.LoggerFactory;
-import scala.Option;
+
 
 import java.io.*;
 import java.net.InetAddress;
-import java.net.URL;
-import java.net.URLDecoder;
 import java.util.*;
 
 public class SmartForestExperiment {
-    public final static int forestWidth = 10;
-    public final static int generations = 200;
-    public final static int populations = 200;
+    public final static int forestWidth = 2;
+    public final static int generations = 50;
+    public final static int populations = 50;
     public final static int elite = 0;
 
     public final static String paramsSourceFile = "kevoreeMultiCrossOverTest.params";
@@ -148,7 +128,7 @@ public class SmartForestExperiment {
             outputFile.close();
 
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
     }
 

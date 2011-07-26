@@ -12,7 +12,10 @@ import java.io.{File, FileInputStream, InputStream}
 object RecursiveRGeneratorApp extends App {
 
   val entryPoint = "paradent61rennesgrid5000fr0"
-  val resultsFolder = "/home/edaubert/workspace/kevoree-experiment/org.kevoree.experiment.trace.gui/results"
+
+  println("hi="+new File("../org.kevoree.experiment.library.gossiperNetty/results").getAbsolutePath)
+
+  val resultsFolder = new File("../org.kevoree.experiment.library.gossiperNetty/results").getAbsolutePath
 
   new File(resultsFolder).listFiles().filter(f => f.isDirectory).foreach{
     f => try {

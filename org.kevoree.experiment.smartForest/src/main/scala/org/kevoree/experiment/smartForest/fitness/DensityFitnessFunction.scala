@@ -1,8 +1,8 @@
 package org.kevoree.experiment.smartForest.fitness
 
 import scala.collection.JavaConversions._
-import org.kevoree.library.reasoner.ecj.GeneticAlgorithm
-import org.kevoree.{NamedElement, ContainerNode, ContainerRoot}
+import org.kevoree.ContainerNode
+import org.kevoree.ContainerRoot
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 
 /**

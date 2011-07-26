@@ -17,7 +17,7 @@ import util.matching.Regex.Match
  * Time: 13:59
  */
 
-class FailureGenerator (ips: List[String]) {
+class FailureGenerator (ips: List[String], poisson: Boolean) {
 
   var removedNodeNetworks: List[NodeNetwork] = List()
 
@@ -187,17 +187,23 @@ class FailureGenerator (ips: List[String]) {
           }
           alreadyUsed = alreadyUsed ++ List(node)
       }
-      println("Select link to remove [default = 0]:")
-      val reader = new BufferedReader(new InputStreamReader(System.in))
-      val line = reader.readLine()
       var linkNumber = 0
-      if (line != "") {
-        try {
-          linkNumber = Integer.parseInt(line)
-        } catch {
-          case _@e => // NO OP
+      if (!poisson) {
+        println("Select link to remove [default = 0]:")
+        val reader = new BufferedReader(new InputStreamReader(System.in))
+        val line = reader.readLine()
+        if (line != "") {
+          try {
+            linkNumber = Integer.parseInt(line)
+          } catch {
+            case _@e => // NO OP
+          }
         }
+      } else {
+        linkNumber = PoissonDistribution
+          .getPoissonWithUpperLimit(1.772453851 /*1/nodeNetworks.size*/ , nodeNetworks.size) // racine carré de PI
       }
+
       nodeNetworks(linkNumber)
     } else {
       var i: java.lang.Integer = 0
@@ -219,16 +225,21 @@ class FailureGenerator (ips: List[String]) {
             }
           }
       }
-      println("Select link to add [default = 0]:")
-      val reader = new BufferedReader(new InputStreamReader(System.in))
-      val line = reader.readLine()
       var linkNumber = 0
-      if (line != "") {
-        try {
-          linkNumber = Integer.parseInt(line)
-        } catch {
-          case _@e => // NO OP
+      if (!poisson) {
+        println("Select link to add [default = 0]:")
+        val reader = new BufferedReader(new InputStreamReader(System.in))
+        val line = reader.readLine()
+        if (line != "") {
+          try {
+            linkNumber = Integer.parseInt(line)
+          } catch {
+            case _@e => // NO OP
+          }
         }
+      } else {
+        linkNumber = PoissonDistribution
+          .getPoissonWithUpperLimit(1.772453851 /*1/nodeNetworks.size*/ , nodeNetworks.size) // racine carré de PI
       }
       nodeNetworks(linkNumber)
     }

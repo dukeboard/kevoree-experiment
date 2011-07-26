@@ -10,47 +10,45 @@ import java.io.{FileReader, BufferedReader, File}
 
 object ModificationApp extends App {
 
-  override def main (args: Array[String]) {
-    //println("starting modification process...")
-    if (args.length != 0 && args(0).equals("true")) {
-      //println("modification process is executed on Grid5000...")
-      Configuration.grid5000 = true
-    }
-    Configuration.build()
-
+  def run () {
     val modificationGenerator = new ModificationGenerator(Configuration.ips)
+    val stream = System.in
+    var b = stream.read()
+    while (b != -1 && b != 'q') {
+      modificationGenerator.doAction("duke0")
+      b = stream.read()
+    }
+  }
 
-    if (Configuration.grid5000) {
-      println(System.getProperty("OAR_NODE_FILE"))
-      if (System.getProperty("OAR_NODE_FILE") != null) {
-        val file = new File(System.getProperty("OAR_NODE_FILE"))
-        if (file.exists()) {
-          val reader = new BufferedReader(new FileReader(file))
-          var line: String = reader.readLine()
-          line = line.replaceAll("-", "").replaceAll("\\.", "") + "0"
-          reader.close()
-
-          // TODO register the node we use to push update
-
-          /*val stream = System.in
-          var b = stream.read()
-          while (b != -1 && b != 'q') {*/
-            modificationGenerator.doAction(line)
-            /*b = stream.read()
-          }*/
-        } else {
-          println("file \"" + file.getAbsolutePath + "\" is missing.\nModification is not possible")
-        }
+  def runForGrid () {
+    val modificationGenerator = new ModificationGenerator(Configuration.ips)
+    if (System.getProperty("OAR_NODE_FILE") != null) {
+      val file = new File(System.getProperty("OAR_NODE_FILE"))
+      if (file.exists()) {
+        val reader = new BufferedReader(new FileReader(file))
+        var line: String = reader.readLine()
+        line = line.replaceAll("-", "").replaceAll("\\.", "") + "0"
+        reader.close()
+        modificationGenerator.doAction(line)
       } else {
-        println("missing $OAR_NODE_FILE variables")
+        println("file \"" + file.getAbsolutePath + "\" is missing.\nModification is not possible")
       }
     } else {
-      val stream = System.in
-      var b = stream.read()
-      while (b != -1 && b != 'q') {
-        modificationGenerator.doAction("duke0")
-        b = stream.read()
-      }
+      println("missing $OAR_NODE_FILE variables")
+    }
+  }
+
+  override def main (args: Array[String]) {
+
+    if (args.contains("grid")) {
+      Configuration.buildForGrid()
+      runForGrid()
+    } else if (args.contains("-grid")) {
+      Configuration.build()
+      run()
+    } else {
+      Configuration.build()
+      run()
     }
   }
 }

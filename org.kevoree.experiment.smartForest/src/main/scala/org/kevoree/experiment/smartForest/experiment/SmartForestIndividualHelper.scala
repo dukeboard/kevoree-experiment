@@ -18,26 +18,16 @@ object SmartForestIndividualHelper {
   def compareForest(ki: SmartForestIndividual): DiffModel = {
     val addList = new java.util.ArrayList[java.util.Map[String, NamedElement]]
     val removeList = new java.util.ArrayList[java.util.Map[String, NamedElement]]
-    val diffDictionnaryList = new java.util.ArrayList[java.util.Map[String, NamedElement]]
-
-    var i: Int = 0
-    while (i < ki.myModel.getNodes.size) {
+    (0 until ki.myModel.getNodes.size).foreach { i =>
       {
         val myNode: ContainerNode = ki.myModel.getNodes.get(i)
         val otherNode: ContainerNode = ki.myModel.getNodes.get(i)
-
         myNode.getComponents.foreach{ ci =>
           if (!containsInstance(otherNode, ci.getTypeDefinition.getName)) {
             val myMap = new java.util.HashMap[String, NamedElement]
             myMap.put(RemoveComponentDPAO.componentName, ci.asInstanceOf[NamedElement])
             myMap.put(RemoveComponentDPAO.nodeName, myNode.asInstanceOf[NamedElement])
             removeList.add(myMap.asInstanceOf[java.util.Map[String, NamedElement]])
-          }
-          else {
-            var myAttribute: DictionaryAttribute = null
-            var otherAttribute: DictionaryAttribute = null
-            var otherComp: ComponentInstance = getInstance(otherNode, ci.getTypeDefinition.getName)
-
           }
         }
         otherNode.getComponents.foreach{ ci =>
@@ -49,7 +39,6 @@ object SmartForestIndividualHelper {
           }
         }
       }
-      i += 1
     }
     return new DiffModel(addList, removeList)
   }

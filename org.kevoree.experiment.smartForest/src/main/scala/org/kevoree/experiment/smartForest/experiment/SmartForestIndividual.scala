@@ -19,8 +19,8 @@ class SmartForestIndividual extends KevoreeIndividualAbstract {
   var mutationDpas = Array(new RemoveComponentDPA().asInstanceOf[DPA], new AddForestMonitoringComponentDPA().asInstanceOf[DPA])
   var maxMutationDpasNumber = 1
   var minMutationDpasNumber = 1
-  var maxResetDpasNumber = 5 //SmartForestExperiment.forestWidth*3
-  var minResetDpasNumber = 0
+  var maxResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*3
+  var minResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth
   var resetDpas = Array(new AddForestMonitoringComponentDPA().asInstanceOf[DPA])
 
   val baseModelPath = SmartForestExperiment.folderToStoreTempFile + File.separator + SmartForestExperiment.individualBaseModel
@@ -29,8 +29,12 @@ class SmartForestIndividual extends KevoreeIndividualAbstract {
    * Destructively crosses over the individual with another in some default
    * manner.
    */
-  def defaultCrossover(state: EvolutionState, thread: Int, ind: SmartForestIndividual): Unit = {
-    val dm = SmartForestIndividualHelper.compareForest(ind)
+  override def defaultCrossover(state: EvolutionState, thread: Int, ind: KevoreeIndividualAbstract): Unit = {
+    if (!ind.isInstanceOf[SmartForestIndividual]) {
+      super.defaultCrossover(state, thread, ind)
+      return
+    }
+    val dm = SmartForestIndividualHelper.compareForest(ind.asInstanceOf[SmartForestIndividual])
     val context = new KevsInterpreterContext(myModel)
     val addDPA = new AddComponentDPA
     val removeDPA = new RemoveComponentDPA

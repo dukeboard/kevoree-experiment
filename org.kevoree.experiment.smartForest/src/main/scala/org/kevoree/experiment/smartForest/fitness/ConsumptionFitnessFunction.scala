@@ -33,6 +33,7 @@ class ConsumptionFitnessFunction extends FitnessFunction {
       node =>
         node.getComponents.foreach {
           compo =>
+            if (compo.getDictionary == null) return 0
             compo.getDictionary.getValues.find(v => v.getAttribute.getName == periodProp) match {
               case Some(property) => {
 

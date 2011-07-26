@@ -294,22 +294,6 @@ public class KevoreeIndividual extends Individual {
                     myMap.put(RemoveComponentDPAO.nodeName(),
                         (NamedElement) myNode);
                     removeList.add(myMap);
-                } else {
-                    // We have the component on the two architectures we should compare their frequency
-                    DictionaryAttribute myAttribute;
-                    DictionaryAttribute otherAttribute;
-                    ComponentInstance otherComp = getInstance(otherNode,ci.getTypeDefinition().getName());
-                    for (int j=0; i<otherComp.getDictionary().getValues().size(); i++){
-                        if (otherComp.getDictionary().getValues().get(j).getAttribute().getName().equalsIgnoreCase(GeneticAlgorithm.frequencyAttribute)){
-                            otherAttribute = otherComp.getDictionary().getValues().get(j).getAttribute();
-                        }
-                    }
-                    for (int j=0; i<ci.getDictionary().getValues().size(); i++){
-                        if (ci.getDictionary().getValues().get(j).getAttribute().getName().equalsIgnoreCase(GeneticAlgorithm.frequencyAttribute)){
-                            myAttribute = ci.getDictionary().getValues().get(j).getAttribute();
-                        }
-                    }
-
                 }
 
             }

@@ -366,7 +366,7 @@ public class KevoreeMultipleGeneticAlgorithm {
         EvolutionState state;
         ParameterDatabase parameters;
         String[] args = new String[] { "-file",
-                GeneticAlgorithm.folderToStoreTempFile + File.separator + SmartForestExperiment.paramsTargetFile };
+                SmartForestExperiment.folderToStoreTempFile + File.separator + SmartForestExperiment.paramsTargetFile };
         int currentJob = 0; // the next job number (0 by default)
 
         parameters = loadParameterDatabase(args);

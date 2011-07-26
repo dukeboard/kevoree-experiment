@@ -4,8 +4,8 @@ import ec.EvolutionState;
 import ec.Individual;
 import ec.Species;
 import ec.util.Parameter;
-import ec.vector.VectorDefaults;
-import ec.vector.VectorIndividual;
+import org.kevoree.experiment.smartForest.experiment.KevoreeIndividualAbstract;
+
 
 public class KevoreeModelSpecies extends Species {
 
@@ -17,7 +17,7 @@ public class KevoreeModelSpecies extends Species {
     
     public Individual newIndividual(final EvolutionState state, int thread)
     {
-        KevoreeIndividual ind = (KevoreeIndividual)super.newIndividual(state, thread);
+        KevoreeIndividualAbstract ind = (KevoreeIndividualAbstract)super.newIndividual(state, thread);
         ind.reset(state,thread);
         return ind;
     }

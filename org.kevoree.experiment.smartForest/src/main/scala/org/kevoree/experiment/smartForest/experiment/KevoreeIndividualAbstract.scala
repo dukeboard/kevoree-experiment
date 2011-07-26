@@ -14,10 +14,9 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.xmi.{XMLResource, XMIResource}
 import org.kevoree.tools.marShell.parser.ParserUtil
 import org.kevoree.library.reasoner.ecj.KevoreeDefaults
-import org.kevoree.{ContainerNode, KevoreePackage,  ContainerRoot}
+import org.kevoree.{ KevoreePackage,  ContainerRoot}
 import ec.{Individual, EvolutionState}
 import scala.collection.JavaConversions._
-import com.sun.jndi.cosnaming.CNNameParser
 
 /**
  * Created by IntelliJ IDEA.
@@ -53,7 +52,9 @@ abstract class KevoreeIndividualAbstract extends Individual{
    */
   def defaultMutate(state: EvolutionState, thread: Int): Unit = {
     val context = new KevsInterpreterContext(myModel)
-    val numberOfMutation = minMutationDpasNumber + state.random(thread).nextInt(maxMutationDpasNumber-minMutationDpasNumber)
+    var numberOfMutation = minMutationDpasNumber
+    if (maxMutationDpasNumber != minMutationDpasNumber)
+      numberOfMutation = minMutationDpasNumber + state.random(thread).nextInt(maxMutationDpasNumber-minMutationDpasNumber)
     (1 to numberOfMutation).foreach{ _ =>
       val myDPA = mutationDpas(state.random(thread).nextInt(mutationDpas.length))
       val myLists = myDPA.applyPointcut(myModel)
@@ -70,7 +71,9 @@ abstract class KevoreeIndividualAbstract extends Individual{
    */
   def reset(state: EvolutionState, thread: Int): Unit = {
     val context = new KevsInterpreterContext(myModel)
-    val numberOfMutation = minResetDpasNumber + state.random(thread).nextInt(maxResetDpasNumber-minResetDpasNumber)
+    var numberOfMutation = minResetDpasNumber
+    if (maxResetDpasNumber != minResetDpasNumber)
+      numberOfMutation = minResetDpasNumber + state.random(thread).nextInt(maxResetDpasNumber-minResetDpasNumber)
     (1 to numberOfMutation).foreach{ _ =>
       val myDPA = resetDpas(state.random(thread).nextInt(resetDpas.length))
       val myLists = myDPA.applyPointcut(myModel)
@@ -82,6 +85,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
     }
   }
 
+  def defaultCrossover(state: EvolutionState, thread: Int, ind: KevoreeIndividualAbstract): Unit = {}
 
   def getGenome: AnyRef = {
     return myModel
@@ -113,7 +117,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
     return ki
   }
 
-  override def equals(ind: AnyRef): Boolean = {
+  override def equals(ind: Any): Boolean = {
     if (!(ind.isInstanceOf[KevoreeIndividualAbstract])) {
       return false
     }

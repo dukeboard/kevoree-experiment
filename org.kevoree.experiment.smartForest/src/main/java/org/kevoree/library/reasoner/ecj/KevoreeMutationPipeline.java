@@ -13,6 +13,7 @@ import ec.Individual;
 import ec.util.Parameter;
 import ec.vector.VectorDefaults;
 import ec.vector.VectorIndividual;
+import org.kevoree.experiment.smartForest.experiment.KevoreeIndividualAbstract;
 
 public class KevoreeMutationPipeline extends BreedingPipeline
     {
@@ -48,8 +49,8 @@ public class KevoreeMutationPipeline extends BreedingPipeline
         // mutate 'em
         for(int q=start;q<n+start;q++)
             {
-            ((KevoreeIndividual)inds[q]).defaultMutate(state,thread);
-            ((KevoreeIndividual)inds[q]).evaluated=false;
+            ((KevoreeIndividualAbstract)inds[q]).defaultMutate(state,thread);
+            ((KevoreeIndividualAbstract)inds[q]).evaluated=false;
             }
 
         return n;

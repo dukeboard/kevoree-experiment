@@ -2,6 +2,7 @@ package org.kevoree.experiment.smartForest;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -35,8 +36,8 @@ import java.util.*;
 
 public class SmartForestExperiment {
     public final static int forestWidth = 10;
-    public final static int generations = 500;
-    public final static int populations = 500;
+    public final static int generations = 200;
+    public final static int populations = 200;
     public final static int elite = 0;
 
     public final static String paramsSourceFile = "kevoreeMultiCrossOverTest.params";
@@ -80,13 +81,6 @@ public class SmartForestExperiment {
             InputStreamReader ipsr=new InputStreamReader(ips);
             BufferedReader br=new BufferedReader(ipsr);
             String line;
-            File generatedDirectory = new File(folderToStoreTempFile);
-            if (generatedDirectory.exists() && generatedDirectory.isDirectory()){
-                for (File myFile : generatedDirectory.listFiles()){
-                    myFile.delete();
-                }
-            }
-            generatedDirectory.mkdirs();
             FileWriter fw = new FileWriter (folderToStoreTempFile + File.separator + targetFile);
             BufferedWriter bw = new BufferedWriter (fw);
             PrintWriter outputFile = new PrintWriter (bw);
@@ -118,6 +112,14 @@ public class SmartForestExperiment {
         root.setLevel(Level.OFF); //change to off
         deleteStatistiqueFile();
         folderToStoreTempFile = getComputerFullName() + "-" + folderToStoreTempFile;
+        // clean and create the temp folder
+        File generatedDirectory = new File(folderToStoreTempFile);
+        if (generatedDirectory.exists() && generatedDirectory.isDirectory()){
+            for (File myFile : generatedDirectory.listFiles()){
+                myFile.delete();
+            }
+        }
+        generatedDirectory.mkdirs();
     }
 
     private static void deleteStatistiqueFile() {

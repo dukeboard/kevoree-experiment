@@ -11,10 +11,10 @@ generations = 100
 pop.subpop.0.species.ind.models-folder = mm
 
 pop.subpop.0.species		= org.kevoree.library.reasoner.ecj.KevoreeModelSpeciesForMutation
-pop.subpop.0.species.ind	= org.kevoree.library.reasoner.ecj.KevoreeMultiIndividual
+pop.subpop.0.species.ind	= org.kevoree.experiment.smartForest.experiment.SmartForestIndividual
 pop.subpop.0.species.mutation-prob	= 1.0
-eval.problem            = org.kevoree.library.reasoner.ecj.MultiObjectiveKevoreeProblem
-pop.subpop.0.species.fitness.num-objectives = 2
+eval.problem            = org.kevoree.experiment.smartForest.experiment.SmartForestFitnessEvaluator
+pop.subpop.0.species.fitness.num-objectives = 3
 pop.subpop.0.species.fitness.maximize = false
 
 

@@ -10,6 +10,7 @@ package org.kevoree.library.reasoner.ecj;
 import ec.vector.*;
 import ec.*;
 import ec.util.*;
+import org.kevoree.experiment.smartForest.experiment.KevoreeIndividualAbstract;
 
 
 public class KevoreeCrossoverPipeline extends BreedingPipeline
@@ -22,9 +23,9 @@ public class KevoreeCrossoverPipeline extends BreedingPipeline
     public boolean tossSecondParent;
 
     /** Temporary holding place for parents */
-   KevoreeIndividual parents[];
+   KevoreeIndividualAbstract parents[];
 
-    public KevoreeCrossoverPipeline() { parents = new KevoreeIndividual[2]; }
+    public KevoreeCrossoverPipeline() { parents = new KevoreeIndividualAbstract[2]; }
     public Parameter defaultBase() { return VectorDefaults.base().push(P_CROSSOVER); }
 
     /** Returns 2 */
@@ -35,7 +36,7 @@ public class KevoreeCrossoverPipeline extends BreedingPipeline
         KevoreeCrossoverPipeline c = (KevoreeCrossoverPipeline)(super.clone());
 
         // deep-cloned stuff
-        c.parents = (KevoreeIndividual[]) parents.clone();
+        c.parents = (KevoreeIndividualAbstract[]) parents.clone();
 
         return c;
         }
@@ -81,8 +82,8 @@ public class KevoreeCrossoverPipeline extends BreedingPipeline
                 sources[0].produce(2,2,0,subpopulation,parents,state,thread);
                 if (!(sources[0] instanceof BreedingPipeline))  // it's a selection method probably
                     { 
-                    parents[0] = (KevoreeIndividual)(parents[0].clone());
-                    parents[1] = (KevoreeIndividual)(parents[1].clone());
+                    parents[0] = (KevoreeIndividualAbstract)(parents[0].clone());
+                    parents[1] = (KevoreeIndividualAbstract)(parents[1].clone());
                     }
                 }
             else // grab from different sources
@@ -90,9 +91,9 @@ public class KevoreeCrossoverPipeline extends BreedingPipeline
                 sources[0].produce(1,1,0,subpopulation,parents,state,thread);
                 sources[1].produce(1,1,1,subpopulation,parents,state,thread);
                 if (!(sources[0] instanceof BreedingPipeline))  // it's a selection method probably
-                    parents[0] = (KevoreeIndividual)(parents[0].clone());
+                    parents[0] = (KevoreeIndividualAbstract)(parents[0].clone());
                 if (!(sources[1] instanceof BreedingPipeline)) // it's a selection method probably
-                    parents[1] = (KevoreeIndividual)(parents[1].clone());
+                    parents[1] = (KevoreeIndividualAbstract)(parents[1].clone());
                 }
                 
             // at this point, parents[] contains our two selected individuals,

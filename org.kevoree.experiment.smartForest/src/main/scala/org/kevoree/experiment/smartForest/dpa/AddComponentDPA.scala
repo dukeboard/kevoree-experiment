@@ -59,6 +59,8 @@ class AddComponentDPA extends DPA {
   }
 
   def getASTScript(stringNamedElementMap: java.util.Map[String, NamedElement]): Script = {
+    
+    
     Script(
       List(
         TransactionalBloc(

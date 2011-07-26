@@ -21,7 +21,7 @@ class SmartForestIndividual extends KevoreeIndividualAbstract {
   var minMutationDpasNumber = 1
   var maxResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*2
   var minResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth
-  var resetDpas = Array(new AddForestMonitoringComponentDPA().asInstanceOf[DPA])
+  var resetDpas : List[DPA] = List(new AddForestMonitoringComponentDPA())
 
   val baseModelPath = SmartForestExperiment.folderToStoreTempFile + File.separator + SmartForestExperiment.individualBaseModel
 

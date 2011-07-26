@@ -81,7 +81,7 @@ public class BrutForceSearch {
         }
         for (int k=0; k<size; k++){
             if (!precisionArray[k].isCompleted()){
-                Integer[] neighbours = MultiObjectiveKevoreeProblem.getNeighbours(k, size);
+                Integer[] neighbours = getNeighbours(k, size);
                 for (int j=0;j<neighbours.length;j++){
                     if (myBool[neighbours[j]][0]){
                         precisionArray[k].setTempPrecision(precisionArray[k].getTempPrecision()+(100.0/8.0));
@@ -102,5 +102,9 @@ public class BrutForceSearch {
         precision = precision / (precisionArray.length *3);
 
         return (float)(100-Math.floor(precision/10)*10);
+    }
+
+    private Integer[] getNeighbours(int k, int size) {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 }

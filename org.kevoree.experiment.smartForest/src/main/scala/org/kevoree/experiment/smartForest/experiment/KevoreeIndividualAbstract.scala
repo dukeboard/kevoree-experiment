@@ -32,7 +32,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
   var minMutationDpasNumber: Int
   var maxMutationDpasNumber: Int
 
-  var resetDpas: Array[DPA]
+  var resetDpas: List[DPA]
   var minResetDpasNumber: Int
   var maxResetDpasNumber: Int
 

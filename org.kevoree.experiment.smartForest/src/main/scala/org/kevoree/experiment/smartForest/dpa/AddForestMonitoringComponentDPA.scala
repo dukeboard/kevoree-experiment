@@ -1,5 +1,6 @@
 package org.kevoree.experiment.smartForest.dpa
 
+import ec.util.MersenneTwisterFast
 import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.{ContainerRoot, NamedElement, ComponentType}
 import scala.collection.JavaConversions._
@@ -81,14 +82,21 @@ class AddForestMonitoringComponentDPA extends DPA {
       script = script.replace(replacedString, myMap.get(name).getName)
     }
     script = script.replace("${" + this.componentName + "}", myMap.get(this.typeDefinition).getName + ({
-      increment += 1;
-      increment
-    }))
+          increment += 1;
+          increment
+        }))
     return script
   }
-
+  
+  val random = new MersenneTwisterFast()
+  
   def getASTScript(myMap: java.util.Map[String, NamedElement]): Script = {
     increment += 1;
+    val props = new java.util.Properties()
+    val newIndex = random.nextInt(PeriodValues.values.size)
+    
+    props.put("period", PeriodValues.values(newIndex).toString)
+    
     Script(
       List(
         TransactionalBloc(
@@ -96,7 +104,7 @@ class AddForestMonitoringComponentDPA extends DPA {
             AddComponentInstanceStatment(
               ComponentInstanceID(myMap.get(AddComponentDPAO.typeDefinition).getName+increment, Some(myMap.get(nodeName).getName)),
               myMap.get(typeDefinition).getName,
-              new java.util.Properties()
+              props
             )
           )
         )

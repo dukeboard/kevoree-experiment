@@ -25,7 +25,7 @@ object Generator {
     var url: URL = null
     var path: String = ""
     try {
-      url = this.getClass.getClassLoader.getResource("baseMyNodes.kev")
+      url = this.getClass.getClassLoader.getResource("defaultLibrary.kev")
       path = URLDecoder.decode(url.toString, "UTF-8")
     }
     catch {

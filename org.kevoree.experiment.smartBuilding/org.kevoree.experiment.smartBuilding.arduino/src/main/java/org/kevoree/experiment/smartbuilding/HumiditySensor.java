@@ -16,6 +16,9 @@ import org.kevoree.framework.AbstractComponentType;
 @Requires({
         @RequiredPort(name = "value", type = PortType.MESSAGE)
 })
+@DictionaryType({
+    @DictionaryAttribute(name = "period", defaultValue = "10", optional = true)
+})
 public class HumiditySensor extends AbstractComponentType {
 
     @Start

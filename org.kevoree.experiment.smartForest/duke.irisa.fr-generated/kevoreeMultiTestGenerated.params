@@ -7,8 +7,8 @@ parent.0 = nsga2.params
 breedthreads = auto
 evalthreads = auto
 
-pop.subpop.0.size = 50
-generations = 50
+pop.subpop.0.size = 200
+generations = 200
 
 pop.subpop.0.species		= org.kevoree.library.reasoner.ecj.KevoreeModelSpecies
 pop.subpop.0.species.ind	= org.kevoree.experiment.smartForest.experiment.SmartForestIndividual

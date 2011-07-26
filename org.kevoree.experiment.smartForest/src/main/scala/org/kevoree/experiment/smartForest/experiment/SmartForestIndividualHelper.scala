@@ -43,15 +43,15 @@ object SmartForestIndividualHelper {
     return new DiffModel(addList, removeList)
   }
 
-  private def getInstance(myNode: ContainerNode, componentName: String): ComponentInstance = {
+  private def getInstance(myNode: ContainerNode, componentTypeName: String): ComponentInstance = {
      myNode.getComponents.find {
-      component => component.getName == componentName
+      component => component.getTypeDefinition.getName == componentTypeName
     }.get
   }
 
-  private def containsInstance(myNode: ContainerNode, componentName: String): Boolean = {
+  private def containsInstance(myNode: ContainerNode, componentTypeName: String): Boolean = {
     myNode.getComponents.find {
-      component => component.getName == componentName
+      component => component.getTypeDefinition.getName == componentTypeName
     }.isDefined
   }
 }

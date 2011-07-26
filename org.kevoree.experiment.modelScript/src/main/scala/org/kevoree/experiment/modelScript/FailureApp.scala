@@ -10,19 +10,39 @@ import java.io.{InputStreamReader, BufferedReader}
 object FailureApp extends App {
 
   override def main (args: Array[String]) {
-    if (args.length != 0 && args(0).equals("true")) {
-      //println("modification process is executed on Grid5000...")
-      Configuration.grid5000 = true
-    }
-    Configuration.build()
 
-    val failureGenerator = new FailureGenerator(Configuration.ips)
+
+    if (args.contains("grid")) {
+      Configuration.buildForGrid()
+    } else if (args.contains("-grid")) {
+      Configuration.build()
+    } else {
+      Configuration.build()
+    }
+
+    var poisson = false
+    if (args.contains("poisson")) {
+      poisson = true
+    } else if (args.contains("-poisson")) {
+      poisson = false
+    }
+
+    var alwaysDown = false
+    var alwaysUp = false
+    if (args.contains("alwaysDown")) {
+      alwaysDown = true
+    } else if (args.contains("alwaysUp")) {
+      alwaysUp = true
+    }
+
+    val failureGenerator = new FailureGenerator(Configuration.ips, poisson)
 
     val stream = new BufferedReader(new InputStreamReader((System.in)))
-    var line = stream.readLine()
-    if (args.length == 2) {
+
+    if (alwaysDown || alwaysUp) {
       failureGenerator.doAction(args(1))
     } else {
+      var line = stream.readLine()
       while (line != null && !line.equals("q")) {
         failureGenerator.doAction(line)
         line = stream.readLine()

@@ -3,6 +3,7 @@ package org.kevoree.library.reasoner.ecj;
 import java.io.File;
 import java.io.PrintWriter;
 
+import org.kevoree.experiment.smartForest.SmartForestExperiment;
 import org.kevoree.tools.marShell.parser.ParserUtil;
 
 import ec.EvolutionState;
@@ -365,7 +366,7 @@ public class KevoreeMultipleGeneticAlgorithm {
         EvolutionState state;
         ParameterDatabase parameters;
         String[] args = new String[] { "-file",
-                GeneticAlgorithm.folderToStoreTempFile + File.separator + "kevoreeMultiTestGenerated.params" };
+                GeneticAlgorithm.folderToStoreTempFile + File.separator + SmartForestExperiment.paramsTargetFile };
         int currentJob = 0; // the next job number (0 by default)
 
         parameters = loadParameterDatabase(args);
@@ -414,31 +415,14 @@ public class KevoreeMultipleGeneticAlgorithm {
 
                 // now we let it go
                 state.run(EvolutionState.C_STARTED_FRESH);
-                
-                
-//                printBestIndividuals(state);
-                cleanup(state); // flush and close various streams, print out
-                                // parameters if necessary
-                parameters = null; // so we load a fresh database next time
-                                   // around
-//                bestIndividual.printIndividualForHumans(state, 0);
-                
+
+                cleanup(state);
+                parameters = null;
+
             }
-            /*
-             * catch (Throwable e) // such as an out of memory error caused by
-             * this job { e.printStackTrace(); state = null; System.gc(); //
-             * take a shot! }
-             */
         }
     }
 
     
-    private void printBestIndividuals(EvolutionState state){
-        System.out.println("Best of run lenght : " + ((MultiObjectiveStatistics)state.statistics).best_of_run.length);
-        
-        for (Individual individual : ((MultiObjectiveStatistics)state.statistics).best_of_run) {
-            ParserUtil.save("target/classes/modified.kev", ((KevoreeIndividual)individual).myModel);
-            App.startEditor("target/classes/modified.kev");
-        }
-    }
+
 }

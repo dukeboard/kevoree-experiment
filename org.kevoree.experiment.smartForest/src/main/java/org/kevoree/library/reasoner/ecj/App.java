@@ -39,8 +39,6 @@ public class App {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello World!");
-        
 
         ContainerRoot newModel = load("target/classes/defaultLibrary.kev");
         System.out.println(new AddComponentDPA().applyPointcut(newModel));

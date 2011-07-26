@@ -16,6 +16,7 @@ public class DiffModel {
     private List<Map<String, NamedElement> > addInstance;
     private List<Map<String, NamedElement>> removeInstance;
 
+
     public DiffModel(List<Map<String, NamedElement>> addInstance, List<Map<String, NamedElement>> removeInstance) {
         this.addInstance = addInstance;
         this.removeInstance = removeInstance;

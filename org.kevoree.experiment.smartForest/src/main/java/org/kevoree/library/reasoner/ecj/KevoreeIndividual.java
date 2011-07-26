@@ -32,6 +32,7 @@ import scala.collection.Iterator;
 import java.io.File;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.text.AttributedCharacterIterator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -281,6 +282,7 @@ public class KevoreeIndividual extends Individual {
     private DiffModel compareForest(KevoreeIndividual ki) {
         List<Map<String, NamedElement>> addList = new ArrayList<Map<String, NamedElement>>();
         List<Map<String, NamedElement>> removeList = new ArrayList<Map<String, NamedElement>>();
+        List<Map<String, NamedElement>> diffDictionnaryList = new ArrayList<Map<String, NamedElement>>();
         for (int i=0; i<myModel.getNodes().size(); i++){
             ContainerNode myNode = myModel.getNodes().get(i);
             ContainerNode otherNode = ki.myModel.getNodes().get(i);
@@ -292,6 +294,22 @@ public class KevoreeIndividual extends Individual {
                     myMap.put(RemoveComponentDPAO.nodeName(),
                         (NamedElement) myNode);
                     removeList.add(myMap);
+                } else {
+                    // We have the component on the two architectures we should compare their frequency
+                    DictionaryAttribute myAttribute;
+                    DictionaryAttribute otherAttribute;
+                    ComponentInstance otherComp = getInstance(otherNode,ci.getTypeDefinition().getName());
+                    for (int j=0; i<otherComp.getDictionary().getValues().size(); i++){
+                        if (otherComp.getDictionary().getValues().get(j).getAttribute().getName().equalsIgnoreCase(GeneticAlgorithm.frequencyAttribute)){
+                            otherAttribute = otherComp.getDictionary().getValues().get(j).getAttribute();
+                        }
+                    }
+                    for (int j=0; i<ci.getDictionary().getValues().size(); i++){
+                        if (ci.getDictionary().getValues().get(j).getAttribute().getName().equalsIgnoreCase(GeneticAlgorithm.frequencyAttribute)){
+                            myAttribute = ci.getDictionary().getValues().get(j).getAttribute();
+                        }
+                    }
+
                 }
 
             }
@@ -309,4 +327,13 @@ public class KevoreeIndividual extends Individual {
         return new DiffModel(addList, removeList);
     }
 
+
+    private  ComponentInstance getInstance(ContainerNode myNode, String componentName){
+        for (ComponentInstance ci : myNode.getComponents()){
+            if (((NamedElement)ci.getTypeDefinition()).getName().equalsIgnoreCase(componentName)){
+                return ci;
+            }
+        }
+        return null;
+    }
 }

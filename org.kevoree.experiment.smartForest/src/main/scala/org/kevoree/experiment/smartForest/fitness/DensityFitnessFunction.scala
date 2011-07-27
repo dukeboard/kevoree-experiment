@@ -36,11 +36,13 @@ class DensityFitnessFunction extends FitnessFunction {
         densityV += density(model, humiditySensor, i)
       }
     }
-    java.lang.Math.floor(densityV).asInstanceOf[Float];
-//    java.lang.Math.floor(densityV * 100 / worseDensity).asInstanceOf[Float];
+    return FitnessPostProcess(densityV)
   }
 
+  private def FitnessPostProcess(density : Double) : Float = {
 
+    (density * 100 / worseDensity).asInstanceOf[Float];
+  }
   def density(myModel: ContainerRoot, myType: String, indice: Int): Double = {
     var density: Double = 0.0
     val i: Int = indice / SmartForestExperiment.forestWidth
@@ -93,6 +95,7 @@ class DensityFitnessFunction extends FitnessFunction {
   private def evaluateWorseDensity(myModel: ContainerRoot): Float = {
     var density: Double = 0.0
     (0 until myModel.getNodes.size).foreach{ i => density += 3 * worseDensity(i)}
+    println("Worse Density = " + density)
     return java.lang.Math.floor(density).asInstanceOf[Float]
   }
 

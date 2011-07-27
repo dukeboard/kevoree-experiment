@@ -16,7 +16,7 @@ import java.util.*;
 
 public class SmartForestExperiment {
     public final static int forestWidth = 10;
-    public final static int generations = 200;
+    public final static int generations = 500;
     public final static int populations = 200;
     public final static int elite = 0;
 

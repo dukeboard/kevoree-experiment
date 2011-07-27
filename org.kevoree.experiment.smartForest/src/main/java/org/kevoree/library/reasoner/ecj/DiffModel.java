@@ -15,11 +15,12 @@ import java.util.Map;
 public class DiffModel {
     private List<Map<String, NamedElement> > addInstance;
     private List<Map<String, NamedElement>> removeInstance;
+    private List<Map<String, NamedElement>> updatePeriodList;
 
-
-    public DiffModel(List<Map<String, NamedElement>> addInstance, List<Map<String, NamedElement>> removeInstance) {
+    public DiffModel(List<Map<String, NamedElement>> addInstance, List<Map<String, NamedElement>> removeInstance, List<Map<String, NamedElement>> updatePeriodList) {
         this.addInstance = addInstance;
         this.removeInstance = removeInstance;
+        this.updatePeriodList = updatePeriodList;
     }
 
     public List<Map<String, NamedElement>> getAddInstance() {
@@ -36,5 +37,13 @@ public class DiffModel {
 
     public void setRemoveInstance(List<Map<String, NamedElement>> removeInstance) {
         this.removeInstance = removeInstance;
+    }
+
+    public List<Map<String, NamedElement>> getUpdatePeriodList() {
+        return updatePeriodList;
+    }
+
+    public void setUpdatePeriodList(List<Map<String, NamedElement>> updatePeriodList) {
+        this.updatePeriodList = updatePeriodList;
     }
 }

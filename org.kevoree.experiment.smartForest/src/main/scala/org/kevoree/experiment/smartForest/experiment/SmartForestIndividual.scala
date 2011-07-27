@@ -2,11 +2,18 @@ package org.kevoree.experiment.smartForest.experiment
 
 import ec.EvolutionState
 import org.kevoree.tools.marShell.interpreter.{KevsInterpreterAspects, KevsInterpreterContext}
-import org.kevoree.experiment.smartForest.dpa.{AddForestMonitoringComponentDPA, RemoveComponentDPA, AddComponentDPA}
 import java.io.File
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 import scala.collection.JavaConversions._
 import org.kevoree.library.tools.dpa.DPA
+import org.kevoree.tools.marShell.ast.TransactionalBloc._
+import org.kevoree.tools.marShell.ast.AddComponentInstanceStatment._
+import org.kevoree.tools.marShell.ast.ComponentInstanceID._
+import org.kevoree.experiment.smartForest.dpa._
+import com.sun.xml.internal.ws.developer.MemberSubmissionAddressing.Validation
+import org.kevoree.tools.marShell.ast.UpdateDictionaryStatement._
+import org.kevoree.tools.marShell.ast._
+import org.kevoree.{DictionaryValue, ComponentInstance, NamedElement}
 
 /**
  * User: ffouquet
@@ -16,7 +23,7 @@ import org.kevoree.library.tools.dpa.DPA
 
 class SmartForestIndividual extends KevoreeIndividualAbstract {
 
-  var mutationDpas = Array(new RemoveComponentDPA().asInstanceOf[DPA], new AddForestMonitoringComponentDPA().asInstanceOf[DPA])
+  var mutationDpas = Array(new RemoveComponentDPA().asInstanceOf[DPA], new AddForestMonitoringComponentDPA().asInstanceOf[DPA], new ChangePeriodPropertyDPA().asInstanceOf[DPA])
   var maxMutationDpasNumber = 1
   var minMutationDpasNumber = 1
   var maxResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*2
@@ -29,6 +36,7 @@ class SmartForestIndividual extends KevoreeIndividualAbstract {
    * Destructively crosses over the individual with another in some default
    * manner.
    */
+
   override def defaultCrossover(state: EvolutionState, thread: Int, ind: KevoreeIndividualAbstract): Unit = {
     if (!ind.isInstanceOf[SmartForestIndividual]) {
       super.defaultCrossover(state, thread, ind)
@@ -36,11 +44,12 @@ class SmartForestIndividual extends KevoreeIndividualAbstract {
     }
     val dm = SmartForestIndividualHelper.compareForest(ind.asInstanceOf[SmartForestIndividual])
     val context = new KevsInterpreterContext(myModel)
-    val addDPA = new AddComponentDPA
     val removeDPA = new RemoveComponentDPA
     dm.getAddInstance.foreach{ map =>
       if (state.random(thread).nextBoolean) {
-        val script = addDPA.getASTScript(map)
+        val script = SmartForestIndividualHelper.copyComponent(map.get(SmartForestIndividualHelper.componentName),
+          map.get(SmartForestIndividualHelper.sourceNodeName),
+          map.get(SmartForestIndividualHelper.targetNodeName))
         KevsInterpreterAspects.rich(script).interpret(context)
       }
     }
@@ -50,6 +59,16 @@ class SmartForestIndividual extends KevoreeIndividualAbstract {
         KevsInterpreterAspects.rich(script).interpret(context)
       }
     }
+    dm.getUpdatePeriodList.foreach{ map =>
+      if (state.random(thread).nextBoolean) {
+        val script = SmartForestIndividualHelper.updateProperty(map.get(ChangePeriodPropertyDPAO.periodPropertyName).asInstanceOf[DictionaryValue].getValue,
+          map.get(SmartForestIndividualHelper.componentName),
+          map.get(SmartForestIndividualHelper.targetNodeName))
+        KevsInterpreterAspects.rich(script).interpret(context)
+      }
+    }
   }
+
+
 
 }

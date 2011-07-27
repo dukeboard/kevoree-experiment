@@ -28,7 +28,9 @@ class SmartForestFitnessEvaluator extends Problem with SimpleProblemForm {
     if (ind.evaluated) return
     if (!(ind.isInstanceOf[SmartForestIndividual])) state.output.fatal("Whoa!  It's not a SmartForestIndividual!!!", null)
     val ki = ind.asInstanceOf[SmartForestIndividual]
-    val newObjectives: Array[Float] = Array(SmartForestFitnessEvaluatorO.getDensityFitnessFunction.evaluate(ki.myModel), SmartForestFitnessEvaluatorO.getConfidenceFitnessFunction.evaluate(ki.myModel), SmartForestFitnessEvaluatorO.getConsumptionFitnessFunction.evaluate(ki.myModel))
+    val newObjectives: Array[Float] = Array(SmartForestFitnessEvaluatorO.getDensityFitnessFunction.evaluate(ki.myModel),
+      SmartForestFitnessEvaluatorO.getConsumptionFitnessFunction.evaluate(ki.myModel),
+      SmartForestFitnessEvaluatorO.getConfidenceFitnessFunction.evaluate(ki.myModel))
     setFitness(state, ki, newObjectives)
   }
 

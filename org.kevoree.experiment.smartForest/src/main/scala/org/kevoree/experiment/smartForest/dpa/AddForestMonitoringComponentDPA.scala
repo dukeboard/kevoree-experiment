@@ -4,10 +4,6 @@ import ec.util.MersenneTwisterFast
 import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.{ContainerRoot, NamedElement, ComponentType}
 import scala.collection.JavaConversions._
-import org.kevoree.tools.marShell.ast.Script._
-import org.kevoree.tools.marShell.ast.TransactionalBloc._
-import org.kevoree.tools.marShell.ast.RemoveComponentInstanceStatment._
-import org.kevoree.tools.marShell.ast.ComponentInstanceID._
 import org.kevoree.tools.marShell.ast.{ComponentInstanceID, AddComponentInstanceStatment, TransactionalBloc, Script}
 
 /**
@@ -95,14 +91,14 @@ class AddForestMonitoringComponentDPA extends DPA {
     val props = new java.util.Properties()
     val newIndex = random.nextInt(PeriodValues.values.size)
     
-    props.put("period", PeriodValues.values(newIndex).toString)
+    props.put(ChangePeriodPropertyDPAO.periodPropertyName, PeriodValues.values(newIndex).toString)
     
     Script(
       List(
         TransactionalBloc(
           List(
             AddComponentInstanceStatment(
-              ComponentInstanceID(myMap.get(AddComponentDPAO.typeDefinition).getName+increment, Some(myMap.get(nodeName).getName)),
+              ComponentInstanceID(myMap.get(typeDefinition).getName+increment, Some(myMap.get(nodeName).getName)),
               myMap.get(typeDefinition).getName,
               props
             )

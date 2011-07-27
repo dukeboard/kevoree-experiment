@@ -122,12 +122,19 @@ class DensityFitnessFunction extends FitnessFunction {
   private def calculateWorseInDirection(diffI: Int, diffJ: Int, indice: Int): Double = {
     var i: Int = indice / SmartForestExperiment.forestWidth
     var j: Int = indice - (i * SmartForestExperiment.forestWidth)
-    if (i == 0 || i == SmartForestExperiment.forestWidth - 1 || j == 0 || j == SmartForestExperiment.forestWidth - 1) {
-      return defaultPenality
+//    if (i == 0 || i == SmartForestExperiment.forestWidth - 1 || j == 0 || j == SmartForestExperiment.forestWidth - 1) {
+//      return defaultPenality
+//    }
+//    i += diffI
+//    j += diffJ
+//    var newIndice: Int = i * SmartForestExperiment.forestWidth + j
+//    return 1 + calculateWorseInDirection(diffI, diffJ, newIndice)
+    var result : Double = 2
+    while (!(i == 0 || i == SmartForestExperiment.forestWidth - 1 || j == 0 || j == SmartForestExperiment.forestWidth - 1)) {
+      result = result + 1d
+      i += diffI
+      j += diffJ
     }
-    i += diffI
-    j += diffJ
-    var newIndice: Int = i * SmartForestExperiment.forestWidth + j
-    return 1 + calculateWorseInDirection(diffI, diffJ, newIndice)
+    result
   }
 }

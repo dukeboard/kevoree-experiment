@@ -6,14 +6,8 @@ import java.io.File
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 import scala.collection.JavaConversions._
 import org.kevoree.library.tools.dpa.DPA
-import org.kevoree.tools.marShell.ast.TransactionalBloc._
-import org.kevoree.tools.marShell.ast.AddComponentInstanceStatment._
-import org.kevoree.tools.marShell.ast.ComponentInstanceID._
 import org.kevoree.experiment.smartForest.dpa._
-import com.sun.xml.internal.ws.developer.MemberSubmissionAddressing.Validation
-import org.kevoree.tools.marShell.ast.UpdateDictionaryStatement._
-import org.kevoree.tools.marShell.ast._
-import org.kevoree.{DictionaryValue, ComponentInstance, NamedElement}
+import org.kevoree.DictionaryValue
 
 /**
  * User: ffouquet
@@ -24,7 +18,7 @@ import org.kevoree.{DictionaryValue, ComponentInstance, NamedElement}
 class SmartForestIndividual extends KevoreeIndividualAbstract {
 
   var mutationDpas = Array(new RemoveComponentDPA().asInstanceOf[DPA], new AddForestMonitoringComponentDPA().asInstanceOf[DPA], new ChangePeriodPropertyDPA().asInstanceOf[DPA])
-  var maxMutationDpasNumber = 1
+  var maxMutationDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*3/10
   var minMutationDpasNumber = 1
   var maxResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*2
   var minResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth

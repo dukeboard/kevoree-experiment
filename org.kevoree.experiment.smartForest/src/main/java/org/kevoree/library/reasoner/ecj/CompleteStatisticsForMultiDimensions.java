@@ -81,7 +81,6 @@ public class CompleteStatisticsForMultiDimensions extends Statistics {
      * this lets overriding methods print additional statistics on the same line
      */
     protected void _postEvaluationStatistics(final EvolutionState state) {
-
         for (int x = 0; x < state.population.subpops.length; x++) {
             for (int y = 0; y < state.population.subpops[x].individuals.length; y++) {
                 if (state.population.subpops[x].individuals[y].evaluated)        // he's got a valid fitness
@@ -104,4 +103,5 @@ public class CompleteStatisticsForMultiDimensions extends Statistics {
         _postEvaluationStatistics(state);
         state.output.println("", statisticsLog);
     }
+
 }

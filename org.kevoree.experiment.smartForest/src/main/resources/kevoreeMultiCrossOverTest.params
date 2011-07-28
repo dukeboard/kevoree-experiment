@@ -17,7 +17,7 @@ pop.subpop.0.species.crossover-prob	= 1
 pop.subpop.0.species.mutation-prob	= 0,5
 
 # Folder to store the models of the population
-pop.subpop.0.species.ind.models-folder = mm
+pop.subpop.0.species.ind.models-folder = models
 
 # Use our own custom mutation class
 pop.subpop.0.species.pipe = org.kevoree.library.reasoner.ecj.KevoreeMutationPipeline
@@ -34,4 +34,11 @@ eval.problem            = org.kevoree.experiment.smartForest.experiment.SmartFor
 pop.subpop.0.species.fitness.num-objectives = 3
 pop.subpop.0.species.fitness.maximize = false
 
+# Use a statistics object which dumps the front
+stat =                                          ec.multiobjective.MultiObjectiveStatistics
+stat.file = $out.stat
+stat.front = $front.stat
 
+stat.num-children = 1
+stat.child.0 = org.kevoree.library.reasoner.ecj.CompleteStatisticsForMultiDimensions
+stat.child.0.file = $out2.stat

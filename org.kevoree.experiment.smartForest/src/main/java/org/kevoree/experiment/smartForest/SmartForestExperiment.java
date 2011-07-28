@@ -16,7 +16,7 @@ import java.util.*;
 
 public class SmartForestExperiment {
     public final static int forestWidth = 10;
-    public final static int generations = 500;
+    public final static int generations = 100;
     public final static int populations = 200;
     public final static int elite = 0;
 
@@ -43,6 +43,10 @@ public class SmartForestExperiment {
         myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populations);
         myProperties.put("generations = 100", "generations = " + generations);
         myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
+        myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
+        myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
+        myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
+        myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
         initializeParams(paramsSourceFile, paramsTargetFile, myProperties);
 
         //Start the experiment
@@ -90,7 +94,6 @@ public class SmartForestExperiment {
         // initialize : logger are quiet, old statistic files are deleted and the folder to store statistic file is prefixed byt the computer name
         Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         root.setLevel(Level.OFF); //change to off
-        deleteStatistiqueFile();
         folderToStoreTempFile = getComputerFullName() + "-" + folderToStoreTempFile;
         // clean and create the temp folder
         File generatedDirectory = new File(folderToStoreTempFile);
@@ -102,12 +105,6 @@ public class SmartForestExperiment {
         generatedDirectory.mkdirs();
     }
 
-    private static void deleteStatistiqueFile() {
-        File myFile = new File("run.statistique");
-        if (myFile.exists() && myFile.isFile()){
-            myFile.delete();
-        }
-    }
 
 
     private static void copyFileToGeneratedDirectory(String myFileName){

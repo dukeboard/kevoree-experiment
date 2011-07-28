@@ -26,6 +26,13 @@ import scala.collection.JavaConversions._
  * To change this template use File | Settings | File Templates.
  */
 
+object KevoreeIndividualAbstractO{
+  var increment = 0
+  def getNextModelName : String = {
+    increment+=1
+    "Models" + increment
+  }
+}
 abstract class KevoreeIndividualAbstract extends Individual{
 
   var mutationDpas: Array[DPA]
@@ -171,9 +178,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
   }
 
   override def toString: String = {
-    val path = model_path + "Models" + ({
-      increment += 1; increment
-    })
+    val path = model_path + KevoreeIndividualAbstractO.getNextModelName
     ParserUtil.save(path, myModel)
     return path
   }

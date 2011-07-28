@@ -51,7 +51,6 @@ abstract class KevoreeIndividualAbstract extends Individual{
   var myModel: ContainerRoot = null
 
   private var model_path: String = null
-  private var increment: Int = 0
 
 
   /**

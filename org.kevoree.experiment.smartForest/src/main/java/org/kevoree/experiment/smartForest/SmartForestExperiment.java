@@ -129,7 +129,7 @@ public class SmartForestExperiment {
         }
     }
 
-    private static String getComputerFullName() {
+    public static String getComputerFullName() {
     String hostName = null;
     try {
       final InetAddress addr = InetAddress.getLocalHost();

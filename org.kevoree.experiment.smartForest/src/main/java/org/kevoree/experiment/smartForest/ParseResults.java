@@ -21,14 +21,19 @@ public class ParseResults {
 
 
     public static void main(String[] args){
-        String path = SmartForestExperiment.getComputerFullName() + "-" + SmartForestExperiment.folderToStoreTempFile + File.separator + "completeStat.stat";
-
-        System.out.println("PATH = " + path);
+        String pathComplete = SmartForestExperiment.getComputerFullName() + "-" + SmartForestExperiment.folderToStoreTempFile + File.separator + "completeStat.stat";
+        String pathClassic = SmartForestExperiment.getComputerFullName() + "-" + SmartForestExperiment.folderToStoreTempFile + File.separator + "classicStat.stat";
+        System.out.println("PATH = " + pathComplete);
         try {
-            InputStream stream = new FileInputStream(new File(path));
+            InputStream stream = new FileInputStream(new File(pathComplete));
             if (stream == null)
                 System.out.println("Perdu");
             StatisticsParser.parseCompleteStatistics(stream);
+
+            stream = new FileInputStream(new File(pathClassic));
+            if (stream == null)
+                System.out.println("Perdu");
+            StatisticsParser.parseStatistics(stream);
         } catch (FileNotFoundException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }

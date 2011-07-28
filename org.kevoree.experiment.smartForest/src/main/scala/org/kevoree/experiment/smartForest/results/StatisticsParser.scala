@@ -2,6 +2,7 @@ package org.kevoree.experiment.smartForest.results
 
 import java.io._
 import java.lang.{Long, Integer}
+import com.sun.xml.internal.fastinfoset.util.ValueArray
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,6 +14,8 @@ import java.lang.{Long, Integer}
 
 case class CompleteStatisticsObject( generation : Int,  breedingDuration : Long, evaluationDuration : Long, populations : List[MultiDimensionalIndividualStatistics])
 case class MultiDimensionalIndividualStatistics(rank : Int, fitness : List[Float])
+case class ParetoFront (individuals : List[StatisticsIndividuals])
+case class StatisticsIndividuals (rank : Int, fitness : List[Float], model : String)
 
 object StatisticsParser {
 
@@ -59,23 +62,55 @@ object StatisticsParser {
     result.toList
   }
 
-  def parseStatistics(stream : InputStream) : CompleteStatisticsObject = {
-      try {
-        val ipsr: InputStreamReader = new InputStreamReader(stream)
-        var br: BufferedReader = new BufferedReader(ipsr)
-        var line: String = null
-        while (({line = br.readLine; line}) != null) {
+  def parseStatistics(stream: InputStream): ParetoFront = {
+    var result = new scala.collection.mutable.ArrayBuffer[StatisticsIndividuals]
+    try {
+      val ipsr: InputStreamReader = new InputStreamReader(stream)
+      val br: BufferedReader = new BufferedReader(ipsr)
+      var line: String = null
+      var pareto = false
+      var evaluated = false
+      var fitness = false
+      var model = false
 
+      var rank = 0
+      var fitnessList = new scala.collection.mutable.ArrayBuffer[Float]
+
+      while (({
+        line = br.readLine; line
+      }) != null) {
+        if (!pareto && line == "Pareto Front of Subpopulation 0") {
+          pareto = true
+          evaluated = true
         }
-        br.close
-      }
-      catch {
-        case e: IOException => {
-          e.printStackTrace
+        else if (pareto && evaluated) {
+          fitness = true;
+        }
+        else if (pareto && fitness) {
+          println(line)
+          val rankString = line.substring(line.indexOf("R=") + 2, line.indexOf("S=") - 1)
+          rank = Integer.parseInt(rankString)
+          val multiFitness = line.substring(line.indexOf("[") + 1, line.indexOf("min]"))
+          val fourthSplit = multiFitness.split(" ")
+          fitnessList = new scala.collection.mutable.ArrayBuffer[Float]
+          (0 until fourthSplit.size).foreach {
+            index =>
+              fitnessList.append(java.lang.Float.parseFloat(fourthSplit(index)).asInstanceOf[Float])
+          }
+          model = true;
+        }
+        else if (pareto && model) {
+          result.append(new StatisticsIndividuals(rank, fitnessList.toList, line))
+          evaluated = true;
         }
       }
-
-
-      null
+      br.close
     }
+    catch {
+      case e: IOException => {
+        e.printStackTrace
+      }
+    }
+    new ParetoFront(result.toList)
+  }
 }

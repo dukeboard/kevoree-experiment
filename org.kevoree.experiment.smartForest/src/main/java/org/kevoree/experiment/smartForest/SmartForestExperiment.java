@@ -15,8 +15,8 @@ import java.net.InetAddress;
 import java.util.*;
 
 public class SmartForestExperiment {
-    public final static int forestWidth = 10;
-    public final static int generations = 100;
+    public final static int forestWidth = 15;
+    public final static int generations = 300;
     public final static int populations = 200;
     public final static int elite = 0;
 

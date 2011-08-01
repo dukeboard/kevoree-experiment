@@ -45,7 +45,6 @@ object RGenerator {
         }
       }
 
-
       val fileWR = new FileWriter(new File(pathCompleteOut))
       fileWR.append(" axe1 <- c(" + axe1res.mkString(",") + ")\n" )
       fileWR.append(" axe2 <- c(" + axe2res.mkString(",") + ")\n" )

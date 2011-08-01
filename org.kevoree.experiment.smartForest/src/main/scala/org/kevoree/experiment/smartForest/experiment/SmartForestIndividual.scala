@@ -18,10 +18,10 @@ import org.kevoree.DictionaryValue
 class SmartForestIndividual extends KevoreeIndividualAbstract {
 
   var mutationDpas = Array(new RemoveComponentDPA().asInstanceOf[DPA], new AddForestMonitoringComponentDPA().asInstanceOf[DPA], new ChangePeriodPropertyDPA().asInstanceOf[DPA])
-  var maxMutationDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*3/10
+  var maxMutationDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*3/20
   var minMutationDpasNumber = 1
-  var maxResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*2
-  var minResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth
+  var maxResetDpasNumber = SmartForestExperiment.forestWidth*SmartForestExperiment.forestWidth*3
+  var minResetDpasNumber = 0
   var resetDpas : List[DPA] = List(new AddForestMonitoringComponentDPA())
 
   val baseModelPath = SmartForestExperiment.folderToStoreTempFile + File.separator + SmartForestExperiment.individualBaseModel

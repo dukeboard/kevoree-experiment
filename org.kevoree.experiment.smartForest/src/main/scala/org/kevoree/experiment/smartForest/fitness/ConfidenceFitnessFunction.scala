@@ -63,6 +63,6 @@ class ConfidenceFitnessFunction extends FitnessFunction {
 
   private def FitnessPostProcess(confidence : Double) : Float = {
     val result = ((bestConfidence - confidence) * 100 / bestConfidence)
-    (result).asInstanceOf[Float]
+    math.floor(result).asInstanceOf[Float]
   }
 }

@@ -75,6 +75,6 @@ class ConsumptionFitnessFunction extends FitnessFunction {
   }
 
   private def FitnessPostProcess(consumption : Double) : Float = {
-    (consumption * 100 / worseConsumption).asInstanceOf[Float];
+    math.floor(consumption * 100 / worseConsumption).asInstanceOf[Float];
   }
 }

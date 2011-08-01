@@ -15,12 +15,12 @@ import java.net.InetAddress;
 import java.util.*;
 
 public class SmartForestExperiment {
-    public final static int forestWidth = 10;
-    public final static int generations = 100;
+    public final static int forestWidth = 15;
+    public final static int generations = 500;
     public final static int populations = 200;
     public final static int elite = 0;
 
-    public final static String paramsSourceFile = "kevoreeMultiCrossOverTest.params";
+    public final static String paramsSourceFile = "SmartForestMultiMutationOnly.params";
     public final static String paramsTargetFile = "kevoreeMultiTestGenerated.params";
     public final static String individualBaseModel = "kevoreeIndividualModel.kev";
 

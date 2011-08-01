@@ -41,7 +41,7 @@ class DensityFitnessFunction extends FitnessFunction {
 
   private def FitnessPostProcess(density : Double) : Float = {
 
-    (density * 100 / worseDensity).asInstanceOf[Float];
+    math.floor(density * 100 / worseDensity).asInstanceOf[Float];
   }
   def density(myModel: ContainerRoot, myType: String, indice: Int): Double = {
     var density: Double = 0.0

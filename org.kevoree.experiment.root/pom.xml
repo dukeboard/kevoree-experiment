@@ -35,6 +35,7 @@
          <repository>
             <id>kevoree-snapshots</id>
             <url>http://maven.kevoree.org/snapshots</url>
+            <snapshots><enabled>true</enabled></snapshots>
         </repository>
     </repositories>
 

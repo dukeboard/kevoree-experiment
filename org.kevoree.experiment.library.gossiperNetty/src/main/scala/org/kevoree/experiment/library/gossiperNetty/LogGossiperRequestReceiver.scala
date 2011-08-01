@@ -37,7 +37,7 @@ class LogGossiperRequestReceiver (channelFragment: NettyGossipAbstractElement, d
       peerSelector.resetNodeFailureAction(targetNodeName)
     } else {
       logger.debug("message is not sent because the link with " + targetNodeName + " is broken")
-      peerSelector.modifyNodeScoreAction(targetNodeName)
+      peerSelector.modifyNodeScoreAction(targetNodeName, true)
     }
   }
 

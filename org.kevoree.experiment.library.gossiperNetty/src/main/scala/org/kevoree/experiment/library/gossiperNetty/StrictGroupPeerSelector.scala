@@ -6,6 +6,7 @@ import org.kevoree.library.gossiperNetty.PeerSelector
 import org.kevoree.api.service.core.handler.KevoreeModelHandlerService
 import org.slf4j.LoggerFactory
 import actors.DaemonActor
+import java.lang.Math
 
 class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelHandlerService, nodeName: String)
   extends PeerSelector with DaemonActor {
@@ -19,18 +20,20 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
 
 
   case class STOP ()
-  case class MODIFY_NODE_SCORE(nodeName : String)
-  case class RESET_NODE_FAILURE(nodeName : String)
 
-  def stop() {
+  case class MODIFY_NODE_SCORE (nodeName: String, failure : Boolean)
+
+  case class RESET_NODE_FAILURE (nodeName: String)
+
+  def stop () {
     this ! STOP()
   }
 
-  def modifyNodeScoreAction(nodeName : String) {
-    this ! MODIFY_NODE_SCORE(nodeName)
+  def modifyNodeScoreAction (nodeName: String, failure: Boolean) {
+    this ! MODIFY_NODE_SCORE(nodeName, failure)
   }
 
-  def resetNodeFailureAction(nodeName : String) {
+  def resetNodeFailureAction (nodeName: String) {
     this ! RESET_NODE_FAILURE(nodeName)
   }
 
@@ -42,8 +45,8 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
         case STOP() => {
           this.exit()
         }
-        case MODIFY_NODE_SCORE(nodeName) => {
-          this.modifyNodeScore(nodeName)
+        case MODIFY_NODE_SCORE(nodeName, failure) => {
+          this.modifyNodeScore(nodeName, failure)
         }
         case RESET_NODE_FAILURE(nodeName) => this.resetNodeFailure(nodeName)
       }
@@ -58,7 +61,7 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
       case Some(group) => {
         //logger.debug("group found: we now look for node on this group")
         //Found minima score node name
-        var foundNodeName = "";
+        var foundNodeName = List[String]();
         var minScore = Long.MaxValue
 
 
@@ -69,19 +72,38 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
           .foreach {
           subNode => {
             //logger.debug(subNode.getName + " is one of the node which are potentially available to do gossip")
-            if (getScore(subNode.getName) < minScore) {
-              foundNodeName = subNode.getName
+            if (getScore(subNode.getName) <= minScore) {
+              //foundNodeName = foundNodeName ++ List(subNode.getName)
               minScore = getScore(subNode.getName)
               //              logger.debug(subNode.getName +
               //                " is one of the node  which are potentially available to do gossip (if its score is good)")
             }
           }
         }
-        //Init node score
-        initNodeScore(foundNodeName)
+        group.getSubNodes
+          .filter(node => !node.getName.equals(nodeName))
+          .filter(node => model.getNodeNetworks
+          .exists(nn => nn.getInitBy.getName == nodeName && nn.getTarget.getName == node.getName))
+          .foreach {
+          subNode => {
+            //logger.debug(subNode.getName + " is one of the node which are potentially available to do gossip")
+            if (getScore(subNode.getName) == minScore) {
+              foundNodeName = foundNodeName ++ List(subNode.getName)
+              //minScore = getScore(subNode.getName)
+              //              logger.debug(subNode.getName +
+              //                " is one of the node  which are potentially available to do gossip (if its score is good)")
+            }
+          }
+        }
+        // select randomly a peer between all potential available nodes which have a good score
+        val nodeName = foundNodeName.get((Math.random() * foundNodeName.size).asInstanceOf[Int])
 
-        logger.debug("return a peer between connected nodes: " + foundNodeName)
-        foundNodeName
+        //Init node score
+        //initNodeScore(nodeName)
+
+
+        logger.debug("return a peer between connected nodes: " + nodeName)
+        nodeName
       }
       case None => logger.debug(groupName + " not Found"); ""
     }
@@ -103,27 +125,36 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
     }
   }
 
-  private def modifyNodeScore (nodeName: String) {
-    logger.debug("increase node score of " + nodeName + " due to communication failure")
-    peerNbFailure.get(nodeName) match {
-      case Some(nodeTuple) => {
-        peerNbFailure.put(nodeName, nodeTuple + 1)
-        peerCheckMap.get(nodeName) match {
-          case Some(nodeTuple1) => {
-            peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, nodeTuple1._2 + 2 * (nodeTuple +1)))
-            logger.debug("Node score of " + nodeName + " is now " + nodeTuple + 2 * (nodeTuple + 1))
+  private def modifyNodeScore (nodeName: String, failure: Boolean) {
+    if (failure) {
+      logger.debug("increase node score of " + nodeName + " due to communication failure")
+      peerNbFailure.get(nodeName) match {
+        case Some(nodeTuple) => {
+          peerNbFailure.put(nodeName, nodeTuple + 1)
+          peerCheckMap.get(nodeName) match {
+            case Some(nodeTuple1) => {
+              peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, nodeTuple1._2 + 2 * (nodeTuple + 1)))
+              logger.debug("Node score of " + nodeName + " is now " + nodeTuple + 2 * (nodeTuple + 1))
+            }
+            case None => peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, 2)) // must not appear
           }
-          case None => peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, 2)) // must not appear
+        }
+        case None => {
+          peerNbFailure.put(nodeName, 2)
+          peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, 2))
         }
       }
-      case None => {
-        peerNbFailure.put(nodeName, 2)
-        peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, 2))
+    } else {
+      peerCheckMap.get(nodeName) match {
+        case Some(nodeTuple) => {
+          peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, nodeTuple._2 + 1))
+        }
+        case None => peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, 0))
       }
     }
   }
 
-  private def resetNodeFailure(nodeName : String) {
+  private def resetNodeFailure (nodeName: String) {
     peerNbFailure.get(nodeName) match {
       case Some(nodeTuple) => {
         peerNbFailure.put(nodeName, 0)

@@ -1,0 +1,1794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kevoree:ContainerRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kevoree="http://kevoree/1.0">
+  <nodes name="parapluie19rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1">
+    <components name="myFakeConsole1" typeDefinition="//@typeDefinitions.2"/>
+  </nodes>
+  <nodes name="parapluie19rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie19rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie19rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie2rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie2rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie2rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie2rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie20rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie20rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie20rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie20rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie21rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie21rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie21rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie21rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie22rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie22rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie22rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie22rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie23rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie23rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie23rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie23rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie24rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie24rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie24rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie24rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie25rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie25rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie25rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie25rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie27rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie27rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie27rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie27rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie28rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie28rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie28rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie28rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie29rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie29rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie29rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie29rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie3rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie3rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie3rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie3rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie30rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie30rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie30rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie30rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie31rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie31rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie31rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie31rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie32rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie32rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie32rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie32rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie33rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie33rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie33rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie33rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie34rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie34rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie34rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie34rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie35rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie35rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie35rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie35rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie36rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie36rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie36rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie36rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie37rennesgrid5000fr0" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie37rennesgrid5000fr1" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie37rennesgrid5000fr2" typeDefinition="//@typeDefinitions.1"/>
+  <nodes name="parapluie37rennesgrid5000fr3" typeDefinition="//@typeDefinitions.1"/>
+  <typeDefinitions xsi:type="kevoree:GroupType" name="LogNettyGossiperGroup" deployUnits="//@deployUnits.0" factoryBean="org.kevoree.experiment.library.gossiperNetty.LogNettyGossiperGroupFactory" bean="org.kevoree.experiment.library.gossiperNetty.LogNettyGossiperGroup" startMethod="startGossiperGroup" stopMethod="stopGossiperGroup" updateMethod="updateGossiperGroup">
+    <dictionaryType>
+      <attributes name="interval" optional="true"/>
+      <attributes name="port" optional="true"/>
+      <attributes name="FullUDP" optional="true"/>
+      <attributes name="sendNotification" optional="true"/>
+      <attributes name="alwaysAskModel" optional="true"/>
+      <attributes name="loggerServerIP"/>
+      <defaultValues attribute="//@typeDefinitions.0/@dictionaryType/@attributes.0" value="30000"/>
+      <defaultValues attribute="//@typeDefinitions.0/@dictionaryType/@attributes.1" value="9010"/>
+      <defaultValues attribute="//@typeDefinitions.0/@dictionaryType/@attributes.2" value="false"/>
+      <defaultValues attribute="//@typeDefinitions.0/@dictionaryType/@attributes.3" value="true"/>
+      <defaultValues attribute="//@typeDefinitions.0/@dictionaryType/@attributes.4" value="false"/>
+      <defaultValues attribute="//@typeDefinitions.0/@dictionaryType/@attributes.5" value="127.0.0.1"/>
+    </dictionaryType>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:NodeType" name="JavaSENode"/>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="FakeConsole" deployUnits="//@deployUnits.4" factoryBean="org.kevoree.experiment.fake.FakeConsoleFactory" bean="org.kevoree.experiment.fake.FakeConsole" startMethod="start" stopMethod="stop" updateMethod="update"/>
+  <repositories units="//@deployUnits.0 //@deployUnits.4" url="http://maven2.kevoree.org/archiva/repository/snapshots/"/>
+  <repositories url="http://scala-tools.org/repo-releases"/>
+  <repositories url="http://maven2.kevoree.org/release"/>
+  <repositories url="http://maven2.kevoree.org/snapshots"/>
+  <repositories url="http://repo1.maven.org/maven2"/>
+  <repositories url="http://maven.kevoree.org/release"/>
+  <repositories url="http://maven.kevoree.org/snapshots"/>
+  <libraries name="Kevoree-Android-JavaSE" subTypes="//@typeDefinitions.0"/>
+  <libraries name="KevoreeExperiment" subTypes="//@typeDefinitions.0 //@typeDefinitions.2"/>
+  <deployUnits groupName="org.kevoree.experiment" unitName="org.kevoree.experiment.library.gossiperNetty" version="1.2.0-SNAPSHOT" hashcode="201107081135750" requiredLibs="//@deployUnits.1 //@deployUnits.2 //@deployUnits.3" targetNodeType="//@typeDefinitions.1"/>
+  <deployUnits name="org.kevoree.extra.org.kevoree.extra.protobuf" url="mvn:org.kevoree.extra/org.kevoree.extra.protobuf/2.3.0" targetNodeType="//@typeDefinitions.1"/>
+  <deployUnits name="org.kevoree.extra.org.kevoree.extra.netty" url="mvn:org.kevoree.extra/org.kevoree.extra.netty/3.2.4" targetNodeType="//@typeDefinitions.1"/>
+  <deployUnits name="org.kevoree.extra.org.kevoree.extra.marshalling" url="mvn:org.kevoree.extra/org.kevoree.extra.marshalling/1.2.0-SNAPSHOT" targetNodeType="//@typeDefinitions.1"/>
+  <deployUnits groupName="org.kevoree.experiment" unitName="org.kevoree.experiment.fake" version="1.2.0-SNAPSHOT" hashcode="201107081139942" targetNodeType="//@typeDefinitions.1"/>
+  <nodeNetworks initBy="//@nodes.0" target="//@nodes.1">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542137"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542138"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.1" target="//@nodes.0">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542137"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542137"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.0" target="//@nodes.2">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542139"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542139"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.2" target="//@nodes.0">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542139"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542139"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.0" target="//@nodes.3">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542140"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542140"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.3" target="//@nodes.0">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542140"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542140"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.1" target="//@nodes.2">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542139"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542139"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.2" target="//@nodes.1">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542139"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542139"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.1" target="//@nodes.3">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542140"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542140"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.3" target="//@nodes.1">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542140"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542140"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.2" target="//@nodes.3">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542140"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542140"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.3" target="//@nodes.2">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542140"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542140"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.0" target="//@nodes.4">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542146"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542147"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.4" target="//@nodes.0">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542146"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542146"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.4" target="//@nodes.5">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542143"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542143"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.5" target="//@nodes.4">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542143"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542143"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.4" target="//@nodes.6">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542144"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542144"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.6" target="//@nodes.4">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542144"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542144"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.4" target="//@nodes.7">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542145"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542146"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.7" target="//@nodes.4">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542145"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542145"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.5" target="//@nodes.6">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542144"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542145"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.6" target="//@nodes.5">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542144"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542144"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.5" target="//@nodes.7">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542146"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542146"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.7" target="//@nodes.5">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542146"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542146"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.6" target="//@nodes.7">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542146"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542146"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.7" target="//@nodes.6">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542146"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542146"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.8" target="//@nodes.9">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542149"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542149"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.9" target="//@nodes.8">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542149"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542149"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.8" target="//@nodes.10">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542151"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542151"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.10" target="//@nodes.8">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542151"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542151"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.8" target="//@nodes.11">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542152"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542152"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.11" target="//@nodes.8">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542152"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542152"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.9" target="//@nodes.10">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542151"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542151"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.10" target="//@nodes.9">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542151"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542151"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.9" target="//@nodes.11">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542153"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542153"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.11" target="//@nodes.9">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542153"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542153"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.10" target="//@nodes.11">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542153"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542153"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.11" target="//@nodes.10">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542153"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542153"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.8" target="//@nodes.0">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542154"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-19.rennes.grid5000.fr" lastCheck="1312148542154"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.0" target="//@nodes.8">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542154"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542154"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.12" target="//@nodes.13">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542157"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542157"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.13" target="//@nodes.12">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542157"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542157"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.12" target="//@nodes.14">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542159"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542159"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.14" target="//@nodes.12">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542159"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542159"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.12" target="//@nodes.15">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542161"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542161"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.15" target="//@nodes.12">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542161"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542161"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.13" target="//@nodes.14">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542160"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542160"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.14" target="//@nodes.13">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542159"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542160"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.13" target="//@nodes.15">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542162"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542162"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.15" target="//@nodes.13">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542161"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542162"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.14" target="//@nodes.15">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542162"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542162"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.15" target="//@nodes.14">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542162"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542162"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.12" target="//@nodes.4">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542163"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-2.rennes.grid5000.fr" lastCheck="1312148542163"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.4" target="//@nodes.12">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542163"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542163"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.16" target="//@nodes.17">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542166"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542166"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.17" target="//@nodes.16">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542166"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542166"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.16" target="//@nodes.18">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542168"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542168"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.18" target="//@nodes.16">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542168"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542168"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.16" target="//@nodes.19">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542170"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542170"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.19" target="//@nodes.16">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542170"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542170"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.17" target="//@nodes.18">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542169"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542169"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.18" target="//@nodes.17">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542168"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542168"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.17" target="//@nodes.19">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542170"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542171"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.19" target="//@nodes.17">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542170"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542170"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.18" target="//@nodes.19">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542171"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542171"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.19" target="//@nodes.18">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542171"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542171"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.16" target="//@nodes.8">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542171"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542171"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.8" target="//@nodes.16">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542172"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542172"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.20" target="//@nodes.21">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542175"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542175"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.21" target="//@nodes.20">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542175"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542175"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.20" target="//@nodes.22">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542177"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542177"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.22" target="//@nodes.20">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542176"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542177"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.20" target="//@nodes.23">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542178"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542178"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.23" target="//@nodes.20">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542178"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542178"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.21" target="//@nodes.22">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542177"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542177"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.22" target="//@nodes.21">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542177"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542177"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.21" target="//@nodes.23">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542178"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542178"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.23" target="//@nodes.21">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542178"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542178"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.22" target="//@nodes.23">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542179"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542179"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.23" target="//@nodes.22">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542178"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542179"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.20" target="//@nodes.8">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542179"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-20.rennes.grid5000.fr" lastCheck="1312148542179"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.8" target="//@nodes.20">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542179"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542179"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.24" target="//@nodes.25">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542181"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542181"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.25" target="//@nodes.24">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542181"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542181"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.24" target="//@nodes.26">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542183"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542183"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.26" target="//@nodes.24">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542183"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542183"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.24" target="//@nodes.27">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542184"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542184"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.27" target="//@nodes.24">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542184"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542184"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.25" target="//@nodes.26">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542183"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542183"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.26" target="//@nodes.25">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542183"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542183"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.25" target="//@nodes.27">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542185"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542185"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.27" target="//@nodes.25">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542184"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542184"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.26" target="//@nodes.27">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542185"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542185"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.27" target="//@nodes.26">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542185"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542185"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.24" target="//@nodes.12">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542185"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542185"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.12" target="//@nodes.24">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542185"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542186"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.28" target="//@nodes.29">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542187"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542187"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.29" target="//@nodes.28">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542187"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542187"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.28" target="//@nodes.30">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542188"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542188"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.30" target="//@nodes.28">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542188"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542188"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.28" target="//@nodes.31">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542189"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542189"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.31" target="//@nodes.28">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542189"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542189"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.29" target="//@nodes.30">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542189"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542189"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.30" target="//@nodes.29">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542188"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542188"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.29" target="//@nodes.31">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542189"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542189"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.31" target="//@nodes.29">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542189"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542189"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.30" target="//@nodes.31">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542190"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542190"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.31" target="//@nodes.30">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542189"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542190"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.28" target="//@nodes.12">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542190"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-21.rennes.grid5000.fr" lastCheck="1312148542190"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.12" target="//@nodes.28">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542190"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542190"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.32" target="//@nodes.33">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542192"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542192"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.33" target="//@nodes.32">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542192"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542192"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.32" target="//@nodes.34">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542193"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542193"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.34" target="//@nodes.32">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542193"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542193"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.32" target="//@nodes.35">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542194"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542194"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.35" target="//@nodes.32">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542194"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542194"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.33" target="//@nodes.34">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542193"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542193"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.34" target="//@nodes.33">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542193"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542193"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.33" target="//@nodes.35">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542194"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542194"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.35" target="//@nodes.33">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542194"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542194"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.34" target="//@nodes.35">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542194"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542194"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.35" target="//@nodes.34">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542194"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542194"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.32" target="//@nodes.16">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542194"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542194"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.16" target="//@nodes.32">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542194"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542195"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.36" target="//@nodes.37">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542196"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542196"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.37" target="//@nodes.36">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542196"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542196"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.36" target="//@nodes.38">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542197"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542197"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.38" target="//@nodes.36">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542197"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542197"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.36" target="//@nodes.39">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542198"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542198"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.39" target="//@nodes.36">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542198"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542198"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.37" target="//@nodes.38">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542198"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542198"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.38" target="//@nodes.37">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542197"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542198"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.37" target="//@nodes.39">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542198"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542199"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.39" target="//@nodes.37">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542198"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542198"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.38" target="//@nodes.39">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542199"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542199"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.39" target="//@nodes.38">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542199"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542199"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.36" target="//@nodes.16">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542199"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-22.rennes.grid5000.fr" lastCheck="1312148542199"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.16" target="//@nodes.36">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542199"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542199"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.40" target="//@nodes.41">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542201"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542201"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.41" target="//@nodes.40">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542201"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542201"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.40" target="//@nodes.42">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542202"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542202"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.42" target="//@nodes.40">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542202"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542202"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.40" target="//@nodes.43">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542203"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542203"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.43" target="//@nodes.40">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542203"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542203"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.41" target="//@nodes.42">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542202"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542202"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.42" target="//@nodes.41">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542202"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542202"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.41" target="//@nodes.43">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542203"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542203"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.43" target="//@nodes.41">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542203"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542203"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.42" target="//@nodes.43">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542203"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542203"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.43" target="//@nodes.42">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542203"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542203"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.40" target="//@nodes.20">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542204"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542204"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.20" target="//@nodes.40">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542204"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-29.rennes.grid5000.fr" lastCheck="1312148542204"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.44" target="//@nodes.45">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542206"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542206"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.45" target="//@nodes.44">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542206"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542206"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.44" target="//@nodes.46">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542207"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542207"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.46" target="//@nodes.44">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542207"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542207"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.44" target="//@nodes.47">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542208"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542208"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.47" target="//@nodes.44">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542208"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542208"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.45" target="//@nodes.46">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542207"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542207"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.46" target="//@nodes.45">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542207"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542207"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.45" target="//@nodes.47">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542208"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542208"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.47" target="//@nodes.45">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542208"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542208"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.46" target="//@nodes.47">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542208"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542208"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.47" target="//@nodes.46">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542208"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542208"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.44" target="//@nodes.20">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542208"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-23.rennes.grid5000.fr" lastCheck="1312148542209"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.20" target="//@nodes.44">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542209"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-3.rennes.grid5000.fr" lastCheck="1312148542209"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.48" target="//@nodes.49">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542211"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542211"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.49" target="//@nodes.48">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542210"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542211"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.48" target="//@nodes.50">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542212"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542212"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.50" target="//@nodes.48">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542212"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542212"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.48" target="//@nodes.51">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542213"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542213"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.51" target="//@nodes.48">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542213"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542213"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.49" target="//@nodes.50">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542212"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542212"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.50" target="//@nodes.49">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542212"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542212"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.49" target="//@nodes.51">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542213"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542213"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.51" target="//@nodes.49">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542213"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542213"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.50" target="//@nodes.51">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542213"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542213"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.51" target="//@nodes.50">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542213"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542213"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.48" target="//@nodes.24">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542213"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542214"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.24" target="//@nodes.48">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542214"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-30.rennes.grid5000.fr" lastCheck="1312148542214"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.52" target="//@nodes.53">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542216"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542216"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.53" target="//@nodes.52">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542216"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542216"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.52" target="//@nodes.54">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542217"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542217"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.54" target="//@nodes.52">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542217"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542217"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.52" target="//@nodes.55">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542218"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542218"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.55" target="//@nodes.52">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542218"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542218"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.53" target="//@nodes.54">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542217"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542217"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.54" target="//@nodes.53">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542217"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542217"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.53" target="//@nodes.55">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542218"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542218"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.55" target="//@nodes.53">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542218"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542218"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.54" target="//@nodes.55">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542218"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542218"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.55" target="//@nodes.54">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542218"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542218"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.52" target="//@nodes.24">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542219"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-24.rennes.grid5000.fr" lastCheck="1312148542219"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.24" target="//@nodes.52">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542219"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-31.rennes.grid5000.fr" lastCheck="1312148542219"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.56" target="//@nodes.57">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542221"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542221"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.57" target="//@nodes.56">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542221"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542221"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.56" target="//@nodes.58">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542222"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542222"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.58" target="//@nodes.56">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542222"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542222"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.56" target="//@nodes.59">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542223"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542223"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.59" target="//@nodes.56">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542223"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542223"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.57" target="//@nodes.58">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542222"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542222"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.58" target="//@nodes.57">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542222"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542222"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.57" target="//@nodes.59">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542223"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542223"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.59" target="//@nodes.57">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542223"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542223"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.58" target="//@nodes.59">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542224"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542224"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.59" target="//@nodes.58">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542224"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542224"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.56" target="//@nodes.28">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542224"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542224"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.28" target="//@nodes.56">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542224"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-32.rennes.grid5000.fr" lastCheck="1312148542224"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.60" target="//@nodes.61">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542226"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542226"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.61" target="//@nodes.60">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542226"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542226"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.60" target="//@nodes.62">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542228"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542228"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.62" target="//@nodes.60">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542227"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542227"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.60" target="//@nodes.63">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542229"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542229"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.63" target="//@nodes.60">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542228"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542229"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.61" target="//@nodes.62">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542228"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542228"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.62" target="//@nodes.61">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542228"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542228"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.61" target="//@nodes.63">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542229"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542229"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.63" target="//@nodes.61">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542229"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542229"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.62" target="//@nodes.63">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542229"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542229"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.63" target="//@nodes.62">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542229"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542229"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.60" target="//@nodes.28">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542229"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-25.rennes.grid5000.fr" lastCheck="1312148542229"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.28" target="//@nodes.60">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542230"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-33.rennes.grid5000.fr" lastCheck="1312148542230"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.64" target="//@nodes.65">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542232"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542232"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.65" target="//@nodes.64">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542231"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542231"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.64" target="//@nodes.66">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542233"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542233"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.66" target="//@nodes.64">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542233"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542233"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.64" target="//@nodes.67">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542234"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542234"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.67" target="//@nodes.64">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542234"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542234"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.65" target="//@nodes.66">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542233"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542233"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.66" target="//@nodes.65">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542233"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542233"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.65" target="//@nodes.67">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542234"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542234"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.67" target="//@nodes.65">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542234"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542234"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.66" target="//@nodes.67">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542234"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542235"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.67" target="//@nodes.66">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542234"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542234"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.64" target="//@nodes.32">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542235"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542235"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.32" target="//@nodes.64">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542235"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-34.rennes.grid5000.fr" lastCheck="1312148542235"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.68" target="//@nodes.69">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542237"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542237"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.69" target="//@nodes.68">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542237"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542237"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.68" target="//@nodes.70">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542239"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542239"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.70" target="//@nodes.68">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542239"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542239"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.68" target="//@nodes.71">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542240"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542240"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.71" target="//@nodes.68">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542240"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542240"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.69" target="//@nodes.70">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542239"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542239"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.70" target="//@nodes.69">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542239"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542239"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.69" target="//@nodes.71">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542240"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542240"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.71" target="//@nodes.69">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542240"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542240"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.70" target="//@nodes.71">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542240"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542240"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.71" target="//@nodes.70">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542240"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542240"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.68" target="//@nodes.32">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542241"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-27.rennes.grid5000.fr" lastCheck="1312148542241"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.32" target="//@nodes.68">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542241"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-35.rennes.grid5000.fr" lastCheck="1312148542241"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.72" target="//@nodes.73">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542243"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542243"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.73" target="//@nodes.72">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542243"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542243"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.72" target="//@nodes.74">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542244"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542245"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.74" target="//@nodes.72">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542244"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542244"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.72" target="//@nodes.75">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542246"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542246"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.75" target="//@nodes.72">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542245"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542246"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.73" target="//@nodes.74">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542245"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542245"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.74" target="//@nodes.73">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542245"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542245"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.73" target="//@nodes.75">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542246"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542246"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.75" target="//@nodes.73">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542246"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542246"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.74" target="//@nodes.75">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542246"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542246"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.75" target="//@nodes.74">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542246"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542246"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.72" target="//@nodes.36">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542246"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542246"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.36" target="//@nodes.72">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542247"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-36.rennes.grid5000.fr" lastCheck="1312148542247"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.76" target="//@nodes.77">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542249"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542249"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.77" target="//@nodes.76">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542249"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542249"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.76" target="//@nodes.78">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542250"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542250"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.78" target="//@nodes.76">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542250"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542250"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.76" target="//@nodes.79">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542251"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542252"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.79" target="//@nodes.76">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542251"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542251"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.77" target="//@nodes.78">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542251"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542251"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.78" target="//@nodes.77">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542251"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542251"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.77" target="//@nodes.79">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542252"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542252"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.79" target="//@nodes.77">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1312148542252"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542252"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.78" target="//@nodes.79">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8003" lastCheck="1312148542252"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542252"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.79" target="//@nodes.78">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1312148542252"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542252"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.76" target="//@nodes.36">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542252"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-28.rennes.grid5000.fr" lastCheck="1312148542252"/>
+    </link>
+  </nodeNetworks>
+  <nodeNetworks initBy="//@nodes.36" target="//@nodes.76">
+    <link networkType="" estimatedRate="100">
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1312148542252"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="parapluie-37.rennes.grid5000.fr" lastCheck="1312148542253"/>
+    </link>
+  </nodeNetworks>
+  <groups name="gossipGroup" typeDefinition="//@typeDefinitions.0" subNodes="//@nodes.0 //@nodes.1 //@nodes.2 //@nodes.3 //@nodes.4 //@nodes.5 //@nodes.6 //@nodes.7 //@nodes.8 //@nodes.9 //@nodes.10 //@nodes.11 //@nodes.12 //@nodes.13 //@nodes.14 //@nodes.15 //@nodes.16 //@nodes.17 //@nodes.18 //@nodes.19 //@nodes.20 //@nodes.21 //@nodes.22 //@nodes.23 //@nodes.24 //@nodes.25 //@nodes.26 //@nodes.27 //@nodes.28 //@nodes.29 //@nodes.30 //@nodes.31 //@nodes.32 //@nodes.33 //@nodes.34 //@nodes.35 //@nodes.36 //@nodes.37 //@nodes.38 //@nodes.39 //@nodes.40 //@nodes.41 //@nodes.42 //@nodes.43 //@nodes.44 //@nodes.45 //@nodes.46 //@nodes.47 //@nodes.48 //@nodes.49 //@nodes.50 //@nodes.51 //@nodes.52 //@nodes.53 //@nodes.54 //@nodes.55 //@nodes.56 //@nodes.57 //@nodes.58 //@nodes.59 //@nodes.60 //@nodes.61 //@nodes.62 //@nodes.63 //@nodes.64 //@nodes.65 //@nodes.66 //@nodes.67 //@nodes.68 //@nodes.69 //@nodes.70 //@nodes.71 //@nodes.72 //@nodes.73 //@nodes.74 //@nodes.75 //@nodes.76 //@nodes.77 //@nodes.78 //@nodes.79">
+    <dictionary>
+      <values attribute="//@typeDefinitions.0/@dictionaryType/@attributes.0" value="10"/>
+      <values attribute="//@typeDefinitions.0/@dictionaryType/@attributes.1" value="parapluie19rennesgrid5000fr0=9000,parapluie19rennesgrid5000fr1=9001,parapluie19rennesgrid5000fr2=9002,parapluie19rennesgrid5000fr3=9003,parapluie2rennesgrid5000fr0=9000,parapluie2rennesgrid5000fr1=9001,parapluie2rennesgrid5000fr2=9002,parapluie2rennesgrid5000fr3=9003,parapluie20rennesgrid5000fr0=9000,parapluie20rennesgrid5000fr1=9001,parapluie20rennesgrid5000fr2=9002,parapluie20rennesgrid5000fr3=9003,parapluie21rennesgrid5000fr0=9000,parapluie21rennesgrid5000fr1=9001,parapluie21rennesgrid5000fr2=9002,parapluie21rennesgrid5000fr3=9003,parapluie22rennesgrid5000fr0=9000,parapluie22rennesgrid5000fr1=9001,parapluie22rennesgrid5000fr2=9002,parapluie22rennesgrid5000fr3=9003,parapluie23rennesgrid5000fr0=9000,parapluie23rennesgrid5000fr1=9001,parapluie23rennesgrid5000fr2=9002,parapluie23rennesgrid5000fr3=9003,parapluie24rennesgrid5000fr0=9000,parapluie24rennesgrid5000fr1=9001,parapluie24rennesgrid5000fr2=9002,parapluie24rennesgrid5000fr3=9003,parapluie25rennesgrid5000fr0=9000,parapluie25rennesgrid5000fr1=9001,parapluie25rennesgrid5000fr2=9002,parapluie25rennesgrid5000fr3=9003,parapluie27rennesgrid5000fr0=9000,parapluie27rennesgrid5000fr1=9001,parapluie27rennesgrid5000fr2=9002,parapluie27rennesgrid5000fr3=9003,parapluie28rennesgrid5000fr0=9000,parapluie28rennesgrid5000fr1=9001,parapluie28rennesgrid5000fr2=9002,parapluie28rennesgrid5000fr3=9003,parapluie29rennesgrid5000fr0=9000,parapluie29rennesgrid5000fr1=9001,parapluie29rennesgrid5000fr2=9002,parapluie29rennesgrid5000fr3=9003,parapluie3rennesgrid5000fr0=9000,parapluie3rennesgrid5000fr1=9001,parapluie3rennesgrid5000fr2=9002,parapluie3rennesgrid5000fr3=9003,parapluie30rennesgrid5000fr0=9000,parapluie30rennesgrid5000fr1=9001,parapluie30rennesgrid5000fr2=9002,parapluie30rennesgrid5000fr3=9003,parapluie31rennesgrid5000fr0=9000,parapluie31rennesgrid5000fr1=9001,parapluie31rennesgrid5000fr2=9002,parapluie31rennesgrid5000fr3=9003,parapluie32rennesgrid5000fr0=9000,parapluie32rennesgrid5000fr1=9001,parapluie32rennesgrid5000fr2=9002,parapluie32rennesgrid5000fr3=9003,parapluie33rennesgrid5000fr0=9000,parapluie33rennesgrid5000fr1=9001,parapluie33rennesgrid5000fr2=9002,parapluie33rennesgrid5000fr3=9003,parapluie34rennesgrid5000fr0=9000,parapluie34rennesgrid5000fr1=9001,parapluie34rennesgrid5000fr2=9002,parapluie34rennesgrid5000fr3=9003,parapluie35rennesgrid5000fr0=9000,parapluie35rennesgrid5000fr1=9001,parapluie35rennesgrid5000fr2=9002,parapluie35rennesgrid5000fr3=9003,parapluie36rennesgrid5000fr0=9000,parapluie36rennesgrid5000fr1=9001,parapluie36rennesgrid5000fr2=9002,parapluie36rennesgrid5000fr3=9003,parapluie37rennesgrid5000fr0=9000,parapluie37rennesgrid5000fr1=9001,parapluie37rennesgrid5000fr2=9002,parapluie37rennesgrid5000fr3=9003"/>
+      <values attribute="//@typeDefinitions.0/@dictionaryType/@attributes.4" value="false"/>
+      <values attribute="//@typeDefinitions.0/@dictionaryType/@attributes.5" value="parapluie-19.rennes.grid5000.fr"/>
+      <values attribute="//@typeDefinitions.0/@dictionaryType/@attributes.3" value="false"/>
+    </dictionary>
+  </groups>
+</kevoree:ContainerRoot>

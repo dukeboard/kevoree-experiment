@@ -29,7 +29,7 @@ class FailureGenerator (ips: List[String], poisson: Boolean) {
       val model = loadCurrentModel()
       var currentModel: ContainerRoot = null
 
-      if (action.equals("down") || removedNodeNetworks.isEmpty) {
+      if (action.equals("down") || action.equals("\"down\"") || removedNodeNetworks.isEmpty) {
         currentModel = updateModelAccordingToRemovedNodeNetworks(EcoreUtil.copy(model))
         val nodeNetworks: (NodeNetwork, NodeNetwork) = askForLink(true, currentModel)
         sendOrder(buildBaseURL(model, nodeNetworks._1.getInitBy.getName) + "?down=" + nodeNetworks._1.getTarget.getName)
@@ -60,7 +60,12 @@ class FailureGenerator (ips: List[String], poisson: Boolean) {
   def updateModelAccordingToRemovedNodeNetworks (model: ContainerRoot): ContainerRoot = {
     removedNodeNetworks.foreach {
       nn =>
-        model.getNodeNetworks.remove(nn)
+      //        model.getNodeNetworks.remove(nn) // TODO seems to doesn't work
+        model.getNodeNetworks.find(n => n.getInitBy.equals(nn.getInitBy) && n.getTarget.equals(nn.getTarget)) match {
+          case Some(nodeNetwork) => model.getNodeNetworks.remove(nodeNetwork)
+          case _ =>
+        }
+
     }
     //println("number of NodeNetworks after update according to removedNodeNetworks: " + model.getNodeNetworks.size())
     model
@@ -163,32 +168,36 @@ class FailureGenerator (ips: List[String], poisson: Boolean) {
   }
 
   private def askForLink (down: Boolean, model: ContainerRoot): (NodeNetwork, NodeNetwork) = {
+
     if (down) {
       var nodeNetworks: Map[java.lang.Integer, (NodeNetwork, NodeNetwork)] = Map()
       var linkNumber = 0
-      if (!poisson) {
-        var i: java.lang.Integer = 0
-        var alreadyUsed: List[ContainerNode] = List()
-        model.getNodes.foreach {
-          node =>
-            model.getNodes.filter(n => !n.getName.equals(node.getName)).foreach {
-              node2 =>
-                if (!alreadyUsed.contains(node2)) {
-                  model.getNodeNetworks.filter(nn =>
-                    nn.getInitBy.getName.equals(node.getName) && nn.getTarget.getName.equals(node2.getName) ||
-                      nn.getTarget.getName.equals(node.getName) && nn.getInitBy.getName.equals(node2.getName)) match {
-                    case ArrayBuffer(nn1: NodeNetwork, nn2: NodeNetwork) => {
-                      nodeNetworks = nodeNetworks ++ Map[java.lang.Integer, (NodeNetwork, NodeNetwork)](i -> (nn1, nn2))
-                      println(i + ": " + node.getName + "<-->" + node2.getName)
 
-                      i = i.intValue() + 1
+      var i: java.lang.Integer = 0
+      var alreadyUsed: List[ContainerNode] = List()
+      model.getNodes.foreach {
+        node =>
+          model.getNodes.filter(n => !n.getName.equals(node.getName)).foreach {
+            node2 =>
+              if (!alreadyUsed.contains(node2)) {
+                model.getNodeNetworks.filter(nn =>
+                  nn.getInitBy.getName.equals(node.getName) && nn.getTarget.getName.equals(node2.getName) ||
+                    nn.getTarget.getName.equals(node.getName) && nn.getInitBy.getName.equals(node2.getName)) match {
+                  case ArrayBuffer(nn1: NodeNetwork, nn2: NodeNetwork) => {
+                    nodeNetworks = nodeNetworks ++ Map[java.lang.Integer, (NodeNetwork, NodeNetwork)](i -> (nn1, nn2))
+                    if (!poisson) {
+                      println(i + ": " + node.getName + "<-->" + node2.getName)
                     }
-                    case _ => // NO OP
+
+                    i = i.intValue() + 1
                   }
+                  case _ => // NO OP
                 }
-            }
-            alreadyUsed = alreadyUsed ++ List(node)
-        }
+              }
+          }
+          alreadyUsed = alreadyUsed ++ List(node)
+      }
+      if (!poisson) {
         println("Select link to remove [default = 0]:")
         val reader = new BufferedReader(new InputStreamReader(System.in))
         val line = reader.readLine()
@@ -208,25 +217,29 @@ class FailureGenerator (ips: List[String], poisson: Boolean) {
     } else {
       var nodeNetworks: Map[java.lang.Integer, (NodeNetwork, NodeNetwork)] = Map()
       var linkNumber = 0
-      if (!poisson) {
-        var i: java.lang.Integer = 0
-        removedNodeNetworks.foreach {
-          nodeNetwork =>
-            nodeNetworks.values.filter(t =>
-              (nodeNetwork.getInitBy.getName.equals(t._1.getInitBy.getName) &&
-                nodeNetwork.getTarget.getName.equals(t._1.getTarget.getName))
-                || (nodeNetwork.getInitBy.getName.equals(t._2.getInitBy.getName) &&
-                nodeNetwork.getTarget.getName.equals(t._2.getTarget.getName))) match {
-              case List((nn1: NodeNetwork, nn2: NodeNetwork)) => // NO OP
-              case _@e => {
-                nodeNetworks = nodeNetworks ++ Map[java.lang.Integer, (NodeNetwork, NodeNetwork)](i ->
-                  (nodeNetwork, foundOpposite(nodeNetwork, removedNodeNetworks)))
-                println(i + ": " + nodeNetwork.getInitBy.getName + "<-->" + nodeNetwork.getTarget.getName)
+      var i: java.lang.Integer = 0
+      removedNodeNetworks.foreach {
+        nodeNetwork =>
+          nodeNetworks.values.filter(t =>
+            (nodeNetwork.getInitBy.getName.equals(t._1.getInitBy.getName) &&
+              nodeNetwork.getTarget.getName.equals(t._1.getTarget.getName))
+              || (nodeNetwork.getInitBy.getName.equals(t._2.getInitBy.getName) &&
+              nodeNetwork.getTarget.getName.equals(t._2.getTarget.getName))) match {
+            case List((nn1: NodeNetwork, nn2: NodeNetwork)) => // NO OP
+            case _@e => {
+              nodeNetworks = nodeNetworks ++ Map[java.lang.Integer, (NodeNetwork, NodeNetwork)](i ->
+                (nodeNetwork, foundOpposite(nodeNetwork, removedNodeNetworks)))
 
-                i = i.intValue() + 1
+              if (!poisson) {
+                println(i + ": " + nodeNetwork.getInitBy.getName + "<-->" + nodeNetwork.getTarget.getName)
               }
+
+              i = i.intValue() + 1
             }
-        }
+          }
+      }
+
+      if (!poisson) {
         println("Select link to add [default = 0]:")
         val reader = new BufferedReader(new InputStreamReader(System.in))
         val line = reader.readLine()

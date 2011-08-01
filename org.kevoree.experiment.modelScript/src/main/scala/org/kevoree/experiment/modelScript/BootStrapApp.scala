@@ -29,9 +29,8 @@ object BootStrapApp extends App {
     }
 
 
-    args.find(arg => arg.startsWith("delay=")) match {
-      case Some(arg) => delay = Integer.parseInt(arg.substring("delay=".size, arg.size))
-      case _ =>
+    args.filter(arg => arg.startsWith("delay=")).foreach{
+      arg => println(arg);delay = Integer.parseInt(arg.substring("delay=".size, arg.size))
     }
 
 

@@ -27,26 +27,14 @@ object FailureApp extends App {
       poisson = false
     }
 
-    var alwaysDown = false
-    var alwaysUp = false
-    if (args.contains("alwaysDown")) {
-      alwaysDown = true
-    } else if (args.contains("alwaysUp")) {
-      alwaysUp = true
-    }
-
     val failureGenerator = new FailureGenerator(Configuration.ips, poisson)
 
     val stream = new BufferedReader(new InputStreamReader((System.in)))
 
-    if (alwaysDown || alwaysUp) {
-      failureGenerator.doAction(args(1))
-    } else {
-      var line = stream.readLine()
-      while (line != null && !line.equals("q")) {
-        failureGenerator.doAction(line)
-        line = stream.readLine()
-      }
+    var line = stream.readLine()
+    while (line != null && !line.equals("q")) {
+      failureGenerator.doAction(line)
+      line = stream.readLine()
     }
   }
 }

@@ -100,6 +100,7 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
 
         //Init node score
         //initNodeScore(nodeName)
+        modifyNodeScore(nodeName, false)
 
 
         logger.debug("return a peer between connected nodes: " + nodeName)

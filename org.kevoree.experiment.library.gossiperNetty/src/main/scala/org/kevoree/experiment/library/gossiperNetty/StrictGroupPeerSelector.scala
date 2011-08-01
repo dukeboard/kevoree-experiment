@@ -21,20 +21,20 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
 
   case class STOP ()
 
-  case class MODIFY_NODE_SCORE (nodeName: String, failure : Boolean)
+  case class MODIFY_NODE_SCORE (nodeName1: String, failure : Boolean)
 
-  case class RESET_NODE_FAILURE (nodeName: String)
+  case class RESET_NODE_FAILURE (nodeName1: String)
 
   def stop () {
     this ! STOP()
   }
 
-  def modifyNodeScoreAction (nodeName: String, failure: Boolean) {
-    this ! MODIFY_NODE_SCORE(nodeName, failure)
+  def modifyNodeScoreAction (nodeName1: String, failure: Boolean) {
+    this ! MODIFY_NODE_SCORE(nodeName1, failure)
   }
 
-  def resetNodeFailureAction (nodeName: String) {
-    this ! RESET_NODE_FAILURE(nodeName)
+  def resetNodeFailureAction (nodeName1: String) {
+    this ! RESET_NODE_FAILURE(nodeName1)
   }
 
   /* PRIVATE PROCESS PART */
@@ -45,10 +45,10 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
         case STOP() => {
           this.exit()
         }
-        case MODIFY_NODE_SCORE(nodeName, failure) => {
-          this.modifyNodeScore(nodeName, failure)
+        case MODIFY_NODE_SCORE(nodeName1, failure) => {
+          this.modifyNodeScore(nodeName1, failure)
         }
-        case RESET_NODE_FAILURE(nodeName) => this.resetNodeFailure(nodeName)
+        case RESET_NODE_FAILURE(nodeName1) => this.resetNodeFailure(nodeName1)
       }
     }
   }
@@ -96,15 +96,15 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
           }
         }
         // select randomly a peer between all potential available nodes which have a good score
-        val nodeName = foundNodeName.get((Math.random() * foundNodeName.size).asInstanceOf[Int])
+        val nodeName1 = foundNodeName.get((Math.random() * foundNodeName.size).asInstanceOf[Int])
 
         //Init node score
         //initNodeScore(nodeName)
-        modifyNodeScore(nodeName, false)
+        modifyNodeScore(nodeName1, false)
 
 
-        logger.debug("return a peer between connected nodes: " + nodeName)
-        nodeName
+        logger.debug("return a peer between connected nodes: " + nodeName1)
+        nodeName1
       }
       case None => logger.debug(groupName + " not Found"); ""
     }

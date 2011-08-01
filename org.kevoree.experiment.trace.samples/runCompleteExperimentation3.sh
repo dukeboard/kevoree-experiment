@@ -3,38 +3,35 @@
 
 if [[ $# -ge 2 ]]; then
 
-# check parameters to find the decrease value if it exists
-decrease=0
-failure=0
-for n in $@; do
-	if [[ `echo ${n} | grep "failure="` -ne "" ]]; then
-		failure=`echo "${n}" | sed 's/failure=//g'`
-	fi
-#	echo "${n} is not the \"decrease\" parameter"
-done
-echo "failure=$failure"
+	# check parameters to find the decrease value if it exists
+	decrease=0
+	failure=0
+	for n in $@; do
+		if [[ `echo ${n} | grep "failure="` -ne "" ]]; then
+			failure=`echo "${n}" | sed 's/failure=//g'`
+		fi
+	#	echo "${n} is not the \"decrease\" parameter"
+	done
+	echo "failure=$failure"
 
-echo $1
-echo $2
+	echo $1
+	echo $2
 
-dir=`pwd`
-echo $dir
+	dir=`pwd`
+	echo $dir
+
+	cd $dir
+	
+	screen -A -m -d -S failureApp ./runFailure.sh
 
 	$dir/runGregLoggerServer.sh start
-
 	sleep 10
-
 	$dir/runKevoreeAgents.sh start
-
 	sleep 15
-
 	$dir/runBootStrap.sh $*
-
 	sleep 15
-
+	
 	delay=$2
-	
-	
 	while [[ $failure -ne "0" ]]; do
 		startTime=`date +%s`
 		let "endTime=startTime+$1"
@@ -46,12 +43,14 @@ echo $dir
 			fi
 		done
 		# add a failure
-		$dir/runFailure.sh
+		screen -p 0 -S failureApp -X eval 'stuff \"down\"\015'
 		let "failure=failure-1"
 		echo "failure=$failure"
 	done
 
 	sleep 120
+
+	oarsh $i "screen -p 0 -S failureApp  -X eval 'stuff \"q\"\015'" &
 
 	$dir/runKevoreeAgents.sh stop
 
@@ -71,7 +70,7 @@ else
 	echo "			sendNotification specifies that all model changes on a node include notification to all nodes"
 	echo "			alwaysAskModel specifies that each time there is a gossiper request, the request directly ask the model"
 	echo "			<delay1> (milliseconds): delay between two gossiper requests for each nodes"
-	echo "			<percentage> (%): number of link failure to reach"
+	echo "			<number>: number of link failure to reach"
 fi
 
 

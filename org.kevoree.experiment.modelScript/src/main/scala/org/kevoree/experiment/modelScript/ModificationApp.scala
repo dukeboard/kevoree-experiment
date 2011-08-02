@@ -12,12 +12,12 @@ object ModificationApp extends App {
 
   def run () {
     val modificationGenerator = new ModificationGenerator(Configuration.ips)
-    val stream = System.in
-    var b = stream.read()
-    while (b != -1 && b != 'q') {
+    //val stream = System.in
+    //var b = stream.read()
+    //while (b != -1 && b != 'q') {
       modificationGenerator.doAction("duke0")
-      b = stream.read()
-    }
+    //  b = stream.read()
+    //}
   }
 
   def runForGrid () {

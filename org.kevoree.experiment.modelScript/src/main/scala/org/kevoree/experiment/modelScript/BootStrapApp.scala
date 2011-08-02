@@ -33,26 +33,6 @@ object BootStrapApp extends App {
       arg => println(arg);delay = Integer.parseInt(arg.substring("delay=".size, arg.size))
     }
 
-
-    /*args.find(arg => arg.startsWith("logServer=")) match {
-      case Some(arg) => Configuration.logServer = arg.substring("logServer=".size, arg.size)
-      case _ =>
-    }*/
-
-    /*if (args.length == 2) {
-      Configuration.grid5000 = true
-      Configuration.build()
-      Configuration.logServer = args(1)
-    } else {
-      Configuration.grid5000 = false
-      Configuration.build()
-      var nbNodes = 0
-      Configuration.packets.foreach {
-        p =>
-          nbNodes = nbNodes + p.nbElem
-      }
-    }*/
-
     println(Configuration.packets.mkString("\n"))
     println("logServer = " + Configuration.logServer)
     println("sendNotification = " + sendNotification)

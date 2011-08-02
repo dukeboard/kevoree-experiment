@@ -11,9 +11,9 @@ echo $dir
 
 $dir/runGregLoggerServer.sh start
 
-sleep 10
+#sleep 10
 
-$dir/runKevoreeAgents.sh start
+#$dir/runKevoreeAgents.sh start
 
 sleep 15
 
@@ -29,13 +29,13 @@ let "endTime=startTime+$1"
 while [[ $endTime -gt `date +%s` ]]; do
 	echo $endTime
 	echo `date +%s`
-        $dir/runModification.sh
-        sleep $delay
+	$dir/runModification.sh
+	sleep $delay
 done
 
 sleep 120
 
-$dir/runKevoreeAgents.sh stop
+#$dir/runKevoreeAgents.sh stop
 
 $dir/runGregLoggerServer.sh stop
 

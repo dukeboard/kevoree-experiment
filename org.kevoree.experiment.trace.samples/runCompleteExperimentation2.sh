@@ -28,7 +28,7 @@ while [[ $delayCheck -gt "1" ]]; do
 
 	sleep 10
 
-	$dir/runKevoreeAgents.sh start
+	#$dir/runKevoreeAgents.sh start
 
 	sleep 15
 
@@ -55,7 +55,7 @@ while [[ $delayCheck -gt "1" ]]; do
 
 	sleep 120
 
-	$dir/runKevoreeAgents.sh stop
+	#$dir/runKevoreeAgents.sh stop
 
 	$dir/runGregLoggerServer.sh stop
 

@@ -26,10 +26,6 @@ object TracePath {
     val tmps = content.split(";")
     var result = VectorClock(List(), "", 0l)
 
-
-    println(content)
-    println(tmps.size)
-
     tmps.size match {
       case 1 => {
         tmps(0).split(',').foreach {

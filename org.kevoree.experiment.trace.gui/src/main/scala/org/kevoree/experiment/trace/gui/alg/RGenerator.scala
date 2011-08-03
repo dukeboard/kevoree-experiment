@@ -51,6 +51,9 @@ object RGenerator {
       }
     }
     recusiveCall(trace.sucessors)
+
+    println(networkSize)
+
     (nodeDiff.values.toList,networkSize)
   }
 
@@ -64,12 +67,16 @@ object RGenerator {
         val tuple = generatePropagationTimeScript(trace)
         diff = diff ++ tuple._1
         var lnetSize = 0l
+
+        println(tuple._2)
+
         tuple._2.foreach{ nettuple =>
           previousNetworkSize.get(nettuple._1) match {
             case Some(previousSize)=> lnetSize = lnetSize + ( nettuple._2 - previousSize )
             case None => lnetSize = lnetSize + nettuple._2
           }
         }
+
         netSize = netSize ++ List(lnetSize)
         previousNetworkSize = tuple._2
       }

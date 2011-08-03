@@ -13,7 +13,7 @@ object AppPath extends App {
 
   //var input: InputStream = this.getClass.getClassLoader.getResourceAsStream("./trace_out.concurrency.-notification")
 
- var inputLazy: InputStream = new FileInputStream(new File("/home/edaubert/workspace/kevoree-experiment/org.kevoree.experiment.root/trace_out"))
+ var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.root/../org.kevoree.experiment.library.gossiperNetty/results/15_20_600_-sendNotification_-alwaysAskModel/trace_out"))
 // var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/trace_out_lazy"))
 // var inputNoLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Desktop/trace_out"))
 
@@ -51,8 +51,11 @@ object AppPath extends App {
      */
 
 
-  var allPath = TracePath.getAllPathFrom("duke0", 3, tracesLazy)
+  var allPath = TracePath.getAllPathFrom("paradent61rennesgrid5000fr0", 3, tracesLazy)
   RGenerator.generateFile(RGenerator.generatePropagationTimeScript(allPath),"outAll.r")
+
+ // println(allPath)
+
 
 
   /**

@@ -15,11 +15,11 @@ $dir/runGregLoggerServer.sh start
 
 #$dir/runKevoreeAgents.sh start
 
-sleep 15
+#sleep 15
 
 $dir/runBootStrap.sh $*
 
-sleep 15
+sleep 60
 
 delay=$2
 startTime=`date +%s`

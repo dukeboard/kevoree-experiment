@@ -45,17 +45,19 @@ class LogAskForDataTCPActor(channelFragment: NettyGossipAbstractElement, request
     if (!networkIsDown) {
       logger.debug("TCP sending ... :-)")
 
-      val client: Service[Message, Message] = ClientBuilder()
-        .codec(ModelCodec)
-        .requestTimeout(Duration.fromTimeUnit(3000, TimeUnit.MILLISECONDS))
-        .hosts(new InetSocketAddress(channelFragment.getAddress(remoteNodeName),
-        channelFragment.parsePortNumber(remoteNodeName)))
-        .hostConnectionLimit(1)
-        .build()
 
       logger.debug("client build ! ")
 
-      try {
+      try { // TODO report try catch out of the exepriment (javase)
+        val client: Service[Message, Message] = ClientBuilder()
+               .codec(ModelCodec)
+               .requestTimeout(Duration.fromTimeUnit(3000, TimeUnit.MILLISECONDS))
+               .hosts(new InetSocketAddress(channelFragment.getAddress(remoteNodeName),
+               channelFragment.parsePortNumber(remoteNodeName)))
+               .hostConnectionLimit(1)
+               .build()
+
+        
         client(messageBuilder.build) onSuccess {
           result =>
             NetworkCommunicationCost.updateDataSizeReceived(result.getSerializedSize)

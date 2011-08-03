@@ -52,7 +52,6 @@ object RGenerator {
     }
     recusiveCall(trace.sucessors)
 
-    println(networkSize)
 
     (nodeDiff.values.toList,networkSize)
   }
@@ -67,8 +66,6 @@ object RGenerator {
         val tuple = generatePropagationTimeScript(trace)
         diff = diff ++ tuple._1
         var lnetSize = 0l
-
-        println(tuple._2)
 
         tuple._2.foreach{ nettuple =>
           previousNetworkSize.get(nettuple._1) match {
@@ -86,7 +83,10 @@ object RGenerator {
     diff.foreach {
       dif => l = l + dif
     }
-    println("avg=" + (l / diff.size))
+    if(diff.size > 0){
+        println("avg=" + (l / diff.size))
+    }
+
 
     "propDelais <- c(" + diff.mkString(",") + ")\n" +
     "netSize <- c(" + netSize.slice(1,netSize.size+1).mkString(",") + ")\n" +

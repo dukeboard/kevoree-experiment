@@ -19,12 +19,12 @@ import com.twitter.finagle.builder.ClientBuilder
  * Time: 16:33
  */
 
-class LogAskForDataTCPActor (channelFragment: NettyGossipAbstractElement, requestSender: GossiperRequestSender,
-  peerSelector: StrictGroupPeerSelector)
+class LogAskForDataTCPActor(channelFragment: NettyGossipAbstractElement, requestSender: GossiperRequestSender,
+                            peerSelector: StrictGroupPeerSelector)
   extends AskForDataTCPActor(channelFragment, requestSender) {
   private val logger = LoggerFactory.getLogger(classOf[LogAskForDataTCPActor])
 
-  override def askForData (uuid: UUID, remoteNodeName: String) {
+  override def askForData(uuid: UUID, remoteNodeName: String) {
     logger.debug("before to send data, we need to test if the node is available")
 
     val messageBuilder: Message.Builder = Message.newBuilder.setDestName(channelFragment.getName)
@@ -49,27 +49,33 @@ class LogAskForDataTCPActor (channelFragment: NettyGossipAbstractElement, reques
         .codec(ModelCodec)
         .requestTimeout(Duration.fromTimeUnit(3000, TimeUnit.MILLISECONDS))
         .hosts(new InetSocketAddress(channelFragment.getAddress(remoteNodeName),
-                                      channelFragment.parsePortNumber(remoteNodeName)))
+        channelFragment.parsePortNumber(remoteNodeName)))
         .hostConnectionLimit(1)
         .build()
 
       logger.debug("client build ! ")
 
-      client(messageBuilder.build) onSuccess {
-        result =>
-          NetworkCommunicationCost.updateDataSizeReceived(result.getSerializedSize)
-          println("Received result asynchronously: " + result)
-          if (result.getContentClass.equals(classOf[VersionedModel].getName)) {
-            requestSender.endGossipAction(result)
-          }
+      try {
+        client(messageBuilder.build) onSuccess {
+          result =>
+            NetworkCommunicationCost.updateDataSizeReceived(result.getSerializedSize)
+            println("Received result asynchronously: " + result)
+            if (result.getContentClass.equals(classOf[VersionedModel].getName)) {
+              requestSender.endGossipAction(result)
+            }
 
-      } onFailure {
-        error =>
-          logger.warn("warn TCP error ", error)
-      } ensure {
-        // All done! Close TCP connection(s):
-        client.release()
+        } onFailure {
+          error =>
+            logger.warn("warn TCP error ", error)
+        } ensure {
+          // All done! Close TCP connection(s):
+          client.release()
+        }
+      } catch {
+        case _@e => logger.error("WTF!!!", e)
       }
+
+
       peerSelector.resetNodeFailureAction(targetNodeName)
     } else {
       logger.debug("message is not sent because the link with " + targetNodeName + " is broken")

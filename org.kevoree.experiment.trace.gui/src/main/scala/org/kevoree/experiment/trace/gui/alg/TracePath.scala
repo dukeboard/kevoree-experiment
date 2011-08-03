@@ -11,7 +11,7 @@ object TracePath {
     var result: List[LinkedTrace] = List()
     var firstIndex = firstNodeVersion
     var subResult = getPathFrom(nodeID, firstIndex, traces)
-    while (!subResult.isEmpty) {
+    while (!subResult.isEmpty ) {
       result = result ++ List(subResult.get)
       //NEXT ITERATION
       firstIndex = firstIndex + 1

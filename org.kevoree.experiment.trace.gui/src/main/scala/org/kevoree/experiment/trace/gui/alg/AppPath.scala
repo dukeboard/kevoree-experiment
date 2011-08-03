@@ -54,7 +54,7 @@ object AppPath extends App {
   var allPath = TracePath.getAllPathFrom("duke00", 3, tracesLazy)
   RGenerator.generateFile(RGenerator.generatePropagationTimeScript(allPath),"outAll.r")
 
- // println(allPath)
+  println(allPath)
 
 
 

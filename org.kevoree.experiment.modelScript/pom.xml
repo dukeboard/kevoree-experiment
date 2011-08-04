@@ -70,7 +70,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>org.kevoree.experiment.modelScript.BootStrapApp</mainClass>
+                                    <mainClass>org.kevoree.experiment.modelScript.Runner</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

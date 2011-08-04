@@ -1,3 +1,4 @@
+/*
 package org.kevoree.experiment.modelScript
 
 
@@ -9,11 +10,10 @@ object BootStrapApp extends App {
     var delay = 10000
 
     if (args.contains("grid")) {
-      Configuration.buildForGrid()
+      COnfiguration.grid = true
     } else if (args.contains("-grid")) {
-      Configuration.build()
     } else {
-      Configuration.build()
+      Configuration.buildDefault()
     }
 
     if (args.contains("alwaysAskModel")) {
@@ -44,4 +44,4 @@ object BootStrapApp extends App {
                   delay)
   }
 
-}
+}*/

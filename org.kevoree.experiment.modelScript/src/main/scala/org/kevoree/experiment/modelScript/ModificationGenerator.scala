@@ -36,7 +36,7 @@ class ModificationGenerator(ips : List[String]) {
 
       doOneMove(model)
       finalizeKevScript()
-      println(kevScript)
+      //println(kevScript)
       updateModelFromKevScript(kevScript.toString(),nodeName)
     } catch {
       case _@e => e.printStackTrace()
@@ -141,7 +141,9 @@ class ModificationGenerator(ips : List[String]) {
       kevScript append "@"
       kevScript append instance.eContainer().asInstanceOf[ContainerNode].getName
       kevScript append " => "
-      kevScript append selectRandomlyIntoList(model.getNodes.toList).asInstanceOf[ContainerNode].getName
+      val nodeName = selectRandomlyIntoList(model.getNodes.toList).asInstanceOf[ContainerNode].getName
+      kevScript append nodeName
+      println("moveComponent " + instance.getName + "@" + instance.eContainer().asInstanceOf[ContainerNode].getName + " => " + nodeName)
     }
   }
 

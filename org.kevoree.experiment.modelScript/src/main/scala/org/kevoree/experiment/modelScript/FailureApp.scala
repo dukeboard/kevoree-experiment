@@ -1,3 +1,4 @@
+/*
 package org.kevoree.experiment.modelScript
 
 import java.io.{InputStreamReader, BufferedReader}
@@ -37,4 +38,4 @@ object FailureApp extends App {
       line = stream.readLine()
     }
   }
-}
+}*/

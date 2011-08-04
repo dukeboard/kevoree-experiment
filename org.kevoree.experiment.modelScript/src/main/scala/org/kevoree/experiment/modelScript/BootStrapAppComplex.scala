@@ -5,14 +5,13 @@ import org.kevoree.tools.marShell.parser.{ParserUtil, KevsParser}
 import org.kevoree.framework.KevoreeXmiHelper
 import java.net.URL
 import java.io.{InputStreamReader, BufferedReader, OutputStreamWriter, ByteArrayOutputStream}
-
 object BootStrapAppComplex {
 
   def bootStrap (packets: List[NodePacket], ip: String, ips: List[String], sendNotification: Boolean,
     alwaysAskModel: Boolean, delay: java.lang.Integer) {
     if (!packets.isEmpty) {
       val model = KevoreeXmiHelper
-        .loadStream(this.getClass.getClassLoader.getResourceAsStream("baseModelEvolution.kev"))
+        .loadStream(this.getClass.getClassLoader.getResourceAsStream("baseModelEvolutionWithLight.kev"))
       val tscript = new StringBuilder
 
       tscript append "tblock {"
@@ -20,11 +19,11 @@ object BootStrapAppComplex {
       tscript.append(TopologyGeneratorScript.generate(packets, ip, sendNotification, alwaysAskModel, delay))
 
       tscript append "addComponent "
-      tscript append "myFakeConsole1"
+      tscript append "myFakeLight"
       tscript append "@"
       tscript append findNodeName(tscript) //"duke0"
       tscript append ":"
-      tscript append "FakeConsole"
+      tscript append "FakeSimpleLight\n"
 
       tscript append "}\n"
 
@@ -75,6 +74,7 @@ object BootStrapAppComplex {
 
           } else {
             println("Interpreter Error")
+            println(parser.lastNoSuccess)
           }
 
         }

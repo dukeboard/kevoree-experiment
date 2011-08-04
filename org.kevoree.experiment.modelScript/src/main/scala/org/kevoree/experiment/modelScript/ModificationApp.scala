@@ -15,12 +15,12 @@ object ModificationApp extends App {
     //val stream = System.in
     //var b = stream.read()
     //while (b != -1 && b != 'q') {
-      modificationGenerator.doAction("duke0")
+    modificationGenerator.doAction(Configuration.followingPlatform)
     //  b = stream.read()
     //}
   }
 
-  def runForGrid () {
+  /*def runForGrid () {
     val modificationGenerator = new ModificationGenerator(Configuration.ips)
     if (System.getProperty("OAR_NODE_FILE") != null) {
       val file = new File(System.getProperty("OAR_NODE_FILE"))
@@ -36,19 +36,18 @@ object ModificationApp extends App {
     } else {
       println("missing $OAR_NODE_FILE variables")
     }
-  }
+  }*/
 
   override def main (args: Array[String]) {
 
     if (args.contains("grid")) {
-      Configuration.buildForGrid()
-      runForGrid()
-    } else if (args.contains("-grid")) {
-      Configuration.build()
-      run()
+      Configuration.grid = true
     } else {
-      Configuration.build()
-      run()
+      args.filter(arg => arg.startsWith("nodeFile=")).foreach {
+        arg => Configuration.nodeFile = arg.substring("nodeFile=".size, arg.size);
+      }
     }
+    Configuration.build()
+    run()
   }
 }

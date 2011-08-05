@@ -61,7 +61,7 @@ class LogAskForDataTCPActor(channelFragment: NettyGossipAbstractElement, request
         client(messageBuilder.build) onSuccess {
           result =>
             NetworkCommunicationCost.updateDataSizeReceived(result.getSerializedSize)
-            println("Received result asynchronously: " + result)
+            println("Received result asynchronously: "  + result.getSerializedSize)
             if (result.getContentClass.equals(classOf[VersionedModel].getName)) {
               requestSender.endGossipAction(result)
             }

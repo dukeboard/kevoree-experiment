@@ -2,3 +2,8 @@
 /log-*.txt
 /felixCache_*/
 bootStrap.kev
+/bootstrap/
+/gregServer/
+/modification/
+/*.kev
+/*.graphml

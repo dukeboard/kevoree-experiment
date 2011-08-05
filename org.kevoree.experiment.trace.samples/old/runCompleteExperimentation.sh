@@ -19,7 +19,7 @@ $dir/runGregLoggerServer.sh start
 
 $dir/runBootStrap.sh $*
 
-sleep 60
+sleep 75
 
 delay=$2
 startTime=`date +%s`

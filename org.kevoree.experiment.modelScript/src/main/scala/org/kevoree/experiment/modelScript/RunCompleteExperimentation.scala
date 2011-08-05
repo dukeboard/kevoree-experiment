@@ -142,7 +142,8 @@ object RunCompleteExperimentation extends App {
   copyResult("bootStrap.kev", folder)
   copyResult("bootStrapComplex.graphml", folder)
   copyResult("bootStrapComplex.kev", folder)
-  copyResult("node.txt", folder)
+  copyResult("nodeFile.txt", folder)
+  copyResult("trace_out", folder)
 
   println("experimentation complete !")
 

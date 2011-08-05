@@ -13,7 +13,17 @@ object RGenerator {
 
   val scriptEnd = "\nlibrary(Hmisc)\nbpplot(propDelais,main=\"Downtime propagation delay\")\nboxplot(propDelais, propDelais, names = c(\"a\", \"b\"), horizontal = TRUE, ylab = \"factors\", main = \"title\")"
 
+
+  var nbHop = new scala.collection.mutable.HashMap[String,Int]()
+
+  def generateTopologyNbHopFrom(origineName : String) {
+
+  }
+
+
   def generatePropagationTimeScript(trace: LinkedTrace): Tuple2[List[Long], HashMap[String, Long]] = {
+
+
 
     val nodeVersion: HashMap[String, Int] = HashMap[String, Int]()
     val nodeDiff: HashMap[String, Long] = HashMap[String, Long]()
@@ -84,17 +94,17 @@ object RGenerator {
 
         println(tuple._1)
 
-        var lnetSize = 0l
+       // var lnetSize = 0l
 
         tuple._2.foreach {
           nettuple =>
             previousNetworkSize.get(nettuple._1) match {
-              case Some(previousSize) => lnetSize = lnetSize + (nettuple._2 - previousSize)
-              case None => lnetSize = lnetSize + nettuple._2
+              case Some(previousSize) => netSize = netSize ++ List(nettuple._2 - previousSize)
+              case None => //netSize = netSize ++ List(nettuple._2)
             }
         }
 
-        netSize = netSize ++ List(lnetSize)
+      //  netSize = netSize ++ List(lnetSize)
         previousNetworkSize = tuple._2
       }
     }
@@ -109,7 +119,7 @@ object RGenerator {
 
 
     "propDelais <- c(" + diff.mkString(",") + ")\n" +
-      "netSize <- c(" + netSize.slice(1, netSize.size + 1).mkString(",") + ")\n" +
+      "netSize <- c(" + netSize/*.slice(1, netSize.size + 1)*/.mkString(",") + ")\n" +
       "\n" + scriptEnd
   }
 

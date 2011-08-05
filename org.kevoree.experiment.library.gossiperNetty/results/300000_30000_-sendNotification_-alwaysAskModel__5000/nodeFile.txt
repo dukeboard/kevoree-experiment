@@ -1,0 +1,9 @@
+p0:paraisseux.irisa.fr:8000
+p1:paraisseux.irisa.fr:8010
+p2:paraisseux.irisa.fr:8020
+d0:duke.irisa.fr:8000
+d1:duke.irisa.fr:8010
+d2:duke.irisa.fr:8020
+i0:131.254.10.69:8000
+i1:131.254.10.69:8010
+i2:131.254.10.69:8020

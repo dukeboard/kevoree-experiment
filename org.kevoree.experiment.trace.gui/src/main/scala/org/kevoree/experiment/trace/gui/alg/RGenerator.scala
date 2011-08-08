@@ -13,17 +13,7 @@ object RGenerator {
 
   val scriptEnd = "\nlibrary(Hmisc)\nbpplot(propDelais,main=\"Downtime propagation delay\")\nboxplot(propDelais, propDelais, names = c(\"a\", \"b\"), horizontal = TRUE, ylab = \"factors\", main = \"title\")"
 
-
-  var nbHop = new scala.collection.mutable.HashMap[String,Int]()
-
-  def generateTopologyNbHopFrom(origineName : String) {
-
-  }
-
-
-  def generatePropagationTimeScript(trace: LinkedTrace): Tuple2[List[Long], HashMap[String, Long]] = {
-
-
+  def generatePropagationTimeScript(trace: LinkedTrace, hops: NbHop): Tuple2[HashMap[String, Long], HashMap[String, Long]] = {
 
     val nodeVersion: HashMap[String, Int] = HashMap[String, Int]()
     val nodeDiff: HashMap[String, Long] = HashMap[String, Long]()
@@ -32,14 +22,13 @@ object RGenerator {
     val firstTime = trace.trace.getTimestamp
     val firstClientID = trace.trace.getClientId
     nodeVersion.put(trace.trace.getClientId, TracePath.stringToVectorClock(trace.trace.getBody).versionForNode(trace.trace.getClientId).get)
-    //nodeDiff.put(trace.trace.getClientId, 0)
     networkSize.put(trace.trace.getClientId, TracePath.stringToVectorClock(trace.trace.getBody).recByteLong)
 
     def recusiveCall(traces: List[LinkedTrace]) {
       traces.foreach {
         trace =>
 
-         // println(trace.toString)
+        // println(trace.toString)
 
           if (trace.trace.getClientId != firstClientID) {
 
@@ -73,12 +62,12 @@ object RGenerator {
 
 
 
-    (nodeDiff.values.toList, networkSize)
+    (nodeDiff, networkSize)
   }
 
 
-  def generatePropagationTimeScript(traces: List[LinkedTrace]): String = {
-    var diff: List[Long] = List()
+  def generatePropagationTimeScript(traces: List[LinkedTrace], hops: NbHop = DefNbHop()): String = {
+    val diff: scala.collection.mutable.HashMap[String, List[Long]] = scala.collection.mutable.HashMap[String, List[Long]]()
     var previousNetworkSize: HashMap[String, Long] = HashMap[String, Long]()
     var netSize: List[Long] = List()
 
@@ -86,40 +75,59 @@ object RGenerator {
 
     traces.foreach {
       trace => {
-        val tuple = generatePropagationTimeScript(trace)
+        val tuple = generatePropagationTimeScript(trace, hops)
 
         // println(tuple._1.size)
 
-        diff = diff ++ tuple._1
+        tuple._1.foreach {
+          t =>
+            diff.put(t._1, diff.get(t._1).getOrElse(List()) ++ List(t._2))
+        }
 
-        println(tuple._1)
 
-       // var lnetSize = 0l
+         var lnetSize = 0l
 
         tuple._2.foreach {
           nettuple =>
             previousNetworkSize.get(nettuple._1) match {
-              case Some(previousSize) => netSize = netSize ++ List(nettuple._2 - previousSize)
+              case Some(previousSize) => {
+                println(nettuple._1+"=>"+nettuple._2)
+                //netSize = netSize ++ List(nettuple._2 - previousSize)
+                lnetSize = lnetSize + (nettuple._2 - previousSize)
+
+              }
               case None => //netSize = netSize ++ List(nettuple._2)
             }
         }
 
-      //  netSize = netSize ++ List(lnetSize)
+          netSize = netSize ++ List(lnetSize)
         previousNetworkSize = tuple._2
       }
     }
 
-    var l = 0l
+
+    var resultDif = List[Long]()
+    var resultDifDivHop = List[Long]()
+    var avg = 0l
     diff.foreach {
-      dif => l = l + dif
+      dif => {
+        dif._2.foreach {
+          difres => {
+            resultDif = resultDif ++ List(difres)
+            resultDifDivHop = resultDifDivHop ++ List(difres / hops.getPathSize(dif._1))
+            avg = avg + difres
+          }
+        }
+      }
     }
+
     if (diff.size > 0) {
-      println("avg=" + (l / diff.size))
+      println("avg=" + (avg / resultDif.size))
     }
 
-
-    "propDelais <- c(" + diff.mkString(",") + ")\n" +
-      "netSize <- c(" + netSize/*.slice(1, netSize.size + 1)*/.mkString(",") + ")\n" +
+    "delay <- c(" + resultDif.mkString(",") + ")\n" +
+    "delayDivHops <- c(" + resultDifDivHop.mkString(",") + ")\n" +
+      "netSize <- c(" + netSize /*.slice(1, netSize.size + 1)*/ .mkString(",") + ")\n" +
       "\n" + scriptEnd
   }
 

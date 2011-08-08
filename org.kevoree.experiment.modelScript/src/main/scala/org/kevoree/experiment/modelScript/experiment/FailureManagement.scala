@@ -11,9 +11,9 @@ import org.kevoree.framework.KevoreeXmiHelper
 import java.net.URL
 import java.io.{InputStreamReader, BufferedReader, OutputStreamWriter, ByteArrayOutputStream}
 import scala.Predef._
-import org.kevoree.experiment.modelScript.{Configuration, TopologyGeneratorScript, Kev2GraphML}
 import org.jgrapht.alg.ConnectivityInspector
 import org.kevoree.{NodeNetwork, NodeLink, ContainerNode}
+import org.kevoree.experiment.modelScript.{KevTopo2JGraph, Configuration, TopologyGeneratorScript, Kev2GraphML}
 
 /**
  * User: ffouquet

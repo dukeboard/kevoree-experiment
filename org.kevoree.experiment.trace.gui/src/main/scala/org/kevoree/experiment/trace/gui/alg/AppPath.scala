@@ -8,15 +8,16 @@ import java.awt.geom.Rectangle2D
 import javax.swing.{JScrollBar, WindowConstants, JFrame}
 import org.kevoree.experiment.trace.TraceMessages
 import java.io._
+import org.kevoree.framework.KevoreeXmiHelper
 
 object AppPath extends App {
 
-  //var input: InputStream = this.getClass.getClassLoader.getResourceAsStream("./trace_out.concurrency.-notification")
 
- var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/trace_out"))
-// var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/trace_out_lazy"))
-// var inputNoLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Desktop/trace_out"))
-
+  var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/trace_out"))
+  var inputModel = KevoreeXmiHelper.load("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/bootStrapComplex.kev")
+ // var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_30000_sendNotification_-alwaysAskModel__15000/trace_out"))
+//  var inputModel = KevoreeXmiHelper.load("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_30000_sendNotification_-alwaysAskModel__15000/bootStrapComplex.kev")
+  val nbHops = NbHop(inputModel, "p00")
 
   var tracesLazy: TraceMessages.Traces = TraceMessages.Traces.parseFrom(inputLazy)
 
@@ -51,11 +52,12 @@ object AppPath extends App {
      */
 
 
-  var allPath = TracePath.getAllPathFrom("duke00", 3, tracesLazy)
-  RGenerator.generateFile(RGenerator.generatePropagationTimeScript(allPath),"outAll.r")
+  var allPath = TracePath.getAllPathFrom("p00", 7, tracesLazy)
 
-  println(allPath)
 
+  RGenerator.generateFile(RGenerator.generatePropagationTimeScript(allPath, nbHops), "outAllNoNotif.r")
+
+  // println(allPath)
 
 
   /**
@@ -68,7 +70,7 @@ object AppPath extends App {
    * @throws Exception if failed.
    * @see <a href="http://www.lowagie.com/iText">iText</a>
    */
-  def saveChartToPDF (chart: JFreeChart, fileName: String, width: java.lang.Integer, height: java.lang.Integer) {
+  def saveChartToPDF(chart: JFreeChart, fileName: String, width: java.lang.Integer, height: java.lang.Integer) {
     if (chart != null) {
       var out: BufferedOutputStream = null
       try {

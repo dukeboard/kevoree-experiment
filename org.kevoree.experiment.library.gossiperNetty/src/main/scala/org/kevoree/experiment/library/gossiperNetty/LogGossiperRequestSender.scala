@@ -4,7 +4,9 @@ import scala.collection.JavaConversions._
 import java.net.{InetAddress, InetSocketAddress}
 import org.slf4j.LoggerFactory
 import org.kevoree.library.gossiperNetty._
-import actors.DaemonActor
+import api.msg.KevoreeMessage.Message
+import org.jboss.netty.channel.{Channels, ChannelPipeline, ChannelPipelineFactory}
+import org.jboss.netty.handler.codec.protobuf.{ProtobufEncoder, ProtobufVarint32LengthFieldPrepender, ProtobufDecoder, ProtobufVarint32FrameDecoder}
 
 /**
  * User: Erwan Daubert - erwan.daubert@gmail.com
@@ -18,11 +20,26 @@ class LogGossiperRequestSender (timeout: java.lang.Long, channelFragment: NettyG
                                                           dataManager, fullUDP, garbage, serializer, alwaysAskModel) {
   private val logger = LoggerFactory.getLogger(classOf[LogGossiperRequestSender])
 
+  bootstrap.setPipelineFactory(new ChannelPipelineFactory() { // TODO refactor with an object for all pipelineFactories
+    override def getPipeline: ChannelPipeline = {
+      val p: ChannelPipeline = Channels.pipeline()
+      //p.addLast("inflater", new ZlibDecoder(ZlibWrapper.ZLIB))
+      p.addLast("frameDecoder", new ProtobufVarint32FrameDecoder)
+      p.addLast("protobufDecoder", new ProtobufDecoder(Message.getDefaultInstance))
+      //p.addLast("deflater", new ZlibEncoder(ZlibWrapper.ZLIB))
+      p.addLast("frameEncoder", new ProtobufVarint32LengthFieldPrepender())
+      p.addLast("protobufEncoder", new ProtobufEncoder())
+
+      p.addLast("handler", new LogGossiperRequestSenderHandler(self))
+      p
+    }
+  })
+
   askForDataTCPActor = new LogAskForDataTCPActor(channelFragment, this, peerSelector)
 
   override def start () = {
-    //channel = bootstrap.bind(new InetSocketAddress(0)) //.asInstanceOf[DatagramChannel]
-    //askForDataTCPActor.start()
+    /*channel = bootstrap.bind(new InetSocketAddress(0)) //.asInstanceOf[DatagramChannel]
+    askForDataTCPActor.start()*/
     super.start()
     this
   }

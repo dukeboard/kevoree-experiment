@@ -2,12 +2,12 @@ package org.kevoree.experiment.library.gossiperNetty;
 
 import org.greg.client.ForkedConfiguration;
 import org.greg.client.ForkedGregClient;
-import org.kevoree.annotation.*;
+import org.kevoree.annotation.DictionaryAttribute;
+import org.kevoree.annotation.DictionaryType;
+import org.kevoree.annotation.GroupType;
+import org.kevoree.annotation.Library;
 import org.kevoree.api.service.core.handler.KevoreeModelHandlerService;
-import org.kevoree.library.gossiperNetty.GossiperActor;
 import org.kevoree.library.gossiperNetty.Serializer;
-import org.kevoree.library.gossiperNetty.group.DataManagerForGroup;
-import org.kevoree.library.gossiperNetty.group.GroupPeerSelector;
 import org.kevoree.library.gossiperNetty.group.GroupSerializer;
 import org.kevoree.library.gossiperNetty.group.NettyGossiperGroup;
 import org.osgi.framework.Bundle;
@@ -30,7 +30,7 @@ public class LogNettyGossiperGroup extends NettyGossiperGroup {
     public void startGossiperGroup() {
         logger.debug("starting group instance");
 
-        FailureSimulation.startServer(parsePortNumber(getNodeName()) + 1000);
+        FailureSimulation.startServer(parsePortNumber(getNodeName()) + 2000);
 
         ForkedConfiguration clientConfig = new ForkedConfiguration();
         clientConfig.clientId = this.getNodeName();

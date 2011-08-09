@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory
 import scala.collection.JavaConversions._
 import org.kevoree.library.gossiperNetty.api.msg.KevoreeMessage.Message
 import com.twitter.finagle.Service
-import com.twitter.finagle.builder.ClientBuilder._
 import com.twitter.util.Duration
 import java.util.concurrent.TimeUnit
 import java.net.InetSocketAddress
@@ -19,12 +18,12 @@ import com.twitter.finagle.builder.ClientBuilder
  * Time: 16:33
  */
 
-class LogAskForDataTCPActor(channelFragment: NettyGossipAbstractElement, requestSender: GossiperRequestSender,
-                            peerSelector: StrictGroupPeerSelector)
+class LogAskForDataTCPActor (channelFragment: NettyGossipAbstractElement, requestSender: GossiperRequestSender,
+  peerSelector: StrictGroupPeerSelector)
   extends AskForDataTCPActor(channelFragment, requestSender) {
   private val logger = LoggerFactory.getLogger(classOf[LogAskForDataTCPActor])
 
-  override def askForData(uuid: UUID, remoteNodeName: String) {
+  override def askForData (uuid: UUID, remoteNodeName: String) {
     logger.debug("before to send data, we need to test if the node is available")
 
     val messageBuilder: Message.Builder = Message.newBuilder.setDestName(channelFragment.getName)
@@ -48,21 +47,25 @@ class LogAskForDataTCPActor(channelFragment: NettyGossipAbstractElement, request
 
       logger.debug("client build ! ")
 
-      try { // TODO report try catch out of the exepriment (javase)
+      try {
+        // TODO report try catch out of the exepriment (javase)
         val client: Service[Message, Message] = ClientBuilder()
-               .codec(ModelCodec)
-               .requestTimeout(Duration.fromTimeUnit(3000, TimeUnit.MILLISECONDS))
-               .hosts(new InetSocketAddress(channelFragment.getAddress(remoteNodeName),
-               channelFragment.parsePortNumber(remoteNodeName)))
-               .hostConnectionLimit(1)
-               .build()
+          .codec(ModelCodec)
+          .requestTimeout(Duration.fromTimeUnit(3000, TimeUnit.MILLISECONDS))
+          .hosts(new InetSocketAddress(channelFragment.getAddress(remoteNodeName),
+                                        channelFragment.parsePortNumber(remoteNodeName)))
+          .hostConnectionLimit(1)
+          .build()
 
-        
+
         client(messageBuilder.build) onSuccess {
           result =>
-            NetworkCommunicationCost.updateDataSizeReceived(result.getSerializedSize)
-            println("Received result asynchronously: "  + result.getSerializedSize)
             if (result.getContentClass.equals(classOf[VersionedModel].getName)) {
+              val versionedModel = VersionedModel.parseFrom(result.getContent)
+              val vectorClock = versionedModel.getVector
+              NetworkCommunicationCost.updateDataSizeReceived(vectorClock.getSerializedSize)
+              logger.info("Received result asynchronously: " + vectorClock.getSerializedSize + "\t sent by " +
+                result.getDestNodeName)
               requestSender.endGossipAction(result)
             }
 

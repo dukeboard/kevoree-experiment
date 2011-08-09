@@ -68,8 +68,7 @@ object RGenerator {
 
   def generatePropagationTimeScript(traces: List[LinkedTrace], hops: NbHop = DefNbHop()): String = {
     val diff: scala.collection.mutable.HashMap[String, List[Long]] = scala.collection.mutable.HashMap[String, List[Long]]()
-    var previousNetworkSize: HashMap[String, Long] = HashMap[String, Long]()
-    var netSize: List[Long] = List()
+    val maxNetworkSize: HashMap[String, Long] = HashMap[String, Long]()
 
     println("NbReconfDetected=" + traces.size)
 
@@ -84,24 +83,14 @@ object RGenerator {
             diff.put(t._1, diff.get(t._1).getOrElse(List()) ++ List(t._2))
         }
 
-
-         var lnetSize = 0l
-
         tuple._2.foreach {
           nettuple =>
-            previousNetworkSize.get(nettuple._1) match {
-              case Some(previousSize) => {
-                println(nettuple._1+"=>"+nettuple._2)
-                //netSize = netSize ++ List(nettuple._2 - previousSize)
-                lnetSize = lnetSize + (nettuple._2 - previousSize)
 
-              }
-              case None => //netSize = netSize ++ List(nettuple._2)
-            }
+            maxNetworkSize.put(
+             nettuple._1,
+             scala.math.max(maxNetworkSize.get(nettuple._1).getOrElse(1000l*1000l),nettuple._2)
+            )
         }
-
-          netSize = netSize ++ List(lnetSize)
-        previousNetworkSize = tuple._2
       }
     }
 
@@ -124,10 +113,15 @@ object RGenerator {
     if (diff.size > 0) {
       println("avg=" + (avg / resultDif.size))
     }
+    maxNetworkSize.foreach{netSize =>
+       maxNetworkSize.put(netSize._1,  (netSize._2 / ( (traces.size+(7-2) ) * 1000) )      )
+    }
+
+
 
     "delay <- c(" + resultDif.mkString(",") + ")\n" +
     "delayDivHops <- c(" + resultDifDivHop.mkString(",") + ")\n" +
-      "netSize <- c(" + netSize /*.slice(1, netSize.size + 1)*/ .mkString(",") + ")\n" +
+      "netSize <- c(" + maxNetworkSize.values /*.slice(1, netSize.size + 1)*/ .mkString(",") + ")\n" +
       "\n" + scriptEnd
   }
 

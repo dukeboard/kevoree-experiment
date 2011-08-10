@@ -13,10 +13,9 @@ import org.kevoree.framework.KevoreeXmiHelper
 object AppPath extends App {
 
 
-  var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/trace_out"))
+ // var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/trace_out"))
   var inputModel = KevoreeXmiHelper.load("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/bootStrapComplex.kev")
- // var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_30000_sendNotification_-alwaysAskModel__15000/trace_out"))
-//  var inputModel = KevoreeXmiHelper.load("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_30000_sendNotification_-alwaysAskModel__15000/bootStrapComplex.kev")
+  var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_30000_sendNotification_-alwaysAskModel__15000/trace_out"))
   val nbHops = NbHop(inputModel, "p00")
 
   var tracesLazy: TraceMessages.Traces = TraceMessages.Traces.parseFrom(inputLazy)
@@ -55,7 +54,7 @@ object AppPath extends App {
   var allPath = TracePath.getAllPathFrom("p00", 7, tracesLazy)
 
 
-  RGenerator.generateFile(RGenerator.generatePropagationTimeScript(allPath, nbHops), "outAllNoNotif.r")
+  RGenerator.generateFile(RGenerator.generatePropagationTimeScript(allPath, nbHops), "outAllNotif.r")
 
   // println(allPath)
 

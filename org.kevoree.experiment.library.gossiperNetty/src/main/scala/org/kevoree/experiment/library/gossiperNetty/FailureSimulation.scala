@@ -13,14 +13,14 @@ import org.slf4j.LoggerFactory
 import com.twitter.finagle.{SimpleFilter, Service}
 import java.net.{URLDecoder, InetSocketAddress}
 import java.util.ArrayList
-
 object FailureSimulation {
 
+  var peerSelector : StrictGroupPeerSelector = null
   val logger = LoggerFactory.getLogger(this.getClass.getName)
   var failureOutNode = new java.util.HashSet[String]();
 
   class HandleExceptions extends SimpleFilter[HttpRequest, HttpResponse] {
-    def apply(request: HttpRequest, service: Service[HttpRequest, HttpResponse]) = {
+    def apply (request: HttpRequest, service: Service[HttpRequest, HttpResponse]) = {
 
       // `handle` asynchronously handles exceptions.
       service(request) handle {
@@ -40,26 +40,38 @@ object FailureSimulation {
 
 
   class FailureSrv extends Service[HttpRequest, HttpResponse] {
-    def apply(request: HttpRequest) = {
+    def apply (request: HttpRequest) = {
       val response = new DefaultHttpResponse(HTTP_1_1, OK)
       val buffer = new StringBuffer
       request.getMethod match {
         case HttpMethod.GET => {
           uriParser(request.getUri).foreach(param => {
-              param._1 match {
-                case "down" => {
-                  param._2.foreach{ value =>
-                     failureOutNode.add(value)
-                  }
+            param._1 match {
+              case "down" => {
+                param._2.foreach {
+                  value =>
+                    failureOutNode.add(value)
                 }
-                case "up" => {
-                  param._2.foreach{ value =>
-                     failureOutNode.remove(value)
-                  }
-
-                }
-                case _ =>
               }
+              case "up" => {
+                param._2.foreach {
+                  value =>
+                    failureOutNode.remove(value)
+                }
+
+              }
+              case "reset" => {
+                param._2.foreach(p => {
+                  p match {
+                    case "true" =>
+                      logger.info("reset all scores!!!!")
+                      peerSelector.resetAll()
+                    case _ =>
+                  }
+                })
+              }
+              case _ =>
+            }
           })
 
         }
@@ -79,34 +91,34 @@ object FailureSimulation {
   var server: Server = null
   val myService: Service[HttpRequest, HttpResponse] = (new HandleExceptions) andThen (new FailureSrv)
 
-  def startServer(port: Int) {
+  def startServer (port: Int, ps : StrictGroupPeerSelector) {
     logger.info("Start Failure simulation server on port " + port)
+    peerSelector = ps
     server = ServerBuilder()
       .codec(Http.get()).name("FailureSimulator")
       .bindTo(new InetSocketAddress(port))
       .build(myService)
   }
 
-  def stop() {
+  def stop () {
     server.close()
   }
-
-  def main(args: Array[String]) {
+/*
+  def main (args: Array[String]) {
     startServer(10000)
-  }
+  }*/
 
 
-  def uriParser(url: String) = {
+  def uriParser (url: String) = {
     val params = new java.util.HashMap[String, java.util.List[String]]()
     val urlParts = url.split("\\?");
     if (urlParts.length > 1) {
       val query = urlParts(1);
-      query.split("&").foreach(param=>
-      {
+      query.split("&").foreach(param => {
         val pair = param.split("=");
         val key = URLDecoder.decode(pair(0), "UTF-8");
         val value = URLDecoder.decode(pair(1), "UTF-8");
-        var values : java.util.List[String] = params.get(key);
+        var values: java.util.List[String] = params.get(key);
         if (values == null) {
           values = new ArrayList[String]();
           params.put(key, values);

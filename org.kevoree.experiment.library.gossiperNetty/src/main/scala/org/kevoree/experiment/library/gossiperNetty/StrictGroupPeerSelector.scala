@@ -21,9 +21,11 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
 
   case class STOP ()
 
-  case class MODIFY_NODE_SCORE (nodeName1: String, failure : Boolean)
+  case class MODIFY_NODE_SCORE (nodeName1: String, failure: Boolean)
 
   case class RESET_NODE_FAILURE (nodeName1: String)
+
+  case class RESET_ALL ()
 
   def stop () {
     this ! STOP()
@@ -31,6 +33,10 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
 
   def modifyNodeScoreAction (nodeName1: String, failure: Boolean) {
     this ! MODIFY_NODE_SCORE(nodeName1, failure)
+  }
+
+  def resetAll () {
+    this !? RESET_ALL()
   }
 
   def resetNodeFailureAction (nodeName1: String) {
@@ -48,8 +54,18 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
         case MODIFY_NODE_SCORE(nodeName1, failure) => {
           this.modifyNodeScore(nodeName1, failure)
         }
+        case RESET_ALL() => reset(); reply("")
         case RESET_NODE_FAILURE(nodeName1) => this.resetNodeFailure(nodeName1)
       }
+    }
+  }
+
+  private def reset () {
+    peerCheckMap.keySet.foreach {
+      nodeName =>
+        peerCheckMap.put(nodeName, Tuple2(System.currentTimeMillis, 0))
+        peerNbFailure.put(nodeName, 0)
+        logger.info("spam to say that scores are reinitiliaze")
     }
   }
 

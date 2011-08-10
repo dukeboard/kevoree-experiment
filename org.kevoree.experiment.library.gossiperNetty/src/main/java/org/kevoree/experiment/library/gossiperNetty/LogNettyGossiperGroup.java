@@ -30,7 +30,6 @@ public class LogNettyGossiperGroup extends NettyGossiperGroup {
     public void startGossiperGroup() {
         logger.debug("starting group instance");
 
-        FailureSimulation.startServer(parsePortNumber(getNodeName()) + 2000);
 
         ForkedConfiguration clientConfig = new ForkedConfiguration();
         clientConfig.clientId = this.getNodeName();
@@ -52,6 +51,8 @@ public class LogNettyGossiperGroup extends NettyGossiperGroup {
         Long timeoutLong = Long.parseLong((String) this.getDictionary().get("interval"));
         Serializer serializer = new GroupSerializer(modelHandlerService);
         selector = new StrictGroupPeerSelector(timeoutLong, modelHandlerService, this.getNodeName());
+
+        FailureSimulation.startServer(parsePortNumber(getNodeName()) + 2000, (StrictGroupPeerSelector)selector);
         actor = new LogGossiperActor(timeoutLong, this, dataManager, parsePortNumber(getNodeName()),
                 parseBooleanProperty("FullUDP"), false, serializer, selector, parseBooleanProperty("alwaysAskModel"), (StrictGroupPeerSelector)selector);
 		actor.start();

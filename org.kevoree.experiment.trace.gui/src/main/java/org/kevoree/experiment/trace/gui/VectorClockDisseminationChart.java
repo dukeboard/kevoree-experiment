@@ -12,7 +12,6 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.kevoree.experiment.trace.TraceMessages;
 
 import java.awt.*;
-import java.io.*;
 import java.util.*;
 import java.util.List;
 
@@ -31,10 +30,6 @@ public class VectorClockDisseminationChart {
 	private Map<String, Map<String, String>> vectorClocks;
 
 	private boolean updated;
-
-	public void saveChart(String chartPath) {
-		// TODO
-	}
 
 	public void loadTrace(TraceMessages.Traces traces/*, boolean cleanBefore*/) {
 
@@ -74,14 +69,12 @@ public class VectorClockDisseminationChart {
     DefaultCategoryDataset defaultcategorydataset = new DefaultCategoryDataset();
 
 	private void buildPlotDataset() {
-
-		// TODO
 		for (int i = 0; i < nodeIds.size(); i++) {
 			long firstTime = 0;
 			try {
 				firstTime = Long.parseLong(timeRepresentations.iterator().next());
 			} catch (NumberFormatException e) {
-				e.printStackTrace(); // TODO must not appears
+				e.printStackTrace(); // must not appears
 			}
 			for (String time : timeRepresentations) {
 				String oldTimeRepresentation = time;
@@ -90,7 +83,7 @@ public class VectorClockDisseminationChart {
 					calendar.setTimeInMillis(Long.parseLong(time) - firstTime);
 					time = "" + calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND) + ":" + calendar.get(Calendar.MILLISECOND);
 				} catch (NumberFormatException e) {
-					e.printStackTrace(); // TODO must not appears
+					e.printStackTrace(); // must not appears
 				}
 				if (vectorClockUpdates.get(nodeIds.get(i)).contains(oldTimeRepresentation)) {
 					defaultcategorydataset.addValue(i, nodeIds.get(i), time);

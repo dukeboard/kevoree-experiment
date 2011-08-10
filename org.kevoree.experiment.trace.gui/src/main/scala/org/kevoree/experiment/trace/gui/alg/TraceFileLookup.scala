@@ -6,6 +6,7 @@ import org.kevoree.experiment.trace.TraceMessages
 import javax.swing.{JPanel, WindowConstants, JFrame}
 import java.awt.BorderLayout
 import java.io.{FileInputStream, InputStream, File}
+import recoverOnFailure.VectorClockSingleDisseminationChartScala
 
 class TraceFileLookup (traceFile: File, frame: JFrame, nodeName: String, var maxVal: Int) extends DaemonActor {
 

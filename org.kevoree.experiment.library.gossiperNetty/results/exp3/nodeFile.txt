@@ -1,0 +1,4 @@
+p0:paraisseux.irisa.fr:8000
+p1:paraisseux.irisa.fr:8010
+p2:paraisseux.irisa.fr:8020
+o0:131.254.100.106:8000

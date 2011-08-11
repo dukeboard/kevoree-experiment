@@ -8,6 +8,7 @@ import com.lowagie.text.Rectangle
 import java.awt.Graphics2D
 import com.lowagie.text.pdf.{DefaultFontMapper, PdfTemplate, PdfContentByte, PdfWriter}
 import java.awt.geom.Rectangle2D
+import org.kevoree.experiment.trace.gui.alg.{VectorClockSingleDisseminationChartScala, TracePath}
 
 /**
  * User: Erwan Daubert - erwan.daubert@gmail.com
@@ -15,25 +16,37 @@ import java.awt.geom.Rectangle2D
  * Time: 17:26
  */
 
-object AppRecoverOnFailureDisplay extends App{
+object AppRecoverOnFailureDisplay extends App {
 
   // var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/trace_out"))
   //var inputModel = KevoreeXmiHelper.load("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/bootStrapComplex.kev")
-  var inputLazy: InputStream = new FileInputStream(new File("/home/edaubert/workspace/kevoree-experiment/org.kevoree.experiment.trace.samples/60000_20000_sendNotification_-alwaysAskModel__15000/trace_out"))
+  var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment//org.kevoree.experiment.trace.samples/trace_out"))
   //val nbHops = NbHop(inputModel, "p00")
 
   var tracesLazy: TraceMessages.Traces = TraceMessages.Traces.parseFrom(inputLazy)
 
   var linkedTrace = TracePath.getPathFrom("p00", 3, tracesLazy)
+  var linkedTrace3 = TracePath.getPathFrom("p00", 4, tracesLazy)
   var linkedTrace2 = TracePath.getPathFrom("o00", 3, tracesLazy)
 
+  RecoveryRGenerator.generateLinkedGraph(
+    List(linkedTrace2.get,linkedTrace3.get),
+    linkedTrace.head.trace.getTimestamp //BEGIN OF TIME
+  )
+
+   /*
   linkedTrace match {
     case Some(ltrace) => {
-      println(ltrace.toString)
+      println(linkedTrace2.get.toString)
       val frame = new JFrame();
       frame.setSize(400, 400);
 
-      val chart = new VectorClockSingleDisseminationChartScala(ltrace)
+      val chart = new VectorClockSingleDisseminationChartScala
+      chart.setBeginOfTime(linkedTrace.head.trace.getTimestamp)
+
+      chart.print(List(linkedTrace2.get/*,linkedTrace3.get*/))
+
+
       val jchart = chart.buildChart()
       //val chartPanel=new ChartScrollBar(0,jchart);
       val chartPanel = new ChartPanel(jchart)
@@ -47,11 +60,12 @@ object AppRecoverOnFailureDisplay extends App{
 
       saveChartToPDF(jchart, "trace_out.pdf", 600, 600)
 
-     // RGenerator.generateFile(RGenerator.generatePropagationTimeScript(ltrace),"out.r")
+      // RGenerator.generateFile(RGenerator.generatePropagationTimeScript(ltrace),"out.r")
 
     }
     case None => println("Not found")
-  }
+
+  }   */
 
   /**
    * Save chart as PDF file. Requires iText library.

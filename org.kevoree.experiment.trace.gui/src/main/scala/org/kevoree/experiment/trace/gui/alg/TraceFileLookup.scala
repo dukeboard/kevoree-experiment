@@ -6,8 +6,6 @@ import org.kevoree.experiment.trace.TraceMessages
 import javax.swing.{JPanel, WindowConstants, JFrame}
 import java.awt.BorderLayout
 import java.io.{FileInputStream, InputStream, File}
-import recoverOnFailure.VectorClockSingleDisseminationChartScala
-
 class TraceFileLookup (traceFile: File, frame: JFrame, nodeName: String, var maxVal: Int) extends DaemonActor {
 
   var previousCheck: Long = 0l
@@ -26,7 +24,7 @@ class TraceFileLookup (traceFile: File, frame: JFrame, nodeName: String, var max
       case Some(ltrace) => {
         //println(ltrace.toString)
 
-        val chart = new VectorClockSingleDisseminationChartScala(ltrace);
+        val chart = new VectorClockSingleDisseminationChartScala();
         val chartPanel = new ChartPanel(chart.buildChart());
         chartPanel.setOpaque(false);
 

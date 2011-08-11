@@ -1,8 +1,6 @@
 package org.kevoree.experiment.trace.gui.alg
 
 import org.kevoree.experiment.trace.TraceMessages.{Trace, Traces}
-import org.kevoree.experiment.modelScript.NodePacket
-
 //import scala.collection.JavaConversions._
 
 object TracePath {
@@ -11,7 +9,7 @@ object TracePath {
     var result: List[LinkedTrace] = List()
     var firstIndex = firstNodeVersion
     var subResult = getPathFrom(nodeID, firstIndex, traces)
-    while (!subResult.isEmpty ) {
+    while (!subResult.isEmpty) {
       result = result ++ List(subResult.get)
       //NEXT ITERATION
       firstIndex = firstIndex + 1
@@ -83,7 +81,7 @@ object TracePath {
       && stringToVectorClock(trace.getBody).source != ""
     ) match {
       case Some(traceRoot) => {
-        val linkedtraceRoot = buildLinkedFor(sortedTraces, traceRoot, nodeID, nodeVersion)
+        val linkedtraceRoot = buildLinkedFor(sortedTraces, traceRoot, nodeID, nodeVersion, nodeID, nodeVersion)
         Some(linkedtraceRoot)
       }
       case None => None
@@ -91,28 +89,28 @@ object TracePath {
   }
 
   /* Build recursively successor for trace with precise nodeID & Version  */
-  protected def buildLinkedFor(traces: List[Trace], trace: Trace, nodeID: String, version: Int): LinkedTrace = {
+  protected def buildLinkedFor(traces: List[Trace], trace: Trace, nodeID: String, version: Int, originID: String, originVersion: Int): LinkedTrace = {
 
     if (traces.isEmpty) {
       LinkedTrace(trace, List())
     } else {
       val tracesWithoutTrace = traces.slice(traces.indexOf(trace) + 1, traces.indexOf(traces.last) + 1)
-      val successors = lookForSuccessor(tracesWithoutTrace, nodeID, version)
+      val successors = lookForSuccessor(tracesWithoutTrace, nodeID, version, originID, originVersion)
       var result = LinkedTrace(trace, List())
       successors.foreach {
         suc =>
-          val optimizedTraces = traces.slice(traces.indexOf(suc._2) + 1, traces.indexOf(traces.last) + 1)
-          result = LinkedTrace(trace, result.sucessors ++ List(buildLinkedFor(optimizedTraces, suc._2, suc._1._1, suc._1._2)))
+        //IF A NODE IS ALREADY TOUCH BY ANY SUB LINKED TRACE
+          if (!result.sucessors.exists(subSuc => subSuc.rcontainsNodeId(suc._1._1))) {
+            val optimizedTraces = traces.slice(traces.indexOf(suc._2) + 1, traces.indexOf(traces.last) + 1)
+            result = LinkedTrace(trace, result.sucessors ++ List(buildLinkedFor(optimizedTraces, suc._2, suc._1._1, suc._1._2, originID, originVersion)))
+          }
       }
-
       result
     }
-
-
   }
 
   /* Look for direct successor of a precise version */
-  protected def lookForSuccessor(traces: List[Trace], nodeID: String, version: Int): List[((String, Int), Trace)] = {
+  protected def lookForSuccessor(traces: List[Trace], nodeID: String, version: Int, originID: String, originVersion: Int): List[((String, Int), Trace)] = {
     if (traces.isEmpty) {
       return List()
     }
@@ -120,17 +118,19 @@ object TracePath {
     val containPrevious = headVector.containEntry(nodeID, version)
     val isFromSourceNode = headVector.source == nodeID
 
-    // val previousTrace = findPreviousTrace(traces.head, traces, nodeID, version)
+    val isSup = headVector.versionForNode(originID).getOrElse(originVersion) == originVersion
+
+    // val previousTrace = 0findPreviousTrace(traces.head, traces, nodeID, version)
     // val alreadyNew  = isAlreadyNew(previousTrace, traces.head, nodeID, version)
     //println("previous trace is also an updated trace so the current trace is not a direct successor")
     // println("trace => " + previousTrace.getBody)
     var lvalue: List[((String, Int), Trace)] = List()
-    if (containPrevious /*&& notContainPrevious*/ && isFromSourceNode) {
+    if (containPrevious /*&& notContainPrevious*/ && isFromSourceNode && isSup) {
       //foundDirectSuccessors2 = foundDirectSuccessors2 ++ List((traces.head.getClientId, headVector.versionForNode(traces.head.getClientId).get))
       lvalue = List(((traces.head.getClientId, headVector.versionForNode(traces.head.getClientId).get), traces.head))
     }
     if (!traces.tail.isEmpty) {
-      lvalue ++ lookForSuccessor(traces.tail, nodeID, version)
+      lvalue ++ lookForSuccessor(traces.tail, nodeID, version, originID, originVersion)
     } else {
       lvalue
     }

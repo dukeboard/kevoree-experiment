@@ -12,6 +12,11 @@ case class LinkedTrace (trace: Trace, sucessors: List[LinkedTrace]) {
     toString(0, trace.getTimestamp)
   }
 
+  def rcontainsNodeId(nodeId : String) : Boolean = {
+     trace.getClientId == nodeId || (sucessors.exists(suc => suc.rcontainsNodeId(nodeId)))
+  }
+
+
   def toString (indice: Int, beginTime: Long): String = {
     val result = new StringBuffer
 

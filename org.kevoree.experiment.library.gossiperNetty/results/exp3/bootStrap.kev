@@ -208,194 +208,194 @@
   <deployUnits groupName="org.kevoree.experiment" unitName="org.kevoree.experiment.library.gossiperNetty" version="1.2.0-SNAPSHOT" hashcode="201108021040547" requiredLibs="//@deployUnits.11 //@deployUnits.10 //@deployUnits.7" targetNodeType="//@typeDefinitions.11"/>
   <nodeNetworks initBy="//@nodes.0" target="//@nodes.1">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1313055283092"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283092"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1313060394107"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394107"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.1" target="//@nodes.0">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313055283092"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283092"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313060394107"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394107"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.0" target="//@nodes.2">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1313055283092"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283092"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1313060394107"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394107"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.2" target="//@nodes.0">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313055283092"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283092"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313060394107"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394107"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.1" target="//@nodes.2">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1313055283092"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283092"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1313060394107"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394107"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.2" target="//@nodes.1">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1313055283092"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283092"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1313060394107"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394107"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.0" target="//@nodes.3">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8010" lastCheck="1313055283092"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283092"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8010" lastCheck="1313060394107"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394107"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.3" target="//@nodes.0">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313055283092"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283092"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313060394108"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394108"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.3" target="//@nodes.4">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8011" lastCheck="1313055283093"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283093"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8011" lastCheck="1313060394108"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394108"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.4" target="//@nodes.3">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8010" lastCheck="1313055283093"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283093"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8010" lastCheck="1313060394108"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394108"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.3" target="//@nodes.5">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8012" lastCheck="1313055283094"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283094"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8012" lastCheck="1313060394109"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394109"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.5" target="//@nodes.3">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8010" lastCheck="1313055283094"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283094"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8010" lastCheck="1313060394109"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394109"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.4" target="//@nodes.5">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8012" lastCheck="1313055283094"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283094"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8012" lastCheck="1313060394109"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394109"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.5" target="//@nodes.4">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8011" lastCheck="1313055283094"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283094"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8011" lastCheck="1313060394109"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394109"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.3" target="//@nodes.6">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8020" lastCheck="1313055283094"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283094"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8020" lastCheck="1313060394109"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394109"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.6" target="//@nodes.3">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8010" lastCheck="1313055283094"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283094"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8010" lastCheck="1313060394109"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394109"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.6" target="//@nodes.7">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8021" lastCheck="1313055283095"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283095"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8021" lastCheck="1313060394110"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394110"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.7" target="//@nodes.6">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8020" lastCheck="1313055283095"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283095"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8020" lastCheck="1313060394110"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394110"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.6" target="//@nodes.8">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8022" lastCheck="1313055283096"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283096"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8022" lastCheck="1313060394110"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394110"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.8" target="//@nodes.6">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8020" lastCheck="1313055283096"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283096"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8020" lastCheck="1313060394110"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394110"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.7" target="//@nodes.8">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8022" lastCheck="1313055283096"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283096"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8022" lastCheck="1313060394110"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394111"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.8" target="//@nodes.7">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8021" lastCheck="1313055283096"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283096"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8021" lastCheck="1313060394110"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394110"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.6" target="//@nodes.0">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313055283096"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283096"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313060394111"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394111"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.0" target="//@nodes.6">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8020" lastCheck="1313055283096"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283096"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8020" lastCheck="1313060394111"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394111"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.9" target="//@nodes.10">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1313055283097"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313055283097"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1313060394112"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313060394112"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.10" target="//@nodes.9">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313055283097"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313055283097"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313060394112"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313060394112"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.9" target="//@nodes.11">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1313055283098"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313055283098"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1313060394112"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313060394112"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.11" target="//@nodes.9">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313055283098"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313055283098"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313060394112"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313060394112"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.10" target="//@nodes.11">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1313055283098"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313055283098"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8002" lastCheck="1313060394112"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313060394112"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.11" target="//@nodes.10">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1313055283098"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313055283098"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8001" lastCheck="1313060394112"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313060394112"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.9" target="//@nodes.0">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313055283098"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313055283098"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313060394113"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="paraisseux.irisa.fr" lastCheck="1313060394113"/>
     </link>
   </nodeNetworks>
   <nodeNetworks initBy="//@nodes.0" target="//@nodes.9">
     <link networkType="" estimatedRate="100">
-      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313055283098"/>
-      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313055283098"/>
+      <networkProperties name="KEVOREE.remote.node.modelsynch.port" value="8000" lastCheck="1313060394113"/>
+      <networkProperties name="KEVOREE.remote.node.ip" value="131.254.100.106" lastCheck="1313060394113"/>
     </link>
   </nodeNetworks>
   <groups name="gossipGroup" typeDefinition="//@typeDefinitions.21" subNodes="//@nodes.0 //@nodes.1 //@nodes.2 //@nodes.3 //@nodes.4 //@nodes.5 //@nodes.6 //@nodes.7 //@nodes.8 //@nodes.9 //@nodes.10 //@nodes.11">

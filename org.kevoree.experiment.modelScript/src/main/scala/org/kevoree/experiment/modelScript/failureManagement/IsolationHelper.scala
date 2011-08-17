@@ -1,4 +1,4 @@
-package org.kevoree.experiment.modelScript.experiment
+package org.kevoree.experiment.modelScript.experiment.failureManagement
 
 import org.kevoree.ContainerRoot
 

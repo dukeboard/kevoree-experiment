@@ -11,7 +11,7 @@ import java.lang.Boolean
 
 case class NodePacket(name: String, ip: String, firstPort: Int, nbElem: Int)
 
-object TopologyGeneratorScript {
+object TopologyGenerator {
 
   def generate(packets: List[NodePacket], logSrvIP: String, sendNotification: Boolean, alwaysAskMoldel: Boolean, delay: java.lang.Integer, maxLink: Int = 3, nbPLink: Int = 1): String = {
     //STEP GENERATE NODE

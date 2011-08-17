@@ -1,4 +1,4 @@
-package org.kevoree.experiment.modelScript.experiment
+package org.kevoree.experiment.modelScript.failureManagement
 
 import org.kevoree.tools.marShell.interpreter.KevsInterpreterContext
 import org.kevoree.tools.marShell.parser.{ParserUtil, KevsParser}
@@ -6,9 +6,10 @@ import org.kevoree.framework.KevoreeXmiHelper
 import java.net.URL
 import java.io.{InputStreamReader, BufferedReader, OutputStreamWriter, ByteArrayOutputStream}
 import scala.Predef._
+import org.kevoree.experiment.modelScript.{Configuration, TopologyGenerator, Kev2GraphML}
 import org.jgrapht.alg.ConnectivityInspector
-import org.kevoree.{NodeNetwork, ContainerNode}
-import org.kevoree.experiment.modelScript.{KevTopo2JGraph, Configuration, TopologyGenerator, Kev2GraphML}
+import org.kevoree.{ContainerRoot, NodeNetwork, ContainerNode}
+import scala.collection.JavaConversions._
 
 /**
  * User: ffouquet
@@ -37,15 +38,7 @@ object FailureManagement extends App {
 
   tscript append "tblock {"
 
-  tscript.append(TopologyGenerator.generate(
-    Configuration.packets,
-    Configuration.logServer,
-    true,
-    false,
-    delay,
-    5,
-    2
-  ))
+  tscript.append(TopologyGenerator.generate(Configuration.packets, Configuration.logServer, true, false, delay, 5, 2))
 
   tscript append "addComponent "
   tscript append "myFakeConsole1"
@@ -104,7 +97,7 @@ object FailureManagement extends App {
         val connectivity = new ConnectivityInspector[ContainerNode,NodeNetwork](KevTopo2JGraph(model))
 
 
-        println(connectivity.connectedSetOf(model.getNodes.get(0)))
+        println(connectivity.connectedSetOf(getFollowingPlatform(Configuration.followingPlatform, model)))
 
 
 
@@ -134,6 +127,12 @@ object FailureManagement extends App {
   }
 
 
+  def getFollowingPlatform(nodeName : String, model : ContainerRoot) : ContainerNode = {
+    model.getNodes.find(n => n.getName.equals(nodeName)) match {
+      case Some(node) => node
+      case _ => null
+    }
+  }
 
 
 

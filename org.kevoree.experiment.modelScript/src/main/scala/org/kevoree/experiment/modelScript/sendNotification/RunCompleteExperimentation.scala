@@ -1,6 +1,7 @@
-package org.kevoree.experiment.modelScript
+package org.kevoree.experiment.modelScript.sendNotification
 
 import java.io._
+import org.kevoree.experiment.modelScript.{ModificationGenerator, Configuration, BootStrapAppComplex}
 
 /**
  * User: Erwan Daubert - erwan.daubert@gmail.com
@@ -9,6 +10,10 @@ import java.io._
  */
 
 object RunCompleteExperimentation extends App {
+
+  println("Kevoree Experiment - Sending Notification")
+  println("Test usability of notification instead of high frequency of research of update")
+
   var alwaysAskModel = false
   var sendNotification = true
   var delay = 10000

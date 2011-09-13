@@ -13,7 +13,7 @@
     <orderEntry type="library" name="Maven: org.kevoree:org.kevoree.framework:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree:org.kevoree.api:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree:org.kevoree.model:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.kevoree.extra:org.kevoree.extra.emf.library:2.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.kevoree.extra:org.kevoree.extra.emf.library:2.7.0" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.9.0-1" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree:org.kevoree.adaptation.model:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:4.2.0" level="project" />

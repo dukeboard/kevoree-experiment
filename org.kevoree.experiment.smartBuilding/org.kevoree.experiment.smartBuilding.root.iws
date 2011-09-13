@@ -58,7 +58,35 @@
     <favorites_list name="org.kevoree.experiment.smartBuilding.root" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Experiment5.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment5.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="24" selection-start="1511" selection-end="1511" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SmartSensorsGUI.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/SmartSensorsGUI.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="45" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractExperiment.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AbstractExperiment.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="19" selection-start="3068" selection-end="3068" vertical-scroll-proportion="0.018043684">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -68,22 +96,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/resources/baseKBenchBig3.kev" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/resources/baseKBenchBig4.kev" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/resources/baseKCrashBench.kev" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/pom.xml" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment1.scala" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment2.scala" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/SmartSensorsGUI.scala" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment3.scala" />
         <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment4.scala" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment5.scala" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AbstractExperiment.scala" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/CapacityTestMega.scala" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/CapacityTest328.scala" />
         <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluence328P.scala" />
-        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AppRunner.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluence328P_SD_16K.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/CapacityTest328.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment1.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment3.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Random5_328_SD.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment2.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/CapacityTestMega.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluence328P_SD.scala" />
         <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluenceMega.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Random5_328_SD_16K.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AppRunner.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AbstractExperiment.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment5.scala" />
+        <option value="$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/SmartSensorsGUI.scala" />
       </list>
     </option>
   </component>
@@ -125,7 +153,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -134,101 +164,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding.root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding.root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding.benchmark" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding.root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding.benchmark" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="benchmark" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding.root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="org.kevoree.experiment.smartBuilding.benchmark" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -252,6 +204,18 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <module name="" />
       <setting name="path" value="" />
@@ -263,18 +227,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -407,24 +359,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="206" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5628466" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22916667" sideWeight="0.5618812" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26777124" sideWeight="0.5924214" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43811882" sideWeight="0.98150784" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40757856" sideWeight="0.98150784" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5628466" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32994455" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -477,88 +429,84 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/SmartSensorsGUI.scala">
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment4.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="32" selection-start="1916" selection-end="1916" vertical-scroll-proportion="0.62852407" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/resources/baseKBenchBig21.kev">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="13" selection-start="15641" selection-end="15641" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/resources/baseKBenchBig24.kev">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="16" selection-start="15878" selection-end="15878" vertical-scroll-proportion="0.7601246" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/TwoWayActors.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment3.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="29" selection-start="2341" selection-end="2341" vertical-scroll-proportion="0.61443496" />
+        <state line="34" column="42" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.30603448" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment1.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="23" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.32193732" />
+        <state line="39" column="29" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.57327586" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/kevoree/extra/org.kevoree.extra.osgi.rxtx/2.2.0/org.kevoree.extra.osgi.rxtx-2.2.0.jar!/gnu/io/CommPortIdentifier.class">
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment3.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.7762646" />
+        <state line="52" column="26" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.3275862" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment5.scala">
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Random5_328_SD.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="74" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.577551" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AbstractExperiment.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="8" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.4857143" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment4.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="17" selection-start="2188" selection-end="2188" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment2.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="24" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/CapacityTestMega.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="711" selection-end="780" vertical-scroll-proportion="0.62857145" />
+        <state line="39" column="51" selection-start="1475" selection-end="1475" vertical-scroll-proportion="0.027298851" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/CapacityTest328.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="27" selection-start="880" selection-end="880" vertical-scroll-proportion="0.0" />
+        <state line="38" column="12" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.30028737" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AppRunner.scala">
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/CapacityTestMega.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="46" selection-start="1259" selection-end="1270" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="0" selection-start="2" selection-end="3372" vertical-scroll-proportion="0.55172414" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluenceMega.scala">
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment2.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="46" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.1699029">
-          <folding />
-        </state>
+        <state line="48" column="16" selection-start="1675" selection-end="1675" vertical-scroll-proportion="0.24568966" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluence328P_SD_16K.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluence328P_SD.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="27" selection-start="2" selection-end="3822" vertical-scroll-proportion="0.38793105" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluence328P.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="38" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.033980582">
+        <state line="73" column="28" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.027298851" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/BootInfluenceMega.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="80" selection-start="613" selection-end="613" vertical-scroll-proportion="0.4698276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Random5_328_SD_16K.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="31" selection-start="699" selection-end="699" vertical-scroll-proportion="0.30028737" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AppRunner.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="7" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/Experiment5.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="24" selection-start="1511" selection-end="1511" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/SmartSensorsGUI.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="45" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.kevoree.experiment.smartBuilding.benchmark/src/main/scala/org/kevoree/experiment/smartbuilding/benchmark/AbstractExperiment.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="19" selection-start="3068" selection-end="3068" vertical-scroll-proportion="0.018043684">
           <folding />
         </state>
       </provider>

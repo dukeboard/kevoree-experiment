@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
 import java.lang.StringBuffer
 import java.nio.charset.Charset
-import scala.collection.JavaConversions._
+import org.kevoree.extra.osgi.rxtx.{ContentListener, KevoreeSharedCom, TwoWayActors}
 
 /**
  * User: ffouquet
@@ -22,13 +22,19 @@ import scala.collection.JavaConversions._
 abstract class AbstractExperiment {
 
   var kompare: KevoreeKompareBean = new KevoreeKompareBean
-
   var boardTypeName = "atmega328"
-  var boardPortName = "/dev/tty.usbserial-A400g2se"
+  var boardPortName = "/dev/tty.usbserial-A400g2zz"
   var pmemType = "EEPROM"
   var psize = "MAX"
 
   def initNode(knodeName: String, model: ContainerRoot) {
+
+    KevoreeSharedCom.addObserver(boardPortName, new ContentListener() {
+      def recContent(content: String) {
+          interpetResult(indice,content)
+      }
+    })
+
     val baseTime = System.currentTimeMillis()
     val node: ArduinoNode = new ArduinoNode
     node.getDictionary.put("boardTypeName", boardTypeName)
@@ -59,7 +65,7 @@ abstract class AbstractExperiment {
 
   def init()
 
-  def runExperiment(_twa: TwoWayActors)
+  def runExperiment()
 
   private val values: HashMap[Int, HashMap[String, Int]] = new HashMap[Int, HashMap[String, Int]]
 
@@ -151,5 +157,6 @@ abstract class AbstractExperiment {
     ImageIO.write(bi, "PNG", new File(this.getClass.getName + ".png"))
   }
 
-
+  var indice = 0
+  def interpetResult(i : Int,c: String)
 }

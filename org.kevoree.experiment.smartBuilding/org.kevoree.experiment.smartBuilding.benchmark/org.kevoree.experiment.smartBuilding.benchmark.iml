@@ -19,7 +19,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/target/maven-archiver" />
       <excludeFolder url="file://$MODULE_DIR$/target/surefire" />
       <excludeFolder url="file://$MODULE_DIR$/target/test-classes" />
     </content>
@@ -30,7 +29,7 @@
     <orderEntry type="library" name="Maven: org.kevoree:org.kevoree.framework:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree:org.kevoree.api:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree:org.kevoree.model:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.kevoree.extra:org.kevoree.extra.emf.library:2.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.kevoree.extra:org.kevoree.extra.emf.library:2.7.0" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.9.0-1" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree:org.kevoree.adaptation.model:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:4.2.0" level="project" />
@@ -39,8 +38,24 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree.tools:org.kevoree.tools.marShellTransform:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree.tools:org.kevoree.tools.marShell:1.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.kevoree.library.arduino:org.kevoree.library.arduino.components:1.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.kevoree.tools:org.kevoree.tools.aether.framework:1.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.aether:aether-api:1.12" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.aether:aether-spi:1.12" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.aether:aether-util:1.12" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.aether:aether-impl:1.12" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.aether:aether-connector-file:1.12" level="project" />
+    <orderEntry type="library" name="Maven: org.sonatype.aether:aether-connector-asynchttpclient:1.12" level="project" />
+    <orderEntry type="library" name="Maven: com.ning:async-http-client:1.6.3" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.netty:netty:3.2.4.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-aether-provider:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-model:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-utils:2.0.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-model-builder:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-interpolation:1.14" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.plexus:plexus-component-annotations:1.5.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-repository-metadata:3.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree.tools:org.kevoree.tools.annotation.api:1.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.kevoree.library.arduino:org.kevoree.library.arduino.components:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree.library.javase:org.kevoree.library.javase.grapher:1.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.kevoree.extra:org.kevoree.extra.chart2d:3.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.xmlgraphics:xmlgraphics-commons:1.4" level="project" />

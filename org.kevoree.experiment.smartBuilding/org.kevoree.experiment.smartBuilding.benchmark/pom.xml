@@ -27,6 +27,13 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.kevoree.library.arduino</groupId>
+            <artifactId>org.kevoree.library.arduino.components</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
+        <dependency>
             <artifactId>org.kevoree.library.javase.grapher</artifactId>
             <groupId>org.kevoree.library.javase</groupId>
             <version>${project.version}</version>

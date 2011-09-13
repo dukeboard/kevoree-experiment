@@ -1,0 +1,34 @@
+# Copyright 2006 by Sean Luke and George Mason University
+# Licensed under the Academic Free License version 3.0
+# See the file "LICENSE" for more information
+
+parent.0 = nsga2.params
+pop.subpop.0.size = 100
+generations = 100
+
+# Folder to store the models of the population
+pop.subpop.0.species.ind.models-folder = duke.irisa.fr-generated/models
+
+pop.subpop.0.species		= org.kevoree.library.reasoner.ecj.KevoreeModelSpeciesForMutation
+pop.subpop.0.species.ind	= org.kevoree.experiment.smartForest.experiment.SmartForestIndividual
+pop.subpop.0.species.mutation-prob	= 1.0
+eval.problem            = org.kevoree.experiment.smartForest.experiment.SmartForestFitnessEvaluator
+pop.subpop.0.species.fitness.num-objectives = 3
+pop.subpop.0.species.fitness.maximize = false
+
+
+# Use our own custom mutation class
+pop.subpop.0.species.pipe			= org.kevoree.library.reasoner.ecj.KevoreeMutationPipeline
+
+# Use for basic GA
+pop.subpop.0.species.pipe.source.0		= ec.select.TournamentSelection
+select.tournament.size		= 3
+
+# Use a statistics object which dumps the front
+stat =                                          ec.multiobjective.MultiObjectiveStatistics
+stat.file = classicStat.stat
+stat.front = front.stat
+
+stat.num-children = 1
+stat.child.0 = org.kevoree.library.reasoner.ecj.CompleteStatisticsForMultiDimensions
+stat.child.0.file = completeStat.stat

@@ -6,6 +6,7 @@ import org.kevoree.tools.marShell.ast.Script
 import org.kevoree.tools.marShellTransform.{AdaptationModelWrapper, KevScriptWrapper}
 import util.Random
 import org.kevoree.framework.KevoreeXmiHelper
+import org.kevoree.extra.osgi.rxtx.KevoreeSharedCom
 
 /**
  * User: ffouquet
@@ -17,6 +18,8 @@ class Experiment5 extends AbstractExperiment {
 
   val random = new Random
   var knodeName = "kbenchmark"
+  boardPortName = "/dev/tty.usbserial-A400g2zz"
+  boardTypeName = "atmega328"
 
 
   //STEP 0 : Init Base model
@@ -29,32 +32,31 @@ class Experiment5 extends AbstractExperiment {
   val model4Path = this.getClass.getClassLoader.getResource("baseKBenchBig24.kev").getPath
   var model4: ContainerRoot = KevoreeXmiHelper.load(model4Path)
 
-
   val models = List(model, model2, model3, model4)
   var previousModel: ContainerRoot = null
 
   override def init() {
     super.initNode(knodeName, model)
     previousModel = model
+
   }
 
-  var twa: TwoWayActors = null
 
-  def runExperiment(_twa: TwoWayActors) {
-    twa = _twa;
+  def runExperiment() {
     for (i <- 0 until 100) {
       doPhase(i)
     }
   }
 
   def doPhase(i: Int) {
+    indice = i
     var newModel = models(random.nextInt(models.size))
     while (newModel == previousModel) {
       newModel = models(random.nextInt(models.size))
     }
     doStep(previousModel, newModel, i);
     previousModel = newModel
-    Thread.sleep(100)
+    Thread.sleep(200)
   }
 
   def doStep(modelA: ContainerRoot, modelB: ContainerRoot, i: Int) {
@@ -64,28 +66,37 @@ class Experiment5 extends AbstractExperiment {
     //println("ReconfSTEP=>" + resultScript)
     val randomToken = random.nextInt(9)
     println(resultScript)
-    (twa.sendAndWait(("$" + randomToken) + resultScript, ("ack" + randomToken), 2000))
-    interpetResult(i, twa.recString)
-    twa.recString = ""
+
+    KevoreeSharedCom.sendSynch(boardPortName, ("$" + randomToken) + resultScript, ("ack" + randomToken), 2000)
+
+    addToRaw(i, "ssize", resultScript.size)
+    SmartSensorsGUI.putSSIZEValue(i, resultScript.size)
+
+
   }
 
   def interpetResult(i: Int, s: String) {
-    s.split('\n').foreach {
-      line =>
-        println(line)
-        if (line.startsWith("mem")) {
-          SmartSensorsGUI.putMemValue(i, Integer.parseInt(line.substring(3).trim()))
-          addToRaw(i, "SDRAM", Integer.parseInt(line.substring(3).trim()))
-        }
-        if (line.startsWith("emem")) {
-          SmartSensorsGUI.putEMemValue(i, Integer.parseInt(line.substring(4).trim()))
-          addToRaw(i, "EEPROM", Integer.parseInt(line.substring(4).trim()))
-        }
 
-        if (line.startsWith("ms")) {
-          SmartSensorsGUI.putRTimeValue(i, Integer.parseInt(line.substring(2).trim()))
-          addToRaw(i, "DOWNTIME", Integer.parseInt(line.substring(2).trim()))
-        }
+    try {
+      s.split('\n').foreach {
+        line =>
+          println(line)
+          if (line.startsWith("mem")) {
+            SmartSensorsGUI.putMemValue(i, Integer.parseInt(line.substring(3).trim()))
+            addToRaw(i, "SDRAM", Integer.parseInt(line.substring(3).trim()))
+          }
+          if (line.startsWith("emem")) {
+            SmartSensorsGUI.putEMemValue(i, Integer.parseInt(line.substring(4).trim()))
+            addToRaw(i, "EEPROM", Integer.parseInt(line.substring(4).trim()))
+          }
+          if (line.startsWith("ms")) {
+            SmartSensorsGUI.putRTimeValue(i, Integer.parseInt(line.substring(2).trim()))
+            addToRaw(i, "DOWNTIME", Integer.parseInt(line.substring(2).trim()))
+          }
+      }
+
+    } catch {
+      case _@e => e.printStackTrace()
     }
   }
 

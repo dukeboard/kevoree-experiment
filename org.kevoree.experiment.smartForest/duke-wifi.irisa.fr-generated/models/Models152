@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kevoree:ContainerRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kevoree="http://kevoree/1.0">
+  <nodes name="node0" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor28723" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="10"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node1" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor4563" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="HumiditySensor49445" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node2" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor3256" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node3" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node4" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor23148" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+    <components name="TempSensor49446" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node5" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node6" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node7" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node8" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node9" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node10" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node11" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor4572" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node12" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node13" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node14" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor44604" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node15" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor17556" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node16" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node17" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor44505" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="SmokeSensor51245" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node18" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node19" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node20" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor26061" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node21" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor19565" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node22" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor6687" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="SmokeSensor28725" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node23" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor2087" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+    <components name="TempSensor43685" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node24" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node25" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor49885" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node26" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor12680" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node27" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node28" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node29" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node30" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor24406" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node31" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node32" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node33" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor39124" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node34" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor39428" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node35" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor41487" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node36" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor16296" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node37" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node38" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor2856" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node39" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node40" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node41" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor42205" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node42" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node43" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node44" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node45" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node46" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor19568" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node47" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor41483" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node48" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node49" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor12677" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node50" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor23154" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node51" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor6686" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="10"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node52" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node53" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor11440" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node54" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor16294" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node55" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node56" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor19569" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node57" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node58" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node59" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor23150" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node60" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node61" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node62" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor4569" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node63" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor4561" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="HumiditySensor12395" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node64" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor16222" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node65" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor7539" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node66" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node67" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor49889" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node68" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node69" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor39127" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node70" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor9780" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="SmokeSensor39120" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+    <components name="HumiditySensor40969" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node71" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node72" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node73" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node74" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor44504" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+    <components name="TempSensor51247" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node75" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node76" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor12675" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="10"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="SmokeSensor28726" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node77" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor38611" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node78" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor23155" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node79" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node80" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node81" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node82" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node83" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor48726" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node84" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node85" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor4568" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node86" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor13924" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node87" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor23156" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="10"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node88" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor49449" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node89" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node90" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node91" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node92" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor42308" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node93" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor26063" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="SmokeSensor27651" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node94" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor3912" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="HumiditySensor19570" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node95" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor22059" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node96" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node97" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node98" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor34040" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node99" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor42204" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node100" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node101" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor28724" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node102" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node103" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node104" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor8777" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="10"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node105" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node106" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node107" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor34043" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node108" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor3909" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+    <components name="TempSensor8780" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node109" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor9771" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node110" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor22056" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node111" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor3251" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node112" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node113" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node114" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor24409" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node115" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node116" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor9777" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+    <components name="TempSensor38612" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node117" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node118" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor34046" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node119" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor49886" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node120" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node121" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor44602" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node122" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor24408" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="SmokeSensor38613" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node123" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node124" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node125" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor26055" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="HumiditySensor51246" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node126" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node127" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node128" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor49448" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node129" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor27652" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node130" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node131" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor11439" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+    <components name="TempSensor24412" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node132" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node133" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node134" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node135" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node136" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor3914" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node137" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node138" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor23158" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node139" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node140" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor19567" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node141" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor19566" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node142" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor3910" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node143" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node144" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node145" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node146" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node147" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node148" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor41489" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="10"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node149" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor43684" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node150" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor40971" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node151" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor1931" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node152" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node153" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node154" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor2084" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node155" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node156" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor49888" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+    <components name="HumiditySensor49890" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node157" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor4565" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+    <components name="TempSensor16223" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node158" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node159" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor1930" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="SmokeSensor7534" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+    <components name="HumiditySensor49887" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node160" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor43686" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node161" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node162" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor9775" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node163" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node164" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor41488" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node165" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node166" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor13926" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node167" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node168" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor44503" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node169" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor7536" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+    <components name="TempSensor16295" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node170" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node171" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor39123" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node172" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor44603" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node173" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor11438" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node174" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor44600" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node175" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor42309" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="10"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node176" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node177" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node178" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor7538" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+    <components name="SmokeSensor23157" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node179" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node180" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor17555" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node181" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node182" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node183" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node184" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node185" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor9779" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+    <components name="TempSensor39132" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="SmokeSensor43687" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node186" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor38614" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node187" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node188" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node189" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor34044" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node190" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor41485" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node191" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor43683" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node192" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node193" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node194" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor47714" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="50"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node195" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node196" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node197" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor34047" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node198" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor29524" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node199" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node200" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node201" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node202" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor7543" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="HumiditySensor49447" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node203" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor16292" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node204" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node205" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor8770" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="40"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+    <components name="SmokeSensor26058" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node206" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor17561" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+    <components name="HumiditySensor39126" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node207" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor39128" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node208" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor7542" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="1000"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node209" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node210" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor48725" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node211" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor39129" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+    <components name="SmokeSensor40972" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node212" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node213" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node214" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node215" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor41480" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="500"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node216" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node217" typeDefinition="//@typeDefinitions.8">
+    <components name="TempSensor2860" typeDefinition="//@typeDefinitions.12">
+      <dictionary>
+        <values attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="250"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.12/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node218" typeDefinition="//@typeDefinitions.8">
+    <components name="SmokeSensor26057" typeDefinition="//@typeDefinitions.14">
+      <dictionary>
+        <values attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.14/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node219" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node220" typeDefinition="//@typeDefinitions.8"/>
+  <nodes name="node221" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor39130" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="20"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node222" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor41486" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node223" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor3254" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="100"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <nodes name="node224" typeDefinition="//@typeDefinitions.8">
+    <components name="HumiditySensor34041" typeDefinition="//@typeDefinitions.7">
+      <dictionary>
+        <values attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="30"/>
+      </dictionary>
+      <required portTypeRef="//@typeDefinitions.7/@required.0"/>
+    </components>
+  </nodes>
+  <typeDefinitions xsi:type="kevoree:ChannelType" name="LBroadC" deployUnits="//@deployUnits.1 //@deployUnits.0" factoryBean="org.kevoree.experiment.smartbuilding.LBroadCFactory" bean="org.kevoree.experiment.smartbuilding.LBroadC" startMethod="lifeCycle" stopMethod="lifeCycle"/>
+  <typeDefinitions xsi:type="kevoree:NodeType" name="JavaSENode"/>
+  <typeDefinitions xsi:type="kevoree:ChannelType" name="IPMultiCast" deployUnits="//@deployUnits.2 //@deployUnits.0" factoryBean="org.kevoree.experiment.smartbuilding.IPMultiCastFactory" bean="org.kevoree.experiment.smartbuilding.IPMultiCast" startMethod="lifeCycle" stopMethod="lifeCycle"/>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="EmergencyLog" deployUnits="//@deployUnits.2 //@deployUnits.1 //@deployUnits.0" factoryBean="org.kevoree.experiment.smartbuilding.EmergencyLogFactory" bean="org.kevoree.experiment.smartbuilding.EmergencyLog" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <required name="forward" ref="//@typeDefinitions.4" optional="false" noDependency="false"/>
+    <provided name="sdata" ref="//@typeDefinitions.4">
+      <mappings beanMethodName="trigger" serviceMethodName="process"/>
+    </provided>
+    <provided name="synch" ref="//@typeDefinitions.4">
+      <mappings beanMethodName="trigger" serviceMethodName="process"/>
+    </provided>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:MessagePortType" name="org.kevoree.framework.MessagePort"/>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="FloorAlarm" deployUnits="//@deployUnits.0" factoryBean="org.kevoree.experiment.smartbuilding.FloorAlarmFactory" bean="org.kevoree.experiment.smartbuilding.FloorAlarm" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <required name="forward" ref="//@typeDefinitions.4" optional="false" noDependency="false"/>
+    <provided name="sdata" ref="//@typeDefinitions.4">
+      <mappings beanMethodName="trigger" serviceMethodName="process"/>
+    </provided>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="GlobalAlarm" deployUnits="//@deployUnits.0" factoryBean="org.kevoree.experiment.smartbuilding.GlobalAlarmFactory" bean="org.kevoree.experiment.smartbuilding.GlobalAlarm" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <provided name="sdata" ref="//@typeDefinitions.4">
+      <mappings beanMethodName="trigger" serviceMethodName="process"/>
+    </provided>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="HumiditySensor" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.HumiditySensorFactory" bean="org.kevoree.experiment.smartbuilding.HumiditySensor" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <dictionaryType>
+      <attributes name="period" optional="true"/>
+      <defaultValues attribute="//@typeDefinitions.7/@dictionaryType/@attributes.0" value="10"/>
+    </dictionaryType>
+    <required name="value" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:NodeType" name="ArduinoNode"/>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="LightSensor" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.LightSensorFactory" bean="org.kevoree.experiment.smartbuilding.LightSensor" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <dictionaryType>
+      <attributes name="period" optional="true"/>
+      <defaultValues attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0" value="10"/>
+    </dictionaryType>
+    <required name="value" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ChannelType" name="GossipRF" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.GossipRFFactory" bean="org.kevoree.experiment.smartbuilding.GossipRF" startMethod="lifeCycle" stopMethod="lifeCycle"/>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="Light" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.LightFactory" bean="org.kevoree.experiment.smartbuilding.Light" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <provided name="on" ref="//@typeDefinitions.4">
+      <mappings beanMethodName="trigger" serviceMethodName="process"/>
+    </provided>
+    <provided name="off" ref="//@typeDefinitions.4">
+      <mappings beanMethodName="trigger" serviceMethodName="process"/>
+    </provided>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="TempSensor" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.TempSensorFactory" bean="org.kevoree.experiment.smartbuilding.TempSensor" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <dictionaryType>
+      <attributes name="period" optional="true"/>
+      <defaultValues attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0" value="10"/>
+    </dictionaryType>
+    <required name="value" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ChannelType" name="SerialCom" deployUnits="//@deployUnits.2 //@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.SerialComFactory" bean="org.kevoree.experiment.smartbuilding.SerialCom" startMethod="lifeCycle" stopMethod="lifeCycle"/>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="SmokeSensor" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.SmokeSensorFactory" bean="org.kevoree.experiment.smartbuilding.SmokeSensor" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <dictionaryType>
+      <attributes name="period" optional="true"/>
+      <defaultValues attribute="//@typeDefinitions.14/@dictionaryType/@attributes.0" value="10"/>
+    </dictionaryType>
+    <required name="value" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="Switch" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.SwitchFactory" bean="org.kevoree.experiment.smartbuilding.Switch" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <required name="click" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+    <required name="release" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="MotionSensor" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.MotionSensorFactory" bean="org.kevoree.experiment.smartbuilding.MotionSensor" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <required name="out" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="LuxOrch" deployUnits="//@deployUnits.1" factoryBean="org.kevoree.experiment.smartbuilding.LuxOrchFactory" bean="org.kevoree.experiment.smartbuilding.LuxOrch" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <required name="on" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+    <required name="off" ref="//@typeDefinitions.4" optional="false" noDependency="true"/>
+    <provided name="sdata" ref="//@typeDefinitions.4">
+      <mappings beanMethodName="trigger" serviceMethodName="process"/>
+    </provided>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:ComponentType" name="BuildingTempMap" deployUnits="//@deployUnits.2" factoryBean="org.kevoree.experiment.smartbuilding.BuildingTempMapFactory" bean="org.kevoree.experiment.smartbuilding.BuildingTempMap" startMethod="lifeCycle" stopMethod="lifeCycle">
+    <provided name="datas" ref="//@typeDefinitions.4">
+      <mappings beanMethodName="trigger" serviceMethodName="process"/>
+    </provided>
+  </typeDefinitions>
+  <typeDefinitions xsi:type="kevoree:NodeType" name="AndroidNode"/>
+  <repositories url="http://maven.kevoree.org/snapshots"/>
+  <repositories url="http://scala-tools.org/repo-releases"/>
+  <repositories url="http://maven.kevoree.org/release"/>
+  <repositories url="http://repo1.maven.org/maven2"/>
+  <libraries name="SmartBuilding" subTypes="//@typeDefinitions.0 //@typeDefinitions.2 //@typeDefinitions.3 //@typeDefinitions.5 //@typeDefinitions.6 //@typeDefinitions.7 //@typeDefinitions.9 //@typeDefinitions.10 //@typeDefinitions.11 //@typeDefinitions.12 //@typeDefinitions.13 //@typeDefinitions.14 //@typeDefinitions.15 //@typeDefinitions.16 //@typeDefinitions.17 //@typeDefinitions.18"/>
+  <deployUnits groupName="org.kevoree.experiment.smartBuilding" unitName="org.kevoree.experiment.smartBuilding.javase" version="1.2.0-SNAPSHOT" hashcode="201106161317183" targetNodeType="//@typeDefinitions.1"/>
+  <deployUnits groupName="org.kevoree.experiment.smartBuilding" unitName="org.kevoree.experiment.smartBuilding.arduino" version="1.2.0-SNAPSHOT" hashcode="201107261819657" targetNodeType="//@typeDefinitions.8"/>
+  <deployUnits groupName="org.kevoree.experiment.smartBuilding" unitName="org.kevoree.experiment.smartBuilding.android" version="1.2.0-SNAPSHOT" hashcode="201106161317748" targetNodeType="//@typeDefinitions.19"/>
+</kevoree:ContainerRoot>

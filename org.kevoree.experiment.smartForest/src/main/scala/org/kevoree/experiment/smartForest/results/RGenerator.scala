@@ -19,7 +19,7 @@ object RGenerator {
       val stream: InputStream = new FileInputStream(new File(pathComplete))
       if (stream == null) System.out.println("Perdu")
       val result = StatisticsParser.parseCompleteStatistics(stream)
-
+      println(result)
       var axe1res: List[String] = List()
       var axe2res: List[String] = List()
       var axe3res: List[String] = List()

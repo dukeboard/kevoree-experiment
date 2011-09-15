@@ -17,687 +17,3487 @@ Generation: 2
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [87.0 0.0 99.0 min] R=0 S=Infinity
+Fitness: [88.0 0.0 99.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models3
 
 Generation: 3
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [92.0 0.0 98.0 min] R=0 S=Infinity
+Fitness: [84.0 0.0 99.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models4
 
 Generation: 4
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [86.0 0.0 98.0 min] R=0 S=Infinity
+Fitness: [80.0 1.0 99.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models5
 
 Generation: 5
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [84.0 1.0 98.0 min] R=0 S=Infinity
+Fitness: [78.0 1.0 98.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models6
 
 Generation: 6
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [85.0 1.0 97.0 min] R=0 S=Infinity
+Fitness: [78.0 1.0 98.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models7
 
 Generation: 7
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [85.0 1.0 97.0 min] R=0 S=Infinity
+Fitness: [75.0 0.0 98.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models8
 
 Generation: 8
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [76.0 1.0 97.0 min] R=0 S=Infinity
+Fitness: [71.0 0.0 98.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models9
 
 Generation: 9
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [76.0 1.0 97.0 min] R=0 S=Infinity
+Fitness: [73.0 1.0 97.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models10
 
 Generation: 10
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [74.0 1.0 97.0 min] R=0 S=Infinity
+Fitness: [71.0 1.0 97.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models11
 
 Generation: 11
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [71.0 2.0 97.0 min] R=0 S=Infinity
+Fitness: [71.0 1.0 97.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models12
 
 Generation: 12
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [71.0 2.0 97.0 min] R=0 S=Infinity
+Fitness: [64.0 1.0 97.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models13
 
 Generation: 13
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [65.0 1.0 97.0 min] R=0 S=Infinity
+Fitness: [62.0 1.0 97.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models14
 
 Generation: 14
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [65.0 2.0 96.0 min] R=0 S=Infinity
+Fitness: [62.0 1.0 97.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models15
 
 Generation: 15
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [66.0 1.0 96.0 min] R=0 S=Infinity
+Fitness: [60.0 2.0 96.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models16
 
 Generation: 16
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [65.0 2.0 96.0 min] R=0 S=Infinity
+Fitness: [59.0 1.0 96.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models17
 
 Generation: 17
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [63.0 2.0 96.0 min] R=0 S=Infinity
+Fitness: [59.0 1.0 96.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models18
 
 Generation: 18
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [66.0 1.0 96.0 min] R=0 S=Infinity
+Fitness: [59.0 1.0 96.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models19
 
 Generation: 19
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [66.0 1.0 96.0 min] R=0 S=Infinity
+Fitness: [59.0 1.0 96.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models20
 
 Generation: 20
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [55.0 3.0 96.0 min] R=0 S=Infinity
+Fitness: [56.0 2.0 96.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models21
 
 Generation: 21
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [55.0 2.0 96.0 min] R=0 S=Infinity
+Fitness: [57.0 1.0 96.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models22
 
 Generation: 22
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [55.0 3.0 95.0 min] R=0 S=Infinity
+Fitness: [52.0 3.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models23
 
 Generation: 23
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [55.0 3.0 95.0 min] R=0 S=Infinity
+Fitness: [54.0 2.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models24
 
 Generation: 24
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [54.0 3.0 95.0 min] R=0 S=Infinity
+Fitness: [53.0 2.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models25
 
 Generation: 25
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [48.0 3.0 95.0 min] R=0 S=Infinity
+Fitness: [52.0 3.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models26
 
 Generation: 26
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [48.0 3.0 95.0 min] R=0 S=Infinity
+Fitness: [52.0 3.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models27
 
 Generation: 27
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [56.0 2.0 95.0 min] R=0 S=Infinity
+Fitness: [52.0 3.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models28
 
 Generation: 28
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [44.0 4.0 94.0 min] R=0 S=Infinity
+Fitness: [53.0 2.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models29
 
 Generation: 29
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [43.0 4.0 94.0 min] R=0 S=Infinity
+Fitness: [49.0 4.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models30
 
 Generation: 30
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [40.0 5.0 94.0 min] R=0 S=Infinity
+Fitness: [53.0 2.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models31
 
 Generation: 31
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [40.0 6.0 93.0 min] R=0 S=Infinity
+Fitness: [49.0 3.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models32
 
 Generation: 32
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [41.0 4.0 93.0 min] R=0 S=Infinity
+Fitness: [47.0 4.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models33
 
 Generation: 33
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [41.0 4.0 93.0 min] R=0 S=Infinity
+Fitness: [50.0 2.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models34
 
 Generation: 34
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [37.0 7.0 92.0 min] R=0 S=Infinity
+Fitness: [40.0 4.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models35
 
 Generation: 35
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [37.0 6.0 92.0 min] R=0 S=Infinity
+Fitness: [45.0 3.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models36
 
 Generation: 36
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [36.0 6.0 92.0 min] R=0 S=Infinity
+Fitness: [47.0 2.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models37
 
 Generation: 37
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [36.0 6.0 92.0 min] R=0 S=Infinity
+Fitness: [47.0 2.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models38
 
 Generation: 38
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [40.0 5.0 92.0 min] R=0 S=Infinity
+Fitness: [38.0 4.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models39
 
 Generation: 39
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [41.0 5.0 91.0 min] R=0 S=Infinity
+Fitness: [37.0 4.0 95.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models40
 
 Generation: 40
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [38.0 5.0 91.0 min] R=0 S=Infinity
+Fitness: [37.0 5.0 94.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models41
 
 Generation: 41
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [38.0 5.0 91.0 min] R=0 S=Infinity
+Fitness: [36.0 4.0 94.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models42
 
 Generation: 42
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [36.0 6.0 91.0 min] R=0 S=Infinity
+Fitness: [35.0 4.0 94.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models43
 
 Generation: 43
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [36.0 5.0 91.0 min] R=0 S=Infinity
+Fitness: [35.0 4.0 94.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models44
 
 Generation: 44
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [35.0 5.0 90.0 min] R=0 S=Infinity
+Fitness: [33.0 5.0 94.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models45
 
 Generation: 45
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [35.0 5.0 90.0 min] R=0 S=Infinity
+Fitness: [33.0 6.0 93.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models46
 
 Generation: 46
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [33.0 5.0 90.0 min] R=0 S=Infinity
+Fitness: [33.0 4.0 93.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models47
 
 Generation: 47
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [33.0 5.0 90.0 min] R=0 S=Infinity
+Fitness: [31.0 6.0 93.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models48
 
 Generation: 48
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [33.0 5.0 90.0 min] R=0 S=Infinity
+Fitness: [30.0 6.0 93.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models49
 
 Generation: 49
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [33.0 5.0 90.0 min] R=0 S=Infinity
+Fitness: [32.0 5.0 93.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models50
 
 Generation: 50
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [32.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [32.0 5.0 93.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models51
 
 Generation: 51
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [31.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [30.0 6.0 93.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models52
 
 Generation: 52
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [31.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [28.0 7.0 93.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models53
 
 Generation: 53
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [31.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [29.0 7.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models54
 
 Generation: 54
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [30.0 7.0 89.0 min] R=0 S=Infinity
+Fitness: [29.0 7.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models55
 
 Generation: 55
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [30.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [27.0 7.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models56
 
 Generation: 56
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [30.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [28.0 6.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models57
 
 Generation: 57
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [30.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [27.0 7.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models58
 
 Generation: 58
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [29.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [27.0 7.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models59
 
 Generation: 59
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [29.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [27.0 7.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models60
 
 Generation: 60
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [27.0 7.0 89.0 min] R=0 S=Infinity
+Fitness: [28.0 6.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models61
 
 Generation: 61
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [25.0 8.0 89.0 min] R=0 S=Infinity
+Fitness: [28.0 6.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models62
 
 Generation: 62
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [29.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [28.0 6.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models63
 
 Generation: 63
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [29.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [29.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models64
 
 Generation: 64
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [29.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [29.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models65
 
 Generation: 65
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [28.0 6.0 89.0 min] R=0 S=Infinity
+Fitness: [29.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models66
 
 Generation: 66
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [23.0 8.0 88.0 min] R=0 S=Infinity
+Fitness: [25.0 8.0 92.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models67
 
 Generation: 67
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [22.0 10.0 88.0 min] R=0 S=Infinity
+Fitness: [29.0 6.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models68
 
 Generation: 68
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [23.0 8.0 88.0 min] R=0 S=Infinity
+Fitness: [28.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models69
 
 Generation: 69
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [23.0 8.0 88.0 min] R=0 S=Infinity
+Fitness: [26.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models70
 
 Generation: 70
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [21.0 10.0 88.0 min] R=0 S=Infinity
+Fitness: [26.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models71
 
 Generation: 71
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [21.0 10.0 88.0 min] R=0 S=Infinity
+Fitness: [27.0 6.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models72
 
 Generation: 72
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [27.0 6.0 88.0 min] R=0 S=Infinity
+Fitness: [27.0 6.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models73
 
 Generation: 73
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [27.0 6.0 88.0 min] R=0 S=Infinity
+Fitness: [26.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models74
 
 Generation: 74
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [27.0 6.0 88.0 min] R=0 S=Infinity
+Fitness: [24.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models75
 
 Generation: 75
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [21.0 9.0 87.0 min] R=0 S=Infinity
+Fitness: [24.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models76
 
 Generation: 76
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [20.0 9.0 87.0 min] R=0 S=Infinity
+Fitness: [26.0 6.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models77
 
 Generation: 77
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [20.0 9.0 87.0 min] R=0 S=Infinity
+Fitness: [26.0 6.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models78
 
 Generation: 78
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [21.0 8.0 87.0 min] R=0 S=Infinity
+Fitness: [26.0 6.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models79
 
 Generation: 79
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [21.0 8.0 87.0 min] R=0 S=Infinity
+Fitness: [23.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models80
 
 Generation: 80
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [19.0 11.0 87.0 min] R=0 S=Infinity
+Fitness: [23.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models81
 
 Generation: 81
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [22.0 9.0 86.0 min] R=0 S=Infinity
+Fitness: [23.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models82
 
 Generation: 82
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [19.0 11.0 86.0 min] R=0 S=Infinity
+Fitness: [24.0 6.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models83
 
 Generation: 83
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [19.0 11.0 86.0 min] R=0 S=Infinity
+Fitness: [24.0 6.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models84
 
 Generation: 84
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [18.0 11.0 86.0 min] R=0 S=Infinity
+Fitness: [23.0 8.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models85
 
 Generation: 85
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [20.0 9.0 86.0 min] R=0 S=Infinity
+Fitness: [23.0 8.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models86
 
 Generation: 86
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [19.0 10.0 85.0 min] R=0 S=Infinity
+Fitness: [23.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models87
 
 Generation: 87
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [17.0 11.0 85.0 min] R=0 S=Infinity
+Fitness: [52.0 0.0 98.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models88
 
 Generation: 88
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [18.0 10.0 85.0 min] R=0 S=Infinity
+Fitness: [23.0 8.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models89
 
 Generation: 89
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [17.0 11.0 85.0 min] R=0 S=Infinity
+Fitness: [23.0 8.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models90
 
 Generation: 90
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [18.0 10.0 85.0 min] R=0 S=Infinity
+Fitness: [23.0 8.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models91
 
 Generation: 91
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [17.0 11.0 85.0 min] R=0 S=Infinity
+Fitness: [24.0 7.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models92
 
 Generation: 92
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [18.0 10.0 85.0 min] R=0 S=Infinity
+Fitness: [22.0 7.0 91.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models93
 
 Generation: 93
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [18.0 10.0 85.0 min] R=0 S=Infinity
+Fitness: [22.0 8.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models94
 
 Generation: 94
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=Infinity
+Fitness: [21.0 8.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models95
 
 Generation: 95
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [17.0 10.0 85.0 min] R=0 S=Infinity
+Fitness: [23.0 7.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models96
 
 Generation: 96
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [50.0 0.0 97.0 min] R=0 S=Infinity
+Fitness: [23.0 7.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models97
 
 Generation: 97
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=Infinity
+Fitness: [22.0 7.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models98
 
 Generation: 98
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [48.0 0.0 98.0 min] R=0 S=Infinity
+Fitness: [21.0 8.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models99
 
 Generation: 99
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [48.0 0.0 98.0 min] R=0 S=Infinity
+Fitness: [20.0 7.0 90.0 min] R=0 S=Infinity
 duke.irisa.fr-generated/models/Models100
+
+Generation: 100
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [20.0 7.0 90.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models101
+
+Generation: 101
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [20.0 7.0 90.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models102
+
+Generation: 102
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models103
+
+Generation: 103
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models104
+
+Generation: 104
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models105
+
+Generation: 105
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [55.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models106
+
+Generation: 106
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [20.0 7.0 90.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models107
+
+Generation: 107
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models108
+
+Generation: 108
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models109
+
+Generation: 109
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [54.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models110
+
+Generation: 110
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models111
+
+Generation: 111
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models112
+
+Generation: 112
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [19.0 9.0 89.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models113
+
+Generation: 113
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [54.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models114
+
+Generation: 114
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [18.0 9.0 89.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models115
+
+Generation: 115
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [18.0 9.0 89.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models116
+
+Generation: 116
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models117
+
+Generation: 117
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [54.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models118
+
+Generation: 118
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [17.0 10.0 89.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models119
+
+Generation: 119
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models120
+
+Generation: 120
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [18.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models121
+
+Generation: 121
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [17.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models122
+
+Generation: 122
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [17.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models123
+
+Generation: 123
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [17.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models124
+
+Generation: 124
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [17.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models125
+
+Generation: 125
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [15.0 11.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models126
+
+Generation: 126
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [17.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models127
+
+Generation: 127
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [16.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models128
+
+Generation: 128
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [18.0 9.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models129
+
+Generation: 129
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [15.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models130
+
+Generation: 130
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [16.0 9.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models131
+
+Generation: 131
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [50.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models132
+
+Generation: 132
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [16.0 9.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models133
+
+Generation: 133
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [15.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models134
+
+Generation: 134
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [50.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models135
+
+Generation: 135
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [14.0 9.0 89.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models136
+
+Generation: 136
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [15.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models137
+
+Generation: 137
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [14.0 9.0 89.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models138
+
+Generation: 138
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [50.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models139
+
+Generation: 139
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [50.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models140
+
+Generation: 140
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [50.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models141
+
+Generation: 141
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [16.0 9.0 87.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models142
+
+Generation: 142
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [15.0 11.0 87.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models143
+
+Generation: 143
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [49.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models144
+
+Generation: 144
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [49.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models145
+
+Generation: 145
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models146
+
+Generation: 146
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 10.0 88.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models147
+
+Generation: 147
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [52.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models148
+
+Generation: 148
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [14.0 11.0 86.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models149
+
+Generation: 149
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [47.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models150
+
+Generation: 150
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [14.0 11.0 86.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models151
+
+Generation: 151
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [14.0 11.0 86.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models152
+
+Generation: 152
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 11.0 86.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models153
+
+Generation: 153
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 10.0 87.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models154
+
+Generation: 154
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models155
+
+Generation: 155
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 10.0 87.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models156
+
+Generation: 156
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models157
+
+Generation: 157
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models158
+
+Generation: 158
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models159
+
+Generation: 159
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 10.0 87.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models160
+
+Generation: 160
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models161
+
+Generation: 161
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models162
+
+Generation: 162
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 11.0 86.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models163
+
+Generation: 163
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models164
+
+Generation: 164
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models165
+
+Generation: 165
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models166
+
+Generation: 166
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 10.0 86.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models167
+
+Generation: 167
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models168
+
+Generation: 168
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models169
+
+Generation: 169
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models170
+
+Generation: 170
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models171
+
+Generation: 171
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models172
+
+Generation: 172
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models173
+
+Generation: 173
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models174
+
+Generation: 174
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models175
+
+Generation: 175
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models176
+
+Generation: 176
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models177
+
+Generation: 177
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models178
+
+Generation: 178
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models179
+
+Generation: 179
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models180
+
+Generation: 180
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models181
+
+Generation: 181
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models182
+
+Generation: 182
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models183
+
+Generation: 183
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models184
+
+Generation: 184
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models185
+
+Generation: 185
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models186
+
+Generation: 186
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models187
+
+Generation: 187
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models188
+
+Generation: 188
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models189
+
+Generation: 189
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models190
+
+Generation: 190
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models191
+
+Generation: 191
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models192
+
+Generation: 192
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models193
+
+Generation: 193
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models194
+
+Generation: 194
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models195
+
+Generation: 195
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models196
+
+Generation: 196
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models197
+
+Generation: 197
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models198
+
+Generation: 198
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models199
+
+Generation: 199
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models200
+
+Generation: 200
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models201
+
+Generation: 201
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models202
+
+Generation: 202
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models203
+
+Generation: 203
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models204
+
+Generation: 204
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models205
+
+Generation: 205
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 12.0 83.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models206
+
+Generation: 206
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 12.0 83.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models207
+
+Generation: 207
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 12.0 83.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models208
+
+Generation: 208
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models209
+
+Generation: 209
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 12.0 83.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models210
+
+Generation: 210
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models211
+
+Generation: 211
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models212
+
+Generation: 212
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models213
+
+Generation: 213
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models214
+
+Generation: 214
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models215
+
+Generation: 215
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models216
+
+Generation: 216
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models217
+
+Generation: 217
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models218
+
+Generation: 218
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models219
+
+Generation: 219
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models220
+
+Generation: 220
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models221
+
+Generation: 221
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models222
+
+Generation: 222
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models223
+
+Generation: 223
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models224
+
+Generation: 224
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models225
+
+Generation: 225
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 12.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models226
+
+Generation: 226
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [13.0 12.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models227
+
+Generation: 227
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models228
+
+Generation: 228
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models229
+
+Generation: 229
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models230
+
+Generation: 230
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models231
+
+Generation: 231
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 13.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models232
+
+Generation: 232
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models233
+
+Generation: 233
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models234
+
+Generation: 234
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 13.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models235
+
+Generation: 235
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 12.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models236
+
+Generation: 236
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models237
+
+Generation: 237
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models238
+
+Generation: 238
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models239
+
+Generation: 239
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models240
+
+Generation: 240
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models241
+
+Generation: 241
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models242
+
+Generation: 242
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models243
+
+Generation: 243
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models244
+
+Generation: 244
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [51.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models245
+
+Generation: 245
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models246
+
+Generation: 246
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 12.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models247
+
+Generation: 247
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 12.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models248
+
+Generation: 248
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models249
+
+Generation: 249
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [10.0 12.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models250
+
+Generation: 250
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [10.0 12.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models251
+
+Generation: 251
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [10.0 12.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models252
+
+Generation: 252
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models253
+
+Generation: 253
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models254
+
+Generation: 254
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [10.0 12.0 83.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models255
+
+Generation: 255
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 12.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models256
+
+Generation: 256
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [10.0 11.0 85.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models257
+
+Generation: 257
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 12.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models258
+
+Generation: 258
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [12.0 12.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models259
+
+Generation: 259
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models260
+
+Generation: 260
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [10.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models261
+
+Generation: 261
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [10.0 11.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models262
+
+Generation: 262
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models263
+
+Generation: 263
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models264
+
+Generation: 264
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models265
+
+Generation: 265
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models266
+
+Generation: 266
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 12.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models267
+
+Generation: 267
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models268
+
+Generation: 268
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 12.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models269
+
+Generation: 269
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 12.0 84.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models270
+
+Generation: 270
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models271
+
+Generation: 271
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [46.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models272
+
+Generation: 272
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models273
+
+Generation: 273
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models274
+
+Generation: 274
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models275
+
+Generation: 275
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models276
+
+Generation: 276
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 13.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models277
+
+Generation: 277
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 13.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models278
+
+Generation: 278
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models279
+
+Generation: 279
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models280
+
+Generation: 280
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models281
+
+Generation: 281
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models282
+
+Generation: 282
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models283
+
+Generation: 283
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models284
+
+Generation: 284
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models285
+
+Generation: 285
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models286
+
+Generation: 286
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 13.0 83.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models287
+
+Generation: 287
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models288
+
+Generation: 288
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models289
+
+Generation: 289
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models290
+
+Generation: 290
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models291
+
+Generation: 291
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models292
+
+Generation: 292
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models293
+
+Generation: 293
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 82.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models294
+
+Generation: 294
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models295
+
+Generation: 295
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models296
+
+Generation: 296
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models297
+
+Generation: 297
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models298
+
+Generation: 298
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models299
+
+Generation: 299
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models300
+
+Generation: 300
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [45.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models301
+
+Generation: 301
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models302
+
+Generation: 302
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [11.0 13.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models303
+
+Generation: 303
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models304
+
+Generation: 304
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models305
+
+Generation: 305
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models306
+
+Generation: 306
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models307
+
+Generation: 307
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models308
+
+Generation: 308
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models309
+
+Generation: 309
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models310
+
+Generation: 310
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [9.0 14.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models311
+
+Generation: 311
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [10.0 15.0 80.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models312
+
+Generation: 312
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [8.0 15.0 81.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models313
+
+Generation: 313
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models314
+
+Generation: 314
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models315
+
+Generation: 315
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models316
+
+Generation: 316
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models317
+
+Generation: 317
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models318
+
+Generation: 318
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [44.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models319
+
+Generation: 319
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [8.0 14.0 80.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models320
+
+Generation: 320
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models321
+
+Generation: 321
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [8.0 15.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models322
+
+Generation: 322
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models323
+
+Generation: 323
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models324
+
+Generation: 324
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models325
+
+Generation: 325
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [8.0 15.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models326
+
+Generation: 326
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [8.0 15.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models327
+
+Generation: 327
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models328
+
+Generation: 328
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models329
+
+Generation: 329
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models330
+
+Generation: 330
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 16.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models331
+
+Generation: 331
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models332
+
+Generation: 332
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models333
+
+Generation: 333
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models334
+
+Generation: 334
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models335
+
+Generation: 335
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models336
+
+Generation: 336
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models337
+
+Generation: 337
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models338
+
+Generation: 338
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models339
+
+Generation: 339
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models340
+
+Generation: 340
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models341
+
+Generation: 341
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models342
+
+Generation: 342
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models343
+
+Generation: 343
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models344
+
+Generation: 344
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models345
+
+Generation: 345
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models346
+
+Generation: 346
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models347
+
+Generation: 347
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models348
+
+Generation: 348
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models349
+
+Generation: 349
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models350
+
+Generation: 350
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models351
+
+Generation: 351
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models352
+
+Generation: 352
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models353
+
+Generation: 353
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models354
+
+Generation: 354
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models355
+
+Generation: 355
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models356
+
+Generation: 356
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models357
+
+Generation: 357
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models358
+
+Generation: 358
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models359
+
+Generation: 359
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models360
+
+Generation: 360
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models361
+
+Generation: 361
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models362
+
+Generation: 362
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models363
+
+Generation: 363
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models364
+
+Generation: 364
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models365
+
+Generation: 365
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models366
+
+Generation: 366
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models367
+
+Generation: 367
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models368
+
+Generation: 368
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models369
+
+Generation: 369
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models370
+
+Generation: 370
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models371
+
+Generation: 371
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 15.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models372
+
+Generation: 372
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models373
+
+Generation: 373
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models374
+
+Generation: 374
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models375
+
+Generation: 375
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models376
+
+Generation: 376
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models377
+
+Generation: 377
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models378
+
+Generation: 378
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models379
+
+Generation: 379
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models380
+
+Generation: 380
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models381
+
+Generation: 381
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models382
+
+Generation: 382
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models383
+
+Generation: 383
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models384
+
+Generation: 384
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models385
+
+Generation: 385
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models386
+
+Generation: 386
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models387
+
+Generation: 387
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models388
+
+Generation: 388
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models389
+
+Generation: 389
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 98.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models390
+
+Generation: 390
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models391
+
+Generation: 391
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models392
+
+Generation: 392
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [43.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models393
+
+Generation: 393
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models394
+
+Generation: 394
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models395
+
+Generation: 395
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models396
+
+Generation: 396
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models397
+
+Generation: 397
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models398
+
+Generation: 398
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models399
+
+Generation: 399
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models400
+
+Generation: 400
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models401
+
+Generation: 401
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models402
+
+Generation: 402
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models403
+
+Generation: 403
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models404
+
+Generation: 404
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models405
+
+Generation: 405
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models406
+
+Generation: 406
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models407
+
+Generation: 407
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models408
+
+Generation: 408
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models409
+
+Generation: 409
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models410
+
+Generation: 410
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 78.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models411
+
+Generation: 411
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models412
+
+Generation: 412
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models413
+
+Generation: 413
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models414
+
+Generation: 414
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models415
+
+Generation: 415
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models416
+
+Generation: 416
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models417
+
+Generation: 417
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models418
+
+Generation: 418
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models419
+
+Generation: 419
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models420
+
+Generation: 420
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models421
+
+Generation: 421
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models422
+
+Generation: 422
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models423
+
+Generation: 423
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models424
+
+Generation: 424
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models425
+
+Generation: 425
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models426
+
+Generation: 426
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models427
+
+Generation: 427
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models428
+
+Generation: 428
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models429
+
+Generation: 429
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models430
+
+Generation: 430
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models431
+
+Generation: 431
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models432
+
+Generation: 432
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models433
+
+Generation: 433
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models434
+
+Generation: 434
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models435
+
+Generation: 435
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models436
+
+Generation: 436
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models437
+
+Generation: 437
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models438
+
+Generation: 438
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models439
+
+Generation: 439
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models440
+
+Generation: 440
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models441
+
+Generation: 441
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models442
+
+Generation: 442
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models443
+
+Generation: 443
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models444
+
+Generation: 444
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models445
+
+Generation: 445
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models446
+
+Generation: 446
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models447
+
+Generation: 447
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [7.0 13.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models448
+
+Generation: 448
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models449
+
+Generation: 449
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models450
+
+Generation: 450
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models451
+
+Generation: 451
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models452
+
+Generation: 452
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models453
+
+Generation: 453
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models454
+
+Generation: 454
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models455
+
+Generation: 455
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 77.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models456
+
+Generation: 456
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models457
+
+Generation: 457
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models458
+
+Generation: 458
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models459
+
+Generation: 459
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models460
+
+Generation: 460
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models461
+
+Generation: 461
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models462
+
+Generation: 462
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models463
+
+Generation: 463
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models464
+
+Generation: 464
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models465
+
+Generation: 465
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models466
+
+Generation: 466
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models467
+
+Generation: 467
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models468
+
+Generation: 468
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models469
+
+Generation: 469
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models470
+
+Generation: 470
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models471
+
+Generation: 471
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models472
+
+Generation: 472
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models473
+
+Generation: 473
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models474
+
+Generation: 474
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models475
+
+Generation: 475
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models476
+
+Generation: 476
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models477
+
+Generation: 477
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models478
+
+Generation: 478
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models479
+
+Generation: 479
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models480
+
+Generation: 480
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models481
+
+Generation: 481
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models482
+
+Generation: 482
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models483
+
+Generation: 483
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [42.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models484
+
+Generation: 484
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models485
+
+Generation: 485
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models486
+
+Generation: 486
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models487
+
+Generation: 487
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models488
+
+Generation: 488
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models489
+
+Generation: 489
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models490
+
+Generation: 490
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models491
+
+Generation: 491
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models492
+
+Generation: 492
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models493
+
+Generation: 493
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models494
+
+Generation: 494
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models495
+
+Generation: 495
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models496
+
+Generation: 496
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models497
+
+Generation: 497
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models498
+
+Generation: 498
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models499
+
+Generation: 499
+Best Individual:
+Subpopulation 0:
+Evaluated: T
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models500
 
 
 
@@ -706,302 +3506,242 @@ duke.irisa.fr-generated/models/Models100
 
 Pareto Front of Subpopulation 0
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models101
+Fitness: [6.0 14.0 76.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models501
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models102
+Fitness: [6.0 14.0 76.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models502
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.019999999552965164
-duke.irisa.fr-generated/models/Models103
+Fitness: [6.0 13.0 77.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models503
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models104
+Fitness: [6.0 13.0 77.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models504
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.019999999552965164
-duke.irisa.fr-generated/models/Models105
+Fitness: [6.0 13.0 77.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models505
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models106
+Fitness: [6.0 14.0 76.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models506
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models107
+Fitness: [6.0 14.0 76.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models507
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models108
+Fitness: [6.0 14.0 76.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models508
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models109
+Fitness: [6.0 14.0 76.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models509
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models110
+Fitness: [6.0 13.0 77.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models510
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=Infinity
-duke.irisa.fr-generated/models/Models111
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models511
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models112
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models512
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=Infinity
-duke.irisa.fr-generated/models/Models113
+Fitness: [6.0 14.0 76.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models513
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models114
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models514
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=Infinity
-duke.irisa.fr-generated/models/Models115
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models515
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models116
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models516
 Evaluated: T
-Fitness: [16.0 11.0 85.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models117
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models517
 Evaluated: T
-Fitness: [17.0 9.0 85.0 min] R=0 S=0.04999999888241291
-duke.irisa.fr-generated/models/Models118
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models518
 Evaluated: T
-Fitness: [18.0 8.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models119
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models519
 Evaluated: T
-Fitness: [18.0 8.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models120
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models520
 Evaluated: T
-Fitness: [18.0 8.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models121
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models521
 Evaluated: T
-Fitness: [18.0 8.0 87.0 min] R=0 S=0.019999999552965164
-duke.irisa.fr-generated/models/Models122
+Fitness: [8.0 12.0 79.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models522
 Evaluated: T
-Fitness: [19.0 7.0 87.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models123
+Fitness: [9.0 11.0 81.0 min] R=0 S=0.07999999821186066
+duke.irisa.fr-generated/models/Models523
 Evaluated: T
-Fitness: [19.0 7.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models124
+Fitness: [10.0 9.0 84.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models524
 Evaluated: T
-Fitness: [19.0 7.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models125
+Fitness: [10.0 9.0 84.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models525
 Evaluated: T
-Fitness: [19.0 7.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models126
+Fitness: [10.0 9.0 84.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models526
 Evaluated: T
-Fitness: [19.0 7.0 87.0 min] R=0 S=0.019999999552965164
-duke.irisa.fr-generated/models/Models127
+Fitness: [11.0 10.0 83.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models527
 Evaluated: T
-Fitness: [21.0 6.0 89.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models128
+Fitness: [11.0 10.0 83.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models528
 Evaluated: T
-Fitness: [21.0 8.0 86.0 min] R=0 S=0.03999999910593033
-duke.irisa.fr-generated/models/Models129
+Fitness: [11.0 10.0 83.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models529
 Evaluated: T
-Fitness: [22.0 5.0 91.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models130
+Fitness: [11.0 10.0 83.0 min] R=0 S=0.03999999910593033
+duke.irisa.fr-generated/models/Models530
 Evaluated: T
-Fitness: [22.0 5.0 91.0 min] R=0 S=0.019999999552965164
-duke.irisa.fr-generated/models/Models131
+Fitness: [12.0 8.0 86.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models531
 Evaluated: T
-Fitness: [24.0 5.0 89.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models132
+Fitness: [12.0 8.0 86.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models532
 Evaluated: T
-Fitness: [24.0 4.0 92.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models133
+Fitness: [12.0 8.0 86.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models533
 Evaluated: T
-Fitness: [24.0 4.0 92.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models134
+Fitness: [12.0 7.0 87.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models534
 Evaluated: T
-Fitness: [24.0 4.0 92.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models135
+Fitness: [12.0 7.0 87.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models535
 Evaluated: T
-Fitness: [24.0 4.0 92.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models136
+Fitness: [12.0 7.0 87.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models536
 Evaluated: T
-Fitness: [24.0 4.0 92.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models137
+Fitness: [12.0 8.0 86.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models537
 Evaluated: T
-Fitness: [24.0 5.0 89.0 min] R=0 S=0.029999999329447746
-duke.irisa.fr-generated/models/Models138
+Fitness: [12.0 7.0 87.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models538
 Evaluated: T
-Fitness: [24.0 4.0 92.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models139
+Fitness: [12.0 8.0 86.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models539
 Evaluated: T
-Fitness: [24.0 4.0 92.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models140
+Fitness: [12.0 8.0 86.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models540
 Evaluated: T
-Fitness: [24.0 4.0 92.0 min] R=0 S=0.019999999552965164
-duke.irisa.fr-generated/models/Models141
+Fitness: [12.0 7.0 87.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models541
 Evaluated: T
-Fitness: [24.0 5.0 89.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models142
+Fitness: [14.0 6.0 87.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models542
 Evaluated: T
-Fitness: [24.0 5.0 89.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models143
+Fitness: [14.0 6.0 87.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models543
 Evaluated: T
-Fitness: [25.0 6.0 88.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models144
+Fitness: [14.0 6.0 87.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models544
 Evaluated: T
-Fitness: [25.0 6.0 88.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models145
+Fitness: [15.0 5.0 89.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models545
 Evaluated: T
-Fitness: [25.0 6.0 88.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models146
+Fitness: [15.0 5.0 89.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models546
 Evaluated: T
-Fitness: [25.0 6.0 88.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models147
+Fitness: [15.0 5.0 89.0 min] R=0 S=0.04999999888241291
+duke.irisa.fr-generated/models/Models547
 Evaluated: T
-Fitness: [25.0 6.0 88.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models148
+Fitness: [15.0 5.0 89.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models548
 Evaluated: T
-Fitness: [26.0 4.0 91.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models149
+Fitness: [19.0 4.0 91.0 min] R=0 S=0.04999999888241291
+duke.irisa.fr-generated/models/Models549
 Evaluated: T
-Fitness: [26.0 4.0 91.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models150
+Fitness: [19.0 4.0 91.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models550
 Evaluated: T
-Fitness: [26.0 4.0 91.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models151
+Fitness: [19.0 4.0 91.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models551
 Evaluated: T
-Fitness: [26.0 4.0 91.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models152
+Fitness: [20.0 3.0 92.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models552
 Evaluated: T
-Fitness: [26.0 4.0 91.0 min] R=0 S=0.019999999552965164
-duke.irisa.fr-generated/models/Models153
+Fitness: [20.0 4.0 90.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models553
 Evaluated: T
-Fitness: [26.0 4.0 91.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models154
+Fitness: [20.0 3.0 92.0 min] R=0 S=0.019999999552965164
+duke.irisa.fr-generated/models/Models554
 Evaluated: T
-Fitness: [26.0 4.0 91.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models155
+Fitness: [20.0 3.0 92.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models555
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models156
+Fitness: [20.0 4.0 90.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models556
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models157
+Fitness: [22.0 3.0 91.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models557
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models158
+Fitness: [22.0 3.0 91.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models558
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models159
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models559
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models160
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models560
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models161
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.03999999910593033
+duke.irisa.fr-generated/models/Models561
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models162
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models562
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models163
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models563
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models164
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models564
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models165
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models565
 Evaluated: T
-Fitness: [27.0 6.0 87.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models166
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models566
 Evaluated: T
-Fitness: [28.0 4.0 90.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models167
+Fitness: [25.0 2.0 95.0 min] R=0 S=0.029999999329447746
+duke.irisa.fr-generated/models/Models567
 Evaluated: T
-Fitness: [28.0 4.0 90.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models168
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models568
 Evaluated: T
-Fitness: [28.0 4.0 90.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models169
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models569
 Evaluated: T
-Fitness: [28.0 4.0 90.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models170
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models570
 Evaluated: T
-Fitness: [28.0 4.0 90.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models171
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models571
 Evaluated: T
-Fitness: [28.0 4.0 90.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models172
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models572
 Evaluated: T
-Fitness: [29.0 3.0 93.0 min] R=0 S=0.029999999329447746
-duke.irisa.fr-generated/models/Models173
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.12999999709427357
+duke.irisa.fr-generated/models/Models573
 Evaluated: T
-Fitness: [29.0 3.0 93.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models174
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.03999999910593033
+duke.irisa.fr-generated/models/Models574
 Evaluated: T
-Fitness: [29.0 3.0 93.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models175
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.009999999776482582
+duke.irisa.fr-generated/models/Models575
 Evaluated: T
-Fitness: [29.0 3.0 93.0 min] R=0 S=0.019999999552965164
-duke.irisa.fr-generated/models/Models176
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models576
 Evaluated: T
-Fitness: [30.0 4.0 89.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models177
+Fitness: [29.0 1.0 96.0 min] R=0 S=0.0
+duke.irisa.fr-generated/models/Models577
 Evaluated: T
-Fitness: [30.0 4.0 89.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models178
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models578
 Evaluated: T
-Fitness: [30.0 3.0 92.0 min] R=0 S=0.04999999888241291
-duke.irisa.fr-generated/models/Models179
+Fitness: [41.0 0.0 97.0 min] R=0 S=Infinity
+duke.irisa.fr-generated/models/Models579
 Evaluated: T
-Fitness: [30.0 4.0 89.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models180
-Evaluated: T
-Fitness: [30.0 4.0 89.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models181
-Evaluated: T
-Fitness: [30.0 4.0 89.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models182
-Evaluated: T
-Fitness: [30.0 4.0 89.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models183
-Evaluated: T
-Fitness: [30.0 3.0 92.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models184
-Evaluated: T
-Fitness: [30.0 4.0 89.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models185
-Evaluated: T
-Fitness: [30.0 3.0 92.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models186
-Evaluated: T
-Fitness: [34.0 2.0 94.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models187
-Evaluated: T
-Fitness: [34.0 2.0 94.0 min] R=0 S=0.05999999865889549
-duke.irisa.fr-generated/models/Models188
-Evaluated: T
-Fitness: [34.0 2.0 94.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models189
-Evaluated: T
-Fitness: [34.0 2.0 94.0 min] R=0 S=0.05000000074505806
-duke.irisa.fr-generated/models/Models190
-Evaluated: T
-Fitness: [34.0 2.0 94.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models191
-Evaluated: T
-Fitness: [39.0 1.0 95.0 min] R=0 S=0.07000000029802322
-duke.irisa.fr-generated/models/Models192
-Evaluated: T
-Fitness: [39.0 1.0 95.0 min] R=0 S=0.12000000290572643
-duke.irisa.fr-generated/models/Models193
-Evaluated: T
-Fitness: [48.0 0.0 98.0 min] R=0 S=0.0
-duke.irisa.fr-generated/models/Models194
-Evaluated: T
-Fitness: [48.0 0.0 98.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models195
-Evaluated: T
-Fitness: [48.0 0.0 98.0 min] R=0 S=Infinity
-duke.irisa.fr-generated/models/Models196
-Evaluated: T
-Fitness: [48.0 0.0 98.0 min] R=0 S=0.09000000357627869
-duke.irisa.fr-generated/models/Models197
-Evaluated: T
-Fitness: [48.0 0.0 98.0 min] R=0 S=Infinity
-duke.irisa.fr-generated/models/Models198
-Evaluated: T
-Fitness: [48.0 0.0 98.0 min] R=0 S=0.009999999776482582
-duke.irisa.fr-generated/models/Models199
-Evaluated: T
-Fitness: [50.0 0.0 97.0 min] R=0 S=Infinity
-duke.irisa.fr-generated/models/Models200
+Fitness: [41.0 0.0 97.0 min] R=0 S=0.11999999731779099
+duke.irisa.fr-generated/models/Models580

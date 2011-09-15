@@ -3,8 +3,8 @@
 # See the file "LICENSE" for more information
 
 parent.0 = nsga2.params
-pop.subpop.0.size = 100
-generations = 100
+pop.subpop.0.size = 80
+generations = 500
 
 # Folder to store the models of the population
 pop.subpop.0.species.ind.models-folder = duke.irisa.fr-generated/models

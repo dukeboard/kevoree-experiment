@@ -12,7 +12,7 @@ import java.io.{File, FileWriter}
 
 object RIndividuGenerator extends App {
 
-  val model = KevoreeXmiHelper.load("duke.irisa.fr-generated/models/Models505")
+  val model = KevoreeXmiHelper.load("homega-generated/models/Models1022")
 
   var avgFreq = List[String]()
   model.getNodes.foreach {
@@ -39,7 +39,7 @@ object RIndividuGenerator extends App {
   fileWR.append("z <- matrix(c(" + avgFreq.mkString(",\n") + "),nrow=" + math.sqrt(avgFreq.size) + ",ncol=" + math.sqrt(avgFreq.size) + ", byrow=TRUE,dimnames = NULL)\n")
   fileWR.append("x <- seq(0," + (math.sqrt(avgFreq.size)-1) + ",by=1)\n")
   fileWR.append("y <- seq(0," + (math.sqrt(avgFreq.size)-1) + ",by=1)\n")
-  fileWR.append("persp(x,y,z,theta=15,phi=15)\n")
+  fileWR.append("persp(x,y,z,theta=15,phi=45)\n")
   fileWR.close()
 
 }

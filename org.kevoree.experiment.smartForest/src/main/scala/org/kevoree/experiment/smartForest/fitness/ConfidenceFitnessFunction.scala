@@ -29,7 +29,7 @@ class ConfidenceFitnessFunction extends FitnessFunction {
             dv.getAttribute.getName == ChangePeriodPropertyDPAO.getPeriodPropertyName
         }.get.getValue)
         val frequency = 1000/period
-        result = result + frequency/(1+getDistanceWithClosestSuperNode(indice)) // 1+ getDistance to avoid division by 0
+        result = result + frequency/((1+getDistanceWithClosestSuperNode(indice))*10) // 1+ getDistance to avoid division by 0
       }
     }
     FitnessPostProcess(result)
@@ -54,7 +54,7 @@ class ConfidenceFitnessFunction extends FitnessFunction {
     val worstPeriod = PeriodValues.values.min
     val worstFreq = 1000 / worstPeriod
     (0 until model.getNodes.size).foreach{ indice =>
-      result = result + 3*worstFreq/(1+getDistanceWithClosestSuperNode(indice)) // 1+ getDistance to avoid division by 0
+      result = result + 3*worstFreq/((1+getDistanceWithClosestSuperNode(indice))*10) // 1+ getDistance to avoid division by 0
     }
     println("Best confidence = " + result)
     (result).asInstanceOf[Float]

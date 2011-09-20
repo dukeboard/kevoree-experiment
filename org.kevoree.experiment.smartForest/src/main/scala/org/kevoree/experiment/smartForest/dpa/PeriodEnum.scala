@@ -6,5 +6,5 @@
 package org.kevoree.experiment.smartForest.dpa
 
 object PeriodValues  {
-  val values = List(10,30,50,100,250,500)
+  val values = List(10,100,500)
 }

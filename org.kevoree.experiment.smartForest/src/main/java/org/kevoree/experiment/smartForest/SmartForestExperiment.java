@@ -3,6 +3,7 @@ package org.kevoree.experiment.smartForest;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import org.kevoree.ContainerRoot;
+import org.kevoree.experiment.smartForest.experiment.SmartForestIndividual;
 import org.kevoree.experiment.smartForest.model.Generator;
 import org.kevoree.library.reasoner.ecj.KevoreeMultipleGeneticAlgorithm;
 import org.kevoree.tools.marShell.parser.ParserUtil;
@@ -16,11 +17,14 @@ import java.util.*;
 
 public class SmartForestExperiment {
     public final static int forestWidth = 20;
-    public final static int generations = 1000;
-    public final static int populations = 100;
+    public final static int generationsForSingle = 100;
+    public final static int populationsForSingle = 100;
+    public final static int generationsForMulti = 300;
+    public final static int populationsForMulti = 200;
     public final static int elite = 0;
 
-    public final static String paramsSourceFile = "SmartForestMultiCrossOver.params";
+    public final static String paramsSingleFitnessSourceFile = "SmartForestSingleFitnessCrossOver.params";
+    public final static String paramsMultiFitnessSourceFile = "SmartForestMultiCrossOver.params";
     public final static String paramsTargetFile = "kevoreeMultiTestGenerated.params";
     public final static String individualBaseModel = "kevoreeIndividualModel.kev";
 
@@ -40,17 +44,40 @@ public class SmartForestExperiment {
 
         // Initialize parameters to match with the experiment
         Map<String,String> myProperties = new HashMap<String,String>();
-        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populations);
-        myProperties.put("generations = 100", "generations = " + generations);
+        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForSingle);
+        myProperties.put("generations = 100", "generations = " + generationsForSingle);
         myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
         myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
         myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
         myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
         myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
-        initializeParams(paramsSourceFile, paramsTargetFile, myProperties);
+        initializeParams(paramsSingleFitnessSourceFile, paramsTargetFile, myProperties);
 
         //Start the experiment
         KevoreeMultipleGeneticAlgorithm kmga = new KevoreeMultipleGeneticAlgorithm ();
+        kmga.start();
+        myModel = ((SmartForestIndividual)kmga.getCurrentState().population.subpops[0].individuals[0]).myModel();
+        kmga.clean();
+        // End of single optimization
+
+        // Beginning of multi axial optimization
+        initExperiment();
+        ParserUtil.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+        myProperties = new HashMap<String,String>();
+        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
+        myProperties.put("generations = 100", "generations = " + generationsForMulti);
+        myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
+        myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
+        myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
+        myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
+        myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
+        initializeParams(paramsMultiFitnessSourceFile, paramsTargetFile, myProperties);
+
+        //Start the experiment
+        kmga = new KevoreeMultipleGeneticAlgorithm ();
+        kmga.start();
+        kmga.clean();
+
 
         collectStatistics();
     }

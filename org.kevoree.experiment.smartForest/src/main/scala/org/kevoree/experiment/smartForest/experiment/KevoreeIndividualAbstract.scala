@@ -155,6 +155,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
   override def setup(state: EvolutionState, base: Parameter): Unit = {
     myModel = load(baseModelPath)
     model_path = state.parameters.getString(base.push(FOLDER_TO_STORE_MODELS), null)
+
     var stat: File = new File(model_path)
     if (stat.isDirectory) {
       for (file <- stat.listFiles) {

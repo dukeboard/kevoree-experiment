@@ -17,10 +17,10 @@ import java.util.*;
 
 public class SmartForestExperiment {
     public final static int forestWidth = 20;
-    public final static int generationsForSingle = 100;
+    public final static int generationsForSingle = 50;
     public final static int populationsForSingle = 100;
-    public final static int generationsForMulti = 300;
-    public final static int populationsForMulti = 200;
+    public final static int generationsForMulti = 50;
+    public final static int populationsForMulti = 100;
     public final static int elite = 0;
 
     public final static String paramsSingleFitnessSourceFile = "SmartForestSingleFitnessCrossOver.params";

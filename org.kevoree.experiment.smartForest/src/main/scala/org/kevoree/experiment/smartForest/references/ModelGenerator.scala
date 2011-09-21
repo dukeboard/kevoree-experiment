@@ -12,6 +12,7 @@ import org.kevoree.tools.marShell.interpreter.KevsInterpreterAspects._
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 
 import org.kevoree.experiment.smartForest.dpa.{PeriodValues, ChangePeriodPropertyDPAO}
+import java.lang.Math
 
 /**
  * User: ffouquet
@@ -65,16 +66,18 @@ object ModelGenerator {
 
   private def getPeriod(indice: Int, forestWidth: Int): Int = {
     val distance = getDistanceWithClosestSuperNode(indice, forestWidth)
-    val target = PeriodValues.values.last / (forestWidth / 2)
-    val theoreticalPeriod = target * distance
-    PeriodValues.values.find(periode => theoreticalPeriod <= periode) match {
-      case Some(periode) => {
-        periode
-      }
-      case None => {
-        PeriodValues.values.last
-      }
+    val targetFrequence = 1000 / PeriodValues.values.min
+    val target = targetFrequence / Math.pow((forestWidth / 2), 2)
+    val theoreticalFrequence = target * Math.pow(distance, 2)
+    var periodeResult = PeriodValues.values.min
+    PeriodValues.values.foreach{
+      periode =>
+        if (Math.abs(theoreticalFrequence - (1000 / periode)) < Math.abs(theoreticalFrequence - (1000 / periodeResult))){
+          periodeResult = periode
+        }
     }
+    println("Distance = " + distance + ", periode = " + periodeResult)
+    periodeResult
   }
 
   private def getDistanceWithClosestSuperNode(indice: Int, forestWidth: Int): Int = {

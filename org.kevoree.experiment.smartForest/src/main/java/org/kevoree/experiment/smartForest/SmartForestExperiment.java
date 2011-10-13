@@ -5,9 +5,8 @@ import ch.qos.logback.classic.Logger;
 import org.kevoree.ContainerRoot;
 import org.kevoree.experiment.smartForest.experiment.SmartForestIndividual;
 import org.kevoree.experiment.smartForest.model.Generator;
+import org.kevoree.framework.KevoreeXmiHelper;
 import org.kevoree.library.reasoner.ecj.KevoreeMultipleGeneticAlgorithm;
-import org.kevoree.tools.marShell.parser.ParserUtil;
-
 import org.slf4j.LoggerFactory;
 
 
@@ -16,7 +15,7 @@ import java.net.InetAddress;
 import java.util.*;
 
 public class SmartForestExperiment {
-    public final static int forestWidth = 20;
+    public final static int forestWidth = 18;
     public final static int generationsForSingle = 50;
     public final static int populationsForSingle = 100;
     public final static int generationsForMulti = 50;
@@ -31,6 +30,7 @@ public class SmartForestExperiment {
     public static String folderToStoreTempFile = "generated";
 
     private static final ClassLoader classLoader = SmartForestExperiment.class.getClassLoader();
+    private static long initTime;
 
 
     public static void main(String[] args){
@@ -40,7 +40,7 @@ public class SmartForestExperiment {
         // initialization of the architecture : We are starting with an architecture with all components on all nodes
         ContainerRoot myModel = Generator.generateForest(forestWidth);
         // Pass it to the SmartForestIndividual
-        ParserUtil.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+        KevoreeXmiHelper.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
 
         // Initialize parameters to match with the experiment
         Map<String,String> myProperties = new HashMap<String,String>();
@@ -62,7 +62,7 @@ public class SmartForestExperiment {
 
         // Beginning of multi axial optimization
         initExperiment();
-        ParserUtil.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+        KevoreeXmiHelper.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
         myProperties = new HashMap<String,String>();
         myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
         myProperties.put("generations = 100", "generations = " + generationsForMulti);
@@ -83,7 +83,7 @@ public class SmartForestExperiment {
     }
 
     private static void collectStatistics() {
-        // TODO
+        System.out.println("time="+(System.currentTimeMillis()-initTime)+"ms");
     }
 
     private static void initializeParams(String sourceFile, String targetFile, Map<String,String> myProperties) {
@@ -118,6 +118,8 @@ public class SmartForestExperiment {
     }
 
     private static void initExperiment() {
+        initTime = System.currentTimeMillis();
+        
         // initialize : logger are quiet, old statistic files are deleted and the folder to store statistic file is prefixed byt the computer name
         Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         root.setLevel(Level.OFF); //change to off

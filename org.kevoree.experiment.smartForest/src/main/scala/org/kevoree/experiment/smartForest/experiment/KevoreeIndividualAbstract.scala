@@ -3,20 +3,16 @@ package org.kevoree.experiment.smartForest.experiment
 import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.tools.marShell.interpreter.{KevsInterpreterAspects, KevsInterpreterContext}
 import ec.util.Parameter
-import org.eclipse.emf.ecore.util.EcoreUtil
 import org.kevoree.kompare.KevoreeKompareBean
 import org.kevoreeAdaptation.AdaptationModel
 import java.io.File
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.ecore.xmi.{XMLResource, XMIResource}
 import org.kevoree.tools.marShell.parser.ParserUtil
 import org.kevoree.library.reasoner.ecj.KevoreeDefaults
-import org.kevoree.{ KevoreePackage,  ContainerRoot}
+import org.kevoree.{ ContainerRoot}
 import ec.{Individual, EvolutionState}
-import scala.collection.JavaConversions._
+import org.kevoree.experiment.smartForest.dpa.AddForestMonitoringComponentDPAO
+import org.kevoree.framework.KevoreeXmiHelper
+import org.kevoree.cloner.ModelCloner
 
 /**
  * Created by IntelliJ IDEA.
@@ -80,6 +76,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
     var numberOfMutation = minResetDpasNumber
     if (maxResetDpasNumber != minResetDpasNumber)
       numberOfMutation = minResetDpasNumber + state.random(thread).nextInt(maxResetDpasNumber-minResetDpasNumber)
+    
     (1 to numberOfMutation).foreach{ _ =>
       val myDPA = resetDpas(state.random(thread).nextInt(resetDpas.length))
       val myLists = myDPA.applyPointcut(myModel)
@@ -111,9 +108,12 @@ abstract class KevoreeIndividualAbstract extends Individual{
     return KevoreeDefaults.base.push(P_KEVOREE_INDIVIDUAL)
   }
 
+
+  val modelCloner = new ModelCloner
   override def clone: AnyRef = {
     val ki: KevoreeIndividualAbstract = super.clone.asInstanceOf[KevoreeIndividualAbstract]
-    ki.myModel = EcoreUtil.copy(myModel)
+    //val stringModel = KevoreeXmiHelper.saveToString(myModel,false)
+    ki.myModel = modelCloner.clone(myModel)
     ki.mutationDpas = mutationDpas
     ki.minMutationDpasNumber = minMutationDpasNumber
     ki.maxMutationDpasNumber = maxMutationDpasNumber
@@ -153,7 +153,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
   }
 
   override def setup(state: EvolutionState, base: Parameter): Unit = {
-    myModel = load(baseModelPath)
+    myModel = KevoreeXmiHelper.load(baseModelPath)
     model_path = state.parameters.getString(base.push(FOLDER_TO_STORE_MODELS), null)
 
     var stat: File = new File(model_path)
@@ -166,20 +166,10 @@ abstract class KevoreeIndividualAbstract extends Individual{
     model_path = model_path + File.separator
   }
 
-  def load(uri: String): ContainerRoot = {
-    var rs: ResourceSetImpl = new ResourceSetImpl
-    rs.getResourceFactoryRegistry.getExtensionToFactoryMap.put("kev", new XMIResourceFactoryImpl)
-    rs.getPackageRegistry.put(KevoreePackage.eNS_URI, KevoreePackage.eINSTANCE)
-    var res: Resource = rs.getResource(URI.createURI(uri), true)
-    (res.asInstanceOf[XMIResource]).getDefaultLoadOptions.put(XMLResource.OPTION_ENCODING, "UTF-8")
-    (res.asInstanceOf[XMIResource]).getDefaultSaveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8")
-    var result: AnyRef = res.getContents.get(0)
-    return result.asInstanceOf[ContainerRoot]
-  }
 
   override def toString: String = {
     val path = model_path + KevoreeIndividualAbstractO.getNextModelName
-    ParserUtil.save(path, myModel)
+    KevoreeXmiHelper.save(path, myModel)
     return path
   }
 

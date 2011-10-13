@@ -2,7 +2,6 @@ package org.kevoree.experiment.smartForest.dpa
 
 import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.{ContainerRoot, NamedElement}
-import scala.collection.JavaConversions._
 import java.util.{HashMap, ArrayList, Map}
 import org.kevoree.tools.marShell.ast.{ComponentInstanceID, RemoveComponentInstanceStatment, TransactionalBloc, Script}
 
@@ -36,7 +35,8 @@ class RemoveComponentDPA extends DPA {
 
   def getScript(myMap: java.util.Map[String, NamedElement]): String = {
     var script: String = templateScript
-    for (name <- myMap.keySet) {
+    import scala.collection.JavaConversions._
+    for (name <- myMap.keySet()) {
       script = script.replace("${" + name + "}", myMap.get(name).getName)
     }
     return script

@@ -3,7 +3,7 @@ package org.kevoree.experiment.smartForest.dpa
 import ec.util.MersenneTwisterFast
 import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.{ContainerRoot, NamedElement, ComponentType}
-import scala.collection.JavaConversions._
+
 import org.kevoree.tools.marShell.ast.{ComponentInstanceID, AddComponentInstanceStatment, TransactionalBloc, Script}
 
 /**
@@ -11,6 +11,7 @@ import org.kevoree.tools.marShell.ast.{ComponentInstanceID, AddComponentInstance
  * Date: 18/07/11
  * Time: 17:22
  */
+
 
 class AddForestMonitoringComponentDPA extends DPA {
   final val componentName: String = "component"
@@ -39,32 +40,32 @@ class AddForestMonitoringComponentDPA extends DPA {
       var existSmokeSensor: Boolean = false
       var existHumiditySensor: Boolean = false
       for (myInstance <- containerNode.getComponents) {
-        if ((myInstance.getTypeDefinition.asInstanceOf[NamedElement]).getName.equalsIgnoreCase("TempSensor")) {
+        if (myInstance.getTypeDefinition.getName.equalsIgnoreCase("TempSensor")) {
           existTempSensor = true
         }
-        if ((myInstance.getTypeDefinition.asInstanceOf[NamedElement]).getName.equalsIgnoreCase("SmokeSensor")) {
+        if (myInstance.getTypeDefinition.getName.equalsIgnoreCase("SmokeSensor")) {
           existSmokeSensor = true
         }
-        if ((myInstance.getTypeDefinition.asInstanceOf[NamedElement]).getName.equalsIgnoreCase("HumiditySensor")) {
+        if (myInstance.getTypeDefinition.getName.equalsIgnoreCase("HumiditySensor")) {
           existHumiditySensor = true
         }
       }
       if (!existHumiditySensor) {
         val myMap: java.util.Map[String, NamedElement] = new java.util.HashMap[String, NamedElement]
         myMap.put(this.typeDefinition, componentTypes.get("HumiditySensor"))
-        myMap.put(this.nodeName, containerNode.asInstanceOf[NamedElement])
+        myMap.put(this.nodeName, containerNode)
         results.add(myMap)
       }
       if (!existSmokeSensor) {
         val myMap: java.util.Map[String, NamedElement] = new java.util.HashMap[String, NamedElement]
         myMap.put(this.typeDefinition, componentTypes.get("SmokeSensor"))
-        myMap.put(this.nodeName, containerNode.asInstanceOf[NamedElement])
+        myMap.put(this.nodeName, containerNode)
         results.add(myMap)
       }
       if (!existTempSensor) {
         val myMap: java.util.Map[String, NamedElement] = new java.util.HashMap[String, NamedElement]
         myMap.put(this.typeDefinition, componentTypes.get("TempSensor"))
-        myMap.put(this.nodeName, containerNode.asInstanceOf[NamedElement])
+        myMap.put(this.nodeName, containerNode)
         results.add(myMap)
       }
     }
@@ -73,6 +74,7 @@ class AddForestMonitoringComponentDPA extends DPA {
 
   def getScript(myMap: java.util.Map[String, NamedElement]): String = {
     var script: String = templateScript
+    import scala.collection.JavaConversions._
     for (name <- myMap.keySet) {
       val replacedString: String = "${" + name + "}"
       script = script.replace(replacedString, myMap.get(name).getName)

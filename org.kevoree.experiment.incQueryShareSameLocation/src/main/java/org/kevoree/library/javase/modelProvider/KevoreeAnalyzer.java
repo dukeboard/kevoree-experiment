@@ -1,16 +1,24 @@
 package org.kevoree.library.javase.modelProvider;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import org.kevoree.framework.KevoreePropertyHelper;
 
 public class KevoreeAnalyzer {
 
+	private DummyGUI gui;
 	
-	public void analyze(org.kevoree.ContainerRoot cr) {
+	public KevoreeAnalyzer(){
+		gui = new DummyGUI();
+		gui.setVisible(true);
+		gui.setTitle("KevoreeAnalyzer");
+	}
+	
+	public String analyze(org.kevoree.ContainerRoot cr) {
 		HashMap<String, ArrayList<String>> archLocationEntities = new HashMap<String, ArrayList<String>>();
-		for (org.kevoree.ContainerNode n : cr.getNodesForJ()) {
+		for (org.kevoree.ContainerNode n : cr.getNodesForJ()) {			
 			for (org.kevoree.ComponentInstance c : n.getComponentsForJ()) {
 				if (c.getTypeDefinition().getName().equals("MovableEntity")) {
 					String loc = KevoreePropertyHelper
@@ -23,7 +31,7 @@ public class KevoreeAnalyzer {
 				}
 			}
 		}
-		String res = "";
+		String res = "**** kevoree  result : "+new Date().getTime() +" ****\n";
 		for (String s : archLocationEntities.keySet()) {
 			res = res + s + " : ";
 			for (String me : archLocationEntities.get(s)) {
@@ -31,8 +39,9 @@ public class KevoreeAnalyzer {
 			}
 			res = res + "\n";
 		}
+		res = res+"*************************\n";
 		System.out.println(res);
+		gui.updateTextArea(res);
+		return res;
 	}
-	
-	
 }

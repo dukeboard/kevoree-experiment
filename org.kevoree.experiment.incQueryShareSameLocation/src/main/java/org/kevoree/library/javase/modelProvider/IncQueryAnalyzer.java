@@ -3,6 +3,7 @@ package org.kevoree.library.javase.modelProvider;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import kevoree.ComponentInstance;
@@ -38,6 +39,7 @@ public class IncQueryAnalyzer {
 	private ShareSameLocation2Matcher matcherShareSameLocation;
 	private DeltaMonitor<ShareSameLocation2Signature> monitorShareSameLocation;
 	private org.kevoree.ContainerRoot loadedContainerRoot;
+	private DummyGUI gui;
 
 	public IncQueryAnalyzer(org.kevoree.ContainerRoot cr, KevScriptEngine kse) {
 		registerMetaModel();
@@ -47,15 +49,9 @@ public class IncQueryAnalyzer {
 		registerPatternMatcher();
 		initPatternMatcher();
 		initMonitorShareSameLocation2();
-	}
-
-	// ALLOW TO LOAD THE CURRENT MODEL FOR INCQUERY PERFORM PATTERNMATCHING
-	public void analyze(org.kevoree.ContainerRoot cr, KevScriptEngine kse) {
-		//loadCurrentModel(cr, kse);
-		//loadContainerRoot();
-		//registerPatternMatcher();
-		//initPatternMatcher();
-		displayPatternResultShareSameLocation();
+		gui = new DummyGUI();
+		gui.setVisible(true);
+		gui.setTitle("IncQueryAnalyzer");		
 	}
 
 	public void displayLoadedModel() {
@@ -82,7 +78,7 @@ public class IncQueryAnalyzer {
 						((ComponentInstance) x.getValueOfC2()).getName());
 			}
 		}
-		String res = "";
+		String res = "**** incQuery result : "+new Date().getTime() +" ****\n";
 		for (String s : archLocationEntities.keySet()) {
 			res = res + s + " : ";
 			for (String me : archLocationEntities.get(s)) {
@@ -90,13 +86,17 @@ public class IncQueryAnalyzer {
 			}
 			res = res + "\n";
 		}
+		res = res+ "*************************\n";
 		System.out.println(res);
+		gui.updateTextArea(res);
+		
 	}
 
 	public void initContainerRootModel(org.kevoree.ContainerRoot cr,
 			KevScriptEngine kse) {
 		// LOAD THE MODEL
-		Chrono.start();
+		Chrono ch = new Chrono();
+		ch.start();
 		try {
 			ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 			for (org.kevoree.ContainerNode n : cr.getNodesForJ()) {
@@ -127,9 +127,8 @@ public class IncQueryAnalyzer {
 			System.out.println(e.toString());
 			e.printStackTrace();
 		}
-
-		Chrono.stop();
-		System.out.println("INIT CONTAINER ROOT MODEL : " + Chrono.displayTime());
+		ch.stop();
+		System.out.println("INIT CONTAINER ROOT MODEL : " + ch.displayTime());
 	}
 
 	// INIT NOTIFIER ON THE PATTERNMATCHER
@@ -145,7 +144,8 @@ public class IncQueryAnalyzer {
 
 	public void initPatternMatcher() {
 		// INIT PATTERNMATCHER AND MONITORPATTERMATCHER
-		Chrono.start();
+		Chrono c = new Chrono();
+		c.start();
 		try {
 			matcherShareSameLocation = new ShareSameLocation2Matcher.Factory()
 					.getMatcher(rootElement);
@@ -154,13 +154,14 @@ public class IncQueryAnalyzer {
 		}
 		monitorShareSameLocation = matcherShareSameLocation
 				.newDeltaMonitor(true);
-		Chrono.stop();
+		c.stop();
 		System.out.println("INIT PATTERNMATCHER AND MONITORPATTERMATCHER : "
-				+ Chrono.displayTime());
+				+ c.displayTime());
 	}
 
 	public void kompare(org.kevoree.ContainerRoot cr) {
-		Chrono.start();
+		Chrono c = new Chrono();
+		c.start();
 		KevoreeKompareBean kkb = new KevoreeKompareBean();
 		
 		AdaptationModel am = kkb.kompare(loadedContainerRoot, cr, "node4");
@@ -198,14 +199,15 @@ public class IncQueryAnalyzer {
 				}
 			}
 		}
-		Chrono.stop();
+		c.stop();
 		System.out
 				.println("KOMPARE LoadedContainerRoot WITH CurrentContainerRoot : "
-						+ Chrono.displayTime());
+						+ c.displayTime());
 	}
 	
-	public void kompare2(org.kevoree.ContainerRoot cr){
-		Chrono.start();
+	public void updateEMFloadedModel(org.kevoree.ContainerRoot cr){
+		Chrono c = new Chrono();
+		c.start();
 		KevoreeKompareBean kkb = new KevoreeKompareBean();
 		ArrayList<AdaptationPrimitive> toAttend = new ArrayList<AdaptationPrimitive>(); 		
 		for (String s : getNodeNameListToCheck()){			
@@ -218,8 +220,7 @@ public class IncQueryAnalyzer {
 		}
 		for (AdaptationPrimitive ap : toAttend) {
 			if (ap.getRef() instanceof org.kevoree.impl.ComponentInstanceImpl) {
-				String newVal = " ";
-				
+				String newVal = " ";				
 				for (DictionaryValue dv : ((org.kevoree.impl.ComponentInstanceImpl) ap
 						.getRef()).getDictionary().get().getValuesForJ()) {
 					if(dv.getAttribute().getName().equals("location")){
@@ -227,8 +228,7 @@ public class IncQueryAnalyzer {
 						System.out.println("new val "+((org.kevoree.impl.ComponentInstanceImpl) ap.getRef())
 								.getName()+": "+newVal);
 					}
-				}
-				
+				}				
 				for (kevoree.DictionaryValue dv : getLoadedComponentByName(
 						((org.kevoree.impl.ComponentInstanceImpl) ap.getRef())
 								.getName()).getDictionary().getValues()) {
@@ -243,8 +243,8 @@ public class IncQueryAnalyzer {
 			}
 		}
 		loadedContainerRoot = cr;
-		Chrono.stop();
-		System.out.println("KOMPARE2 : "+ Chrono.displayTime());
+		c.stop();
+		System.out.println("KOMPARE2 : "+ c.displayTime());
 	}
 
 	public ArrayList<String> getNodeNameListToCheck() {
@@ -292,18 +292,20 @@ public class IncQueryAnalyzer {
 	}
 
 	public void loadContainerRoot() {
-		Chrono.start();
+		Chrono c = new Chrono();
+		c.start();
 		rootElement = (ContainerRoot) resourceModel.getContents().get(0);
-		Chrono.stop();
+		c.stop();
 		System.out
 				.println("INSTANTIATE ROOTELEMENT WITH THE CONTAINERROOT OF THE LOADED MODEL : "
-						+ Chrono.displayTime());
+						+ c.displayTime());
 	}
 
 	public void loadCurrentModel(org.kevoree.ContainerRoot cr,
 			KevScriptEngine kse) {
 		// LOAD THE MODEL
-		Chrono.start();
+		Chrono ch = new Chrono();
+		ch.start();
 		try {
 			ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 			for (org.kevoree.ContainerNode n : cr.getNodesForJ()) {
@@ -333,31 +335,33 @@ public class IncQueryAnalyzer {
 			System.out.println(e.toString());
 			e.printStackTrace();
 		}
-		Chrono.stop();
-		System.out.println("LOAD THE MODEL : " + Chrono.displayTime());
+		ch.stop();
+		System.out.println("LOAD THE MODEL : " + ch.displayTime());
 	}
 
 	public void registerMetaModel() {
 		// REGISTER THE METAMODEL
-		Chrono.start();
+		Chrono c = new Chrono();
+		c.start();
 		resourceSetMetamodel = new ResourceSetImpl();
 		resourceSetMetamodel.getPackageRegistry().put(KevoreePackage.eNS_URI,
 				KevoreePackage.eINSTANCE);
 		resourceSetMetamodel.getResourceFactoryRegistry()
 				.getExtensionToFactoryMap()
 				.put("*", new XMIResourceFactoryImpl());
-		Chrono.stop();
-		System.out.println("REGISTER METAMODEL : " + Chrono.displayTime());
+		c.stop();
+		System.out.println("REGISTER METAMODEL : " + c.displayTime());
 	}
 
 	public void registerPatternMatcher() {
 		// REGISTER PATTERN MATCHERS
-		Chrono.start();
+		Chrono c = new Chrono();
+		c.start();
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(
 				ShareSameLocation2Matcher.FACTORY.getPatternName(),
 				new PatternBuilderForshareSameLocation2());
-		Chrono.stop();
+		c.stop();
 		System.out.println("REGISTER PATTERN MATCHERS : "
-				+ Chrono.displayTime());
+				+ c.displayTime());
 	}
 }

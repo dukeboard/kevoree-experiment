@@ -41,10 +41,15 @@ import org.kevoree.framework.AbstractComponentType;
 })
 
 public class MovableEntity extends AbstractComponentType{
+	
+	private DummyGUI gui;
+	
 	@Start
     public void start() {
 		getDictionary().put("location", 0);
         System.out.println("MovableEntity : "+getName());
+        gui = new DummyGUI();
+        gui.setVisible(true);
     }
 
     @Stop
@@ -53,9 +58,11 @@ public class MovableEntity extends AbstractComponentType{
 
     @Update
     public void update() {
+    	gui.setTitle(getNodeName()+" : "+getName());
     	System.out
 		.println("*****************************************************************************");
     	System.out.println("Ok I've updated my location : "+getDictionary().get("location"));
+    	gui.updateTextArea("Ok I've updated my location : "+getDictionary().get("location"));
     	System.out
 		.println("*****************************************************************************");
     }

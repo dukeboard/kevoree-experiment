@@ -25,6 +25,7 @@ public class Reasoner extends AbstractComponentType implements ModelListener {
 	private KevoreeAnalyzer ka;
 	private IncQueryAnalyzer iqa;
 	
+	
 	@Start
 	public void start() {
 		org.kevoree.ContainerRoot cr = getModelService().getLastModel(); 
@@ -39,33 +40,36 @@ public class Reasoner extends AbstractComponentType implements ModelListener {
 
 	@Update
 	public void update() {
+
 	}
 
 	@Override
 	public void modelUpdated() {
 			System.out.println("----------------------MODEL UPDATED "+ getModelService().getLastModification()+"---------------------------");
 			org.kevoree.ContainerRoot cr = getModelService().getLastModel();			
-			
-//			System.out.println("ANALYZE VIA INCQUERY");			
-//			iqa.analyze(cr, getKevScriptEngineFactory().createKevScriptEngine(cr));
-//			System.out.println("END ANALYZE VIA INCQUERY");
-//			
+		
 			System.out.println("ANALYZE VIA KEVOREE");
-			Chrono.start();	ka.analyze(cr);	Chrono.stop();System.out.println(Chrono.displayTime());
+			Chrono c = new Chrono();
+			c.start();
+			//gui.updateTextArea(ka.analyze(cr));
+			ka.analyze(cr);
+			c.stop();
+			//gui.updateTextArea(Chrono.displayTime());
+			System.out.println(c.displayTime());
 			System.out.println("END ANALYZE VIA KEVOREE : ");
 			
 			
 			System.out.println("----------------------END MODEL UPDATED ---------------------------");
 
 			System.out.println("----------------------TEST COMPARISON---------------------------");
-			iqa.kompare2(cr);
+			iqa.updateEMFloadedModel(cr);
 			//System.out.println("loaded model");
 			//iqa.displayLoadedModel();
 			System.out.println("----------------------END  COMPARISON---------------------------");
 			
-			System.out.println("ANALYZE VIA KEVOREE");
-			Chrono.start();	ka.analyze(cr);	Chrono.stop();System.out.println(Chrono.displayTime());
-			System.out.println("END ANALYZE VIA KEVOREE : ");
+//			System.out.println("ANALYZE VIA KEVOREE");
+//			Chrono.start();	ka.analyze(cr);	Chrono.stop();System.out.println(Chrono.displayTime());
+//			System.out.println("END ANALYZE VIA KEVOREE : ");
 			
 	}
 

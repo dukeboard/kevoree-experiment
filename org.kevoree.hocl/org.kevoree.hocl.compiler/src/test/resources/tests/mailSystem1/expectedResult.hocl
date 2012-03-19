@@ -1,0 +1,20 @@
+
+package fr.inria.fr.inria.hocl.tests.mailSystem1;
+
+let send = replace "ToSend":(domainC::String:id::String):<message::Message,?tosend>,
+                   "Pool":domainP::String:<?pool>
+                by "ToSend":(domainC:id):<tosend>,
+                   "Pool":domainP:<message,pool>
+in
+let receive = replace "Pool":domainP::String:<message::Message,?pool>,
+                      "MailBox":(domainC::String:id::String):<?mailbox>
+                   by "Pool":domainP:<pool>,
+                      "MailBox":(domainC:id):<message, mailbox>
+                   if message.receiverDomain.equals(domainC) && message.receiverId.equals(id)
+in
+<send,
+ receive,
+ "MailBox":("A":"1"):<>,
+ "ToSend":("A":"1"):<>,
+ "Pool":"A":<new Message("Congratulations!","A","2"), new Message("Hello","A","3")>
+>

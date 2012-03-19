@@ -1,0 +1,24 @@
+
+// A resource allocation problem  (cf ACM 93) : passive -> waiting -> using -> passive -> ...
+
+package fr.inria.fr.inria.hocl.tests.resourceAlloc;
+
+let enqueue = replace user::String:"passive"
+                   by user:"waiting"
+in
+let allocResource = replace user::String:"waiting", res::String
+                       by user:"using":res
+in
+let freeResource = replace user::String:"using":res::String
+                        by res
+in
+<
+ enqueue, allocResource, freeResource,
+ "USER 1":"passive",
+ "USER 2":"passive",
+ "USER 3":"passive",
+ "USER 4":"passive",
+ "USER 5":"passive",
+ "RES A",
+ "RES B"
+> 

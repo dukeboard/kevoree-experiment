@@ -1,0 +1,43 @@
+
+// Find a minimal spanning tree over a weighted graph (cf ACM 93)
+
+package fr.inria.fr.inria.hocl.tests.graphMinSpanTree;
+
+                     let min = 
+                       replace-one v::MySet:<?e>
+                       by
+                       let rmLoop = replace v::MySet, n2::String:m2::String:c2::int
+                                         by v
+                                         if v.contains(m2)
+                       in
+                       let findMin = replace n1::String:m1::String:c1::int, n2::String:m2::String:c2::int
+                                          by n1:m1:c1
+                                          if c1 <= c2
+                       in
+                        <rmLoop, v, e>,
+                        replace-one <rmLoop=rl, v::MySet, ?e>
+                                 by <findMin, e>,
+                                    replace-one <findMin=fm,?e> by e
+                     in
+
+let min_st = replace v1::MySet:<?st1>:<?e1>:<n1::String:m1::String:c1::int>,
+                     v2::MySet:<?st2>:<?e2>:<n2::String:m2::String:c2::int>
+                  by
+                     v1.addAll(v2):<st1,st2,n1:m1:c1>:<e1,e2>:<min, v1:<e1,e2>> // v1.addAll(v2):<e1,e2> indeed
+                  if v2.contains(m1)
+in
+<
+ min_st,
+ MySet.expectedResult():   // all nodes
+ <("A":"B":2),("A":"C":3),("A":"D":4)>:   // the minimum spanning tree
+ <("A":"B":2),("A":"D":4),("A":"C":3),
+  ("B":"A":2),("B":"C":6),("B":"D":5),
+  ("C":"A":3),("C":"B":6),("C":"D":10),
+  ("D":"C":10),("D":"A":4),("D":"B":5)>: // E
+ <min,MySet.expectedResult():
+   <("A":"B":2),("A":"D":4),("A":"C":3),
+   ("B":"A":2),("B":"C":6),("B":"D":5),
+   ("C":"A":3),("C":"B":6),("C":"D":10),
+   ("D":"C":10),("D":"A":4),("D":"B":5)>
+ >
+>

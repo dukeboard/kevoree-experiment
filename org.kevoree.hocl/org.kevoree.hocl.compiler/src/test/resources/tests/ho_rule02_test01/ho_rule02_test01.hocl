@@ -1,0 +1,8 @@
+
+package fr.inria.fr.inria.hocl.tests.ho_rule02_test01;
+
+let rule1 = replace-one x::Integer, <y::Integer,?w>
+                     by "FOUND"
+                     if y.compareTo(x) == 0
+in
+ <rule1,5,4,<5,3>,8>

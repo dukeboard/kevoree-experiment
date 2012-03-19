@@ -1,0 +1,9 @@
+
+// convert a  multi-set to a set (a test of non-linear pattern)
+
+package fr.inria.fr.inria.hocl.tests.toSet;
+
+let toset = replace x::int,x::int by x in
+ <
+   toset,8,41,31,135,15,315,987,9,54,684,16,84,58,4,5,3,1
+ >

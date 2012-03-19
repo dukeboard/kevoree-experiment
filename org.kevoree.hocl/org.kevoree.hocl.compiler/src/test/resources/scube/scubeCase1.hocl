@@ -1,0 +1,25 @@
+package demo.scubeCase1;
+
+import demo.demo.kavoree.*;
+
+let balance = 
+	replace "NODE":"Node_Id":id1::int:"Num":num1::int:<?w1, s::Service>,
+			"NODE":"Node_Id":id2::int:"Num":num2::int:<?w2>
+	by	"NODE":"Node_Id":id1:"Num":(num1-1):<w1>,
+		"NODE":"Node_Id":id2:"Num":(num2+1):<w2, s>
+	if 	num1 - num2 >=2
+in
+
+let getNewServices2Node1 = 
+	replace "NEW_SERVICES":num1::int:<?w>,
+			"NODE":"Node_Id":1:"Num":num::int:<?l>
+	by	"NODE":"Node_Id":1:"Num":(num+num1):<l,w>
+in
+
+<
+	balance, getNewServices2Node1, 
+	
+	"NODE":"Node_Id":1:"Num":3:<new Service ("s1"), new Service("s2"), new Service("s3")>,
+	//"NODE":"Node_Id":1:"Num":3:<"S1", "S2", "S3">,
+	"NODE":"Node_Id":2:"Num":0:<>
+>

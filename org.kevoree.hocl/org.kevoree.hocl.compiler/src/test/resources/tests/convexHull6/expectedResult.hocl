@@ -1,0 +1,19 @@
+
+/**  Compute the convex hull of a set of 6 points **/
+/* Expected result */
+
+package fr.inria.fr.inria.hocl.tests.convexHull6;
+
+ let removePoint =
+     replace  p::Point, p1::Point, p2::Point, p3::Point
+          by  p1, p2, p3
+          if  p.inTriangle(p1,p2,p3)
+  in
+    < removePoint,
+      new Point(2,7,1),
+      new Point(5,6,2),
+//      new Point(3,4,3),
+      new Point(1,1,4),
+//      new Point(4,2,5),
+      new Point(7,2,6)
+    >

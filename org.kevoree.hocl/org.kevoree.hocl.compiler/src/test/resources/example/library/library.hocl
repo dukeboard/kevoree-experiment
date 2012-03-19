@@ -1,0 +1,35 @@
+package fr.inria.fr.inria.hocl.example.library;
+
+let addBook =
+	replace bookname::String, "next_id":i::int
+	by "BOOK":i:bookname, "next_id":i+1
+in
+let addStu =
+	replace stuname::String, "next_id":i::int
+	by "STUDENT":i:stuname, "next_id":i+1
+in
+let borrowBook =
+	replace "BOOKS":<"BOOK":bookid::int:bookname::String, ?w>, "Borrow":stuname::String:bookname::String, "RECORD":<?x>
+	by "BOOKS":<w>, "RECORD":<x,"Borrow":stuname:bookname>
+in
+<
+	"BOOKS":<
+		addBook,
+		"next_id":1,
+		"Thinking in JAVA",
+		"Code Complete",
+		"Code Complete"
+	>,
+	"STUDENTS":<
+		addStu,
+		"next_id":1,
+		"Thierry",
+		"Nicola",
+		"Valentine"
+	>,
+	"RECORD":<>,
+	"Borrow":"Thierry":"Thinking in JAVA",
+	"Borrow":"Nicola":"Code Complete",
+	"Borrow":"Thierry":"Code Complete",
+	replace-one "BOOKS":<addBook=x,?w>,"STUDENTS":<addStu=y,?k> by borrowBook, "BOOKS":<w>,"STUDENTS":<k>
+>

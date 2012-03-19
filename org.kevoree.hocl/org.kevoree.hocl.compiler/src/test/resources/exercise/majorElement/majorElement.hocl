@@ -1,0 +1,13 @@
+package fr.inria.fr.inria.hocl.exercise.majorElement;
+
+let reduce=
+	replace x::String, y::String, ?w
+	by w
+	if !x.equals(y)
+in
+<
+	reduce,
+	"Barack","Barack","Barack","Jack","Bill","Bill","Jack",
+	"Barack","Jack","Barack","Barack","Bill","Barack",
+	"Barack","Jack","Barack","Barack"
+>

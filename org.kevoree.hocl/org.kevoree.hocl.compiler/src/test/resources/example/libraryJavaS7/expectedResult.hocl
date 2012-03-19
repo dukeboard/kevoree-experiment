@@ -1,0 +1,33 @@
+
+package fr.inria.fr.inria.hocl.example.libraryJavaS7;
+
+let borrowBook=
+	replace  "BOOKS":<?w, book::Book>, "STUDENTS":<?k, stu::Student>,"RECORDS":<?l>,"Borrow":stu_name::String:book_name::String
+	by "RECORDS":<l, "Borrow":stu_name:book_name>, "BOOKS":<w, book>, "STUDENTS":<k, stu>
+	if book.getBookName()== book_name && stu.getStuName()==stu_name && book.borrowBook() && stu.borrowBook(book)
+in
+let returnBook=
+	replace  "BOOKS":<?w, book::Book>, "STUDENTS":<?k, stu::Student>,"Return":stuname::String:bookname::String,"RECORDS":<?l,"Borrow":stuname::String:bookname::String>
+	by "RECORDS":<l,"Borrow":stuname:bookname:"Returned">,  "BOOKS":<w, book>, "STUDENTS":<k, stu>
+	if book.getBookName()== bookname && stu.getStuName()==stuname && book.returnbook()&& stu.returnBook(book)
+in
+<
+	borrowBook,returnBook,
+	"RECORDS":<
+		"Borrow":"Thierry":"Thinking in JAVA",
+		"Borrow":"Nicola":"Code Complete",
+		"Borrow":"Thierry":"C++ Primer":"Returned"
+	>,
+	
+	"BOOKS":<
+		"THis is a book.ID:0, Name:Thinking in JAVA, Available:NO.\n",
+		"THis is a book.ID:1, Name:Code Complete, Available:NO.\n",
+		"THis is a book.ID:2, Name:C++ Primer, Available:YES."
+	>,
+	
+	"STUDENTS":<
+		"THis is a student. ID:2, Name:Valentine\n"+"BorowedBooks:",
+		"THis is a student. ID:1, Name:Nicola\n"+"BorowedBooks:1: Code Complete;",
+		"THis is a student. ID:0, Name:Thierry\n"+"BorowedBooks:1: Thinking in JAVA;"
+	>
+>

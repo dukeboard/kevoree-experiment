@@ -1,0 +1,19 @@
+
+/* SAT, the famous NP-complete problem: find the values of
+ *   boolean variables such that some boolean propositions are true
+ * 
+ *  x1 or not x2 or x3  and  not x1 or x2 or x3  and  not x1 or not x2 or not x3
+ *
+*/
+
+package fr.inria.fr.inria.hocl.tests.sat;
+
+let sat = replace-one <x1::Boolean,x2::Boolean,x3::Boolean,?w>
+                   by "X1":x1,"X2":x2,"X3":x3
+                   if (x1 || ! x2 || x3) && (! x1 || x2 || x3) && (! x1 || ! x2 || ! x3)
+in
+<
+ <true,true,true,
+  false,false,false>,
+ sat
+>

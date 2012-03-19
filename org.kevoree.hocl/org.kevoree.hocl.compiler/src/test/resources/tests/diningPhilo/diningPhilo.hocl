@@ -1,0 +1,29 @@
+
+// the famous dining philosophers problem (cf ACM 93)
+
+package fr.inria.fr.inria.hocl.tests.diningPhilo;
+
+let diningPhilo =
+  replace-one size::int
+           by
+             let philoStartEating = replace-one "ThinkingPhilo":p::int, "Fork":i::int, "Fork":j::int
+                                         by "EatingPhilo":i
+                                         if p==i && j==(i+1)%size
+             in
+             let philoStartThinking = replace-one "EatingPhilo":p::int
+                                           by "ThinkingPhilo":p, "Fork":p, "Fork":(p+1)%size
+             in
+             let genPhiloFork = replace i::int
+                                   by (i-1), "ThinkingPhilo":(i-1), "Fork":(i-1)
+                                   if i > 0
+             in
+             let genActions = replace i::int
+                                   by (i-1), philoStartEating, philoStartThinking
+                                   if i > 0
+             in
+              <genPhiloFork, size>,
+              (replace-one <genPhiloFork=gpf, iter::int, ?w> by w),
+              <genActions, size>,
+              (replace-one <genActions=ga, iter::int, ?w> by w)
+in
+ < diningPhilo, 5 >

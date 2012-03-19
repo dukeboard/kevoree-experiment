@@ -1,0 +1,55 @@
+
+/*
+ *  This program return the length of the shortest path in
+ * a weigthted directed graph between two nodes x and y
+ * and for any pairs (x,y).  (cf ACM93)
+ *
+ *
+ * results : BACEF cost 9 B:F:9, ...
+ */
+
+package fr.inria.fr.inria.hocl.tests.graphShortestPath;
+
+
+let shortcut = replace v1::String:v2::String:c1::int,
+                       v3::String:v4::String:c2::int,
+                       v5::String:v6::String:c3::int
+                    by v1:v2:c1,
+                       v3:v4:c2,
+                       v5:v6:(c1+c2)
+                    if v2.equals(v3) && v1.equals(v5) && v4.equals(v6) && c3 > c1 + c2 && c1 != Integer.MAX_VALUE && c2 != Integer.MAX_VALUE
+in
+<
+ "A":"B":Integer.MAX_VALUE,
+ "A":"C":1,
+ "A":"D":Integer.MAX_VALUE,
+ "A":"E":Integer.MAX_VALUE,
+ "A":"F":Integer.MAX_VALUE,
+ "B":"A":3,
+ "B":"C":5,
+ "B":"D":Integer.MAX_VALUE,
+ "B":"E":Integer.MAX_VALUE,
+ "B":"F":Integer.MAX_VALUE,
+ "C":"A":Integer.MAX_VALUE,
+ "C":"B":Integer.MAX_VALUE,
+ "C":"D":2,
+ "C":"E":4,
+ "C":"F":Integer.MAX_VALUE,
+ "D":"A":5,
+ "D":"B":Integer.MAX_VALUE,
+ "D":"C":Integer.MAX_VALUE,
+ "D":"E":Integer.MAX_VALUE,
+ "D":"F":5,
+ "E":"A":Integer.MAX_VALUE,
+ "E":"B":Integer.MAX_VALUE,
+ "E":"C":Integer.MAX_VALUE,
+ "E":"D":Integer.MAX_VALUE,
+ "E":"F":1,
+ "F":"A":Integer.MAX_VALUE,
+ "F":"B":Integer.MAX_VALUE,
+ "F":"C":Integer.MAX_VALUE,
+ "F":"D":Integer.MAX_VALUE,
+ "F":"E":Integer.MAX_VALUE,
+ shortcut
+>
+

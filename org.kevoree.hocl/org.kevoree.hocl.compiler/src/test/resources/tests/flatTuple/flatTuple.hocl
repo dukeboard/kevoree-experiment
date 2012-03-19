@@ -1,0 +1,16 @@
+
+package fr.inria.fr.inria.hocl.tests.flatTuple;
+
+let flatTuple = replace (x::int:y::int):z::int
+                     by x:y:z
+in
+let moveLeft = replace x::int:(y::int:z::int)
+                    by (y:z):x
+in
+ < flatTuple, moveLeft,
+   3:4:5,
+   (3:4):6,
+   5:(4:6),
+   ((2:3):4):6
+ >
+ 

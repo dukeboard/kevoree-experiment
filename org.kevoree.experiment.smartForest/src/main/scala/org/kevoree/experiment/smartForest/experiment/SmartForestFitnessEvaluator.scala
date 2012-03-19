@@ -31,6 +31,8 @@ class SmartForestFitnessEvaluator extends Problem with SimpleProblemForm {
     val newObjectives: Array[Float] = Array(SmartForestFitnessEvaluatorO.getDensityFitnessFunction.evaluate(ki.myModel),
       SmartForestFitnessEvaluatorO.getConsumptionFitnessFunction.evaluate(ki.myModel),
       SmartForestFitnessEvaluatorO.getConfidenceFitnessFunction.evaluate(ki.myModel))
+
+
     setFitness(state, ki, newObjectives)
   }
 

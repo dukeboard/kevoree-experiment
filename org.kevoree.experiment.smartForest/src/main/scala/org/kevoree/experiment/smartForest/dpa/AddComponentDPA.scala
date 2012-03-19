@@ -3,7 +3,7 @@ package org.kevoree.experiment.smartForest.dpa
 import org.kevoree.library.tools.dpa.DPA
 import java.util.ArrayList
 import org.kevoree.{ContainerRoot, NamedElement, ComponentType}
-import scala.collection.JavaConversions._
+
 import org.kevoree.tools.marShell.ast.TransactionalBloc._
 import org.kevoree.tools.marShell.ast.AddComponentInstanceStatment._
 import org.kevoree.tools.marShell.ast.ComponentInstanceID._
@@ -47,6 +47,7 @@ class AddComponentDPA extends DPA {
 
   def getScript(myMap: java.util.Map[String, NamedElement]): String = {
     var script: String = templateScript
+    import scala.collection.JavaConversions._
     for (name <- myMap.keySet) {
       val replacedString: String = "${" + name + "}"
       script = script.replace(replacedString, myMap.get(name).getName)

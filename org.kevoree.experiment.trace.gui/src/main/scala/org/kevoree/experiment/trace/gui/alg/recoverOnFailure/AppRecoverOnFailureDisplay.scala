@@ -8,7 +8,8 @@ import com.lowagie.text.Rectangle
 import java.awt.Graphics2D
 import com.lowagie.text.pdf.{DefaultFontMapper, PdfTemplate, PdfContentByte, PdfWriter}
 import java.awt.geom.Rectangle2D
-import org.kevoree.experiment.trace.gui.alg.{VectorClockSingleDisseminationChartScala, TracePath}
+import scala.collection.JavaConversions._
+import org.kevoree.experiment.trace.gui.alg.{RGenerator, VectorClockSingleDisseminationChartScala, TracePath}
 
 /**
  * User: Erwan Daubert - erwan.daubert@gmail.com
@@ -20,19 +21,20 @@ object AppRecoverOnFailureDisplay extends App {
 
   // var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/trace_out"))
   //var inputModel = KevoreeXmiHelper.load("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/300000_45000_-sendNotification_-alwaysAskModel__1000/bootStrapComplex.kev")
-  var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment//org.kevoree.experiment.trace.samples/trace_out"))
-  //val nbHops = NbHop(inputModel, "p00")
-
+  var inputLazy: InputStream = new FileInputStream(new File("/Users/ffouquet/Documents/DEV/dukeboard_github/kevoree-experiment/org.kevoree.experiment.library.gossiperNetty/results/exp3/trace_out3"))
   var tracesLazy: TraceMessages.Traces = TraceMessages.Traces.parseFrom(inputLazy)
-
   var linkedTrace = TracePath.getPathFrom("p00", 3, tracesLazy)
-  var linkedTrace3 = TracePath.getPathFrom("p00", 4, tracesLazy)
-  var linkedTrace2 = TracePath.getPathFrom("o00", 3, tracesLazy)
+  var linkedTrace2 = TracePath.getPathFrom("p00", 4, tracesLazy)
+  var linkedTrace3 = TracePath.getPathFrom("o00", 3, tracesLazy)
 
-  RecoveryRGenerator.generateLinkedGraph(
-    List(linkedTrace2.get,linkedTrace3.get),
-    linkedTrace.head.trace.getTimestamp //BEGIN OF TIME
-  )
+  val content = (RecoveryRGenerator.generateLinkedGraph(
+    List(linkedTrace.get,linkedTrace2.get,linkedTrace3.get),
+    linkedTrace.head.trace.getTimestamp, //BEGIN OF TIME
+    List("black","red","blue"),
+    List("10","1","8")
+  ) )
+
+  RGenerator.generateFile(content,"exp3.r")
 
    /*
   linkedTrace match {

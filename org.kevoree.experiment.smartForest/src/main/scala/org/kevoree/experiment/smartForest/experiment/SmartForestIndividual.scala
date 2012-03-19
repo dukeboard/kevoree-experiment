@@ -4,7 +4,6 @@ import ec.EvolutionState
 import org.kevoree.tools.marShell.interpreter.{KevsInterpreterAspects, KevsInterpreterContext}
 import java.io.File
 import org.kevoree.experiment.smartForest.SmartForestExperiment
-import scala.collection.JavaConversions._
 import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.experiment.smartForest.dpa._
 import org.kevoree.DictionaryValue
@@ -14,6 +13,7 @@ import org.kevoree.DictionaryValue
  * Date: 25/07/11
  * Time: 09:01
  */
+
 
 class SmartForestIndividual extends KevoreeIndividualAbstract {
 
@@ -25,6 +25,7 @@ class SmartForestIndividual extends KevoreeIndividualAbstract {
   var resetDpas : List[DPA] = List(new AddForestMonitoringComponentDPA())
 
   val baseModelPath = SmartForestExperiment.folderToStoreTempFile + File.separator + SmartForestExperiment.individualBaseModel
+ 
 
    /**
    * Destructively crosses over the individual with another in some default
@@ -39,6 +40,7 @@ class SmartForestIndividual extends KevoreeIndividualAbstract {
     val dm = SmartForestIndividualHelper.compareForest(ind.asInstanceOf[SmartForestIndividual])
     val context = new KevsInterpreterContext(myModel)
     val removeDPA = new RemoveComponentDPA
+    import scala.collection.JavaConversions._
     dm.getAddInstance.foreach{ map =>
       if (state.random(thread).nextBoolean) {
         val script = SmartForestIndividualHelper.copyComponent(map.get(SmartForestIndividualHelper.componentName),

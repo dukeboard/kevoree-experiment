@@ -1,6 +1,5 @@
 package org.kevoree.experiment.smartForest.fitness
 
-import scala.collection.JavaConversions._
 import org.kevoree.{ComponentInstance, ContainerRoot}
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 import java.lang.{Math}
@@ -22,14 +21,14 @@ class ConfidenceFitnessFunction extends FitnessFunction {
     if (bestConfidence == 0) bestConfidence = calculateBestConfidence(model)
     var result : Float = 0
     (0 until model.getNodes.size).foreach{ indice =>
-      val node = model.getNodes.get(indice);
+      val node = model.getNodes(indice);
       node.getComponents.foreach{ componentInstance =>
-        val period = Integer.parseInt(componentInstance.asInstanceOf[ComponentInstance].getDictionary.getValues.find {
+        val period = Integer.parseInt(componentInstance.asInstanceOf[ComponentInstance].getDictionary.get.getValues.find {
           dv =>
             dv.getAttribute.getName == ChangePeriodPropertyDPAO.getPeriodPropertyName
         }.get.getValue)
         val frequency = 1000/period
-        result = result + frequency/(1+getDistanceWithClosestSuperNode(indice)) // 1+ getDistance to avoid division by 0
+        result = result + frequency/((1+getDistanceWithClosestSuperNode(indice))*(1+getDistanceWithClosestSuperNode(indice) )) // 1+ getDistance to avoid division by 0
       }
     }
     FitnessPostProcess(result)
@@ -54,7 +53,7 @@ class ConfidenceFitnessFunction extends FitnessFunction {
     val worstPeriod = PeriodValues.values.min
     val worstFreq = 1000 / worstPeriod
     (0 until model.getNodes.size).foreach{ indice =>
-      result = result + 3*worstFreq/(1+getDistanceWithClosestSuperNode(indice)) // 1+ getDistance to avoid division by 0
+      result = result + 3*worstFreq/((1+getDistanceWithClosestSuperNode(indice))*(1+getDistanceWithClosestSuperNode(indice) )) // 1+ getDistance to avoid division by 0
     }
     println("Best confidence = " + result)
     (result).asInstanceOf[Float]
@@ -63,6 +62,6 @@ class ConfidenceFitnessFunction extends FitnessFunction {
 
   private def FitnessPostProcess(confidence : Double) : Float = {
     val result = ((bestConfidence - confidence) * 100 / bestConfidence)
-    math.floor(result).asInstanceOf[Float]
+    (result).asInstanceOf[Float]
   }
 }

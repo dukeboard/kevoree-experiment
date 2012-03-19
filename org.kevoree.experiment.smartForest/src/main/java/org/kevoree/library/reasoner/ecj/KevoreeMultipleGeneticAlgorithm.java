@@ -51,6 +51,15 @@ public class KevoreeMultipleGeneticAlgorithm {
     /** 'auto' thread parameter value */
     public static final String V_THREADS_AUTO = "auto";
 
+
+    public EvolutionState getCurrentState() {
+        return currentState;
+    }
+
+
+    private EvolutionState currentState;
+
+
     /**
      * Restores an EvolutionState from checkpoint if "-checkpoint FILENAME" is
      * in the command-line arguments.
@@ -360,69 +369,38 @@ public class KevoreeMultipleGeneticAlgorithm {
     }
 
 
-    /** Top-level evolutionary loop. */
-
     public KevoreeMultipleGeneticAlgorithm() {
         EvolutionState state;
         ParameterDatabase parameters;
         String[] args = new String[] { "-file",
                 SmartForestExperiment.folderToStoreTempFile + File.separator + SmartForestExperiment.paramsTargetFile };
-        int currentJob = 0; // the next job number (0 by default)
+
 
         parameters = loadParameterDatabase(args);
-        if (currentJob == 0) // no current job number yet
-            currentJob = parameters.getIntWithDefault(new Parameter(
-                    "current-job"), null, 0);
-        if (currentJob < 0)
-            Output.initialError("The 'current-job' parameter must be >= 0 (or not exist, which defaults to 0)");
+        parameters.getIntWithDefault(new Parameter("current-job"), null, 0);
+        parameters.getIntWithDefault(new Parameter("jobs"), null, 1);
 
-        int numJobs = parameters.getIntWithDefault(new Parameter("jobs"), null,
-                1);
-        if (numJobs < 1)
-            Output.initialError("The 'jobs' parameter must be >= 1 (or not exist, which defaults to 1)");
 
-        for (int job = currentJob; job < numJobs; job++) {
-            {
+        // Initialize the EvolutionState, then set its job variables
+        state = initialize(parameters, 1); // pass in job# as the seed
+                                             // increment
+        state.output.systemMessage("Job: " + 1);
+        state.job = new Object[1]; // make the job argument storage
+        state.job[0] = new Integer(1); // stick the current job in our
+                                         // job storage
+        state.runtimeArguments = args; // stick the runtime arguments in
+                                       // our storage
+        parameters = null;
+        currentState =  state;
 
-                // Initialize the EvolutionState, then set its job variables
-                state = initialize(parameters, job); // pass in job# as the seed
-                                                     // increment
-                state.output.systemMessage("Job: " + job);
-                state.job = new Object[1]; // make the job argument storage
-                state.job[0] = new Integer(job); // stick the current job in our
-                                                 // job storage
-                state.runtimeArguments = args; // stick the runtime arguments in
-                                               // our storage
-                if (numJobs > 1) // only if iterating (so we can be
-                                 // backwards-compatible),
-                {
-                    String jobFilePrefix = "job." + job + ".";
-                    state.output.setFilePrefix(jobFilePrefix); // add a prefix
-                                                               // for
-                                                               // checkpoint/output
-                                                               // files
-                    state.checkpointPrefix = jobFilePrefix
-                            + state.checkpointPrefix; // also set up checkpoint
-                                                      // prefix
-                }
-
-                // Here you can set up the EvolutionState's parameters further
-                // before it's setup(...).
-                // This includes replacing the random number generators,
-                // changing values in state.parameters,
-                // changing instance variables (except for job and
-                // runtimeArguments, please), etc.
-
-                // now we let it go
-                state.run(EvolutionState.C_STARTED_FRESH);
-
-                cleanup(state);
-                parameters = null;
-
-            }
-        }
     }
 
-    
+    public void start(){
+        currentState.run(EvolutionState.C_STARTED_FRESH);
+    }
+
+    public void clean(){
+        cleanup(currentState);
+    }
 
 }

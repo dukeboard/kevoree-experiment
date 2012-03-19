@@ -5,7 +5,6 @@ import java.util.Map
 import org.kevoree.{ContainerRoot, NamedElement}
 import org.kevoree.tools.marShell.ast.{UpdateDictionaryStatement, TransactionalBloc, Script}
 import ec.util.MersenneTwisterFast
-import scala.collection.JavaConversions._
 
 /**
  * User: ffouquet

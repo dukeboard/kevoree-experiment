@@ -30,13 +30,8 @@ case class LinkedTrace (trace: Trace, sucessors: List[LinkedTrace]) {
     result.append("")
 
 
-
-    val calendar: Calendar = Calendar.getInstance
-    calendar.setTimeInMillis((trace.getTimestamp - beginTime) / 1000000)
-    val timeRepresentation = "" + calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND) + ":" +
-      calendar.get(Calendar.MILLISECOND)
-
-    result.append(timeRepresentation)
+    val timeStampMilli = ((trace.getTimestamp-beginTime) * ( 0.000001) )
+    result.append(timeStampMilli)
     result.append("=>" + sucessors.size)
     result.append(lineSeparator)
     sucessors.foreach {

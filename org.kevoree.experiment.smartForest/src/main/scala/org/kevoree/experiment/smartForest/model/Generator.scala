@@ -4,12 +4,9 @@ import java.net.{URLDecoder, URL}
 import org.kevoree.tools.marShell.parser.KevsParser
 import org.kevoree.tools.marShell.ast.Script
 import org.kevoree.tools.marShell.interpreter.{KevsInterpreterAspects, KevsInterpreterContext}
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
-import org.kevoree.{KevoreePackage, NamedElement, ContainerRoot}
-import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.ecore.xmi.{XMLResource, XMIResource}
 import org.kevoree.tools.marShell.interpreter.KevsInterpreterAspects._
+import org.kevoree.ContainerRoot
+import org.kevoree.framework.KevoreeXmiHelper
 
 /**
  * User: ffouquet
@@ -25,8 +22,8 @@ object Generator {
     var url: URL = null
     var path: String = ""
     try {
-      url = this.getClass.getClassLoader.getResource("defaultLibrary.kev")
-      path = URLDecoder.decode(url.toString, "UTF-8")
+      path = this.getClass.getClassLoader.getResource("defaultLibrary.kev").getPath
+     // path = URLDecoder.decode(url.toString, "UTF-8")
     }
     catch {
       case e: Exception => {
@@ -34,7 +31,7 @@ object Generator {
       }
     }
 
-    val myModel: ContainerRoot = load(path)
+    val myModel: ContainerRoot = KevoreeXmiHelper.load(path)
 
     for (i <- 0 until (forestWidth * forestWidth)) {
       val scriptString: String = "tblock {\n addNode node" + i + ":ArduinoNode \n }"
@@ -52,16 +49,6 @@ object Generator {
 
   }
 
-  def load(uri: String): ContainerRoot = {
-    val rs = new ResourceSetImpl();
-    rs.getResourceFactoryRegistry.getExtensionToFactoryMap.put("kev", new XMIResourceFactoryImpl());
-    rs.getPackageRegistry.put(KevoreePackage.eNS_URI, KevoreePackage.eINSTANCE);
-    val res = rs.getResource(URI.createURI(uri), true);
-    res.asInstanceOf[XMIResource].getDefaultLoadOptions.put(XMLResource.OPTION_ENCODING, "UTF-8");
-    res.asInstanceOf[XMIResource].getDefaultSaveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8");
-    val result = res.getContents.get(0);
-    result.asInstanceOf[ContainerRoot]
-  }
 
 
 }

@@ -19,43 +19,57 @@ object RGenerator {
       val stream: InputStream = new FileInputStream(new File(pathComplete))
       if (stream == null) System.out.println("Perdu")
       val result = StatisticsParser.parseCompleteStatistics(stream)
-
+      println(result)
       var axe1res: List[String] = List()
       var axe2res: List[String] = List()
       var axe3res: List[String] = List()
       var axeFullres: List[String] = List()
 
+      //var paraValues: List[String] = List()
+      var i = 0
+
       result.foreach {
         generation => {
-          var res = (300f,300f,300f)
-          var res2 = 300f
-          generation.populations.foreach {
-            popuplation =>
-              res2 = math.min(res2 , (popuplation.fitness(0)+popuplation.fitness(1)+popuplation.fitness(2)) )
-              res = (
-                math.min(res._1,popuplation.fitness(0)),
-                math.min(res._2,popuplation.fitness(1)),
-                math.min(res._3,popuplation.fitness(2)))
-          }
-          axe1res = axe1res ++ List(res._1.toString)
-          axe2res = axe2res ++ List(res._2.toString)
-          axe3res = axe3res ++ List(res._3.toString)
-          axeFullres = axeFullres ++ List((res2/3).toString)
 
+          if (i % 2 == 0) {
+            println("i=" + i)
+            generation.populations.foreach {
+              individu =>
+
+                if (individu.rank == 0) {
+                  axe1res = axe1res ++ List(" " + i + "," + (individu.fitness(0)))
+                  axe2res = axe2res ++ List(" " + i + "," + (individu.fitness(1)))
+                  axe3res = axe3res ++ List(" " + i + "," + (individu.fitness(2)))
+                  axeFullres = axeFullres ++ List(" " + i + "," +  ( (individu.fitness(0)+(individu.fitness(1)+(individu.fitness(2)) ))))
+                }
+
+            }
+          }
+          i = i + 1
         }
       }
 
+
       val fileWR = new FileWriter(new File(pathCompleteOut))
-      fileWR.append(" axe1 <- c(" + axe1res.mkString(",") + ")\n" )
-      fileWR.append(" axe2 <- c(" + axe2res.mkString(",") + ")\n" )
-      fileWR.append(" axe3 <- c(" + axe3res.mkString(",") + ")\n" )
-      fileWR.append(" axeFull <- c(" + axeFullres.mkString(",") + ")\n" )
+      //  fileWR.append(" axe1 <- c(" + axe1res.mkString(",") + ")\n")
+      //  fileWR.append(" axe2 <- c(" + axe2res.mkString(",") + ")\n")
+      // fileWR.append(" axe3 <- c(" + axe3res.mkString(",") + ")\n")
+      //   fileWR.append(" axeFull <- c(" + axeFullres.mkString(",") + ")\n")
 
-      fileWR.append("plot(axeFull,ylim=c(0,100),xlim=c(0,"+axeFullres.size+"))\n")
-      fileWR.append("lines(axe1, col=\"blue\")\n")
-      fileWR.append("lines(axe2, col=\"red\")\n")
-      fileWR.append("lines(axe3, col=\"green\")\n")
+      //  fileWR.append("plot(axeFull,ylim=c(0,100),xlim=c(0," + axeFullres.size + "))\n")
+      //  fileWR.append("lines(axe1, col=\"blue\")\n")
+      //  fileWR.append("lines(axe2, col=\"red\")\n")
+      //   fileWR.append("lines(axe3, col=\"green\")\n")
 
+      fileWR.append("axe1 <- matrix(c(" + axe1res.mkString(",\n") + "),nrow=" + axe1res.size + ",ncol=2, byrow=TRUE,dimnames = NULL)\n")
+      fileWR.append("axe2 <- matrix(c(" + axe2res.mkString(",\n") + "),nrow=" + axe2res.size + ",ncol=2, byrow=TRUE,dimnames = NULL)\n")
+      fileWR.append("axe3 <- matrix(c(" + axe3res.mkString(",\n") + "),nrow=" + axe3res.size + ",ncol=2, byrow=TRUE,dimnames = NULL)\n")
+      fileWR.append("axeFullres <- matrix(c(" + axeFullres.mkString(",\n") + "),nrow=" + axeFullres.size + ",ncol=2, byrow=TRUE,dimnames = NULL)\n")
+      fileWR.append("par(mfrow=c(4,1))\n")
+      fileWR.append("plot(axe1)\n")
+      fileWR.append("plot(axe2)\n")
+      fileWR.append("plot(axe3)\n")
+      fileWR.append("plot(axeFullres)\n")
       fileWR.close()
 
 

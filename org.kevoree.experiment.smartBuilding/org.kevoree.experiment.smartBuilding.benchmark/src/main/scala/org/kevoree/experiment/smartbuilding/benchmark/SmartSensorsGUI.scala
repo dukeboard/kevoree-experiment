@@ -2,9 +2,10 @@ package org.kevoree.experiment.smartbuilding.benchmark
 
 import info.monitorenter.gui.chart.Chart2D
 import java.awt.Color
-import javax.swing.{BoxLayout, JPanel}
 import info.monitorenter.gui.chart.traces.{Trace2DSimple, Trace2DLtd}
 import info.monitorenter.gui.chart.rangepolicies.RangePolicyMinimumViewport
+import javax.swing.{JLabel, BoxLayout, JPanel}
+import info.monitorenter.gui.chart.IAxis.AxisTitle
 
 /**
  * User: ffouquet
@@ -15,7 +16,7 @@ import info.monitorenter.gui.chart.rangepolicies.RangePolicyMinimumViewport
 object SmartSensorsGUI {
 
   var chartMem = new Chart2D();
-  chartMem.setBackground(Color.DARK_GRAY);
+  chartMem.setBackground(Color.white);
   //chartMem.setGridColor(Color.ORANGE)
 
   var axisXMem = chartMem.getAxisX();
@@ -24,30 +25,49 @@ object SmartSensorsGUI {
   var axisYMem = chartMem.getAxisY();
   axisXMem.setStartMajorTick(false);
   axisXMem.setMajorTickSpacing(10);
-  // axisXMem.setRangePolicy(new RangePolicyMinimumViewport(new info.monitorenter.util.Range(0,1700)));
-
-  //axisYMem.setRange(new info.monitorenter.util.Range(0,1700))
+  axisXMem.setMinorTickSpacing(10)
+  axisXMem.setAxisTitle(new AxisTitle("reconfiguration step"))
   var traceMem = new Trace2DSimple();
+  traceMem.setName("Dynamic memory")
   traceMem.setColor(Color.RED);
   chartMem.addTrace(traceMem);
 
   var chartEMem = new Chart2D();
-  chartEMem.setBackground(Color.DARK_GRAY);
+  chartEMem.setBackground(Color.white);
   var axisXEMem = chartEMem.getAxisX();
   axisXEMem.setStartMajorTick(false);
   axisXEMem.setMajorTickSpacing(10);
+  axisXEMem.setMinorTickSpacing(10)
+  axisXEMem.setAxisTitle(new AxisTitle("reconfiguration step"))
   var traceEMem = new Trace2DSimple();
-  traceEMem.setColor(Color.YELLOW);
+  traceEMem.setColor(Color.GREEN);
+  traceEMem.setName("Persistent memory")
   chartEMem.addTrace(traceEMem);
 
   var chartRTime = new Chart2D();
-  chartRTime.setBackground(Color.DARK_GRAY);
+  chartRTime.setBackground(Color.white);
   var axisXRTime = chartRTime.getAxisX();
   axisXRTime.setStartMajorTick(false);
   axisXRTime.setMajorTickSpacing(10);
+  axisXRTime.setMinorTickSpacing(10)
+  axisXRTime.setAxisTitle(new AxisTitle("reconfiguration step"))
   var traceTTime = new Trace2DSimple();
-  traceTTime.setColor(Color.ORANGE);
+  traceTTime.setColor(Color.black)
+  traceTTime.setName("Downtime")
   chartRTime.addTrace(traceTTime);
+
+  var chartSSIZE = new Chart2D();
+  chartSSIZE.setBackground(Color.white);
+  var axisXSSIZE = chartSSIZE.getAxisX();
+  axisXSSIZE.setStartMajorTick(false);
+  axisXSSIZE.setMajorTickSpacing(10);
+  axisXSSIZE.setMinorTickSpacing(10)
+  axisXSSIZE.setAxisTitle(new AxisTitle("reconfiguration step"))
+  var traceSSIZE = new Trace2DSimple();
+  traceSSIZE.setColor(Color.blue);
+  traceSSIZE.setName("KevScript size")
+  chartSSIZE.addTrace(traceSSIZE);
+
 
   var p: JPanel = null
 
@@ -58,6 +78,7 @@ object SmartSensorsGUI {
       p.add(chartMem)
       p.add(chartEMem)
       p.add(chartRTime)
+      p.add(chartSSIZE)
     }
     p
   }
@@ -66,6 +87,7 @@ object SmartSensorsGUI {
     traceMem.removeAllPoints()
     traceEMem.removeAllPoints()
     traceTTime.removeAllPoints()
+    traceSSIZE.removeAllPoints()
   }
 
   def putMemValue(index: Int, i: Int) {
@@ -79,6 +101,8 @@ object SmartSensorsGUI {
   def putRTimeValue(index: Int, i: Int) {
     traceTTime.addPoint(index, i)
   }
-
+  def putSSIZEValue(index: Int, i: Int) {
+    traceSSIZE.addPoint(index, i)
+  }
 
 }

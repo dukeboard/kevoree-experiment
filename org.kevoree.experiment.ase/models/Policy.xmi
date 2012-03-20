@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rbac.rbac:Policy xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rbac.rbac="rbac.rbac" xsi:schemaLocation="rbac.rbac ../metamodel/rbac.ecore#//rbac">
+  <elements xsi:type="rbac.rbac:User" name="Gary" assignedRoles="//@elements.4"/>
+  <elements xsi:type="rbac.rbac:User" name="Mary" assignedRoles="//@elements.4"/>
+  <elements xsi:type="rbac.rbac:User" name="Boris" assignedRoles="//@elements.4 //@elements.6"/>
+  <elements xsi:type="rbac.rbac:User" name="Alicia" assignedRoles="//@elements.4 //@elements.5"/>
+  <elements xsi:type="rbac.rbac:Role" name="employee" permissions="//@elements.7"/>
+  <elements xsi:type="rbac.rbac:Role" name="relationshipManager" ssod="//@elements.6" permissions="//@elements.8"/>
+  <elements xsi:type="rbac.rbac:Role" name="rescuer" ssod="//@elements.5" permissions="//@elements.9"/>
+  <elements xsi:type="rbac.rbac:Permission" name="consult">
+    <operations name="read" resources="//@elements.11 //@elements.12"/>
+  </elements>
+  <elements xsi:type="rbac.rbac:Permission" name="modifiy">
+    <operations name="read" resources="//@elements.10 //@elements.11 //@elements.12"/>
+    <operations name="update" resources="//@elements.10 //@elements.11"/>
+  </elements>
+  <elements xsi:type="rbac.rbac:Permission" name="admin">
+    <operations name="create" resources="//@elements.12"/>
+    <operations name="read" resources="//@elements.12"/>
+    <operations name="update" resources="//@elements.12"/>
+    <operations name="delete" resources="//@elements.12"/>
+  </elements>
+  <elements xsi:type="rbac.rbac:Resource" name="externalContactAddressBook"/>
+  <elements xsi:type="rbac.rbac:Resource" name="employeeAddressBook"/>
+  <elements xsi:type="rbac.rbac:Resource" name="emergencyAddressBook"/>
+</rbac.rbac:Policy>

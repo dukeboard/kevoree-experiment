@@ -1,0 +1,13 @@
+
+package fr.inria.fr.inria.hocl.tests.largerThan;
+
+let cmp = replace-one p::int
+                   by keepLarger = replace x::int,?w 
+                                        by w
+                                        if x <= p
+in
+<
+ <cmp,5,3,6,546,8,8,4,1,3,13,8,64,84,2,1>,
+ replace-one <keepLarger=kl, ?w> by w
+>
+

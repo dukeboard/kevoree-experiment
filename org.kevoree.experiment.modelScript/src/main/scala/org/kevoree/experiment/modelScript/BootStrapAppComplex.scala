@@ -5,10 +5,12 @@ import org.kevoree.tools.marShell.parser.{ParserUtil, KevsParser}
 import org.kevoree.framework.KevoreeXmiHelper
 import java.net.URL
 import java.io.{InputStreamReader, BufferedReader, OutputStreamWriter, ByteArrayOutputStream}
+import org.kevoree.ContainerRoot
+
 object BootStrapAppComplex {
 
   def bootStrap (packets: List[NodePacket], ip: String, ips: List[String], sendNotification: Boolean,
-    alwaysAskModel: Boolean, delay: java.lang.Integer) {
+    alwaysAskModel: Boolean, delay: java.lang.Integer, maxLink: Int = 3, nbPLink: Int = 1) : ContainerRoot = {
     if (!packets.isEmpty) {
       val model = KevoreeXmiHelper
         .loadStream(this.getClass.getClassLoader.getResourceAsStream("baseModelEvolutionWithLight.kev"))
@@ -16,7 +18,7 @@ object BootStrapAppComplex {
 
       tscript append "tblock {"
 
-      tscript.append(TopologyGeneratorScript.generate(packets, ip, sendNotification, alwaysAskModel, delay))
+      tscript.append(TopologyGenerator.generate(packets, ip, sendNotification, alwaysAskModel, delay, maxLink, nbPLink))
 
       tscript append "addComponent "
       tscript append "myFakeLight"
@@ -44,6 +46,7 @@ object BootStrapAppComplex {
             Kev2GraphML.toGraphMLFile("bootStrapComplex", model)
 
             //Try to push to all
+            var isFirst = true
             ips.foreach {
               ip =>
                 try {
@@ -65,12 +68,15 @@ object BootStrapAppComplex {
                   }
                   wr.close();
                   rd.close();
-
+                  if (isFirst) {
+                    Thread.sleep(10000)
+                    isFirst = false
+                  }
                 } catch {
                   case _@e => e.printStackTrace()
                 }
             }
-
+            return model
 
           } else {
             println("Interpreter Error")
@@ -84,6 +90,7 @@ object BootStrapAppComplex {
         }
       }
     }
+    null
   }
 
   def findNodeName (script: StringBuilder): String = {

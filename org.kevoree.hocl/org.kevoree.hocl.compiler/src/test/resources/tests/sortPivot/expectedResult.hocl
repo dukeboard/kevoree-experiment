@@ -1,0 +1,12 @@
+
+package fr.inria.fr.inria.hocl.tests.sortPivot;
+
+
+let sort = replace-one <?w>
+                    by (replace-one p::int
+                                   by (greater = replace x::int, "G":<?w>  by "G":<x,w>  if x > p),
+                                      (  lower = replace x::int, "L":<?w>  by "L":<x,w>  if x <= p),
+                                      "G":<>, "L":<>, p),
+                         w
+in
+<"G":<481,6351,48,135,3081,43,864>, "L":<9,1,3,8,1,5,1,1>>

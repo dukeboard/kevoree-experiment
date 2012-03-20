@@ -1,0 +1,16 @@
+
+package fr.inria.fr.inria.hocl.example.libraryJavaS2;
+
+<
+	"BOOKS":<
+		"THis is a book.ID:0, Name:Thinking in JAVA\n",
+		"THis is a book.ID:1, Name:Code Complete\n",
+		"THis is a book.ID:2, Name:C++ Primer\n"
+	>,
+	
+	"STUDENTS":<
+		"THis is a student. ID:0, Name:Thierry\n",
+		"THis is a student. ID:1, Name:Nicola\n",
+		"THis is a student. ID:2, Name:Valentine\n"
+	>
+>

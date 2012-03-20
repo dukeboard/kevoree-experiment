@@ -1,0 +1,53 @@
+
+// The Telegram problem (cf ACM93)
+// expected result = "Bonjour, comment ?a va ?ZZZZSecond message STOPZZZZVoici le dernier messageZZZZ"
+
+package fr.inria.fr.inria.hocl.tests.telegram;
+
+// transform a string into a sequence of characters
+let stringToChar = replace s::String:l::int
+                        by s.substring(0,1):l:1, s.substring(1):(l+1)
+                        if s.length() > 0
+in
+
+// transform a sequence of characters into a string
+let charToString = replace v1::String:i1::int:s1::int, v2::String:i2::int:s2::int
+                        by (v1+v2):i1:(s1+s2)
+                        if i2 == i1 + s1
+in
+
+// remove successive spaces (cut the telegram)
+let rmDoubleSpace = replace " ":i1::int:s1::int, " ":i2::int:s2::int
+                         by " ":i1:(s1+s2)
+                         if i2 == i1 + s1
+in
+
+// stick cut parts of the telegram
+let stick = replace v1::String:i1::int:s1::int, v2::String:i2::int:s2::int
+                 by v1:i1:1, v2:(i1+1):(s1+s2-1)
+                 if i2 == i1 + s1 && s1 > 1
+in
+
+// remove trailing spaces
+let rmTrailingSpaces = replace "Z":i1::int:1, "Z":i2::int:1, "Z":i3::int:1, "Z":i4::int:1, " ":i5::int:k::int
+                            by "Z":i1:1, "Z":i2:1, "Z":i3:1, "Z":i4:(k+1)
+                            if i2 == i1 + 1 && i3 == i1 + 2 && i4 == i1 + 3 && i5 == i1 + 4
+in
+
+// remove leading spaces
+let rmLeadingSpaces = replace " ":i0::int:1, "Z":i1::int:1, "Z":i2::int:1, "Z":i3::int:1, "Z":i4::int:k::int
+                           by "Z":i0:1, "Z":i1:1, "Z":i2:1, "Z":i3:(k+1)
+                           if i0 == i1 - 1 && i2 == i1 + 1 && i3 == i1 + 2 && i4 == i1 + 3
+in
+
+<
+ < "Bonjour, comment  ?a   va  ?  ZZZZ  Second message  STOP  ZZZZ    Voici  le dernier  message  ZZZZ ":0,
+   stringToChar,
+   rmDoubleSpace,
+   stick,
+   rmTrailingSpaces,
+   rmLeadingSpaces
+ >,
+ replace-one <stringToChar=stc, rmDoubleSpace=rmDS, stick=s, rmTrailingSpaces=rmTS, rmLeadingSpaces=rmLS, ?w>
+      by w, charToString
+>

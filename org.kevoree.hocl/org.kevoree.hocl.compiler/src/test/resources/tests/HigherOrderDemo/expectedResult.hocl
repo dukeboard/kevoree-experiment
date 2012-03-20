@@ -1,0 +1,18 @@
+package fr.inria.fr.inria.hocl.example.HigherOrderDemo;
+
+let selectNumbers=
+	replace x::int,?y
+	by y
+	if x<10 || x>20
+in
+let getEvenNumbers=
+	replace x::int, ?y
+	by y
+	if x%2!=0
+in
+let getMaxNumber=
+	replace x::int, y::int
+	by x
+	if x>=y
+in
+<getMaxNumber,18>

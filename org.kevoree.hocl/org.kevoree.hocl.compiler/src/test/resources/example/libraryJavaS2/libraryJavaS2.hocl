@@ -1,0 +1,15 @@
+
+package fr.inria.fr.inria.hocl.example.libraryJavaS2;
+
+<
+	"BOOKS":<
+		new Book("Thinking in JAVA"),
+		new Book("Code Complete"),
+		new Book("C++ Primer")
+	>,
+	"STUDENTS":<
+		new Student("Thierry"),
+		new Student("Nicola"),
+		new Student("Valentine")
+	>
+>

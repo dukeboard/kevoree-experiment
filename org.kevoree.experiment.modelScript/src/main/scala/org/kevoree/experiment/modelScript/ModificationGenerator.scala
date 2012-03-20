@@ -17,22 +17,12 @@ class ModificationGenerator(ips : List[String]) {
   var ip: String = null
   var port: Int = 0
 
-  //val addresses: Array[String] = new Array[String] ()
-
-  /*val dukeIP = "131.254.15.214"
-  val paraisseuxIP = "131.254.12.28"
-  val ips = List(dukeIP, paraisseuxIP)*/
 
 
   def doAction(nodeName:String) {
     try {
       loadCurrentModel()
       initKevScript()
-
-      /*
-      if(!model.getNodes.exists(node=> node.getComponents.size() > 0)){
-        doAddComponent(model)
-      } */
 
       doOneMove(model)
       finalizeKevScript()

@@ -1,0 +1,24 @@
+
+package fr.inria.fr.inria.hocl.tests.factorization;
+
+// n = 24, 9687
+
+let sieve =  replace x::int, y::int
+                  by x
+                  if y % x == 0
+in
+let iota = replace "Iota":(x::int)
+                by "Iota":x-1, x
+                if x > 1
+in
+let maketuple = replace x::int by x:24:0 in
+let makediv = replace x::int:y::int:k::int by x:y/x:k+1 if y % x == 0 in
+let develop1 = replace x::int:y::int:k::int by x:y:k-1, x if k > 0 in
+let develop0 = replace x::int:y::int:0, ?w by w in
+<
+  <iota,sieve,"Iota":24>,
+  (replace-one <maketuple = x, ?w> by <w,makediv>),
+  (replace-one <iota = x, sieve = y, "Iota":1, ?w> by <w,maketuple>),
+  (replace-one <makediv = x, ?w> by <w,develop1,develop0>),
+  (replace-one <develop1 = x, develop0 = y, ?w> by w)
+>

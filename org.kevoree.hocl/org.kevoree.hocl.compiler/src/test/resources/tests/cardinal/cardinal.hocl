@@ -1,0 +1,10 @@
+
+package fr.inria.fr.inria.hocl.tests.cardinal;
+
+let to_one = replace x::Object by 1 if !(x instanceof Integer) || ((Integer)x).intValue() != 1 in
+let apply_to_one = replace-one <?w> by <w,to_one> in
+let sum = replace x::int, y::int by x+y in
+< (replace-one <to_one = x, ?w> by w,sum),
+  apply_to_one,
+  <new Object(), 5, new Object(), -5, 1>
+ >

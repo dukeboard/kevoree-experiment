@@ -1,0 +1,9 @@
+
+package fr.inria.fr.inria.hocl.example.extractMaxNumber;
+
+let getMaxNumber=
+	replace x::int, y::int
+	by x
+	if x>=y
+in
+<"Result":<16>>

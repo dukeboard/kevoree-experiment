@@ -1,0 +1,40 @@
+package fr.inria.fr.inria.hocl.example.sortPivot;
+
+let choosePivot=
+	replace-one i::int
+	by "pivot":i
+in
+let greaterThan=
+	replace x::int, "R":<?w>, "index":i::int, "pivot":k::int
+	by "R":<x,w>, "index":i,"pivot":k
+	if x > k
+in 
+let greaterThanOneShot=
+	replace-one x::int, "R":<?w>, "index":i::int, "pivot":k::int
+	by "R":<x,w>, "index":i,"pivot":k
+	if x > k
+in 
+let smallerThan=
+	replace x::int, "L":<?w>, "index":i::int, "pivot":k::int
+	by "L":<x,w>, "index":i+1,"pivot":k
+	if x < k
+in
+let smallerThanOneShot=
+	replace-one x::int, "L":<?w>, "index":i::int, "pivot":k::int
+	by "L":<x,w>, "index":i+1,"pivot":k
+	if x < k
+in
+let startNextRound=
+	replace <"L":<?x>,"R":<?y>,"index":i::int,"pivot":k::int,greaterThan=w,smallerThan=z>
+	by <x,choosePivot,greaterThanOneShot,smallerThanOneShot,"index":1,"R":<>,"L":<>>, 
+		<y,choosePivot,greaterThanOneShot,smallerThanOneShot,"index":i+1,"R":<>,"L":<>>, i:k
+in
+<
+	startNextRound,
+ 	<
+ 		choosePivot,greaterThan,smallerThan,
+ 		9,1,5,3,4,8,2,10,7,6,
+ 		"index":1,"R":<>,"L":<>
+	>
+>
+	

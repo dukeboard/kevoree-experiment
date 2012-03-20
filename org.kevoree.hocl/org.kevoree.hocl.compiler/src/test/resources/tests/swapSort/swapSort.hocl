@@ -1,0 +1,29 @@
+
+/**  **/
+
+package fr.inria.fr.inria.hocl.tests.swapSort;
+import java.util.Random;
+ 
+let swap =
+  replace  (i::Integer):(x::Integer), (j::Integer):(y::Integer)
+       by  i:y, j:x
+       if  i.intValue() < j.intValue() && x.intValue() > y.intValue()
+in
+let genRandomPairs =
+  replace  "gen":(n::Integer):(rand::Random)
+       by  "gen":new Integer(n.intValue()-1):rand, n:new Integer(rand.nextInt())
+       if  n.intValue() > 0 
+in
+   < swap,
+      1:10,
+      new Integer(2):new Integer(3),
+      new Integer(3):new Integer(34),
+      new Integer(4):new Integer(9),
+      new Integer(5):new Integer(1),
+      new Integer(6):new Integer(9),
+      new Integer(7):new Integer(10),
+      new Integer(8):new Integer(33),
+      new Integer(9):new Integer(100),
+      new Integer(10):new Integer(5)
+   >
+   

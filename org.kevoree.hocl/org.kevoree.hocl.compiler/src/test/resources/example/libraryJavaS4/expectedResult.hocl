@@ -1,0 +1,29 @@
+
+package fr.inria.fr.inria.hocl.example.libraryJavaS4;
+
+let borrowBook=
+	replace  "BOOKS":<?w, book::Book>, "STUDENTS":<?k, stu::Student>,"RECORDS":<?l>,"Borrow":stu_name::String:book_name::String
+	by "RECORDS":<l, "Borrow":stu_name:book_name>, "BOOKS":<w, book>, "STUDENTS":<k, stu>
+	if book.getBookName()== book_name && stu.getStuName()==stu_name && book.borrowBook()
+in
+<
+	borrowBook,
+
+	"RECORDS":<
+			"Borrow":"Thierry":"Thinking in JAVA",
+			"Borrow":"Nicola":"Code Complete",
+			"Borrow":"Thierry":"C++ Primer"
+	>,
+	
+	"BOOKS":<
+		"THis is a book.ID:0, Name:Thinking in JAVA, Available:NO.\n",
+		"THis is a book.ID:1, Name:Code Complete, Available:NO.\n",
+		"THis is a book.ID:2, Name:C++ Primer, Available:NO.\n"
+	>,
+	
+	"STUDENTS":<
+		"THis is a student. ID:2, Name:Valentine\n",
+		"THis is a student. ID:1, Name:Nicola\n",
+		"THis is a student. ID:0, Name:Thierry"
+	>
+>

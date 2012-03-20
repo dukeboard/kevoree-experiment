@@ -1,0 +1,19 @@
+
+package fr.inria.fr.inria.hocl.tests.primes10_iotaInv;
+import java.math.BigInteger;
+
+let sieve =  replace x::BigInteger, y::BigInteger
+                  by x
+                  if y.remainder(x).compareTo(BigInteger.ZERO) == 0
+in
+let iota = replace "Iota":(x::BigInteger)
+                by x, "Iota":(x.subtract(BigInteger.ONE))
+                if x.compareTo(BigInteger.ONE) > 0
+in
+ <sieve,
+  iota,
+  "Iota":new BigInteger("1"),
+  new BigInteger("2"),
+  new BigInteger("3"),
+  new BigInteger("5"),
+  new BigInteger("7")>

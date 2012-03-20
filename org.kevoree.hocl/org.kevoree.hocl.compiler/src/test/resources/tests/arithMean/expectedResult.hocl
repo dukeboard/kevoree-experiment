@@ -1,0 +1,9 @@
+
+package fr.inria.fr.inria.hocl.tests.arithMean;
+
+let mean = replace x::float,y::float
+                by (x+y)/2, (x+y)/2
+                if Math.abs(x-y) > 0.01
+in
+let convertToFloat = replace x::int  by new Float(x)  in
+<convertToFloat,mean,7.25f,7.25f,7.25f,7.25f,7.25f,7.25f,7.25f,7.25f>

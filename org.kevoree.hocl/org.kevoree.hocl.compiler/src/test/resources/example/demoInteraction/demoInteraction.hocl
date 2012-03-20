@@ -1,0 +1,74 @@
+package fr.inria.fr.inria.hocl.example.demoInteraction;
+
+let removeElement = 
+	replace x::Object, "REMOVE":<y::Object, ?w>
+	by "REMOVE":<w>
+	if (x.equals(y))
+in
+
+let passInsertTuple =
+	replace x::String:<?w>, "INSERT":x::String:<?l>
+	by x:<w,l>
+in
+
+let passRemoveTuple =
+	replace x::String:<?w>, "REMOVE":x::String:<?l>
+	by x:<w,l>
+in
+
+let removeTrashTuple =
+	replace x::String:<"REMOVE":<?y>, ?l>
+	by x:<l>
+in
+
+let getMaxNumber=
+	replace x::int, y::int
+	by x
+	if x>=y
+in
+
+let getMinNumber =
+	replace x::int, y::int
+	by x
+	if x<=y
+in
+
+let getMaxLength =
+	replace "MAXLENGTH":i::int, s::String
+	by	"MAXLENGTH":s.length()
+	if s.length()>i
+in
+
+//let changeOnetoTwo =
+//	replace 1
+//	by 2
+//in
+
+//let changeTwotoOne = 
+//	replace 2
+//	by 1
+//in
+
+<
+	removeElement,passInsertTuple,passRemoveTuple,removeTrashTuple,
+	
+	"calculateMaxNumber":<
+		getMaxNumber,removeElement,
+		16,5,-6,0,3,5,0,5,9,-3,1,16
+	>,
+	
+	"calculateMinNumber":<
+		getMinNumber,removeElement,
+		16,5,-6,0,3,5,0,5,9,-3,1,16
+	>,
+	
+	"calculateMaxLength":<
+		getMaxLength, removeElement,
+		"MAXLENGTH":0,
+		"Hello", "Bonjour"
+	>
+	
+	//"calculateNoStop":<
+	//	changeOnetoTwo,changeTwotoOne,1
+	//>
+>

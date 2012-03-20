@@ -1,0 +1,19 @@
+
+// cf ACM 93
+
+package fr.inria.fr.inria.hocl.tests.dutchNationalFlag;
+
+let rw = replace i::int:"Red", j::int:"White"
+              by i:"White", j:"Red"
+              if i > j
+in
+let wb = replace i::int:"White", j::int:"Blue"
+              by i:"Blue", j:"White"
+              if i > j
+in
+let rb = replace i::int:"Red",  j::int:"Blue"
+              by i:"Blue", j:"Red"
+              if i > j
+in
+<rw,wb,rb,1:"Red",2:"Red",3:"White",4:"White",5:"Blue",6:"Blue",7:"Blue">
+

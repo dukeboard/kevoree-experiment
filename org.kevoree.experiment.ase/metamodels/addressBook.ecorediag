@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_5CGq8G57EeGvcqfYS8yYEQ" type="EcoreTools" name="addressBook" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_5hri4G57EeGvcqfYS8yYEQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_5hsJ8G57EeGvcqfYS8yYEQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_5hsJ8W57EeGvcqfYS8yYEQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_CABBIG58EeGvcqfYS8yYEQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressBook.ecore#//AddressBook/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CABBIW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_5hsJ8m57EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5hsJ8257EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5hsJ9G57EeGvcqfYS8yYEQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5hsJ9W57EeGvcqfYS8yYEQ" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_CrC7IG58EeGvcqfYS8yYEQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="addressBook.ecore#//AddressBook/create"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_CrC7IW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_DQ4zIG58EeGvcqfYS8yYEQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="addressBook.ecore#//AddressBook/read"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DQ4zIW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_EPJLIG58EeGvcqfYS8yYEQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="addressBook.ecore#//AddressBook/update"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_EPJLIW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_E6tQoG58EeGvcqfYS8yYEQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="addressBook.ecore#//AddressBook/delete"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_E6tQoW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_5hsJ9m57EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5hsJ9257EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5hsJ-G57EeGvcqfYS8yYEQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_5hri4W57EeGvcqfYS8yYEQ" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="addressBook.ecore#//AddressBook"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5hri4m57EeGvcqfYS8yYEQ" x="228" y="90"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_6sMOMG57EeGvcqfYS8yYEQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_6sM1QG57EeGvcqfYS8yYEQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_6sM1QW57EeGvcqfYS8yYEQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_F5MSIG58EeGvcqfYS8yYEQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressBook.ecore#//Contact/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_F5MSIW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_GsJZEG58EeGvcqfYS8yYEQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressBook.ecore#//Contact/address"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_GsJZEW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_HL0-sG58EeGvcqfYS8yYEQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressBook.ecore#//Contact/phone"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HL0-sW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_6sM1Qm57EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_6sM1Q257EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_6sM1RG57EeGvcqfYS8yYEQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_6sM1RW57EeGvcqfYS8yYEQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_6sM1Rm57EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_6sM1R257EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_6sM1SG57EeGvcqfYS8yYEQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_6sMOMW57EeGvcqfYS8yYEQ" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="addressBook.ecore#//Contact"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6sMOMm57EeGvcqfYS8yYEQ" x="540" y="120"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_7mU7MG57EeGvcqfYS8yYEQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_7mViQG57EeGvcqfYS8yYEQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_7mViQW57EeGvcqfYS8yYEQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_ASiysG58EeGvcqfYS8yYEQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressBook.ecore#//AddressBookClient/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ASiysW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_BD0eoG58EeGvcqfYS8yYEQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="addressBook.ecore#//AddressBookClient/password"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_BD0eoW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_7mViQm57EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7mViQ257EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7mViRG57EeGvcqfYS8yYEQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_7mWJUG57EeGvcqfYS8yYEQ" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_KFJVMG58EeGvcqfYS8yYEQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="addressBook.ecore#//AddressBookClient/create"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_KFJ8QG58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_K7ZAsG58EeGvcqfYS8yYEQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="addressBook.ecore#//AddressBookClient/read"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_K7ZAsW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_LkNUMG58EeGvcqfYS8yYEQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="addressBook.ecore#//AddressBookClient/update"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LkNUMW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_MFYuoG58EeGvcqfYS8yYEQ" type="2002">
+        <element xmi:type="ecore:EOperation" href="addressBook.ecore#//AddressBookClient/delete"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_MFYuoW58EeGvcqfYS8yYEQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_7mWJUW57EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7mWJUm57EeGvcqfYS8yYEQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7mWJU257EeGvcqfYS8yYEQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_7mU7MW57EeGvcqfYS8yYEQ" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="addressBook.ecore#//AddressBookClient"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7mU7Mm57EeGvcqfYS8yYEQ" x="222" y="300"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_5CGq8W57EeGvcqfYS8yYEQ"/>
+  <element xmi:type="ecore:EPackage" href="addressBook.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_-ZF9wG57EeGvcqfYS8yYEQ" type="3002" source="_5hri4G57EeGvcqfYS8yYEQ" target="_6sMOMG57EeGvcqfYS8yYEQ">
+    <children xmi:type="notation:Node" xmi:id="_-ZGk0G57EeGvcqfYS8yYEQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_-ZGk0W57EeGvcqfYS8yYEQ" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_-ZHL4G57EeGvcqfYS8yYEQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_-ZHL4W57EeGvcqfYS8yYEQ" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_-ZF9wW57EeGvcqfYS8yYEQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_-ZF9wm57EeGvcqfYS8yYEQ" fontColor="4210752" fontName="Ubuntu" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="addressBook.ecore#//AddressBook/contacts"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-ZF9w257EeGvcqfYS8yYEQ" points="[32, -7, -206, 3]$[247, 10, 9, 20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-ZJoIG57EeGvcqfYS8yYEQ" id="(0.6862745098039216,0.7619047619047619)"/>
+  </edges>
+</notation:Diagram>

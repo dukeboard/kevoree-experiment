@@ -1,7 +1,13 @@
 package addressBook.enforcement;
 
+import java.io.IOException;
 import java.util.Vector;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.kevoree.annotation.ComponentType;
 import org.kevoree.annotation.Start;
 import org.kevoree.annotation.Stop;
@@ -18,6 +24,8 @@ import rbac.rbac.impl.UserImpl;
 public class Reasoner extends AbstractComponentType {
 	private DummyGUIReasoner gui;
 	private Policy policy;
+	private ResourceSet resourceSetMetamodel;
+	private Resource resourceModel;
 	private Vector<String> reasonerOperations;
 	private Vector<String> addressBookOperations;
 	private KevScriptEngine kse;
@@ -40,6 +48,17 @@ public class Reasoner extends AbstractComponentType {
 		gui.setTitle("Reasoner : " + getName());
 		gui.setVisible(true);
 		gui.updateEntities(reasonerOperations);
+		
+		/*
+		 * TO DO : see where to put the resources folder and what is the path to set to access it  
+		 */
+		
+		
+//		//test load EMF
+//		loadPolicyModel();
+//		for(PolicyElement e : policy.getElements()){
+//			System.out.println(e.getName());
+//		}
 
 		initPolicy();
 
@@ -47,6 +66,31 @@ public class Reasoner extends AbstractComponentType {
 		kse = getKevScriptEngineFactory().createKevScriptEngine();
 	}
 
+	public void loadPolicyModel() {
+		// REGISTER THE METAMODEL
+		resourceSetMetamodel = new ResourceSetImpl();
+		resourceSetMetamodel.getPackageRegistry().put(RbacPackage.eNS_URI,
+				RbacPackage.eINSTANCE);
+		resourceSetMetamodel.getResourceFactoryRegistry()
+				.getExtensionToFactoryMap()
+				.put("xmi", new XMIResourceFactoryImpl());
+		// LOAD THE MODEL
+		resourceModel = resourceSetMetamodel.createResource(URI
+				.createFileURI("Policy.xmi"));
+		try {
+			resourceModel.load(null);
+		} catch (IOException e) {
+			System.out.println("error during the model loading step");
+			e.printStackTrace();
+		}
+		// INSTANTIATE ROOTELEMENT WITH THE CONTAINERROOT OF THE LOADED MODEL
+		policy = (Policy) resourceModel.getContents().get(0);	
+		for(PolicyElement e : policy.getElements()){
+			System.out.println(e.getName());
+		}
+	}
+	
+	
 	@Stop
 	public void stop() {
 	}
@@ -58,7 +102,6 @@ public class Reasoner extends AbstractComponentType {
 
 	public void initPolicy() {
 		policy = RbacFactory.eINSTANCE.createPolicy();
-
 		// USERS
 		rbac.rbac.User gary = RbacFactory.eINSTANCE.createUser();
 		gary.setName("Gary");
@@ -117,14 +160,14 @@ public class Reasoner extends AbstractComponentType {
 		rescuerDelete.setName("delete");
 
 		// RESOURCES
-		Resource employeeAddressBook = RbacFactory.eINSTANCE.createResource();
+		rbac.rbac.Resource employeeAddressBook = RbacFactory.eINSTANCE.createResource();
 		employeeAddressBook.setName("employeeAddressBook");
 
-		Resource externalContactAddressBook = RbacFactory.eINSTANCE
+		rbac.rbac.Resource externalContactAddressBook = RbacFactory.eINSTANCE
 				.createResource();
 		externalContactAddressBook.setName("externalContactAddressBook");
 
-		Resource emergencyAddressBook = RbacFactory.eINSTANCE.createResource();
+		rbac.rbac.Resource emergencyAddressBook = RbacFactory.eINSTANCE.createResource();
 		emergencyAddressBook.setName("emergencyAddressBook");
 		policy.getElements().add(employeeAddressBook);
 		policy.getElements().add(externalContactAddressBook);
@@ -182,7 +225,7 @@ public class Reasoner extends AbstractComponentType {
 						for (Operation o : p.getOperations()) {
 							gui.updateTextArea("   operation(s) : "
 									+ o.getName());
-							for (Resource re : o.getResources()) {
+							for (rbac.rbac.Resource re : o.getResources()) {
 								gui.updateTextArea("    resource(s) : "
 										+ re.getName());
 							}
@@ -196,15 +239,9 @@ public class Reasoner extends AbstractComponentType {
 
 	public String addSubjects() {
 		String script = "";
-		// kse = getKevScriptEngineFactory()
-		// .createKevScriptEngine();
 		// ajout d'un node subjects
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding subjects components");
-		// kse.append("addNode subjects : JavaSENode");
-		// kse.append("addChild subjects@node0");
-		// kse.append("addToGroup sync subjects");
-		// kse.append("updateDictionary sync{ port=\"8101\"}@subjects");
 		script = script + "\n" + "addNode subjects : JavaSENode";
 		script = script + "\n" + "addChild subjects@node0";
 		script = script + "\n" + "addToGroup sync subjects";
@@ -214,29 +251,18 @@ public class Reasoner extends AbstractComponentType {
 		for (PolicyElement e : policy.getElements()) {
 			if (e instanceof UserImpl) {
 				gui.updateTextArea("subject : " + e.getName());
-				// kse.append("addComponent " + e.getName()
-				// + "@subjects : AddressBookClient { }");
 				script = script + "\n" + "addComponent " + e.getName()
 						+ "@subjects : AddressBookClient";
 			}
 		}
-//		gui.updateTextArea("added subjects components : "
-//				+ kse.atomicInterpretDeploy());
-		// kse.clearScript();
 		return script;
 	}
 
 	public String addUsers() {
 		String script = "";
-		// kse = getKevScriptEngineFactory()
-		// .createKevScriptEngine();
 		// ajout d'un node user
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding users components");
-		// kse.append("addNode users : JavaSENode");
-		// kse.append("addChild users@node0");
-		// kse.append("addToGroup sync users");
-		// kse.append("updateDictionary sync{ port=\"8102\"}@users");
 		script = script + "\n" + "addNode users : JavaSENode";
 		script = script + "\n" + "addChild users@node0";
 		script = script + "\n" + "addToGroup sync users";
@@ -246,29 +272,18 @@ public class Reasoner extends AbstractComponentType {
 		for (PolicyElement e : policy.getElements()) {
 			if (e instanceof UserImpl) {
 				gui.updateTextArea("user : " + e.getName());
-				// kse.append("addComponent " + e.getName() +
-				// "@users : User { }");
 				script = script + "\n" + "addComponent " + e.getName()
 						+ "@users : User { }";
 			}
 		}
-//		gui.updateTextArea("added users components : "
-//				+ kse.atomicInterpretDeploy());
-		// kse.clearScript();
 		return script;
 	}
 
 	public String addRoles() {
 		String script = "";
-		// kse = getKevScriptEngineFactory()
-		// .createKevScriptEngine();
 		// ajout d'un node role
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding roles components");
-		// kse.append("addNode roles : JavaSENode");
-		// kse.append("addChild roles@node0");
-		// kse.append("addToGroup sync roles");
-		// kse.append("updateDictionary sync{ port=\"8103\"}@roles");
 		script = script + "\n" + "addNode roles : JavaSENode";
 		script = script + "\n" + "addChild roles@node0";
 		script = script + "\n" + "addToGroup sync roles";
@@ -277,8 +292,6 @@ public class Reasoner extends AbstractComponentType {
 		for (PolicyElement e : policy.getElements()) {
 			if (e instanceof RoleImpl) {
 				gui.updateTextArea("role : " + e.getName());
-				// kse.append("addComponent " + e.getName() +
-				// "@roles : Role { }");
 				script = script + "\n" + "addComponent " + e.getName()
 						+ "@roles : Role { }";
 				portNumber = portNumber + 1;
@@ -286,21 +299,14 @@ public class Reasoner extends AbstractComponentType {
 		}
 		gui.updateTextArea("added roles components : "
 				+ kse.atomicInterpretDeploy());
-		// kse.clearScript();
 		return script;
 	}
 
 	public String addResources() {
 		String script = "";
-		// kse = getKevScriptEngineFactory()
-		// .createKevScriptEngine();
 		// ajout d'un node resources
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding resources components");
-		// kse.append("addNode resources : JavaSENode");
-		// kse.append("addChild resources@node0");
-		// kse.append("addToGroup sync resources");
-		// kse.append("updateDictionary sync{ port=\"8104\"}@resources");
 		script = script + "\n" + "addNode resources : JavaSENode";
 		script = script + "\n" + "addChild resources@node0";
 		script = script + "\n" + "addToGroup sync resources";
@@ -310,22 +316,16 @@ public class Reasoner extends AbstractComponentType {
 		for (PolicyElement e : policy.getElements()) {
 			if (e instanceof ResourceImpl) {
 				gui.updateTextArea("resource : " + e.getName());
-				// kse.append("addComponent " + e.getName()
-				// + "@resources : AddressBook { }");
 				script = script + "\n" + "addComponent " + e.getName()
 						+ "@resources : AddressBook { }";
 				portNumber = portNumber + 1;
 			}
 		}
-		// gui.updateTextArea("added resources components : "+kse.atomicInterpretDeploy());
-		// kse.clearScript();
 		return script;
 	}
 
 	public String addChannelSubjectsUsers() {
 		String script = "";
-		// kse = getKevScriptEngineFactory()
-		// .createKevScriptEngine();
 		// adding channels subjects users
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding channels subjects users");
@@ -335,22 +335,15 @@ public class Reasoner extends AbstractComponentType {
 					String channelName = "subject" + e.getName() + s;
 					script = script + "\n" + "addChannel " + channelName
 							+ " : SocketChannel{name = \"" + channelName + "\"}";
-					// gui.updateTextArea("script : " + script);
-					// kse.append(script);
 					portNumber = portNumber + 1;
 				}
 			}
 		}
-		// kse.interpretDeploy();
-		// kse.clearScript();
 		return script;
 	}
 
 	public String addChannelUsersRoles() {
 		String script = "";
-		// kse = getKevScriptEngineFactory()
-		// .createKevScriptEngine();
-		// adding channels users roles
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding channels users roles");
 		for (PolicyElement e : policy.getElements()) {
@@ -361,21 +354,14 @@ public class Reasoner extends AbstractComponentType {
 							+ " : SocketChannel{name = \"" + channelName + "\""
 							+ "}";
 					portNumber = portNumber + 1;
-					// gui.updateTextArea("script : " + script);
-					// kse.append(script);
 				}
 			}
 		}
-		// kse.interpretDeploy();
-		// kse.clearScript();
 		return script;
 	}
 
 	public String addChannelRolesResources() {
 		String script = "";
-		// kse = getKevScriptEngineFactory()
-		// .createKevScriptEngine();
-		// ajout des channels roles -> resources
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding channels roles resources");
 		for (PolicyElement e : policy.getElements()) {
@@ -387,21 +373,15 @@ public class Reasoner extends AbstractComponentType {
 								+ " : SocketChannel{name = \"" + channelName
 								+ "\"" + "}";
 						portNumber = portNumber + 1;
-						// gui.updateTextArea("script : " + script);
-						// kse.append(script);
 					}
 				}
 			}
 		}
-		// kse.interpretDeploy();
-		// kse.clearScript();
 		return script;
 	}
 
 	public String addBindingSubjectsUsers() {
 		String script = "";
-		// kse = getKevScriptEngineFactory()
-		// .createKevScriptEngine();
 		// adding bindings subjects-usersChannelOp
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding bindings subjects-usersChannelOp");
@@ -415,14 +395,6 @@ public class Reasoner extends AbstractComponentType {
 					script = script + "\n" + "updateDictionary " + channelName
 							+ "{ port=\"" + portNumber + "\"}@subjects";
 					portNumber = portNumber + 1;
-					// gui.updateTextArea("script : " + script);
-					// gui.updateTextArea("script2 : " + script2);
-					// kse.append(script);
-					// kse.interpretDeploy();
-					// kse.clearScript();
-					// kse.append(script2);
-					// kse.interpretDeploy();
-					// kse.clearScript();
 				}
 			}
 
@@ -441,14 +413,6 @@ public class Reasoner extends AbstractComponentType {
 					script = script + "\n" + "updateDictionary " + channelName
 							+ "{ port=\"" + portNumber + "\"}@users";
 					portNumber = portNumber + 1;
-					// gui.updateTextArea("script : " + script);
-					// gui.updateTextArea("script2 : " + script2);
-					// kse.append(script);
-					// kse.interpretDeploy();
-					// kse.clearScript();
-					// kse.append(script2);
-					// kse.interpretDeploy();
-					// kse.clearScript();
 				}
 			}
 		}
@@ -457,7 +421,6 @@ public class Reasoner extends AbstractComponentType {
 
 	public String addBindingUsersRoles() {
 		String script ="";
-//		kse = getKevScriptEngineFactory().createKevScriptEngine();
 		// adding bindings users-ChannelRoleOp
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding bindings users-ChannelRoleOp");
@@ -471,14 +434,6 @@ public class Reasoner extends AbstractComponentType {
 					script = script +"\n"+ "updateDictionary " + channelName
 							+ "{ port=\"" + portNumber + "\"}@users";
 					portNumber = portNumber + 1;
-//					gui.updateTextArea("script : " + script);
-//					gui.updateTextArea("script2 : " + script2);
-//					kse.append(script);
-//					kse.interpretDeploy();
-//					kse.clearScript();
-//					kse.append(script2);
-//					kse.interpretDeploy();
-//					kse.clearScript();
 				}
 			}
 		}
@@ -497,14 +452,6 @@ public class Reasoner extends AbstractComponentType {
 						script = script +"\n"+"updateDictionary " + channelName
 								+ "{ port=\"" + portNumber + "\"}@roles";
 						portNumber = portNumber + 1;
-//						gui.updateTextArea("script : " + script);
-//						gui.updateTextArea("script2 : " + script2);
-//						kse.append(script);
-//						kse.interpretDeploy();
-//						kse.clearScript();
-//						kse.append(script2);
-//						kse.interpretDeploy();
-//						kse.clearScript();
 					}
 				}
 			}
@@ -514,7 +461,6 @@ public class Reasoner extends AbstractComponentType {
 
 	public String addBindingRolesResources() {
 		String script ="";
-//		kse = getKevScriptEngineFactory().createKevScriptEngine();
 		// ajout des relations permissions roles -> resources
 		gui.updateTextArea("************************************");
 		gui.updateTextArea("adding bindings roles-channels");
@@ -529,14 +475,6 @@ public class Reasoner extends AbstractComponentType {
 						script = script +"\n"+"updateDictionary " + channelName
 								+ "{ port=\"" + portNumber + "\"}@roles";
 						portNumber = portNumber + 1;
-//						gui.updateTextArea("script : " + script);
-//						gui.updateTextArea("script2 : " + script2);
-//						kse.append(script);
-//						kse.interpretDeploy();
-//						kse.clearScript();
-//						kse.append(script2);
-//						kse.interpretDeploy();
-//						kse.clearScript();
 					}
 				}
 			}
@@ -549,7 +487,7 @@ public class Reasoner extends AbstractComponentType {
 			if (e instanceof RoleImpl) {
 				for (Permission p : ((Role) e).getPermissions()) {
 					for (Operation o : p.getOperations()) {
-						for (Resource c : o.getResources()) {
+						for (rbac.rbac.Resource c : o.getResources()) {
 							portNumber = portNumber + 1;
 							String channelName = p.getName() + o.getName();
 							script = script +"\n"+ "bind " + c.getName() + "."
@@ -558,14 +496,6 @@ public class Reasoner extends AbstractComponentType {
 							script = script +"\n"+ "updateDictionary " + channelName
 									+ "{ port=\"" + portNumber
 									+ "\"}@resources";
-//							gui.updateTextArea("script : " + script);
-//							gui.updateTextArea("script2 : " + script2);
-//							kse.append(script);
-//							kse.interpretDeploy();
-//							kse.clearScript();
-//							kse.append(script2);
-//							kse.interpretDeploy();
-//							kse.clearScript();
 						}
 					}
 				}
@@ -578,27 +508,29 @@ public class Reasoner extends AbstractComponentType {
 	 * transform the policy into components, channels and bindings
 	 */
 	public void enforcePolicy() {
-
+		
 		String script = "";
+		//add nodes and components
 		script = script + addSubjects();
 		script = script + addUsers();
 		script = script + addRoles();
 		script = script + addResources();
-
+		//add channels
 		script = script + addChannelSubjectsUsers();
 		script = script +addChannelUsersRoles();
 		script = script +addChannelRolesResources();
-
+		//add bindings
 		script = script + addBindingSubjectsUsers();
 		script = script + addBindingUsersRoles();
 		script = script + addBindingRolesResources();
-
+		//apply reconfiguration script
 		kse = getKevScriptEngineFactory().createKevScriptEngine();
 		kse.append(script);
-		gui.updateTextArea("enforced : " + kse.atomicInterpretDeploy());
-
-		// ajout des bindings entre users and roles
-		// kse.append("updateDictionary nodes {host=node1}");
+		Boolean scriptApplied = kse.atomicInterpretDeploy();
+		
+		System.out.println("scriptApplied : " +scriptApplied);
+		gui.updateTextArea("scriptApplied : " +scriptApplied);
+		
 	}
 
 }

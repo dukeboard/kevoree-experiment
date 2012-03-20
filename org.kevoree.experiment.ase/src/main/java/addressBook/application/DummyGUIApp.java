@@ -155,7 +155,7 @@ public class DummyGUIApp extends javax.swing.JFrame {
 	}
 
 	public void updateTextArea(String s) {
-		jTextArea1.setText(jTextArea1.getText() + "\n" + s);
+		jTextArea1.setText(jTextArea1.getText() + "\n" + s); 
 	}
 
 	public static void main(String args[]) {

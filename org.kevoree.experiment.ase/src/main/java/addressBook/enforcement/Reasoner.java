@@ -1,6 +1,7 @@
 package addressBook.enforcement;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Vector;
 
 import org.eclipse.emf.common.util.URI;
@@ -36,7 +37,8 @@ public class Reasoner extends AbstractComponentType {
 		System.out.println("hello Reasoner");
 		reasonerOperations = new Vector<String>();
 		reasonerOperations.add("displayPolicy");
-		reasonerOperations.add("enforcePolicy");
+		reasonerOperations.add("enforcePolicyASE");
+		reasonerOperations.add("enforcePolicyNEW");
 
 		addressBookOperations = new Vector<String>();
 		addressBookOperations.add("create");
@@ -504,10 +506,92 @@ public class Reasoner extends AbstractComponentType {
 		return script;
 	}
 
+	
+	//NEW MAPPING	
+	
+
+	public String addBindingSubjectsEnforcementChannelResources() {
+		String script ="";
+		// ajout des relations subject -> channelsEnforcement -> resources
+		gui.updateTextArea("************************************");
+		gui.updateTextArea("adding bindings subject -> channelsEnforcement -> resources");
+		// ajout des relations subject -> channelsEnforcement
+		HashMap<String,Vector<String>> channelSubjectUserOperation =new HashMap<String, Vector<String>>();
+		for (PolicyElement e : policy.getElements()) {
+			if (e instanceof UserImpl) {
+				for (Role r : ((User) e).getAssignedRoles()) {
+					for (Permission p : r.getPermissions()) {
+						for (Operation o : p.getOperations()){
+							if (! channelSubjectUserOperation.containsKey(e.getName())){
+								channelSubjectUserOperation.put(e.getName(), new Vector<String>());
+								channelSubjectUserOperation.get(e.getName()).add(o.getName());
+							}
+							else{
+								if (!channelSubjectUserOperation.get(e.getName()).contains(o.getName())){
+									channelSubjectUserOperation.get(e.getName()).add(o.getName());
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		for(String e : channelSubjectUserOperation.keySet()){
+			for(String o : channelSubjectUserOperation.get(e)){
+					String channelName = "subject" + e + o;
+					script = script + "\n" + "addChannel " + channelName
+				+ " : SocketChannel{name = \"" + channelName + "\"}";
+			}
+		}
+		
+		for(String e : channelSubjectUserOperation.keySet()){
+			for(String o : channelSubjectUserOperation.get(e)){
+				portNumber = portNumber + 1;
+				String channelName = "subject" + e + o;
+				gui.updateTextArea("new channel added : "+channelName);
+				script = script + "\n" + "bind " + e + "." + o
+						+ "@subjects" + "=>" + channelName;
+				script = script + "\n" + "updateDictionary " + channelName
+						+ "{ port=\"" + portNumber + "\"}@subjects";
+			}
+		}
+		
+		
+		
+		// ajout des relations channelsEnforcement -> resources
+		for (PolicyElement e : policy.getElements()) {
+			if (e instanceof UserImpl) {
+				for (Role r : ((User) e).getAssignedRoles()) {
+					for (Permission p : r.getPermissions()) {
+						for (Operation o : p.getOperations()){
+							for (rbac.rbac.Resource resource : o.getResources()) {
+								portNumber = portNumber + 1;
+								String channelName = "subject"+e.getName() + o.getName();
+								
+								script = script +"\n"+ "bind " + resource.getName() + "."
+										+ o.getName() + "@resources" + " =>"
+										+ channelName;
+								script = script +"\n"+ "updateDictionary " + channelName
+										+ "{ port=\"" + portNumber
+										+ "\"}@resources";
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		return script;
+	}
+	
+
+	
+	
+	
 	/*
 	 * transform the policy into components, channels and bindings
 	 */
-	public void enforcePolicy() {
+	public void enforcePolicyASE() {
 		
 		String script = "";
 		//add nodes and components
@@ -532,5 +616,25 @@ public class Reasoner extends AbstractComponentType {
 		gui.updateTextArea("scriptApplied : " +scriptApplied);
 		
 	}
-
+	
+	
+	
+	/*
+	 * transform the policy into components, channels and bindings
+	 */
+	public void enforcePolicyNEW() {
+		String script = "";
+		//add nodes and components
+		script = script + addSubjects();
+		script = script + addResources();
+		//add channels + bindings
+		script = script + addBindingSubjectsEnforcementChannelResources();
+		//apply reconfiguration script
+		kse = getKevScriptEngineFactory().createKevScriptEngine();
+		kse.append(script);
+		Boolean scriptApplied = kse.atomicInterpretDeploy();
+		System.out.println("scriptApplied : " +scriptApplied);
+		gui.updateTextArea("scriptApplied : " +scriptApplied);
+	}
+	
 }

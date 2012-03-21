@@ -142,9 +142,13 @@ public class DummyGUIReasoner extends javax.swing.JFrame {
 		{
 			parent.displayPolicy();
 		}
-		if (jComboBox1.getSelectedItem().toString().equals("enforcePolicy"))
+		if (jComboBox1.getSelectedItem().toString().equals("enforcePolicyASE"))
 		{
-			parent.enforcePolicy();
+			parent.enforcePolicyASE();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("enforcePolicyNEW"))
+		{
+			parent.enforcePolicyNEW();
 		}
 	}
 

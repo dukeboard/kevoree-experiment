@@ -1,0 +1,33 @@
+
+package fr.inria.fr.inria.hocl.tests.factorization2;
+
+// n = 24, 9687
+
+                          
+
+let primes =
+  replace-one n::int
+           by let sieve = replace x::int, y::int
+                               by x
+                               if y % x == 0
+              in
+              let iota = replace "Iota":(x::int)
+                              by "Iota":x+2, x
+                              if x <= n
+              in
+                <sieve, iota, "Iota":3>,
+                replace-one <iota = x, sieve = y, "Iota":n::int, ?w> by 2,w
+in
+let findDiv = replace <prime::int, ?p>, "n":n::int
+                   by <prime, p>, prime, "n":n/prime
+                   if n % prime == 0
+in
+let facto = replace-one n::int
+                     by <
+                         <primes,n>,
+                         "n":n,
+                         findDiv
+                        >,
+                        replace-one <<?primes>, findDiv=fd, "n":n::int, ?decomp> by decomp
+in
+<facto, 24>

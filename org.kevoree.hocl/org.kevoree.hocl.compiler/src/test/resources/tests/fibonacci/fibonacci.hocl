@@ -1,0 +1,24 @@
+
+// cf ACM 93
+
+// Fib(10)=55
+
+package fr.inria.fr.inria.hocl.tests.fibonacci;
+
+let fibonacci =
+  replace-one n::int
+           by
+              let gen = replace n::int
+                             by n-1, n-2
+                             if n > 1
+              in
+              let sigma = replace x::int, y::int
+                               by x+y
+              in
+                <
+                  <n,gen>,
+                  replace-one <gen = x, ?w> by w,sigma
+                >,
+                replace-one <sigma = x, ?w> by w
+in
+<10,fibonacci>

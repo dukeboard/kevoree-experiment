@@ -1,0 +1,16 @@
+
+/* SAT, the famous NP-complete problem: find the values of
+ *   boolean variables such that some boolean propositions are true
+ * 
+ *  x1 or not x2 or x3  and  not x1 or x2 or x3  and  not x1 or not x2 or not x3
+ *
+*/
+
+package fr.inria.fr.inria.hocl.tests.sat;
+
+
+<
+ "X1":true,
+ "X2":true,
+ "X3":false
+>

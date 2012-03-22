@@ -1,0 +1,15 @@
+
+/**  Prime10: compute all prime numbers lower than 10 **/
+
+package fr.inria.fr.inria.hocl.tests.primesIncr;
+
+let sieve =  replace y::long, x::long
+                  by ((x))
+                  if y % x == 0 && x < Math.ceil(Math.sqrt(100))
+in
+let iota = replace "Iota":(x::long)
+                by "Iota":(x+2), x
+                if x < 100
+in
+ < <sieve,iota,"Iota":3L>, replace-one <sieve = x, iota = y, "Iota":r::long, ?w> by 2l,w>
+

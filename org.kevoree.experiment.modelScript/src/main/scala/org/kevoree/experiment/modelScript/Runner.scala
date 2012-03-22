@@ -1,5 +1,6 @@
 package org.kevoree.experiment.modelScript
 
+
 /**
  * User: Erwan Daubert - erwan.daubert@gmail.com
  * Date: 04/08/11
@@ -8,9 +9,11 @@ package org.kevoree.experiment.modelScript
 
 object Runner extends App {
   if (args.contains("1")) {
-    RunCompleteExperimentation.main(args)
+    sendNotification.RunCompleteExperimentation.main(args)
   } else if (args.contains("2")) {
-    // TODO
+    failureManagement.RunCompleteExperimentation.main(args)
+  } else if (args.contains("3")) {
+    recoverOnFailure.RunCompleteExperimentation.main(args)
   }
 
 }

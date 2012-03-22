@@ -1,0 +1,13 @@
+
+// factorial:  fact(10) = 3628800
+
+package fr.inria.fr.inria.hocl.tests.factorial;
+
+let iota = replace "iota":n::int
+                by "iota":(n-1), n
+                if n > 1
+in
+let prod = replace x::int, y::int
+                by x*y
+in
+<<iota, "iota":10, prod>, replace-one <iota=i, prod=p, "iota":n::int, ?w> by w>

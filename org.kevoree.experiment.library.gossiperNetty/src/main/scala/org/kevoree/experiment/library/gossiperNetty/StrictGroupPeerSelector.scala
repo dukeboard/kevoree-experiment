@@ -2,11 +2,11 @@ package org.kevoree.experiment.library.gossiperNetty
 
 import collection.mutable.HashMap
 import scala.collection.JavaConversions._
-import org.kevoree.library.gossiperNetty.PeerSelector
-import org.kevoree.api.service.core.handler.KevoreeModelHandlerService
-import org.slf4j.LoggerFactory
 import actors.DaemonActor
 import java.lang.Math
+import org.kevoree.library.gossiperNetty.PeerSelector
+import org.slf4j.LoggerFactory
+import org.kevoree.api.service.core.handler.KevoreeModelHandlerService
 
 class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelHandlerService, nodeName: String)
   extends PeerSelector with DaemonActor {
@@ -75,7 +75,6 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
 
     model.getGroups.find(group => group.getName == groupName) match {
       case Some(group) => {
-        //logger.debug("group found: we now look for node on this group")
         //Found minima score node name
         var foundNodeName = List[String]();
         var minScore = Long.MaxValue
@@ -87,12 +86,8 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
           .exists(nn => nn.getInitBy.getName == nodeName && nn.getTarget.getName == node.getName))
           .foreach {
           subNode => {
-            //logger.debug(subNode.getName + " is one of the node which are potentially available to do gossip")
             if (getScore(subNode.getName) <= minScore) {
-              //foundNodeName = foundNodeName ++ List(subNode.getName)
               minScore = getScore(subNode.getName)
-              //              logger.debug(subNode.getName +
-              //                " is one of the node  which are potentially available to do gossip (if its score is good)")
             }
           }
         }
@@ -102,12 +97,8 @@ class StrictGroupPeerSelector (timeout: Long, modelHandlerService: KevoreeModelH
           .exists(nn => nn.getInitBy.getName == nodeName && nn.getTarget.getName == node.getName))
           .foreach {
           subNode => {
-            //logger.debug(subNode.getName + " is one of the node which are potentially available to do gossip")
             if (getScore(subNode.getName) == minScore) {
               foundNodeName = foundNodeName ++ List(subNode.getName)
-              //minScore = getScore(subNode.getName)
-              //              logger.debug(subNode.getName +
-              //                " is one of the node  which are potentially available to do gossip (if its score is good)")
             }
           }
         }

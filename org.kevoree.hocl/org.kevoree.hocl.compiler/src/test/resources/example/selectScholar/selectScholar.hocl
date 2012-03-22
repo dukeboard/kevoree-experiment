@@ -1,0 +1,23 @@
+
+package fr.inria.fr.inria.hocl.example.selectScholar;
+
+let selectCandidate=
+	replace stu1::String:score1::double, ?w
+	by w
+	if score1<18.00
+in
+let searchScholar=
+	replace stu1::String:score1::double, stu2::String:score2::double
+	by stu1:score1
+	if score1 > score2
+in
+<
+	<
+		selectCandidate,searchScholar,
+		"Thierry":17.96,
+		"Nicola":16.98,
+		"Ameli":17.26,
+		"Christina":12.89
+	>,
+	replace-one <selectCandidate=x, searchScholar=y, ?w> by w
+>

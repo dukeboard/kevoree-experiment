@@ -1,0 +1,7 @@
+package fr.inria.fr.inria.hocl.exercise.sum;
+
+let add=
+	replace x::int, y::int
+	by x+y
+in
+<add,55>

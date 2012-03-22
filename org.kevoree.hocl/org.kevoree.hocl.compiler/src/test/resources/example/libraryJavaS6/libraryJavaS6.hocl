@@ -1,0 +1,32 @@
+
+package fr.inria.fr.inria.hocl.example.libraryJavaS6;
+
+let borrowBook=
+	replace  "BOOKS":<?w, book::Book>, "STUDENTS":<?k, stu::Student>,"RECORDS":<?l>,"Borrow":stu_name::String:book_name::String
+	by "RECORDS":<l, "Borrow":stu_name:book_name>, "BOOKS":<w, book>, "STUDENTS":<k, stu>
+	if book.getBookName()== book_name && stu.getStuName()==stu_name && book.borrowBook() && stu.borrowBook(book)
+in
+let returnBook=
+	replace  "BOOKS":<?w, book::Book>, "STUDENTS":<?k, stu::Student>,"Return":stuname::String:bookname::String,"RECORDS":<?l,"Borrow":stuname::String:bookname::String>
+	by "RECORDS":<l,"Borrow":stuname:bookname:"Returned">,  "BOOKS":<w, book>, "STUDENTS":<k, stu>
+	if book.getBookName()== bookname && stu.getStuName()==stuname && book.returnbook()&& stu.returnBook(book)
+in
+<
+	borrowBook,returnBook,
+	"BOOKS":<
+		new Book("Thinking in JAVA"),
+		new Book("Code Complete"),
+		new Book("C++ Primer")
+	>,
+	"STUDENTS":<
+		new Student("Thierry"),
+		new Student("Nicola"),
+		new Student("Valentine")
+	>,
+	"RECORDS":<>,
+
+	"Borrow":"Thierry":"Thinking in JAVA",
+	"Borrow":"Nicola":"Code Complete",
+	"Borrow":"Thierry":"C++ Primer",
+	"Return":"Thierry":"C++ Primer"
+>

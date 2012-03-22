@@ -1,0 +1,5 @@
+
+package fr.inria.fr.inria.hocl.tests.cardinal;
+
+let sum = replace x::int, y::int by x+y in
+< sum, 5 >

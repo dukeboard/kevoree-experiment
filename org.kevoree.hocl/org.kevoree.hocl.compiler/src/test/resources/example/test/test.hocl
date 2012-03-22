@@ -1,0 +1,17 @@
+package fr.inria.fr.inria.hocl.example.test;
+
+let getMaxNumber=
+	replace x::int, y::int
+	by x
+	if x>y
+in
+
+let getMinNumber =
+	replace x::int, y::int
+	by x
+	if x<y
+in
+
+<
+	6,7,getMaxNumber,"test":<1,2,3,4,5,getMinNumber>
+>

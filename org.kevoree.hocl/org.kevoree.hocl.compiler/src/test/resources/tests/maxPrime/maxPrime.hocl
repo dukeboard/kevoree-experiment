@@ -1,0 +1,21 @@
+
+/** Compute the greatest prime number lower than a given integer **/
+
+package fr.inria.fr.inria.hocl.tests.maxPrime;
+import java.math.BigInteger;
+
+// import_hocl tests.primes10.primes10;
+
+let max = replace x::BigInteger, y::BigInteger
+               by x
+               if x.compareTo(y) >= 0
+in
+let sieve =  replace x::BigInteger, y::BigInteger
+                  by x
+                  if y.remainder(x).compareTo(BigInteger.ZERO) == 0
+in
+let iota = replace "Iota":(x::BigInteger)
+                by "Iota":(x.subtract(BigInteger.ONE)), x
+                if x.compareTo(BigInteger.ONE) > 0
+in
+ <<sieve,iota,"Iota":new BigInteger("10")>, replace-one <sieve = x, iota = y, ?w> by max,w>

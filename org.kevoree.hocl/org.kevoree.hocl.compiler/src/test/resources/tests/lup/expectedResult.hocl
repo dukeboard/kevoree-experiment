@@ -1,0 +1,10 @@
+
+package fr.inria.fr.inria.hocl.tests.lup;
+
+// the longest upsequence is 2 4 8 9 10
+
+let max = replace x1::int:y1::int:z1::int, x2::int:y2::int:z2::int
+               by x1:y1:z1
+               if z1 >= z2
+in
+< max, 9:10:5 >

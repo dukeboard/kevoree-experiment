@@ -1,0 +1,16 @@
+
+
+// Compute the greatest common divisor (gcd) of two integers using the Euclide's algorithm
+ 
+
+package fr.inria.fr.inria.hocl.tests.gcdEuclide;
+
+
+let euclide = replace "U":(u::Integer), "V":(v::Integer)
+                   by "U":v, "V":(u % v)
+                   if v != 0
+in
+<<"U":56, "V":42, euclide>,
+ replace-one <"U":(gcd::Integer), ?w> by gcd>
+
+

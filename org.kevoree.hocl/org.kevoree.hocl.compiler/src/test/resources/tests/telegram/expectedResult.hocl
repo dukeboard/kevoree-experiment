@@ -1,0 +1,17 @@
+
+// The Telegram problem (cf ACM93)
+// expected result = "Bonjour, comment ?a va ?ZZZZSecond message STOPZZZZVoici le dernier messageZZZZ"
+
+package fr.inria.fr.inria.hocl.tests.telegram;
+
+
+// transform a sequence of characters into a string
+let charToString = replace v1::String:i1::int:s1::int, v2::String:i2::int:s2::int
+                        by (v1+v2):i1:(s1+s2)
+                        if i2 == i1 + s1
+in
+
+
+ < "Bonjour, comment ?a va ?ZZZZSecond message STOPZZZZVoici le dernier messageZZZZ":0:99,
+   charToString, "":99
+ >

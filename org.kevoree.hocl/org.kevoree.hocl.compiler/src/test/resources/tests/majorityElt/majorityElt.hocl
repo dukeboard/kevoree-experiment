@@ -1,0 +1,7 @@
+
+// cf ACM 93
+
+package fr.inria.fr.inria.hocl.tests.majorityElt;
+
+let maj = replace x::int,y::int,?w by w if x != y in
+<maj,1,1,1,1,1,1,1,1,1,2,2,3,3,2,3,2,3>

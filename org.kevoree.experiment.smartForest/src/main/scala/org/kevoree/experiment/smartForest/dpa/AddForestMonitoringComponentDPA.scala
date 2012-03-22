@@ -15,10 +15,12 @@ import org.kevoree.tools.marShell.ast.{ComponentInstanceID, AddComponentInstance
 
 class AddForestMonitoringComponentDPA extends DPA {
   final val componentName: String = "component"
+
   def getComponentName = componentName
 
   final val typeDefinition: String = "type"
   final val nodeName: String = "node"
+
   def getNodeName = nodeName
 
   final val templateScript: String = "tblock { \n" + "  addComponent ${component}@${node} : ${type}\n" + "}"
@@ -40,15 +42,13 @@ class AddForestMonitoringComponentDPA extends DPA {
       var existSmokeSensor: Boolean = false
       var existHumiditySensor: Boolean = false
       for (myInstance <- containerNode.getComponents) {
-        if (myInstance.getTypeDefinition.getName.equalsIgnoreCase("TempSensor")) {
-          existTempSensor = true
+
+        myInstance.getTypeDefinition.getName match {
+          case "TempSensor" => existTempSensor = true
+          case "SmokeSensor" => existSmokeSensor = true
+          case "HumiditySensor" => existHumiditySensor = true
         }
-        if (myInstance.getTypeDefinition.getName.equalsIgnoreCase("SmokeSensor")) {
-          existSmokeSensor = true
-        }
-        if (myInstance.getTypeDefinition.getName.equalsIgnoreCase("HumiditySensor")) {
-          existHumiditySensor = true
-        }
+
       }
       if (!existHumiditySensor) {
         val myMap: java.util.Map[String, NamedElement] = new java.util.HashMap[String, NamedElement]
@@ -80,27 +80,27 @@ class AddForestMonitoringComponentDPA extends DPA {
       script = script.replace(replacedString, myMap.get(name).getName)
     }
     script = script.replace("${" + this.componentName + "}", myMap.get(this.typeDefinition).getName + ({
-          increment += 1;
-          increment
-        }))
+      increment += 1;
+      increment
+    }))
     return script
   }
-  
+
   val random = new MersenneTwisterFast()
-  
+
   def getASTScript(myMap: java.util.Map[String, NamedElement]): Script = {
     increment += 1;
     val props = new java.util.Properties()
     val newIndex = random.nextInt(PeriodValues.values.size)
-    
+
     props.put(ChangePeriodPropertyDPAO.periodPropertyName, PeriodValues.values(newIndex).toString)
-    
+
     Script(
       List(
         TransactionalBloc(
           List(
             AddComponentInstanceStatment(
-              ComponentInstanceID(myMap.get(typeDefinition).getName+increment, Some(myMap.get(nodeName).getName)),
+              ComponentInstanceID(myMap.get(typeDefinition).getName + increment, Some(myMap.get(nodeName).getName)),
               myMap.get(typeDefinition).getName,
               props
             )

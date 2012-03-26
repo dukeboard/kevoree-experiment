@@ -26,7 +26,7 @@ public class KMFLoaderTest {
     public void setUp() {
         //WARM UP
         for(int i=0 ; i< 20 ; i++){
-           // KevoreeXmiHelper.loadStream(this.getClass().getClassLoader().getResourceAsStream("sky.kev"));
+            KevoreeXmiHelper.loadStream(this.getClass().getClassLoader().getResourceAsStream("sky.kev"));
         }
     }
 
@@ -41,10 +41,10 @@ public class KMFLoaderTest {
     public void test1() throws Exception {
         KevoreeXmiHelper.loadStream(this.getClass().getClassLoader().getResourceAsStream("sky.kev"));
     }
-
+/*
     @Test
     public void test2() throws Exception {
         KevoreeXmiHelper.loadStream(this.getClass().getClassLoader().getResourceAsStream("aGood.kev"));
-    }
+    }*/
 
 }

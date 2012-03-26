@@ -3,350 +3,350 @@ Generation: 0
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 18.903847 54.850124 min] R=0 S=Infinity
+Fitness: [0.0 14.585384 53.760822 min] R=0 S=Infinity
 
 
 Generation: 1
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.013711778 18.832384 54.579517 min] R=0 S=Infinity
+Fitness: [0.0 15.462308 52.922077 min] R=0 S=Infinity
 
 
 Generation: 2
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.013711778 18.882954 54.537884 min] R=0 S=Infinity
+Fitness: [0.0 16.416924 52.597404 min] R=0 S=Infinity
 
 
 Generation: 3
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 18.963438 54.496254 min] R=0 S=Infinity
+Fitness: [0.0 16.416924 52.597404 min] R=0 S=Infinity
 
 
 Generation: 4
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.07198684 19.288223 54.35054 min] R=0 S=Infinity
+Fitness: [0.099920064 17.663847 52.272728 min] R=0 S=Infinity
 
 
 Generation: 5
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.08569861 19.665005 54.0383 min] R=0 S=Infinity
+Fitness: [0.0 16.416924 52.11039 min] R=0 S=Infinity
 
 
 Generation: 6
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 19.41643 53.68443 min] R=0 S=Infinity
+Fitness: [0.0 17.317692 51.54221 min] R=0 S=Infinity
 
 
 Generation: 7
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.041135333 19.795584 53.663612 min] R=0 S=Infinity
+Fitness: [0.0 17.317692 51.54221 min] R=0 S=Infinity
 
 
 Generation: 8
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.1542575 20.173315 53.37219 min] R=0 S=Infinity
+Fitness: [0.0 17.317692 51.54221 min] R=0 S=Infinity
 
 
 Generation: 9
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.1542575 20.173315 53.37219 min] R=0 S=Infinity
+Fitness: [0.0 17.317692 51.54221 min] R=0 S=Infinity
 
 
 Generation: 10
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.1542575 20.173315 53.37219 min] R=0 S=Infinity
+Fitness: [0.0 17.317692 51.54221 min] R=0 S=Infinity
 
 
 Generation: 11
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.030851502 18.67379 53.351376 min] R=0 S=Infinity
+Fitness: [0.0 17.317692 51.54221 min] R=0 S=Infinity
 
 
 Generation: 12
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.054847114 20.296772 53.184845 min] R=0 S=Infinity
+Fitness: [0.17985612 16.64077 51.54221 min] R=0 S=Infinity
 
 
 Generation: 13
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.068558894 20.519943 53.143215 min] R=0 S=Infinity
+Fitness: [0.0 12.88 54.22078 min] R=0 S=Infinity
 
 
 Generation: 14
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.08569861 20.845203 53.039135 min] R=0 S=Infinity
+Fitness: [0.07993605 16.083847 50.919914 min] R=0 S=Infinity
 
 
 Generation: 15
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.23310024 20.818138 52.601997 min] R=0 S=Infinity
+Fitness: [0.07993605 16.083847 50.919914 min] R=0 S=Infinity
 
 
 Generation: 16
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.23310024 20.818138 52.601997 min] R=0 S=Infinity
+Fitness: [0.0 16.853077 50.811687 min] R=0 S=Infinity
 
 
 Generation: 17
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.017139724 21.379868 52.456287 min] R=0 S=Infinity
+Fitness: [0.0 17.63 50.51407 min] R=0 S=Infinity
 
 
 Generation: 18
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 21.656458 51.956703 min] R=0 S=Infinity
+Fitness: [1.2789768 9.933077 64.393936 min] R=0 S=Infinity
 
 
 Generation: 19
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 17.7538 53.830143 min] R=0 S=Infinity
+Fitness: [0.97921664 9.118462 67.28896 min] R=0 S=Infinity
 
 
 Generation: 20
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.1302619 21.634378 51.894257 min] R=0 S=Infinity
+Fitness: [1.0991207 9.053846 67.07251 min] R=0 S=Infinity
 
 
 Generation: 21
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.1302619 21.634378 51.894257 min] R=0 S=Infinity
+Fitness: [1.1590728 8.487692 67.28896 min] R=0 S=Infinity
 
 
 Generation: 22
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 21.656458 51.956703 min] R=0 S=Infinity
+Fitness: [0.5595524 9.181539 72.07792 min] R=0 S=Infinity
 
 
 Generation: 23
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.10283834 13.628205 63.42631 min] R=0 S=Infinity
+Fitness: [0.0 18.976154 50.29762 min] R=0 S=Infinity
 
 
 Generation: 24
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.36336213 13.704179 60.84513 min] R=0 S=Infinity
+Fitness: [1.7186251 10.196923 57.521645 min] R=0 S=Infinity
 
 
 Generation: 25
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 14.260447 64.88343 min] R=0 S=Infinity
+Fitness: [1.3389288 8.020769 73.024895 min] R=0 S=Infinity
 
 
 Generation: 26
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.38735774 13.513058 60.970024 min] R=0 S=Infinity
+Fitness: [2.3381295 10.0430765 57.440475 min] R=0 S=Infinity
 
 
 Generation: 27
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.38735774 13.513058 60.970024 min] R=0 S=Infinity
+Fitness: [2.3381295 10.0430765 57.440475 min] R=0 S=Infinity
 
 
 Generation: 28
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 13.127018 66.65279 min] R=0 S=Infinity
+Fitness: [2.7777777 7.646923 72.402596 min] R=0 S=Infinity
 
 
 Generation: 29
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.11655012 13.126543 64.80016 min] R=0 S=Infinity
+Fitness: [2.877698 7.6315384 72.402596 min] R=0 S=Infinity
 
 
 Generation: 30
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 19.183048 52.560368 min] R=0 S=Infinity
+Fitness: [1.678657 6.937692 74.48593 min] R=0 S=Infinity
 
 
 Generation: 31
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 13.040123 66.9234 min] R=0 S=Infinity
+Fitness: [1.2190248 8.055385 75.67641 min] R=0 S=Infinity
 
 
 Generation: 32
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.013711778 12.815764 69.171524 min] R=0 S=Infinity
+Fitness: [0.0 11.735385 53.78788 min] R=0 S=Infinity
 
 
 Generation: 33
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.4147813 12.2537985 65.25812 min] R=0 S=Infinity
+Fitness: [1.3189448 7.289231 75.838745 min] R=0 S=Infinity
 
 
 Generation: 34
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.6238859 13.065527 61.719402 min] R=0 S=Infinity
+Fitness: [1.598721 6.806923 74.78355 min] R=0 S=Infinity
 
 
 Generation: 35
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.5518991 12.207977 65.00832 min] R=0 S=Infinity
+Fitness: [1.598721 6.806923 74.78355 min] R=0 S=Infinity
 
 
 Generation: 36
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.5518991 12.207977 65.00832 min] R=0 S=Infinity
+Fitness: [0.0 13.381538 52.11039 min] R=0 S=Infinity
 
 
 Generation: 37
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.682161 13.001187 62.13572 min] R=0 S=Infinity
+Fitness: [2.5979216 9.188461 60.66017 min] R=0 S=Infinity
 
 
 Generation: 38
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.041135333 12.342117 73.75104 min] R=0 S=Infinity
+Fitness: [0.0 13.736154 51.352814 min] R=0 S=Infinity
 
 
 Generation: 39
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.041135333 12.342117 73.75104 min] R=0 S=Infinity
+Fitness: [2.0383694 6.519231 75.45995 min] R=0 S=Infinity
 
 
 Generation: 40
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 22.642925 50.97835 min] R=0 S=Infinity
+Fitness: [3.017586 9.157692 60.66017 min] R=0 S=Infinity
 
 
 Generation: 41
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.5690388 11.757122 68.46378 min] R=0 S=Infinity
+Fitness: [3.017586 9.157692 60.66017 min] R=0 S=Infinity
 
 
 Generation: 42
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.5690388 11.757122 68.46378 min] R=0 S=Infinity
+Fitness: [3.23741 9.103847 60.66017 min] R=0 S=Infinity
 
 
 Generation: 43
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.59303445 11.747389 67.672775 min] R=0 S=Infinity
+Fitness: [0.0 17.153847 49.64827 min] R=0 S=Infinity
 
 
 Generation: 44
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.59303445 11.747389 67.672775 min] R=0 S=Infinity
+Fitness: [3.4772182 9.177692 60.010822 min] R=0 S=Infinity
 
 
 Generation: 45
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 21.832859 51.332222 min] R=0 S=Infinity
+Fitness: [2.917666 6.1284614 76.10931 min] R=0 S=Infinity
 
 
 Generation: 46
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.80213904 11.359687 69.462944 min] R=0 S=Infinity
+Fitness: [0.0 20.746155 47.8355 min] R=0 S=Infinity
 
 
 Generation: 47
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.66502124 11.16453 68.85928 min] R=0 S=Infinity
+Fitness: [0.0 20.746155 47.8355 min] R=0 S=Infinity
 
 
 Generation: 48
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.0 12.080959 71.190674 min] R=0 S=Infinity
+Fitness: [3.8968825 9.108461 60.09199 min] R=0 S=Infinity
 
 
 Generation: 49
 Best Individual:
 Subpopulation 0:
 Evaluated: T
-Fitness: [0.068558894 11.832858 73.70941 min] R=0 S=Infinity
+Fitness: [0.0 17.147692 48.944805 min] R=0 S=Infinity
 
 
 
@@ -356,302 +356,302 @@ Fitness: [0.068558894 11.832858 73.70941 min] R=0 S=Infinity
 
 Pareto Front of Subpopulation 0
 Evaluated: T
-Fitness: [0.0 19.599953 52.477104 min] R=0 S=0.005456981714814901
+Fitness: [0.0 20.829231 47.70022 min] R=0 S=0.006476192502304912
 
 Evaluated: T
-Fitness: [0.0 21.262108 51.269775 min] R=0 S=0.005918102280702442
+Fitness: [0.0 8.112308 70.481606 min] R=0 S=0.012334913713857532
 
 Evaluated: T
-Fitness: [0.0 14.603276 57.056618 min] R=0 S=0.005522842635400593
+Fitness: [0.0 12.506154 51.028137 min] R=0 S=0.0056316854897886515
 
 Evaluated: T
-Fitness: [0.0 16.037512 53.955036 min] R=0 S=0.006375532248057425
+Fitness: [0.0 12.443077 51.298702 min] R=0 S=0.00852191902231425
 
 Evaluated: T
-Fitness: [0.0 21.480532 51.24896 min] R=0 S=0.0069597624242305756
+Fitness: [0.0 8.476153 68.01948 min] R=0 S=0.010220833006314933
 
 Evaluated: T
-Fitness: [0.0 20.517332 51.436302 min] R=0 S=0.007910042011644691
+Fitness: [0.0 12.368462 51.97511 min] R=0 S=0.008675756282173097
 
 Evaluated: T
-Fitness: [0.0 19.97626 51.935886 min] R=0 S=0.007017707917839289
+Fitness: [0.0 16.258461 49.594154 min] R=0 S=0.01042970671551302
 
 Evaluated: T
-Fitness: [0.0 12.377255 69.25479 min] R=0 S=0.005456209182739258
+Fitness: [0.0 11.908462 53.030304 min] R=0 S=0.010455026756972075
 
 Evaluated: T
-Fitness: [0.0 14.2827635 57.910076 min] R=0 S=0.004267358803190291
+Fitness: [0.0 14.939231 50.108227 min] R=0 S=0.005810375383589417
 
 Evaluated: T
-Fitness: [0.0 22.717949 50.20816 min] R=0 S=0.0038250923389568925
+Fitness: [0.0 8.199231 69.80519 min] R=0 S=0.006769066036213189
 
 Evaluated: T
-Fitness: [0.0 18.25451 53.26811 min] R=0 S=0.003699932130984962
+Fitness: [0.0 14.223846 50.378788 min] R=0 S=0.009163493989035487
 
 Evaluated: T
-Fitness: [0.0 15.399335 54.600334 min] R=0 S=0.004617910482920706
+Fitness: [0.0 11.363846 54.031384 min] R=0 S=0.009351644781418145
 
 Evaluated: T
-Fitness: [0.0 18.443258 53.22648 min] R=0 S=0.005451202276162803
+Fitness: [0.0 11.911538 52.570347 min] R=0 S=0.013578720390796661
 
 Evaluated: T
-Fitness: [0.0 13.712013 61.115738 min] R=0 S=0.004834938095882535
+Fitness: [0.0 14.08077 50.487015 min] R=0 S=0.02056345879100263
 
 Evaluated: T
-Fitness: [0.0 12.9981 66.90258 min] R=0 S=0.0047717191046103835
+Fitness: [0.0 8.7846155 67.61364 min] R=0 S=0.01579998934175819
 
 Evaluated: T
-Fitness: [0.0 14.094967 57.93089 min] R=0 S=0.007941484451293945
+Fitness: [0.0 15.877692 49.756493 min] R=0 S=0.007122335257008672
 
 Evaluated: T
-Fitness: [0.0 19.67094 52.060783 min] R=0 S=0.005844669416546822
+Fitness: [0.0 19.096153 47.88961 min] R=0 S=0.020881519187241793
 
 Evaluated: T
-Fitness: [0.0 14.617046 56.765194 min] R=0 S=Infinity
+Fitness: [0.0 17.147692 48.944805 min] R=0 S=0.005294227506965399
 
 Evaluated: T
-Fitness: [0.0 22.9962 50.187344 min] R=0 S=Infinity
+Fitness: [0.0 17.147692 48.944805 min] R=0 S=Infinity
 
 Evaluated: T
-Fitness: [0.013711778 20.968899 51.0408 min] R=0 S=0.00615896238014102
+Fitness: [0.0 20.740768 47.862553 min] R=0 S=0.01842470106203109
 
 Evaluated: T
-Fitness: [0.013711778 13.894824 61.011658 min] R=0 S=0.006273088627494872
+Fitness: [0.07993605 16.97 48.782467 min] R=0 S=0.009516982943750918
 
 Evaluated: T
-Fitness: [0.013711778 15.747863 54.079933 min] R=0 S=0.003625516896136105
+Fitness: [0.07993605 12.519231 50.73052 min] R=0 S=0.02115737833082676
 
 Evaluated: T
-Fitness: [0.013711778 17.043447 53.393005 min] R=0 S=0.009670467115938663
+Fitness: [0.07993605 22.115385 46.888527 min] R=0 S=Infinity
 
 Evaluated: T
-Fitness: [0.013711778 22.657408 50.437138 min] R=0 S=0.00669795973226428
+Fitness: [0.07993605 15.843846 49.756493 min] R=0 S=0.006115693831816316
 
 Evaluated: T
-Fitness: [0.013711778 19.416666 52.206493 min] R=0 S=0.00509368724306114
+Fitness: [0.07993605 21.502308 47.483765 min] R=0 S=0.006942462990991771
 
 Evaluated: T
-Fitness: [0.013711778 19.18756 52.22731 min] R=0 S=0.004116096475627273
+Fitness: [0.1598721 21.292307 47.294373 min] R=0 S=0.007076492300257087
 
 Evaluated: T
-Fitness: [0.013711778 21.477446 50.936718 min] R=0 S=0.004265842493623495
+Fitness: [0.1598721 8.637692 66.34199 min] R=0 S=0.01343743602046743
 
 Evaluated: T
-Fitness: [0.013711778 11.958452 69.33805 min] R=0 S=0.004296875122236088
+Fitness: [0.1598721 9.975385 58.22511 min] R=0 S=0.004854459781199694
 
 Evaluated: T
-Fitness: [0.013711778 13.371557 62.2398 min] R=0 S=0.007006006082519889
+Fitness: [0.17985612 22.032309 46.996754 min] R=0 S=0.010189228225499392
 
 Evaluated: T
-Fitness: [0.013711778 15.369658 54.5587 min] R=0 S=0.0050582694238983095
+Fitness: [0.17985612 8.5 66.61256 min] R=0 S=0.010518367562326603
 
 Evaluated: T
-Fitness: [0.013711778 18.084045 53.143215 min] R=0 S=0.004371910123154521
+Fitness: [0.17985612 12.301538 52.05628 min] R=0 S=0.005902223521843553
 
 Evaluated: T
-Fitness: [0.013711778 18.900286 52.393837 min] R=0 S=0.003694457933306694
+Fitness: [0.17985612 11.515385 53.436146 min] R=0 S=0.005498835947946645
 
 Evaluated: T
-Fitness: [0.017139724 19.977207 51.66528 min] R=0 S=0.007465725066140294
+Fitness: [0.19984013 16.385386 49.296535 min] R=0 S=0.010009119578171521
 
 Evaluated: T
-Fitness: [0.017139724 15.7065525 54.184013 min] R=0 S=0.008375791665457655
+Fitness: [0.23980816 10.026923 58.06277 min] R=0 S=0.011464198061730713
 
 Evaluated: T
-Fitness: [0.017139724 18.707739 52.726894 min] R=0 S=0.005343994620488957
+Fitness: [0.25979218 9.537692 59.199135 min] R=0 S=0.008506057216436602
 
 Evaluated: T
-Fitness: [0.027423557 15.168803 55.995003 min] R=0 S=0.005170717253349721
+Fitness: [0.2797762 16.38077 49.296535 min] R=0 S=0.004844954062718898
 
 Evaluated: T
-Fitness: [0.027423557 22.790123 50.145714 min] R=0 S=Infinity
+Fitness: [0.3197442 8.9653845 62.391773 min] R=0 S=0.008552684565074742
 
 Evaluated: T
-Fitness: [0.027423557 19.08832 52.144047 min] R=0 S=0.004059181199409068
+Fitness: [0.3197442 10.947692 55.330086 min] R=0 S=0.0114683723077178
 
 Evaluated: T
-Fitness: [0.027423557 14.5019 56.286427 min] R=0 S=0.005832141563587356
+Fitness: [0.3397282 18.999231 48.2684 min] R=0 S=0.007372653592028655
 
 Evaluated: T
-Fitness: [0.027423557 11.844492 69.81682 min] R=0 S=0.0059661195846274495
+Fitness: [0.3397282 18.56 48.755413 min] R=0 S=0.019710490669240244
 
 Evaluated: T
-Fitness: [0.041135333 14.405033 56.53622 min] R=0 S=0.00625253701582551
+Fitness: [0.35971224 12.292308 52.05628 min] R=0 S=0.004911535026622005
 
 Evaluated: T
-Fitness: [0.041135333 22.42284 50.582848 min] R=0 S=0.005400657653808594
+Fitness: [0.41966426 10.467692 56.277058 min] R=0 S=0.015690092724980786
 
 Evaluated: T
-Fitness: [0.041135333 14.355176 57.32723 min] R=0 S=0.006346807291265577
+Fitness: [0.41966426 9.682307 58.71212 min] R=0 S=0.006491561274742708
 
 Evaluated: T
-Fitness: [0.041135333 11.940409 67.568695 min] R=0 S=0.005114725718158297
+Fitness: [0.4596323 9.806923 58.4145 min] R=0 S=0.004823326977202669
 
 Evaluated: T
-Fitness: [0.041135333 13.956078 60.6786 min] R=0 S=0.004008026007795706
+Fitness: [0.49960032 10.600769 56.16883 min] R=0 S=0.006266851560212672
 
 Evaluated: T
-Fitness: [0.041135333 12.033001 67.256454 min] R=0 S=0.004789991304278374
+Fitness: [0.53956836 8.737692 61.98593 min] R=0 S=0.006102063591242768
 
 Evaluated: T
-Fitness: [0.04456328 13.110873 62.55204 min] R=0 S=0.004511289647780359
+Fitness: [0.5595524 11.16 54.464287 min] R=0 S=0.005906479374971241
 
 Evaluated: T
-Fitness: [0.04456328 20.244064 51.45712 min] R=0 S=0.007725300529273227
+Fitness: [0.5995204 15.428461 50.05411 min] R=0 S=0.01276333573332522
 
 Evaluated: T
-Fitness: [0.04456328 12.237892 67.152374 min] R=0 S=0.005208763788687065
+Fitness: [0.5995204 7.8192306 65.530304 min] R=0 S=0.011933207308175042
 
 Evaluated: T
-Fitness: [0.047991224 12.76282 64.4463 min] R=0 S=0.004737781127914786
+Fitness: [0.6195044 18.882307 48.430737 min] R=0 S=0.007768187701003626
 
 Evaluated: T
-Fitness: [0.06513095 18.745253 52.68526 min] R=0 S=0.004491929255891591
+Fitness: [0.6594724 8.910769 61.580086 min] R=0 S=0.005842912258231081
 
 Evaluated: T
-Fitness: [0.068558894 12.8335705 64.05079 min] R=0 S=0.007366461475612596
+Fitness: [0.6594724 11.376154 53.57143 min] R=0 S=0.007459750195266679
 
 Evaluated: T
-Fitness: [0.068558894 11.832858 73.70941 min] R=0 S=Infinity
+Fitness: [0.6994404 8.506923 62.9329 min] R=0 S=0.008540673443349078
 
 Evaluated: T
-Fitness: [0.07198684 20.951805 51.373856 min] R=0 S=0.005486282898345962
+Fitness: [0.6994404 14.645385 50.13528 min] R=0 S=0.00968237713095732
 
 Evaluated: T
-Fitness: [0.07198684 14.071463 57.20233 min] R=0 S=0.00394142512959661
+Fitness: [0.7194245 11.333846 53.219696 min] R=0 S=0.006226020312169567
 
 Evaluated: T
-Fitness: [0.08227067 11.766856 71.66944 min] R=0 S=0.031658676962251775
+Fitness: [0.7394085 10.068461 57.224026 min] R=0 S=0.013455884298309684
 
 Evaluated: T
-Fitness: [0.08569861 18.927351 52.289757 min] R=0 S=0.0036141675082035363
+Fitness: [0.8193445 10.060769 57.224026 min] R=0 S=0.01088426326168701
 
 Evaluated: T
-Fitness: [0.0925545 13.981719 59.32556 min] R=0 S=0.005263160419417545
+Fitness: [0.87929654 11.100769 54.464287 min] R=0 S=0.007013170456048101
 
 Evaluated: T
-Fitness: [0.10283834 13.480057 61.42798 min] R=0 S=0.005213059775996953
+Fitness: [0.89928055 21.17154 47.45671 min] R=0 S=0.006524677504785359
 
 Evaluated: T
-Fitness: [0.10969423 12.603039 64.48793 min] R=0 S=0.013223290006862953
+Fitness: [0.89928055 6.9915385 74.26948 min] R=0 S=0.009797289400012232
 
 Evaluated: T
-Fitness: [0.10969423 14.6882715 56.161533 min] R=0 S=0.004535407351795584
+Fitness: [0.89928055 10.951538 54.761906 min] R=0 S=0.010188760352320969
 
 Evaluated: T
-Fitness: [0.11312217 15.309829 55.370525 min] R=0 S=0.004167041857726872
+Fitness: [0.9592326 6.8246155 74.70238 min] R=0 S=0.005182683249586262
 
 Evaluated: T
-Fitness: [0.11312217 16.882954 53.6428 min] R=0 S=0.007455601386027411
+Fitness: [0.97921664 10.656154 55.844154 min] R=0 S=0.004970831825630739
 
 Evaluated: T
-Fitness: [0.11312217 13.052469 61.802666 min] R=0 S=0.006671556882793084
+Fitness: [0.99920064 6.5946155 75.62229 min] R=0 S=0.010739739867858589
 
 Evaluated: T
-Fitness: [0.11655012 12.970798 63.00999 min] R=0 S=0.007495484169339761
+Fitness: [1.0391687 6.7746153 74.70238 min] R=0 S=0.005760827712947503
 
 Evaluated: T
-Fitness: [0.12340601 13.229344 61.40716 min] R=0 S=0.0042189781670458615
+Fitness: [1.0391687 7.753077 69.318184 min] R=0 S=0.010710294023738243
 
 Evaluated: T
-Fitness: [0.12340601 17.902897 52.914238 min] R=0 S=0.008033928646909771
+Fitness: [1.0591527 6.0353847 76.24459 min] R=0 S=0.04964300099527463
 
 Evaluated: T
-Fitness: [0.12683395 16.69682 53.78851 min] R=0 S=0.006590485209017061
+Fitness: [1.0991207 10.706154 55.68182 min] R=0 S=0.0056008362444117665
 
 Evaluated: T
-Fitness: [0.13711779 14.995964 55.5995 min] R=0 S=0.007965816192154307
+Fitness: [1.1990408 7.5723076 68.96645 min] R=0 S=0.005599143580184318
 
 Evaluated: T
-Fitness: [0.14054573 21.944445 50.749374 min] R=0 S=0.006357282290991861
+Fitness: [1.1990408 7.7846155 68.66883 min] R=0 S=0.006044962501619011
 
 Evaluated: T
-Fitness: [0.14740162 17.47531 52.9975 min] R=0 S=0.010431197690195404
+Fitness: [1.2190248 7.2253847 71.75325 min] R=0 S=0.0064222907240036875
 
 Evaluated: T
-Fitness: [0.15768546 13.645299 59.38801 min] R=0 S=0.005834101350046694
+Fitness: [1.2390088 7.433846 71.13095 min] R=0 S=0.005544056679354981
 
 Evaluated: T
-Fitness: [0.1611134 16.518757 53.934223 min] R=0 S=0.008292622002045391
+Fitness: [1.3189448 6.1215386 76.190475 min] R=0 S=0.009960493887774646
 
 Evaluated: T
-Fitness: [0.1611134 13.971747 58.492924 min] R=0 S=0.0064301760867238045
+Fitness: [1.3788968 6.006154 80.97944 min] R=0 S=Infinity
 
 Evaluated: T
-Fitness: [0.17825311 13.945632 57.764362 min] R=0 S=0.006424102117307484
+Fitness: [1.458833 7.453846 70.10281 min] R=0 S=0.007025729573797435
 
 Evaluated: T
-Fitness: [0.17825311 13.702754 58.597004 min] R=0 S=0.004735665086627705
+Fitness: [1.518785 7.2446156 70.96861 min] R=0 S=0.007739286316791549
 
 Evaluated: T
-Fitness: [0.20567667 15.233381 54.683598 min] R=0 S=0.003618199290940538
+Fitness: [1.538769 7.0692306 72.32143 min] R=0 S=0.006577360851224512
 
 Evaluated: T
-Fitness: [0.21253256 14.834758 55.22481 min] R=0 S=0.0075854192255064845
+Fitness: [1.538769 7.7976923 68.50649 min] R=0 S=0.007039520700345747
 
 Evaluated: T
-Fitness: [0.21938846 13.299857 60.553707 min] R=0 S=0.009848891233559698
+Fitness: [1.598721 8.314615 65.23268 min] R=0 S=0.015660915058106184
 
 Evaluated: T
-Fitness: [0.24338406 15.163105 54.933388 min] R=0 S=0.005333163193427026
+Fitness: [1.618705 8.241538 65.50325 min] R=0 S=0.005736165214329958
 
 Evaluated: T
-Fitness: [0.24681202 12.809354 62.55204 min] R=0 S=0.00552533712470904
+Fitness: [1.7985611 8.283077 65.23268 min] R=0 S=0.006695114425383508
 
 Evaluated: T
-Fitness: [0.2776635 13.490503 59.80433 min] R=0 S=0.013217148371040821
+Fitness: [1.9784173 6.669231 72.70022 min] R=0 S=0.005828318535350263
 
 Evaluated: T
-Fitness: [0.29480323 13.588081 58.97169 min] R=0 S=0.009176327002933249
+Fitness: [2.0183854 6.84 71.40151 min] R=0 S=0.005856829753611237
 
 Evaluated: T
-Fitness: [0.32565475 11.8259735 70.31641 min] R=0 S=0.008614031976321712
+Fitness: [2.1582735 6.6130767 75.16234 min] R=0 S=0.007714381499681622
 
 Evaluated: T
-Fitness: [0.33936653 12.471272 65.59117 min] R=0 S=0.017867333968752064
+Fitness: [2.3181455 6.5730767 72.943726 min] R=0 S=0.007600467070005834
 
 Evaluated: T
-Fitness: [0.3462224 12.066952 63.821815 min] R=0 S=0.006364533328451216
+Fitness: [2.3780975 6.456923 75.21645 min] R=0 S=0.005812814080854878
 
 Evaluated: T
-Fitness: [0.3667901 11.739316 69.65029 min] R=0 S=0.004868388932663947
+Fitness: [2.5379696 6.43 73.48485 min] R=0 S=0.007381238858215511
 
 Evaluated: T
-Fitness: [0.38050184 12.645299 63.55121 min] R=0 S=0.0055696984636597335
+Fitness: [2.7378097 6.3515387 73.809525 min] R=0 S=0.006683423649519682
 
 Evaluated: T
-Fitness: [0.3907857 11.939459 66.38218 min] R=0 S=0.004882354063738603
+Fitness: [2.7577937 9.107693 61.282467 min] R=0 S=0.005957093351753429
 
 Evaluated: T
-Fitness: [0.39764157 11.979107 66.02831 min] R=0 S=0.005195419245865196
+Fitness: [2.7577937 8.186923 63.825756 min] R=0 S=0.017302825770457275
 
 Evaluated: T
-Fitness: [0.4147813 11.974596 66.02831 min] R=0 S=0.004156566035817377
+Fitness: [2.8177457 9.359231 60.497837 min] R=0 S=0.005394937878008932
 
 Evaluated: T
-Fitness: [0.4387769 11.635802 68.67194 min] R=0 S=0.007108318619430065
+Fitness: [2.897682 8.275385 63.609306 min] R=0 S=0.004873490397585556
 
 Evaluated: T
-Fitness: [0.45591664 11.789886 68.15154 min] R=0 S=0.006311828241450712
+Fitness: [2.977618 6.3215384 73.376625 min] R=0 S=0.007033503148704767
 
 Evaluated: T
-Fitness: [0.46962842 11.392688 70.60783 min] R=0 S=0.016584736295044422
+Fitness: [3.017586 9.157692 60.66017 min] R=0 S=0.0068214082275517285
 
 Evaluated: T
-Fitness: [0.50390786 11.688984 68.276436 min] R=0 S=0.0064448235934833065
+Fitness: [3.257394 8.708462 62.175323 min] R=0 S=0.006574103725142777
 
 Evaluated: T
-Fitness: [0.58617854 11.584995 66.56953 min] R=0 S=0.007121635135263205
+Fitness: [3.4572341 9.04077 60.82251 min] R=0 S=0.00828353432007134
 
 Evaluated: T
-Fitness: [0.66502124 11.16453 68.85928 min] R=0 S=0.005522947758436203
+Fitness: [3.5771382 9.198462 59.767315 min] R=0 S=0.007820649188943207
 
 Evaluated: T
-Fitness: [0.70958453 11.113723 69.005 min] R=0 S=0.005097816581837833
+Fitness: [3.6171062 9.051538 60.11905 min] R=0 S=0.00578826671699062
 
 Evaluated: T
-Fitness: [0.7232963 11.442545 67.73522 min] R=0 S=0.008368581009563059
+Fitness: [3.6970425 9.1207695 60.03788 min] R=0 S=0.005725143011659384
 
 Evaluated: T
-Fitness: [0.77128756 10.825024 69.02581 min] R=0 S=Infinity
+Fitness: [3.8968825 9.108461 60.09199 min] R=0 S=Infinity
 

@@ -138,9 +138,21 @@ public class DummyGUIReasoner extends javax.swing.JFrame {
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 		updateTextArea(jComboBox1.getSelectedItem().toString() +" : chose");
+		if (jComboBox1.getSelectedItem().toString().equals("initPolicyExample1"))
+		{
+			parent.initPolicyExample1();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("initPolicyExample2"))
+		{
+			parent.initPolicyExample2();
+		}
 		if (jComboBox1.getSelectedItem().toString().equals("displayPolicy"))
 		{
 			parent.displayPolicy();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("checkPolicy"))
+		{
+			parent.checkPolicy();
 		}
 		if (jComboBox1.getSelectedItem().toString().equals("enforcePolicyASE"))
 		{

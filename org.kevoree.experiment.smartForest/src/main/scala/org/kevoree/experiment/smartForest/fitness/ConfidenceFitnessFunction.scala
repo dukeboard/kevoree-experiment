@@ -4,7 +4,6 @@ import org.kevoree.{ComponentInstance, ContainerRoot}
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 import java.lang.{Math}
 import org.kevoree.experiment.smartForest.dpa.{PeriodValues, ChangePeriodPropertyDPAO}
-import reflect.ValDef
 
 /**
  * User: ffouquet

@@ -9,6 +9,7 @@ import org.kevoree.tools.marShell.ast.AddComponentInstanceStatment._
 import org.kevoree.tools.marShell.ast.ComponentInstanceID._
 import org.kevoree.tools.marShell.ast.UpdateDictionaryStatement._
 import org.kevoree.tools.marShell.ast._
+import java.util.HashMap
 
 /**
  * Created by IntelliJ IDEA.
@@ -109,13 +110,16 @@ object SmartForestIndividualHelper {
     val props = new java.util.Properties()
     props.put(ChangePeriodPropertyDPAO.getPeriodPropertyName, propertyValue)
 
+    val propsAll = new HashMap[String,java.util.Properties]()
+    propsAll.put("*",props)
+
     Script(
       List(
         TransactionalBloc(
           List(
             UpdateDictionaryStatement(componentInstance.getName,
               Some(targetNode.getName),
-              props)
+              propsAll)
           )
         )
       )

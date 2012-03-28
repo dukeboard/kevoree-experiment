@@ -36,9 +36,13 @@ public class Reasoner extends AbstractComponentType {
 	public void start() {
 		System.out.println("hello Reasoner");
 		reasonerOperations = new Vector<String>();
+		reasonerOperations.add("initPolicyExample1"); 
+		reasonerOperations.add("initPolicyExample2");
 		reasonerOperations.add("displayPolicy");
+		reasonerOperations.add("checkPolicy");
 		reasonerOperations.add("enforcePolicyASE");
 		reasonerOperations.add("enforcePolicyNEW");
+		
 
 		addressBookOperations = new Vector<String>();
 		addressBookOperations.add("create");
@@ -213,6 +217,235 @@ public class Reasoner extends AbstractComponentType {
 		admin.getOperations().add(rescuerCreate);
 	}
 
+	public void initPolicyExample1() {
+		policy = RbacFactory.eINSTANCE.createPolicy();
+		// USERS
+		rbac.rbac.User gary = RbacFactory.eINSTANCE.createUser();
+		gary.setName("Gary");
+		rbac.rbac.User mary = RbacFactory.eINSTANCE.createUser();
+		mary.setName("Mary");
+		rbac.rbac.User alicia = RbacFactory.eINSTANCE.createUser();
+		alicia.setName("Alicia");
+		rbac.rbac.User boris = RbacFactory.eINSTANCE.createUser();
+		boris.setName("Boris");
+		// adding users
+		policy.getElements().add(gary);
+		policy.getElements().add(mary);
+		policy.getElements().add(alicia);
+		policy.getElements().add(boris);
+
+		// ROLES
+		rbac.rbac.Role employee = RbacFactory.eINSTANCE.createRole();
+		employee.setName("employee");
+		rbac.rbac.Role relationshipManager = RbacFactory.eINSTANCE.createRole();
+		relationshipManager.setName("relationshipManager");
+		rbac.rbac.Role rescuer = RbacFactory.eINSTANCE.createRole();
+		rescuer.setName("rescuer");
+		// adding roles
+		policy.getElements().add(employee);
+		policy.getElements().add(relationshipManager);
+		policy.getElements().add(rescuer);
+
+		// PERMISSIONS
+		Permission consult = RbacFactory.eINSTANCE.createPermission();
+		consult.setName("consult");
+		Permission modify = RbacFactory.eINSTANCE.createPermission();
+		modify.setName("modify");
+		Permission admin = RbacFactory.eINSTANCE.createPermission();
+		admin.setName("admin");
+		// adding permissions
+		policy.getElements().add(consult);
+		policy.getElements().add(modify);
+		policy.getElements().add(admin);
+
+		// OPERATIONS
+		Operation consultRead = RbacFactory.eINSTANCE.createOperation();
+		consultRead.setName("read");
+
+		Operation modifyRead = RbacFactory.eINSTANCE.createOperation();
+		modifyRead.setName("read");
+		Operation modifyUpdate = RbacFactory.eINSTANCE.createOperation();
+		modifyUpdate.setName("update");
+
+		Operation rescuerRead = RbacFactory.eINSTANCE.createOperation();
+		rescuerRead.setName("read");
+		Operation rescuerUpdate = RbacFactory.eINSTANCE.createOperation();
+		rescuerUpdate.setName("update");
+		Operation rescuerCreate = RbacFactory.eINSTANCE.createOperation();
+		rescuerCreate.setName("create");
+		Operation rescuerDelete = RbacFactory.eINSTANCE.createOperation();
+		rescuerDelete.setName("delete");
+
+		// RESOURCES
+		rbac.rbac.Resource employeeAddressBook = RbacFactory.eINSTANCE.createResource();
+		employeeAddressBook.setName("employeeAddressBook");
+
+		rbac.rbac.Resource externalContactAddressBook = RbacFactory.eINSTANCE
+				.createResource();
+		externalContactAddressBook.setName("externalContactAddressBook");
+
+		rbac.rbac.Resource emergencyAddressBook = RbacFactory.eINSTANCE.createResource();
+		emergencyAddressBook.setName("emergencyAddressBook");
+		policy.getElements().add(employeeAddressBook);
+		policy.getElements().add(externalContactAddressBook);
+		policy.getElements().add(emergencyAddressBook);
+
+		// USERS-ROLES ASSIGNMENT
+		gary.getAssignedRoles().add(employee);
+		mary.getAssignedRoles().add(employee);
+		boris.getAssignedRoles().add(employee);
+		boris.getAssignedRoles().add(rescuer);
+		alicia.getAssignedRoles().add(employee);
+		alicia.getAssignedRoles().add(relationshipManager);
+
+		// ROLES-PERMISSIONS ASSIGNMENT
+		employee.getPermissions().add(consult);
+		relationshipManager.getPermissions().add(modify);
+		rescuer.getPermissions().add(admin);
+
+		// OPERATIONS-RESOURCES ASSIGNMENT
+		consultRead.getResources().add(employeeAddressBook);
+
+		//modifyRead.getResources().add(employeeAddressBook);
+		modifyRead.getResources().add(externalContactAddressBook);
+		modifyUpdate.getResources().add(employeeAddressBook);
+		modifyUpdate.getResources().add(externalContactAddressBook);
+
+		rescuerRead.getResources().add(emergencyAddressBook);
+		rescuerUpdate.getResources().add(emergencyAddressBook);
+		rescuerDelete.getResources().add(emergencyAddressBook);
+		rescuerCreate.getResources().add(emergencyAddressBook);
+
+		// PERMISSIONS-OPERATIONS ASSIGNMENT
+		consult.getOperations().add(consultRead);
+
+		modify.getOperations().add(modifyRead);
+		modify.getOperations().add(modifyUpdate);
+
+		admin.getOperations().add(rescuerRead);
+		admin.getOperations().add(rescuerUpdate);
+		admin.getOperations().add(rescuerDelete);
+		admin.getOperations().add(rescuerCreate);
+	}
+	
+	public void initPolicyExample2() {
+		policy = RbacFactory.eINSTANCE.createPolicy();
+		// USERS
+		rbac.rbac.User gary = RbacFactory.eINSTANCE.createUser();
+		gary.setName("Gary");
+		rbac.rbac.User mary = RbacFactory.eINSTANCE.createUser();
+		mary.setName("Mary");
+		rbac.rbac.User alicia = RbacFactory.eINSTANCE.createUser();
+		alicia.setName("Alicia");
+		rbac.rbac.User boris = RbacFactory.eINSTANCE.createUser();
+		boris.setName("Boris");
+		// adding users
+		policy.getElements().add(gary);
+		policy.getElements().add(mary);
+		policy.getElements().add(alicia);
+		policy.getElements().add(boris);
+
+		// ROLES
+		rbac.rbac.Role employee = RbacFactory.eINSTANCE.createRole();
+		employee.setName("employee");
+		rbac.rbac.Role relationshipManager = RbacFactory.eINSTANCE.createRole();
+		relationshipManager.setName("relationshipManager");
+		rbac.rbac.Role rescuer = RbacFactory.eINSTANCE.createRole();
+		rescuer.setName("rescuer");
+		rbac.rbac.Role assistant = RbacFactory.eINSTANCE.createRole();
+		assistant.setName("assistant");
+		// adding roles
+		policy.getElements().add(employee);
+		policy.getElements().add(relationshipManager);
+		policy.getElements().add(rescuer);
+		policy.getElements().add(assistant);
+
+		// PERMISSIONS
+		Permission consult = RbacFactory.eINSTANCE.createPermission();
+		consult.setName("consult");
+		Permission modify = RbacFactory.eINSTANCE.createPermission();
+		modify.setName("modify");
+		Permission admin = RbacFactory.eINSTANCE.createPermission();
+		admin.setName("admin");
+		// adding permissions
+		policy.getElements().add(consult);
+		policy.getElements().add(modify);
+		policy.getElements().add(admin);
+
+		// OPERATIONS
+		Operation consultRead = RbacFactory.eINSTANCE.createOperation();
+		consultRead.setName("read");
+
+		Operation modifyRead = RbacFactory.eINSTANCE.createOperation();
+		modifyRead.setName("read");
+		Operation modifyUpdate = RbacFactory.eINSTANCE.createOperation();
+		modifyUpdate.setName("update");
+
+		Operation rescuerRead = RbacFactory.eINSTANCE.createOperation();
+		rescuerRead.setName("read");
+		Operation rescuerUpdate = RbacFactory.eINSTANCE.createOperation();
+		rescuerUpdate.setName("update");
+		Operation rescuerCreate = RbacFactory.eINSTANCE.createOperation();
+		rescuerCreate.setName("create");
+		Operation rescuerDelete = RbacFactory.eINSTANCE.createOperation();
+		rescuerDelete.setName("delete");
+
+		// RESOURCES
+		rbac.rbac.Resource employeeAddressBook = RbacFactory.eINSTANCE.createResource();
+		employeeAddressBook.setName("employeeAddressBook");
+
+		rbac.rbac.Resource externalContactAddressBook = RbacFactory.eINSTANCE
+				.createResource();
+		externalContactAddressBook.setName("externalContactAddressBook");
+
+		rbac.rbac.Resource emergencyAddressBook = RbacFactory.eINSTANCE.createResource();
+		emergencyAddressBook.setName("emergencyAddressBook");
+		policy.getElements().add(employeeAddressBook);
+		policy.getElements().add(externalContactAddressBook);
+		policy.getElements().add(emergencyAddressBook);
+
+		// USERS-ROLES ASSIGNMENT
+		gary.getAssignedRoles().add(employee);
+		mary.getAssignedRoles().add(employee);
+		mary.getAssignedRoles().add(assistant);
+		boris.getAssignedRoles().add(employee);
+		boris.getAssignedRoles().add(rescuer);
+		alicia.getAssignedRoles().add(employee);
+		alicia.getAssignedRoles().add(relationshipManager);
+
+		// ROLES-PERMISSIONS ASSIGNMENT
+		employee.getPermissions().add(consult);
+		relationshipManager.getPermissions().add(modify);
+		rescuer.getPermissions().add(admin);
+		assistant.getPermissions().add(modify);
+
+		// OPERATIONS-RESOURCES ASSIGNMENT
+		consultRead.getResources().add(employeeAddressBook);
+
+		//modifyRead.getResources().add(employeeAddressBook);
+		modifyRead.getResources().add(externalContactAddressBook);
+		modifyUpdate.getResources().add(employeeAddressBook);
+		modifyUpdate.getResources().add(externalContactAddressBook);
+
+		rescuerRead.getResources().add(emergencyAddressBook);
+		rescuerUpdate.getResources().add(emergencyAddressBook);
+		rescuerDelete.getResources().add(emergencyAddressBook);
+		rescuerCreate.getResources().add(emergencyAddressBook);
+
+		// PERMISSIONS-OPERATIONS ASSIGNMENT
+		consult.getOperations().add(consultRead);
+
+		modify.getOperations().add(modifyRead);
+		modify.getOperations().add(modifyUpdate);
+
+		admin.getOperations().add(rescuerRead);
+		admin.getOperations().add(rescuerUpdate);
+		admin.getOperations().add(rescuerDelete);
+		admin.getOperations().add(rescuerCreate);
+	}
+	
+	
+	
 	/*
 	 * display the policy on the dummy gui
 	 */
@@ -236,9 +469,14 @@ public class Reasoner extends AbstractComponentType {
 				}
 			}
 		}
-
 	}
 
+	
+	public void checkPolicy(){
+		PolicyChecker pc = new PolicyChecker(policy);		
+		gui.updateTextArea(pc.checkPolicy());
+	}
+	
 	public String addSubjects() {
 		String script = "";
 		// ajout d'un node subjects
@@ -538,26 +776,14 @@ public class Reasoner extends AbstractComponentType {
 		}
 		for(String e : channelSubjectUserOperation.keySet()){
 			for(String o : channelSubjectUserOperation.get(e)){
-					String channelName = "subject" + e + o;
-					script = script + "\n" + "addChannel " + channelName
-				+ " : SocketChannel{name = \"" + channelName + "\"}";
-			}
-		}
-		
-		for(String e : channelSubjectUserOperation.keySet()){
-			for(String o : channelSubjectUserOperation.get(e)){
 				portNumber = portNumber + 1;
 				String channelName = "subject" + e + o;
-				gui.updateTextArea("new channel added : "+channelName);
-				script = script + "\n" + "bind " + e + "." + o
-						+ "@subjects" + "=>" + channelName;
-				script = script + "\n" + "updateDictionary " + channelName
-						+ "{ port=\"" + portNumber + "\"}@subjects";
+				script = script + "\n" + "addChannel " + channelName + " : SocketChannel{name = \"" + channelName + "\"}";
+				script = script + "\n" + "bind " + e + "." + o + "@subjects" + "=>" + channelName;
+				script = script + "\n" + "updateDictionary " + channelName + "{ port=\"" + portNumber + "\"}@subjects";
 			}
 		}
-		
-		
-		
+				
 		// ajout des relations channelsEnforcement -> resources
 		for (PolicyElement e : policy.getElements()) {
 			if (e instanceof UserImpl) {
@@ -568,25 +794,16 @@ public class Reasoner extends AbstractComponentType {
 								portNumber = portNumber + 1;
 								String channelName = "subject"+e.getName() + o.getName();
 								
-								script = script +"\n"+ "bind " + resource.getName() + "."
-										+ o.getName() + "@resources" + " =>"
-										+ channelName;
-								script = script +"\n"+ "updateDictionary " + channelName
-										+ "{ port=\"" + portNumber
-										+ "\"}@resources";
+								script = script +"\n"+ "bind " + resource.getName() + "."+ o.getName() + "@resources" + " =>"+ channelName;
+								script = script +"\n"+ "updateDictionary " + channelName+ "{ port=\"" + portNumber+ "\"}@resources";
 							}
 						}
 					}
 				}
 			}
 		}
-		
 		return script;
 	}
-	
-
-	
-	
 	
 	/*
 	 * transform the policy into components, channels and bindings

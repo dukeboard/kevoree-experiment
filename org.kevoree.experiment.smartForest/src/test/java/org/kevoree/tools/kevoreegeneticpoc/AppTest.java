@@ -39,11 +39,9 @@ public class AppTest
 
         HashMap<Integer, Long> times = new HashMap<Integer, Long>();
         for (int i = 3; i < 21; i = i + 1) {
-            long timeBeforeExecution = System.currentTimeMillis();
             SmartForestExperiment.forestWidth = i;
             SmartForestExperiment.main(new String[0]);
-            long mesuredTime = (System.currentTimeMillis() - timeBeforeExecution);
-            System.out.println("Size = " + i + " ---> " + mesuredTime + " ms");
+            long mesuredTime = SmartForestExperiment.collectStatistics();
             times.put(i, mesuredTime);
         }
 

@@ -76,13 +76,10 @@ public class SmartForestExperiment {
         kmga = new KevoreeMultipleGeneticAlgorithm ();
         kmga.start();
         kmga.clean();
-
-
-        collectStatistics();
     }
 
-    private static void collectStatistics() {
-        System.out.println("time="+(System.currentTimeMillis()-initTime)+"ms");
+    public static Long collectStatistics() {
+        return (System.currentTimeMillis()-initTime);
     }
 
     private static void initializeParams(String sourceFile, String targetFile, Map<String,String> myProperties) {

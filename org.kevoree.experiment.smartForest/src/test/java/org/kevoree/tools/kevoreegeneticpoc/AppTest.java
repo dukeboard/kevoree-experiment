@@ -38,7 +38,7 @@ public class AppTest
         SmartForestExperiment.main(new String[0]);
 
         HashMap<Integer, Long> times = new HashMap<Integer, Long>();
-        for (int i = 3; i < 15; i = i + 1) {
+        for (int i = 3; i < 16; i = i + 1) {
             long timeBeforeExecution = System.currentTimeMillis();
             SmartForestExperiment.forestWidth = i;
             SmartForestExperiment.main(new String[0]);
@@ -64,7 +64,7 @@ public class AppTest
             if (!firstValue) {
                 System.out.print(",");
             }
-            System.out.print(i);
+            System.out.print((i/1000));
             firstValue = false;
         }
         System.out.println("))");

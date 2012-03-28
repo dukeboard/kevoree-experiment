@@ -26,16 +26,11 @@ public class ParseResults {
         System.out.println("PATH = " + pathComplete);
         try {
             InputStream stream = new FileInputStream(new File(pathComplete));
-            if (stream == null)
-                System.out.println("Perdu");
             StatisticsParser.parseCompleteStatistics(stream);
-
             stream = new FileInputStream(new File(pathClassic));
-            if (stream == null)
-                System.out.println("Perdu");
             StatisticsParser.parseStatistics(stream);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
 
     }

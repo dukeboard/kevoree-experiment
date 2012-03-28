@@ -15,12 +15,12 @@ import java.net.InetAddress;
 import java.util.*;
 
 public class SmartForestExperiment {
-    public final static int forestWidth = 10;
-    public final static int generationsForSingle = 50;
-    public final static int populationsForSingle = 100;
-    public final static int generationsForMulti = 50;
-    public final static int populationsForMulti = 100;
-    public final static int elite = 0;
+    public static int forestWidth = 3;
+    public static int generationsForSingle = 50;
+    public static int populationsForSingle = 100;
+    public static int generationsForMulti = 50;
+    public static int populationsForMulti = 100;
+    public static int elite = 0;
 
     public final static String paramsSingleFitnessSourceFile = "SmartForestSingleFitnessCrossOver.params";
     public final static String paramsMultiFitnessSourceFile = "SmartForestMultiCrossOver.params";
@@ -31,7 +31,6 @@ public class SmartForestExperiment {
 
     private static final ClassLoader classLoader = SmartForestExperiment.class.getClassLoader();
     private static long initTime;
-
 
     public static void main(String[] args){
 
@@ -123,7 +122,7 @@ public class SmartForestExperiment {
         // initialize : logger are quiet, old statistic files are deleted and the folder to store statistic file is prefixed byt the computer name
         Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         root.setLevel(Level.OFF); //change to off
-        folderToStoreTempFile = getComputerFullName() + "-" + folderToStoreTempFile;
+        folderToStoreTempFile = getComputerFullName() + "-generated";
         // clean and create the temp folder
         File generatedDirectory = new File(folderToStoreTempFile);
         if (generatedDirectory.exists() && generatedDirectory.isDirectory()){

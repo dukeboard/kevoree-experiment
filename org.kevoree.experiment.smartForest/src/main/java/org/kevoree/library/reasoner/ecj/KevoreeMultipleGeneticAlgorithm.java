@@ -197,12 +197,13 @@ public class KevoreeMultipleGeneticAlgorithm {
         // 1. create the output
 
         output = new Output(true);
+        output.setVerbosity(Output.V_VERBOSE);
 
         // stdout is always log #0. stderr is always log #1.
         // stderr accepts announcements, and both are fully verbose
         // by default.
-        output.addLog(ec.util.Log.D_STDOUT, false);
-        output.addLog(ec.util.Log.D_STDERR, true);
+        //output.addLog(ec.util.Log.D_STDOUT, false);
+        //output.addLog(ec.util.Log.D_STDERR, true);
 
         // now continue intialization
         return initialize(parameters, randomSeedOffset, output);

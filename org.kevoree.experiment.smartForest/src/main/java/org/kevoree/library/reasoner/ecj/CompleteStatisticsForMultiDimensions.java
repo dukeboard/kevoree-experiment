@@ -41,7 +41,7 @@ public class CompleteStatisticsForMultiDimensions extends Statistics {
         } catch (IOException i) {
             state.output.fatal("An IOException occurred while trying to create the log " + statisticsFile + ":\n" + i);
         }
-        writeModels = state.parameters.getBoolean(base.push(P_WRITE_MODELS),null,false);
+        writeModels = state.parameters.getBoolean(base.push(P_WRITE_MODELS), null, false);
     }
 
     public void preInitializationStatistics(final EvolutionState state) {
@@ -77,11 +77,6 @@ public class CompleteStatisticsForMultiDimensions extends Statistics {
     }
 
 
-
-
-
-
-
     /**
      * Prints out the statistics, but does not end with a println --
      * this lets overriding methods print additional statistics on the same line
@@ -94,20 +89,21 @@ public class CompleteStatisticsForMultiDimensions extends Statistics {
             for (int y = 0; y < state.population.subpops[x].individuals.length; y++) {
                 if (state.population.subpops[x].individuals[y].evaluated)        // he's got a valid fitness
                 {
-                    if (writeModels)
+                    if (writeModels) {
                         state.output.print(state.population.subpops[x].individuals[y].toString() + ";", statisticsLog);
-                    if (state.population.subpops[x].individuals[y].fitness instanceof MultiObjectiveFitness)
 
+                    }
+                    if (state.population.subpops[x].individuals[y].fitness instanceof MultiObjectiveFitness) {
                         try {
                             Float tempVal = ((NSGA2MultiObjectiveFitness) state.population.subpops[x].individuals[y].fitness).getScore();
-                            if(tempVal > bestValue){
-                                bestValue =  tempVal;
+                            if (tempVal > bestValue) {
+                                bestValue = tempVal;
                             }
                         } catch (Exception e) {
-                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            e.printStackTrace();
                         }
-
-                    state.output.print(((MultiObjectiveFitness) state.population.subpops[x].individuals[y].fitness).fitnessToStringForHumans() + "*", statisticsLog);
+                        state.output.print(((MultiObjectiveFitness) state.population.subpops[x].individuals[y].fitness).fitnessToStringForHumans() + "*", statisticsLog);
+                    }
                 }
             }
         }

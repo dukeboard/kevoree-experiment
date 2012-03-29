@@ -59,6 +59,9 @@ public class AppTest
 
             bestValue.add(StatHandler$.MODULE$.bestValue());
             heapSize.add(beanMemory.getHeapMemoryUsage().getUsed() / Math.pow(10,6)  );
+
+            System.out.println("Res = "+mesuredTime+"-"+StatHandler$.MODULE$.bestValue()+"-"+beanMemory.getHeapMemoryUsage().getUsed() / Math.pow(10,6) );
+
         }
         System.out.println("=====================R Script =========================");
         System.out.println("library(ggplot2)");

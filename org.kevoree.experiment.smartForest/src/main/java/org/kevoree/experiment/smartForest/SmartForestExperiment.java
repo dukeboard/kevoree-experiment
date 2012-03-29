@@ -16,7 +16,7 @@ import java.util.*;
 
 public class SmartForestExperiment {
     public static int forestWidth = 3;
-    public static int generationsForSingle = 150;
+    public static int generationsForSingle = 50;
     public static int populationsForSingle = 100;
     public static int generationsForMulti = 50;
     public static int populationsForMulti = 100;
@@ -113,8 +113,12 @@ public class SmartForestExperiment {
 
     }
 
-    private static void initExperiment() {
+
+    public static void initTimeStat(){
         initTime = System.currentTimeMillis();
+    }
+
+    private static void initExperiment() {
         
         // initialize : logger are quiet, old statistic files are deleted and the folder to store statistic file is prefixed byt the computer name
         Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);

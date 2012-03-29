@@ -140,7 +140,6 @@ public class DummyGUIClient extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		//updateTextArea(jComboBox1.getSelectedItem().toString());
 		System.out.println(jTextArea1.getText()+" on port : "+jComboBox1.getSelectedItem().toString());
 		parent.getPortByName(jComboBox1.getSelectedItem().toString(), MessagePort.class).process(jTextArea1.getText());
 	}

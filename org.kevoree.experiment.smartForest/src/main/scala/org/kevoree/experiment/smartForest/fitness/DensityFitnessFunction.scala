@@ -13,6 +13,7 @@ import org.kevoree.experiment.smartForest.SmartForestExperiment
 
 class DensityFitnessFunction extends FitnessFunction {
 
+
   val tempSensor: String = "TempSensor"
   val smokeSensor: String = "SmokeSensor"
   val humiditySensor: String = "HumiditySensor"
@@ -40,8 +41,7 @@ class DensityFitnessFunction extends FitnessFunction {
   }
 
   private def FitnessPostProcess(density : Double) : Float = {
-
-    (density * 100 / worseDensity).asInstanceOf[Float];
+    (density * 100 / worseDensity).asInstanceOf[Float]
   }
   def density(myModel: ContainerRoot, myType: String, indice: Int): Double = {
     var density: Double = 0.0

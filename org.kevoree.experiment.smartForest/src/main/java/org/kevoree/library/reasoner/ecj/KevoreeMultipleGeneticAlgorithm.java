@@ -108,17 +108,7 @@ public class KevoreeMultipleGeneticAlgorithm {
         {
             output.fatal("Threads number must exist.", threadParameter, null);
         } else if (V_THREADS_AUTO.equalsIgnoreCase(tmp_s)) {
-            Runtime runtime = Runtime.getRuntime();
-            try {
-                return ((Integer) runtime.getClass()
-                        .getMethod("availableProcessors", (Class[]) null)
-                        .invoke(runtime, (Object[]) null)).intValue();
-            } catch (Exception e) {
-                output.fatal(
-                        "Whoa! This Java version is too old to have the Runtime.availableProcessors() method available.\n"
-                                + "This means you can't use 'auto' as a threads option.",
-                        threadParameter, null);
-            }
+            return Runtime.getRuntime().availableProcessors();
         } else {
             try {
                 thread = parameters.getInt(threadParameter, null);
@@ -197,12 +187,13 @@ public class KevoreeMultipleGeneticAlgorithm {
         // 1. create the output
 
         output = new Output(true);
+        output.setVerbosity(Output.V_VERBOSE);
 
         // stdout is always log #0. stderr is always log #1.
         // stderr accepts announcements, and both are fully verbose
         // by default.
-        output.addLog(ec.util.Log.D_STDOUT, false);
-        output.addLog(ec.util.Log.D_STDERR, true);
+        //output.addLog(ec.util.Log.D_STDOUT, false);
+        //output.addLog(ec.util.Log.D_STDERR, true);
 
         // now continue intialization
         return initialize(parameters, randomSeedOffset, output);

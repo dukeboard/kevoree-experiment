@@ -10,7 +10,6 @@ import org.kevoree.tools.marShell.parser.ParserUtil
 import org.kevoree.library.reasoner.ecj.KevoreeDefaults
 import org.kevoree.{ ContainerRoot}
 import ec.{Individual, EvolutionState}
-import org.kevoree.experiment.smartForest.dpa.AddForestMonitoringComponentDPAO
 import org.kevoree.framework.KevoreeXmiHelper
 import org.kevoree.cloner.ModelCloner
 
@@ -168,9 +167,10 @@ abstract class KevoreeIndividualAbstract extends Individual{
 
 
   override def toString: String = {
-    val path = model_path + KevoreeIndividualAbstractO.getNextModelName
-    KevoreeXmiHelper.save(path, myModel)
-    return path
+    //val path = model_path + KevoreeIndividualAbstractO.getNextModelName
+   // KevoreeXmiHelper.save(path, myModel)
+   // return path
+    ""
   }
 
   override def distanceTo(otherInd: Individual): Double = {

@@ -19,6 +19,7 @@ import org.kevoree.framework.AbstractComponentType;
 		@ProvidedPort(name = "read", type = PortType.MESSAGE),
 		@ProvidedPort(name = "update", type = PortType.MESSAGE),
 		@ProvidedPort(name = "delete", type = PortType.MESSAGE) })
+
 public class AddressBook extends AbstractComponentType {
 	private DummyGUIApp gui;
 	private ArrayList<Contact> contacts;
@@ -48,48 +49,30 @@ public class AddressBook extends AbstractComponentType {
 
 	@Port(name = "create")
 	public void create(Object o) {
-		//if (o.toString().startsWith("create")) {
-			System.out.println("create : " + o.toString());
-			Contact c = new Contact();
-			c.setName(o.toString());
-			contacts.add(c);
-			gui.updateTextArea(o.toString() + " created");
-			update();
-		//}
+			String res = o.toString(); 
+			System.out.println("create : " + res);
+			gui.updateTextArea("create : " + res);
 	}
 
 	@Port(name = "update")
 	public void update(Object o) {
-		//if (o.toString().startsWith("update")) {
-			System.out.println("update : " + o.toString());
-			gui.updateTextArea(o.toString() + " updated");
-		//}
+		String res = o.toString(); 
+		System.out.println("update : " + res);
+		gui.updateTextArea("update : " + res);
 	}
 
 	@Port(name = "delete")
-	public void delete(Object o) {
-		//if (o.toString().startsWith("delete")) {
-			System.out.println("delete : " + o.toString());
-			gui.updateTextArea(o.toString() + " deleted");
-			for (Contact c : contacts) {
-				if (c.getName().equals(o.toString())) {
-					contacts.remove(c);
-				}
-			}			
-			update();
-		//}
+	public void delete(Object o) {		
+		String res = o.toString(); 
+		System.out.println("delete : " + res);
+		gui.updateTextArea("delete : " + res);
 	}
 
 	@Port(name = "read")
 	public void read(Object o) {
-		//if (o.toString().startsWith("read")) {
-			System.out.println("read");
-			gui.updateTextArea("read:"+o.toString());
-			for (Contact c : contacts) {
-				System.out.println("contact : " + c.getName());
-				gui.updateTextArea("contact : " + c.getName());
-			}
-		//}
+		String res = o.toString(); 
+		System.out.println("read : " + res);
+		gui.updateTextArea("read : " + res);
 	}
 
 }

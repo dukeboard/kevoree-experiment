@@ -51,7 +51,7 @@ public class AppTest
         SmartForestExperiment.forestWidth = 5;
         SmartForestExperiment.main(new String[0]);
         HashMap<Integer, Long> times = new HashMap<Integer, Long>();
-        for (int i = 15; i < 21; i = i + 1) {
+        for (int i = 3; i < 17; i = i + 1) {
             StatHandler$.MODULE$.putValue(0f);
             SmartForestExperiment.initTimeStat();
             SmartForestExperiment.forestWidth = i;

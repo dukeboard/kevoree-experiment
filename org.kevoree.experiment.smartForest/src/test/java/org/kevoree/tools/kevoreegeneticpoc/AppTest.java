@@ -48,10 +48,10 @@ public class AppTest
         List<Float> bestValue = new ArrayList<Float>();
 
         //WARMUP
-        SmartForestExperiment.forestWidth = 3;
+        SmartForestExperiment.forestWidth = 5;
         SmartForestExperiment.main(new String[0]);
         HashMap<Integer, Long> times = new HashMap<Integer, Long>();
-        for (int i = 5; i < 9; i = i + 1) {
+        for (int i = 3; i < 15; i = i + 1) {
             StatHandler$.MODULE$.putValue(0f);
             SmartForestExperiment.initTimeStat();
             SmartForestExperiment.forestWidth = i;

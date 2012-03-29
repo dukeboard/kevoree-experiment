@@ -1,3 +1,4 @@
+/*
 package fr.inria.hocl.core.hocli;
 
 import fr.inria.hocl.api.ExternalObject;
@@ -100,3 +101,4 @@ public class IOSenderRe implements Serializable {
 	} 
 
 }
+*/

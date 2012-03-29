@@ -156,7 +156,7 @@ abstract public class ReactionRule implements Atom, Serializable {
 	 *         number of reactions
 	 */
 	public String getStat() {
-		String s = new String( "\n" );
+		String s = "\n";
 		s = s + this + " statistics:\n";
 		s = s + " - number of tests: "
 				+ Hocli.debug.getNbCheckedPermutations( this ) + "\n";

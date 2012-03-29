@@ -3,7 +3,6 @@ package org.kevoree.tools.hocl.framework;
 import fr.inria.hocl.api.Solution;
 import fr.inria.hocl.api.StrategyManager;
 import fr.inria.hocl.core.hocli.Hocli;
-import org.kevoree.annotation.Start;
 import org.kevoree.framework.AbstractComponentType;
 
 /**
@@ -22,8 +21,7 @@ public abstract class AbstractHoclComponentType extends AbstractComponentType {
 		return solution;
 	}
 
-	@Start
-	public void start() throws Exception {
+	public void initializeSolution() throws Exception {
 		Hocli.init();
 		StrategyManager.init();
 
@@ -38,6 +36,5 @@ public abstract class AbstractHoclComponentType extends AbstractComponentType {
 		} catch (ClassNotFoundException e) {
 			throw new Exception("Unable to initialize hocl engine", e);
 		}
-
 	}
 }

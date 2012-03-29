@@ -1,3 +1,4 @@
+/*
 package fr.inria.hocl.core.hocli;
 
 
@@ -8,12 +9,14 @@ import java.rmi.RemoteException;
 
 public interface GeneralSrvInterface extends Remote {
 
-	/**
+	*/
+/**
 	 * Remotely invocable method.
 	 * 
 	 * @exception java.rmi.RemoteException
 	 *              if the remote invocation fails.
-	 */
+	 *//*
+
 	public void remoteOperations(Molecule m) throws RemoteException;
 
 
@@ -24,3 +27,4 @@ public interface GeneralSrvInterface extends Remote {
 	public void remoteRemove(Molecule m) throws RemoteException;
 
 }
+*/

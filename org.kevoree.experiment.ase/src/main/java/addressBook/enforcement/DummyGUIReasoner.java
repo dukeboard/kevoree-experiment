@@ -140,11 +140,11 @@ public class DummyGUIReasoner extends javax.swing.JFrame {
 		updateTextArea(jComboBox1.getSelectedItem().toString() +" : chose");
 		if (jComboBox1.getSelectedItem().toString().equals("initPolicyExample1"))
 		{
-			parent.initPolicyExample1();
+			parent.getPolicyGenerator().initPolicyExample1();
 		}
 		if (jComboBox1.getSelectedItem().toString().equals("initPolicyExample2"))
 		{
-			parent.initPolicyExample2();
+			parent.getPolicyGenerator().initPolicyExample2();
 		}
 		if (jComboBox1.getSelectedItem().toString().equals("displayPolicy"))
 		{
@@ -161,6 +161,10 @@ public class DummyGUIReasoner extends javax.swing.JFrame {
 		if (jComboBox1.getSelectedItem().toString().equals("enforcePolicyNEW"))
 		{
 			parent.enforcePolicyNEW();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("launchTest"))
+		{
+			parent.launchTest();
 		}
 	}
 

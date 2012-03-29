@@ -67,7 +67,7 @@ public class AppTest
         }
         System.out.println("=====================R Script =========================");
         System.out.println("library(ggplot2)");
-        System.out.print("expData <- data.frame(x=c(");
+        System.out.print("nbSensors <- c(");
         boolean firstValue = true;
         for (Integer i : times.keySet()) {
             if (!firstValue) {
@@ -76,7 +76,8 @@ public class AppTest
             System.out.print((i*i));
             firstValue = false;
         }
-        System.out.print("), y= c(");
+        System.out.println(")");
+        System.out.print("searchTime <- c(");
         firstValue = true;
         for (Long i : times.values()) {
             if (!firstValue) {
@@ -85,7 +86,8 @@ public class AppTest
             System.out.print((i/1000));
             firstValue = false;
         }
-        System.out.print("), heap= c(");
+        System.out.println(")");
+        System.out.print("heapSize <- c(");
         firstValue = true;
         for (Double i : heapSize) {
             if (!firstValue) {
@@ -94,7 +96,8 @@ public class AppTest
             System.out.print(i);
             firstValue = false;
         }
-        System.out.print("), bv= c(");
+        System.out.println(")");
+        System.out.print("foundValues <- c(");
         firstValue = true;
         for (Float i : bestValue) {
             if (!firstValue) {
@@ -103,8 +106,7 @@ public class AppTest
             System.out.print(i);
             firstValue = false;
         }
-
-        System.out.println("))");
+        System.out.println(")");
         System.out.println("ggplot(expData, aes(x, y)) + geom_point(legend = FALSE) + geom_line() + scale_y_continuous(\"Computation time in millisecondes\") + scale_x_continuous(\"Number of sensor simulated in forest\")");
         System.out.println("=====================R Script =========================");
         assertTrue(true);

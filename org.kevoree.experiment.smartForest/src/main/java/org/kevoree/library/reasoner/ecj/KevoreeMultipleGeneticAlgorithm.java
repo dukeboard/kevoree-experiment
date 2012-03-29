@@ -108,17 +108,7 @@ public class KevoreeMultipleGeneticAlgorithm {
         {
             output.fatal("Threads number must exist.", threadParameter, null);
         } else if (V_THREADS_AUTO.equalsIgnoreCase(tmp_s)) {
-            Runtime runtime = Runtime.getRuntime();
-            try {
-                return ((Integer) runtime.getClass()
-                        .getMethod("availableProcessors", (Class[]) null)
-                        .invoke(runtime, (Object[]) null)).intValue();
-            } catch (Exception e) {
-                output.fatal(
-                        "Whoa! This Java version is too old to have the Runtime.availableProcessors() method available.\n"
-                                + "This means you can't use 'auto' as a threads option.",
-                        threadParameter, null);
-            }
+            return Runtime.getRuntime().availableProcessors();
         } else {
             try {
                 thread = parameters.getInt(threadParameter, null);

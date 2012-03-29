@@ -4,6 +4,7 @@ import ec.EvolutionState;
 import ec.Statistics;
 import ec.multiobjective.MultiObjectiveFitness;
 import ec.util.Parameter;
+import org.kevoree.experiment.smartForest.results.StatHandler$;
 
 import java.io.File;
 import java.io.IOException;
@@ -76,11 +77,19 @@ public class CompleteStatisticsForMultiDimensions extends Statistics {
     }
 
 
+
+
+
+
+
     /**
      * Prints out the statistics, but does not end with a println --
      * this lets overriding methods print additional statistics on the same line
      */
     protected void _postEvaluationStatistics(final EvolutionState state) {
+
+        java.lang.Float bestValue = 0f;
+
         for (int x = 0; x < state.population.subpops.length; x++) {
             for (int y = 0; y < state.population.subpops[x].individuals.length; y++) {
                 if (state.population.subpops[x].individuals[y].evaluated)        // he's got a valid fitness
@@ -88,10 +97,23 @@ public class CompleteStatisticsForMultiDimensions extends Statistics {
                     if (writeModels)
                         state.output.print(state.population.subpops[x].individuals[y].toString() + ";", statisticsLog);
                     if (state.population.subpops[x].individuals[y].fitness instanceof MultiObjectiveFitness)
-                        state.output.print(((MultiObjectiveFitness) state.population.subpops[x].individuals[y].fitness).fitnessToStringForHumans() + "*", statisticsLog);
+
+                        try {
+                            Float tempVal = ((NSGA2MultiObjectiveFitness) state.population.subpops[x].individuals[y].fitness).getScore();
+                            if(tempVal > bestValue){
+                                bestValue =  tempVal;
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+
+                    state.output.print(((MultiObjectiveFitness) state.population.subpops[x].individuals[y].fitness).fitnessToStringForHumans() + "*", statisticsLog);
                 }
             }
         }
+
+        StatHandler$.MODULE$.putValue(bestValue);
+
     }
 
 

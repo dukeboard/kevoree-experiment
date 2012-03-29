@@ -5,7 +5,6 @@ package org.kevoree.library.reasoner.ecj;
  * User: jbourcie
  * Date: 07/07/11
  * Time: 15:36
- * To change this template use File | Settings | File Templates.
  */
 public class NSGA2MultiObjectiveFitness extends ec.multiobjective.nsga2.NSGA2MultiObjectiveFitness {
 
@@ -13,4 +12,15 @@ public class NSGA2MultiObjectiveFitness extends ec.multiobjective.nsga2.NSGA2Mul
         {
         return super.fitnessToStringForHumans().replace("\n"," ");
         }
+
+
+    public Float getScore() throws Exception {
+
+        if(getNumObjectives() != 3){
+            throw new Exception("DaFuck ");
+        }
+
+        return ( 300 - (getObjective(0)+getObjective(1)+getObjective(2)) );
+    }
+
 }

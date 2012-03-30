@@ -142,7 +142,7 @@ public class PolicyGenerator {
 		admin.getOperations().add(rescuerCreate);
 	}
 	
-	public void initPolicyExamples(int number, int numberOperationByPermission,
+	public Policy initPolicyExamples(int number, int numberOperationByPermission,
 			boolean randomPermission, boolean cyclicDelegation,boolean cyclicHierarchy, boolean ssod,
 			boolean dsod) {
 		RbacFactory factory = RbacFactory.eINSTANCE;
@@ -294,6 +294,7 @@ public class PolicyGenerator {
 				}
 			}
 		}
+		return policy;
 	}
 
 	public void initPolicyExample1() {

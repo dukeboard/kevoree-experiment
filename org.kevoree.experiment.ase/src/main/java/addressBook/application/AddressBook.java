@@ -3,6 +3,8 @@ package addressBook.application;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import javax.swing.JFrame;
+
 import org.kevoree.annotation.ComponentType;
 import org.kevoree.annotation.Port;
 import org.kevoree.annotation.PortType;
@@ -35,6 +37,8 @@ public class AddressBook extends AbstractComponentType {
 
 	@Stop
 	public void stop() {
+    	gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		gui.dispose();
 	}
 
 	@Update

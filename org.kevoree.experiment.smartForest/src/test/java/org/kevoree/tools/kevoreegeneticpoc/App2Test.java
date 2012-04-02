@@ -37,7 +37,7 @@ public class App2Test
 
 
         HashMap<String, List<Float>> bestValues = new HashMap<String, List<Float>>();
-        Set<Integer> generations = new HashSet<Integer>();
+        ArrayList<Integer> generations = new ArrayList<Integer>();
 
 
         //WARMUP
@@ -53,7 +53,7 @@ public class App2Test
             System.out.println("Run "+initParam);
             for (int i = 50; i < 200; i = i + 35) {
                 System.out.println("Run for "+i +" generations");
-                generations.add(i);
+                if(!generations.contains(i)){generations.add(i); }
                 SmartForestExperiment.generationsForSingle = i;
                 //SmartForestExperiment.generationsForMulti = i;
                 System.setProperty("INIT_VAR", initParam);

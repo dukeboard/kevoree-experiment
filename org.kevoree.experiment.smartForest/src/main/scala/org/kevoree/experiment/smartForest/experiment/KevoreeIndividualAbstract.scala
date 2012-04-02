@@ -81,7 +81,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
     var initVar = System.getProperty("INIT_VAR")
     initVar match {
       case "EMPTY_INIT" => {
-        myModel = KevoreeFactory.createContainerRoot
+        myModel = KevoreeXmiHelper.loadStream(this.getClass.getClassLoader.getResourceAsStream("defaultLibrary.kev"))
       }
       case "FULL_INIT" => {
         myModel = ModelGenerator.generateForest(SmartForestExperiment.forestWidth)

@@ -55,7 +55,7 @@ public class App2Test
                 System.out.println("Run for "+i +" generations");
                 generations.add(i);
                 SmartForestExperiment.generationsForSingle = i;
-                SmartForestExperiment.generationsForMulti = i;
+                //SmartForestExperiment.generationsForMulti = i;
                 System.setProperty("INIT_VAR", initParam);
                 StatHandler$.MODULE$.putValue(0f);
                 SmartForestExperiment.initTimeStat();

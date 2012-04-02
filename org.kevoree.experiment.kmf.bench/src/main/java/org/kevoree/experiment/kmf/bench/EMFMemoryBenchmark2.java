@@ -1,9 +1,11 @@
 package org.kevoree.experiment.kmf.bench;
 
-import org.kevoree.ContainerRoot;
-import org.kevoree.cloner.ModelCloner;
-import org.kevoree.framework.KevoreeXmiHelper$;
-
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.kemf.compat.kevoree.ContainerRoot;
+import org.kevoree.tools.emf.compat.EMFXmiHelper;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
@@ -21,7 +23,7 @@ public class EMFMemoryBenchmark2 {
     static List keeper = new ArrayList<Object>();
     static String modelURL = "/Users/duke/Documents/dev/dukeboard/kevoree-experiment/org.kevoree.experiment.smartForest/duke.irisa.fr-generated/kevoreeIndividualModel.kev";
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         List<Integer> stepIDS = new ArrayList<Integer>();
         List<Long> elems = new ArrayList<Long>();
@@ -32,14 +34,17 @@ public class EMFMemoryBenchmark2 {
         MemoryMXBean beanMemory = ManagementFactory.getMemoryMXBean();
         long begin = System.currentTimeMillis();
 
-        ContainerRoot model = KevoreeXmiHelper$.MODULE$.load(modelURL);
-        ModelCloner cloner = new ModelCloner();
+        org.kemf.compat.kevoree.ContainerRoot model = EMFXmiHelper.loadStream(new FileInputStream(modelURL));
         for (int i = 0; i < 10001; i++) {
             /* ContainerRoot model2 = KevoreeXmiHelper$.MODULE$.load("/Users/duke/Documents/dev/dukeboard/kevoree-experiment/org.kevoree.experiment.smartForest/src/main/resources/defaultLibrary.kev");
          keeper.add(model2);   */
 
             long beforeClone = System.nanoTime();
-            keeper.add(cloner.clone(model));
+
+            ContainerRoot model2 = EcoreUtil.copy(model);
+            EcoreUtil.resolveAll(model2);
+            keeper.add(model2);
+
             double after = (System.nanoTime() - beforeClone) / Math.pow(10, 3);
             System.out.println(i + "->" + after);
 
@@ -90,7 +95,7 @@ public class EMFMemoryBenchmark2 {
         }
         System.out.println(")\n");
         isfirst = true;
-        System.out.print("heapMem <- c(");
+        System.out.print("heapMemEMF <- c(");
         for (Double i : heapMem) {
             if (!isfirst) {
                 System.out.print(",");
@@ -100,7 +105,7 @@ public class EMFMemoryBenchmark2 {
         }
         System.out.println(")\n");
         isfirst = true;
-        System.out.print("garbageTime <- c(");
+        System.out.print("garbageTimeEMF <- c(");
         for (Long i : garbageTime) {
             if (!isfirst) {
                 System.out.print(",");
@@ -110,7 +115,7 @@ public class EMFMemoryBenchmark2 {
         }
         System.out.println(")\n");
         isfirst = true;
-        System.out.print("clonetime <- c(");
+        System.out.print("clonetimeEMF <- c(");
         for (Double i : cloneTime) {
             if (!isfirst) {
                 System.out.print(",");

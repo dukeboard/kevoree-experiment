@@ -6,21 +6,19 @@ import junit.framework.TestSuite;
 import org.kevoree.experiment.smartForest.SmartForestExperiment;
 import org.kevoree.experiment.smartForest.results.StatHandler$;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.MemoryMXBean;
 import java.util.*;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest2
+public class App2Test
         extends TestCase {
     /**
      * Create the test case
      *
      * @param testName name of the test case
      */
-    public AppTest2(String testName) {
+    public App2Test(String testName) {
         super(testName);
     }
 
@@ -28,7 +26,7 @@ public class AppTest2
      * @return the suite of tests being tested
      */
     public static Test suite() {
-        return new TestSuite(AppTest2.class);
+        return new TestSuite(App2Test.class);
     }
 
 

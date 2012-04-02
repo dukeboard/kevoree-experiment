@@ -8,10 +8,11 @@ import org.kevoreeAdaptation.AdaptationModel
 import java.io.File
 import org.kevoree.tools.marShell.parser.ParserUtil
 import org.kevoree.library.reasoner.ecj.KevoreeDefaults
-import org.kevoree.{ ContainerRoot}
+import org.kevoree.{ContainerRoot}
 import ec.{Individual, EvolutionState}
 import org.kevoree.framework.KevoreeXmiHelper
 import org.kevoree.cloner.ModelCloner
+import org.kevoree.experiment.smartForest.InitParam
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,14 +22,16 @@ import org.kevoree.cloner.ModelCloner
  * To change this template use File | Settings | File Templates.
  */
 
-object KevoreeIndividualAbstractO{
+object KevoreeIndividualAbstractO {
   var increment = 0
-  def getNextModelName : String = {
-    increment+=1
+
+  def getNextModelName: String = {
+    increment += 1
     "Models" + increment
   }
 }
-abstract class KevoreeIndividualAbstract extends Individual{
+
+abstract class KevoreeIndividualAbstract extends Individual {
 
   var mutationDpas: Array[DPA]
   var minMutationDpasNumber: Int
@@ -55,15 +58,16 @@ abstract class KevoreeIndividualAbstract extends Individual{
     val context = new KevsInterpreterContext(myModel)
     var numberOfMutation = minMutationDpasNumber
     if (maxMutationDpasNumber != minMutationDpasNumber)
-      numberOfMutation = minMutationDpasNumber + state.random(thread).nextInt(maxMutationDpasNumber-minMutationDpasNumber)
-    (1 to numberOfMutation).foreach{ _ =>
-      val myDPA = mutationDpas(state.random(thread).nextInt(mutationDpas.length))
-      val myLists = myDPA.applyPointcut(myModel)
-      if (!myLists.isEmpty) {
-        val myMap = myLists.get(state.random(thread).nextInt(myLists.size))
-        val script = myDPA.getASTScript(myMap)
-        KevsInterpreterAspects.rich(script).interpret(context)
-      }
+      numberOfMutation = minMutationDpasNumber + state.random(thread).nextInt(maxMutationDpasNumber - minMutationDpasNumber)
+    (1 to numberOfMutation).foreach {
+      _ =>
+        val myDPA = mutationDpas(state.random(thread).nextInt(mutationDpas.length))
+        val myLists = myDPA.applyPointcut(myModel)
+        if (!myLists.isEmpty) {
+          val myMap = myLists.get(state.random(thread).nextInt(myLists.size))
+          val script = myDPA.getASTScript(myMap)
+          KevsInterpreterAspects.rich(script).interpret(context)
+        }
     }
   }
 
@@ -71,20 +75,42 @@ abstract class KevoreeIndividualAbstract extends Individual{
    * Initializes the individual.
    */
   def reset(state: EvolutionState, thread: Int): Unit = {
-    val context = new KevsInterpreterContext(myModel)
-    var numberOfMutation = minResetDpasNumber
-    if (maxResetDpasNumber != minResetDpasNumber)
-      numberOfMutation = minResetDpasNumber + state.random(thread).nextInt(maxResetDpasNumber-minResetDpasNumber)
-    
-    (1 to numberOfMutation).foreach{ _ =>
-      val myDPA = resetDpas(state.random(thread).nextInt(resetDpas.length))
-      val myLists = myDPA.applyPointcut(myModel)
-      if (!myLists.isEmpty) {
-        val myMap = myLists.get(state.random(thread).nextInt(myLists.size))
-        val script = myDPA.getASTScript(myMap)
-        KevsInterpreterAspects.rich(script).interpret(context)
+
+    var initVar = System.getProperty("INIT_VAR")
+    initVar match {
+
+      case "EMPTY_INIT" => {
+        println("Empty Init ....")
+
+      }
+      case "FULL_INIT" => {
+        println("Full Init .....")
+
+      }
+      case "RANDOM_INIT" => {
+        println("Random Init .....")
+        val context = new KevsInterpreterContext(myModel)
+        var numberOfMutation = minResetDpasNumber
+        if (maxResetDpasNumber != minResetDpasNumber)
+          numberOfMutation = minResetDpasNumber + state.random(thread).nextInt(maxResetDpasNumber - minResetDpasNumber)
+        (1 to numberOfMutation).foreach {
+          _ =>
+            val myDPA = resetDpas(state.random(thread).nextInt(resetDpas.length))
+            val myLists = myDPA.applyPointcut(myModel)
+            if (!myLists.isEmpty) {
+              val myMap = myLists.get(state.random(thread).nextInt(myLists.size))
+              val script = myDPA.getASTScript(myMap)
+              KevsInterpreterAspects.rich(script).interpret(context)
+            }
+        }
+      }
+      case "HUMAN_INIT" => {
+        println("Human Init .....")
+
       }
     }
+
+
   }
 
   def defaultCrossover(state: EvolutionState, thread: Int, ind: KevoreeIndividualAbstract): Unit = {}
@@ -109,6 +135,7 @@ abstract class KevoreeIndividualAbstract extends Individual{
 
 
   val modelCloner = new ModelCloner
+
   override def clone: AnyRef = {
     val ki: KevoreeIndividualAbstract = super.clone.asInstanceOf[KevoreeIndividualAbstract]
     //val stringModel = KevoreeXmiHelper.saveToString(myModel,false)
@@ -130,11 +157,12 @@ abstract class KevoreeIndividualAbstract extends Individual{
       return false
     }
     val kkb = new KevoreeKompareBean
-    myModel.getNodes.foreach { cn =>
-      val am = kkb.kompare(myModel, ind.asInstanceOf[KevoreeIndividualAbstract].myModel, cn.getName)
-      if (!am.getAdaptations.isEmpty) {
-        return false
-      }
+    myModel.getNodes.foreach {
+      cn =>
+        val am = kkb.kompare(myModel, ind.asInstanceOf[KevoreeIndividualAbstract].myModel, cn.getName)
+        if (!am.getAdaptations.isEmpty) {
+          return false
+        }
     }
     return true
   }
@@ -145,8 +173,9 @@ abstract class KevoreeIndividualAbstract extends Individual{
 
   override def size: Long = {
     var count: Int = 0
-    myModel.getNodes.foreach { cn =>
-      count += cn.getComponents.size
+    myModel.getNodes.foreach {
+      cn =>
+        count += cn.getComponents.size
     }
     return count
   }
@@ -168,17 +197,18 @@ abstract class KevoreeIndividualAbstract extends Individual{
 
   override def toString: String = {
     //val path = model_path + KevoreeIndividualAbstractO.getNextModelName
-   // KevoreeXmiHelper.save(path, myModel)
-   // return path
+    // KevoreeXmiHelper.save(path, myModel)
+    // return path
     ""
   }
 
   override def distanceTo(otherInd: Individual): Double = {
     var result: Double = 0.0
     val kkb = new KevoreeKompareBean
-    myModel.getNodes.foreach { cn =>
-      val am: AdaptationModel = kkb.kompare(myModel, (otherInd.asInstanceOf[KevoreeIndividualAbstract]).myModel, cn.getName)
-      result += am.getAdaptations.size
+    myModel.getNodes.foreach {
+      cn =>
+        val am: AdaptationModel = kkb.kompare(myModel, (otherInd.asInstanceOf[KevoreeIndividualAbstract]).myModel, cn.getName)
+        result += am.getAdaptations.size
     }
     return result
   }

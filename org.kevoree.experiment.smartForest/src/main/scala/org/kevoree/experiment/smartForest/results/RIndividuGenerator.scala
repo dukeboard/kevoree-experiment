@@ -3,6 +3,7 @@ package org.kevoree.experiment.smartForest.results
 import org.kevoree.framework.KevoreeXmiHelper
 import java.io.{File, FileWriter}
 import org.kevoree.ContainerRoot
+import org.kevoree.experiment.smartForest.references.ModelGenerator
 
 /**
  * User: ffouquet
@@ -12,7 +13,10 @@ import org.kevoree.ContainerRoot
 
 object RIndividuGenerator extends App {
 
-  val model = KevoreeXmiHelper.load("homega-homega-generated/models/Models113")
+  //val model = KevoreeXmiHelper.load("homega-homega-generated/models/Models113")
+
+  val model = ModelGenerator.generateForest(20)
+
   generateIndividualRRepresentation(model)
 
   def generateIndividualRRepresentation(model: ContainerRoot) = {

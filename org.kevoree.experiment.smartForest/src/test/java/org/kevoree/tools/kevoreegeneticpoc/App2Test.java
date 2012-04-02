@@ -41,7 +41,7 @@ public class App2Test
 
 
         //WARMUP
-        SmartForestExperiment.forestWidth = 4;
+        SmartForestExperiment.forestWidth = 12;
 
         List<String> runs = new ArrayList<String>();
         runs.add("EMPTY_INIT");
@@ -51,7 +51,7 @@ public class App2Test
 
         for (String initParam : runs) {
             System.out.println("Run "+initParam);
-            for (int i = 50; i < 100; i = i + 20) {
+            for (int i = 50; i < 200; i = i + 20) {
                 System.out.println("Run for "+i +" generations");
                 generations.add(i);
                 SmartForestExperiment.generationsForSingle = i;
@@ -59,7 +59,6 @@ public class App2Test
                 System.setProperty("INIT_VAR", initParam);
                 StatHandler$.MODULE$.putValue(0f);
                 SmartForestExperiment.initTimeStat();
-                SmartForestExperiment.forestWidth = i;
                 SmartForestExperiment.main(new String[0]);
                 long mesuredTime = SmartForestExperiment.collectStatistics();
                 List<Float> values = bestValues.get(initParam);

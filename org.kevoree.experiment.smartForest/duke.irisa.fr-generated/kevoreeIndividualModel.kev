@@ -1,40 +1,4 @@
 <kevoree:ContainerRoot xsi:type="kevoree:ContainerRoot" xmlns:xml="http://www.omg.org/XMI" xmi:version="2.0" xmlns:xsi="http://wwww.w3.org/2001/XMLSchema-instance" xmlns:kevoree="http://kevoree/1.0">
- <nodes typeDefinition="//@typeDefinitions.8" name="node0" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node1" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node2" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node3" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node4" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node5" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node6" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node7" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node8" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node9" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node10" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node11" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node12" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node13" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node14" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node15" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node16" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node17" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node18" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node19" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node20" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node21" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node22" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node23" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node24" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node25" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node26" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node27" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node28" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node29" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node30" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node31" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node32" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node33" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node34" xsi:type="kevoree:ContainerNode"></nodes>
- <nodes typeDefinition="//@typeDefinitions.8" name="node35" xsi:type="kevoree:ContainerNode"></nodes>
  <typeDefinitions deployUnits="//@deployUnits.1 //@deployUnits.0" upperFragments="0" lowerFragments="0" upperBindings="0" lowerBindings="0" stopMethod="lifeCycle" startMethod="lifeCycle" bean="org.kevoree.experiment.smartbuilding.LBroadC" factoryBean="org.kevoree.experiment.smartbuilding.LBroadCFactory" name="LBroadC" xsi:type="kevoree:ChannelType"></typeDefinitions>
  <typeDefinitions name="JavaSENode" xsi:type="kevoree:NodeType"></typeDefinitions>
  <typeDefinitions deployUnits="//@deployUnits.2 //@deployUnits.0" upperFragments="0" lowerFragments="0" upperBindings="0" lowerBindings="0" stopMethod="lifeCycle" startMethod="lifeCycle" bean="org.kevoree.experiment.smartbuilding.IPMultiCast" factoryBean="org.kevoree.experiment.smartbuilding.IPMultiCastFactory" name="IPMultiCast" xsi:type="kevoree:ChannelType"></typeDefinitions>

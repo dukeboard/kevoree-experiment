@@ -44,7 +44,7 @@ public class App2Test
         SmartForestExperiment.forestWidth = 12;
 
         List<String> runs = new ArrayList<String>();
-        runs.add("EMPTY_INIT");
+       // runs.add("EMPTY_INIT");
         runs.add("FULL_INIT");
         runs.add("RANDOM_INIT");
         runs.add("HUMAN_INIT");
@@ -77,7 +77,7 @@ public class App2Test
             if (!firstValue) {
                 System.out.print(",");
             }
-            System.out.print((i * i));
+            System.out.print((i));
             firstValue = false;
         }
         System.out.println(")");

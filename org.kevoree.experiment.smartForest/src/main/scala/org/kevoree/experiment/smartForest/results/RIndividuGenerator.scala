@@ -13,9 +13,9 @@ import org.kevoree.experiment.smartForest.references.ModelGenerator
 
 object RIndividuGenerator extends App {
 
-  //val model = KevoreeXmiHelper.load("homega-homega-generated/models/Models113")
+  val model = KevoreeXmiHelper.load("/Users/duke/Documents/dev/dukeboard/kevoree-experiment/org.kevoree.experiment.smartForest/MacBook-Pro-de-duke.local-generated/kevoreeIndividualModel.kev")
 
-  val model = ModelGenerator.generateForest(12)
+ // val model = ModelGenerator.generateForest(12)
 
   generateIndividualRRepresentation(model)
 

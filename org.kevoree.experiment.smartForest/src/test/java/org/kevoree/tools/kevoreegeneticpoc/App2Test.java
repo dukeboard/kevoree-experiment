@@ -45,13 +45,13 @@ public class App2Test
 
         List<String> runs = new ArrayList<String>();
        // runs.add("EMPTY_INIT");
-        runs.add("FULL_INIT");
-        runs.add("RANDOM_INIT");
-        runs.add("HUMAN_INIT");
+        //runs.add("FULL_INIT");
+      //  runs.add("RANDOM_INIT");
+       runs.add("HUMAN_INIT");
 
         for (String initParam : runs) {
             System.out.println("Run "+initParam);
-            for (int i = 50; i < 200; i = i + 35) {
+            for (int i = 50; i < 51; i = i + 35) {
                 System.out.println("Run for "+i +" generations");
                 if(!generations.contains(i)){generations.add(i); }
                 SmartForestExperiment.generationsForSingle = i;

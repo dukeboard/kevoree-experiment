@@ -41,7 +41,7 @@ public class App2Test
 
 
         //WARMUP
-        SmartForestExperiment.forestWidth = 12;
+        SmartForestExperiment.forestWidth = 15;
 
         List<String> runs = new ArrayList<String>();
        // runs.add("EMPTY_INIT");

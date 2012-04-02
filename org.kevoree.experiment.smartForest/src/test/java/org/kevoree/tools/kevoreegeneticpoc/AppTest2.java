@@ -8,9 +8,7 @@ import org.kevoree.experiment.smartForest.results.StatHandler$;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Unit test for simple App.
@@ -39,72 +37,67 @@ public class AppTest2
      */
     public void testApp() {
 
-        MemoryMXBean beanMemory = ManagementFactory.getMemoryMXBean();
 
-        List<Double> heapSize = new ArrayList<Double>();
-        List<Float> bestValue = new ArrayList<Float>();
+        HashMap<String, List<Float>> bestValues = new HashMap<String, List<Float>>();
+        Set<Integer> generations = new HashSet<Integer>();
+
 
         //WARMUP
-        SmartForestExperiment.forestWidth = 5;
-        SmartForestExperiment.main(new String[0]);
-        HashMap<Integer, Long> times = new HashMap<Integer, Long>();
-        for (int i = 3; i < 17; i = i + 1) {
-            StatHandler$.MODULE$.putValue(0f);
-            SmartForestExperiment.initTimeStat();
-            SmartForestExperiment.forestWidth = i;
-            SmartForestExperiment.main(new String[0]);
-            long mesuredTime = SmartForestExperiment.collectStatistics();
-            times.put(i, mesuredTime);
+        SmartForestExperiment.forestWidth = 4;
 
-            bestValue.add(StatHandler$.MODULE$.bestValue());
-            heapSize.add(beanMemory.getHeapMemoryUsage().getUsed() / Math.pow(10,6)  );
+        List<String> runs = new ArrayList<String>();
+        runs.add("EMPTY_INIT");
+        runs.add("FULL_INIT");
+        runs.add("RANDOM_INIT");
+        runs.add("HUMAN_INIT");
 
-            System.out.println("Res = "+mesuredTime+"-"+StatHandler$.MODULE$.bestValue()+"-"+beanMemory.getHeapMemoryUsage().getUsed() / Math.pow(10,6) );
-
+        for (String initParam : runs) {
+            System.out.println("Run "+initParam);
+            for (int i = 50; i < 100; i = i + 20) {
+                System.out.println("Run for "+i +" generations");
+                generations.add(i);
+                SmartForestExperiment.generationsForSingle = i;
+                SmartForestExperiment.generationsForMulti = i;
+                System.setProperty("INIT_VAR", initParam);
+                StatHandler$.MODULE$.putValue(0f);
+                SmartForestExperiment.initTimeStat();
+                SmartForestExperiment.forestWidth = i;
+                SmartForestExperiment.main(new String[0]);
+                long mesuredTime = SmartForestExperiment.collectStatistics();
+                List<Float> values = bestValues.get(initParam);
+                if (values == null) {
+                    values = new ArrayList<Float>();
+                }
+                values.add(StatHandler$.MODULE$.bestValue());
+                bestValues.put(initParam, values);
+            }
         }
+
         System.out.println("=====================R Script =========================");
-        System.out.println("library(ggplot2)");
-        System.out.print("nbSensors <- c(");
+        System.out.print("generations <- c(");
         boolean firstValue = true;
-        for (Integer i : times.keySet()) {
+        for (Integer i : generations) {
             if (!firstValue) {
                 System.out.print(",");
             }
-            System.out.print((i*i));
+            System.out.print((i * i));
             firstValue = false;
         }
         System.out.println(")");
-        System.out.print("searchTime <- c(");
-        firstValue = true;
-        for (Long i : times.values()) {
-            if (!firstValue) {
-                System.out.print(",");
+
+        for (String run : bestValues.keySet()) {
+            System.out.print(run+" <- c(");
+            firstValue = true;
+            for (Float i : bestValues.get(run)) {
+                if (!firstValue) {
+                    System.out.print(",");
+                }
+                System.out.print(i);
+                firstValue = false;
             }
-            System.out.print((i/1000));
-            firstValue = false;
+            System.out.println(")");
         }
-        System.out.println(")");
-        System.out.print("heapSize <- c(");
-        firstValue = true;
-        for (Double i : heapSize) {
-            if (!firstValue) {
-                System.out.print(",");
-            }
-            System.out.print(i);
-            firstValue = false;
-        }
-        System.out.println(")");
-        System.out.print("foundValues <- c(");
-        firstValue = true;
-        for (Float i : bestValue) {
-            if (!firstValue) {
-                System.out.print(",");
-            }
-            System.out.print(i);
-            firstValue = false;
-        }
-        System.out.println(")");
-        System.out.println("ggplot(expData, aes(x, y)) + geom_point(legend = FALSE) + geom_line() + scale_y_continuous(\"Computation time in millisecondes\") + scale_x_continuous(\"Number of sensor simulated in forest\")");
+
         System.out.println("=====================R Script =========================");
         assertTrue(true);
     }

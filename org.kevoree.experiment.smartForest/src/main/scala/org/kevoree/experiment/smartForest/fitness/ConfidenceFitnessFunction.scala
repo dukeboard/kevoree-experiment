@@ -54,7 +54,7 @@ class ConfidenceFitnessFunction extends FitnessFunction {
     (0 until model.getNodes.size).foreach{ indice =>
       result = result + 3*worstFreq/((1+getDistanceWithClosestSuperNode(indice))*(1+getDistanceWithClosestSuperNode(indice) )) // 1+ getDistance to avoid division by 0
     }
-    println("Best confidence = " + result)
+   // println("Best confidence = " + result)
     (result).asInstanceOf[Float]
   }
 

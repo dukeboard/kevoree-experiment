@@ -63,7 +63,6 @@ object ModelGenerator {
           periodeResult = periode
         }
     }
-    println("Distance = " + distance + ", periode = " + periodeResult)
     periodeResult
   }
 

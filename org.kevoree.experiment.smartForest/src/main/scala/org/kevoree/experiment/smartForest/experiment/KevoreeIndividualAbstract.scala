@@ -8,11 +8,13 @@ import org.kevoreeAdaptation.AdaptationModel
 import java.io.File
 import org.kevoree.tools.marShell.parser.ParserUtil
 import org.kevoree.library.reasoner.ecj.KevoreeDefaults
-import org.kevoree.{ContainerRoot}
 import ec.{Individual, EvolutionState}
 import org.kevoree.framework.KevoreeXmiHelper
 import org.kevoree.cloner.ModelCloner
-import org.kevoree.experiment.smartForest.InitParam
+import org.kevoree.{KevoreeFactory, ContainerRoot}
+import org.kevoree.experiment.smartForest.references.ModelGenerator
+import org.kevoree.experiment.smartForest.results.RIndividuGenerator
+import org.kevoree.experiment.smartForest.{SmartForestExperiment, InitParam}
 
 /**
  * Created by IntelliJ IDEA.
@@ -78,17 +80,18 @@ abstract class KevoreeIndividualAbstract extends Individual {
 
     var initVar = System.getProperty("INIT_VAR")
     initVar match {
-
       case "EMPTY_INIT" => {
-        println("Empty Init ....")
-
+        myModel = KevoreeFactory.createContainerRoot
       }
       case "FULL_INIT" => {
-        println("Full Init .....")
-
+        myModel = ModelGenerator.generateForest(SmartForestExperiment.forestWidth)
       }
-      case "RANDOM_INIT" => {
-        println("Random Init .....")
+      case "HUMAN_INIT" => {
+        myModel = ModelGenerator.generateForest(SmartForestExperiment.forestWidth)
+        RIndividuGenerator.generateIndividualRRepresentation(myModel)
+      }
+
+      case  _ => {
         val context = new KevsInterpreterContext(myModel)
         var numberOfMutation = minResetDpasNumber
         if (maxResetDpasNumber != minResetDpasNumber)
@@ -104,10 +107,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
             }
         }
       }
-      case "HUMAN_INIT" => {
-        println("Human Init .....")
 
-      }
     }
 
 

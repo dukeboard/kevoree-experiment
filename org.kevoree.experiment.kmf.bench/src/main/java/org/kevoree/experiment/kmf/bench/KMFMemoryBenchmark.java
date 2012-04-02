@@ -42,7 +42,6 @@ public class KMFMemoryBenchmark {
             long beforeClone = System.nanoTime();
             keeper.add(cloner.clone(model));
             double after = (System.nanoTime() - beforeClone) / Math.pow(10, 3);
-
             System.out.println(i + "->" + after);
 
             //double memoryUsed = beanMemory.getHeapMemoryUsage().getUsed() / Math.pow(10,6)  ;
@@ -121,8 +120,6 @@ public class KMFMemoryBenchmark {
             isfirst = false;
         }
         System.out.println(")\n");
-
-
         System.out.println("======================== Script R ==========================");
     }
 

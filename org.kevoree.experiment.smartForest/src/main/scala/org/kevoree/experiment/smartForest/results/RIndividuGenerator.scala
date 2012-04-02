@@ -15,7 +15,7 @@ object RIndividuGenerator extends App {
 
   //val model = KevoreeXmiHelper.load("homega-homega-generated/models/Models113")
 
-  val model = ModelGenerator.generateForest(20)
+  val model = ModelGenerator.generateForest(12)
 
   generateIndividualRRepresentation(model)
 

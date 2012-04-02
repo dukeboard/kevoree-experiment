@@ -95,7 +95,7 @@ class DensityFitnessFunction extends FitnessFunction {
   private def evaluateWorseDensity(myModel: ContainerRoot): Float = {
     var density: Double = 0.0
     (0 until myModel.getNodes.size).foreach{ i => density += 3 * worseDensity(i)}
-    println("Worse Density = " + density)
+    //println("Worse Density = " + density)
     return java.lang.Math.floor(density).asInstanceOf[Float]
   }
 

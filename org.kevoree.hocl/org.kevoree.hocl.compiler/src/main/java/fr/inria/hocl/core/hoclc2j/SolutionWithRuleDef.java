@@ -62,12 +62,12 @@ public class SolutionWithRuleDef implements Solution {
 		// directly.
 
 		String s = "";
-		Set<Symbols> freeVars = solution.getFreeVars();
+		/*Set<Symbols> freeVars = solution.getFreeVars();
 		if( freeVars.contains( reactionRulePat ) ) {
 			s = reactionRulePat.generateDeclaration( reactionRulePat,
-					"/*SolWithRuleDef: iterator */" ); // FIXME
-		}
-		return s + "\n" + solution.generateContentsDeclaration();
+					"*//*SolWithRuleDef: iterator *//*" ); // FIXME
+		}*/
+		return s + /*"\n" +*/ solution.generateContentsDeclaration();
 	}
 
 

@@ -13,7 +13,6 @@ public class InfoPort extends Thread{
 	private int portMin = 0;
 	private int portMax = 65535;
 	
-	
 	public InfoPort(){
 		ports = new HashMap<String, Integer>();
 		freePorts = new ArrayList<Integer>();
@@ -44,7 +43,6 @@ public class InfoPort extends Thread{
 		}
 		System.out.println("number of free port(s) : "+freePorts.size());
 		System.out.println("number of busy port(s) : "+busyPorts.size());
-		
 	}
 	
 	public ArrayList<Integer> getFreePorts() {

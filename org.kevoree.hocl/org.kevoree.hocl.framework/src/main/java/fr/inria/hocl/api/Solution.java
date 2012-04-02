@@ -23,8 +23,7 @@ public class Solution implements Atom, Serializable {
 
 	private Molecule contents; // molecule inside the solution
 
-	private SimpleLinkedList<SolutionObserver> observersAdd; // list of observers
-																														// of this solution
+	private SimpleLinkedList<SolutionObserver> observersAdd; // list of observers of this solution
 
 	private SolutionState state;
 
@@ -258,7 +257,7 @@ public class Solution implements Atom, Serializable {
 	}
 
 
-	public String prepareprintsol() {
+	/*public String prepareprintsol() {
 
 		String input = this.toString();
 		String output = "";
@@ -316,7 +315,7 @@ public class Solution implements Atom, Serializable {
 		}
 
 		return output;
-	}
+	}*/
 
 
 	/*public void printsol() {
@@ -361,10 +360,10 @@ public class Solution implements Atom, Serializable {
 			}
 		}
 		Hocli.debug.addLog( Debug.DebugSymbol.SOLUTION_WHATISINSIDE,
-				"Initial solution is: \n" + this.prepareprintsol() );
+				"Initial solution is: \n" + this.toString() );
 		reduceSolution( this );
 		Hocli.debug.addLog( Debug.DebugSymbol.SOLUTION_WHATISINSIDE,
-				"Solution is: \n" + this.prepareprintsol() );
+				"Solution is: \n" + this.toString() );
 		// Hocli.debug.addLog(Debug.DebugSymbol.SOLUTION_PARTIAL, "\n" + solution);
 		Hocli.debug.printLog();
 

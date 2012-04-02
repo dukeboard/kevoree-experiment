@@ -140,379 +140,379 @@ public class BasicMolecule extends LinkedList<Atom> implements Molecule {
 	}
 
 
-	public String generateAddElementCode() {
-		List<String> types = getElementTypes();
-		String myCode = "";
-
-		String generateFunction = "";
-		String generateTuple = "";
-		String generateSolution = "";
-
-		generateTuple += "\tpublic Tuple generateTupleElement() throws IOException{\n"
-		    + "\t\tint num;\n"
-		    + "\t\tString input;\n\n"
-		    + "\t\tSystem.out.println(\"How many elements in the tuple?\\n\");\n"
-		    + "\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
-		    + "\t\tnum = Integer.decode(input);\n\n"
-		    + "\t\tTuple t = new Tuple (num);\n"
-		    + "\t\tfor (int i=0;i<num;i++){\n"
-		    + "\t\t\tSystem.out.print(\"Enter the type for the \");\n"
-		    + "\t\t\tint j = i % 10;\n"
-		    + "\t\t\tif (j == 0)\n"
-		    + "\t\t\t\tSystem.out.println((i+1) + \"st element. \\n\");\n"
-		    + "\t\t\telse if (j == 1)\n"
-		    + "\t\t\t\tSystem.out.println((i+1) + \"nd element. \\n\");\n"
-		    + "\t\t\telse if (j == 2)\n"
-		    + "\t\t\t\tSystem.out.println((i+1) + \"rd element. \\n\");\n"
-		    + "\t\t\telse \n\t\t\t\t System.out.println((i+1) + \"th element. \\n\");\n"
-		    + "\t\t\tSystem.out.println(\"Types:\");\n"
-		    + "\t\t\tSystem.out.println(this.displayTypes());\n"
-		    + "\t\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n\n"
-		    + "\t\t\twhile(input.length()==0){\n"
-		    + "\t\t\t\tSystem.out.println(\"Enter the type of the element.\");\n"
-		    + "\t\t\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
-		    + "\t\t\t}\n"
-		    + "\t\t\t int choice = Integer.decode(input);\n"
-		    + "\t\t\t input = this.getiAllType(choice-1);\n";
-
-
-		generateSolution += "\tpublic Solution generateSolutionElement() throws IOException{\n"
-		    + "\t\tint sign = 0;\n"
-		    + "\t\tString input;\n"
-		    + "\t\tSolution sol = new Solution ();\n"
-		    + "\t\tMolecule mol = new Molecule();\n"
-		    + "\t\twhile(sign == 0){\n"
-		    + "\t\t\tSystem.out.println(\"Do you want to add an element in this solution? (y/n)\");\n"
-		    + "\t\t\tString stop = new BufferedReader(new InputStreamReader(System.in)).readLine();\n\n"
-		    + "\t\t\tif (stop.equals(\"yes\")||stop.equals(\"y\")||stop.equals(\"YES\")||stop.equals(\"Y\")){\n"
-		    + "\t\t\t\tSystem.out.println(\"Enter the type of the element.\\n\");\n"
-		    + "\t\t\t\tSystem.out.println(\"Types:\");\n"
-		    + "\t\t\t\tSystem.out.println(this.displayTypes());\n"
-		    + "\t\t\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n\n"
-		    + "\t\t\t\twhile(input.length()==0){\n"
-		    + "\t\t\t\t\tSystem.out.println(\"Enter the type of the element.\");\n"
-		    + "\t\t\t\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
-		    + "\t\t\t\t}\n"
-		    + "\t\t\t\tint choice = Integer.decode(input);\n"
-		    + "\t\t\t\tinput = this.getiAllType(choice-1);\n";
-		
-		myCode += "\tpublic Molecule addElement(){\n"
-				+ "\t\tString input = \"\";\n"
-				+ "\t\tExternalObject obj;\n"
-				+ "\t\tReactionRule r;\n"
-				+ "\t\tMolecule mol = new Molecule();\n"
-				+ "\t\tint choice;\n\n"
-				+ "\t\tSystem.out.println(\"Create the element that you want to add/remove.\\n\");\n"
-				+ "\t\tSystem.out.println(\"What kind of element you want to create? (input the number) \\n \");\n"
-				+ "\t\tSystem.out.println(\"Supported Elements:\");\n"
-				+ "\t\tSystem.out.println(this.displayTypes());\n\n";
-
-		/*
-		 * this is the version that can return all the element types before
-		 * compilation
-		 * 
-		 * for (int i=0;i<types.size();i++){ myCode += "\t\tSystem.out.println(\""+
-		 * (i+1) + ": "+types.get(i)+"\");\n"; }
-		 */
-
-		myCode += "\t\ttry {\n"
-				+ "\t\t\tinput += new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
-				+ "\t\t} catch (IOException e1) {\n" + "\t\t\te1.printStackTrace();\n"
-				+ "\t\t}\n\n"
-
-				+ "\t\ttry{\n\n" + "\t\t\tchoice = Integer.decode(input);\n"
-				+ "\t\t\tinput = this.getiAllType(choice-1);\n"
-				+ "\t\t\tif(input.length()==0)\n"
-				+ "\t\t\t\tSystem.out.println(\"Null pointer!\");\n";
-
-		for( int i = 0; i < types.size(); i++ ) {
-
-			String s = types.get( i );
-			String[] l = s.split( "\\-" );
-
-			if( l[0].startsWith( "_HOCL" ) )
-				continue;
-
-			myCode += "\t\t\telse if (input.equals(\"" + l[0] + "\")){\n";
-			
-			// temp is l[0] but with capitalized first letter
-			String temp = l[0].substring( 0, 1 ).toUpperCase() + l[0].substring( 1 );
-
-			myCode += "\t\t\t\tmol = new Molecule();\n";
-
-			if( l[1].equals( "Reaction Rule" ) ) {
-
-				myCode += "\t\t\t\tr = new " + temp + "()" + ";\n"
-						+ "\t\t\t\tmol.add(r);\n";
-
-				// myCode += "\t\t\t\tReactionRule r = generate"+temp+"Element()"+";\n"
-				// + "\t\t\t\tmol.add(r);\n";
-
-				// generateFunction += "//\tpublic" + temp + " generate" + temp
-				// 		+ "Element(){;\n" + "\t\t//return new " + temp + "();\n\n"
-				// 		+ "\t//}\n";
-				if (i == 0) {
-				    generateTuple += "\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\tt.set(i, new " + temp + "());\n" 
-					+ "\t\t\t}\n\n";
-				    generateSolution += "\t\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tmol = new Molecule();\n" + "\t\t\t\t\tmol.add(new "
-					+ temp + "());\n" + "\t\t\t\t\tsol.addMolecule(mol);\n"
-					+ "\t\t\t\t}\n\n";
-
-				} else {
-				    generateTuple += "\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\tt.set(i, new " + temp + "());\n" 
-					+ "\t\t\t}\n\n";
-				    generateSolution += "\t\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tmol = new Molecule();\n" + "\t\t\t\t\tmol.add(new "
-					+ temp + "());\n" + "\t\t\t\t\tsol.addMolecule(mol);\n"
-					+ "\t\t\t\t}\n\n";
-
-				}
-			} else if( l[1].equals( "Java Object" ) ) {
-				myCode += "\t\t\t\tobj = new ExternalObject(generate" + l[0]
-						+ "Element());\n" + "\t\t\t\tmol.add(obj);\n";
-				if( l[0].equalsIgnoreCase( "object" ) ) {
-					generateFunction += "\tpublic " + l[0] + " generate" + l[0]
-							+ "Element() throws IOException{;\n" + "\t\treturn new " + l[0]
-							+ "();\n\n" + "\t}\n";
-				} else {
-					generateFunction += "\tpublic "
-							+ l[0]
-							+ " generate"
-							+ l[0]
-							+ "Element() throws IOException{;\n"
-							+ "\t\tSystem.out.println(\"Enter your " + l[0] + ":\\n\");\n"
-							+ "\t\tString input = new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
-							+ "\t\treturn new " + l[0] + "(input);\n\n" + "\t}\n";
-				}
-
-				if ( i==0 ) {
-				    generateTuple += "\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\tt.set(i, new ExternalObject (generate" + l[0]
-					+ "Element()));\n" + "\t\t\t}\n\n";
-				    generateSolution += "\t\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tmol = new Molecule();\n"
-					+ "\t\t\t\t\tmol.add(new ExternalObject (generate" + l[0]
-					+ "Element())) ;\n" + "\t\t\t\t\tsol.addMolecule(mol);\n"
-					+ "\t\t\t\t}\n\n";
-				} else {
-				    generateTuple += "\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\tt.set(i, new ExternalObject (generate" + l[0]
-					+ "Element()));\n" + "\t\t\t}\n\n";
-				    generateSolution += "\t\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tmol = new Molecule();\n"
-					+ "\t\t\t\t\tmol.add(new ExternalObject (generate" + l[0]
-					+ "Element())) ;\n" + "\t\t\t\t\tsol.addMolecule(mol);\n"
-					+ "\t\t\t\t}\n\n";
-				}
-				
-
-			} else if( l[1].equals( "'element1:element2:...:elementn'" ) ) {
-				myCode += "\t\t\t\tmol.add(generateTupleElement());\n\n";
-
-				if ( i==0 ) {
-				    generateTuple += "\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\tt.set(i, generate" + l[0] + "Element());\n"
-					+ "\t\t\t}\n\n";
-				    generateSolution += "\t\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tmol = new Molecule();\n"
-					+ "\t\t\t\t\tmol.add(generateTupleElement());\n"
-					+ "\t\t\t\t\tsol.addMolecule(mol);\n" + "\t\t\t\t}\n\n";
-				} else {
-				 generateTuple += "\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\tt.set(i, generate" + l[0] + "Element());\n"
-					+ "\t\t\t}\n\n";
-				 generateSolution += "\t\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
-				     + "\t\t\t\t\tmol = new Molecule();\n"
-				     + "\t\t\t\t\tmol.add(generateTupleElement());\n"
-				     + "\t\t\t\t\tsol.addMolecule(mol);\n" + "\t\t\t\t}\n\n";				    
-				}
-				    
-			} else if( l[1].equals( "'A container like: <>'" ) ) {
-				myCode += "\t\t\t\tmol.add(generateSolutionElement());\n\n";
-
-				if ( i==0) {
-				    generateTuple += "\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tt.set(i, generate" + l[0] + "Element());\n"
-					+ "\t\t\t\t}\n\n";
-				    generateSolution += "\t\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tmol.add(generateSolutionElement());\n"
-					+ "\t\t\t\t\tsol.addMolecule(mol);\n\n" + "\t\t\t\t}\n\n";
-				} else {
-				    generateTuple += "\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tt.set(i, generate" + l[0] + "Element());\n"
-					+ "\t\t\t\t}\n\n";
-				    generateSolution += "\t\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
-					+ "\t\t\t\t\tmol.add(generateSolutionElement());\n"
-					+ "\t\t\t\t\tsol.addMolecule(mol);\n\n" + "\t\t\t\t}\n\n";
-				}
-
-			} else {
-				myCode += "\t\t\t\t//" + l[1] + ";\n";
-			}
-
-			myCode += "\t\t\t\t}\n\n";
-		}
-		myCode += "\t\t\t\telse{\n"
-				+ "\t\t\t\t\tPackage pack = this.getClass().getPackage();\n"
-				+ "\t\t\t\t\tString packageName = pack.getName();\n"
-				+ "\t\t\t\t\tString ts = input.substring(0, 1).toUpperCase()+input.substring(1);\n"
-				+ "\t\t\t\t\tReactionRule m = (ReactionRule) Class.forName(packageName+\".\"+ts).newInstance();\n "
-				+ "\t\t\t\t\tmol.add(m);\n\n"
-				+ "\t\t\t\t\tSystem.out.println(\"The new rule has been added!\");\n"
-				+ "\t\t\t}\n\n"
-				+ "\t\treturn mol;\n"
-				+ "\t\t}\n\n"
-				+ "\t\tcatch  (Exception e) {\n\n"
-				+ "\t\t\tSystem.out.println(\"Input Error! Please input *NUMBER* while not string!\");"
-				+ "\t\t\treturn mol;"
-				+ "\t\t}\n\n"
-				+ "\t}\n"
-
-				+ "\tpublic Molecule addElementSubSolution(String line) throws IOException{\n"
-				+ "\t\tMolecule mol = new Molecule();\n"
-				+ "\t\tString[] s = line.split(\"\\\\ \");\n"
-				+ "\t\tif(s.length!=2){\n"
-				+ "\t\t\tString errorLog=	\"Input command with wrong format.\\n\"\n"
-				+ "\t\t\t+	\"Use 'put' command in the following ways:\\n\"\n"
-				+ "\t\t\t+	\"1: 'put'; (just put an element in the container;)\\n\"\n"
-				+ "\t\t\t+	\"2: 'put path' ex.: put ./SubSolition1/SubSolution1-1 (put an element in the indicated subsolution.)\\n\";\n"
-				+ "\t\t\tSystem.out.println(errorLog);\n"
-				+ "\t\t}\n\n"
-				+
-
-				"\t\telse{\n"
-				+
-
-				"\t\t\t//System.out.println(\"The length of input command is: \" + s.length +\"\\n\");\n"
-				+ "\t\t\t//System.out.println(\"S0 is: \" + s[0] +\"\\n\");\n"
-				+ "\t\t\t//System.out.println(\"S1 is: \" + s[1] +\"\\n\");\n"
-				+ "\t\t\tString[] path = s[1].split(\"\\\\/\");\n"
-				+ "\t\t\tint size = path.length;\n"
-				+ "\t\t\tTuple[] tuple = new Tuple[size-1];\n\n"
-				+
-
-				"\t\t\ttuple[size-2] = new Tuple(3);\n"
-				+ "\t\t\ttuple[size-2].set(0, new ExternalObject(\"INSERT\"));\n"
-				+ "\t\t\ttuple[size-2].set(1, new ExternalObject(path[size-1]));\n"
-				+ "\t\t\ttuple[size-2].set(2, (this.generateSolutionElement()));\n\n"
-				+
-
-				"\t\t\tfor (int i = size-3;i>=0;i--){\n"
-				+ "\t\t\t\ttuple[i] = new Tuple(3);\n"
-				+ "\t\t\t\ttuple[i].set(0, new ExternalObject(\"INSERT\"));\n"
-				+ "\t\t\t\ttuple[i].set(1, new ExternalObject(path[i+1]));\n"
-				+
-
-				"\t\t\t\tSolution so = new Solution();\n"
-				+ "\t\t\t\tMolecule mo = new Molecule();\n"
-				+ "\t\t\t\tmo.add(tuple[i+1]);\n"
-				+ "\t\t\t\tso.addMolecule(mo);\n"
-				+
-
-				"\t\t\t\ttuple[i].set(2, so);\n"
-				+
-
-				"\t\t\t}\n\n"
-				+
-
-				"\t\t\tmol.add(tuple[0]);\n"
-				+
-
-				"\t\t}\n"
-				+
-
-				"\t\treturn mol;\n"
-				+ "\t}\n\n"
-				+
-
-				"\tpublic Molecule addRemoveTuple() throws IOException{\n"
-				+ "\t\tSystem.out.println(\"We are going to construct a solution for all the elements that you want to remove.\");\n"
-				+ "\t\tTuple t = new Tuple(2);\n"
-				+ "\t\tt.set(0, new ExternalObject(\"REMOVE\"));\n"
-				+ "\t\tt.set(1, this.generateSolutionElement());\n"
-				+ "\t\tMolecule mo = new Molecule();\n"
-				+ "\t\tmo.add(t);\n"
-				+ "\t\treturn mo;\n"
-				+ "\t}\n\n"
-				+
-
-				"\tpublic Molecule addInheritRemoveTuple(String line) throws IOException{\n"
-				+ "\t\t\t\tMolecule m = new Molecule();\n"
-				+ "\t\tString[] s = line.split(\"\\\\ \");\n"
-				+
-
-				"\t\tif(s.length!=2){\n"
-				+ "\t\t\tString errorLog=	\"Input command with wrong format.\\n\"\n"
-				+ "\t\t\t+	\"Use 'get' command in the following ways:\\n\"\n"
-				+ "\t\t\t+	\"1: 'get'; (just get an element in the container;)\\n\"\n"
-				+ "\t\t\t+	\"2: 'get path' ex.: get ./SubSolition1/SubSolution1-1 (get the elements in the indicated subsolution.)\\n\";\n"
-				+ "\t\t\tSystem.out.println(errorLog);\n"
-				+ "\t\t}\n\n"
-				+
-
-				"\t\telse{\n"
-				+
-
-				"\t\t\tif(!s[1].contains(\"/\"))\n"
-				+ "\t\t\t\tSystem.out.println(\"You have given a wrong solution path.\\n\");\n"
-				+
-
-				"\t\t\telse{\n"
-				+
-
-				"\t\t\t\tSystem.out.println(\"We are going to construct a solution for all the elements that you want to remove.\");\n"
-				+ "\t\t\t\tString[] path = s[1].split(\"\\\\/\");\n"
-				+ "\t\t\t\tint size = path.length;\n"
-				+ "\t\t\t\tTuple[] tuple = new Tuple[size-1];\n\n" +
-
-				"\t\t\t\ttuple[size-2] = new Tuple(3);\n"
-				+ "\t\t\t\ttuple[size-2].set(0, new ExternalObject(\"REMOVE\"));\n"
-				+ "\t\t\t\ttuple[size-2].set(1, new ExternalObject(path[size-1]));\n"
-				+ "\t\t\t\tSolution so = new Solution();\n"
-				+ "\t\t\t\tMolecule mo = new Molecule();\n"
-				+ "\t\t\t\tTuple tt = new Tuple(2);\n"
-				+ "\t\t\t\ttt.set(0, new ExternalObject(\"REMOVE\"));\n"
-				+ "\t\t\t\ttt.set(1,this.generateSolutionElement());\n"
-				+ "\t\t\t\tmo.add(tt);\n" + "\t\t\t\tso.addMolecule(mo);\n"
-				+ "\t\t\t\ttuple[size-2].set(2, so);\n" +
-
-				"\t\t\t\tfor (int i = size-3;i>=0;i--){\n"
-				+ "\t\t\t\t\ttuple[i] = new Tuple(3);\n"
-				+ "\t\t\t\t\ttuple[i].set(0, new ExternalObject(\"REMOVE\"));\n"
-				+ "\t\t\t\t\ttuple[i].set(1, new ExternalObject(path[i+1]));\n" +
-
-				"\t\t\t\t\tso = new Solution();\n" + "\t\t\t\t\tmo = new Molecule();\n"
-				+ "\t\t\t\t\tmo.add(tuple[i+1]);\n" + "\t\t\t\t\tso.addMolecule(mo);\n"
-				+
-
-				"\t\t\t\t\ttuple[i].set(2, so);\n" +
-
-				"\t\t\t\t}\n\n" +
-
-				"\t\t\t\tm.add(tuple[0]);\n" +
-
-				"\t\t\t}\n" + "\t\t}\n" + "\t\treturn m;\n" + "\t}\n\n";
-
-		generateTuple += "\t\t}\n" + "\t\treturn t;\n" + "\t}\n\n";
-
-		generateSolution += "\t\t\t\telse{\n"
-				+ "\t\t\t\t\ttry{\n"
-				+ "\t\t\t\t\t\tString ts = input.substring(0, 1).toUpperCase()+input.substring(1);\n"
-				+ "\t\t\t\t\t\tReactionRule m = (ReactionRule) Class.forName(input).newInstance();\n"
-				+ "\t\t\t\t\t\tmol.add(m);\n"
-				+ "\t\t\t\t\t\tsol.addMolecule(mol);\n"
-				+ "\t\t\t\t\t}catch(Exception e){\n"
-				+ "\t\t\t\t\t\tSystem.out.println(\"Error: (Test1_gen.generateSolutionElement()): \"+e+\".\");\n"
-				+ "\t\t\t\t\t}\n" + "\t\t\t\t}\n" + "\t\t\t}\n\n"
-				+ "\t\t\telse{sign=1;}\n\n" + "\t\t}\n\n" + "\t\treturn sol;\n" + "\t}";
-
-		return myCode + "\n\n" + generateFunction + "\n\n" + generateTuple + "\n\n"
-				+ generateSolution;
-
-	}
+//	public String generateAddElementCode() {
+//		List<String> types = getElementTypes();
+//		String myCode = "";
+//
+//		String generateFunction = "";
+//		String generateTuple = "";
+//		String generateSolution = "";
+//
+//		generateTuple += "\tpublic Tuple generateTupleElement() throws IOException{\n"
+//		    + "\t\tint num;\n"
+//		    + "\t\tString input;\n\n"
+//		    + "\t\tSystem.out.println(\"How many elements in the tuple?\\n\");\n"
+//		    + "\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
+//		    + "\t\tnum = Integer.decode(input);\n\n"
+//		    + "\t\tTuple t = new Tuple (num);\n"
+//		    + "\t\tfor (int i=0;i<num;i++){\n"
+//		    + "\t\t\tSystem.out.print(\"Enter the type for the \");\n"
+//		    + "\t\t\tint j = i % 10;\n"
+//		    + "\t\t\tif (j == 0)\n"
+//		    + "\t\t\t\tSystem.out.println((i+1) + \"st element. \\n\");\n"
+//		    + "\t\t\telse if (j == 1)\n"
+//		    + "\t\t\t\tSystem.out.println((i+1) + \"nd element. \\n\");\n"
+//		    + "\t\t\telse if (j == 2)\n"
+//		    + "\t\t\t\tSystem.out.println((i+1) + \"rd element. \\n\");\n"
+//		    + "\t\t\telse \n\t\t\t\t System.out.println((i+1) + \"th element. \\n\");\n"
+//		    + "\t\t\tSystem.out.println(\"Types:\");\n"
+//		    + "\t\t\tSystem.out.println(this.displayTypes());\n"
+//		    + "\t\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n\n"
+//		    + "\t\t\twhile(input.length()==0){\n"
+//		    + "\t\t\t\tSystem.out.println(\"Enter the type of the element.\");\n"
+//		    + "\t\t\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
+//		    + "\t\t\t}\n"
+//		    + "\t\t\t int choice = Integer.decode(input);\n"
+//		    + "\t\t\t input = this.getiAllType(choice-1);\n";
+//
+//
+//		generateSolution += "\tpublic Solution generateSolutionElement() throws IOException{\n"
+//		    + "\t\tint sign = 0;\n"
+//		    + "\t\tString input;\n"
+//		    + "\t\tSolution sol = new Solution ();\n"
+//		    + "\t\tMolecule mol = new Molecule();\n"
+//		    + "\t\twhile(sign == 0){\n"
+//		    + "\t\t\tSystem.out.println(\"Do you want to add an element in this solution? (y/n)\");\n"
+//		    + "\t\t\tString stop = new BufferedReader(new InputStreamReader(System.in)).readLine();\n\n"
+//		    + "\t\t\tif (stop.equals(\"yes\")||stop.equals(\"y\")||stop.equals(\"YES\")||stop.equals(\"Y\")){\n"
+//		    + "\t\t\t\tSystem.out.println(\"Enter the type of the element.\\n\");\n"
+//		    + "\t\t\t\tSystem.out.println(\"Types:\");\n"
+//		    + "\t\t\t\tSystem.out.println(this.displayTypes());\n"
+//		    + "\t\t\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n\n"
+//		    + "\t\t\t\twhile(input.length()==0){\n"
+//		    + "\t\t\t\t\tSystem.out.println(\"Enter the type of the element.\");\n"
+//		    + "\t\t\t\t\tinput = new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
+//		    + "\t\t\t\t}\n"
+//		    + "\t\t\t\tint choice = Integer.decode(input);\n"
+//		    + "\t\t\t\tinput = this.getiAllType(choice-1);\n";
+//
+//		myCode += "\tpublic Molecule addElement(){\n"
+//				+ "\t\tString input = \"\";\n"
+//				+ "\t\tExternalObject obj;\n"
+//				+ "\t\tReactionRule r;\n"
+//				+ "\t\tMolecule mol = new Molecule();\n"
+//				+ "\t\tint choice;\n\n"
+//				+ "\t\tSystem.out.println(\"Create the element that you want to add/remove.\\n\");\n"
+//				+ "\t\tSystem.out.println(\"What kind of element you want to create? (input the number) \\n \");\n"
+//				+ "\t\tSystem.out.println(\"Supported Elements:\");\n"
+//				+ "\t\tSystem.out.println(this.displayTypes());\n\n";
+//
+//		/*
+//		 * this is the version that can return all the element types before
+//		 * compilation
+//		 *
+//		 * for (int i=0;i<types.size();i++){ myCode += "\t\tSystem.out.println(\""+
+//		 * (i+1) + ": "+types.get(i)+"\");\n"; }
+//		 */
+//
+//		myCode += "\t\ttry {\n"
+//				+ "\t\t\tinput += new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
+//				+ "\t\t} catch (IOException e1) {\n" + "\t\t\te1.printStackTrace();\n"
+//				+ "\t\t}\n\n"
+//
+//				+ "\t\ttry{\n\n" + "\t\t\tchoice = Integer.decode(input);\n"
+//				+ "\t\t\tinput = this.getiAllType(choice-1);\n"
+//				+ "\t\t\tif(input.length()==0)\n"
+//				+ "\t\t\t\tSystem.out.println(\"Null pointer!\");\n";
+//
+//		for( int i = 0; i < types.size(); i++ ) {
+//
+//			String s = types.get( i );
+//			String[] l = s.split( "\\-" );
+//
+//			if( l[0].startsWith( "_HOCL" ) )
+//				continue;
+//
+//			myCode += "\t\t\telse if (input.equals(\"" + l[0] + "\")){\n";
+//
+//			// temp is l[0] but with capitalized first letter
+//			String temp = l[0].substring( 0, 1 ).toUpperCase() + l[0].substring( 1 );
+//
+//			myCode += "\t\t\t\tmol = new Molecule();\n";
+//
+//			if( l[1].equals( "Reaction Rule" ) ) {
+//
+//				myCode += "\t\t\t\tr = new " + temp + "()" + ";\n"
+//						+ "\t\t\t\tmol.add(r);\n";
+//
+//				// myCode += "\t\t\t\tReactionRule r = generate"+temp+"Element()"+";\n"
+//				// + "\t\t\t\tmol.add(r);\n";
+//
+//				// generateFunction += "//\tpublic" + temp + " generate" + temp
+//				// 		+ "Element(){;\n" + "\t\t//return new " + temp + "();\n\n"
+//				// 		+ "\t//}\n";
+//				if (i == 0) {
+//				    generateTuple += "\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\tt.set(i, new " + temp + "());\n"
+//					+ "\t\t\t}\n\n";
+//				    generateSolution += "\t\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tmol = new Molecule();\n" + "\t\t\t\t\tmol.add(new "
+//					+ temp + "());\n" + "\t\t\t\t\tsol.addMolecule(mol);\n"
+//					+ "\t\t\t\t}\n\n";
+//
+//				} else {
+//				    generateTuple += "\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\tt.set(i, new " + temp + "());\n"
+//					+ "\t\t\t}\n\n";
+//				    generateSolution += "\t\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tmol = new Molecule();\n" + "\t\t\t\t\tmol.add(new "
+//					+ temp + "());\n" + "\t\t\t\t\tsol.addMolecule(mol);\n"
+//					+ "\t\t\t\t}\n\n";
+//
+//				}
+//			} else if( l[1].equals( "Java Object" ) ) {
+//				myCode += "\t\t\t\tobj = new ExternalObject(generate" + l[0]
+//						+ "Element());\n" + "\t\t\t\tmol.add(obj);\n";
+//				if( l[0].equalsIgnoreCase( "object" ) ) {
+//					generateFunction += "\tpublic " + l[0] + " generate" + l[0]
+//							+ "Element() throws IOException{;\n" + "\t\treturn new " + l[0]
+//							+ "();\n\n" + "\t}\n";
+//				} else {
+//					generateFunction += "\tpublic "
+//							+ l[0]
+//							+ " generate"
+//							+ l[0]
+//							+ "Element() throws IOException{;\n"
+//							+ "\t\tSystem.out.println(\"Enter your " + l[0] + ":\\n\");\n"
+//							+ "\t\tString input = new BufferedReader(new InputStreamReader(System.in)).readLine();\n"
+//							+ "\t\treturn new " + l[0] + "(input);\n\n" + "\t}\n";
+//				}
+//
+//				if ( i==0 ) {
+//				    generateTuple += "\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\tt.set(i, new ExternalObject (generate" + l[0]
+//					+ "Element()));\n" + "\t\t\t}\n\n";
+//				    generateSolution += "\t\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tmol = new Molecule();\n"
+//					+ "\t\t\t\t\tmol.add(new ExternalObject (generate" + l[0]
+//					+ "Element())) ;\n" + "\t\t\t\t\tsol.addMolecule(mol);\n"
+//					+ "\t\t\t\t}\n\n";
+//				} else {
+//				    generateTuple += "\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\tt.set(i, new ExternalObject (generate" + l[0]
+//					+ "Element()));\n" + "\t\t\t}\n\n";
+//				    generateSolution += "\t\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tmol = new Molecule();\n"
+//					+ "\t\t\t\t\tmol.add(new ExternalObject (generate" + l[0]
+//					+ "Element())) ;\n" + "\t\t\t\t\tsol.addMolecule(mol);\n"
+//					+ "\t\t\t\t}\n\n";
+//				}
+//
+//
+//			} else if( l[1].equals( "'element1:element2:...:elementn'" ) ) {
+//				myCode += "\t\t\t\tmol.add(generateTupleElement());\n\n";
+//
+//				if ( i==0 ) {
+//				    generateTuple += "\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\tt.set(i, generate" + l[0] + "Element());\n"
+//					+ "\t\t\t}\n\n";
+//				    generateSolution += "\t\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tmol = new Molecule();\n"
+//					+ "\t\t\t\t\tmol.add(generateTupleElement());\n"
+//					+ "\t\t\t\t\tsol.addMolecule(mol);\n" + "\t\t\t\t}\n\n";
+//				} else {
+//				 generateTuple += "\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\tt.set(i, generate" + l[0] + "Element());\n"
+//					+ "\t\t\t}\n\n";
+//				 generateSolution += "\t\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
+//				     + "\t\t\t\t\tmol = new Molecule();\n"
+//				     + "\t\t\t\t\tmol.add(generateTupleElement());\n"
+//				     + "\t\t\t\t\tsol.addMolecule(mol);\n" + "\t\t\t\t}\n\n";
+//				}
+//
+//			} else if( l[1].equals( "'A container like: <>'" ) ) {
+//				myCode += "\t\t\t\tmol.add(generateSolutionElement());\n\n";
+//
+//				if ( i==0) {
+//				    generateTuple += "\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tt.set(i, generate" + l[0] + "Element());\n"
+//					+ "\t\t\t\t}\n\n";
+//				    generateSolution += "\t\t\t\tif(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tmol.add(generateSolutionElement());\n"
+//					+ "\t\t\t\t\tsol.addMolecule(mol);\n\n" + "\t\t\t\t}\n\n";
+//				} else {
+//				    generateTuple += "\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tt.set(i, generate" + l[0] + "Element());\n"
+//					+ "\t\t\t\t}\n\n";
+//				    generateSolution += "\t\t\t\telse if(input.equals(\"" + l[0] + "\")){\n"
+//					+ "\t\t\t\t\tmol.add(generateSolutionElement());\n"
+//					+ "\t\t\t\t\tsol.addMolecule(mol);\n\n" + "\t\t\t\t}\n\n";
+//				}
+//
+//			} else {
+//				myCode += "\t\t\t\t//" + l[1] + ";\n";
+//			}
+//
+//			myCode += "\t\t\t\t}\n\n";
+//		}
+//		myCode += "\t\t\t\telse{\n"
+//				+ "\t\t\t\t\tPackage pack = this.getClass().getPackage();\n"
+//				+ "\t\t\t\t\tString packageName = pack.getName();\n"
+//				+ "\t\t\t\t\tString ts = input.substring(0, 1).toUpperCase()+input.substring(1);\n"
+//				+ "\t\t\t\t\tReactionRule m = (ReactionRule) Class.forName(packageName+\".\"+ts).newInstance();\n "
+//				+ "\t\t\t\t\tmol.add(m);\n\n"
+//				+ "\t\t\t\t\tSystem.out.println(\"The new rule has been added!\");\n"
+//				+ "\t\t\t}\n\n"
+//				+ "\t\treturn mol;\n"
+//				+ "\t\t}\n\n"
+//				+ "\t\tcatch  (Exception e) {\n\n"
+//				+ "\t\t\tSystem.out.println(\"Input Error! Please input *NUMBER* while not string!\");"
+//				+ "\t\t\treturn mol;"
+//				+ "\t\t}\n\n"
+//				+ "\t}\n"
+//
+//				+ "\tpublic Molecule addElementSubSolution(String line) throws IOException{\n"
+//				+ "\t\tMolecule mol = new Molecule();\n"
+//				+ "\t\tString[] s = line.split(\"\\\\ \");\n"
+//				+ "\t\tif(s.length!=2){\n"
+//				+ "\t\t\tString errorLog=	\"Input command with wrong format.\\n\"\n"
+//				+ "\t\t\t+	\"Use 'put' command in the following ways:\\n\"\n"
+//				+ "\t\t\t+	\"1: 'put'; (just put an element in the container;)\\n\"\n"
+//				+ "\t\t\t+	\"2: 'put path' ex.: put ./SubSolition1/SubSolution1-1 (put an element in the indicated subsolution.)\\n\";\n"
+//				+ "\t\t\tSystem.out.println(errorLog);\n"
+//				+ "\t\t}\n\n"
+//				+
+//
+//				"\t\telse{\n"
+//				+
+//
+//				"\t\t\t//System.out.println(\"The length of input command is: \" + s.length +\"\\n\");\n"
+//				+ "\t\t\t//System.out.println(\"S0 is: \" + s[0] +\"\\n\");\n"
+//				+ "\t\t\t//System.out.println(\"S1 is: \" + s[1] +\"\\n\");\n"
+//				+ "\t\t\tString[] path = s[1].split(\"\\\\/\");\n"
+//				+ "\t\t\tint size = path.length;\n"
+//				+ "\t\t\tTuple[] tuple = new Tuple[size-1];\n\n"
+//				+
+//
+//				"\t\t\ttuple[size-2] = new Tuple(3);\n"
+//				+ "\t\t\ttuple[size-2].set(0, new ExternalObject(\"INSERT\"));\n"
+//				+ "\t\t\ttuple[size-2].set(1, new ExternalObject(path[size-1]));\n"
+//				+ "\t\t\ttuple[size-2].set(2, (this.generateSolutionElement()));\n\n"
+//				+
+//
+//				"\t\t\tfor (int i = size-3;i>=0;i--){\n"
+//				+ "\t\t\t\ttuple[i] = new Tuple(3);\n"
+//				+ "\t\t\t\ttuple[i].set(0, new ExternalObject(\"INSERT\"));\n"
+//				+ "\t\t\t\ttuple[i].set(1, new ExternalObject(path[i+1]));\n"
+//				+
+//
+//				"\t\t\t\tSolution so = new Solution();\n"
+//				+ "\t\t\t\tMolecule mo = new Molecule();\n"
+//				+ "\t\t\t\tmo.add(tuple[i+1]);\n"
+//				+ "\t\t\t\tso.addMolecule(mo);\n"
+//				+
+//
+//				"\t\t\t\ttuple[i].set(2, so);\n"
+//				+
+//
+//				"\t\t\t}\n\n"
+//				+
+//
+//				"\t\t\tmol.add(tuple[0]);\n"
+//				+
+//
+//				"\t\t}\n"
+//				+
+//
+//				"\t\treturn mol;\n"
+//				+ "\t}\n\n"
+//				+
+//
+//				"\tpublic Molecule addRemoveTuple() throws IOException{\n"
+//				+ "\t\tSystem.out.println(\"We are going to construct a solution for all the elements that you want to remove.\");\n"
+//				+ "\t\tTuple t = new Tuple(2);\n"
+//				+ "\t\tt.set(0, new ExternalObject(\"REMOVE\"));\n"
+//				+ "\t\tt.set(1, this.generateSolutionElement());\n"
+//				+ "\t\tMolecule mo = new Molecule();\n"
+//				+ "\t\tmo.add(t);\n"
+//				+ "\t\treturn mo;\n"
+//				+ "\t}\n\n"
+//				+
+//
+//				"\tpublic Molecule addInheritRemoveTuple(String line) throws IOException{\n"
+//				+ "\t\t\t\tMolecule m = new Molecule();\n"
+//				+ "\t\tString[] s = line.split(\"\\\\ \");\n"
+//				+
+//
+//				"\t\tif(s.length!=2){\n"
+//				+ "\t\t\tString errorLog=	\"Input command with wrong format.\\n\"\n"
+//				+ "\t\t\t+	\"Use 'get' command in the following ways:\\n\"\n"
+//				+ "\t\t\t+	\"1: 'get'; (just get an element in the container;)\\n\"\n"
+//				+ "\t\t\t+	\"2: 'get path' ex.: get ./SubSolition1/SubSolution1-1 (get the elements in the indicated subsolution.)\\n\";\n"
+//				+ "\t\t\tSystem.out.println(errorLog);\n"
+//				+ "\t\t}\n\n"
+//				+
+//
+//				"\t\telse{\n"
+//				+
+//
+//				"\t\t\tif(!s[1].contains(\"/\"))\n"
+//				+ "\t\t\t\tSystem.out.println(\"You have given a wrong solution path.\\n\");\n"
+//				+
+//
+//				"\t\t\telse{\n"
+//				+
+//
+//				"\t\t\t\tSystem.out.println(\"We are going to construct a solution for all the elements that you want to remove.\");\n"
+//				+ "\t\t\t\tString[] path = s[1].split(\"\\\\/\");\n"
+//				+ "\t\t\t\tint size = path.length;\n"
+//				+ "\t\t\t\tTuple[] tuple = new Tuple[size-1];\n\n" +
+//
+//				"\t\t\t\ttuple[size-2] = new Tuple(3);\n"
+//				+ "\t\t\t\ttuple[size-2].set(0, new ExternalObject(\"REMOVE\"));\n"
+//				+ "\t\t\t\ttuple[size-2].set(1, new ExternalObject(path[size-1]));\n"
+//				+ "\t\t\t\tSolution so = new Solution();\n"
+//				+ "\t\t\t\tMolecule mo = new Molecule();\n"
+//				+ "\t\t\t\tTuple tt = new Tuple(2);\n"
+//				+ "\t\t\t\ttt.set(0, new ExternalObject(\"REMOVE\"));\n"
+//				+ "\t\t\t\ttt.set(1,this.generateSolutionElement());\n"
+//				+ "\t\t\t\tmo.add(tt);\n" + "\t\t\t\tso.addMolecule(mo);\n"
+//				+ "\t\t\t\ttuple[size-2].set(2, so);\n" +
+//
+//				"\t\t\t\tfor (int i = size-3;i>=0;i--){\n"
+//				+ "\t\t\t\t\ttuple[i] = new Tuple(3);\n"
+//				+ "\t\t\t\t\ttuple[i].set(0, new ExternalObject(\"REMOVE\"));\n"
+//				+ "\t\t\t\t\ttuple[i].set(1, new ExternalObject(path[i+1]));\n" +
+//
+//				"\t\t\t\t\tso = new Solution();\n" + "\t\t\t\t\tmo = new Molecule();\n"
+//				+ "\t\t\t\t\tmo.add(tuple[i+1]);\n" + "\t\t\t\t\tso.addMolecule(mo);\n"
+//				+
+//
+//				"\t\t\t\t\ttuple[i].set(2, so);\n" +
+//
+//				"\t\t\t\t}\n\n" +
+//
+//				"\t\t\t\tm.add(tuple[0]);\n" +
+//
+//				"\t\t\t}\n" + "\t\t}\n" + "\t\treturn m;\n" + "\t}\n\n";
+//
+//		generateTuple += "\t\t}\n" + "\t\treturn t;\n" + "\t}\n\n";
+//
+//		generateSolution += "\t\t\t\telse{\n"
+//				+ "\t\t\t\t\ttry{\n"
+//				+ "\t\t\t\t\t\tString ts = input.substring(0, 1).toUpperCase()+input.substring(1);\n"
+//				+ "\t\t\t\t\t\tReactionRule m = (ReactionRule) Class.forName(input).newInstance();\n"
+//				+ "\t\t\t\t\t\tmol.add(m);\n"
+//				+ "\t\t\t\t\t\tsol.addMolecule(mol);\n"
+//				+ "\t\t\t\t\t}catch(Exception e){\n"
+//				+ "\t\t\t\t\t\tSystem.out.println(\"Error: (Test1_gen.generateSolutionElement()): \"+e+\".\");\n"
+//				+ "\t\t\t\t\t}\n" + "\t\t\t\t}\n" + "\t\t\t}\n\n"
+//				+ "\t\t\telse{sign=1;}\n\n" + "\t\t}\n\n" + "\t\treturn sol;\n" + "\t}";
+//
+//		return myCode + "\n\n" + generateFunction + "\n\n" + generateTuple + "\n\n"
+//				+ generateSolution;
+//
+//	}
 
 
 	/*
@@ -720,6 +720,10 @@ public class BasicMolecule extends LinkedList<Atom> implements Molecule {
 		for (Atom o : this) {
 			o.findReadOnlyReactives();
 		}
+	}
+
+	public String generateAddElementCode () {
+		return "";
 	}
 
 }

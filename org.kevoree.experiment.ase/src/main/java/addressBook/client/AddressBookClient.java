@@ -2,6 +2,8 @@ package addressBook.client;
 
 import java.util.Vector;
 
+import javax.swing.JFrame;
+
 import org.kevoree.annotation.ComponentType;
 import org.kevoree.annotation.PortType;
 import org.kevoree.annotation.RequiredPort;
@@ -41,6 +43,9 @@ public class AddressBookClient  extends AbstractComponentType{
 
     @Stop
     public void stop() {
+    	operations = null;
+    	gui.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		gui.dispose();
     }
 
     @Update

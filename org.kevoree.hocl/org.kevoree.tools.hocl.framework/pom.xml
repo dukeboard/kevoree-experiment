@@ -10,9 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>org.kevoree.tools.hocl.framework</artifactId>
+    <name>Kevoree :: HOCL :: Framework</name>
 
     <properties>
-        <kevoree.version>1.6.0-BETA5</kevoree.version>
         <kevoree.include>*:*</kevoree.include>
     </properties>
 

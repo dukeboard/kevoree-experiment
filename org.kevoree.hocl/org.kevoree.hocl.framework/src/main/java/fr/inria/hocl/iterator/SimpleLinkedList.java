@@ -74,7 +74,7 @@ public class SimpleLinkedList<E> implements Serializable {
 		String s;
 		SimpleIterator<E> it = newIterator();
 
-		s = new String( "[" );
+		s = "[";
 		it.moveToBeginning();
 		while( !it.isAtEnd() ) {
 			s = s + it;
@@ -229,7 +229,7 @@ public class SimpleLinkedList<E> implements Serializable {
 
 
 		public String toString() {
-			String s = new String();
+			String s;
 
 			if( isAtEnd() ) {
 				s = "END";

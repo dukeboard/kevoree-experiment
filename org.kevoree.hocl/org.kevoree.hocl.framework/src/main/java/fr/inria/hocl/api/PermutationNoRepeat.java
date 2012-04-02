@@ -31,25 +31,21 @@ public class PermutationNoRepeat implements Permutation, Serializable {
 
 	private final AtomIterator[] atomIterators; // for variables of atoms
 
-	private final MoleculeIterator[] moleculeIterators; // for variables of
-																											// molecules
+	private final MoleculeIterator[] moleculeIterators; // for variables of molecules
 
-	private final ReactionRule reactionRule; // reaction rule this permutation
-																						// belongs to
+	private final ReactionRule reactionRule; // reaction rule this permutation belongs to
 
 	private Solution solution; // solution to iterate
 
 	private final int permSize; // number of atoms to look for
 
-	private boolean wholeSolutionMatched; // true if all element of the solution
-																				// have been matched
+	private boolean wholeSolutionMatched; // true if all element of the solution have been matched
 
 	private SimpleIterator<Atom> it_new;
 
 	private SimpleIterator<Atom> it_nextNew;
 
-	private int currentNew; // ensure that at least atomIterators[currentNew] is a
-													// new atom
+	private int currentNew; // ensure that at least atomIterators[currentNew] is a new atom
 
 	public PermutationNoRepeat(AtomIterator[] atomIterators, MoleculeIterator[] moleculeIterators, ReactionRule reactionRule ) {
 
@@ -179,7 +175,7 @@ public class PermutationNoRepeat implements Permutation, Serializable {
 	public boolean nextMatch() {
 		int i;
 		boolean exists;
-		boolean satisfied = false;
+		boolean satisfied;
 
 		i = 0;
 		while( i < permSize && !isFinal() ) {
@@ -187,7 +183,7 @@ public class PermutationNoRepeat implements Permutation, Serializable {
 			if( i == 0 ) {
 				Hocli.debug.incrRuleCheckedPermutations( reactionRule );
 				Hocli.debug.addLog( Debug.DebugSymbol.TESTED_PERM, reactionRule
-						+ " test permutation n�"
+						+ " test permutation n"
 						+ Hocli.debug.getNbCheckedPermutations( reactionRule ) + "\n"
 						+ this.toString() );
 			}
@@ -240,7 +236,7 @@ public class PermutationNoRepeat implements Permutation, Serializable {
 
 	private boolean next( int itToMove ) {
 		assert ( itToMove < permSize && itToMove >= 0 );
-		boolean exists = false;
+		boolean exists;
 
 		Hocli.debug
 				.addLog( Debug.DebugSymbol.PERMUTATION, "next(" + itToMove + ")" );
@@ -263,7 +259,7 @@ public class PermutationNoRepeat implements Permutation, Serializable {
 
 	private boolean nextHard( int itToMove ) {
 		assert ( itToMove < permSize && itToMove >= 0 );
-		boolean exists = false;
+		boolean exists;
 
 		Hocli.debug.addLog( Debug.DebugSymbol.PERMUTATION, "nextHard(" + itToMove
 				+ ")" );
@@ -306,7 +302,7 @@ public class PermutationNoRepeat implements Permutation, Serializable {
 		/*
 		 * 3 conflicts may happen: - end of cycle - reference to the current rr (ie
 		 * self): rr cannot be argument of itself - reference to an atom already
-		 * refered by another iterator of the current rr
+		 * referred by another iterator of the current rr
 		 */
 
 		if( isIteratorAtCycleEnd( itNb ) ) {
@@ -339,7 +335,7 @@ public class PermutationNoRepeat implements Permutation, Serializable {
 			}
 		} else {
 
-			// cannot refer to elements refered by previous iterators
+			// cannot refer to elements referred by previous iterators
 			int j = 0;
 			while( j < itNb && !atomIterators[j].equals( atomIterators[itNb] ) ) {
 				j++;
@@ -433,7 +429,7 @@ public class PermutationNoRepeat implements Permutation, Serializable {
 				moleculeIterator.clear();
 
 				for (int j = 0; j < size && !it_sol.isAtEnd(); j++) {
-					int k = 0;
+					int k;
 					// find an atom that is not already a reactive and
 					// not currentRule
 					boolean found;

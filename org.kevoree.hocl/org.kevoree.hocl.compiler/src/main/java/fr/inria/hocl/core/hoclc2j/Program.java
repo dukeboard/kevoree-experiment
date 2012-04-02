@@ -76,13 +76,13 @@ public class Program {
 				// useless
 				// + "\t\tthis.allTypes = new LinkedList<String>();\n\n"
 
-				+ "\t\tExternalObject object;\n"
+//				+ "\t\tExternalObject object;\n"
 
 				+ "\t\tReactionRule rule;\n"
 
-				+ "\t\tString[] string;\n"
+				/*+ "\t\tString[] string;\n"
 
-				+ "\t\tTuple tuple;\n\n"
+				+ "\t\tTuple tuple;\n\n"*/
 
 				+ CodeGeneratorHelper.indentCode(2, sol.generateContentsDeclaration()) + "\n"
 

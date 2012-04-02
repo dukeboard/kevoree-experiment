@@ -61,6 +61,22 @@ public class PolicyChecker {
 		return res;
 	}
 	
+	public String checkPolicyWithoutTime(){
+		String res ="";
+		//System.out.println("checkPolicyElementsNameNotNull : "+ checkPolicyElementsNameNotNull());
+		res = res+ "checkPolicyElementsNameNotNull : "	+ checkPolicyElementsNameNotNull();
+		//System.out.println("checkAcyclicDelegation : "+ checkAcyclicDelegation());
+		res = res +"\n"+"checkAcyclicDelegation : "+ checkAcyclicDelegation();
+		//System.out.println("checkAcyclicHierachy : "+ checkAcyclicHierachy());
+		res = res +"\n"+"checkAcyclicHierachy : "+ checkAcyclicHierachy();
+		//System.out.println("checkSSoD : " + checkSSoD());
+		res = res +"\n"+"checkSSoD : " + checkSSoD();
+		//System.out.println("checkDSoD : " + checkDSoD());
+		res = res +"\n"+"checkDSoD : " + checkDSoD();
+		//System.out.println("temps de verication : "+c.displayTime());
+		return res;
+	}
+	
 	public PolicyChecker(Policy p) {
 		policy = p;
 	}

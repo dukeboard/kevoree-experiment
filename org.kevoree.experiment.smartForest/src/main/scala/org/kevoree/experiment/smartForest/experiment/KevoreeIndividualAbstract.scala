@@ -73,6 +73,9 @@ abstract class KevoreeIndividualAbstract extends Individual {
     }
   }
 
+
+  var isFirst = true
+
   /**
    * Initializes the individual.
    */
@@ -91,7 +94,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
         RIndividuGenerator.generateIndividualRRepresentation(myModel)
       }
 
-      case  _ => {
+      case _ => {
         val context = new KevsInterpreterContext(myModel)
         var numberOfMutation = minResetDpasNumber
         if (maxResetDpasNumber != minResetDpasNumber)
@@ -106,6 +109,20 @@ abstract class KevoreeIndividualAbstract extends Individual {
               KevsInterpreterAspects.rich(script).interpret(context)
             }
         }
+
+
+        if /*(isFirst) {
+          var cumul = 0f
+
+          val confidenceScore = SmartForestFitnessEvaluatorO.getConfidenceFitnessFunction.evaluate(myModel)
+          val densityScore = SmartForestFitnessEvaluatorO.getDensityFitnessFunction.evaluate(myModel)
+          val consumptionScore = SmartForestFitnessEvaluatorO.getConsumptionFitnessFunction.evaluate(myModel)
+          cumul = 300 - (confidenceScore+densityScore+consumptionScore)
+          println(cumul+",")
+        }
+
+        isFirst = false
+        */
       }
 
     }

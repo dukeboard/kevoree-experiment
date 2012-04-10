@@ -12,13 +12,24 @@ import org.kevoree.experiment.smartForest.experiment.SmartForestFitnessEvaluator
 
 object ReferenceGenerator extends App {
 
-  val model = ModelGenerator.generateForest(20);
+  val model = ModelGenerator.generateForest(12);
+
+
   RIndividuGenerator.generateIndividualRRepresentation(model)
+
+  println("Model "+model)
+
+
   val confidenceScore = SmartForestFitnessEvaluatorO.getConfidenceFitnessFunction.evaluate(model)
-  val densityScore = SmartForestFitnessEvaluatorO.getDensityFitnessFunction.evaluate(model)
-  val consumptionScore = SmartForestFitnessEvaluatorO.getConsumptionFitnessFunction.evaluate(model)
   println("Confidence Score = " + confidenceScore)
+
+  val densityScore = SmartForestFitnessEvaluatorO.getDensityFitnessFunction.evaluate(model)
   println("Density Score = " + densityScore)
+
+  val consumptionScore = SmartForestFitnessEvaluatorO.getConsumptionFitnessFunction.evaluate(model)
   println("Consumption Score = " + consumptionScore)
+
+
+
   println("Global Score = " + (consumptionScore + confidenceScore + densityScore))
 }

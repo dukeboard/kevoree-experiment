@@ -20,22 +20,12 @@ import org.kevoree.framework.KevoreeXmiHelper
 object ModelGenerator {
 
   val parser: KevsParser = new KevsParser
-  val superNodesIndices = List((0, 0), (0, SmartForestExperiment.forestWidth - 1), (SmartForestExperiment.forestWidth - 1, 0), (SmartForestExperiment.forestWidth - 1, SmartForestExperiment.forestWidth - 1))
+  var superNodesIndices = List((0, 0), (0, SmartForestExperiment.forestWidth - 1), (SmartForestExperiment.forestWidth - 1, 0), (SmartForestExperiment.forestWidth - 1, SmartForestExperiment.forestWidth - 1))
+
 
   def generateForest(forestWidth: Int): ContainerRoot = {
-    var url: URL = null
-    var path: String = ""
-    try {
-      url = this.getClass.getClassLoader.getResource("defaultLibrary.kev")
-      path = URLDecoder.decode(url.toString, "UTF-8")
-    }
-    catch {
-      case e: Exception => {
-        e.printStackTrace()
-      }
-    }
-
-    val myModel: ContainerRoot = KevoreeXmiHelper.load(path)
+    superNodesIndices = List((0, 0), (0, forestWidth - 1), (forestWidth - 1, 0), (forestWidth - 1, forestWidth - 1))
+    val myModel: ContainerRoot = KevoreeXmiHelper.loadStream(this.getClass.getClassLoader.getResourceAsStream("defaultLibrary.kev"));
 
     for (i <- 0 until (forestWidth * forestWidth)) {
       val scriptString: String = "tblock {\n addNode node" + i + ":ArduinoNode \n " +
@@ -73,7 +63,6 @@ object ModelGenerator {
           periodeResult = periode
         }
     }
-    println("Distance = " + distance + ", periode = " + periodeResult)
     periodeResult
   }
 

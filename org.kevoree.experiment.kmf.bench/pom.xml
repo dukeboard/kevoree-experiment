@@ -7,7 +7,7 @@
     <groupId>org.kevoree.experiment</groupId>
     <artifactId>org.kevoree.experiment.kmf.bench</artifactId>
     <name>Kevoree :: Experiment :: KmfBench</name>
-    <version>1.6.0-SNAPSHOT</version>
+    <version>1.6.0-RC1</version>
 
     <dependencies>
         <dependency>

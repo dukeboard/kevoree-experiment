@@ -1,3 +1,5 @@
+package org.kevoree.experiment.kmf.bench;
+
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.kevoree.loader.ContainerRootLoader;
 import org.kevoree.tools.emf.compat.EMFXmiHelper;

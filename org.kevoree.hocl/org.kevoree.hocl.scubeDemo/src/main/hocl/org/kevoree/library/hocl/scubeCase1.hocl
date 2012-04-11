@@ -2,34 +2,19 @@ package org.kevoree.library.hocl;
 
 import org.kevoree.*;
 
-let balance =
-   replace "NODE":"Node_Id":id1::String:"Num":num1::int:<?w1, s::String>,
-           "NODE":"Node_Id":id2::String:"Num":num2::int:<?w2>
-    by  "NODE":"Node_Id":id1:"Num":(num1-1):<w1>,
-        "NODE":"Node_Id":id2:"Num":(num2+1):<w2, s>
-   if num1 - num2 >= 2
-in
-
-let bind =
-	replace "CHANNEL":"Channel_Id":channelId::String:<?w1, c1::String:c1Port::String:c1Type::String>,
-			"COMPONENT":component::ComponentInstance
-	by	"CHANNEL":"Channel_Id":channelId:<w1, c1:c1Port:c1Type, component.getName():c1Port:component.getTypeDefinition().getName()>,
-	    "COMPONENT":component
-	if (c1Type.equals(component.getTypeDefinition().getName()) && !component.getName().equals(c1))
-in
-
 let addComponent =
-   replace "ADD_COMPONENT":component::ComponentInstance:"Node_Id":nodeId::String,
+   replace "ADD_COMPONENT":componentName::String:"Node_Id":nodeId::String:<?w>,
            "NODE":"Node_Id":id::String:"Num":num::int:<?l>
-    by    "NODE":"Node_Id":id:"Num":(num+1):<l,component.getName()>,
-         "COMPONENT":component
+    by     "NODE":"Node_Id":id:"Num":(num+1):<l,componentName>,
+           "COMPONENT":nodeId:componentName:<w>
     if (nodeId.equals(id))
 in
 
 let removeComponent =
     replace "DELETE_COMPONENT":node_id::String:component_id::String,
-           "NODE":"Node_Id":id::String:"Num":num::int:<s::String, ?w>
-    by  "NODE":"Node_Id":id:"Num":num:<w>
+           "NODE":"Node_Id":id::String:"Num":num::int:<s::String, ?w1>,
+           "COMPONENT":nodeId::String:componentName::String:<?w2>
+    by  "NODE":"Node_Id":id:"Num":num:<w1>
     if (s.equals(component_id) && node_id.equals(id))
 in
 
@@ -46,7 +31,6 @@ let removeNode =
    if (node.getName().equals(id))
 in
 
-
 let addChannel =
     replace "ADD_CHANNEL":channel::Channel
     by    "CHANNEL":"Channel_Id":channel.getName():<>
@@ -62,21 +46,38 @@ in
 
 let addBinding =
     replace "ADD_BINDING":mBinding::MBinding,
-            "CHANNEL":"Channel_Id":channelId::String:<?w1>
+            "CHANNEL":"Channel_Id":channelId::String:<?w1>,
+            "COMPONENT":nodeId::String:componentName::String:<?w2, portName::String>
     by      "CHANNEL":"Channel_Id":channelId:<w1,
-                ((ComponentInstance)mBinding.getPort().eContainer()).getName():mBinding.getPort().getPortTypeRef().getName():((ComponentInstance)mBinding.getPort().eContainer()).getTypeDefinition().getName()>
-    if (mBinding.getHub().getName().equals(channelId))
+                ((ContainerNode)mBinding.getPort().eContainer().eContainer()).getName():((ComponentInstance)mBinding.getPort().eContainer()).getName():mBinding.getPort().getPortTypeRef().getName()>,
+            "COMPONENT":nodeId:componentName:<w2>
+    if (mBinding.getHub().getName().equals(channelId) && ((ContainerNode)mBinding.getPort().eContainer().eContainer()).getName().equals(nodeId) && ((ComponentInstance)mBinding.getPort().eContainer()).getName().equals(componentName) &&  portName.equals(mBinding.getPort().getPortTypeRef().getName()))
 in
 
 let removeBinding =
     replace "REMOVE_BINDING":mBinding::MBinding,
-            "CHANNEL":"Channel_Id":channelId::String:<?w1, c1::String:c1Port::String:c1Type::String>
+            "CHANNEL":"Channel_Id":channelId::String:<?w1, c1Node::String:c1::String:c1Port::String>
     by      "CHANNEL":"Channel_Id":channelId:<w1>
     if (mBinding.getHub().getName().equals(channelId)
             && ((ComponentInstance)mBinding.getPort().eContainer()).getName().equals(c1)
-            && mBinding.getPort().getPortTypeRef().getName().equals(c1Port)
-            && ((ComponentInstance)mBinding.getPort().eContainer()).getTypeDefinition().getName().equals(c1Type))
+            && mBinding.getPort().getPortTypeRef().getName().equals(c1Port))
+in
+
+let balance =
+   replace "NODE":"Node_Id":id1::String:"Num":num1::int:<?w1, s::String>,
+           "NODE":"Node_Id":id2::String:"Num":num2::int:<?w2>
+    by  "NODE":"Node_Id":id1:"Num":(num1-1):<w1>,
+        "NODE":"Node_Id":id2:"Num":(num2+1):<w2, s>
+   if num1 - num2 >= 2
+in
+
+let bind =
+	replace "CHANNEL":"Channel_Id":channelId::String:<?w1, c1Node::String:c1::String:c1Port::String>,
+			"COMPONENT":nodeId::String:componentName::String:<?w2, portName::String>
+	by	    "CHANNEL":"Channel_Id":channelId:<w1, c1Node:c1:c1Port, nodeId:componentName:portName>,
+	        "COMPONENT":nodeId:componentName:<w2>
+	if (!(c1Node.equals(nodeId) && componentName.equals(c1)) && c1Port.equals(portName))
 in
 <
-   balance, bind, addComponent, removeComponent, addNode, removeNode, addChannel, removeChannel, addBinding, removeBinding
+   addComponent, removeComponent, addNode, removeNode, addChannel, removeChannel, addBinding, removeBinding, balance, bind
 >

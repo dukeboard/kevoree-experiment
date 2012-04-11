@@ -19,7 +19,7 @@
 
     <properties>
         <slf4j.version>1.6.1</slf4j.version>
-        <kevoree.version>1.6.0-RC1</kevoree.version>
+        <kevoree.version>1.7.0-SNAPSHOT</kevoree.version>
     </properties>
 
     <repositories>

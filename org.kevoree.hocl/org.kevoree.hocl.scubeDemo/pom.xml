@@ -17,11 +17,6 @@
     </properties>
 
     <dependencies>
-        <!--<dependency>
-            <groupId>org.kevoree.hocl</groupId>
-            <artifactId>org.kevoree.hocl.compiler</artifactId>
-            <version>${project.version}</version>
-        </dependency>-->
         <dependency>
             <groupId>org.kevoree.hocl</groupId>
             <artifactId>org.kevoree.tools.hocl.framework</artifactId>
@@ -40,6 +35,11 @@
         <dependency>
             <groupId>org.kevoree</groupId>
             <artifactId>org.kevoree.kompare</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kevoree.library.javase</groupId>
+            <artifactId>org.kevoree.library.javase.webserver</artifactId>
             <version>${kevoree.version}</version>
         </dependency>
     </dependencies>

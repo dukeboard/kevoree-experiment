@@ -3,6 +3,7 @@ package org.kevoree.library.hocl;
 import org.kevoree.ComponentInstance;
 import org.kevoree.ContainerNode;
 import org.kevoree.ContainerRoot;
+import org.kevoree.MBinding;
 import org.kevoree.annotation.*;
 import org.kevoree.api.service.core.handler.ModelListener;
 import org.kevoree.api.service.core.script.KevScriptEngine;
@@ -60,8 +61,6 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 	}
 
 	public boolean initUpdate (ContainerRoot currentModel, ContainerRoot proposedModel) {
-		// here we can compare models and prepare molecules to add on the solution
-//		adaptationModel = PlanningManager.kompare(currentModel, proposedModel);
 		return true;
 	}
 
@@ -91,13 +90,14 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 	private void applyHoclResult (String result) {
 		KevScriptEngine kengine = getKevScriptEngineFactory().createKevScriptEngine();
 		String content = result.substring(1).substring(0, result.substring(1).length() - 1);
-		Pattern pattern = Pattern.compile("\\(([^()]*)\\)");
+//		Pattern pattern = Pattern.compile("\\(([^()]*(?:(<.*>))?)\\)");
+		Pattern pattern = Pattern.compile("\\((((<((\"[^<>:,\"]*\"|[0-9]*|\\(((\"[^<>:,\"]*\"|[0-9]*)(:)?)*\\))(,)?)*>|\"[^<>:,\"]*\"|[0-9]*)(:)?)*)\\)");
 		Matcher matcher = pattern.matcher(content);
 
 		while (matcher.find()) {
 			String molecule = matcher.group(1);
-			String[] values = molecule.split(":");
-			if (values[0].equals("\"NODE\"")) {
+			if (molecule.startsWith("\"NODE\"")) {
+				String[] values = molecule.split(":");
 				String nodeName = values[2].substring(1, values[2].length() - 1);
 				String componentsString = values[5].substring(1, values[5].length() - 1);
 				String[] components = componentsString.split(",");
@@ -106,7 +106,6 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 						String componentName = component.substring(1, component.length() - 1);
 						// look for the component on the model to know if the component must move according to decision taken by HOCL engine
 						String oldName = getOldNodeNameForComponent(componentName);
-						System.out.println(componentName + "@" + oldName + "=>" + nodeName);
 						if (oldName != null && !oldName.equals("") && !oldName.equals(nodeName)) {
 							kengine.addVariable("nodeName", oldName);
 							kengine.addVariable("newNodeName", nodeName);
@@ -115,16 +114,36 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 						}
 					}
 				}
-			} else if (values[0].equals("\"CHANNEL\"")) {
+			} else if (molecule.startsWith("\"CHANNEL\"")) {
+				String[] values = molecule.split(":");
 				String channelName = values[2].substring(1, values[2].length() - 1);
-				String componentsString = values[3].substring(1, values[3].length() - 1);
-				String[] components = componentsString.split(",");
-				for (String component : components) {
-					if (!component.equals("")) {
-						System.out.println(channelName + "->" + component);
+				String bindingsString = molecule.split("<")[1].substring(0, molecule.split("<")[1].length() - 1);
+				String[] bindings = bindingsString.split(",");
+				for (String binding : bindings) {
+					String[] bindingData =binding.substring(1, binding.length() - 1).split(":");
+					String nodeName = bindingData[0].substring(1, bindingData[0].length() - 1);
+					String componentName = bindingData[1].substring(1, bindingData[1].length() - 1);
+					String portName = bindingData[2].substring(1, bindingData[2].length() - 1);
+					if (!componentName.equals("")) {
+						boolean alreadyExist = false;
+						for (MBinding mbinding  : getModelService().getLastModel().getMBindingsForJ()) {
+							if (mbinding.getPort().getPortTypeRef().getName().equals(portName)
+									&& ((ComponentInstance)mbinding.getPort().eContainer()).getName().equals(componentName)
+									&& ((ContainerNode)mbinding.getPort().eContainer().eContainer()).getName().equals(nodeName)
+									&& mbinding.getHub().getName().equals(channelName)) {
+								alreadyExist = true;
+								break;
+							}
+						}
+						if (!alreadyExist) {
+						kengine.addVariable("nodeName", nodeName);
+						kengine.addVariable("componentName", componentName);
+						kengine.addVariable("portName", portName);
+						kengine.addVariable("channelName", channelName);
+						kengine.append("bind {componentName}.{portName}@{nodeName} =>{channelName}");
+						}
 					}
 				}
-
 			}
 		}
 		try {

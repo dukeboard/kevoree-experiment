@@ -24,6 +24,7 @@ import org.kevoree.api.service.core.script.KevScriptEngine;
 import org.kevoree.framework.KevoreePropertyHelper;
 import org.kevoree.framework.KevoreeXmiHelper;
 import org.kevoree.kompare.KevoreeKompareBean;
+import org.kevoree.tools.emf.compat.TransModelHelper;
 import org.kevoreeAdaptation.AdaptationModel;
 import org.kevoreeAdaptation.AdaptationPrimitive;
 
@@ -31,17 +32,20 @@ import patternbuilders.test.PatternBuilderForshareSameLocation2;
 import patternmatchers.test.ShareSameLocation2Matcher;
 import signatures.test.ShareSameLocation2Signature;
 
+
 public class IncQueryAnalyzer {
 
-	private ResourceSet resourceSetMetamodel;
+	private ResourceSet resourceSetMetamodel; 
 	private Resource resourceModel;
 	private ContainerRoot rootElement;
 	private ShareSameLocation2Matcher matcherShareSameLocation;
 	private DeltaMonitor<ShareSameLocation2Signature> monitorShareSameLocation;
 	private org.kevoree.ContainerRoot loadedContainerRoot;
 	private DummyGUI gui;
+	private TransModelHelper transModelHelper;
 
 	public IncQueryAnalyzer(org.kevoree.ContainerRoot cr, KevScriptEngine kse) {
+		transModelHelper = new TransModelHelper();
 		registerMetaModel();
 		initContainerRootModel(cr, kse);
 		loadCurrentModel(loadedContainerRoot, kse);
@@ -98,7 +102,7 @@ public class IncQueryAnalyzer {
 		Chrono ch = new Chrono();
 		ch.start();
 		try {
-			ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+			
 			for (org.kevoree.ContainerNode n : cr.getNodesForJ()) {
 				for (org.kevoree.ComponentInstance c : n.getComponentsForJ()) {
 					if (c.getTypeDefinition().getName().equals("MovableEntity")) {
@@ -112,8 +116,16 @@ public class IncQueryAnalyzer {
 				}
 			}
 			cr = kse.interpret();
+			
+			//rootElement = (ContainerRoot) transModelHelper.konvert(cr);
+			
+			gui.updateTextArea(transModelHelper.konvert(cr).toString());
+			
+			ByteArrayOutputStream outStream = new ByteArrayOutputStream();
 			KevoreeXmiHelper.saveStream(outStream, cr);
+			
 			// System.out.println(KevoreeXmiHelper.saveToString(cr, true));
+			
 			resourceModel = resourceSetMetamodel.createResource(URI
 					.createURI(KevoreePackage.eNS_URI));
 			byte[] currentModel = outStream.toByteArray();

@@ -4,6 +4,7 @@
  */
 package org.kevoree.library.javase.modelProvider;
 
+import org.kevoree.ContainerRoot;
 import org.kevoree.annotation.ComponentType;
 import org.kevoree.annotation.Library;
 import org.kevoree.annotation.Start;
@@ -23,7 +24,7 @@ import org.kevoree.framework.AbstractComponentType;
 public class Reasoner extends AbstractComponentType implements ModelListener {
 
 	private KevoreeAnalyzer ka;
-	private IncQueryAnalyzer iqa;
+	private IncQueryAnalyzer iqa; 
 	
 	
 	@Start
@@ -76,6 +77,12 @@ public class Reasoner extends AbstractComponentType implements ModelListener {
 	@Override
 	public boolean preUpdate(org.kevoree.ContainerRoot currentModel,
 			org.kevoree.ContainerRoot proposedModel) {
+		return true;
+	}
+
+	@Override
+	public boolean initUpdate(ContainerRoot arg0, ContainerRoot arg1) {
+		// TODO Auto-generated method stub
 		return true;
 	}
 

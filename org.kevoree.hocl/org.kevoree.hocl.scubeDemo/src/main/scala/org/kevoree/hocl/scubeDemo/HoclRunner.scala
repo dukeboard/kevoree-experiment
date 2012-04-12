@@ -17,14 +17,14 @@ import org.slf4j.LoggerFactory
 object HoclRunner {
   private final val logger = LoggerFactory.getLogger(this.getClass)
 
-  def execute (adaptationModel: AdaptationModel, solution: Solution) {
+  def execute (adaptationModel: AdaptationModel, solution: Solution, nodeName : String, chemicalComponentName : String) {
     val commandMapper = new CommandMapper(solution)
     var actionToRollback = List[HoclCommand]()
 
     logger.debug("STARTING HOCL COMMAND")
     val done = adaptationModel.getAdaptations.forall {
       adaptation =>
-        val command = commandMapper.buildHoclCommand(adaptation)
+        val command = commandMapper.buildHoclCommand(adaptation, nodeName, chemicalComponentName)
         if (command.execute()) {
           actionToRollback = actionToRollback ++ List[HoclCommand](command)
           true

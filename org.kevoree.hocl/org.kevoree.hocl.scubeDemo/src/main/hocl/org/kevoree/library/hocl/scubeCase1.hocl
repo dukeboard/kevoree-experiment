@@ -11,11 +11,11 @@ let addComponent =
 in
 
 let removeComponent =
-    replace "DELETE_COMPONENT":node_id::String:component_id::String,
-           "NODE":"Node_Id":id::String:"Num":num::int:<s::String, ?w1>,
-           "COMPONENT":nodeId::String:componentName::String:<?w2>
+    replace "REMOVE_COMPONENT":node_id::String:component_id::String,
+           "NODE":"Node_Id":id::String:"Num":num::int:<componentName::String, ?w1>,
+           "COMPONENT":nodeId::String:cn::String:<?w2>
     by  "NODE":"Node_Id":id:"Num":num:<w1>
-    if (s.equals(component_id) && node_id.equals(id))
+    if (componentName.equals(component_id) && node_id.equals(id) && nodeId.equals(node_id) && cn.equals(component_id))
 in
 
 let addNode =
@@ -56,11 +56,14 @@ in
 
 let removeBinding =
     replace "REMOVE_BINDING":mBinding::MBinding,
-            "CHANNEL":"Channel_Id":channelId::String:<?w1, c1Node::String:c1::String:c1Port::String>
-    by      "CHANNEL":"Channel_Id":channelId:<w1>
+            "CHANNEL":"Channel_Id":channelId::String:<?w1, c1Node::String:c1::String:c1Port::String>,
+            "COMPONENT":nodeId::String:componentName::String:<?w2>
+    by      "CHANNEL":"Channel_Id":channelId:<w1>,
+            "COMPONENT":nodeId:componentName:<w2, c1Port>
     if (mBinding.getHub().getName().equals(channelId)
             && ((ComponentInstance)mBinding.getPort().eContainer()).getName().equals(c1)
-            && mBinding.getPort().getPortTypeRef().getName().equals(c1Port))
+            && mBinding.getPort().getPortTypeRef().getName().equals(c1Port)
+            && componentName.equals(c1))
 in
 
 let balance =

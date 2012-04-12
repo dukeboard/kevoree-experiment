@@ -1,37 +1,31 @@
-package reasoner;
+package addressBook.application;
 
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 
-public class ReasonerIncQueryGUI extends javax.swing.JFrame {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
+public class DummyGUIApp extends javax.swing.JFrame {
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
 	private javax.swing.JComboBox jComboBox1;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTextArea jTextArea1;
-	private ReasonerIncQuery reasonerIncQuery;
+
+	private AddressBook parent; 
 	
-	public ReasonerIncQueryGUI() {
+	public DummyGUIApp() {
 		initComponents();
 	}
 	
-	public ReasonerIncQueryGUI(ReasonerIncQuery riq) {
+	public DummyGUIApp(AddressBook a) {
 		initComponents();
-		reasonerIncQuery =riq;
+		parent = a;
 	}
 	
-	public ReasonerIncQueryGUI(String name) {
-		initComponents();
-		setTitle(getName());
-	}
-	
+
 	private void initComponents() {
+
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jTextArea1 = new javax.swing.JTextArea();
 		jComboBox1 = new javax.swing.JComboBox();
@@ -144,11 +138,11 @@ public class ReasonerIncQueryGUI extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		updateTextArea("loadLastModel");
-		reasonerIncQuery.analyze();
+		
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+		parent.update();
 	}
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,13 +155,13 @@ public class ReasonerIncQueryGUI extends javax.swing.JFrame {
 	}
 
 	public void updateTextArea(String s) {
-		jTextArea1.setText(jTextArea1.getText() + "\n" + s);
+		jTextArea1.setText(jTextArea1.getText() + "\n" + s); 
 	}
 
 	public static void main(String args[]) {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new ReasonerIncQueryGUI().setVisible(true);
+				new DummyGUIApp().setVisible(true);
 			}
 		});
 	}

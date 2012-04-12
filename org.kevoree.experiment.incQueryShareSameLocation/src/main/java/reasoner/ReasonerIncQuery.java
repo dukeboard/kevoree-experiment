@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 package reasoner;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -32,8 +31,14 @@ import org.kevoree.framework.KevoreeXmiHelper;
 import org.kevoree.tools.emf.compat.TransModelHelper;
 
 import patternbuilders.nodeInfo.PatternBuilderFornode;
+import patternbuilders.nodeInfo.PatternBuilderFornodeObject;
+import patternbuilders.nodeInfo.PatternBuilderFornodeSubject;
 import patternmatchers.nodeInfo.NodeMatcher;
+import patternmatchers.nodeInfo.NodeObjectMatcher;
+import patternmatchers.nodeInfo.NodeSubjectMatcher;
+import signatures.nodeInfo.NodeObjectSignature;
 import signatures.nodeInfo.NodeSignature;
+import signatures.nodeInfo.NodeSubjectSignature;
 import utils.time.Chrono;
 
 /**
@@ -42,7 +47,7 @@ import utils.time.Chrono;
  * 
  **/
 
-@Library(name = "IncQuery SAMPLE")
+@Library(name = "ArchitectureIncQueryZer")
 @ComponentType()
 public class ReasonerIncQuery extends AbstractComponentType implements ModelListener {
 	
@@ -53,19 +58,18 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 	private ResourceSet resourceSetMetamodel; 
 	private Resource resourceModel;
 	
-
-
+	// Analyze system at runtime : each time the runtime model changes a notification is received by the reasoner
+	// For each notification do :
+	//1 get the current model
+	//2 update the model associated to incQuery
+	//3 analyze results of incQuery monitor
+	
 	public void saveKevoreeEMFModel(String path) {
-		// REGISTER THE METAMODEL
 		resourceSetMetamodel = new ResourceSetImpl();
 		resourceSetMetamodel.getPackageRegistry().put(org.kemf.compat.kevoree.KevoreePackage.eNS_URI, org.kemf.compat.kevoree.KevoreePackage.eINSTANCE);
 		resourceSetMetamodel.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
-
-		resourceModel = resourceSetMetamodel.createResource(URI
-				.createFileURI("models/" + path + ".xmi"));
-
+		resourceModel = resourceSetMetamodel.createResource(URI.createFileURI("models/" + path + ".xmi"));
 		resourceModel.getContents().add(emfRootElement);
-
 		try {
 			resourceModel.save(Collections.EMPTY_MAP);
 		} catch (IOException e) {
@@ -73,22 +77,21 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 		}
 	}
 	
-	
-	public void loadLastModel() {
+	public void analyze() {
 		Chrono chrono = new Chrono();
-		HashMap<String, String> processTime = new HashMap<String, String>();
+		HashMap<String, String> processTime = new HashMap<String, String>();		
 		
 		//get current architecture model
 		chrono.start();
 		kevRootElement = getModelService().getLastModel();
 		chrono.stop();
-		processTime.put("getModelService().getLastModel();", chrono.displayTime());
+		processTime.put("getModelService().getLastModel();", chrono.displayTime());		
 		
 		//transform current kevoree model into kevoree emf compliant model
 		chrono.start();
 		kev2emf();
 		chrono.stop();
-		processTime.put("kev2emf();", chrono.displayTime());
+		processTime.put("kev2emf();", chrono.displayTime());		
 		
 		//analyze architecture to detect nodes
 		chrono.start();
@@ -96,26 +99,32 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 		chrono.stop();
 		processTime.put("nodeInfo();", chrono.displayTime());
 		
-		//serialize kev model emf xmi
+		//analyze architecture to detect nodes containing subject address book 
 		chrono.start();
-		saveKevoreeEMFModel("boukiki");
+		nodeSubjectInfo();
 		chrono.stop();
-		processTime.put("saveKevoreeEMFModel(\"boukiki\")", chrono.displayTime());
+		processTime.put("nodeSubjectInfo();;", chrono.displayTime());
+
+		//analyze architecture to detect nodes containing object address book
+		chrono.start();
+		nodeObjectInfo();
+		chrono.stop();
+		processTime.put("nodeObjectInfo();", chrono.displayTime());
 		
+				
+		//serialize kev model emf xmi
+//		chrono.start();
+//		saveKevoreeEMFModel("boukiki");
+//		chrono.stop();
+//		processTime.put("saveKevoreeEMFModel(\"boukiki\")", chrono.displayTime());		
 		//emfRootElement = transModelHelper.konvert(kevRootElement);
 		chrono.start();
 		gui.updateTextArea("kevRootElement : " + kevRootElement.toString());
 		gui.updateTextArea("emfRootElement : " + emfRootElement.toString());
 		chrono.stop();
-		
-		
-		
 		for (String s : processTime.keySet()){
 			gui.updateTextArea(s+" : "+processTime.get(s));	
 		}
-		
-		
-		
 	}
 
 	public void kev2emf(){
@@ -131,54 +140,52 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 		try {
 			resourceModel.load(inStream, null);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
 		emfRootElement = (org.kemf.compat.kevoree.ContainerRoot) resourceModel.getContents().get(0);
 	}
 	
 	public void nodeInfo(){
-		BuilderRegistry.getContributedStatelessPatternBuilders().put(
-				NodeMatcher.FACTORY.getPatternName(),
-				new PatternBuilderFornode());
- 
-
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(NodeMatcher.FACTORY.getPatternName(),new PatternBuilderFornode());
 		NodeMatcher matcher =null;
 		try {
 			matcher = NodeMatcher.FACTORY.getMatcher(emfRootElement);
 		} catch (IncQueryRuntimeException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		matcher.countMatches();
-		System.out.println("number of nodes : "+matcher.countMatches());
 		gui.updateTextArea("number of nodes : "+matcher.countMatches());
-		System.out.println();
 		for(NodeSignature sig : matcher.getAllMatchesAsSignature()){
-			System.out.println("sig : "+sig.getValueOfX());
 			gui.updateTextArea("sig : "+sig.getValueOfX());
-		}
-		
-		final DeltaMonitor<NodeSignature> mon = matcher.newDeltaMonitor(true);
-		matcher.addCallbackAfterUpdates(new Runnable() {
-
-			@Override
-			public void run() {
-				for (NodeSignature x : mon.matchFoundEvents) {
-					System.out.println(x.getValueOfX());
-					
-				}
-				mon.clear();
-
-			}
-		});
-
-		for (NodeSignature x : mon.matchFoundEvents) {
-			System.out.println(x.getValueOfX());
 		}
 	}
 	
+	public void nodeSubjectInfo(){
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(NodeSubjectMatcher.FACTORY.getPatternName(),new PatternBuilderFornodeSubject());
+		NodeSubjectMatcher matcher =null;
+		try {
+			matcher = NodeSubjectMatcher.FACTORY.getMatcher(emfRootElement);
+		} catch (IncQueryRuntimeException e) {
+			e.printStackTrace();
+		}
+		gui.updateTextArea("number of nodes with RBAC subjects: "+matcher.countMatches());
+		for(NodeSubjectSignature sig : matcher.getAllMatchesAsSignature()){
+			gui.updateTextArea("sig : "+sig.getValueOfN());
+		}
+	}
+		
+	public void nodeObjectInfo(){
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(NodeObjectMatcher.FACTORY.getPatternName(),new PatternBuilderFornodeObject());
+		NodeObjectMatcher matcher =null;
+		try {
+			matcher = NodeObjectMatcher.FACTORY.getMatcher(emfRootElement);
+		} catch (IncQueryRuntimeException e) {
+			e.printStackTrace();
+		}
+		gui.updateTextArea("number of nodes with RBAC objects : "+matcher.countMatches());
+		for(NodeObjectSignature sig : matcher.getAllMatchesAsSignature()){
+			gui.updateTextArea("sig : "+sig.getValueOfN());
+		}
+	}
 	
 	@Start
 	public void start() {
@@ -194,12 +201,13 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 	}
 
 	@Update
-	public void update() {
+	public void update(){
 	}
 
 	@Override
-	public void modelUpdated() {
-		kevRootElement = getModelService().getLastModel();						
+	public boolean initUpdate(ContainerRoot arg0, ContainerRoot arg1) {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 	@Override
@@ -207,10 +215,13 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 			org.kevoree.ContainerRoot proposedModel) {
 		return true;
 	}
-
+	
 	@Override
-	public boolean initUpdate(ContainerRoot arg0, ContainerRoot arg1) {
-		// TODO Auto-generated method stub
-		return true;
+	public void modelUpdated() {
+		Chrono c = new Chrono();
+		c.start();
+		analyze();
+		c.stop();
+		gui.updateTextArea("time analyze :"+c.displayTime());
 	}
 }

@@ -1,37 +1,30 @@
-package reasoner;
+package addressBook.enforcement;
 
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 
-public class ReasonerIncQueryGUI extends javax.swing.JFrame {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class DummyGUIReasoner extends javax.swing.JFrame {
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
 	private javax.swing.JComboBox jComboBox1;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTextArea jTextArea1;
-	private ReasonerIncQuery reasonerIncQuery;
+
+	private PolicyReasoner parent; 
 	
-	public ReasonerIncQueryGUI() {
+	public DummyGUIReasoner() {
 		initComponents();
 	}
 	
-	public ReasonerIncQueryGUI(ReasonerIncQuery riq) {
+	public DummyGUIReasoner(PolicyReasoner a) {
 		initComponents();
-		reasonerIncQuery =riq;
+		parent = a;
 	}
 	
-	public ReasonerIncQueryGUI(String name) {
-		initComponents();
-		setTitle(getName());
-	}
-	
+
 	private void initComponents() {
+
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jTextArea1 = new javax.swing.JTextArea();
 		jComboBox1 = new javax.swing.JComboBox();
@@ -144,11 +137,39 @@ public class ReasonerIncQueryGUI extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		updateTextArea("loadLastModel");
-		reasonerIncQuery.analyze();
+		updateTextArea(jComboBox1.getSelectedItem().toString() +" : chose");
+		if (jComboBox1.getSelectedItem().toString().equals("initPolicyExample1"))
+		{
+			parent.getPolicyGenerator().initPolicyExample1();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("initPolicyExample2"))
+		{
+			parent.getPolicyGenerator().initPolicyExample2();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("displayPolicy"))
+		{
+			parent.displayPolicy();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("checkPolicy"))
+		{
+			parent.checkPolicy();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("enforcePolicyASE"))
+		{
+			parent.enforcePolicyASE();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("enforcePolicyNEW"))
+		{
+			parent.enforcePolicyNEW();
+		}
+		if (jComboBox1.getSelectedItem().toString().equals("launchTest"))
+		{
+			parent.launchTest();
+		}
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+		parent.update();
 	}
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +188,7 @@ public class ReasonerIncQueryGUI extends javax.swing.JFrame {
 	public static void main(String args[]) {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				new ReasonerIncQueryGUI().setVisible(true);
+				new DummyGUIReasoner().setVisible(true);
 			}
 		});
 	}

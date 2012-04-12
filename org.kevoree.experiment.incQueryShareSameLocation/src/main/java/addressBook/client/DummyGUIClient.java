@@ -1,37 +1,33 @@
-package reasoner;
+package addressBook.client;
 
 import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 
-public class ReasonerIncQueryGUI extends javax.swing.JFrame {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+import org.kevoree.framework.MessagePort;
+
+
+public class DummyGUIClient extends javax.swing.JFrame {
 	private javax.swing.JButton jButton1;
 	private javax.swing.JButton jButton2;
 	private javax.swing.JButton jButton3;
 	private javax.swing.JComboBox jComboBox1;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTextArea jTextArea1;
-	private ReasonerIncQuery reasonerIncQuery;
+
+	private AddressBookClient parent ;
 	
-	public ReasonerIncQueryGUI() {
+	public DummyGUIClient() {
 		initComponents();
 	}
 	
-	public ReasonerIncQueryGUI(ReasonerIncQuery riq) {
+	public DummyGUIClient(AddressBookClient c) {
 		initComponents();
-		reasonerIncQuery =riq;
+		parent = c;
 	}
 	
-	public ReasonerIncQueryGUI(String name) {
-		initComponents();
-		setTitle(getName());
-	}
-	
+
 	private void initComponents() {
+
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jTextArea1 = new javax.swing.JTextArea();
 		jComboBox1 = new javax.swing.JComboBox();
@@ -144,11 +140,12 @@ public class ReasonerIncQueryGUI extends javax.swing.JFrame {
 	}
 
 	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-		updateTextArea("loadLastModel");
-		reasonerIncQuery.analyze();
+		System.out.println(jTextArea1.getText()+" on port : "+jComboBox1.getSelectedItem().toString());
+		parent.getPortByName(jComboBox1.getSelectedItem().toString(), MessagePort.class).process(jTextArea1.getText());
 	}
 
 	private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+		
 	}
 
 	private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,8 +163,8 @@ public class ReasonerIncQueryGUI extends javax.swing.JFrame {
 
 	public static void main(String args[]) {
 		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new ReasonerIncQueryGUI().setVisible(true);
+			public void run() {	
+				new DummyGUIClient().setVisible(true);
 			}
 		});
 	}

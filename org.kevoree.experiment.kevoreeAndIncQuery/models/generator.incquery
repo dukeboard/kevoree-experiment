@@ -3,4 +3,7 @@
   <ecoreModel>
     <models href="kevoree.genmodel#/"/>
   </ecoreModel>
+  <ecoreModel>
+    <models href="rbac.genmodel#/"/>
+  </ecoreModel>
 </incquerygenmodel:IncQueryGenmodel>

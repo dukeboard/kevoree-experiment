@@ -38,43 +38,43 @@ public class PatternBuilderFornodeSubject implements IStatelessGeneratedRetePatt
 		assert("enforcementInfo.nodeSubject".equals(gtPattern));
 		buildable = buildable.getNextContainer().putOnTab("enforcementInfo.nodeSubject");
 		
-		final Address<? extends Receiver> var_30 = buildable.patternCollector("enforcementInfo.nodeSubject");
-		final Stub<Address<? extends Supplier>> var_31 = buildable.buildStartStub(new Object[] {}, new Object[] {});
-		final Object var_32 = ((EClass) (EPackage.Registry.INSTANCE.getEPackage("http://kevoree/1.0").getEClassifier("NamedElement"))).getEStructuralFeature("name");
-		final Stub<Address<? extends Supplier>> var_33 = buildable.binaryEdgeTypeStub(new FlatTuple(new Object[] {"TYPDEF", "TYPNAME"}), var_32);
-		final TupleMask var_34 = new TupleMask(new int[] {}, 0);
-		final TupleMask var_35 = new TupleMask(new int[] {}, 2);
-		final TupleMask var_36 = new TupleMask(new int[] {0, 1}, 2);
-		final Stub<Address<? extends Supplier>> var_37 = buildable.buildBetaNode(var_31, var_33, var_34, var_35, var_36, false);
-		final Stub<Address<? extends Supplier>> var_38 = buildable.buildInjectivityChecker(var_37, 0, new int[] {1});
-		final AbstractEvaluator var_39 = new AbstractEvaluator(){ 
+		final Address<? extends Receiver> var_499 = buildable.patternCollector("enforcementInfo.nodeSubject");
+		final Stub<Address<? extends Supplier>> var_500 = buildable.buildStartStub(new Object[] {}, new Object[] {});
+		final Object var_501 = ((EClass) (EPackage.Registry.INSTANCE.getEPackage("http://kevoree/1.0").getEClassifier("NamedElement"))).getEStructuralFeature("name");
+		final Stub<Address<? extends Supplier>> var_502 = buildable.binaryEdgeTypeStub(new FlatTuple(new Object[] {"TYPDEF", "TYPNAME"}), var_501);
+		final TupleMask var_503 = new TupleMask(new int[] {}, 0);
+		final TupleMask var_504 = new TupleMask(new int[] {}, 2);
+		final TupleMask var_505 = new TupleMask(new int[] {0, 1}, 2);
+		final Stub<Address<? extends Supplier>> var_506 = buildable.buildBetaNode(var_500, var_502, var_503, var_504, var_505, false);
+		final Stub<Address<? extends Supplier>> var_507 = buildable.buildInjectivityChecker(var_506, 0, new int[] {1});
+		final AbstractEvaluator var_508 = new AbstractEvaluator(){ 
 			@Override 
 			public Object doEvaluate(Tuple tuple) throws Exception { 
 				return VPMTermEvaluator.equals(tuple.get(1).toString(),"AddressBookClient");
 			}
 		};
-		final Stub<Address<? extends Supplier>> var_40 = buildable.buildPredicateChecker(var_39, null, new int[] {1}, var_38);
-		final Object var_41 = ((EClass) (EPackage.Registry.INSTANCE.getEPackage("http://kevoree/1.0").getEClassifier("Instance"))).getEStructuralFeature("typeDefinition");
-		final Stub<Address<? extends Supplier>> var_42 = buildable.binaryEdgeTypeStub(new FlatTuple(new Object[] {"C", "TYPDEF"}), var_41);
-		final TupleMask var_43 = new TupleMask(new int[] {0}, 2);
-		final TupleMask var_44 = new TupleMask(new int[] {1}, 2);
-		final TupleMask var_45 = new TupleMask(new int[] {0}, 2);
-		final Stub<Address<? extends Supplier>> var_46 = buildable.buildBetaNode(var_40, var_42, var_43, var_44, var_45, false);
-		final Stub<Address<? extends Supplier>> var_47 = buildable.buildInjectivityChecker(var_46, 2, new int[] {0});
-		final Stub<Address<? extends Supplier>> var_48 = buildable.buildInjectivityChecker(var_47, 2, new int[] {1});
-		final Object var_49 = ((EClass) (EPackage.Registry.INSTANCE.getEPackage("http://kevoree/1.0").getEClassifier("ContainerNode"))).getEStructuralFeature("components");
-		final Stub<Address<? extends Supplier>> var_50 = buildable.binaryEdgeTypeStub(new FlatTuple(new Object[] {"N", "C"}), var_49);
-		final TupleMask var_51 = new TupleMask(new int[] {2}, 3);
-		final TupleMask var_52 = new TupleMask(new int[] {1}, 2);
-		final TupleMask var_53 = new TupleMask(new int[] {0}, 2);
-		final Stub<Address<? extends Supplier>> var_54 = buildable.buildBetaNode(var_48, var_50, var_51, var_52, var_53, false);
-		final Stub<Address<? extends Supplier>> var_55 = buildable.buildInjectivityChecker(var_54, 2, new int[] {3});
-		final Stub<Address<? extends Supplier>> var_56 = buildable.buildInjectivityChecker(var_55, 3, new int[] {0});
-		final Stub<Address<? extends Supplier>> var_57 = buildable.buildInjectivityChecker(var_56, 3, new int[] {1});
-		final TupleMask var_58 = new TupleMask(new int[] {3}, 4);
-		final Stub<Address<? extends Supplier>> var_59 = buildable.buildTrimmer(var_57, var_58);
-		buildable.buildConnection(var_59, var_30);
-		return var_30;
+		final Stub<Address<? extends Supplier>> var_509 = buildable.buildPredicateChecker(var_508, null, new int[] {1}, var_507);
+		final Object var_510 = ((EClass) (EPackage.Registry.INSTANCE.getEPackage("http://kevoree/1.0").getEClassifier("Instance"))).getEStructuralFeature("typeDefinition");
+		final Stub<Address<? extends Supplier>> var_511 = buildable.binaryEdgeTypeStub(new FlatTuple(new Object[] {"C", "TYPDEF"}), var_510);
+		final TupleMask var_512 = new TupleMask(new int[] {0}, 2);
+		final TupleMask var_513 = new TupleMask(new int[] {1}, 2);
+		final TupleMask var_514 = new TupleMask(new int[] {0}, 2);
+		final Stub<Address<? extends Supplier>> var_515 = buildable.buildBetaNode(var_509, var_511, var_512, var_513, var_514, false);
+		final Stub<Address<? extends Supplier>> var_516 = buildable.buildInjectivityChecker(var_515, 2, new int[] {0});
+		final Stub<Address<? extends Supplier>> var_517 = buildable.buildInjectivityChecker(var_516, 2, new int[] {1});
+		final Object var_518 = ((EClass) (EPackage.Registry.INSTANCE.getEPackage("http://kevoree/1.0").getEClassifier("ContainerNode"))).getEStructuralFeature("components");
+		final Stub<Address<? extends Supplier>> var_519 = buildable.binaryEdgeTypeStub(new FlatTuple(new Object[] {"N", "C"}), var_518);
+		final TupleMask var_520 = new TupleMask(new int[] {2}, 3);
+		final TupleMask var_521 = new TupleMask(new int[] {1}, 2);
+		final TupleMask var_522 = new TupleMask(new int[] {0}, 2);
+		final Stub<Address<? extends Supplier>> var_523 = buildable.buildBetaNode(var_517, var_519, var_520, var_521, var_522, false);
+		final Stub<Address<? extends Supplier>> var_524 = buildable.buildInjectivityChecker(var_523, 2, new int[] {3});
+		final Stub<Address<? extends Supplier>> var_525 = buildable.buildInjectivityChecker(var_524, 3, new int[] {0});
+		final Stub<Address<? extends Supplier>> var_526 = buildable.buildInjectivityChecker(var_525, 3, new int[] {1});
+		final TupleMask var_527 = new TupleMask(new int[] {3}, 4);
+		final Stub<Address<? extends Supplier>> var_528 = buildable.buildTrimmer(var_526, var_527);
+		buildable.buildConnection(var_528, var_499);
+		return var_499;
 
 	}
 	

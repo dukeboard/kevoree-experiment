@@ -3,6 +3,7 @@ import nemf.ecore.datatypes;
 import datatypes;
 
 machine enforcementInfo { 
+	
 	 //allows to list all nodes
 	 pattern node(X) = {
 	 	ContainerNode(X); 
@@ -21,7 +22,6 @@ machine enforcementInfo {
 	 }
 	 
 	 //list nodes containing addressBook Object
-	 @scope{list}
 	 pattern nodeObject(N) = {
 	 	ContainerNode(N);	
 	 	ComponentInstance(C);
@@ -70,8 +70,83 @@ machine enforcementInfo {
 		MBinding.hub(RELHUB,B,CHA);	 	
 	 } 
 	 
+	 //retrieve subject component associated to ports binded to channels
+	 pattern portSubjectsBinded(C,P,B) ={
+	 	ComponentInstance(C);
+	 	TypeDefinition(TYPDEF);
+	 	Instance.typeDefinition(R,C,TYPDEF);	
+		EString(TYPNAME);
+		NamedElement.name(RR,TYPDEF,TYPNAME);
+		check (toString(value(TYPNAME)) == "AddressBookClient");
+		
+		
+		Port(P);
+		ComponentInstance.required(RELREQ,C,P);
+		MBinding(B);
+		MBinding.port(RELPORT,B,P);
+		Channel(CHA);
+		MBinding.hub(RELHUB,B,CHA);	 	
+	 }
+	 
+	 //retrieve subject component associated to ports binded to channels
+	 pattern channelPortObjectBinded(OBJECT,CHANNEL,PORT,BINDING) ={
+	 	ComponentInstance(OBJECT);
+	 	TypeDefinition(TYPDEF);
+	 	Instance.typeDefinition(R,OBJECT,TYPDEF);	
+		EString(TYPNAME);
+		NamedElement.name(RR,TYPDEF,TYPNAME);
+		check (toString(value(TYPNAME)) == "AddressBook");
+		
+		Port(PORT);
+		ComponentInstance.provided(RELREQ,OBJECT,PORT);
+		MBinding(BINDING);
+		MBinding.port(RELPORT,BINDING,PORT);
+		Channel(CHANNEL);
+		MBinding.hub(RELHUB,BINDING,CHANNEL);	 	
+	 }
 	 
 	 
-	 
-	 	 
+	 //retrieve subject component associated to ports binded to channels
+	 pattern authorization(SUBJECT,CHANNEL,OBJECT,PORTSUB,PORTOBJ,BINDINGSUBCHA,BINDINGCHAOBJ) ={
+	 	//component subject
+	 	ComponentInstance(SUBJECT);
+	 	TypeDefinition(TYPDEFSUB);
+	 	Instance.typeDefinition(RSUB,SUBJECT,TYPDEFSUB);	
+		EString(TYPNAMESUB);
+		NamedElement.name(RRSUB,TYPDEFSUB,TYPNAMESUB);
+		check (toString(value(TYPNAMESUB)) == "AddressBookClient");
+		
+		//component object
+		ComponentInstance(OBJECT);
+	 	TypeDefinition(TYPDEFOBJ);
+	 	Instance.typeDefinition(ROBJ,OBJECT,TYPDEFOBJ);	
+		EString(TYPNAMEOBJ);
+		NamedElement.name(RROBJ,TYPDEFOBJ,TYPNAMEOBJ);
+		check (toString(value(TYPNAMEOBJ)) == "AddressBook");
+		
+		//channel subject op
+		Channel(CHANNEL);
+		
+		//port subject
+		Port(PORTSUB);
+		ComponentInstance.required(RRPS,SUBJECT,PORTSUB);
+		
+		//port object
+		Port(PORTOBJ);
+		ComponentInstance.provided(RRPO,OBJECT,PORTOBJ);
+		
+		//binding port subject
+		MBinding(BINDINGSUBCHA);
+		MBinding.port(RRPSB,BINDINGSUBCHA,PORTSUB);
+		
+		//binding port object 
+		MBinding(BINDINGCHAOBJ);
+		MBinding.port(RRPOB,BINDINGCHAOBJ,PORTOBJ);
+		
+		//binding port subject -> CHANNEL
+		MBinding.hub(RRCPSC,BINDINGSUBCHA,CHANNEL);
+		
+		//binding port object -> CHANNEL
+		MBinding.hub(RRCPOC,BINDINGCHAOBJ,CHANNEL);
+	 } 
 }

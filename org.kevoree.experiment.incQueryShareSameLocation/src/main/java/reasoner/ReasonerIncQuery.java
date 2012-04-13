@@ -30,12 +30,21 @@ import org.kevoree.framework.AbstractComponentType;
 import org.kevoree.framework.KevoreeXmiHelper;
 import org.kevoree.tools.emf.compat.TransModelHelper;
 
+import patternbuilders.enforcementInfo.PatternBuilderForbinding;
+import patternbuilders.enforcementInfo.PatternBuilderForchannel;
+import patternbuilders.enforcementInfo.PatternBuilderForsubjectsBinded;
 import patternbuilders.nodeInfo.PatternBuilderFornode;
 import patternbuilders.nodeInfo.PatternBuilderFornodeObject;
 import patternbuilders.nodeInfo.PatternBuilderFornodeSubject;
+import patternmatchers.enforcementInfo.BindingMatcher;
+import patternmatchers.enforcementInfo.ChannelMatcher;
+import patternmatchers.enforcementInfo.SubjectsBindedMatcher;
 import patternmatchers.nodeInfo.NodeMatcher;
 import patternmatchers.nodeInfo.NodeObjectMatcher;
 import patternmatchers.nodeInfo.NodeSubjectMatcher;
+import signatures.enforcementInfo.BindingSignature;
+import signatures.enforcementInfo.ChannelSignature;
+import signatures.enforcementInfo.SubjectsBindedSignature;
 import signatures.nodeInfo.NodeObjectSignature;
 import signatures.nodeInfo.NodeSignature;
 import signatures.nodeInfo.NodeSubjectSignature;
@@ -78,6 +87,9 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 	}
 	
 	public void analyze() {
+		Chrono bibi = new Chrono();
+		bibi.start();
+		
 		Chrono chrono = new Chrono();
 		HashMap<String, String> processTime = new HashMap<String, String>();		
 		
@@ -111,13 +123,31 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 		chrono.stop();
 		processTime.put("nodeObjectInfo();", chrono.displayTime());
 		
-				
+		//analyze architecture to detect channels
+		chrono.start();
+		channelInfo();
+		chrono.stop();
+		processTime.put("channelInfo();", chrono.displayTime());
+		
+		//analyze architecture to detect channels
+		chrono.start();
+		bindingInfo();
+		chrono.stop();
+		processTime.put("bindingInfo();", chrono.displayTime());
+		
+		//analyze architecture to detect subjects with bindings
+		chrono.start();
+		subjectBindedInfo();
+		chrono.stop();
+		processTime.put("subjectBindedInfo();", chrono.displayTime());
+		
 		//serialize kev model emf xmi
 //		chrono.start();
 //		saveKevoreeEMFModel("boukiki");
 //		chrono.stop();
 //		processTime.put("saveKevoreeEMFModel(\"boukiki\")", chrono.displayTime());		
 		//emfRootElement = transModelHelper.konvert(kevRootElement);
+		
 		chrono.start();
 		gui.updateTextArea("kevRootElement : " + kevRootElement.toString());
 		gui.updateTextArea("emfRootElement : " + emfRootElement.toString());
@@ -125,6 +155,9 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 		for (String s : processTime.keySet()){
 			gui.updateTextArea(s+" : "+processTime.get(s));	
 		}
+		
+		bibi.stop();
+		gui.updateTextArea("\ntotal time analyze : " + bibi.displayTime());
 	}
 
 	public void kev2emf(){
@@ -146,6 +179,7 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 	}
 	
 	public void nodeInfo(){
+		gui.updateTextArea("\nnodeInfo");
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(NodeMatcher.FACTORY.getPatternName(),new PatternBuilderFornode());
 		NodeMatcher matcher =null;
 		try {
@@ -160,6 +194,7 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 	}
 	
 	public void nodeSubjectInfo(){
+		gui.updateTextArea("\nnodeSubjectInfo");
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(NodeSubjectMatcher.FACTORY.getPatternName(),new PatternBuilderFornodeSubject());
 		NodeSubjectMatcher matcher =null;
 		try {
@@ -174,6 +209,7 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 	}
 		
 	public void nodeObjectInfo(){
+		gui.updateTextArea("\nnodeObjectInfo");
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(NodeObjectMatcher.FACTORY.getPatternName(),new PatternBuilderFornodeObject());
 		NodeObjectMatcher matcher =null;
 		try {
@@ -184,6 +220,51 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 		gui.updateTextArea("number of nodes with RBAC objects : "+matcher.countMatches());
 		for(NodeObjectSignature sig : matcher.getAllMatchesAsSignature()){
 			gui.updateTextArea("sig : "+sig.getValueOfN());
+		}
+	}
+	
+	public void channelInfo(){
+		gui.updateTextArea("\nchannelInfo");
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(ChannelMatcher.FACTORY.getPatternName(),new PatternBuilderForchannel());
+		ChannelMatcher matcher =null;
+		try {
+			matcher = ChannelMatcher.FACTORY.getMatcher(emfRootElement);
+		} catch (IncQueryRuntimeException e) {
+			e.printStackTrace();
+		}
+		gui.updateTextArea("number of channels : "+matcher.countMatches());
+		for(ChannelSignature sig : matcher.getAllMatchesAsSignature()){
+			gui.updateTextArea("sig : "+sig.getValueOfC());
+		}
+	}
+	
+	public void bindingInfo(){
+		gui.updateTextArea("\nbindinglInfo");
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(BindingMatcher.FACTORY.getPatternName(),new PatternBuilderForbinding());
+		BindingMatcher matcher =null;
+		try {
+			matcher = BindingMatcher.FACTORY.getMatcher(emfRootElement);
+		} catch (IncQueryRuntimeException e) {
+			e.printStackTrace();
+		}
+		gui.updateTextArea("number of bindings : "+matcher.countMatches());
+		for(BindingSignature sig : matcher.getAllMatchesAsSignature()){
+			gui.updateTextArea("sig : "+sig.getValueOfB());
+		}
+	}
+	
+	public void subjectBindedInfo(){
+		gui.updateTextArea("\nsubjectBindedInfo");
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(SubjectsBindedMatcher.FACTORY.getPatternName(),new PatternBuilderForsubjectsBinded());
+		SubjectsBindedMatcher matcher =null;
+		try {
+			matcher = SubjectsBindedMatcher.FACTORY.getMatcher(emfRootElement);
+		} catch (IncQueryRuntimeException e) {
+			e.printStackTrace();
+		}
+		gui.updateTextArea("number of subjectsBinded : "+matcher.countMatches());
+		for(SubjectsBindedSignature sig : matcher.getAllMatchesAsSignature()){
+			gui.updateTextArea("sig : "+sig.getValueOfC());
 		}
 	}
 	

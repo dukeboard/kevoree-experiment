@@ -22,6 +22,7 @@ import org.kevoree.framework.AbstractComponentType;
 import rbac.*;
 import rbac.rbac.generator.PolicyGenerator;
 import rbac.rbac.impl.*;
+import transformations.Policy2KevScript;
 import utils.time.Chrono;
 
 @Library(name = "RBAC")
@@ -136,7 +137,7 @@ public class PolicyReasoner extends AbstractComponentType {
 		// policy model generation
 		Chrono c = new Chrono();
 		c.start();
-		policy = policyGenerator.initPolicyExamples(numberOfElements, 3, true, false, false,
+		policy = policyGenerator.initPolicyExamples(numberOfElements, 3, false,true, false, false,
 				false, false);
 		displayPolicy();
 		c.stop();
@@ -596,20 +597,29 @@ public class PolicyReasoner extends AbstractComponentType {
 	 * the adaptation
 	 */
 	public void enforcePolicyNEW() {
+		
 		String script = "";
-		script = script + removeBindingSubjectsEnforcementChannelResources();
-		script = script + removeNodes();
-		// add nodes and components
-		script = script + addSubjects();
-		script = script + addResources();
-		// add channels + bindings
-		script = script + addBindingSubjectsEnforcementChannelResources();
+		
+//		script = script + removeBindingSubjectsEnforcementChannelResources();
+//		script = script + removeNodes();
+//		// add nodes and components
+//		script = script + addSubjects();
+//		script = script + addResources();
+//		// add channels + bindings
+//		script = script + addBindingSubjectsEnforcementChannelResources();
+		
+		//using cool transfo
+		Policy2KevScript p2k = new Policy2KevScript(policy);
+		script = p2k.transfoPolicyIntoKevScriptNEW();
+		
+		
 		// apply reconfiguration script
 		kse = getKevScriptEngineFactory().createKevScriptEngine();
 		kse.append(script);
 		Boolean scriptApplied = kse.atomicInterpretDeploy();
 		System.out.println("scriptApplied : " + scriptApplied);
 		gui.updateTextArea("scriptApplied : " + scriptApplied);
+		
 		portNumber = 42000;
 	}
 

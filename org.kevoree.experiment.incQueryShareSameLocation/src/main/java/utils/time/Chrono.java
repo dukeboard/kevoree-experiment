@@ -17,8 +17,8 @@ import java.util.Date;
 public class Chrono 
 {
 
-        private static Date dStartDate;
-        private static Date dEndDate;
+        private Date dStartDate;
+        private Date dEndDate;
 
         public Chrono(){}
         
@@ -50,7 +50,7 @@ public class Chrono
         public void main(String[] args){      
         	Chrono c = new Chrono();
         	c.start();
-        	System.out.println(Chrono.dStartDate.getTime());
+        	System.out.println(c.dStartDate.getTime());
         	for (int i = 0;i< 1000;i++)
         		System.out.println("bibi");
         	c.stop();

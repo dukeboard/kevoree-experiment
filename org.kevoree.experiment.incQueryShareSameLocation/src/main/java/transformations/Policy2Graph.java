@@ -694,7 +694,7 @@ public class Policy2Graph {
 	
 	public void initPolicyGood(){
 		PolicyGenerator policyGenerator = new PolicyGenerator(policy);		
-		policy = policyGenerator.initPolicyExamples(3, 3, false, false, false, false, false);
+		policy = policyGenerator.initPolicyExamples(3, 3, false, false, false, false, false, false);
 	}
 	
 	

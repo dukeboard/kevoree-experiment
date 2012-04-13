@@ -142,7 +142,7 @@ public class PolicyGenerator {
 	}
 	
 	public Policy initPolicyExamples(int number, int numberOperationByPermission,
-			boolean randomPermission, boolean cyclicDelegation,boolean cyclicHierarchy, boolean ssod,
+			boolean randomPermission, boolean addressBookOperation, boolean cyclicDelegation,boolean cyclicHierarchy, boolean ssod,
 			boolean dsod) {
 		RbacFactory factory = RbacFactory.eINSTANCE;
 		policy = factory.createPolicy();
@@ -159,17 +159,21 @@ public class PolicyGenerator {
 			rbac.Resource re = factory.createResource();
 			re.setName("obj" + i);
 			policy.getElements().add(re);
-			for (int j = 0; j < numberOperationByPermission; j++) {
-				Operation op = factory.createOperation();
-				op.setName("ope" + j);
-				p.getOperations().add(op);
+		
+			if (addressBookOperation) {
+				for(String s : addressBookOperations){
+					Operation op = factory.createOperation();
+					op.setName(s);
+					p.getOperations().add(op);
+				}
 			}
-
-//			for(String s : addressBookOperations){
-//				Operation op = factory.createOperation();
-//				op.setName(s);
-//				p.getOperations().add(op);
-//			}
+			else{
+				for (int j = 0; j < numberOperationByPermission; j++) {
+					Operation op = factory.createOperation();
+					op.setName("ope" + j);
+					p.getOperations().add(op);
+				}
+			}
 		}
 
 		

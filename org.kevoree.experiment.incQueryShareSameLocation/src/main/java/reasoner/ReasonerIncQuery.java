@@ -30,20 +30,29 @@ import org.kevoree.framework.AbstractComponentType;
 import org.kevoree.framework.KevoreeXmiHelper;
 import org.kevoree.tools.emf.compat.TransModelHelper;
 
+import patternbuilders.enforcementInfo.PatternBuilderForauthorization;
 import patternbuilders.enforcementInfo.PatternBuilderForbinding;
 import patternbuilders.enforcementInfo.PatternBuilderForchannel;
+import patternbuilders.enforcementInfo.PatternBuilderForchannelPortObjectBinded;
+import patternbuilders.enforcementInfo.PatternBuilderForportSubjectsBinded;
 import patternbuilders.enforcementInfo.PatternBuilderForsubjectsBinded;
 import patternbuilders.nodeInfo.PatternBuilderFornode;
 import patternbuilders.nodeInfo.PatternBuilderFornodeObject;
 import patternbuilders.nodeInfo.PatternBuilderFornodeSubject;
+import patternmatchers.enforcementInfo.AuthorizationMatcher;
 import patternmatchers.enforcementInfo.BindingMatcher;
 import patternmatchers.enforcementInfo.ChannelMatcher;
+import patternmatchers.enforcementInfo.ChannelPortObjectBindedMatcher;
+import patternmatchers.enforcementInfo.PortSubjectsBindedMatcher;
 import patternmatchers.enforcementInfo.SubjectsBindedMatcher;
 import patternmatchers.nodeInfo.NodeMatcher;
 import patternmatchers.nodeInfo.NodeObjectMatcher;
 import patternmatchers.nodeInfo.NodeSubjectMatcher;
+import signatures.enforcementInfo.AuthorizationSignature;
 import signatures.enforcementInfo.BindingSignature;
+import signatures.enforcementInfo.ChannelPortObjectBindedSignature;
 import signatures.enforcementInfo.ChannelSignature;
+import signatures.enforcementInfo.PortSubjectsBindedSignature;
 import signatures.enforcementInfo.SubjectsBindedSignature;
 import signatures.nodeInfo.NodeObjectSignature;
 import signatures.nodeInfo.NodeSignature;
@@ -140,6 +149,24 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 		subjectBindedInfo();
 		chrono.stop();
 		processTime.put("subjectBindedInfo();", chrono.displayTime());
+		
+		//analyze architecture to detect subject's port with bindings
+		chrono.start();
+		portSubjectBindedInfo();
+		chrono.stop();
+		processTime.put("portSubjectBindedInfo();", chrono.displayTime());
+		
+		//analyze architecture to detect channel binded to objects
+		chrono.start();
+		channelPortObjectBindedInfo();
+		chrono.stop();
+		processTime.put("channelPortObjectBindedInfo();", chrono.displayTime());
+		
+		//analyze architecture to detect authorization
+		chrono.start();
+		authorizationInfo();
+		chrono.stop();
+		processTime.put("authorizationInfo();", chrono.displayTime());
 		
 		//serialize kev model emf xmi
 //		chrono.start();
@@ -265,6 +292,51 @@ public class ReasonerIncQuery extends AbstractComponentType implements ModelList
 		gui.updateTextArea("number of subjectsBinded : "+matcher.countMatches());
 		for(SubjectsBindedSignature sig : matcher.getAllMatchesAsSignature()){
 			gui.updateTextArea("sig : "+sig.getValueOfC());
+		}
+	}
+	
+	public void portSubjectBindedInfo(){
+		gui.updateTextArea("\nportSubjectBindedInfo");
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(PortSubjectsBindedMatcher.FACTORY.getPatternName(),new PatternBuilderForportSubjectsBinded());
+		PortSubjectsBindedMatcher matcher =null;
+		try {
+			matcher = PortSubjectsBindedMatcher.FACTORY.getMatcher(emfRootElement);
+		} catch (IncQueryRuntimeException e) {
+			e.printStackTrace();
+		}
+		gui.updateTextArea("number of portSubjectBinded : "+matcher.countMatches());
+		for(PortSubjectsBindedSignature sig : matcher.getAllMatchesAsSignature()){
+			gui.updateTextArea("sig : "+sig.getValueOfC()+" : "+sig.getValueOfP());
+		}
+	}
+	
+	public void channelPortObjectBindedInfo(){
+		gui.updateTextArea("\nchannelPortObjectBindedInfo");
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(ChannelPortObjectBindedMatcher.FACTORY.getPatternName(),new PatternBuilderForchannelPortObjectBinded());
+		ChannelPortObjectBindedMatcher matcher =null;
+		try {
+			matcher = ChannelPortObjectBindedMatcher.FACTORY.getMatcher(emfRootElement);
+		} catch (IncQueryRuntimeException e) {
+			e.printStackTrace();
+		}
+		gui.updateTextArea("number of authorization : "+matcher.countMatches());
+		for(ChannelPortObjectBindedSignature sig : matcher.getAllMatchesAsSignature()){
+			gui.updateTextArea("sig : "+sig.getValueOfCHANNEL()+" : "+sig.getValueOfOBJECT());
+		}
+	}	
+	
+	public void authorizationInfo(){
+		gui.updateTextArea("\nauthorizationInfo");
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(AuthorizationMatcher.FACTORY.getPatternName(),new PatternBuilderForauthorization());
+		AuthorizationMatcher matcher =null;
+		try {
+			matcher = AuthorizationMatcher.FACTORY.getMatcher(emfRootElement);
+		} catch (IncQueryRuntimeException e) {
+			e.printStackTrace();
+		}
+		gui.updateTextArea("number of authorization : "+matcher.countMatches());
+		for(AuthorizationSignature sig : matcher.getAllMatchesAsSignature()){
+			gui.updateTextArea("sig : "+sig.getValueOfSUBJECT()+" : "+sig.getValueOfCHANNEL()+" : "+sig.getValueOfOBJECT());
 		}
 	}
 	

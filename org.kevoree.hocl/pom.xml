@@ -13,6 +13,7 @@
         <module>org.kevoree.hocl.maven.compile</module>
         <module>org.kevoree.tools.hocl.framework</module>
         <module>org.kevoree.hocl.framework</module>
+        <module>org.kevoree.hocl.model</module>
     </modules>
     <packaging>pom</packaging>
     <name>Kevoree :: Experiment :: HOCL</name>

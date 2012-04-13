@@ -1,0 +1,77 @@
+import nemf.packages.kevoree;
+import nemf.ecore.datatypes;
+import datatypes;
+
+machine enforcementInfo { 
+	 //allows to list all nodes
+	 pattern node(X) = {
+	 	ContainerNode(X); 
+	 }
+	 
+	 //list nodes containing addressBook Client
+	 pattern nodeSubject(N) = {
+	 	ContainerNode(N);	
+	 	ComponentInstance(C);
+	 	ContainerNode.components(NC, N, C);
+	 	TypeDefinition(TYPDEF);
+	 	Instance.typeDefinition(R,C,TYPDEF);	
+		EString(TYPNAME);
+		NamedElement.name(RR,TYPDEF,TYPNAME);
+		check (toString(value(TYPNAME)) == "AddressBookClient");
+	 }
+	 
+	 //list nodes containing addressBook Object
+	 @scope{list}
+	 pattern nodeObject(N) = {
+	 	ContainerNode(N);	
+	 	ComponentInstance(C);
+	 	ContainerNode.components(NC, N, C);
+	 	TypeDefinition(TYPDEF);
+	 	Instance.typeDefinition(R,C,TYPDEF);	
+		EString(TYPNAME);
+		NamedElement.name(RR,TYPDEF,TYPNAME);
+		check (toString(value(TYPNAME)) == "AddressBook");
+	 }
+	 
+	 //retrieve subject component
+	 pattern subjectComponent(C) = {
+	 	ComponentInstance(C);
+	 	TypeDefinition(TYPDEF);
+	 	Instance.typeDefinition(R,C,TYPDEF);	
+		EString(TYPNAME);
+		NamedElement.name(RR,TYPDEF,TYPNAME);
+		check (toString(value(TYPNAME)) == "AddressBookClient");
+	 }
+	 
+	 //retrieve channels
+	 pattern channel(C) = {
+	 	Channel(C);	 	
+	 }
+	 
+	  //retrieve bindings
+	 pattern binding(B) = {
+	 	MBinding(B);	 	
+	 }
+	 
+	 
+	 //retrieve subject component associated to ports binded to channels
+	 pattern subjectsBinded(C) ={
+	 	ComponentInstance(C);
+	 	TypeDefinition(TYPDEF);
+	 	Instance.typeDefinition(R,C,TYPDEF);	
+		EString(TYPNAME);
+		NamedElement.name(RR,TYPDEF,TYPNAME);
+		check (toString(value(TYPNAME)) == "AddressBookClient");
+		Port(P);
+		ComponentInstance.required(RELREQ,C,P);
+		MBinding(B);
+		MBinding.port(RELPORT,B,P);
+		Channel(CHA);
+		MBinding.hub(RELHUB,B,CHA);	 	
+	 } 
+	 
+	 
+	 
+	 
+	 	 
+}

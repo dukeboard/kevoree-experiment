@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kevoree:ContainerRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kevoree="http://kevoree/1.0" xsi:schemaLocation="http://kevoree/1.0 kevoree.ecore">
+  <nodes name="node1"/>
+  <nodes name="node2"/>
+</kevoree:ContainerRoot>

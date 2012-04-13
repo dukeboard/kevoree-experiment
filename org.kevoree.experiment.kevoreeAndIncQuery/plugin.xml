@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.aa.generatedContribution"
+         name=""
+         point="org.eclipse.viatra2.emf.incquery.patternmatcher.builder">
+      <pattern-builder
+            build-class="patternbuilders.nodeInfo.PatternBuilderFornode"
+            pattern-fqn="nodeInfo.node">
+      </pattern-builder>
+   </extension>
+   <extension
+         id="analyzeKevoreeWithIncQuery.generatedContribution"
+         point="org.eclipse.viatra2.emf.incquery.patternmatcher.builder">
+      <pattern-builder
+            build-class="patternbuilders.nodeInfo.PatternBuilderFornodeObject"
+            pattern-fqn="nodeInfo.nodeObject">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderFornodeSubject"
+            pattern-fqn="enforcementInfo.nodeSubject">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.nodeInfo.PatternBuilderFornode"
+            pattern-fqn="nodeInfo.node">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForchannel"
+            pattern-fqn="enforcementInfo.channel">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForsubjectComponent"
+            pattern-fqn="enforcementInfo.subjectComponent">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForsubjectsBinded"
+            pattern-fqn="enforcementInfo.subjectsBinded">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderFornode"
+            pattern-fqn="enforcementInfo.node">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderFornodeObject"
+            pattern-fqn="enforcementInfo.nodeObject">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.nodeInfo.PatternBuilderFornodeSubject"
+            pattern-fqn="nodeInfo.nodeSubject">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForbinding"
+            pattern-fqn="enforcementInfo.binding">
+      </pattern-builder>
+   </extension>
+
+</plugin>

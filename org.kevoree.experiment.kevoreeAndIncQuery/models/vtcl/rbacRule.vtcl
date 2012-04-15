@@ -1,0 +1,49 @@
+import nemf.packages.rbac.rbac;
+import nemf.ecore.datatypes;
+import datatypes;
+
+machine policyInfo {
+	 
+	 //allows to list all users
+	 pattern user(U) = {
+	 	User(U); 
+	 }
+	 
+	  //allows to list all users
+	 pattern object(OB) = {
+	 	Resource(OB); 
+	 }
+	 
+	 
+	 //allows to list user->operation->resource
+	 pattern userRule(USER,OPERATION,OBJECT) = {
+	 	User(USER);
+	 	Role(ROLE);
+	 	Permission(PERMISSION);
+	 	Operation(OPERATION);
+	 	Resource(OBJECT);
+	 	
+	 	User.assignedRoles(UR,USER,ROLE);
+	 	Role.permissions(RP,ROLE,PERMISSION);
+	 	Permission.operations(PO,PERMISSION,OPERATION);
+	 	Operation.resources(OR,OPERATION,OBJECT);
+	 }
+	 
+	 	 //allows to list user->operation->resource
+	 pattern userFullRule(USER,ROLE,PERMISSION,OPERATION,OBJECT) = {
+	 	User(USER);
+	 	Role(ROLE);
+	 	Permission(PERMISSION);
+	 	Operation(OPERATION);
+	 	Resource(OBJECT);
+	 	
+	 	User.assignedRoles(UR,USER,ROLE);
+	 	Role.permissions(RP,ROLE,PERMISSION);
+	 	Permission.operations(PO,PERMISSION,OPERATION);
+	 	Operation.resources(OR,OPERATION,OBJECT);
+	 }
+	
+	 
+	
+	
+}

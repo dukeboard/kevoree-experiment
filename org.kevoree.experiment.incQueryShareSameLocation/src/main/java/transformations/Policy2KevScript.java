@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Vector;
 
 import rbac.*;
-import rbac.rbac.*;
 import rbac.rbac.editor.PolicyEditor;
 import rbac.rbac.impl.*;
 import utils.time.Chrono;
@@ -107,8 +106,7 @@ public class Policy2KevScript {
 						+ "=>" + channelName;
 				bindings.add("bind " + e + "." + o + "@subjects" + "=>"
 						+ channelName);
-				script = script + "\n" + "updateDictionary " + channelName
-						+ "{ port=\"" + portNumber + "\"}@subjects";
+				script = script + "\n" + "updateDictionary " + channelName	+ "{ port=\"" + portNumber + "\"}@subjects";
 			}
 		}
 		// System.out.println("3");
@@ -200,8 +198,7 @@ public class Policy2KevScript {
 							if(!opResources.keySet().contains(operation)){
 								HashSet<String> resources = new HashSet<String>();
 								opResources.put(operation, resources);
-								portNumber = portNumber + 1;
-								
+								portNumber = portNumber + 1;								
 								script = script + "\n" + "addChannel " + channelName
 										+ " : SocketChannel{name = \"" + channelName + "\"}";
 								script = script + "\n" + "bind " + user + "." + operation
@@ -219,10 +216,10 @@ public class Policy2KevScript {
 											+ operation + "@resources" + " =>" + channelName;
 									script = script + "\n" + "updateDictionary " + channelName
 											+ "{ port=\"" + portNumber + "\"}@resources";
+									//script = script + "\n" + "updateDictionary " + channelName+ "{ "+r.getName()+p.getName()+op.getName()+obj.getName()+"=\" true \"}";
 								}
 							}
 						}
-				
 					}					
 				}
 			}
@@ -231,7 +228,6 @@ public class Policy2KevScript {
 		return script;
 	}
 	
-
 	// generate script to add binding enforcementNEW
 	public String addBindingSubjectsEnforcementChannelResources3() {
 		String script = "";
@@ -274,7 +270,6 @@ public class Policy2KevScript {
 										+ channelName + "{ port=\""
 										+ portNumber + "\"}@resources";
 							}
-
 						}
 					}
 				}

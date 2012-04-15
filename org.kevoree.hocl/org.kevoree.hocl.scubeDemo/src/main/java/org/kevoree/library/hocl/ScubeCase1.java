@@ -103,6 +103,8 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 		Pattern pattern = Pattern.compile("\\((((<((\"[^<>:,\"]*\"|[0-9]*|\\(((\"[^<>:,\"]*\"|[0-9]*)(:)?)*\\))(,)?)*>|\"[^<>:,\"]*\"|[0-9]*)(:)?)*)\\)");
 		Matcher matcher = pattern.matcher(content);
 
+		boolean isThereUpdateToApply = false;
+
 		while (matcher.find()) {
 			String molecule = matcher.group(1);
 			if (molecule.startsWith("\"NODE\"")) {
@@ -117,6 +119,7 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 							// look for the component on the model to know if the component must move according to decision taken by HOCL engine
 							String oldName = getOldNodeNameForComponent(componentName);
 							if (oldName != null && !"".equals(oldName) && !oldName.equals(nodeName)) {
+								isThereUpdateToApply = true;
 								kengine.addVariable("nodeName", oldName);
 								kengine.addVariable("newNodeName", nodeName);
 								kengine.addVariable("componentName", componentName);
@@ -151,17 +154,13 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 								}
 							}
 							if (!alreadyExist) {
+								isThereUpdateToApply = true;
 								kengine.addVariable("nodeName", nodeName);
 								kengine.addVariable("componentName", componentName);
 								kengine.addVariable("portName", portName);
 								kengine.addVariable("channelName", channelName);
 								kengine.append("bind {componentName}.{portName}@{nodeName} =>{channelName}");
 								fixPort(channelName, nodeName, kengine);
-								/*Option<Integer> portOption = KevoreePropertyHelper.getIntPropertyForChannel(this.getModelService().getLastModel(), channelName, "port", true, nodeName);
-							 if (portOption.isEmpty()) {
-								 kengine.addVariable("portPropertyValue", "" + selectPort(channelName));
-								 kengine.append("updateDictionary {channelName} {port='{portPropertyValue}'}@{nodeName}");
-							 }*/
 							}
 						}
 					}
@@ -169,6 +168,11 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 			}
 		}
 		try {
+			if (isThereUpdateToApply) {
+				logger.info("HOCL DEFINE UPDATE");
+			} else {
+				logger.info("NO UPDATE DEFINE BY HOCL");
+			}
 			kengine.interpretDeploy();
 		} catch (Exception e) {
 			logger.warn("Unable to apply the HOCL result");
@@ -228,25 +232,10 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 	}
 
 	private void fixPortAndBinding (String nodeName, String componentName, KevScriptEngine kengine) {
-		logger.info("fix port numbers");
 		ContainerRoot model = getModelService().getLastModel();
 		for (MBinding mb : model.getMBindingsForJ()) {
 			if (((ComponentInstance) mb.getPort().eContainer()).getName().equals(componentName)) {
-				/*Option<Integer> portOption = KevoreePropertyHelper.getIntPropertyForChannel(model, mb.getHub().getName(), "port", true, nodeName);
-				logger.info("found binding to fix {}", portOption);
-				if (portOption.isEmpty()) {
-					logger.info("look for a new port number");
-					kengine.addVariable("nodeName", nodeName);
-					kengine.addVariable("channelName", mb.getHub().getName());
-					kengine.addVariable("portPropertyValue", "" + selectPort(mb.getHub().getName(), nodeName));
-					kengine.append("updateDictionary {channelName} {port='{portPropertyValue}'}@{nodeName}");
-				}*/
 				fixPort(mb.getHub().getName(), nodeName, kengine);
-				// binding must also be removed and recreate in HOCL
-				//new RemoveBindingMolecule(mb, getSolution()).execute();
-				/*ModelCloner cloner = new ModelCloner();
-													ContainerRoot modelNew = cloner.clone(model);
-													MBinding mbNew = cloner.clone(mb);*/
 			}
 		}
 	}

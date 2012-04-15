@@ -1,35 +1,37 @@
 merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.javaseNode/1.7.0-SNAPSHOT"
 merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-SNAPSHOT"
-merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-SNAPSHOT"
+//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-SNAPSHOT"
 merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nioChannels/1.7.0-SNAPSHOT"
 //merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nanohttp/1.7.0-SNAPSHOT"
 merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.gossiperNetty/1.7.0-SNAPSHOT"
 merge "mvn:org.kevoree.hocl/org.kevoree.hocl.scubeDemo/1.0.0-SNAPSHOT"
 
-// add Node
-addNode node0 : JavaSENode {logLevel = "DEBUG"}
-addNode node1 : JavaSENode {logLevel = "DEBUG"}
-//addNode node2 : JavaSENode
-
-// add and configuration Group
-addGroup HOCLGroup : NettyGossiperGroup {merge="true"}
-addToGroup HOCLGroup node0
-addToGroup HOCLGroup node1
-//addToGroup HOCLGroup node2
-updateDictionary HOCLGroup  {port="11000",http_port="12000"}@node0,{port="11001",http_port="12001"}@node1
-
-
 // add MiniCloudNode to start from the editor
 //merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/{kevoree.version}"
 merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/1.7.0-SNAPSHOT"
-addNode miniCloudNode : MiniCloudNode {logLevel = "DEBUG"}
-addToGroup HOCLGroup miniCloudNode
-updateDictionary HOCLGroup  {port="6000",http_port="6001"}@miniCloudNode
+addNode miniCloudNode : MiniCloudNode //{logLevel = "DEBUG"}
 
 // add a sync group to only push on the minicloud node
 addGroup sync : NanoRestGroup
 addToGroup sync miniCloudNode
 updateDictionary sync {port="8000"}@miniCloudNode
+
+// add Node
+addNode node0 : JavaSENode //{logLevel = "DEBUG"}
+addNode node1 : JavaSENode //{logLevel = "DEBUG"}
+//addNode node2 : JavaSENode
+
+// add and configuration Group
+addGroup HOCLGroup : NettyGossiperGroup {mergeModel="true"}
+addToGroup HOCLGroup node0
+addToGroup HOCLGroup node1
+
+//addToGroup HOCLGroup node2
+updateDictionary HOCLGroup  {port="11000",http_port="12000"}@node0,{port="11001",http_port="12001"}@node1
+
+// add miniCloudNode on HOCL group
+addToGroup HOCLGroup miniCloudNode
+updateDictionary HOCLGroup {port="11100",http_port="12100"}@miniCloudNode
 
 // add Components
 addComponent chemical@miniCloudNode : ScubeCase1
@@ -42,7 +44,7 @@ addComponent webserver@node0 : WebServer {port="8080", timeout="5000"}
 
 //Add Channels
 addChannel requestChannel : NioRoundRobin
-addChannel responseChannel : NioRoundRobin
+addChannel responseChannel : NioChannel
 
 // bind Channels and Components
 bind webserver.handler@node0=> requestChannel

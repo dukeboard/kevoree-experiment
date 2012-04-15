@@ -34,7 +34,7 @@
 
     <properties>
         <slf4j.version>1.6.1</slf4j.version>
-        <kevoree.version>1.7.0-SNAPSHOT</kevoree.version>
+        <kevoree.version>1.7.0-BETA1</kevoree.version>
     </properties>
 
     <repositories>

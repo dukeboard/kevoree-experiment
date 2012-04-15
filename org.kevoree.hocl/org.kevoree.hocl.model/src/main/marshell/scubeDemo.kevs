@@ -3,27 +3,33 @@ merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0
 merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-SNAPSHOT"
 merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nioChannels/1.7.0-SNAPSHOT"
 //merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nanohttp/1.7.0-SNAPSHOT"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.gossiperNetty/1.7.0-SNAPSHOT"
 merge "mvn:org.kevoree.hocl/org.kevoree.hocl.scubeDemo/1.0.0-SNAPSHOT"
 
 // add Node
-addNode node0 : JavaSENode
-addNode node1 : JavaSENode
+addNode node0 : JavaSENode {logLevel = "DEBUG"}
+addNode node1 : JavaSENode {logLevel = "DEBUG"}
 //addNode node2 : JavaSENode
 
 // add and configuration Group
-addGroup HOCLGroup : HoclNanoRestGroup
+addGroup HOCLGroup : NettyGossiperGroup {merge="true"}
 addToGroup HOCLGroup node0
 addToGroup HOCLGroup node1
 //addToGroup HOCLGroup node2
-updateDictionary HOCLGroup  {port="8000"}@node0,{port="8001"}@node1//,{port="8002"}@node2
+updateDictionary HOCLGroup  {port="11000",http_port="12000"}@node0,{port="11001",http_port="12001"}@node1
 
 
 // add MiniCloudNode to start from the editor
 //merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/{kevoree.version}"
 merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/1.7.0-SNAPSHOT"
-addNode miniCloudNode : MiniCloudNode
+addNode miniCloudNode : MiniCloudNode {logLevel = "DEBUG"}
 addToGroup HOCLGroup miniCloudNode
-updateDictionary HOCLGroup  {port="6000"}@miniCloudNode
+updateDictionary HOCLGroup  {port="6000",http_port="6001"}@miniCloudNode
+
+// add a sync group to only push on the minicloud node
+addGroup sync : NanoRestGroup
+addToGroup sync miniCloudNode
+updateDictionary sync {port="8000"}@miniCloudNode
 
 // add Components
 addComponent chemical@miniCloudNode : ScubeCase1
@@ -40,17 +46,17 @@ addChannel responseChannel : NioRoundRobin
 
 // bind Channels and Components
 bind webserver.handler@node0=> requestChannel
-bind page1.request@node0 => requestChannel
-bind page2.request@node1 => requestChannel
+bind page1.request@node1 => requestChannel
+//bind page2.request@node1 => requestChannel
 bind webserver.response@node0 => responseChannel
-bind page1.content@node0 => responseChannel
-bind page2.content@node1 => responseChannel
+bind page1.content@node1 => responseChannel
+//bind page2.content@node1 => responseChannel
 
 // update Channels attributes
-updateDictionary requestChannel  {port="9000"}@node0
-updateDictionary requestChannel  {port="9001"}@node1
-updateDictionary responseChannel  {port="9010"}@node0
-updateDictionary responseChannel  {port="9011"}@node1
+updateDictionary requestChannel  {port="9100"}@node0
+updateDictionary requestChannel  {port="9101"}@node1
+updateDictionary responseChannel  {port="9110"}@node0
+updateDictionary responseChannel  {port="9111"}@node1
 
 
 addChild node0 @ miniCloudNode

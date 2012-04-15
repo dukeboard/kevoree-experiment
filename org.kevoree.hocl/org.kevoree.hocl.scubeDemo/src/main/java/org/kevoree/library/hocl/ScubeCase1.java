@@ -16,8 +16,9 @@ import org.kevoreeAdaptation.AdaptationModel;
 import org.slf4j.LoggerFactory;
 import scala.Option;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -68,6 +69,8 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 	}
 
 	public void modelUpdated () {
+
+		getModelService().unregisterModelListener(this);
 		AdaptationModel adaptationModel;
 		if (starting) {
 			logger.debug("HOCL solution intialization");
@@ -88,11 +91,12 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 			// get result and adapt Kevoree according to result of the chemical engine
 			applyHoclResult(getSolution().toString());
 		}
+
+		getModelService().registerModelListener(this);
 	}
 
 	private void applyHoclResult (String result) {
 
-		getModelService().unregisterModelListener(this);
 		KevScriptEngine kengine = getKevScriptEngineFactory().createKevScriptEngine();
 		String content = result.substring(1).substring(0, result.substring(1).length() - 1);
 //		Pattern pattern = Pattern.compile("\\(([^()]*(?:(<.*>))?)\\)");
@@ -131,34 +135,35 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 				String[] bindings = bindingsString.split(",");
 				for (String binding : bindings) {
 					if (!"".equals(binding)) {
-					String[] bindingData = binding.substring(1, binding.length() - 1).split(":");
-					String nodeName = bindingData[0].substring(1, bindingData[0].length() - 1);
-					String componentName = bindingData[1].substring(1, bindingData[1].length() - 1);
-					String portName = bindingData[2].substring(1, bindingData[2].length() - 1);
-					if (!"".equals(componentName)) {
-						boolean alreadyExist = false;
-						for (MBinding mbinding : getModelService().getLastModel().getMBindingsForJ()) {
-							if (mbinding.getPort().getPortTypeRef().getName().equals(portName)
-									&& ((ComponentInstance) mbinding.getPort().eContainer()).getName().equals(componentName)
-									&& ((ContainerNode) mbinding.getPort().eContainer().eContainer()).getName().equals(nodeName)
-									&& mbinding.getHub().getName().equals(channelName)) {
-								alreadyExist = true;
-								break;
+						String[] bindingData = binding.substring(1, binding.length() - 1).split(":");
+						String nodeName = bindingData[0].substring(1, bindingData[0].length() - 1);
+						String componentName = bindingData[1].substring(1, bindingData[1].length() - 1);
+						String portName = bindingData[2].substring(1, bindingData[2].length() - 1);
+						if (!"".equals(componentName)) {
+							boolean alreadyExist = false;
+							for (MBinding mbinding : getModelService().getLastModel().getMBindingsForJ()) {
+								if (mbinding.getPort().getPortTypeRef().getName().equals(portName)
+										&& ((ComponentInstance) mbinding.getPort().eContainer()).getName().equals(componentName)
+										&& ((ContainerNode) mbinding.getPort().eContainer().eContainer()).getName().equals(nodeName)
+										&& mbinding.getHub().getName().equals(channelName)) {
+									alreadyExist = true;
+									break;
+								}
+							}
+							if (!alreadyExist) {
+								kengine.addVariable("nodeName", nodeName);
+								kengine.addVariable("componentName", componentName);
+								kengine.addVariable("portName", portName);
+								kengine.addVariable("channelName", channelName);
+								kengine.append("bind {componentName}.{portName}@{nodeName} =>{channelName}");
+								fixPort(channelName, nodeName, kengine);
+								/*Option<Integer> portOption = KevoreePropertyHelper.getIntPropertyForChannel(this.getModelService().getLastModel(), channelName, "port", true, nodeName);
+							 if (portOption.isEmpty()) {
+								 kengine.addVariable("portPropertyValue", "" + selectPort(channelName));
+								 kengine.append("updateDictionary {channelName} {port='{portPropertyValue}'}@{nodeName}");
+							 }*/
 							}
 						}
-						if (!alreadyExist) {
-							kengine.addVariable("nodeName", nodeName);
-							kengine.addVariable("componentName", componentName);
-							kengine.addVariable("portName", portName);
-							kengine.addVariable("channelName", channelName);
-							kengine.append("bind {componentName}.{portName}@{nodeName} =>{channelName}");
-							Option<Integer> portOption = KevoreePropertyHelper.getIntPropertyForChannel(this.getModelService().getLastModel(), channelName, "port", true, nodeName);
-							if (portOption.isEmpty()) {
-								kengine.addVariable("portPropertyValue", "" + selectPort(channelName));
-								kengine.append("updateDictionary {channelName} {port='{portPropertyValue}'}@{nodeName}");
-							}
-						}
-					}
 					}
 				}
 			}
@@ -168,7 +173,6 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 		} catch (Exception e) {
 			logger.warn("Unable to apply the HOCL result");
 		}
-		getModelService().registerModelListener(this);
 	}
 
 	private String getOldNodeNameForComponent (String componentName) {
@@ -183,35 +187,61 @@ public class ScubeCase1 extends AbstractHoclComponentType implements ModelListen
 		return "";
 	}
 
-	private int selectPort (String channelName) {
+	private void fixPort (String channelName, String nodeName, KevScriptEngine kengine) {
+		kengine.addVariable("nodeName", nodeName);
+		kengine.addVariable("channelName", channelName);
+		kengine.addVariable("portPropertyValue", "" + selectPort(channelName, nodeName));
+		kengine.append("updateDictionary {channelName} {port='{portPropertyValue}'}@{nodeName}");
+	}
+
+	private int selectPort (String channelName, String nodeName) {
+		Option<Integer> portOption = KevoreePropertyHelper.getIntPropertyForChannel(this.getModelService().getLastModel(), channelName, "port", true, this.getName());
+		int defaultNB = 0;
+		if (portOption.isDefined()) {
+			defaultNB = portOption.get();
+		}
 		List<ContainerNode> nodes = this.getModelService().getLastModel().getNodesForJ();
-		List<Integer> portAlreadyUsed = new ArrayList<Integer>(nodes.size());
+		Map<String, Integer> portAlreadyUsed = new HashMap<String, Integer>(nodes.size());
 		for (ContainerNode node : nodes) {
-			Option<Integer> portOption = KevoreePropertyHelper.getIntPropertyForChannel(this.getModelService().getLastModel(), channelName, "port", true, node.getName());
+			portOption = KevoreePropertyHelper.getIntPropertyForChannel(this.getModelService().getLastModel(), channelName, "port", true, node.getName());
 			if (portOption.isDefined()) {
-				portAlreadyUsed.add(portOption.get());
+				if (portAlreadyUsed.containsValue(portOption.get())) {
+					if (portAlreadyUsed.containsKey(nodeName) && portAlreadyUsed.get(nodeName).equals(portOption.get())) {
+						portAlreadyUsed.remove(nodeName);
+					}
+				}
+				portAlreadyUsed.put(node.getName(), portOption.get());
 			}
 		}
-		int maxPortNumber = 9000;
-		for (int portNumber : portAlreadyUsed) {
-			if (portNumber > maxPortNumber) {
-				maxPortNumber = portNumber;
+		if (portAlreadyUsed.containsKey(nodeName) && !portAlreadyUsed.get(nodeName).equals(defaultNB)) {
+			return portAlreadyUsed.get(nodeName);
+		} else {
+			int maxPortNumber = 9000;
+			for (int portNumber : portAlreadyUsed.values()) {
+				if (portNumber > maxPortNumber) {
+					maxPortNumber = portNumber;
+				}
 			}
+			return maxPortNumber + 1;
 		}
-		return maxPortNumber + 1;
+
 	}
 
 	private void fixPortAndBinding (String nodeName, String componentName, KevScriptEngine kengine) {
+		logger.info("fix port numbers");
 		ContainerRoot model = getModelService().getLastModel();
 		for (MBinding mb : model.getMBindingsForJ()) {
 			if (((ComponentInstance) mb.getPort().eContainer()).getName().equals(componentName)) {
-				Option<Integer> portOption = KevoreePropertyHelper.getIntPropertyForChannel(model, mb.getHub().getName(), "port", true, nodeName);
+				/*Option<Integer> portOption = KevoreePropertyHelper.getIntPropertyForChannel(model, mb.getHub().getName(), "port", true, nodeName);
+				logger.info("found binding to fix {}", portOption);
 				if (portOption.isEmpty()) {
+					logger.info("look for a new port number");
 					kengine.addVariable("nodeName", nodeName);
 					kengine.addVariable("channelName", mb.getHub().getName());
-					kengine.addVariable("portPropertyValue", "" + selectPort(mb.getHub().getName()));
+					kengine.addVariable("portPropertyValue", "" + selectPort(mb.getHub().getName(), nodeName));
 					kengine.append("updateDictionary {channelName} {port='{portPropertyValue}'}@{nodeName}");
-				}
+				}*/
+				fixPort(mb.getHub().getName(), nodeName, kengine);
 				// binding must also be removed and recreate in HOCL
 				//new RemoveBindingMolecule(mb, getSolution()).execute();
 				/*ModelCloner cloner = new ModelCloner();

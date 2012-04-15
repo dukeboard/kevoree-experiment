@@ -18,6 +18,20 @@
     <packaging>pom</packaging>
     <name>Kevoree :: Experiment :: HOCL</name>
 
+<build>
+        <plugins>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+         </plugins>
+ </build>
+
     <properties>
         <slf4j.version>1.6.1</slf4j.version>
         <kevoree.version>1.7.0-SNAPSHOT</kevoree.version>

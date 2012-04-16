@@ -48,4 +48,17 @@
         </repository>
     </repositories>
 
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>kevoree-release</id>
+            <url>http://maven.kevoree.org/release</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>kevoree-snapshots</id>
+            <url>http://maven.kevoree.org/snapshots</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
 </project>

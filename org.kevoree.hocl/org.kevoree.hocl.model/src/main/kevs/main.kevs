@@ -1,14 +1,14 @@
-merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.javaseNode/1.7.0-BETA"
-merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-BETA"
-//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-BETA"
-merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nioChannels/1.7.0-BETA"
-//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nanohttp/1.7.0-BETA"
-merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.gossiperNetty/1.7.0-BETA"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.javaseNode/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-BETA1"
+//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nioChannels/1.7.0-BETA1"
+//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nanohttp/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.gossiperNetty/1.7.0-BETA1"
 merge "mvn:org.kevoree.hocl/org.kevoree.hocl.scubeDemo/1.0.0-SNAPSHOT"
 
 // add MiniCloudNode to start from the editor
 //merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/{kevoree.version}"
-merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/1.7.0-BETA"
+merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/1.7.0-BETA1"
 addNode node0 : MiniCloudNode //{logLevel = "DEBUG"}
 
 // add a sync group to only push on the minicloud node

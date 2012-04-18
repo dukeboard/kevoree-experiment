@@ -9,6 +9,7 @@ package utils.writer;
  *
  * @author obendavi
  */
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -16,14 +17,16 @@ public class FileWriterO {
 
 	private FileWriter fw;
 
-	public void writeStringOnFile(java.lang.String s, java.lang.String path) {
+	public File writeStringOnFile(java.lang.String s, java.lang.String path) {
+		File f =new File(path);
 		try {
-			fw = new FileWriter(path, false);
+			fw= new FileWriter(f,false);
 			fw.write(s, 0, s.length());
 			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return f;
 	}
 
 	public static void main(String[] args) {

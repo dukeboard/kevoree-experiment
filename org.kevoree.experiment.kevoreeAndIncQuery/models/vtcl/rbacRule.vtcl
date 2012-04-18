@@ -9,13 +9,42 @@ machine policyInfo {
 	 	User(U); 
 	 }
 	 
+	 //allows to list all roles
+	 pattern role(R) = {
+	 	Role(R); 
+	 }
+	 
+	 //allows to list all sessions
+	 pattern session(S) = {
+	 	Session(S); 
+	 }
+	 
+	 //allows to list all permission
+	 pattern permission(P) = {
+	 	Permission(P); 
+	 }
+	 
 	  //allows to list all users
 	 pattern object(OB) = {
 	 	Resource(OB); 
 	 }
 	 
 	 
+	 //allows to list user->operation
+	 
+	 pattern userOperation(USER,OPERATIONNAME) = {
+	 	User(USER);
+	 	Role(ROLE);
+	 	Permission(PERMISSION);
+	 	Operation(OPERATION);
+	 	PolicyElement.name(R,OPERATION,OPERATIONNAME);			
+	 	User.assignedRoles(UR,USER,ROLE);
+	 	Role.permissions(RP,ROLE,PERMISSION);
+	 	Permission.operations(PO,PERMISSION,OPERATION);
+	 }
+	 
 	 //allows to list user->operation->resource
+	 
 	 pattern userRule(USER,OPERATION,OBJECT) = {
 	 	User(USER);
 	 	Role(ROLE);
@@ -29,14 +58,13 @@ machine policyInfo {
 	 	Operation.resources(OR,OPERATION,OBJECT);
 	 }
 	 
-	 	 //allows to list user->operation->resource
+	//allows to list user->operation->resource (rule)
 	 pattern userFullRule(USER,ROLE,PERMISSION,OPERATION,OBJECT) = {
 	 	User(USER);
 	 	Role(ROLE);
 	 	Permission(PERMISSION);
 	 	Operation(OPERATION);
-	 	Resource(OBJECT);
-	 	
+	 	Resource(OBJECT);	 	
 	 	User.assignedRoles(UR,USER,ROLE);
 	 	Role.permissions(RP,ROLE,PERMISSION);
 	 	Permission.operations(PO,PERMISSION,OPERATION);

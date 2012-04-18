@@ -38,18 +38,18 @@ public class PatternBuilderForobject implements IStatelessGeneratedRetePatternBu
 		assert("policyInfo.object".equals(gtPattern));
 		buildable = buildable.getNextContainer().putOnTab("policyInfo.object");
 		
-		final Address<? extends Receiver> var_0 = buildable.patternCollector("policyInfo.object");
-		final Stub<Address<? extends Supplier>> var_1 = buildable.buildStartStub(new Object[] {}, new Object[] {});
-		final Object var_2 = EPackage.Registry.INSTANCE.getEPackage("rbac.rbac").getEClassifier("Resource");
-		final Stub<Address<? extends Supplier>> var_3 = buildable.unaryTypeStub(new FlatTuple(new Object[] {"OB"}), var_2);
-		final TupleMask var_4 = new TupleMask(new int[] {}, 0);
-		final TupleMask var_5 = new TupleMask(new int[] {}, 1);
-		final TupleMask var_6 = new TupleMask(new int[] {0}, 1);
-		final Stub<Address<? extends Supplier>> var_7 = buildable.buildBetaNode(var_1, var_3, var_4, var_5, var_6, false);
-		final TupleMask var_8 = new TupleMask(new int[] {0}, 1);
-		final Stub<Address<? extends Supplier>> var_9 = buildable.buildTrimmer(var_7, var_8);
-		buildable.buildConnection(var_9, var_0);
-		return var_0;
+		final Address<? extends Receiver> var_617 = buildable.patternCollector("policyInfo.object");
+		final Stub<Address<? extends Supplier>> var_618 = buildable.buildStartStub(new Object[] {}, new Object[] {});
+		final Object var_619 = EPackage.Registry.INSTANCE.getEPackage("rbac.rbac").getEClassifier("Resource");
+		final Stub<Address<? extends Supplier>> var_620 = buildable.unaryTypeStub(new FlatTuple(new Object[] {"OB"}), var_619);
+		final TupleMask var_621 = new TupleMask(new int[] {}, 0);
+		final TupleMask var_622 = new TupleMask(new int[] {}, 1);
+		final TupleMask var_623 = new TupleMask(new int[] {0}, 1);
+		final Stub<Address<? extends Supplier>> var_624 = buildable.buildBetaNode(var_618, var_620, var_621, var_622, var_623, false);
+		final TupleMask var_625 = new TupleMask(new int[] {0}, 1);
+		final Stub<Address<? extends Supplier>> var_626 = buildable.buildTrimmer(var_624, var_625);
+		buildable.buildConnection(var_626, var_617);
+		return var_617;
 
 	}
 	

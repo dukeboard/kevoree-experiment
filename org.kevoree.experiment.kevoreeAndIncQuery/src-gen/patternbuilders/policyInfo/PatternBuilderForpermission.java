@@ -38,18 +38,18 @@ public class PatternBuilderForpermission implements IStatelessGeneratedRetePatte
 		assert("policyInfo.permission".equals(gtPattern));
 		buildable = buildable.getNextContainer().putOnTab("policyInfo.permission");
 		
-		final Address<? extends Receiver> var_468 = buildable.patternCollector("policyInfo.permission");
-		final Stub<Address<? extends Supplier>> var_469 = buildable.buildStartStub(new Object[] {}, new Object[] {});
-		final Object var_470 = EPackage.Registry.INSTANCE.getEPackage("rbac.rbac").getEClassifier("Permission");
-		final Stub<Address<? extends Supplier>> var_471 = buildable.unaryTypeStub(new FlatTuple(new Object[] {"P"}), var_470);
-		final TupleMask var_472 = new TupleMask(new int[] {}, 0);
-		final TupleMask var_473 = new TupleMask(new int[] {}, 1);
-		final TupleMask var_474 = new TupleMask(new int[] {0}, 1);
-		final Stub<Address<? extends Supplier>> var_475 = buildable.buildBetaNode(var_469, var_471, var_472, var_473, var_474, false);
-		final TupleMask var_476 = new TupleMask(new int[] {0}, 1);
-		final Stub<Address<? extends Supplier>> var_477 = buildable.buildTrimmer(var_475, var_476);
-		buildable.buildConnection(var_477, var_468);
-		return var_468;
+		final Address<? extends Receiver> var_547 = buildable.patternCollector("policyInfo.permission");
+		final Stub<Address<? extends Supplier>> var_548 = buildable.buildStartStub(new Object[] {}, new Object[] {});
+		final Object var_549 = EPackage.Registry.INSTANCE.getEPackage("rbac.rbac").getEClassifier("Permission");
+		final Stub<Address<? extends Supplier>> var_550 = buildable.unaryTypeStub(new FlatTuple(new Object[] {"P"}), var_549);
+		final TupleMask var_551 = new TupleMask(new int[] {}, 0);
+		final TupleMask var_552 = new TupleMask(new int[] {}, 1);
+		final TupleMask var_553 = new TupleMask(new int[] {0}, 1);
+		final Stub<Address<? extends Supplier>> var_554 = buildable.buildBetaNode(var_548, var_550, var_551, var_552, var_553, false);
+		final TupleMask var_555 = new TupleMask(new int[] {0}, 1);
+		final Stub<Address<? extends Supplier>> var_556 = buildable.buildTrimmer(var_554, var_555);
+		buildable.buildConnection(var_556, var_547);
+		return var_547;
 
 	}
 	

@@ -15,6 +15,7 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 
 
+import rbacTextualEditor.editor.commands.commandsEditor.CommandColoration;
 import rbacTextualEditor.editor.commands.commandsPolicy.CommandInterpret;
 import rbacTextualEditor.editor.graphicComponents.PopupCompletion;
 import rbacTextualEditor.editor.graphicComponents.TextPaneEditor;
@@ -35,8 +36,7 @@ public class KeyListenerRbacEditor implements KeyListener {
 		int code = e.getKeyCode();
 		if (e.isControlDown()) {
 			textPaneEditor.setBackground(Color.lightGray);
-			if (code == KeyEvent.VK_SPACE) {
-				completion();
+			if (code == KeyEvent.VK_SPACE) {				
 				popupCompletion = new PopupCompletion(textPaneEditor);
 				if (!(textPaneEditor.getCaret().getMagicCaretPosition() == null)) {
 					popupCompletion
@@ -54,7 +54,8 @@ public class KeyListenerRbacEditor implements KeyListener {
 			if (code == KeyEvent.VK_K) {
 				popupCompletion = new PopupCompletion(textPaneEditor);
 				if (!(textPaneEditor.getCaret().getMagicCaretPosition() == null)) {
-					coloration();
+					CommandColoration coloration = new CommandColoration(textPaneEditor, "coloration");
+					coloration.execute();
 				}
 			}
 		}
@@ -62,6 +63,7 @@ public class KeyListenerRbacEditor implements KeyListener {
 			if (code == KeyEvent.VK_SHIFT) {
 				CommandInterpret ci = new CommandInterpret(textPaneEditor, "interpret");
 				ci.execute();
+				textPaneEditor.setBackground(Color.white);
 			}
 		}
 	}
@@ -76,73 +78,6 @@ public class KeyListenerRbacEditor implements KeyListener {
 		textPaneEditor.setBackground(Color.white);
 	}
 
-	public void completion() {
-		textPaneEditor.propositions.clear();
-		int pos = textPaneEditor.getCaretPosition() - 1;
-		String content = null;
-		try {
-			content = textPaneEditor.getText(0, pos + 1);
-		} catch (BadLocationException e) {
-			e.printStackTrace();
-		}
-		int w;
-		for (w = pos; w >= 0; w--) {
-			if (!Character.isLetter(content.charAt(w))) {
-				break;
-			}
-		}
-		if (pos - w < 1) {
-			return;
-		}
-		String prefix = content.substring(w + 1).toLowerCase();
-		int n = Collections.binarySearch(textPaneEditor.primitives, prefix);
-		if (n < 0 && -n <= textPaneEditor.primitives.size()) {
-			textPaneEditor.propositions.clear();
-			for (String val : textPaneEditor.primitives) {
-				if (val.startsWith(prefix)) {
-					textPaneEditor.propositions.add(val);
-				}
-			}
-		}
-	}
-
-	public void coloration() {
-		popupCompletion.setVisible(false);
-		String text = textPaneEditor.getText().replaceAll("\n", " ");
-		System.out.println(text);
-		final StyledDocument doc = textPaneEditor.getStyledDocument();
-		final MutableAttributeSet normal = new SimpleAttributeSet();
-		StyleConstants.setForeground(normal, Color.black);
-		StyleConstants.setBold(normal, false);
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				doc.setCharacterAttributes(0, doc.getLength(), normal, true);
-			}
-		});
-
-		for (String strToHL : textPaneEditor.primitives) {
-			System.out.println(strToHL);
-			Pattern p = Pattern.compile("(" + strToHL + ")");
-			Matcher m = p.matcher(text);
-			while (m.find() == true) {
-				System.out.println("Found    '" + m.group(0)
-						+ "'  at position  " + m.start(0) + "-" + m.end(0)
-						+ "   +++\n");
-				MutableAttributeSet attri = new SimpleAttributeSet();
-				StyleConstants.setForeground(attri, Color.blue);
-				StyleConstants.setBold(attri, true);
-				final int start = m.start(0);
-				final int end = m.end(0);
-				final int length = end - start;
-				final MutableAttributeSet style = attri;
-
-				SwingUtilities.invokeLater(new Runnable() {
-					public void run() {
-						doc.setCharacterAttributes(start, length, style, true);
-					}
-				});
-			}
-		}
-	}
+	
 
 }

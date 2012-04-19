@@ -16,6 +16,7 @@ public class MenuItemRbacEditor extends JMenuItem{
 		setText(c.getName());
 		setVisible(true);
 		addActionListener(c);
+		
 	}
 		
 }

@@ -2,7 +2,7 @@
 <plugin>
 
    <extension
-         id="org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.aa.generatedContribution"
+         id="org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.analyzeKevoreeWithIncQuery.aa.generatedContribution"
          name=""
          point="org.eclipse.viatra2.emf.incquery.patternmatcher.builder">
       <pattern-builder
@@ -11,7 +11,7 @@
       </pattern-builder>
    </extension>
    <extension
-         id="org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.analyzeKevoreeWithIncQuery.generatedContribution"
+         id="org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.org.kevoree.experiment.KevoreeAndIncQuery.analyzeKevoreeWithIncQuery.generatedContribution"
          name=""
          point="org.eclipse.viatra2.emf.incquery.patternmatcher.builder">
       <pattern-builder
@@ -59,88 +59,104 @@
          id="org.kevoree.experiment.KevoreeAndIncQuery.generatedContribution"
          point="org.eclipse.viatra2.emf.incquery.patternmatcher.builder">
       <pattern-builder
-            build-class="patternbuilders.enforcementInfo.PatternBuilderForauthorization"
-            pattern-fqn="enforcementInfo.authorization">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.policyInfo.PatternBuilderForuserOperation"
-            pattern-fqn="policyInfo.userOperation">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.enforcementInfo.PatternBuilderForbinding"
-            pattern-fqn="enforcementInfo.binding">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.policyInfo.PatternBuilderForsession"
-            pattern-fqn="policyInfo.session">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.enforcementInfo.PatternBuilderFornodeSubject"
-            pattern-fqn="enforcementInfo.nodeSubject">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.enforcementInfo.PatternBuilderForportSubjectsBinded"
-            pattern-fqn="enforcementInfo.portSubjectsBinded">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.enforcementInfo.PatternBuilderForsubjectComponent"
-            pattern-fqn="enforcementInfo.subjectComponent">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.nodeInfo.PatternBuilderFornodeObject"
-            pattern-fqn="nodeInfo.nodeObject">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.nodeInfo.PatternBuilderFornodeSubject"
-            pattern-fqn="nodeInfo.nodeSubject">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.enforcementInfo.PatternBuilderForchannel"
-            pattern-fqn="enforcementInfo.channel">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.enforcementInfo.PatternBuilderForchannelPortObjectBinded"
-            pattern-fqn="enforcementInfo.channelPortObjectBinded">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.nodeInfo.PatternBuilderFornode"
-            pattern-fqn="nodeInfo.node">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.policyInfo.PatternBuilderForuserFullRule"
-            pattern-fqn="policyInfo.userFullRule">
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForsubjectsBinded"
+            pattern-fqn="enforcementInfo.subjectsBinded">
       </pattern-builder>
       <pattern-builder
             build-class="patternbuilders.enforcementInfo.PatternBuilderFornode"
             pattern-fqn="enforcementInfo.node">
       </pattern-builder>
       <pattern-builder
-            build-class="patternbuilders.policyInfo.PatternBuilderForpermission"
-            pattern-fqn="policyInfo.permission">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.policyInfo.PatternBuilderForuser"
-            pattern-fqn="policyInfo.user">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.enforcementInfo.PatternBuilderForsubjectsBinded"
-            pattern-fqn="enforcementInfo.subjectsBinded">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.policyInfo.PatternBuilderForrole"
-            pattern-fqn="policyInfo.role">
-      </pattern-builder>
-      <pattern-builder
-            build-class="patternbuilders.policyInfo.PatternBuilderForuserRule"
-            pattern-fqn="policyInfo.userRule">
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForchannelPortObjectBinded"
+            pattern-fqn="enforcementInfo.channelPortObjectBinded">
       </pattern-builder>
       <pattern-builder
             build-class="patternbuilders.policyInfo.PatternBuilderForobject"
             pattern-fqn="policyInfo.object">
       </pattern-builder>
       <pattern-builder
+            build-class="patternbuilders.nodeInfo.PatternBuilderFornodeObject"
+            pattern-fqn="nodeInfo.nodeObject">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForOperationObjectAssignment"
+            pattern-fqn="policyInfo.OperationObjectAssignment">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.nodeInfo.PatternBuilderFornode"
+            pattern-fqn="nodeInfo.node">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForuserRoleAssignment"
+            pattern-fqn="policyInfo.userRoleAssignment">
+      </pattern-builder>
+      <pattern-builder
             build-class="patternbuilders.enforcementInfo.PatternBuilderFornodeObject"
             pattern-fqn="enforcementInfo.nodeObject">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForsession"
+            pattern-fqn="policyInfo.session">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForuserRule"
+            pattern-fqn="policyInfo.userRule">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForuserOperation"
+            pattern-fqn="policyInfo.userOperation">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForuserFullRule"
+            pattern-fqn="policyInfo.userFullRule">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderFornodeSubject"
+            pattern-fqn="enforcementInfo.nodeSubject">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForRolePermissionAssignment"
+            pattern-fqn="policyInfo.RolePermissionAssignment">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForauthorization"
+            pattern-fqn="enforcementInfo.authorization">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForuser"
+            pattern-fqn="policyInfo.user">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForsubjectComponent"
+            pattern-fqn="enforcementInfo.subjectComponent">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForpermission"
+            pattern-fqn="policyInfo.permission">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForportSubjectsBinded"
+            pattern-fqn="enforcementInfo.portSubjectsBinded">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForchannel"
+            pattern-fqn="enforcementInfo.channel">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForPermissionOperationAssignment"
+            pattern-fqn="policyInfo.PermissionOperationAssignment">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.nodeInfo.PatternBuilderFornodeSubject"
+            pattern-fqn="nodeInfo.nodeSubject">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.policyInfo.PatternBuilderForrole"
+            pattern-fqn="policyInfo.role">
+      </pattern-builder>
+      <pattern-builder
+            build-class="patternbuilders.enforcementInfo.PatternBuilderForbinding"
+            pattern-fqn="enforcementInfo.binding">
       </pattern-builder>
    </extension>
 

@@ -29,6 +29,56 @@ public class CommandColoration extends CommandRbac{
 	
 	
 	public void execute(){
+//		String text = textPaneEditor.getText().replaceAll("\n", " ");
+//		final StyledDocument doc = textPaneEditor.getStyledDocument();
+//		final MutableAttributeSet normal = new SimpleAttributeSet();
+//		StyleConstants.setForeground(normal, Color.black);
+//		StyleConstants.setBold(normal, false);
+//		SwingUtilities.invokeLater(new Runnable() {
+//			public void run() {
+//				doc.setCharacterAttributes(0, doc.getLength(), normal, true);
+//			}
+//		});
+//
+//		for (String statements : textPaneEditor.primitives) {
+//			Pattern p = Pattern.compile("(" + statements + ")");
+//			Matcher m = p.matcher(text);
+//			while (m.find() == true) {
+//				MutableAttributeSet attri = new SimpleAttributeSet();
+//				StyleConstants.setForeground(attri, Color.blue);
+//				StyleConstants.setBold(attri, true);
+//				final int start = m.start(0);
+//				final int end = m.end(0);
+//				final int length = end - start;
+//				final MutableAttributeSet style = attri;
+//				SwingUtilities.invokeLater(new Runnable() {
+//					public void run() {
+//						doc.setCharacterAttributes(start, length, style, true);
+//					}
+//				});
+//			}
+//		}
+//		
+//		Pattern p = Pattern.compile("(PolicyScript)");
+//		Matcher m = p.matcher(text);
+//		while (m.find() == true) {
+//			MutableAttributeSet attri = new SimpleAttributeSet();
+//			StyleConstants.setForeground(attri, Color.orange);
+//			StyleConstants.setBold(attri, true);
+//			final int start = m.start(0);
+//			final int end = m.end(0);
+//			final int length = end - start;
+//			final MutableAttributeSet style = attri;
+//			SwingUtilities.invokeLater(new Runnable() {
+//				public void run() {
+//					doc.setCharacterAttributes(start, length, style, true);
+//				}
+//			});
+//		}
+		coloration();
+	}
+	
+	public void coloration() {
 		String text = textPaneEditor.getText().replaceAll("\n", " ");
 		final StyledDocument doc = textPaneEditor.getStyledDocument();
 		final MutableAttributeSet normal = new SimpleAttributeSet();
@@ -39,7 +89,14 @@ public class CommandColoration extends CommandRbac{
 				doc.setCharacterAttributes(0, doc.getLength(), normal, true);
 			}
 		});
+		
+		colorationPrimitives(text, doc);
+		colorationPolicyScript(text, doc);
 
+	}
+	
+	
+	public void colorationPrimitives(String text, final StyledDocument doc){
 		for (String statements : textPaneEditor.primitives) {
 			Pattern p = Pattern.compile("(" + statements + ")");
 			Matcher m = p.matcher(text);
@@ -58,7 +115,9 @@ public class CommandColoration extends CommandRbac{
 				});
 			}
 		}
-		
+	}
+	
+	public void colorationPolicyScript(String text, final StyledDocument doc){
 		Pattern p = Pattern.compile("(PolicyScript)");
 		Matcher m = p.matcher(text);
 		while (m.find() == true) {
@@ -77,5 +136,4 @@ public class CommandColoration extends CommandRbac{
 		}
 	}
 	
-
 }

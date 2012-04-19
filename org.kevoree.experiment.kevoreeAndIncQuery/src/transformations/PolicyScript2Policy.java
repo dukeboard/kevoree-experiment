@@ -13,6 +13,7 @@ public class PolicyScript2Policy {
 	private String script;
 	private ArrayList<String> primitives;
 	
+	
 	public PolicyScript2Policy(String txt) {
 		script = txt.replaceAll("\n", " ");
 		script = script.substring(script.indexOf("PolicyScript{") + 13,
@@ -24,7 +25,6 @@ public class PolicyScript2Policy {
 
 	public void initPrimitives() {
 		for (Method m : PolicyEditor.class.getMethods()){
-			System.out.println(m.getName());
 			primitives.add(m.getName());
 		}
 	}
@@ -33,20 +33,19 @@ public class PolicyScript2Policy {
 		Policy policy = RbacFactory.eINSTANCE.createPolicy();
 		PolicyEditor policyEditor = new PolicyEditor(policy);
 		parseExpressions(policyEditor);
-		System.out.println(policy.getElements().size());
 		return policy;
 	}
 	
 	public void transformation(Policy policy) {
 		PolicyEditor policyEditor = new PolicyEditor(policy);
 		parseExpressions(policyEditor);
-		System.out.println(policy.getElements().size());
 	}
 
 	public void parseExpressions(PolicyEditor policyEditor) {
 		for (String expr : script.split(";")) {
+			String exprPrim = expr.substring(0,expr.indexOf("("));
 			for (String prim : primitives) {
-				if (expr.contains(prim)) {
+				if (exprPrim.equals(prim)) {
 					triggerMethod(policyEditor, parseExpressionArguments(expr),
 							prim);
 				}
@@ -60,6 +59,7 @@ public class PolicyScript2Policy {
 		int cpt = 0;
 		for (String arg : txt.split(",")) {
 			args[cpt] = arg;
+			cpt=cpt+1;
 		}
 		return args;
 	}
@@ -68,7 +68,7 @@ public class PolicyScript2Policy {
 		Class[] paramTypes = null;
 		if (args != null) {
 			paramTypes = new Class[args.length];
-			for (int i = 0; i < args.length; ++i) {
+			for (int i = 0; i < args.length; i++) {
 				paramTypes[i] = args[i].getClass();
 			}
 		}

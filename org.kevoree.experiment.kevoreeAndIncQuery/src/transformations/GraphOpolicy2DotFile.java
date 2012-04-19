@@ -3,7 +3,6 @@ package transformations;
 import grapho.Edge;
 import grapho.GraphElement;
 import grapho.GraphO;
-import grapho.GraphoFactory;
 import grapho.GraphoPackage;
 import grapho.Node;
 import grapho.impl.EdgeImpl;
@@ -18,9 +17,14 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import utils.graphStructure.dotThings.DotDisplayer;
 import utils.writer.FileWriterO;
 
+
+/**
+ * This class allows to transform a Graph0 representing a policy into a dot File
+ * @author obendavi
+ *
+ */
 
 public class GraphOpolicy2DotFile {
 	
@@ -76,7 +80,4 @@ public class GraphOpolicy2DotFile {
 		File f = fw.writeStringOnFile(output, path);
 		return f;
 	}
-	
-	
-	
 }

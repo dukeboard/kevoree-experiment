@@ -38,18 +38,18 @@ public class PatternBuilderForuser implements IStatelessGeneratedRetePatternBuil
 		assert("policyInfo.user".equals(gtPattern));
 		buildable = buildable.getNextContainer().putOnTab("policyInfo.user");
 		
-		final Address<? extends Receiver> var_478 = buildable.patternCollector("policyInfo.user");
-		final Stub<Address<? extends Supplier>> var_479 = buildable.buildStartStub(new Object[] {}, new Object[] {});
-		final Object var_480 = EPackage.Registry.INSTANCE.getEPackage("rbac.rbac").getEClassifier("User");
-		final Stub<Address<? extends Supplier>> var_481 = buildable.unaryTypeStub(new FlatTuple(new Object[] {"U"}), var_480);
-		final TupleMask var_482 = new TupleMask(new int[] {}, 0);
-		final TupleMask var_483 = new TupleMask(new int[] {}, 1);
-		final TupleMask var_484 = new TupleMask(new int[] {0}, 1);
-		final Stub<Address<? extends Supplier>> var_485 = buildable.buildBetaNode(var_479, var_481, var_482, var_483, var_484, false);
-		final TupleMask var_486 = new TupleMask(new int[] {0}, 1);
-		final Stub<Address<? extends Supplier>> var_487 = buildable.buildTrimmer(var_485, var_486);
-		buildable.buildConnection(var_487, var_478);
-		return var_478;
+		final Address<? extends Receiver> var_510 = buildable.patternCollector("policyInfo.user");
+		final Stub<Address<? extends Supplier>> var_511 = buildable.buildStartStub(new Object[] {}, new Object[] {});
+		final Object var_512 = EPackage.Registry.INSTANCE.getEPackage("rbac.rbac").getEClassifier("User");
+		final Stub<Address<? extends Supplier>> var_513 = buildable.unaryTypeStub(new FlatTuple(new Object[] {"U"}), var_512);
+		final TupleMask var_514 = new TupleMask(new int[] {}, 0);
+		final TupleMask var_515 = new TupleMask(new int[] {}, 1);
+		final TupleMask var_516 = new TupleMask(new int[] {0}, 1);
+		final Stub<Address<? extends Supplier>> var_517 = buildable.buildBetaNode(var_511, var_513, var_514, var_515, var_516, false);
+		final TupleMask var_518 = new TupleMask(new int[] {0}, 1);
+		final Stub<Address<? extends Supplier>> var_519 = buildable.buildTrimmer(var_517, var_518);
+		buildable.buildConnection(var_519, var_510);
+		return var_510;
 
 	}
 	

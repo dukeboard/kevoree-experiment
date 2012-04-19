@@ -9,14 +9,13 @@ package utils.writer;
  *
  * @author obendavi
  */
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileWriterO {
-
 	private FileWriter fw;
-
 	public File writeStringOnFile(java.lang.String s, java.lang.String path) {
 		File f =new File(path);
 		try {

@@ -29,9 +29,37 @@ machine policyInfo {
 	 	Resource(OB); 
 	 }
 	 
+	 //list user-role assignment
+	 pattern userRoleAssignment(USER,ROLE) ={
+	 	User(USER);
+	 	Role(ROLE);
+	 	User.assignedRoles(REL,USER,ROLE);	
+	 }
+	 
+	 //list role-permission assignment
+	 pattern RolePermissionAssignment(ROLE,PERM) ={
+	 	Role(ROLE);
+	 	Permission(PERM);
+	 	Role.permissions(REL,ROLE,PERM);	
+	 }
+	 
+	 //list permission-operation assignment
+	 pattern PermissionOperationAssignment(PERM,OPE) ={
+	 	Permission(PERM);
+	 	Operation(OPE);
+	 	Permission.operations(REL,PERM,OPE);	
+	 }
+	 
+	 //list permission-operation assignment
+	 pattern OperationObjectAssignment(PERM,OPE,OBJ) ={
+	 	Permission(PERM);
+	 	Operation(OPE);
+	 	Resource(OBJ);
+	 	Permission.operations(REL,PERM,OPE);
+	 	Operation.resources(REL2,OPE,OBJ);	
+	 }
 	 
 	 //allows to list user->operation
-	 
 	 pattern userOperation(USER,OPERATIONNAME) = {
 	 	User(USER);
 	 	Role(ROLE);
@@ -43,8 +71,7 @@ machine policyInfo {
 	 	Permission.operations(PO,PERMISSION,OPERATION);
 	 }
 	 
-	 //allows to list user->operation->resource
-	 
+	 //allows to list reules under the form of user->operation->resource
 	 pattern userRule(USER,OPERATION,OBJECT) = {
 	 	User(USER);
 	 	Role(ROLE);
@@ -58,7 +85,8 @@ machine policyInfo {
 	 	Operation.resources(OR,OPERATION,OBJECT);
 	 }
 	 
-	//allows to list user->operation->resource (rule)
+	//allows to list rule under the form of  user->role->permission->operation->resource (rule)
+	//here it may be interesting to detect  what are the redundant user rule(user->operation->object)
 	 pattern userFullRule(USER,ROLE,PERMISSION,OPERATION,OBJECT) = {
 	 	User(USER);
 	 	Role(ROLE);

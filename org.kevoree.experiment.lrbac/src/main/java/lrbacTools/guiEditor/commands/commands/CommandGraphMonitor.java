@@ -1,22 +1,19 @@
-package lrbacTools.guiEditor.commands.commandsPolicy;
+package lrbacTools.guiEditor.commands.commands;
 
-
-
-import lrbacTools.guiEditor.commands.CommandRbac;
-import lrbacTools.guiEditor.commands.ICommandRbac;
+import lrbacTools.guiEditor.commands.Command;
+import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
 import lrbacTools.guiEditor.graphicComponents.TextPaneEditor;
 
 
-public class CommandGraphMonitor  extends CommandRbac implements ICommandRbac{
-	private TextPaneEditor textPaneEditor;
-	public CommandGraphMonitor(TextPaneEditor editor,String id){
-		textPaneEditor = editor;
-		setName(id);
-		setDescription(id);
+public class CommandGraphMonitor  extends Command{
+
+	public CommandGraphMonitor(RbacTextualEditor editor, String id){
+		super(editor, id);
 	}
 	
 	@Override
 	public void execute() {
-		textPaneEditor.getGraphMonitor().setVisible(true);
+		getEditor().graphMonitor.update();
+		getEditor().graphMonitor.setVisible(true);
 	}
 }

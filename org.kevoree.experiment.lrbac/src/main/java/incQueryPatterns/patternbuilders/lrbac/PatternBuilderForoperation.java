@@ -5,7 +5,7 @@
  * org.eclipse.viatra2.emf.incquery.codegen.patternmatcher.builder 
  *******************************************************************************/
 
-package patternbuilders.lrbac;
+package incQueryPatterns.patternbuilders.lrbac;
 
 import java.util.HashMap;
 

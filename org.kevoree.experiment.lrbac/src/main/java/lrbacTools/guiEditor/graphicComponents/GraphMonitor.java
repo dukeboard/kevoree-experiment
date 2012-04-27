@@ -1,26 +1,27 @@
 package lrbacTools.guiEditor.graphicComponents;
 
 import grapho.GraphO;
-import graphoTools.transformations.GraphOpolicy2DotFile;
 import java.io.File;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
 import lrbac.Policy;
+import lrbacTools.transformations.GraphOpolicy2DotFile;
 import lrbacTools.transformations.Policy2Graph;
 import utils.graphStructure.dotThings.DotDisplayer;
 
 public class GraphMonitor extends JFrame{
 	
 	private JScrollPane scroll;
-	private Policy policy;
+	private RbacTextualEditor editor;
 	
-	public GraphMonitor(Policy p){
-		policy = p;
-		Policy2Graph transfo2Graph = new Policy2Graph(policy);
+	public GraphMonitor(RbacTextualEditor e){
+		editor = e;
+		Policy2Graph transfo2Graph = new Policy2Graph(editor.getPolicy());
 		GraphO g = transfo2Graph.transformation();
 		GraphOpolicy2DotFile transfo2Dot = new GraphOpolicy2DotFile(g);
-		File f = transfo2Dot.transformation("graphs/ola.dot");
+		File f = transfo2Dot.transformation("policyGraph.dot");
 		DotDisplayer.createPngFile(f);
 		        
         String pngPath = f.getAbsolutePath();
@@ -38,10 +39,10 @@ public class GraphMonitor extends JFrame{
 	
 	public void update()
 	{
-		Policy2Graph transfo2Graph = new Policy2Graph(policy);
+		Policy2Graph transfo2Graph = new Policy2Graph(editor.getPolicy());
 		GraphO g = transfo2Graph.transformation();
 		GraphOpolicy2DotFile transfo2Dot = new GraphOpolicy2DotFile(g);
-		File f = transfo2Dot.transformation("graphs/ola.dot");
+		File f = transfo2Dot.transformation("policyGraph.dot");
 		DotDisplayer.createPngFile(f);
 		        
         String pngPath = f.getAbsolutePath();
@@ -49,6 +50,9 @@ public class GraphMonitor extends JFrame{
         pngPath = pngPath+"png";
         File pngFile = new File(pngPath); 
         setContentPane(new JScrollPane(new ImageComponent(pngFile)));
-        
+        if(isVisible()){
+        	setVisible(true);
+        }
 	}
+	
 }

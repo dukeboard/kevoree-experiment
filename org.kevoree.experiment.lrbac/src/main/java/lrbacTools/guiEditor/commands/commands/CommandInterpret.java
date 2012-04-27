@@ -1,29 +1,20 @@
-package lrbacTools.guiEditor.commands.commandsPolicy;
+package lrbacTools.guiEditor.commands.commands;
 
-import javax.swing.Action;
-
-
-import lrbacTools.guiEditor.commands.CommandRbac;
-import lrbacTools.guiEditor.commands.ICommandRbac;
-import lrbacTools.guiEditor.graphicComponents.TextPaneEditor;
+import lrbacTools.guiEditor.commands.Command;
+import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
 import lrbacTools.transformations.PolicyScript2Policy;
 
-public class CommandInterpret extends CommandRbac implements ICommandRbac{
+public class CommandInterpret extends Command{
 	
-	private TextPaneEditor textPaneEditor;
 	
-	public CommandInterpret(TextPaneEditor editor, String id){
-		textPaneEditor = editor;		
-		setName(id);
-		setDescription(id);
-		putValue(Action.NAME, getName());
+	public CommandInterpret(RbacTextualEditor editor, String id){
+		super(editor, id);
 	}
 	
 	public void execute(){
-		PolicyScript2Policy transfo = new PolicyScript2Policy(textPaneEditor.getText());
-		transfo.transformation(textPaneEditor.getPolicy());
-		textPaneEditor.setText("PolicyScript{\n\n}");
-		textPaneEditor.getGraphMonitor().update();
-		textPaneEditor.getGraphMonitor().setVisible(true);
+		PolicyScript2Policy transfo = new PolicyScript2Policy(getEditor().textPaneEditor.getText());
+		transfo.transformation(getEditor().getPolicy());
+		getEditor().textPaneEditor.setText("PolicyScript{\n\n}");
+		getEditor().graphMonitor.update();
 	}
 }

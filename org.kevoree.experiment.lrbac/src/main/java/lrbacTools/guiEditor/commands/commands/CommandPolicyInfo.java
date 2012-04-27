@@ -1,31 +1,23 @@
-package lrbacTools.guiEditor.commands.commandsPolicy;
+package lrbacTools.guiEditor.commands.commands;
 
-import javax.swing.Action;
 import javax.swing.JOptionPane;
 
-
-import lrbacTools.guiEditor.commands.CommandRbac;
-import lrbacTools.guiEditor.commands.ICommandRbac;
+import lrbacTools.guiEditor.commands.Command;
+import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
 import lrbacTools.guiEditor.graphicComponents.TextPaneEditor;
 import lrbacTools.transformations.Policy2Stats;
 
-public class CommandPolicyInfo extends CommandRbac implements ICommandRbac{
+public class CommandPolicyInfo extends Command{
 	
-	private TextPaneEditor textPaneEditor;
-	
-	
-	public CommandPolicyInfo(TextPaneEditor editor, String id){
-		textPaneEditor = editor;		
-		setName(id);
-		setDescription(id);
-		putValue(Action.NAME, getName());
+	public CommandPolicyInfo(RbacTextualEditor editor, String id){
+		super(editor, id);
 	}
 	
 	
 	public void execute(){
-		Policy2Stats transfo = new Policy2Stats(textPaneEditor.getPolicy());
+		Policy2Stats transfo = new Policy2Stats(getEditor().getPolicy());
 		String res = transfo.transformation();
-		JOptionPane.showMessageDialog(textPaneEditor, res, "PolicyInfo", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(getEditor().textPaneEditor, res, "PolicyInfo", JOptionPane.INFORMATION_MESSAGE);
 	}
 		
 	}

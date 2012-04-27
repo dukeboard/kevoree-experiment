@@ -1,29 +1,20 @@
 package lrbacTools.guiEditor.controllers;
 
-import java.awt.Color;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.text.MutableAttributeSet;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
 
-import lrbacTools.guiEditor.commands.commandsEditor.CommandColoration;
-import lrbacTools.guiEditor.graphicComponents.PopupCompletion;
-import lrbacTools.guiEditor.graphicComponents.TextPaneEditor;
+import lrbacTools.guiEditor.commands.commands.CommandColoration;
+import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
+
 
 
 public class DocumentListenerLrbac implements DocumentListener {
 
-	private TextPaneEditor textPaneEditor;
+	private RbacTextualEditor editor;
 
-	public DocumentListenerLrbac(TextPaneEditor editor,
-			PopupCompletion popup) {
-		textPaneEditor = editor;
+	public DocumentListenerLrbac(RbacTextualEditor e) {
+		editor = e;
 	}
 	
 	@Override
@@ -37,7 +28,7 @@ public class DocumentListenerLrbac implements DocumentListener {
 		Runnable r = new Runnable() {
 			@Override
 			public void run() {
-				CommandColoration c =new CommandColoration(textPaneEditor, "command");
+				CommandColoration c =new CommandColoration(editor, "command");
 				c.execute();
 				
 			}

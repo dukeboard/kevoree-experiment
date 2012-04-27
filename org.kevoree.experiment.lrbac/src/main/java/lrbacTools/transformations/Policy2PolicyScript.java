@@ -3,9 +3,9 @@ package lrbacTools.transformations;
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
 import org.eclipse.viatra2.emf.incquery.runtime.extensibility.BuilderRegistry;
 
-import patternbuilders.lrbac.*;
-import patternmatchers.lrbac.*;
-import signatures.lrbac.*;
+import incQueryPatterns.patternbuilders.lrbac.*;
+import incQueryPatterns.patternmatchers.lrbac.*;
+import incQueryPatterns.signatures.lrbac.*;
 import lrbac.*;
 import lrbac.Object;
 

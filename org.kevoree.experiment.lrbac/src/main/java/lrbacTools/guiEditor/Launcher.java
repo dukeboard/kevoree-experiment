@@ -3,30 +3,25 @@ package lrbacTools.guiEditor;
 import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
 import org.kevoree.annotation.ComponentType;
 import org.kevoree.annotation.Library;
-import org.kevoree.annotation.Port;
-import org.kevoree.annotation.PortType;
-import org.kevoree.annotation.ProvidedPort;
-import org.kevoree.annotation.Provides;
 import org.kevoree.annotation.Start;
 import org.kevoree.annotation.Stop;
 import org.kevoree.annotation.Update;
 import org.kevoree.framework.AbstractComponentType;
 import javax.swing.JFrame;
-import org.kevoree.api.service.core.script.KevScriptEngine;
 
 @Library(name = "RBAC")
 @ComponentType()
 
 public class Launcher extends AbstractComponentType {
-	
 	private RbacTextualEditor editor;
-	private KevScriptEngine kse;
 	
 	@Start
 	public void start() {
-		kse = getKevScriptEngineFactory().createKevScriptEngine();
-	    editor = new RbacTextualEditor(kse);
-		editor.setVisible(true);
+		System.out.println("hello editor");
+	    editor = new RbacTextualEditor(this);
+	    System.out.println("editor instantiated");
+	    editor.setVisible(true);
+		System.out.println("you should be visible :)");
 	}
 
 	@Stop
@@ -38,11 +33,11 @@ public class Launcher extends AbstractComponentType {
 
 	@Update
 	public void update() {
-
+		editor.setVisible(true);
+		System.out.println("you should be visible :)");
 	}
+		
 	
-
-
 	
 	
 	

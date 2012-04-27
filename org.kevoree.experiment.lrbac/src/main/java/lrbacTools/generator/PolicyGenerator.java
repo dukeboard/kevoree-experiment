@@ -51,9 +51,18 @@ public class PolicyGenerator {
 			p.setName("perm" + cptElt);
 			policy.getElements().add(p);
 			
-			Operation op = factory.createOperation();
-			op.setName("op"+i);
-			policy.getElements().add(op);
+			if(addressBookOperation){
+				for(String s : addressBookOperations){
+					Operation op = factory.createOperation();
+					op.setName(s);
+					policy.getElements().add(op);
+				}
+			}
+			else {
+				Operation op = factory.createOperation();
+				op.setName("op"+i);
+				policy.getElements().add(op);
+			}
 			
 			Object re = factory.createObject();
 			re.setName("obj" + cptElt);

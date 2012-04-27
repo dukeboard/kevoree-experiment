@@ -3,37 +3,30 @@ package lrbacTools.guiEditor.controllers;
 import java.awt.*;
 import java.awt.event.*;
 
-import lrbacTools.guiEditor.commands.commandsEditor.CommandColoration;
-import lrbacTools.guiEditor.commands.commandsPolicy.CommandInterpret;
+import lrbacTools.guiEditor.commands.commands.CommandColoration;
+import lrbacTools.guiEditor.commands.commands.CommandInterpret;
 import lrbacTools.guiEditor.graphicComponents.PopupCompletion;
+import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
 import lrbacTools.guiEditor.graphicComponents.TextPaneEditor;
 
 
 public class KeyListenerLrbac implements KeyListener {
 
-	private TextPaneEditor textPaneEditor;
+	private RbacTextualEditor editor;
 	private PopupCompletion popupCompletion;
 
-	public KeyListenerLrbac(TextPaneEditor editor,
-			PopupCompletion popup) {
-		textPaneEditor = editor;
-		popupCompletion = popup;
+	public KeyListenerLrbac(RbacTextualEditor e) {
+		editor = e;
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		if (e.isControlDown()) {
-			textPaneEditor.setBackground(Color.lightGray);
+			editor.setBackground(Color.lightGray);
 			if (code == KeyEvent.VK_SPACE) {				
-				popupCompletion = new PopupCompletion(textPaneEditor);
-				if (!(textPaneEditor.getCaret().getMagicCaretPosition() == null)) {
-					popupCompletion
-							.show(textPaneEditor, textPaneEditor.getCaret()
-									.getMagicCaretPosition().x + 5,
-									textPaneEditor.getCaret()
-											.getMagicCaretPosition().y + 10);
-				}
+				editor.popupCompletion.completion();
+				editor.popupCompletion.show(editor.textPaneEditor,editor.textPaneEditor.getCaret().getMagicCaretPosition().x+5,editor.textPaneEditor.getCaret().getMagicCaretPosition().y+13);
 			}
 		}
 		if (code == KeyEvent.VK_ESCAPE) {
@@ -41,30 +34,30 @@ public class KeyListenerLrbac implements KeyListener {
 		}
 		if (e.isControlDown()) {
 			if (code == KeyEvent.VK_K) {
-				popupCompletion = new PopupCompletion(textPaneEditor);
-				if (!(textPaneEditor.getCaret().getMagicCaretPosition() == null)) {
-					CommandColoration coloration = new CommandColoration(textPaneEditor, "coloration");
+				popupCompletion = new PopupCompletion(editor);
+				if (!(editor.textPaneEditor.getCaret().getMagicCaretPosition() == null)) {
+					CommandColoration coloration = new CommandColoration(editor, "coloration");
 					coloration.execute();
 				}
 			}
 		}
 		if (e.isControlDown()) {
 			if (code == KeyEvent.VK_SHIFT) {
-				CommandInterpret ci = new CommandInterpret(textPaneEditor, "interpret");
+				CommandInterpret ci = new CommandInterpret(editor, "interpret");
 				ci.execute();
-				textPaneEditor.setBackground(Color.white);
+				editor.setBackground(Color.white);
 			}
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		textPaneEditor.setBackground(Color.white);
+		editor.setBackground(Color.white);
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		textPaneEditor.setBackground(Color.white);
+		editor.setBackground(Color.white);
 	}
 
 	

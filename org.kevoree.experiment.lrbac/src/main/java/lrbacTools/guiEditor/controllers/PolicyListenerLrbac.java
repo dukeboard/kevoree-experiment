@@ -2,22 +2,27 @@ package lrbacTools.guiEditor.controllers;
 
 import javax.swing.JOptionPane;
 
+
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
 import org.eclipse.viatra2.emf.incquery.runtime.extensibility.BuilderRegistry;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
 
-import patternbuilders.lrbac.*;
-import patternmatchers.lrbac.*;
-import signatures.lrbac.*;
+import incQueryPatterns.patternbuilders.lrbac.*;
+import incQueryPatterns.patternmatchers.lrbac.*;
+import incQueryPatterns.signatures.lrbac.*;
 
 import lrbac.*;
+import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
 import lrbacTools.guiEditor.graphicComponents.TextPaneEditor;
+import lrbacTools.guiEditor.Launcher;
 import lrbacTools.transformations.Policy2KevScript;
+
+import org.kevoree.api.service.core.script.KevScriptEngine;
 
 public class PolicyListenerLrbac {
 
 	private Policy policy;
-	private TextPaneEditor textPaneEditor;
+	private RbacTextualEditor editor;
 
 	// matchers
 	private UserMatcher userMatcher;
@@ -36,13 +41,13 @@ public class PolicyListenerLrbac {
 
 	private int portNumber;
 
-	public PolicyListenerLrbac(TextPaneEditor editor, Policy p) {
-		textPaneEditor = editor;
-		policy = p;
+	public PolicyListenerLrbac(RbacTextualEditor ed) {
+		editor = ed;
+		policy = editor.getPolicy();
 
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(
 				UserMatcher.FACTORY.getPatternName(),
-				new patternbuilders.lrbac.PatternBuilderForuser());
+				new PatternBuilderForuser());	
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(
 				ObjectMatcher.FACTORY.getPatternName(),
 				new PatternBuilderForobject());
@@ -79,18 +84,16 @@ public class PolicyListenerLrbac {
 				for (UserSignature sig : monitorUser.matchFoundEvents) {
 					String script = policy2KevScript.addSubject(((User) sig
 							.getValueOfU()).getName());
-					textPaneEditor.kse.append(script);
-					Boolean scriptApplied = textPaneEditor.kse.atomicInterpretDeploy();
-					System.out.println(scriptApplied+":"+script);
-//					JOptionPane.showMessageDialog(textPaneEditor, scriptApplied +script,
-//							"IncTransf", JOptionPane.INFORMATION_MESSAGE);
+					applyScript(script);
 				}
+				
 				for (UserSignature sig : monitorUser.matchLostEvents) {
+					System.out.println("lost event");
 					String script = policy2KevScript.removeSubject(((User) sig
 							.getValueOfU()).getName());
-//					JOptionPane.showMessageDialog(textPaneEditor, script,
-//							"IncTransf", JOptionPane.INFORMATION_MESSAGE);
+					applyScript(script);
 				}
+				
 				monitorUser.clear();
 			}
 		});
@@ -102,74 +105,50 @@ public class PolicyListenerLrbac {
 					String script = policy2KevScript
 							.addObject(((lrbac.Object) sig.getValueOfOB())
 									.getName());
-					textPaneEditor.kse.append(script);
-					Boolean scriptApplied = textPaneEditor.kse.atomicInterpretDeploy();
-					System.out.println(scriptApplied+":"+script);
-//					JOptionPane.showMessageDialog(textPaneEditor,scriptApplied+ script,
-//							"IncTransf", JOptionPane.INFORMATION_MESSAGE);
+					applyScript(script);
 				}
 				for (ObjectSignature sig : monitorObject.matchLostEvents) {
 					String script = policy2KevScript
 							.removeObject(((lrbac.Object) sig.getValueOfOB())
 									.getName());
-//					JOptionPane.showMessageDialog(textPaneEditor, script,
-//							"IncTransf", JOptionPane.INFORMATION_MESSAGE);
+					applyScript(script);
 				}
-				monitorUser.clear();
+				monitorObject.clear();
 			}
 		});
 
-//		userOperationMatcher.addCallbackAfterUpdates(new Runnable() {
-//			@Override
-//			public void run() {
-//				for (UserOperationSignature sig : monitorUserOperation.matchFoundEvents) {
-//					String script = policy2KevScript.addUserOperation(
-//							((User) sig.getValueOfUSER()).getName(),
-//							(sig.getValueOfOPERATIONNAME()).toString());
-//					textPaneEditor.kse.append(script);
-//					Boolean scriptApplied = textPaneEditor.kse.atomicInterpretDeploy();
-////					JOptionPane.showMessageDialog(textPaneEditor,scriptApplied + script,
-////							"IncTransf", JOptionPane.INFORMATION_MESSAGE);
-//				}
-//				for (UserOperationSignature sig : monitorUserOperation.matchLostEvents) {
-//					String script = policy2KevScript.removeUserOperation(((User) sig
-//							.getValueOfUSER()).getName(), ((Operation) sig
-//							.getValueOfOPERATIONNAME()).getName());
-////					JOptionPane.showMessageDialog(textPaneEditor, script,
-////							"IncTransf", JOptionPane.INFORMATION_MESSAGE);
-//				}
-//			}
-//		});
-//
-//		userRuleMatcher.addCallbackAfterUpdates(new Runnable() {
-//			@Override
-//			public void run() {
-//				for (UserRuleSignature sig : monitorUserRule.matchFoundEvents) {
-//					String script = policy2KevScript.addUserRule(
-//							((User) sig.getValueOfUSER()).getName(),
-//							((Operation) sig.getValueOfOPERATION()).getName(),
-//							((lrbac.Object) sig.getValueOfOBJECT()).getName());
-//					textPaneEditor.kse.append(script);
-//					Boolean scriptApplied = textPaneEditor.kse.atomicInterpretDeploy();
-////					JOptionPane.showMessageDialog(textPaneEditor, scriptApplied+script,
-////							"IncTransf", JOptionPane.INFORMATION_MESSAGE);
-//				}
-//				for (UserRuleSignature sig : monitorUserRule.matchLostEvents) {
-//					String script = policy2KevScript.removeUserRule(
-//							((User) sig.getValueOfUSER()).getName(),
-//							((Operation) sig.getValueOfOPERATION()).getName(),
-//							((lrbac.Object) sig.getValueOfOBJECT()).getName());
-////					JOptionPane.showMessageDialog(textPaneEditor, script,
-////							"IncTransf", JOptionPane.INFORMATION_MESSAGE);
-//				}
-//				monitorUser.clear();
-//			}
-//		});
+		userRuleMatcher.addCallbackAfterUpdates(new Runnable() {
+			@Override
+			public void run() {
+				for (UserRuleSignature sig : monitorUserRule.matchFoundEvents) {
+					String script = policy2KevScript.addUserRule(
+							((User) sig.getValueOfUSER()).getName(),
+							((Operation) sig.getValueOfOPERATION()).getName(),
+							((lrbac.Object) sig.getValueOfOBJECT()).getName());
+					applyScript(script);
+				}
+				for (UserRuleSignature sig : monitorUserRule.matchLostEvents) {
+					String script = policy2KevScript.removeUserRule(
+							((User) sig.getValueOfUSER()).getName(),
+							((Operation) sig.getValueOfOPERATION()).getName(),
+							((lrbac.Object) sig.getValueOfOBJECT()).getName());
+					applyScript(script);
+				}
+				monitorUserRule.clear();
+			}
+		});
 		
 		String script= policy2KevScript.addStaticArchitecturalElements();
-		textPaneEditor.kse.append(script);
-		Boolean scriptApplied = textPaneEditor.kse.atomicInterpretDeploy();
-		System.out.println(scriptApplied+":"+script);
+		applyScript(script);
 	}
-
+	
+	public void applyScript(String s){
+		KevScriptEngine kse = editor.kevoreeLauncher.getKevScriptEngineFactory().createKevScriptEngine();
+		kse.append(s);
+		System.out.println("script : "+s+" on : "+kse);
+		Boolean scriptApplied = kse.atomicInterpretDeploy();		
+		JOptionPane.showMessageDialog(editor, scriptApplied+":"+s,
+				"IncTransf", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
 }

@@ -1,31 +1,23 @@
-package lrbacTools.guiEditor.commands.commandsPolicy;
+package lrbacTools.guiEditor.commands.commands;
 
-import javax.swing.Action;
 import javax.swing.JOptionPane;
 
 import lrbacTools.checker.PolicyChecker;
-import lrbacTools.guiEditor.commands.CommandRbac;
-import lrbacTools.guiEditor.commands.ICommandRbac;
-import lrbacTools.guiEditor.graphicComponents.TextPaneEditor;
+import lrbacTools.guiEditor.commands.Command;
+import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
 
 
-public class CommandCheck extends CommandRbac implements ICommandRbac{
+public class CommandCheck extends Command{
 	
-	private TextPaneEditor textPaneEditor;
-	
-	
-	public CommandCheck(TextPaneEditor editor, String id){
-		textPaneEditor = editor;		
-		setName(id);
-		setDescription(id);
-		putValue(Action.NAME, getName());
+	public CommandCheck(RbacTextualEditor editor, String id){
+		super(editor,id);
 	}
 	
 	
 	public void execute(){
-		PolicyChecker checker = new PolicyChecker(textPaneEditor.getPolicy());
+		PolicyChecker checker = new PolicyChecker(getEditor().getPolicy());
 		String res =checker.checkPolicy();
-		JOptionPane.showMessageDialog(textPaneEditor, res, "Check", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(getEditor(), res, "Check", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }

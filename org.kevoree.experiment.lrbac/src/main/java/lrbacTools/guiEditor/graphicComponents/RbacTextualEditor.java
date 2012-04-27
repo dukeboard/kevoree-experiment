@@ -1,30 +1,130 @@
 package lrbacTools.guiEditor.graphicComponents;
 
 import java.awt.Dimension;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
-import org.kevoree.api.service.core.script.KevScriptEngine;
-public class RbacTextualEditor extends JFrame{
+
+import lrbac.LrbacFactory;
+import lrbac.Policy;
+import lrbacTools.editor.PolicyEditor;
+import lrbacTools.guiEditor.Launcher;
+import lrbacTools.guiEditor.commands.commands.CommandColoration;
+import lrbacTools.guiEditor.controllers.DocumentListenerLrbac;
+import lrbacTools.guiEditor.controllers.KeyListenerLrbac;
+import lrbacTools.guiEditor.controllers.PolicyListenerLrbac;
+
+public class RbacTextualEditor extends JFrame {
 	
-	private TextPaneEditor textPaneEditor;
-	private MenuBarRbacEditor menuBarTextPane;
-	public KevScriptEngine kse;
+	//kevoree launcher
+	public Launcher kevoreeLauncher;
 	
-	public RbacTextualEditor(KevScriptEngine k){
-		kse = k;
+	//model
+	private Policy policy;
+	
+	// graphic elements
+	public TextPaneEditor textPaneEditor;
+	public MenuBarRbacEditor menuBarTextPane;
+	public PopupCompletion popupCompletion;
+	public final List<String> languagePrimitives;
+	public GraphMonitor graphMonitor;
+	
+	// controllers
+	public KeyListenerLrbac keyListenerLrbac;
+	public DocumentListenerLrbac documentListenerLrbac;
+	public PolicyListenerLrbac policyListenerLrbac;
+
+	public RbacTextualEditor(Launcher k) {
+		super();
+		System.out.println("jusque la tout va bien !");
+		kevoreeLauncher = k;
+		languagePrimitives = new ArrayList<String>();
+		initLanguagePrimitives();		
+		System.out.println("jusque la tout va bien !");
+		initModel();
+		initGraphicComponent();
+		initControllers();
+		System.out.println("jusque la tout va bien !");
+		update();
+		System.out.println("jusque la tout va bien !");
+	}
+
+	public RbacTextualEditor() {
+		super();
+		languagePrimitives = new ArrayList<String>();
+		initLanguagePrimitives();		
+		
+		initModel();
+		initGraphicComponent();
+		initControllers();
+		update();
+	}
+	
+	public void initModel(){
+		policy = LrbacFactory.eINSTANCE.createPolicy();
+	}
+	
+	public void initGraphicComponent(){
 		setTitle("RBAC Editor");
 		setSize(600, 400);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		textPaneEditor = new TextPaneEditor(kse);
+		
+		textPaneEditor = new TextPaneEditor(kevoreeLauncher);
 		JScrollPane scroll = new JScrollPane();
-		Dimension d =new Dimension(600, 400);
+		Dimension d = new Dimension(600, 400);
 		scroll.setSize(d);
 		scroll.setPreferredSize(d);
 		scroll.setMinimumSize(d);
 		setContentPane(scroll);
 		scroll.setViewportView(textPaneEditor);
-		menuBarTextPane = new MenuBarRbacEditor(textPaneEditor);
-		setJMenuBar(menuBarTextPane);		
+		
+		menuBarTextPane = new MenuBarRbacEditor(this);
+		setJMenuBar(menuBarTextPane);
+		
+		graphMonitor = new GraphMonitor(this);
+		
+		popupCompletion = new PopupCompletion(this);
+		add(popupCompletion);
 	}
+
+	public void initControllers(){
+		keyListenerLrbac = new KeyListenerLrbac(this);
+		textPaneEditor.addKeyListener(keyListenerLrbac);
+		documentListenerLrbac = new DocumentListenerLrbac(this);
+		textPaneEditor.getDocument().addDocumentListener(documentListenerLrbac);
+		policyListenerLrbac = new PolicyListenerLrbac(this);
+		// policyListenerLrbac.startMonitor();
+	}
+	
+	public void initLanguagePrimitives() {
+		for (Method m : PolicyEditor.class.getMethods()) {
+			languagePrimitives.add(m.getName());
+		}
+	}
+
+	
+	public void update(){
+		graphMonitor.update();
+		CommandColoration c= new CommandColoration(this, "coloration");
+		c.execute();
+	}
+	
+	
+	/**
+	 * @return the policy
+	 */
+	public Policy getPolicy() {
+		return policy;
+	}
+
+	/**
+	 * @param policy the policy to set
+	 */
+	public void setPolicy(Policy policy) {
+		this.policy = policy;
+	}
+	
 }

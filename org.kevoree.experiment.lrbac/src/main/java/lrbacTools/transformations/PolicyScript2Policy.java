@@ -4,9 +4,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-import patternbuilders.lrbac.*;
-import patternmatchers.lrbac.*;
-import signatures.lrbac.*;
+import incQueryPatterns.patternbuilders.lrbac.*;
+import incQueryPatterns.patternmatchers.lrbac.*;
+import incQueryPatterns.signatures.lrbac.*;
 import lrbac.*;
 import lrbacTools.editor.PolicyEditor;
 

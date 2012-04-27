@@ -5,10 +5,9 @@ import java.util.ArrayList;
 
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
 import org.eclipse.viatra2.emf.incquery.runtime.extensibility.BuilderRegistry;
-
-import patternbuilders.lrbac.*;
-import patternmatchers.lrbac.*;
-import signatures.lrbac.*;
+import incQueryPatterns.patternbuilders.lrbac.*;
+import incQueryPatterns.patternmatchers.lrbac.*;
+import incQueryPatterns.signatures.lrbac.*;
 import utils.writer.FileWriterO;
 
 import lrbac.*;
@@ -30,7 +29,7 @@ public class Policy2KevScript {
 		policy = p;
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(
 				UserMatcher.FACTORY.getPatternName(),
-				new patternbuilders.lrbac.PatternBuilderForuser());
+				new PatternBuilderForuser());
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(
 				ObjectMatcher.FACTORY.getPatternName(),
 				new PatternBuilderForobject());
@@ -50,6 +49,15 @@ public class Policy2KevScript {
 			e.printStackTrace();
 		}
 		portNumber = 42000;
+	}
+	
+	public String transformation() {
+		String script = "";
+		script = script + addStaticArchitecturalElements();
+		script = script + addSubjects();
+		script = script + addObjects();
+		script = script + addUserRules();
+		return script;
 	}
 
 	public File transformation(String path) {
@@ -71,8 +79,7 @@ public class Policy2KevScript {
 		script = script + "\n" + "addNode subjects : JavaSENode";
 		script = script + "\n" + "addChild subjects@node0";
 		script = script + "\n" + "addToGroup sync subjects";
-		script = script + "\n"
-				+ "updateDictionary sync{ port=\"8101\"}@subjects";
+		script = script + "\n" + "updateDictionary sync{ port=\"8101\"}@subjects";
 		// ajout d'un node resources
 		script = script + "\n" + "addNode resources : JavaSENode";
 		script = script + "\n" + "addChild resources@node0";
@@ -92,13 +99,13 @@ public class Policy2KevScript {
 	public String removeSubject(String userName) {
 		String script = "";
 		script = script + "\n" + "removeComponent " + userName
-				+ "@subjects : AddressBookClient";
+				+ "@subjects";
 		return script;
 	}
 
 	public String addSubjects() {
 		String script = "";
-		for (UserSignature sig : userMatcher.getAllMatchesAsSignature()) {
+		for (UserSignature  sig : userMatcher.getAllMatchesAsSignature()) {
 			String userName = ((User) sig.getValueOfU()).getName();
 			script = script + "\n" + "addComponent " + userName
 					+ "@subjects : AddressBookClient";
@@ -109,7 +116,7 @@ public class Policy2KevScript {
 	public String removeObject(String objectName){
 		String script = "";
 		script = script + "\n" + "removeComponent " + objectName
-				+ "@resources : AddressBook { }";
+				+ "@resources";
 		return script;
 	}
 	

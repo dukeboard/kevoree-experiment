@@ -1,23 +1,20 @@
-package lrbacTools.guiEditor.commands.commandsEditor;
+package lrbacTools.guiEditor.commands.commands;
 
 import javax.swing.JOptionPane;
 
-import lrbacTools.guiEditor.commands.CommandRbac;
-import lrbacTools.guiEditor.commands.ICommandRbac;
+import lrbacTools.guiEditor.commands.Command;
+import lrbacTools.guiEditor.graphicComponents.RbacTextualEditor;
 import lrbacTools.guiEditor.graphicComponents.TextPaneEditor;
 
-public class CommandShortcut  extends CommandRbac implements ICommandRbac{
-	private TextPaneEditor textPaneEditor;
+public class CommandShortcut  extends Command{
 	
-	public CommandShortcut(TextPaneEditor editor,String id){
-		textPaneEditor=editor;
-		setName(id);
-		setDescription(id);
+	public CommandShortcut(RbacTextualEditor editor, String id){
+		super(editor, id);
 	}
 	
 	@Override
 	public void execute() {
-		JOptionPane.showMessageDialog(textPaneEditor,  "ctrl-space : completion\nctrl-k     : coloration\nctrl-shift : interpret","Shorcut", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(getEditor().textPaneEditor,  "ctrl-space : completion\nctrl-k     : coloration\nctrl-shift : interpret","Shorcut", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }

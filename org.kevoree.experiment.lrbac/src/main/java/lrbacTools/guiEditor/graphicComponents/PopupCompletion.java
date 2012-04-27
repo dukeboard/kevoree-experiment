@@ -1,6 +1,5 @@
 package lrbacTools.guiEditor.graphicComponents;
 
-import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -8,36 +7,37 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.text.BadLocationException;
 
-import lrbacTools.guiEditor.commands.commandsEditor.CommandCompletion;
-
+import lrbacTools.guiEditor.commands.commands.CommandCompletion;
 
 
 public class PopupCompletion extends JPopupMenu{
+	private RbacTextualEditor editor;
 	private ArrayList<String> propositions;
-	private TextPaneEditor textPaneEditor;
-	
-	public PopupCompletion(TextPaneEditor editor){
+	public PopupCompletion(RbacTextualEditor e){
 		super();
-		textPaneEditor = editor;
-		completion();
-		propositions = (ArrayList<String>) textPaneEditor.propositions;
-		
-		if(propositions.size() == 0){
-			add(new JMenuItem("no match found"));
-		}
-		for(String s : propositions){
-			add(new MenuItemRbacEditor(new CommandCompletion(textPaneEditor, s),textPaneEditor));
-		}
-		
+		editor = e;		
 		setAutoscrolls(true);
+		propositions = new ArrayList<String>(); 
 	}
 	
+	public void updateItems(){
+		removeAll();
+		for(String s : propositions){
+			JMenuItem menu = new JMenuItem(s);
+			CommandCompletion c = new CommandCompletion(editor, s);
+			menu.setAction(c);
+			menu.setText(s);
+			menu.setName(s);
+			menu.setVisible(true);
+			add(menu);
+		}
+	}
+
 	public void completion() {
-		textPaneEditor.propositions.clear();
-		int pos = textPaneEditor.getCaretPosition() - 1;
+		int pos = editor.textPaneEditor.getCaretPosition() - 1;
 		String content = null;
 		try {
-			content = textPaneEditor.getText(0, pos + 1);
+			content = editor.textPaneEditor.getText(0, pos + 1);
 		} catch (BadLocationException e) {
 			e.printStackTrace();
 		}
@@ -48,23 +48,24 @@ public class PopupCompletion extends JPopupMenu{
 			}
 		}
 		if (pos - w < 1) {
-			textPaneEditor.propositions.clear();
-			for (String val : textPaneEditor.primitives) {
-				textPaneEditor.propositions.add(val);
+			propositions.clear();
+			for (String val : editor.languagePrimitives) {
+				propositions.add(val);
 			}
+			updateItems();
 			return;
 		}
-		//String prefix = content.substring(w + 1).toLowerCase();
 		String prefix = content.substring(w + 1);
-		int n = Collections.binarySearch(textPaneEditor.primitives, prefix);
-		if (n < 0 && -n <= textPaneEditor.primitives.size()) {
-			textPaneEditor.propositions.clear();
-			for (String val : textPaneEditor.primitives) {
+		int n = Collections.binarySearch(editor.languagePrimitives, prefix);
+		if (n < 0 && -n <= editor.languagePrimitives.size()) {
+			propositions.clear();
+			for (String val : editor.languagePrimitives) {
 				if (val.startsWith(prefix)) {
-					textPaneEditor.propositions.add(val);
+					propositions.add(val);
 				}
 			}
 		}
+		updateItems();
 	}
 	
 }

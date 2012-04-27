@@ -143,10 +143,14 @@ public class PolicyListenerLrbac {
 	}
 	
 	public void applyScript(String s){
+		Boolean scriptApplied = true; 
+		if (! (editor.kevoreeLauncher == null)){
 		KevScriptEngine kse = editor.kevoreeLauncher.getKevScriptEngineFactory().createKevScriptEngine();
 		kse.append(s);
 		System.out.println("script : "+s+" on : "+kse);
-		Boolean scriptApplied = kse.atomicInterpretDeploy();		
+		scriptApplied = kse.atomicInterpretDeploy();
+		}
+				
 		JOptionPane.showMessageDialog(editor, scriptApplied+":"+s,
 				"IncTransf", JOptionPane.INFORMATION_MESSAGE);
 	}

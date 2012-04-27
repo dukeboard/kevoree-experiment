@@ -15,6 +15,6 @@ public class CommandInterpret extends Command{
 		PolicyScript2Policy transfo = new PolicyScript2Policy(getEditor().textPaneEditor.getText());
 		transfo.transformation(getEditor().getPolicy());
 		getEditor().textPaneEditor.setText("PolicyScript{\n\n}");
-		getEditor().graphMonitor.update();
+		getEditor().update();
 	}
 }

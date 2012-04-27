@@ -13,7 +13,7 @@ public class CommandGraphMonitor  extends Command{
 	
 	@Override
 	public void execute() {
-		getEditor().graphMonitor.update();
-		getEditor().graphMonitor.setVisible(true);
+		getEditor().graphMonitorPolicy.update();
+		getEditor().graphMonitorPolicy.setVisible(true);
 	}
 }

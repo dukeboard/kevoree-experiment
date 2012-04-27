@@ -36,6 +36,8 @@ public class MenuBarRbacEditor extends JMenuBar{
 		menuRun.add(new MenuItemRbacEditor(new CommandInterpret(editor, "interpret")));
 		
 		menuView.add(new MenuItemRbacEditor(new CommandGraphMonitor(editor, "graphMonitor")));
+		menuView.add(new MenuItemRbacEditor(new CommandGraphMonitorPolicyRule(editor, "graphMonitorPolicyRule")));
+		menuView.add(new MenuItemRbacEditor(new CommandGraphMonitorEnforcedRule(editor, "graphMonitorEnforcedRule")));
 		
 		
 		menuTool.add(new MenuItemRbacEditor(new CommandLoadPolicyScriptExample(editor, "initScriptExample")));
@@ -44,7 +46,8 @@ public class MenuBarRbacEditor extends JMenuBar{
 		menuTool.addSeparator();
 		menuTool.add(new MenuItemRbacEditor(new CommandPolicy2Graph(editor, "policy2PDFGraph")));
 		menuTool.add(new MenuItemRbacEditor(new CommandPolicy2KevScript(editor, "policy2KevScript")));
-		menuTool.add(new MenuItemRbacEditor(new CommandPolicyInfo(editor, "policy2stats")));
+		menuTool.add(new MenuItemRbacEditor(new CommandPolicyInfo(editor, "policy2policyStats")));
+		menuTool.add(new MenuItemRbacEditor(new CommandKevoree2PolicyStats(editor, "kevoree2policyStats")));
 		menuTool.addSeparator();
 		menuTool.add(new MenuItemRbacEditor(new CommandCheck(editor, "check")));
 		

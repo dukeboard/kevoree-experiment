@@ -23,7 +23,6 @@ public class CommandLoad extends Command {
 	public void execute() {
 		ResourceSet resourceSetMetamodel;
 		Resource resourceModel;
-		Policy rootElement;
 		
 		// REGISTER THE METAMODEL
 		resourceSetMetamodel = new ResourceSetImpl();
@@ -48,7 +47,7 @@ public class CommandLoad extends Command {
 		}
 		// INSTANTIATE ROOTELEMENT WITH THE CONTAINERROOT OF THE LOADED MODEL
 		getEditor().setPolicy((Policy) resourceModel.getContents().get(0));
-		getEditor().graphMonitor.update();
+		getEditor().graphMonitorPolicy.update();
 		
 	}
 

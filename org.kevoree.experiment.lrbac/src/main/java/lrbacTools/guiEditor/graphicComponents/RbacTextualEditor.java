@@ -8,14 +8,14 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-import lrbac.LrbacFactory;
-import lrbac.Policy;
+import lrbac.*;
 import lrbacTools.editor.PolicyEditor;
 import lrbacTools.guiEditor.Launcher;
 import lrbacTools.guiEditor.commands.commands.CommandColoration;
 import lrbacTools.guiEditor.controllers.DocumentListenerLrbac;
 import lrbacTools.guiEditor.controllers.KeyListenerLrbac;
 import lrbacTools.guiEditor.controllers.PolicyListenerLrbac;
+import lrbacTools.transformations.Policy2KevScript;
 
 public class RbacTextualEditor extends JFrame {
 	
@@ -30,7 +30,9 @@ public class RbacTextualEditor extends JFrame {
 	public MenuBarRbacEditor menuBarTextPane;
 	public PopupCompletion popupCompletion;
 	public final List<String> languagePrimitives;
-	public GraphMonitor graphMonitor;
+	public GraphMonitor graphMonitorPolicy;
+	public GraphMonitorPolicyRule graphMonitorPolicyRule;
+	public GraphMonitorEnforcedRule graphMonitorEnforcedRule;
 	
 	// controllers
 	public KeyListenerLrbac keyListenerLrbac;
@@ -39,18 +41,19 @@ public class RbacTextualEditor extends JFrame {
 
 	public RbacTextualEditor(Launcher k) {
 		super();
-		System.out.println("jusque la tout va bien !");
 		kevoreeLauncher = k;
 		languagePrimitives = new ArrayList<String>();
 		initLanguagePrimitives();		
-		System.out.println("jusque la tout va bien !");
+	
 		initModel();
 		initGraphicComponent();
 		initControllers();
-		System.out.println("jusque la tout va bien !");
 		update();
-		System.out.println("jusque la tout va bien !");
+		
+		Policy2KevScript policy2KevScript = new Policy2KevScript(policy);
+		String script= policy2KevScript.addStaticArchitecturalElements();
 	}
+
 
 	public RbacTextualEditor() {
 		super();
@@ -84,7 +87,9 @@ public class RbacTextualEditor extends JFrame {
 		menuBarTextPane = new MenuBarRbacEditor(this);
 		setJMenuBar(menuBarTextPane);
 		
-		graphMonitor = new GraphMonitor(this);
+		graphMonitorPolicy = new GraphMonitor(this);
+		graphMonitorPolicyRule = new GraphMonitorPolicyRule(this);
+		graphMonitorEnforcedRule = new GraphMonitorEnforcedRule(this);
 		
 		popupCompletion = new PopupCompletion(this);
 		add(popupCompletion);
@@ -99,7 +104,7 @@ public class RbacTextualEditor extends JFrame {
 		// policyListenerLrbac.startMonitor();
 	}
 	
-	public void initLanguagePrimitives() {
+	public void initLanguagePrimitives() { 
 		for (Method m : PolicyEditor.class.getMethods()) {
 			languagePrimitives.add(m.getName());
 		}
@@ -107,7 +112,8 @@ public class RbacTextualEditor extends JFrame {
 
 	
 	public void update(){
-		graphMonitor.update();
+		graphMonitorPolicy.update();
+		graphMonitorPolicyRule.update();
 		CommandColoration c= new CommandColoration(this, "coloration");
 		c.execute();
 	}

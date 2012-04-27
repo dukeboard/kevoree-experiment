@@ -12,6 +12,7 @@ public class CommandInitPolicyMonitor extends Command{
 
 	public void execute(){
 		System.out.println("startMonitor");
+		getEditor().kevoreeLauncher.getModelService().registerModelListener(getEditor().kevoreeLauncher);
 		getEditor().policyListenerLrbac.startMonitor();
 	}
 }

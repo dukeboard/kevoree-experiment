@@ -4,17 +4,23 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 
 import org.eclipse.viatra2.emf.incquery.runtime.exception.IncQueryRuntimeException;
 import org.eclipse.viatra2.emf.incquery.runtime.extensibility.BuilderRegistry;
 import org.eclipse.viatra2.gtasm.patternmatcher.incremental.rete.misc.DeltaMonitor;
 
+import grapho.Edge;
+import grapho.GraphElement;
+import grapho.GraphO;
+import grapho.GraphoFactory;
+import grapho.Node;
+import grapho.impl.EdgeImpl;
+import grapho.impl.NodeImpl;
 import incQueryPatterns.patternbuilders.lrbac.*;
 import incQueryPatterns.patternmatchers.lrbac.*;
 import incQueryPatterns.signatures.lrbac.*;
 import lrbac.*;
+import lrbac.Object;
 
 
 public class Policy2Stats {
@@ -63,51 +69,27 @@ public class Policy2Stats {
 			return script;
 		}
 		
-		public void incrementalTransformation(){
-			userMatcher.addCallbackAfterUpdates(new Runnable() {
-				@Override
-				public void run() {
-					
-					for(UserSignature sig : monitorUser.matchFoundEvents){
-					}
-					monitorUser.clear();
-				}
-			});
+		public GraphO transform2PolicyRuleGraph(){
+			GraphoFactory factory = GraphoFactory.eINSTANCE;
+			GraphO g = factory.createGraphO();
+			for(UserRuleSignature sig : userRuleMatcher.getAllMatchesAsSignature()){
+		
+				
+				String subj = ((User)sig.getValueOfUSER()).getName();
+				String cha = ((Operation)sig.getValueOfOPERATION()).getName();
+				String obj = ((Object)sig.getValueOfOBJECT()).getName();
+				
+				addNodeByName(g,subj);
+				addNodeByName(g,obj);
+				addNodeByName(g,cha);
+				addEdge(g, subj, cha);
+				addEdge(g, cha,obj);
+			}
 			
-			objectMatcher.addCallbackAfterUpdates(new Runnable() {
-				@Override
-				public void run() {
-					monitorUser.clear();
-				}
-			});
 			
-			userRuleMatcher.addCallbackAfterUpdates(new Runnable() {
-				@Override
-				public void run() {
-					for(UserRuleSignature sig : monitorUserRule.matchFoundEvents){
-						String script = "";
-						script = script + "number rules : "+userRuleMatcher.getAllMatchesAsSignature().size()+"\n";
-						try {
-							bufferedWriter.write(script);
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-					
-					for(UserRuleSignature sig : monitorUserRule.matchLostEvents){
-						String script = "";
-						script = script + "number rules : "+userRuleMatcher.getAllMatchesAsSignature().size()+"\n";
-						try {
-							bufferedWriter.write(script);
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					}
-					monitorUser.clear();
-				}
-			});		
+			return g;
 		}
+		
 		
 	public String addSubjects(){
 		String script = "";
@@ -137,4 +119,51 @@ public class Policy2Stats {
 	public int numberRules(){
 		return userRuleMatcher.getAllMatchesAsSignature().size();
 	}
+	
+	public Node getNodeByName(GraphO g, String nodeName) {
+		Node res = null;
+		for (GraphElement e : g.getElements()) {
+			if (e instanceof NodeImpl && e.getName().equals(nodeName)) {
+				res = (Node) e;
+			}
+		}
+		return res;
+	}
+	
+	public void addNodeByName(GraphO g, String e) {
+		if (getNodeByName(g, e) == null){
+			Node n = GraphoFactory.eINSTANCE.createNode();
+			n.setColor("black");
+			n.setLabel(e);
+			n.setName(e);
+			n.setShape("ellipse");
+			n.setStyle("solid");		
+			g.getElements().add(n);
+		}
+	}
+	
+	public Edge getEdgeByName(GraphO g, String edgeName) {
+		Edge res = null;
+		System.out.println("getEdgeByName : "+edgeName);
+		for (GraphElement e : g.getElements()) {
+			if (e instanceof EdgeImpl && e.getName().equals(edgeName)) {
+				res = (Edge) e;
+			}
+		}
+		return res;
+	}
+	
+	public void addEdge(GraphO g,String n1,String n2){
+		if (getEdgeByName(g, n1+n2) == null){
+			Edge ed = GraphoFactory.eINSTANCE.createEdge();
+			ed.setName(n1+n2);
+			ed.setColor("black");
+			ed.setStyle("solid");
+			ed.setConstraintRank(true);
+			ed.setNodeA(getNodeByName(g, n1));
+			ed.setNodeB(getNodeByName(g,n2));
+			g.getElements().add(ed);
+		}
+	}
+	
 }

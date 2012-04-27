@@ -1,5 +1,5 @@
 package lrbacTools.guiEditor.commands.commands;
-
+ 
 import javax.swing.JOptionPane;
 
 import lrbacTools.guiEditor.commands.Command;

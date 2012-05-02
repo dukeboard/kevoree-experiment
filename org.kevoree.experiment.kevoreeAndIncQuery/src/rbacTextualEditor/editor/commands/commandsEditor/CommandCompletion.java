@@ -12,7 +12,6 @@ import rbacTools.editor.PolicyEditor;
 
 
 public class CommandCompletion extends CommandRbac implements ICommandRbac{
-
 	private TextPaneEditor textPaneEditor;
 	
 	

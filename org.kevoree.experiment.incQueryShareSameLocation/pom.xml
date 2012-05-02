@@ -5,11 +5,11 @@
     <groupId>org.kevoree.sample</groupId>
     <artifactId>org.kevoree.experiment.incQueryShareSameLocation</artifactId>
     <packaging>bundle</packaging>
-    <version>1.5.0</version>
+    <version>1.7.0</version>
     <name>shareSameLocation</name>
 
     <properties>
-        <kevoree.version>1.6.0-BETA2</kevoree.version>
+        <kevoree.version>1.6.0-SNAPSHOT</kevoree.version>
     </properties>
 
     <dependencies>
@@ -37,6 +37,13 @@
             <artifactId>org.kevoree.kompare</artifactId>
             <version>${kevoree.version}</version>
             <type>bundle</type>
+        </dependency>
+        
+          <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.emf.compat </artifactId>
+            <version>${kevoree.version}</version>
+            <scope>provided</scope>
         </dependency>
 
        <!-- <dependency>

@@ -104,6 +104,22 @@
     <element xmi:type="ecore:EClass" href="addressBook.ecore#//AddressBookClient"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7mU7Mm57EeGvcqfYS8yYEQ" x="222" y="300"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_3rwFEYDcEeG3rrTBF3v40g" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_3ryhUIDcEeG3rrTBF3v40g" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_3rzvcIDcEeG3rrTBF3v40g" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_3rzvcYDcEeG3rrTBF3v40g"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3r09kIDcEeG3rrTBF3v40g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3r09kYDcEeG3rrTBF3v40g"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_3r1koIDcEeG3rrTBF3v40g" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_3r1koYDcEeG3rrTBF3v40g"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3r1kooDcEeG3rrTBF3v40g"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3r1ko4DcEeG3rrTBF3v40g"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_3rwFEoDcEeG3rrTBF3v40g" fontColor="4210752" fontName="Ubuntu" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="addressBook.ecore#//System"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3rwFE4DcEeG3rrTBF3v40g" x="72" y="210"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_5CGq8W57EeGvcqfYS8yYEQ"/>
   <element xmi:type="ecore:EPackage" href="addressBook.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_-ZF9wG57EeGvcqfYS8yYEQ" type="3002" source="_5hri4G57EeGvcqfYS8yYEQ" target="_6sMOMG57EeGvcqfYS8yYEQ">
@@ -118,5 +134,31 @@
     <element xmi:type="ecore:EReference" href="addressBook.ecore#//AddressBook/contacts"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-ZF9w257EeGvcqfYS8yYEQ" points="[32, -7, -206, 3]$[247, 10, 9, 20]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-ZJoIG57EeGvcqfYS8yYEQ" id="(0.6862745098039216,0.7619047619047619)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5bar4IDcEeG3rrTBF3v40g" type="3002" source="_3rwFEYDcEeG3rrTBF3v40g" target="_5hri4G57EeGvcqfYS8yYEQ">
+    <children xmi:type="notation:Node" xmi:id="_5bb6AIDcEeG3rrTBF3v40g" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5bb6AYDcEeG3rrTBF3v40g" x="-38" y="-19"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5bchEIDcEeG3rrTBF3v40g" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5bchEYDcEeG3rrTBF3v40g" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5bar4YDcEeG3rrTBF3v40g" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5bar4oDcEeG3rrTBF3v40g" fontColor="4210752" fontName="Ubuntu" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="addressBook.ecore#//System/resources"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5bar44DcEeG3rrTBF3v40g" points="[35, -20, -98, 58]$[134, -38, 1, 40]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5bfkYIDcEeG3rrTBF3v40g" id="(0.23931623931623933,0.6153846153846154)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_9Kgz0IDcEeG3rrTBF3v40g" type="3002" source="_3rwFEYDcEeG3rrTBF3v40g" target="_7mU7MG57EeGvcqfYS8yYEQ">
+    <children xmi:type="notation:Node" xmi:id="_9Kgz1IDcEeG3rrTBF3v40g" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9Kgz1YDcEeG3rrTBF3v40g" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_9Kgz1oDcEeG3rrTBF3v40g" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_9Kgz14DcEeG3rrTBF3v40g" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_9Kgz0YDcEeG3rrTBF3v40g" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_9Kgz0oDcEeG3rrTBF3v40g" fontColor="4210752" fontName="Ubuntu" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="addressBook.ecore#//System/clients"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9Kgz04DcEeG3rrTBF3v40g" points="[23, 27, -122, -109]$[75, 142, -70, 6]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9KipAIDcEeG3rrTBF3v40g" id="(0.7549019607843137,0.3333333333333333)"/>
   </edges>
 </notation:Diagram>

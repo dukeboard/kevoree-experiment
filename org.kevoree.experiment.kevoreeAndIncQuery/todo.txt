@@ -1,2 +1,10 @@
-1 transfo policy2policyScript
-2 transfo cartesianCoordinateSystem2tex
+ 0 before to go further stabilize the current prototype, all should be in models and invarianted
+ 0 ecriture des invariants en incQuery
+ 1 voir ecriture de transfo avec incQuery
+ 2 transfo policy2policyScript
+ 3 transfo cartesianCoordinateSystem2tex
+ 
+ 
+ 
+ 
+ 

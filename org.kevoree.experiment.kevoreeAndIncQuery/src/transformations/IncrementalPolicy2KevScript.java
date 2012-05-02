@@ -34,12 +34,16 @@ public class IncrementalPolicy2KevScript {
 	private int portNumber;
 	private ArrayList<String> bindings;
 	private ArrayList<String> nodes;
+	
 	private UserMatcher userMatcher;
 	private ObjectMatcher objectMatcher;
 	private UserRuleMatcher userRuleMatcher;
+	
+	
 	final DeltaMonitor<UserSignature> monitorUser;
 	final DeltaMonitor<ObjectSignature> monitorObject;
 	final DeltaMonitor<UserRuleSignature> monitorUserRule;
+	
 	private CartesianCoordinateSystem systemCartesian;
 	private CartesiancoordinatesystemFactory fact = CartesiancoordinatesystemFactory.eINSTANCE;
 	Chrono c = new Chrono();

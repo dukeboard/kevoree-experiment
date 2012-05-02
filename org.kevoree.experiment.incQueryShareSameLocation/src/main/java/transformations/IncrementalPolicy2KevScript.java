@@ -7,14 +7,17 @@ import org.eclipse.viatra2.emf.incquery.runtime.extensibility.BuilderRegistry;
 
 import patternbuilders.policyInfo.PatternBuilderForobject;
 import patternbuilders.policyInfo.PatternBuilderForuser;
+import patternbuilders.policyInfo.PatternBuilderForuserOperation;
 import patternbuilders.policyInfo.PatternBuilderForuserRule;
 import patternmatchers.policyInfo.ObjectMatcher;
 import patternmatchers.policyInfo.UserMatcher;
+import patternmatchers.policyInfo.UserOperationMatcher;
 import patternmatchers.policyInfo.UserRuleMatcher;
 
 import rbac.*;
 import rbac.rbac.generator.PolicyGenerator;
 import signatures.policyInfo.ObjectSignature;
+import signatures.policyInfo.UserOperationSignature;
 import signatures.policyInfo.UserRuleSignature;
 import signatures.policyInfo.UserSignature;
 import utils.time.Chrono;
@@ -27,6 +30,7 @@ public class IncrementalPolicy2KevScript {
 	private ArrayList<String> nodes;
 	private UserMatcher userMatcher;
 	private ObjectMatcher objectMatcher;
+	private UserOperationMatcher userOperationMatcher;
 	private UserRuleMatcher userRuleMatcher;
 	
 	
@@ -37,10 +41,12 @@ public class IncrementalPolicy2KevScript {
 		nodes = new ArrayList<String>();
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(UserMatcher.FACTORY.getPatternName(),new PatternBuilderForuser());
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(ObjectMatcher.FACTORY.getPatternName(),new PatternBuilderForobject());
+		BuilderRegistry.getContributedStatelessPatternBuilders().put(UserOperationMatcher.FACTORY.getPatternName(),new PatternBuilderForuserOperation());
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(UserRuleMatcher.FACTORY.getPatternName(),new PatternBuilderForuserRule());
 		try {
 			userMatcher = UserMatcher.FACTORY.getMatcher(policy);
 			objectMatcher = ObjectMatcher.FACTORY.getMatcher(policy);
+			userOperationMatcher = UserOperationMatcher.FACTORY.getMatcher(policy);
 			userRuleMatcher = UserRuleMatcher.FACTORY.getMatcher(policy);
 		} catch (IncQueryRuntimeException e) {
 			e.printStackTrace();
@@ -91,6 +97,40 @@ public class IncrementalPolicy2KevScript {
 		return script;
 	}
 	
+	
+	public void infoUserOperation(){
+		System.out.println("number of userOperations : "+userOperationMatcher.countMatches());
+		for (UserOperationSignature sig : userOperationMatcher.getAllMatchesAsSignature()){
+			System.out.println("sig : "+sig.getValueOfUSER()+" : "+sig.getValueOfOPERATIONNAME());
+		}
+		
+	}
+	
+	
+	public String addUserOperations(){
+		String script = "";
+		for (UserOperationSignature sig : userOperationMatcher.getAllMatchesAsSignature()){
+			System.out.println("sig : "+sig.getValueOfUSER()+" : "+sig.getValueOfOPERATIONNAME());
+		}
+		for (UserOperationSignature sig : userOperationMatcher.getAllMatchesAsSignature()){
+			String userName = ((User)sig.getValueOfUSER()).getName();
+			String operationName = sig.getValueOfOPERATIONNAME().toString();
+			String channelName = "subject"+userName+operationName;
+			
+			portNumber = portNumber + 1;
+			script = script + "\n" + "addChannel " + channelName
+					+ " : SocketChannel{name = \"" + channelName + "\"}";
+			script = script + "\n" + "bind " + userName + "." + operationName
+					+ "@subjects" + "=>" + channelName;
+			bindings.add("bind " + userName + "." + operationName + "@subjects"
+					+ "=>" + channelName);
+			script = script + "\n" + "updateDictionary " + channelName
+					+ "{ port=\"" + portNumber + "\"}@subjects";
+		}
+		return script;
+	}
+	
+	
 	public void infoUserRule(){
 		System.out.println("number of rules : "+userRuleMatcher.countMatches());
 		for(UserRuleSignature sig : userRuleMatcher.getAllMatchesAsSignature()){
@@ -105,18 +145,7 @@ public class IncrementalPolicy2KevScript {
 			String objectName = ((Resource)sig.getValueOfOBJECT()).getName();
 			String operationName = ((Operation)sig.getValueOfOPERATION()).getName();
 			String channelName = "subject"+userName+operationName;
-			
-			portNumber = portNumber + 1;
-			script = script + "\n" + "addChannel " + channelName
-					+ " : SocketChannel{name = \"" + channelName + "\"}";
-			script = script + "\n" + "bind " + userName + "." + operationName
-					+ "@subjects" + "=>" + channelName;
-			bindings.add("bind " + userName + "." + operationName + "@subjects"
-					+ "=>" + channelName);
-			script = script + "\n" + "updateDictionary " + channelName
-					+ "{ port=\"" + portNumber + "\"}@subjects";
-			
-			
+
 			portNumber = portNumber + 1;
 			script = script + "\n" + "bind " + objectName + "."
 					+ operationName + "@resources" + " =>" + channelName;
@@ -131,6 +160,7 @@ public class IncrementalPolicy2KevScript {
 		String script ="";
 		script = script + addSubjects();
 		script = script + addObjects();
+		script = script + addUserOperations();
 		script = script + addUserRules();
 		return script;
 	}

@@ -129,8 +129,6 @@ public class PolicyEditor {
 		getUser(userName).setSession(getSession(sessionName));
 	}
 
-	
-
 	public void addRoleRoleSSoD(String role1name, String role2name) {
 		getRole(role1name).getSsod().add(getRole(role2name));
 	}
@@ -149,25 +147,24 @@ public class PolicyEditor {
 
 	// remove relationships
 
-	public void removeUserRoleAssignment(String userName, String roleName) {
+	public void removeUserRole(String userName, String roleName) {
 		getUser(userName).getRoles().remove(getRole(roleName));
 	}
 
-	public void removeRolePermissionAssignment(String roleName,
+	public void removeRolePermission(String roleName,
 			String permissionName) {
 		getRole(roleName).getPermissions()
 				.remove(getPermission(permissionName));
 	}
-
-	public void removePermissionOperationAssignment(String permissionName,
-			String operationName) {
-		getOperation(operationName).getPermissions().remove(getPermission(permissionName));
+	
+	public void removePermissionOperationObject(String permissionName,
+			String operationName,String objectname) {
+		getPermissionOperation(permissionName, operationName).getObjects().remove(getObject(objectname));
 	}
 
-	public void removeOperationObjectAssignment(
-			String operationName, String resourceName) {
-		getOperation(operationName).getObjects()
-				.remove(getObject(resourceName));
+	public void removePermissionOperation(String permissionName,
+			String operationName) {
+		getOperation(operationName).getPermissions().remove(getPermission(permissionName));
 	}
 
 	public void removeUserSessionAssignment(String userName, String sessionName) {

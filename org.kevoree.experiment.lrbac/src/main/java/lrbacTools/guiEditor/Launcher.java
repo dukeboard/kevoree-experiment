@@ -38,7 +38,7 @@ public class Launcher extends AbstractComponentType implements ModelListener {
 	public void start() {
 	    editor = new RbacTextualEditor(this);
 	    editor.setVisible(true);
-	    
+	    editor.update();
 	    //update();
 	}
 
@@ -51,19 +51,18 @@ public class Launcher extends AbstractComponentType implements ModelListener {
 
 	@Update
 	public void update() {
+		
 	}
 
 	
 	@Override
 	public boolean initUpdate(org.kevoree.ContainerRoot arg0,
 			org.kevoree.ContainerRoot arg1) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public void modelUpdated() {
-		System.out.println("BOOBBBBOBBBOOBBBOOB");
 //		getModelService().acquireLock(new ModelHandlerLockCallBack() {
 //			@Override
 //			public void lockTimeout() {
@@ -82,7 +81,7 @@ public class Launcher extends AbstractComponentType implements ModelListener {
 //				// TODO Auto-generated method stub				
 //			}
 //		},(long) 3000);
-		editor.graphMonitorEnforcedRule.update();
+		editor.update();
 //		getModelService().releaseLock(new UUID(10, 10));
 		
 	}

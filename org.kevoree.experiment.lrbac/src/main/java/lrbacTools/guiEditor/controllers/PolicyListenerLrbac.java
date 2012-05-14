@@ -91,6 +91,7 @@ public class PolicyListenerLrbac {
 					System.out.println("lost event");
 					String script = policy2KevScript.removeSubject(((User) sig
 							.getValueOfU()).getName());
+					JOptionPane.showMessageDialog(null, script);
 					applyScript(script);
 				}
 				
@@ -128,7 +129,7 @@ public class PolicyListenerLrbac {
 					applyScript(script);
 				}
 				for (UserRuleSignature sig : monitorUserRule.matchLostEvents) {
-					String script = policy2KevScript.removeUserRule(
+					String script = removeRule(
 							((User) sig.getValueOfUSER()).getName(),
 							((Operation) sig.getValueOfOPERATION()).getName(),
 							((lrbac.Object) sig.getValueOfOBJECT()).getName());
@@ -137,20 +138,38 @@ public class PolicyListenerLrbac {
 				monitorUserRule.clear();
 			}
 		});
-		
 		String script= policy2KevScript.addStaticArchitecturalElements();
 		applyScript(script);
 	}
 	
+	
+	
+	//finir remove Rule
+	public String removeRule(String userName,String operationName,String objectName){
+		String res = "";
+		//boolean haveToSuppressChannel = false;
+		int haveToSuppressChannel = 0;
+		for(UserRuleSignature sig : userRuleMatcher.getAllMatchesAsSignature()){
+			String user = ((User) sig.getValueOfUSER()).getName();
+			String operation = ((Operation) sig.getValueOfOPERATION()).getName();
+			if(user.equals(userName)&&operation.equals(operationName)){
+				res = res + "\n"+ policy2KevScript.removeUserRuleBindingChannelObjectOperation(userName, operationName, objectName);
+				return res;
+			}
+		}
+		res =res +"\n"+policy2KevScript.removeUserRule(userName, operationName, objectName);
+		return res;
+	}
+	
 	public void applyScript(String s){
+		editor.update();
 		Boolean scriptApplied = true; 
 		if (! (editor.kevoreeLauncher == null)){
-		KevScriptEngine kse = editor.kevoreeLauncher.getKevScriptEngineFactory().createKevScriptEngine();
-		kse.append(s);
-		System.out.println("script : "+s+" on : "+kse);
-		scriptApplied = kse.atomicInterpretDeploy();
+			KevScriptEngine kse = editor.kevoreeLauncher.getKevScriptEngineFactory().createKevScriptEngine();
+			kse.append(s);
+			System.out.println("script : "+s+" on : "+kse);
+			scriptApplied = kse.atomicInterpretDeploy();
 		}
-				
 		JOptionPane.showMessageDialog(editor, scriptApplied+":"+s,
 				"IncTransf", JOptionPane.INFORMATION_MESSAGE);
 	}

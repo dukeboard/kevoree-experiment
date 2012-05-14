@@ -35,6 +35,27 @@ public class DotDisplayer {
 		t.start();
 	}
 
+	
+	public static void createPdfFile(final File dotFile) {
+		String fileName = dotFile.getAbsolutePath().replace(".dot", "");
+		Runtime runtime = Runtime.getRuntime();
+		try {
+			Chrono c = new Chrono();
+			c.start();
+			runtime.exec(
+					new String[] { "dot", "-Tpdf", "-Kdot",
+							dotFile.getAbsolutePath(), "-o", fileName + ".pdf" })
+					.waitFor();
+			c.stop();
+			// System.out.println("display time : "+c.displayTime());
+		} catch (InterruptedException e) {
+			System.out.println("InterruptedException : " + e.toString());
+		} catch (IOException e) {
+			System.out.println("IOException : " + e.toString());
+		}
+	}
+	
+	
 	public static void createPngFile(final File dotFile) {
 		String fileName = dotFile.getAbsolutePath().replace(".dot", "");
 		Runtime runtime = Runtime.getRuntime();

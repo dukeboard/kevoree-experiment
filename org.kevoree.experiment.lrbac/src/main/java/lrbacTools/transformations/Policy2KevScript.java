@@ -15,6 +15,16 @@ import lrbac.Object;
 
 public class Policy2KevScript {
 
+	//to discuss : deux solutions prinicpales pour terminer le mapping
+	
+	//premiere connecter toutes les operations de chaque subject avec leur 
+	//channel correspondante et pour chaque regle ajouter et supprimer les bindings necessaires
+	//bien mais requiert dintegrer des regles dans la channel ou bien un code vis a vis des objects
+	
+	// deuxieme solution avant d'ajouter la combi binding channel binding, checker sur le modele architectural 
+	//si la channel existe deja auquel cas seul le dernier binding sera ajouté 
+	
+	
 	// matchers
 	private UserMatcher userMatcher;
 	private ObjectMatcher objectMatcher;
@@ -98,8 +108,15 @@ public class Policy2KevScript {
 	
 	public String removeSubject(String userName) {
 		String script = "";
-		script = script + "\n" + "removeComponent " + userName
-				+ "@subjects";
+		for(UserRuleSignature sig : userRuleMatcher.getAllMatchesAsSignature()){
+			if ( ((User)sig.getValueOfUSER()).getName().equals(userName)){
+				String objectName = ((Object) sig.getValueOfOBJECT()).getName();
+				String operationName = ((Operation) sig.getValueOfOPERATION())
+						.getName();						
+				script = script + "\n"  + removeUserRule(userName, operationName, objectName);
+			}
+		}
+		script = script + "\n" + "removeComponent " + userName	+ "@subjects";
 		return script;
 	}
 
@@ -142,8 +159,13 @@ public class Policy2KevScript {
 		String script = "";
 		String channelName = "subject" + userName + operationName;
 		portNumber = portNumber + 1;
+	
+		//ici necessaire de verifier si la channel existe deja
+		//nop 
+		
+		
 		script = script + "\n" + "addChannel " + channelName
-				+ " : SocketChannel{name = \"" + channelName + "\"}";
+				+ " : SocketChannel";
 		script = script + "\n" + "bind " + userName + "." + operationName
 				+ "@subjects" + "=>" + channelName;
 
@@ -162,113 +184,134 @@ public class Policy2KevScript {
 		String script = "";
 		String channelName = "subject" + userName + operationName;
 
-		script = script + "\n" + "removeChannel " + channelName
-				+ " : SocketChannel{name = \"" + channelName + "\"}";
 		script = script + "\n" + "unbind " + userName + "." + operationName
 				+ "@subjects" + "=>" + channelName;
 		
 		script = script + "\n" + "unbind " + objectName + "." + operationName
 				+ "@resources" + " =>" + channelName;
-		return script;
-	}
-
-	public String addUserRules() {
-		String script = "";
-		for (UserRuleSignature sig : userRuleMatcher.getAllMatchesAsSignature()) {
-			String userName = ((User) sig.getValueOfUSER()).getName();
-			String objectName = ((Object) sig.getValueOfOBJECT()).getName();
-			String operationName = ((Operation) sig.getValueOfOPERATION())
-					.getName();
-			String channelName = "subject" + userName + operationName;
-
-			portNumber = portNumber + 1;
-			script = script + "\n" + "addChannel " + channelName
-					+ " : SocketChannel{name = \"" + channelName + "\"}";
-			script = script + "\n" + "bind " + userName + "." + operationName
-					+ "@subjects" + "=>" + channelName;
-			script = script + "\n" + "updateDictionary " + channelName
-					+ "{ port=\"" + portNumber + "\"}@subjects";
-
-			portNumber = portNumber + 1;
-			script = script + "\n" + "bind " + objectName + "." + operationName
-					+ "@resources" + " =>" + channelName;
-			script = script + "\n" + "updateDictionary " + channelName
-					+ "{ port=\"" + portNumber + "\"}@resources";
-		}
-		return script;
-	}
-
-	
-
-	public String addUserOperations() {
-		String script = "";
-		for (UserOperationSignature sig : userOperationMatcher
-				.getAllMatchesAsSignature()) {
-			String userName = ((User) sig.getValueOfUSER()).getName();
-			String operationName = sig.getValueOfOPERATIONNAME().toString();
-			String channelName = "subject" + userName + operationName;
-			portNumber = portNumber + 1;
-			script = script + "\n" + "addChannel " + channelName
-					+ " : SocketChannel{name = \"" + channelName + "\"}";
-			script = script + "\n" + "bind " + userName + "." + operationName
-					+ "@subjects" + "=>" + channelName;
-			script = script + "\n" + "updateDictionary " + channelName
-					+ "{ port=\"" + portNumber + "\"}@subjects";
-
-		}
-		return script;
-	}
-
-	public String addUserOperation(String userName, String operationName) {
-		String channelName = "subject" + userName + operationName;
-		portNumber = portNumber + 1;
-		String script =  "\n" + "addChannel " + channelName
-				+ " : SocketChannel{name = \"" + channelName + "\"}";
-		script = script + "\n" + "bind " + userName + "." + operationName
-				+ "@subjects" + "=>" + channelName;
-		script = script + "\n" + "updateDictionary " + channelName
-				+ "{ port=\"" + portNumber + "\"}@subjects";
+		
+		script = script + "\n" + "removeChannel " + channelName;
+		
 		return script;
 	}
 	
-	public String removeUserOperation(String userName, String operationName) {
+	
+	public String removeUserRuleChannel(String userName, String operationName,
+			String objectName) {
+		
+		String script = "";
 		String channelName = "subject" + userName + operationName;
-		portNumber = portNumber + 1;
-		String script =  "\n" + "removeChannel " + channelName
-				+ " : SocketChannel{name = \"" + channelName + "\"}";
+
+		script = script + "\n" + "removeChannel " + channelName;
+		
+		return script;
+	}
+	
+	public String removeUserRuleBindingSubjectOperationChannel(String userName, String operationName,
+			String objectName) {
+		String script = "";
+		String channelName = "subject" + userName + operationName;
+
 		script = script + "\n" + "unbind " + userName + "." + operationName
 				+ "@subjects" + "=>" + channelName;
 		return script;
 	}
 	
-	public String addUserOperationsRule(String userName, String objectName,
-			String operationName){
-		
+	public String removeUserRuleBindingChannelObjectOperation(String userName, String operationName,
+			String objectName) {
+		String script = "";
 		String channelName = "subject" + userName + operationName;
-		portNumber = portNumber + 1;
-		String script = "\n" + "bind " + objectName + "." + operationName
+
+		script = script + "\n" + "unbind " + objectName + "." + operationName
 				+ "@resources" + " =>" + channelName;
-		script = script + "\n" + "updateDictionary " + channelName
-				+ "{ port=\"" + portNumber + "\"}@resources";
 		return script;
 	}
 	
-	public String addUserOperationsRules() {
+	
+
+	public String addUserRules() {
 		String script = "";
 		for (UserRuleSignature sig : userRuleMatcher.getAllMatchesAsSignature()) {
+			
+			
+			
 			String userName = ((User) sig.getValueOfUSER()).getName();
 			String objectName = ((Object) sig.getValueOfOBJECT()).getName();
 			String operationName = ((Operation) sig.getValueOfOPERATION())
 					.getName();
-			String channelName = "subject" + userName + operationName;
-
-			portNumber = portNumber + 1;
-			script = script + "\n" + "bind " + objectName + "." + operationName
-					+ "@resources" + " =>" + channelName;
-			script = script + "\n" + "updateDictionary " + channelName
-					+ "{ port=\"" + portNumber + "\"}@resources";
+			
+			script = script + "\n"+addUserRule(userName, operationName, objectName);
 		}
 		return script;
 	}
 
+//	public String addUserOperations() {
+//		String script = "";
+//		for (UserOperationSignature sig : userOperationMatcher
+//				.getAllMatchesAsSignature()) {
+//			String userName = ((User) sig.getValueOfUSER()).getName();
+//			String operationName = sig.getValueOfOPERATIONNAME().toString();
+//			String channelName = "subject" + userName + operationName;
+//			portNumber = portNumber + 1;
+//			script = script + "\n" + "addChannel " + channelName
+//					+ " : SocketChannel{name = \"" + channelName + "\"}";
+//			script = script + "\n" + "bind " + userName + "." + operationName
+//					+ "@subjects" + "=>" + channelName;
+//			script = script + "\n" + "updateDictionary " + channelName
+//					+ "{ port=\"" + portNumber + "\"}@subjects";
+//		}
+//		return script;
+//	}
+//
+//	public String addUserOperation(String userName, String operationName) {
+//		String channelName = "subject" + userName + operationName;
+//		portNumber = portNumber + 1;
+//		String script =  "\n" + "addChannel " + channelName
+//				+ " : SocketChannel{name = \"" + channelName + "\"}";
+//		script = script + "\n" + "bind " + userName + "." + operationName
+//				+ "@subjects" + "=>" + channelName;
+//		script = script + "\n" + "updateDictionary " + channelName
+//				+ "{ port=\"" + portNumber + "\"}@subjects";
+//		return script;
+//	}
+//	
+//	public String removeUserOperation(String userName, String operationName) {
+//		String channelName = "subject" + userName + operationName;
+//		portNumber = portNumber + 1;
+//		String script =  "\n" + "removeChannel " + channelName
+//				+ " : SocketChannel{name = \"" + channelName + "\"}";
+//		script = script + "\n" + "unbind " + userName + "." + operationName
+//				+ "@subjects" + "=>" + channelName;
+//		return script;
+//	}
+//	
+//	public String addUserOperationsRule(String userName, String objectName,
+//			String operationName){
+//		
+//		String channelName = "subject" + userName + operationName;
+//		portNumber = portNumber + 1;
+//		String script = "\n" + "bind " + objectName + "." + operationName
+//				+ "@resources" + " =>" + channelName;
+//		script = script + "\n" + "updateDictionary " + channelName
+//				+ "{ port=\"" + portNumber + "\"}@resources";
+//		return script;
+//	}
+//	
+//	public String addUserOperationsRules() {
+//		String script = "";
+//		for (UserRuleSignature sig : userRuleMatcher.getAllMatchesAsSignature()) {
+//			String userName = ((User) sig.getValueOfUSER()).getName();
+//			String objectName = ((Object) sig.getValueOfOBJECT()).getName();
+//			String operationName = ((Operation) sig.getValueOfOPERATION())
+//					.getName();
+//			String channelName = "subject" + userName + operationName;
+//
+//			portNumber = portNumber + 1;
+//			script = script + "\n" + "bind " + objectName + "." + operationName
+//					+ "@resources" + " =>" + channelName;
+//			script = script + "\n" + "updateDictionary " + channelName
+//					+ "{ port=\"" + portNumber + "\"}@resources";
+//		}
+//		return script;
+//	}
 }

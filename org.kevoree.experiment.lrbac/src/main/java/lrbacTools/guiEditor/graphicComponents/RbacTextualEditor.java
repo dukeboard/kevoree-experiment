@@ -30,9 +30,11 @@ public class RbacTextualEditor extends JFrame {
 	public MenuBarRbacEditor menuBarTextPane;
 	public PopupCompletion popupCompletion;
 	public final List<String> languagePrimitives;
+
 	public GraphMonitor graphMonitorPolicy;
 	public GraphMonitorPolicyRule graphMonitorPolicyRule;
 	public GraphMonitorEnforcedRule graphMonitorEnforcedRule;
+	public GraphMonitorCompPolicyRule graphMonitorCompPolicyRule;
 	
 	// controllers
 	public KeyListenerLrbac keyListenerLrbac;
@@ -48,7 +50,6 @@ public class RbacTextualEditor extends JFrame {
 		initModel();
 		initGraphicComponent();
 		initControllers();
-		update();
 		
 		Policy2KevScript policy2KevScript = new Policy2KevScript(policy);
 		String script= policy2KevScript.addStaticArchitecturalElements();
@@ -63,7 +64,6 @@ public class RbacTextualEditor extends JFrame {
 		initModel();
 		initGraphicComponent();
 		initControllers();
-		update();
 	}
 	
 	public void initModel(){
@@ -90,6 +90,7 @@ public class RbacTextualEditor extends JFrame {
 		graphMonitorPolicy = new GraphMonitor(this);
 		graphMonitorPolicyRule = new GraphMonitorPolicyRule(this);
 		graphMonitorEnforcedRule = new GraphMonitorEnforcedRule(this);
+		graphMonitorCompPolicyRule  = new GraphMonitorCompPolicyRule(this);
 		
 		popupCompletion = new PopupCompletion(this);
 		add(popupCompletion);
@@ -110,14 +111,14 @@ public class RbacTextualEditor extends JFrame {
 		}
 	}
 
-	
 	public void update(){
 		graphMonitorPolicy.update();
+		graphMonitorEnforcedRule.update();
 		graphMonitorPolicyRule.update();
+		graphMonitorCompPolicyRule.update();
 		CommandColoration c= new CommandColoration(this, "coloration");
 		c.execute();
 	}
-	
 	
 	/**
 	 * @return the policy

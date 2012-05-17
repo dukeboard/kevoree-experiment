@@ -14,6 +14,7 @@
    <provided xsi:type="kevoree:Port" portTypeRef="//@typeDefinitions.86/@provided.0"></provided>
    <provided xsi:type="kevoree:Port" portTypeRef="//@typeDefinitions.86/@provided.1"></provided>
    <required xsi:type="kevoree:Port" portTypeRef="//@typeDefinitions.86/@required.0"></required>
+   <required xsi:type="kevoree:Port" portTypeRef="//@typeDefinitions.86/@required.1"></required>
   </components>
  </nodes>
  <nodes metaData="x=941,y=224" xsi:type="kevoree:ContainerNode" name="node2" typeDefinition="//@typeDefinitions.13">
@@ -849,7 +850,8 @@
   </dictionaryType>
  </typeDefinitions>
  <typeDefinitions updateMethod="update" startMethod="start" factoryBean="xacml.pep.PEPCFactory" xsi:type="kevoree:ComponentType" name="PEPC" bean="xacml.pep.PEPC" stopMethod="stop" deployUnits="//@deployUnits.0">
-  <required noDependency="true" name="send" xsi:type="kevoree:PortTypeRef" optional="true" ref="//@typeDefinitions.0"></required>
+  <required noDependency="true" name="sendRequest" xsi:type="kevoree:PortTypeRef" optional="true" ref="//@typeDefinitions.0"></required>
+  <required noDependency="true" name="sendResult" xsi:type="kevoree:PortTypeRef" optional="true" ref="//@typeDefinitions.0"></required>
   <provided noDependency="false" name="receiveRequest" xsi:type="kevoree:PortTypeRef" optional="false" ref="//@typeDefinitions.0">
    <mappings beanMethodName="receiveRequest" xsi:type="kevoree:PortTypeMapping" serviceMethodName="process"></mappings>
    <mappings beanMethodName="receiveRequest" xsi:type="kevoree:PortTypeMapping" serviceMethodName="process"></mappings>
@@ -922,12 +924,12 @@
  <mBindings port="//@nodes.0/@components.0/@required.1" xsi:type="kevoree:MBinding" hub="//@hubs.0"></mBindings>
  <mBindings port="//@nodes.0/@components.0/@required.2" xsi:type="kevoree:MBinding" hub="//@hubs.0"></mBindings>
  <mBindings port="//@nodes.0/@components.0/@required.3" xsi:type="kevoree:MBinding" hub="//@hubs.0"></mBindings>
- <mBindings port="//@nodes.1/@components.0/@required.0" xsi:type="kevoree:MBinding" hub="//@hubs.1"></mBindings>
  <mBindings port="//@nodes.2/@components.0/@provided.0" xsi:type="kevoree:MBinding" hub="//@hubs.1"></mBindings>
  <mBindings port="//@nodes.1/@components.0/@provided.0" xsi:type="kevoree:MBinding" hub="//@hubs.0"></mBindings>
  <mBindings port="//@nodes.2/@components.0/@required.0" xsi:type="kevoree:MBinding" hub="//@hubs.2"></mBindings>
  <mBindings port="//@nodes.1/@components.0/@provided.1" xsi:type="kevoree:MBinding" hub="//@hubs.2"></mBindings>
- <deployUnits requiredLibs="//@deployUnits.1 //@deployUnits.2 //@deployUnits.3 //@deployUnits.4 //@deployUnits.5 //@deployUnits.6 //@deployUnits.7" hashcode="201205161501198" unitName="org.kevoree.experiment.xacml" xsi:type="kevoree:DeployUnit" groupName="org.kevoree.sample" version="1.7.0" type="bundle" targetNodeType="//@typeDefinitions.13"></deployUnits>
+ <mBindings port="//@nodes.1/@components.0/@required.0" xsi:type="kevoree:MBinding" hub="//@hubs.1"></mBindings>
+ <deployUnits requiredLibs="//@deployUnits.1 //@deployUnits.2 //@deployUnits.3 //@deployUnits.4 //@deployUnits.5 //@deployUnits.6 //@deployUnits.7" hashcode="201205170202004" unitName="org.kevoree.experiment.xacml" xsi:type="kevoree:DeployUnit" groupName="org.kevoree.sample" version="1.7.0" type="bundle" targetNodeType="//@typeDefinitions.13"></deployUnits>
  <deployUnits type="bundle" unitName="org.kevoree.kompare" xsi:type="kevoree:DeployUnit" groupName="org.kevoree" version="1.7.0-SNAPSHOT" targetNodeType="//@typeDefinitions.13"></deployUnits>
  <deployUnits type="bundle" unitName="org.kevoree.extra.emf.library" xsi:type="kevoree:DeployUnit" groupName="org.kevoree.extra" version="2.7.0" targetNodeType="//@typeDefinitions.13"></deployUnits>
  <deployUnits type="bundle" unitName="viatra2.emf.incquery.runtime" xsi:type="kevoree:DeployUnit" groupName="org.eclipse.viatra2" version="1.1" targetNodeType="//@typeDefinitions.13"></deployUnits>

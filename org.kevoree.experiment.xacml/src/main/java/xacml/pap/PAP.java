@@ -7,6 +7,7 @@ import com.sun.xacml.finder.PolicyFinder;
 import com.sun.xacml.finder.impl.FilePolicyModule;
 
 public class PAP {
+
 	private FilePolicyModule policyModule;
 	private PolicyFinder policyFinder;
 	private Set<Object> policyModules;
@@ -51,14 +52,11 @@ public class PAP {
 	}
 	
 	public void putPolicy() {
-		System.out.println(policyModules.size());
 		policyModule = new FilePolicyModule();
 		policyModule.addPolicy("/home/obendavi/Bureau/coding/workspaceKEVOREE/kevoree-experiment/org.kevoree.experiment.xacml/src/main/resources/policies/policy.xml");
 		policyFinder = new PolicyFinder();
 		policyModules = new HashSet<Object>();
 		policyModules.add(policyModule);
 		policyFinder.setModules(policyModules);
-		System.out.println(policyModules.size());
 	}
-
 }

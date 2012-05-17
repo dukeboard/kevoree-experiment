@@ -1,6 +1,8 @@
-package xacml.pdp;
+package objects;
 
-import java.io.File;
+import java.util.Vector;
+
+import javax.swing.JFrame;
 
 import org.kevoree.annotation.ComponentType;
 import org.kevoree.annotation.Library;
@@ -16,47 +18,40 @@ import org.kevoree.annotation.Update;
 import org.kevoree.framework.AbstractComponentType;
 import org.kevoree.framework.MessagePort;
 
+import client.visitor.GUIVisitor;
+
+
 
 @Library(name = "XACML")
 @ComponentType()
-@Provides({
-    @ProvidedPort(name = "evaluate", type = PortType.MESSAGE),
-    @ProvidedPort(name = "updatePolicy", type = PortType.MESSAGE)
-})
 @Requires({
-    @RequiredPort(name = "result", type = PortType.MESSAGE, optional = true)
+    @RequiredPort(name = "send", type = PortType.MESSAGE, optional = true)
 })
 
-public class PDPXC  extends AbstractComponentType{
-	
-	private PDPX pdp;
-	
+@Provides({
+	@ProvidedPort(name = "receive", type = PortType.MESSAGE)
+})
+
+public class ObjectK extends AbstractComponentType{
+
     @Start
     public void start() {
-      pdp = new PDPX();
     }
 
     @Stop
     public void stop() {
-    	
+  
     }
 
     @Update
     public void update() {
-    	
     }
 
-    @Port(name = "evaluate")
-	public void create(Object o) {
-			String res = o.toString(); 
-			boolean resEvaluation = pdp.evaluate((File) o);
-			getPortByName("result",MessagePort.class).process(resEvaluation);
-	}
-    
-    @Port(name = "updatePolicy")
-   	public void updatePolicy(Object o) {
-   			String res = o.toString(); 
-   			pdp.updatePolicy();   			
+    @Port(name = "receive")
+   	public void receive(Object o) {
+   			String res = o.toString(); 	
+   			getPortByName("send",MessagePort.class).process(getName());
    	}
+
 
 }

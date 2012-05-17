@@ -12,7 +12,7 @@ public class CommandLoad extends Command{
 		super(e, nme, desc);
 	}
 	public void execute(){
-	ResourceSet resourceSetMetamodel;
+	ResourceSet resourceSetMetamodel; 
 	Resource resourceModel;
 	// REGISTER THE METAMODEL
 	resourceSetMetamodel = new ResourceSetImpl();

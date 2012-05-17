@@ -7,7 +7,7 @@ public class CommandCompletion extends Command{
 	public CommandCompletion(PolicyTextualEditor e, String nme, String desc) {
 		super(e, nme, desc);
 	}
-	@Override
+	@Override 
 	public void execute() {
 		//to insert the selected string into the document
 		int pos =editor.getTextPaneEditor().getCaretPosition() -1;

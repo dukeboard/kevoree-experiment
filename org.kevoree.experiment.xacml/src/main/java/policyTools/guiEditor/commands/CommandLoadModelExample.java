@@ -16,5 +16,5 @@ public class CommandLoadModelExample extends Command{
 		Generator gen = new Generator(policy);
 		gen.generateModelExample();
 
-	}
+	} 
 }

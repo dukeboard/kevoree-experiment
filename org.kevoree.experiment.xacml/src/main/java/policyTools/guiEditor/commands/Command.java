@@ -1,5 +1,5 @@
 package policyTools.guiEditor.commands;
-import javax.swing.Action;
+import javax.swing.Action; 
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import policyTools.guiEditor.graphicComponents.PolicyTextualEditor;

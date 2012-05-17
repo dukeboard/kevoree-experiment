@@ -6,8 +6,10 @@ import java.util.*;
 import java.util.List;
 import java.lang.reflect.*;
 import policy.*;
+import policyTools.KevPDP;
 import policyTools.guiEditor.controllers.*;
 import policyTools.guiEditor.commands.*;
+import xacml.pdp.PDPX;
 
 public class PolicyTextualEditor extends JFrame{
 private TextPaneEditor textPaneEditor;
@@ -19,12 +21,14 @@ public PolicyListener policyListener;
 public PopupCompletion popupCompletion;
 public GraphMonitor graphMonitor;
 public List<String> primitives;
+public PDPX pdp;
 
-	public PolicyTextualEditor(){
+	public PolicyTextualEditor(PDPX x){
 		policy = PolicyFactory.eINSTANCE.createPolicy();
 		initGraphicalComponents();
 		initControllers();
-       initPrimitives();
+        initPrimitives();
+        pdp = x;
 	}
 
 

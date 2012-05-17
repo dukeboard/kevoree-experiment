@@ -60,6 +60,13 @@ mX.setName("generateXacmlFile");
 mX.setVisible(true);
 menuTools.add(mX);
 
+JMenuItem mXX = new JMenuItem("updatePDPpolicy");
+mXX.setAction(new CommandUpdatePDP(editor, "updatePDPpolicy", "updatePDPpolicy"));
+mXX.setText("updatePDPpolicy");
+mXX.setName("updatePDPpolicy");
+mXX.setVisible(true);
+menuTools.add(mXX);
+
 JMenuItem menuMl = new JMenuItem("listenModel");
 menuMl.setAction(new CommandModelListener(editor, "listenModel", "listenModel"));
 menuMl.setText("listenModel");

@@ -8,7 +8,7 @@ import javax.swing.Action;
 public class CommandInterpretScript extends Command{
 	public CommandInterpretScript(PolicyTextualEditor e, String nme, String desc) {
 		super(e, nme, desc);
-	}
+	} 
 	@Override
 	public void execute() {
 			PolicyScript2Policy transfo = new PolicyScript2Policy(editor.getTextPaneEditor().getText());

@@ -5,7 +5,7 @@ public class CommandModelListener extends Command{
 	public CommandModelListener(PolicyTextualEditor e, String nme, String desc) {
 		super(e, nme, desc);
 	}
-	@Override
+	@Override 
 	public void execute() {
 			editor.getPolicyListener().listen();
 	 }

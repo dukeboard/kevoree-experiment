@@ -21,9 +21,9 @@ import com.sun.xacml.finder.AttributeFinder;
 import com.sun.xacml.finder.ResourceFinder;
 
 public class PDPX {
-	private PDP pdp;
-	private PAP pap;
-	private PIP pip;
+	public PDP pdp;
+	public PAP pap;
+	public PIP pip;
 	public DummyGUIPDP gui;
 	
 	private AttributeFinder attrFinder;
@@ -52,16 +52,17 @@ public class PDPX {
 		gui.setVisible(true);
 	}
 	
-	public String evaluate(File arg0){
+	public boolean evaluate(File arg0){
 		RequestCtx request = null;
 		try {
 			request = RequestCtx.getInstance(new FileInputStream(arg0));
 			} catch (FileNotFoundException e) {
-			gui.updateTextArea("error generate request : "+e.getMessage());
+			gui.updateTextArea("FileNotFoundException : "+e.getMessage());
 		} catch (ParsingException e) {
-			gui.updateTextArea("error generate request : "+e.getMessage());
+			gui.updateTextArea("ParsingException : "+e.getMessage());
 		}
 		ResponseCtx res = pdp.evaluate(request);
+		
 		boolean resBool = false;
 	    int eval = 0;
 	    for(Object o : res.getResults()){
@@ -81,8 +82,7 @@ public class PDPX {
 	    	resBool = true;
 	    }
 		gui.updateTextArea(res.toString()+" : "+resBool);
-        
-		return res.toString()+" : "+resBool;	 
+		return resBool;	 
 	}
 	
 	public void removePolicy(){
@@ -95,6 +95,11 @@ public class PDPX {
 		pap.putPolicy();
 		pdpConfig = new PDPConfig(attrFinder, pap.getPolicyFinder(), resourceFinder);
 		pdp = new PDP(pdpConfig);
+	}
+	
+	public void updatePolicy(){
+		removePolicy();
+		putPolicy();
 	}
 
 }

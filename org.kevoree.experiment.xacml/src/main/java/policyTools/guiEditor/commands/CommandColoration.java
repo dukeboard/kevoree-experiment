@@ -13,7 +13,7 @@ public class CommandColoration extends policyTools.guiEditor.commands.Command{
 	public CommandColoration(PolicyTextualEditor e, String nme, String desc) {
 		super(e, nme, desc);
 	}
-	public void execute(){
+	public void execute(){ 
 		Runnable r = new Runnable() {
 			@Override
 			public void run() {

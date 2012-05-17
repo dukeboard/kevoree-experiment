@@ -14,7 +14,7 @@ public class PAP {
 	
 	public PAP(){
 		policyModule = new FilePolicyModule();
-		policyModule.addPolicy("/home/obendavi/Bureau/coding/workspaceKEVOREE/kevoree-experiment/org.kevoree.experiment.xacml/src/main/resources/policies/policy.xml");
+		policyModule.addPolicy("policy.xml");
 		policyFinder = new PolicyFinder();
 		policyModules = new HashSet<Object>();
 		policyModules.add(policyModule);
@@ -46,17 +46,23 @@ public class PAP {
 	}
 
 	public void removePolicy() {
+		System.out.println("remove old policy");
 		System.out.println(policyModules.size());
 		policyModules.remove(policyModule);
 		System.out.println(policyModules.size());
 	}
 	
 	public void putPolicy() {
+		System.out.println("put target policy");
 		policyModule = new FilePolicyModule();
-		policyModule.addPolicy("/home/obendavi/Bureau/coding/workspaceKEVOREE/kevoree-experiment/org.kevoree.experiment.xacml/src/main/resources/policies/policy.xml");
+		policyModule.addPolicy("policy.xml");
 		policyFinder = new PolicyFinder();
 		policyModules = new HashSet<Object>();
 		policyModules.add(policyModule);
 		policyFinder.setModules(policyModules);
 	}
+	
+
+
+	
 }

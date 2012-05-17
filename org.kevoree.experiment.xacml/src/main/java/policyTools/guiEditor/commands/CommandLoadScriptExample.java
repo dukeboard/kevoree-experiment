@@ -11,7 +11,7 @@ public class CommandLoadScriptExample extends Command{
 	public void execute() {
 		Policy policy = PolicyFactory.eINSTANCE.createPolicy();
 		Generator gen = new Generator(policy);
-		gen.generateModelExample();
+		gen.generateModelExample(); 
 		Policy2PolicyScript t=new Policy2PolicyScript(policy);
        String script = "PolicyScript{\n";
        script = script + t.transformation();

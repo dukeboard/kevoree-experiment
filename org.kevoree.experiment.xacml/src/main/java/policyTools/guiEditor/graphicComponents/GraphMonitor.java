@@ -23,7 +23,7 @@ public GraphMonitor(PolicyTextualEditor x){
     pngPath = pngPath.substring(0,f.getAbsolutePath().length()-3);
     pngPath = pngPath+"png";
     File pngFile = new File(pngPath);
-    scroll = new JScrollPane(new ImageComponent(pngFile));
+    scroll = new JScrollPane(new ImageComponent(pngFile)); 
     add(scroll);
     setTitle("Graph Monitor");
     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

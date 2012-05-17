@@ -99,7 +99,7 @@ public class Policy2Xacml {
 			User u = (User) sig.getValueOfUSER();
 			Operation op = (Operation) sig.getValueOfOPERATION();
 			Object ob = (Object)sig.getValueOfOBJECT();
-			policyGenerator.policyRuleGenerator.addRule(u.getName(), op.getName(), ob.getName());
+			policyGenerator.policyRuleGenerator.addRule(u.getName(), ob.getName(), op.getName());
 		}
 	}
 	

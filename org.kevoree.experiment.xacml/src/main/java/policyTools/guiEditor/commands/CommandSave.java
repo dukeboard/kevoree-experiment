@@ -10,7 +10,7 @@ import policyTools.guiEditor.graphicComponents.*;
 public class CommandSave extends Command{
 	public CommandSave(PolicyTextualEditor e, String nme, String desc) {
 		super(e, nme, desc);
-	}
+	} 
 	public void execute(){
 	ResourceSet resourceSetMetamodel;
 	Resource resourceModel;

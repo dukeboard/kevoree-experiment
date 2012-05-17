@@ -21,7 +21,7 @@ public class PolicyListener {
 
 	private PolicyTextualEditor editor;
 
-	private Policy policy;
+	private Policy policy; 
 
 	// matchers
 	private UserMatcher userMatcher;

@@ -45,7 +45,7 @@ public class RequestGenerator {
 		resources.add(attributeResource);
 		
 		HashSet<Object> actions = new HashSet<Object>();
-		AttributeValue attributeValueAction = new AttributeValue(new URI("http://www.w3.org/2001/XMLSchema#string")) {
+		AttributeValue attributeValueAction = new AttributeValue(new URI("http://www.w3.org/2001/XMLSchema#anyURI")) {
 			
 			@Override
 			public String encode() {

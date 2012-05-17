@@ -10,6 +10,6 @@ public class CommandPolicy2XACML extends Command{
 	@Override
 	public void execute() {
 		Policy2Xacml trans = new Policy2Xacml(editor.getPolicy());
-		trans.transformation();
+		trans.transformation(); 
 	}  
 }

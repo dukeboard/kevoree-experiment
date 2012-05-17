@@ -24,10 +24,14 @@ import org.kevoree.framework.MessagePort;
 public class PEPC extends AbstractComponentType {
 
 	private PEP pep;
+	private boolean waitResponse;
+	private String objectAsked;
 
 	@Start
 	public void start() {
 		pep = new PEP();
+		waitResponse = false;
+		objectAsked = "";
 	}
 
 	@Stop
@@ -42,27 +46,70 @@ public class PEPC extends AbstractComponentType {
 
 	@Port(name = "receiveRequest")
 	public void receiveRequest(Object o) {
+		
 		String res = o.toString();
 		pep.gui.updateTextArea("receiveRequest : " + res);
 		String request = res;
 		
-		
+		String role = request.substring(0,request.indexOf(":"));
+		request = request.substring(request.indexOf(":")+1,request.length());
 		String subject =request.substring(0,request.indexOf(":"));
-//		pep.gui.updateTextArea("subject : "+subject);
 		request = request.substring(request.indexOf(":")+1,request.length());
 		String operation =request.substring(0,request.indexOf(":"));
-//		pep.gui.updateTextArea("operation : "+operation);
 		request = request.substring(request.indexOf(":")+1,request.length());
-//		pep.gui.updateTextArea("request : "+request);
-		String object =request.substring(1,request.length());
-//		pep.gui.updateTextArea("receiveRequest : " + subject+operation+object);
-		getPortByName("sendRequest", MessagePort.class).process(
-				pep.generateRequest(subject,operation,object));
+		String object =request.substring(0,request.length());
+		waitResponse = true;
+		objectAsked = object;
+		if (subject.equals(getName())){
+			getPortByName("sendRequest", MessagePort.class).process(
+					pep.generateRequest(subject,object,operation));
+		}
 	}
 
 	@Port(name = "receiveResponse")
 	public void receiveResponse(Object o) {
-		String res = o.toString();
-		pep.gui.updateTextArea("receiveRequest : " + res);
+		if(waitResponse && (o.toString().startsWith(objectAsked) ||  o.toString().equals("not allowed"))){
+			String res = o.toString();
+			pep.gui.updateTextArea("receiveResponse : " + res);
+			getPortByName("sendResult", MessagePort.class).process(res);
+			waitResponse = false;
+			objectAsked ="";
+		}
 	}
 }
+
+
+
+
+
+
+
+//addUser(user0);
+//addUser(user1);
+//addRole(student);
+//addRole(visitor);
+//addPermission(permissionStudent);
+//addPermission(permissionVisitor);
+//addOperation(list);
+//addOperation(download);
+//addObject(obj0);
+//addObject(obj1);
+//addObject(obj3);
+//addUserRole(user0,student);
+//addUserRole(user1,visitor);
+//addRolePermission(student,permissionStudent);
+//addRolePermission(visitor,permissionVisitor);
+//addPermissionOperation(permissionStudent,download);
+//addPermissionOperation(permissionStudent,list);
+//addPermissionOperation(permissionVisitor,list);
+//addPermissionOperationObject(permissionStudent,download,obj0);
+//addPermissionOperationObject(permissionStudent,download,obj1);
+//addPermissionOperationObject(permissionStudent,download,obj3);
+//addPermissionOperationObject(permissionStudent,list,obj0);
+//addPermissionOperationObject(permissionStudent,list,obj1);
+//addPermissionOperationObject(permissionStudent,list,obj3);
+//addPermissionOperationObject(permissionVisitor,list,obj0);
+//addPermissionOperationObject(permissionVisitor,list,obj1);
+//addPermissionOperationObject(permissionVisitor,list,obj3);
+
+//addPermissionOperationObject(permissionStudent,download,obj2);

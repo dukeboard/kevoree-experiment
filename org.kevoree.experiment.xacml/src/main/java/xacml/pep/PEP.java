@@ -14,9 +14,9 @@ public class PEP {
 		gui.setVisible(true);		
 	}
 	
-	public File generateRequest(String userId,String resourceId, String actionId){
+	public File generateRequest(String userId,String resourceId, String actionId,String roleId){
 		try {
-			RequestGenerator.createRequest("request.xml", userId, resourceId, actionId);
+			RequestGenerator.createRequest("request.xml", userId, resourceId, actionId, roleId);
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}

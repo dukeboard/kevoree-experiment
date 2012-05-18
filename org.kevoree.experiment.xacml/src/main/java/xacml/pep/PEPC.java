@@ -62,7 +62,7 @@ public class PEPC extends AbstractComponentType {
 		objectAsked = object;
 		if (subject.equals(getName())){
 			getPortByName("sendRequest", MessagePort.class).process(
-					pep.generateRequest(subject,object,operation));
+					pep.generateRequest(subject,object,operation,role));
 		}
 	}
 

@@ -7,21 +7,21 @@ import org.eclipse.viatra2.emf.incquery.runtime.extensibility.BuilderRegistry;
 
 import patternbuilders.policy.PatternBuilderForobject;
 import patternbuilders.policy.PatternBuilderForoperation;
-import patternbuilders.policy.PatternBuilderForuserRule;
+import patternbuilders.policy.PatternBuilderForuserRoleRule;
 import patternmatchers.policy.ObjectMatcher;
 import patternmatchers.policy.OperationMatcher;
 import patternmatchers.policy.UserMatcher;
-import patternmatchers.policy.UserRuleMatcher;
+import patternmatchers.policy.UserRoleRuleMatcher;
 import policy.Operation;
 import policy.Policy;
+import policy.Role;
 import policy.User;
 import policy.Object;
 import signatures.policy.ObjectSignature;
 import signatures.policy.OperationSignature;
-import signatures.policy.UserRuleSignature;
+import signatures.policy.UserRoleRuleSignature;
 import signatures.policy.UserSignature;
 import xacml.filesGenerator.PolicyGenerator;
-
 
 public class Policy2Xacml {
 	private Policy policy;
@@ -29,13 +29,12 @@ public class Policy2Xacml {
 	
 	private UserMatcher userMatcher;
 	private ObjectMatcher objectMatcher;
-	private UserRuleMatcher userRuleMatcher;
+	private UserRoleRuleMatcher userRoleRuleMatcher;
 	private OperationMatcher operationMatcher;
 	
 	public Policy2Xacml(Policy x) {
 		policy = x;
 		policyGenerator = new PolicyGenerator();
-		
 
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(
 				UserMatcher.FACTORY.getPatternName(),
@@ -44,15 +43,15 @@ public class Policy2Xacml {
 				ObjectMatcher.FACTORY.getPatternName(),
 				new PatternBuilderForobject());
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(
-				UserRuleMatcher.FACTORY.getPatternName(),
-				new PatternBuilderForuserRule());
+				UserRoleRuleMatcher.FACTORY.getPatternName(),
+				new PatternBuilderForuserRoleRule());
 		BuilderRegistry.getContributedStatelessPatternBuilders().put(
 				OperationMatcher.FACTORY.getPatternName(),
 				new PatternBuilderForoperation());
 		try {
 			userMatcher = UserMatcher.FACTORY.getMatcher(policy);
 			objectMatcher = ObjectMatcher.FACTORY.getMatcher(policy);
-			userRuleMatcher = UserRuleMatcher.FACTORY.getMatcher(policy);
+			userRoleRuleMatcher = UserRoleRuleMatcher.FACTORY.getMatcher(policy);
 			operationMatcher = OperationMatcher.FACTORY.getMatcher(policy);
 		} catch (IncQueryRuntimeException e) {
 			e.printStackTrace();
@@ -68,7 +67,6 @@ public class Policy2Xacml {
 		try {
 			policyGenerator.createPolicy();
 		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -95,12 +93,12 @@ public class Policy2Xacml {
 	}
 	
 	public void addRules(){
-		for(UserRuleSignature sig : userRuleMatcher.getAllMatchesAsSignature()){
+		for(UserRoleRuleSignature sig : userRoleRuleMatcher.getAllMatchesAsSignature()){
 			User u = (User) sig.getValueOfUSER();
 			Operation op = (Operation) sig.getValueOfOPERATION();
 			Object ob = (Object)sig.getValueOfOBJECT();
-			policyGenerator.policyRuleGenerator.addRule(u.getName(), ob.getName(), op.getName());
+			Role r = (Role)sig.getValueOfROLE();
+			policyGenerator.policyRuleGenerator.addRule(u.getName(), ob.getName(), op.getName(),r.getName());
 		}
-	}
-	
+	}	
 }

@@ -305,4 +305,68 @@ public class PolicyTargetGenerator {
 			}
 		};
 	}	
+	public Evaluatable createEvaluatableConditionRole(final String roleName) throws URISyntaxException{
+		final URI u = new URI("urn:oasis:names:tc:xacml:1.0:function:string-one-and-only");
+		return new Evaluatable() {			
+			@Override
+			public URI getType() {
+				return u ;
+			}
+			
+			@Override
+			public List getChildren() {
+				return null;
+			}
+			
+			@Override
+			public boolean evaluatesToBag() {
+				return false;
+			}
+			
+			@Override
+			public EvaluationResult evaluate(EvaluationCtx arg0) {
+				EvaluationResult er= null;
+				try {
+					er= new EvaluationResult(new AttributeValue(new URI("http://www.w3.org/2001/XMLSchema#string")) {
+						
+						@Override
+						public String encode() {
+							return null;
+						}
+					});
+				} catch (URISyntaxException e) {
+					e.printStackTrace();
+				}
+				return er;
+			}
+			
+			@Override
+			public void encode(OutputStream arg0, Indenter arg1) {
+				String s = "	<Apply FunctionId=\"urn:oasis:names:tc:xacml:1.0:function:string-one-and-only\">"+"\n"+
+						   "		<SubjectAttributeDesignator DataType=\"http://www.w3.org/2001/XMLSchema#string\""+"\n"+
+                     "		AttributeId= \"role\"/>"+"\n"+
+						   "	</Apply>"+"\n"+
+						   "	<AttributeValue DataType=\"http://www.w3.org/2001/XMLSchema#string\">"+roleName+"</AttributeValue>"+"\n";
+				try {
+					arg0.write(s.getBytes());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			@Override
+			public void encode(OutputStream arg0) {
+				String s = "	<Apply FunctionId=\"urn:oasis:names:tc:xacml:1.0:function:string-one-and-only\">"+"\n"+
+						   "		<SubjectAttributeDesignator DataType=\"http://www.w3.org/2001/XMLSchema#string\""+"\n"+
+                        "		AttributeId= \"role\"/>"+"\n"+
+						   "	</Apply>"+"\n"+
+						   "	<AttributeValue DataType=\"http://www.w3.org/2001/XMLSchema#string\">"+roleName+"</AttributeValue>"+"\n";
+				try {
+					arg0.write(s.getBytes());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		};  
+	}
 }

@@ -88,11 +88,14 @@ class AddForestMonitoringComponentDPA extends DPA {
   
   def getASTScript(myMap: java.util.Map[String, NamedElement]): Script = {
     increment += 1;
+    if (myMap == null){
+      return null
+    }
     val props = new java.util.Properties()
     val newIndex = random.nextInt(PeriodValues.values.size)
     
     props.put(ChangePeriodPropertyDPAO.periodPropertyName, PeriodValues.values(newIndex).toString)
-    
+
     Script(
       List(
         TransactionalBloc(

@@ -29,6 +29,7 @@ public class SmartForestExperiment {
     public final static String individualBaseModel = "kevoreeIndividualModel.kev";
 
     public static String folderToStoreTempFile = "generated";
+    private static long initTime;
 
     private static final ClassLoader classLoader = SmartForestExperiment.class.getClassLoader();
 
@@ -61,29 +62,29 @@ public class SmartForestExperiment {
         // End of single optimization
 
         // Beginning of multi axial optimization
-        initExperiment();
-        ParserUtil.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
-        myProperties = new HashMap<String,String>();
-        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
-        myProperties.put("generations = 100", "generations = " + generationsForMulti);
-        myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
-        myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
-        myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
-        myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
-        myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
-        initializeParams(paramsMultiFitnessSourceFile, paramsTargetFile, myProperties);
-
-        //Start the experiment
-        kmga = new KevoreeMultipleGeneticAlgorithm ();
-        kmga.start();
-        kmga.clean();
+//        initExperiment();
+//        ParserUtil.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+//        myProperties = new HashMap<String,String>();
+//        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
+//        myProperties.put("generations = 100", "generations = " + generationsForMulti);
+//        myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
+//        myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
+//        myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
+//        myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
+//        myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
+//        initializeParams(paramsMultiFitnessSourceFile, paramsTargetFile, myProperties);
+//
+//        //Start the experiment
+//        kmga = new KevoreeMultipleGeneticAlgorithm ();
+//        kmga.start();
+//        kmga.clean();
 
 
         collectStatistics();
     }
 
     private static void collectStatistics() {
-        // TODO
+        System.out.println("time="+(System.currentTimeMillis()-initTime)+"ms");
     }
 
     private static void initializeParams(String sourceFile, String targetFile, Map<String,String> myProperties) {
@@ -118,6 +119,8 @@ public class SmartForestExperiment {
     }
 
     private static void initExperiment() {
+        initTime = System.currentTimeMillis();
+
         // initialize : logger are quiet, old statistic files are deleted and the folder to store statistic file is prefixed byt the computer name
         Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         root.setLevel(Level.OFF); //change to off

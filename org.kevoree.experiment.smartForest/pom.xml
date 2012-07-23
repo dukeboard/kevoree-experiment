@@ -16,6 +16,11 @@
     </properties>
     <repositories>
         <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
             <id>scala-tools.org</id>
             <name>Scala-tools Maven2 Repository</name>
             <url>http://scala-tools.org/repo-releases</url>
@@ -102,6 +107,31 @@
             <groupId>org.kevoree.extra</groupId>
             <artifactId>org.kevoree.extra.emf.library</artifactId>
             <version>2.7.0</version>
+        </dependency>
+        <dependency>
+	        <groupId>net.sf.jung</groupId>
+	        <artifactId>jung-api</artifactId>
+	        <version>2.0.1</version>
+        </dependency>
+        <dependency>
+	        <groupId>net.sf.jung</groupId>
+	        <artifactId>jung-algorithms</artifactId>
+	        <version>2.0.1</version>
+        </dependency>
+        <dependency>
+	        <groupId>net.sf.jung</groupId>
+	        <artifactId>jung-graph-impl</artifactId>
+	        <version>2.0.1</version>
+        </dependency>
+        <dependency>
+	        <groupId>net.sf.jung</groupId>
+	        <artifactId>jung-visualization</artifactId>
+	        <version>2.0.1</version>
+        </dependency>
+        <dependency>
+	        <groupId>jfree</groupId>
+	        <artifactId>jfreechart</artifactId>
+	        <version>1.0.13</version>
         </dependency>
 
 

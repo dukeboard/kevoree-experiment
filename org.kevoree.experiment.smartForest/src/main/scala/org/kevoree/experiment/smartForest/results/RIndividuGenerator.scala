@@ -13,7 +13,7 @@ import org.kevoree.ContainerRoot
 
 object RIndividuGenerator extends App {
 
-  val model = KevoreeXmiHelper.load("homega-homega-generated/models/Models113")
+  val model = KevoreeXmiHelper.load("homega-homega-generated/models/Models402")
   generateIndividualRRepresentation(model)
 
   def generateIndividualRRepresentation(model: ContainerRoot) = {

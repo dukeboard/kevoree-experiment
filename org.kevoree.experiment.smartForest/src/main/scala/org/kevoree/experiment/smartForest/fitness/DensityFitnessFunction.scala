@@ -1,6 +1,6 @@
 package org.kevoree.experiment.smartForest.fitness
 
-import scala.collection.JavaConversions._
+
 import org.kevoree.ContainerNode
 import org.kevoree.ContainerRoot
 import org.kevoree.experiment.smartForest.SmartForestExperiment
@@ -13,6 +13,7 @@ import org.kevoree.experiment.smartForest.SmartForestExperiment
 
 class DensityFitnessFunction extends FitnessFunction {
 
+
   val tempSensor: String = "TempSensor"
   val smokeSensor: String = "SmokeSensor"
   val humiditySensor: String = "HumiditySensor"
@@ -24,8 +25,8 @@ class DensityFitnessFunction extends FitnessFunction {
   def evaluate(model: ContainerRoot): Float = {
     if (worseDensity == 0.0) worseDensity = evaluateWorseDensity(model)
     var densityV = 0.0;
-    for (i <- 0 until model.getNodes.size()) {
-      val myNode = model.getNodes.get(i);
+    for (i <- 0 until model.getNodes.size) {
+      val myNode = model.getNodes(i);
       if (!containsInstance(myNode, tempSensor)) {
         densityV += density(model, tempSensor, i)
       }
@@ -40,8 +41,7 @@ class DensityFitnessFunction extends FitnessFunction {
   }
 
   private def FitnessPostProcess(density : Double) : Float = {
-
-    (density * 100 / worseDensity).asInstanceOf[Float];
+    (density * 100 / worseDensity).asInstanceOf[Float]
   }
   def density(myModel: ContainerRoot, myType: String, indice: Int): Double = {
     var density: Double = 0.0
@@ -76,7 +76,7 @@ class DensityFitnessFunction extends FitnessFunction {
     i += diffI
     j += diffJ
     val newIndice: Int = i * SmartForestExperiment.forestWidth + j
-    val myNode: ContainerNode = myModel.getNodes.get(newIndice)
+    val myNode: ContainerNode = myModel.getNodes(newIndice)
     if (containsInstance(myNode, myType)) {
       count += 1
       1
@@ -95,7 +95,7 @@ class DensityFitnessFunction extends FitnessFunction {
   private def evaluateWorseDensity(myModel: ContainerRoot): Float = {
     var density: Double = 0.0
     (0 until myModel.getNodes.size).foreach{ i => density += 3 * worseDensity(i)}
-    println("Worse Density = " + density)
+    //println("Worse Density = " + density)
     return java.lang.Math.floor(density).asInstanceOf[Float]
   }
 

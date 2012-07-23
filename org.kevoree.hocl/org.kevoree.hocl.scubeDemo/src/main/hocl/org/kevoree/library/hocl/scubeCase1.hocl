@@ -1,0 +1,143 @@
+package org.kevoree.library.hocl;
+
+import org.kevoree.*;
+
+let addComponent =
+   replace "ADD_COMPONENT":componentName::String:"Node_Id":nodeId::String:<?w>,
+           "NODE":"Node_Id":id::String:"Num":num::int:<?l>
+    by     "NODE":"Node_Id":id:"Num":(num+1):<l,componentName>,
+           "COMPONENT":nodeId:componentName:<w>
+    if (nodeId.equals(id))
+in
+
+let addComponentWhenIfAlreadyExist =
+   replace "ADD_COMPONENT":componentName::String:"Node_Id":id::String:<?w>,
+           "COMPONENT":nodeId::String:cn::String:<?w>
+    by     "COMPONENT":nodeId:cn:<w>
+    if (nodeId.equals(id) && componentName.equals(cn))
+in
+
+let fixComponentOnNode =
+    replace "NODE":"Node_Id":id::String:"Num":num::int:<c1::String, c2::String, ?w1>
+    by "NODE":"Node_Id":id:"Num":num:<c1, w1>
+    if (c1.equals(c2))
+in
+
+let removeComponent =
+    replace "REMOVE_COMPONENT":node_id::String:component_id::String,
+           "NODE":"Node_Id":id::String:"Num":num::int:<componentName::String, ?w1>,
+           "COMPONENT":nodeId::String:cn::String:<?w2>
+    by  "NODE":"Node_Id":id:"Num":num:<w1>
+    if (componentName.equals(component_id) && node_id.equals(id) && nodeId.equals(node_id) && cn.equals(component_id))
+in
+
+let removeComponentWhenMoved =
+    replace "REMOVE_COMPONENT":node_id::String:component_id::String,
+           "NODE":"Node_Id":id::String:"Num":num::int:<componentName::String, ?w1>,
+           "COMPONENT":nodeId::String:cn::String:<?w2>
+    by  "NODE":"Node_Id":id:"Num":num:<componentName, w1>
+    if (componentName.equals(component_id) && cn.equals(component_id) && nodeId.equals(node_id)) && !node_id.equals(id)
+in
+
+let addNode =
+    replace "ADD_NODE":node::ContainerNode
+    by  "NODE":"Node_Id":node.getName():"Num":0:<>
+in
+
+let removeNode =
+    replace "DELETE_NODE":node::ContainerNode,
+           "NODE":"Node_Id":id::String:"Num":num::int:<?w>,
+           ?l
+    by  l
+   if (node.getName().equals(id))
+in
+
+let addChannel =
+    replace "ADD_CHANNEL":channel::Channel
+    by    "CHANNEL":"Channel_Id":channel.getName():<>
+in
+
+let mergeChannel =
+    replace "CHANNEL":"Channel_Id":channelId1::String:<?w1>,
+            "CHANNEL":"Channel_Id":channelId2::String:<?w2>
+    by      "CHANNEL":"Channel_Id":channelId1:<w1, w2>
+    if (channelId1.equals(channelId2))
+in
+
+let removeChannel =
+    replace "DELETE_CHANNEL":channel::Channel,
+           "CHANNEL":"Channel_Id":id::String:<?w>,
+           ?l
+   by  l
+   if (channel.getName().equals(id))
+in
+
+let addBinding =
+    replace "ADD_BINDING":mBinding::MBinding,
+            "CHANNEL":"Channel_Id":channelId::String:<?w1>,
+            "COMPONENT":nodeId::String:componentName::String:<?w2, portName::String>
+    by      "CHANNEL":"Channel_Id":channelId:<w1,
+                ((ContainerNode)mBinding.getPort().eContainer().eContainer()).getName():((ComponentInstance)mBinding.getPort().eContainer()).getName():mBinding.getPort().getPortTypeRef().getName()>,
+            "COMPONENT":nodeId:componentName:<w2>
+    if (mBinding.getHub().getName().equals(channelId)
+        && ((ContainerNode)mBinding.getPort().eContainer().eContainer()).getName().equals(nodeId)
+        && ((ComponentInstance)mBinding.getPort().eContainer()).getName().equals(componentName)
+        &&  portName.equals(mBinding.getPort().getPortTypeRef().getName()))
+in
+
+let addBindingWhenAlreadyConfigured =
+    replace "ADD_BINDING":mBinding::MBinding,
+            "CHANNEL":"Channel_Id":channelId::String:<?w1,c1Node::String:c1::String:c1Port::String >
+    by      "CHANNEL":"Channel_Id":channelId:<w1, c1Node:c1:c1Port>
+    if (mBinding.getHub().getName().equals(channelId)
+        && mBinding.getPort().getPortTypeRef().getName().equals(c1Port)
+        && ((ComponentInstance)mBinding.getPort().eContainer()).getName().equals(c1)
+        && ((ContainerNode)mBinding.getPort().eContainer().eContainer()).getName().equals(c1Node))
+in
+
+let removeBinding =
+    replace "REMOVE_BINDING":mBinding::MBinding,
+            "CHANNEL":"Channel_Id":channelId::String:<?w1, c1Node::String:c1::String:c1Port::String>,
+            "COMPONENT":nodeId::String:componentName::String:<?w2>
+    by      "CHANNEL":"Channel_Id":channelId:<w1>,
+            "COMPONENT":nodeId:componentName:<w2, c1Port>
+    if (mBinding.getHub().getName().equals(channelId)
+            && ((ComponentInstance)mBinding.getPort().eContainer()).getName().equals(c1)
+            && mBinding.getPort().getPortTypeRef().getName().equals(c1Port)
+            && componentName.equals(c1))
+in
+
+let fixBinding =
+    replace "CHANNEL":"Channel_Id":channelId::String:<?w1, c1Node::String:c1::String:c1Port::String, c2Node::String:c2::String:c2Port::String>,
+            "NODE":"Node_Id":id::String:"Num":num::int:<componentName::String, ?w2>
+    by      "CHANNEL":"Channel_Id":channelId:<w1, c1Node:c1:c1Port>,
+            "NODE":"Node_Id":id:"Num":num:<componentName, w2>
+    if ((c1Node.equals(c2Node)
+    || (!c1Node.equals(c2Node)
+        && c1Node.equals(id)))
+    && c1.equals(c2) && c1Port.equals(c2Port))
+in
+
+let balance =
+   replace "NODE":"Node_Id":id1::String:"Num":num1::int:<?w1, s::String>,
+           "NODE":"Node_Id":id2::String:"Num":num2::int:<?w2>
+    by  "NODE":"Node_Id":id1:"Num":(num1-1):<w1>,
+        "NODE":"Node_Id":id2:"Num":(num2+1):<w2, s>
+   if num1 - num2 >= 2
+in
+
+let bind =
+	replace "CHANNEL":"Channel_Id":channelId::String:<?w1, c1Node::String:c1::String:c1Port::String>,
+			"COMPONENT":nodeId::String:componentName::String:<?w2, portName::String>
+	by	    "CHANNEL":"Channel_Id":channelId:<w1, c1Node:c1:c1Port, nodeId:componentName:portName>,
+	        "COMPONENT":nodeId:componentName:<w2>
+	if (!(c1Node.equals(nodeId) && componentName.equals(c1)) && c1Port.equals(portName))
+in
+<
+   addComponent, addComponentWhenIfAlreadyExist, fixComponentOnNode,
+   removeComponent, removeComponentWhenMoved,
+   addNode, removeNode,
+   addChannel, mergeChannel, removeChannel,
+   addBinding, addBindingWhenAlreadyConfigured, removeBinding, fixBinding,
+   balance, bind
+>

@@ -1,0 +1,67 @@
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.javaseNode/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-BETA1"
+//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nioChannels/1.7.0-BETA1"
+//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nanohttp/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.gossiperNetty/1.7.0-BETA1"
+merge "mvn:org.kevoree.hocl/org.kevoree.hocl.scubeDemo/1.0.0-SNAPSHOT"
+
+// add MiniCloudNode to start from the editor
+//merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/{kevoree.version}"
+merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/1.7.0-BETA1"
+addNode miniCloudNode : MiniCloudNode //{logLevel = "DEBUG"}
+
+// add a sync group to only push on the minicloud node
+addGroup sync : NanoRestGroup
+addToGroup sync miniCloudNode
+updateDictionary sync {port="8000"}@miniCloudNode
+
+// add Node
+addNode node0 : JavaSENode //{logLevel = "DEBUG"}
+addNode node1 : JavaSENode //{logLevel = "DEBUG"}
+//addNode node2 : JavaSENode
+
+// add and configuration Group
+addGroup HOCLGroup : NettyGossiperGroup {mergeModel="true"}
+addToGroup HOCLGroup node0
+addToGroup HOCLGroup node1
+
+//addToGroup HOCLGroup node2
+updateDictionary HOCLGroup  {port="11000",http_port="12000"}@node0,{port="11001",http_port="12001"}@node1
+
+// add miniCloudNode on HOCL group
+addToGroup HOCLGroup miniCloudNode
+updateDictionary HOCLGroup {port="11100",http_port="12100"}@miniCloudNode
+
+// add Components
+addComponent chemical@miniCloudNode : ScubeCase1
+addComponent page1@node1 : HelloWorldPage {urlpattern="/page"}
+//addComponent page2@node0 : HelloWorldPage {urlpattern="/page"}
+addComponent webserver@node0 : WebServer {port="8080", timeout="5000"}
+//addComponent page2@node2 : HelloWorldPage {urlpattern="/page"}
+
+//addComponent page4@node1 : HelloWorldPage {urlpattern="/page"}
+
+//Add Channels
+addChannel requestChannel : NioRoundRobin
+addChannel responseChannel : NioChannel
+
+// bind Channels and Components
+bind webserver.handler@node0=> requestChannel
+bind page1.request@node1 => requestChannel
+//bind page2.request@node1 => requestChannel
+bind webserver.response@node0 => responseChannel
+bind page1.content@node1 => responseChannel
+//bind page2.content@node1 => responseChannel
+
+// update Channels attributes
+updateDictionary requestChannel  {port="9100"}@node0
+updateDictionary requestChannel  {port="9101"}@node1
+updateDictionary responseChannel  {port="9110"}@node0
+updateDictionary responseChannel  {port="9111"}@node1
+
+
+addChild node0 @ miniCloudNode
+addChild node1 @ miniCloudNode
+//addChild node2 @ miniCloudNode
+

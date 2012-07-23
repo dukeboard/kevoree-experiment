@@ -70,13 +70,14 @@
 # verbosity = 				0
 
 # one thread
-evalthreads = 				auto
-breedthreads = 				auto
+evalthreads = 				2
+breedthreads = 				2
 
 # ECJ used to use this as its initial random seed by default.  No longer, now
 # it's assumed to be the wall clock time by default.
 # seed.0 = 				4357
 seed.0 =				time
+seed.1=                 time
 
 
 

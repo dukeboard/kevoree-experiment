@@ -5,15 +5,10 @@ import org.kevoree.tools.marShell.parser.{ParserUtil, KevsParser}
 import org.kevoree.framework.KevoreeXmiHelper
 import java.net.URL
 import java.io.{InputStreamReader, BufferedReader, OutputStreamWriter, ByteArrayOutputStream}
-import org.kevoree.tools.marShell.interpreter.KevsInterpreterContext._
-import org.kevoree.tools.marShell.parser.{ParserUtil, KevsParser}
-import org.kevoree.framework.KevoreeXmiHelper
-import java.net.URL
-import java.io.{InputStreamReader, BufferedReader, OutputStreamWriter, ByteArrayOutputStream}
 import scala.Predef._
 import org.jgrapht.alg.ConnectivityInspector
-import org.kevoree.{NodeNetwork, NodeLink, ContainerNode}
-import org.kevoree.experiment.modelScript.{KevTopo2JGraph, Configuration, TopologyGeneratorScript, Kev2GraphML}
+import org.kevoree.{NodeNetwork, ContainerNode}
+import org.kevoree.experiment.modelScript.{KevTopo2JGraph, Configuration, TopologyGenerator, Kev2GraphML}
 
 /**
  * User: ffouquet
@@ -42,7 +37,7 @@ object FailureManagement extends App {
 
   tscript append "tblock {"
 
-  tscript.append(TopologyGeneratorScript.generate(
+  tscript.append(TopologyGenerator.generate(
     Configuration.packets,
     Configuration.logServer,
     true,

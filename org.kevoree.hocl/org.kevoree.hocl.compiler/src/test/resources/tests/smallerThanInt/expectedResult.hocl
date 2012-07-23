@@ -1,0 +1,11 @@
+
+package fr.inria.fr.inria.hocl.tests.smallerThanInt;
+
+let removeBigger = replace x::int, ?w
+                        by w
+                        if x > 10
+in
+ < removeBigger,
+   8,4,3,8,6,1
+ >
+ 

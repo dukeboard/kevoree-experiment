@@ -1,0 +1,14 @@
+
+// Multiset partitioning (cf ACM93)
+
+package fr.inria.fr.inria.hocl.tests.msetPartition;
+
+
+let sp = replace "S":<x::int,?ws>, "T":<y::int,?wy>
+              by "S":<y,ws>, "T":<x,wy>
+              if x > y
+in
+< "S":<6,5,4,4,1,3,2,3>,
+  sp,
+  "T":<7,9,9,8>
+>

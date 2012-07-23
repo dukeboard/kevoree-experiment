@@ -1,0 +1,11 @@
+
+package fr.inria.fr.inria.hocl.example.getPrimeNumbers;
+
+let prime=
+	replace x::int,y::int
+	by x
+	if y % x ==0
+in
+<
+	prime,2,3,5,7
+>

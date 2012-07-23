@@ -1,11 +1,9 @@
 package org.kevoree.experiment.smartForest.fitness
 
-import scala.collection.JavaConversions._
 import org.kevoree.{ComponentInstance, ContainerRoot}
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 import java.lang.{Math}
 import org.kevoree.experiment.smartForest.dpa.{PeriodValues, ChangePeriodPropertyDPAO}
-import reflect.ValDef
 
 /**
  * User: ffouquet
@@ -22,9 +20,9 @@ class ConfidenceFitnessFunction extends FitnessFunction {
     if (bestConfidence == 0) bestConfidence = calculateBestConfidence(model)
     var result : Float = 0
     (0 until model.getNodes.size).foreach{ indice =>
-      val node = model.getNodes.get(indice);
+      val node = model.getNodes(indice);
       node.getComponents.foreach{ componentInstance =>
-        val period = Integer.parseInt(componentInstance.asInstanceOf[ComponentInstance].getDictionary.getValues.find {
+        val period = Integer.parseInt(componentInstance.asInstanceOf[ComponentInstance].getDictionary.get.getValues.find {
           dv =>
             dv.getAttribute.getName == ChangePeriodPropertyDPAO.getPeriodPropertyName
         }.get.getValue)
@@ -56,7 +54,7 @@ class ConfidenceFitnessFunction extends FitnessFunction {
     (0 until model.getNodes.size).foreach{ indice =>
       result = result + 3*worstFreq/((1+getDistanceWithClosestSuperNode(indice))*(1+getDistanceWithClosestSuperNode(indice) )) // 1+ getDistance to avoid division by 0
     }
-    println("Best confidence = " + result)
+   // println("Best confidence = " + result)
     (result).asInstanceOf[Float]
   }
 

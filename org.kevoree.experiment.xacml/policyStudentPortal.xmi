@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<policy:Policy xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:policy="http://policy/1.0">
+  <elements xsi:type="policy:Object" name="obj2" operations="//@elements.8"/>
+  <elements xsi:type="policy:User" name="user0" roles="//@elements.3"/>
+  <elements xsi:type="policy:User" name="user1" roles="//@elements.4"/>
+  <elements xsi:type="policy:Role" name="student" users="//@elements.1" permissions="//@elements.5"/>
+  <elements xsi:type="policy:Role" name="visitor" users="//@elements.2" permissions="//@elements.6"/>
+  <elements xsi:type="policy:Permission" name="permissionStudent" roles="//@elements.3" operations="//@elements.8 //@elements.7"/>
+  <elements xsi:type="policy:Permission" name="permissionVisitor" roles="//@elements.4" operations="//@elements.7"/>
+  <elements xsi:type="policy:Operation" name="list" objects="//@elements.9 //@elements.10 //@elements.11" permissions="//@elements.5 //@elements.6"/>
+  <elements xsi:type="policy:Operation" name="download" objects="//@elements.9 //@elements.10 //@elements.11 //@elements.0" permissions="//@elements.5"/>
+  <elements xsi:type="policy:Object" name="obj0" operations="//@elements.8 //@elements.7"/>
+  <elements xsi:type="policy:Object" name="obj1" operations="//@elements.8 //@elements.7"/>
+  <elements xsi:type="policy:Object" name="obj3" operations="//@elements.8 //@elements.7"/>
+</policy:Policy>

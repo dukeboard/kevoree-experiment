@@ -1,0 +1,15 @@
+
+/**  Prime10: compute all prime numbers lower than 10 **/
+
+package fr.inria.fr.inria.hocl.tests.primesDecr;
+
+let sieve =  replace x::int, y::int
+                  by ((x))
+                  if y % x == 0
+in
+let iota = replace "Iota":(x::int)
+                by "Iota":(x-1), x
+                if x > 1
+in
+ <sieve,iota,"Iota":1000>
+

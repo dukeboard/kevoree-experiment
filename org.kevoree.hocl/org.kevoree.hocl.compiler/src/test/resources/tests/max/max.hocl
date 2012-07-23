@@ -1,0 +1,8 @@
+
+package fr.inria.fr.inria.hocl.tests.max;
+
+//Calculate max number
+//let max = replace x::int, y::int by x if x >= y in
+
+let rec max = replace-one x::int, y::int by x,max if x >= y in
+<max,5,9,-6,0,3,5,0,5,9,-3,1>

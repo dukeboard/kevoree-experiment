@@ -1,0 +1,25 @@
+
+package fr.inria.fr.inria.hocl.example.libraryJavaS3;
+
+let borrowBook=
+	replace  "RECORDS":<?l>,"Borrow":stu_name::String:book_name::String
+	by "RECORDS":<l, "Borrow":stu_name:book_name>
+in
+<
+	borrowBook,
+	"BOOKS":<
+		new Book("Thinking in JAVA"),
+		new Book("Code Complete"),
+		new Book("C++ Primer")
+	>,
+	"STUDENTS":<
+		new Student("Thierry"),
+		new Student("Nicola"),
+		new Student("Valentine")
+	>,
+	"RECORDS":<>,
+
+	"Borrow":"Thierry":"Thinking in JAVA",
+	"Borrow":"Nicola":"Code Complete",
+	"Borrow":"Thierry":"C++ Primer"
+>

@@ -1,0 +1,37 @@
+
+// Connectivity of an undirected graph (cf ACM93)
+
+package fr.inria.fr.inria.hocl.tests.graphConnectivity;
+
+//import java.util.*;
+
+let connect = replace v::MySet, w::MySet, m::String:n::String //v::Set<String>, w::Set<String>, m::String:n::String
+                   by v.addAll(w) //? v : null
+                   if v.contains(m) && w.contains(n)
+in
+
+let inside = replace v::MySet, m::String:n::String //v::Set<String>, m::String:n::String
+                  by v
+                  if v.contains(m) && v.contains(n)
+in
+
+<
+  new MySet("A"),
+  new MySet("B"),
+  new MySet("C"),
+  new MySet("D"),
+  new MySet("E"),
+  new MySet("F"),
+  new MySet("G"),
+  new MySet("H"),
+  "A":"B",
+  "C":"B",
+  "E":"B",
+  "D":"B",
+  "C":"E",
+  "B":"F",
+  "F":"G",
+  "G":"H",
+  connect,
+  inside
+>

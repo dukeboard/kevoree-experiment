@@ -1,0 +1,36 @@
+import nemf.packages.kevoree;
+import nemf.ecore.datatypes;
+import datatypes;
+
+machine nodeInfo { 
+	 //allows to list all nodes
+	 pattern node(X) = {
+	 	ContainerNode(X); 
+	 }
+	 
+	 //list nodes containing addressBook Client
+	 pattern nodeSubject(N) = {
+	 	ContainerNode(N);	
+	 	ComponentInstance(C);
+	 	ContainerNode.components(NC, N, C);
+	 	TypeDefinition(TYPDEF);
+	 	Instance.typeDefinition(R,C,TYPDEF);	
+		EString(TYPNAME);
+		NamedElement.name(RR,TYPDEF,TYPNAME);
+		check (toString(value(TYPNAME)) == "AddressBookClient");
+	 }
+	 
+	 //list nodes containing addressBook Object
+	 pattern nodeObject(N) = {
+	 	ContainerNode(N);	
+	 	ComponentInstance(C);
+	 	ContainerNode.components(NC, N, C);
+	 	TypeDefinition(TYPDEF);
+	 	Instance.typeDefinition(R,C,TYPDEF);	
+		EString(TYPNAME);
+		NamedElement.name(RR,TYPDEF,TYPNAME);
+		check (toString(value(TYPNAME)) == "AddressBook");
+	 }
+	 
+	 
+}

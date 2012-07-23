@@ -1,0 +1,176 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.kevoree.sample</groupId>
+    <artifactId>org.kevoree.experiment.xacml</artifactId>
+    <packaging>bundle</packaging>
+    <version>1.7.0</version>
+    <name>xacml</name>
+
+    <properties>
+        <kevoree.version>1.7.0-SNAPSHOT</kevoree.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.javase.framework</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.annotation.api</artifactId>
+            <version>${kevoree.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.kevoree</groupId>
+            <artifactId>org.kevoree.kompare</artifactId>
+            <version>${kevoree.version}</version>
+            <type>bundle</type>
+        </dependency>
+        
+          <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.emf.compat </artifactId>
+            <version>${kevoree.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+	<dependency>
+            <groupId>org.kevoree.extra</groupId>
+	    <artifactId>org.kevoree.extra.emf.library</artifactId>
+	    <version>2.7.0</version>
+	    <type>bundle</type>
+	</dependency>
+	
+        <dependency>
+            <groupId>org.eclipse.viatra2</groupId>
+            <artifactId>viatra2.emf.incquery.runtime</artifactId>
+            <version>1.1</version>
+            <type>bundle</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.viatra2</groupId>
+            <artifactId>viatra2.gtasm.patternmatcher.incremental.rete</artifactId>
+            <version>1.1</version>
+            <type>bundle</type>
+        </dependency>
+        
+         <dependency>
+            <groupId>sun.xacml</groupId>
+            <artifactId>xacml</artifactId>
+            <version>1.0</version>
+            <type>bundle</type>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.kevoree.tools</groupId>
+                <artifactId>org.kevoree.tools.annotation.mavenplugin</artifactId>
+                <version>${kevoree.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <nodeTypeNames>JavaSENode</nodeTypeNames>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Felix BnD plugin : allow Bundle packaging : generate OSGi JAR  -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.5</version>
+                <extensions>true</extensions>
+            </plugin>
+            <!-- Java compiler plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+ 	    <!--plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>scala-compile-first</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>scala-test-compile</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmArgs>
+                        <jvmArg>-Xmx1024m</jvmArg>
+                    </jvmArgs>
+                </configuration>
+            </plugin-->
+        </plugins>
+	  
+    </build>
+
+    <repositories>
+        <repository>
+            <id>kevoree-release</id>
+            <url>http://maven.kevoree.org/release</url>
+        </repository>
+        <repository>
+            <id>kevoree-snapshot</id>
+            <url>http://maven.kevoree.org/snapshots</url>
+        </repository>
+        <repository>
+            <id>ecore</id>
+            <url>http://mvnrepository.com/artifact/org.eclipse.emf/ecore</url>
+        </repository>
+        <repository>
+            <id>ecore-xmi</id>
+            <url>http://mvnrepository.com/artifact/org.eclipse.emf/ecore-xmi</url>
+        </repository>
+        <repository>
+            <id>common</id>
+            <url>http://mvnrepository.com/artifact/org.eclipse.emf/common</url>
+        </repository>
+
+
+    </repositories>
+
+
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>kevoree-release</id>
+            <url>http://maven.kevoree.org/release</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>kevoree-snapshot</id>
+            <url>http://maven.kevoree.org/snapshots</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

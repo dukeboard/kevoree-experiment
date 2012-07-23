@@ -1,7 +1,6 @@
 package org.kevoree.experiment.smartForest.fitness
 
 import org.kevoree.ContainerRoot
-import scala.collection.JavaConversions._
 import collection.immutable.HashMap
 import java.lang.Double
 import org.kevoree.experiment.smartForest.dpa.{PeriodValues, ChangePeriodPropertyDPAO}
@@ -37,11 +36,11 @@ class ConsumptionFitnessFunction extends FitnessFunction {
       node =>
         node.getComponents.foreach {
           compo =>
-            if (compo.getDictionary == null) {
+            if (compo.getDictionary.isEmpty) {
 
               return 0l
             }
-            compo.getDictionary.getValues.find(v => v.getAttribute.getName == ChangePeriodPropertyDPAO.periodPropertyName) match {
+            compo.getDictionary.get.getValues.find(v => v.getAttribute.getName == ChangePeriodPropertyDPAO.periodPropertyName) match {
               case Some(property) => {
                 val period =  Integer.parseInt(property.getValue)
                 val freq = 1000 /  period
@@ -60,7 +59,7 @@ class ConsumptionFitnessFunction extends FitnessFunction {
   private def calculateWorseConsumption(model: ContainerRoot): Double = {
     var result = 0l
     val worstPeriod = PeriodValues.values.min
-    println("Worst Period = " + worstPeriod)
+    //println("Worst Period = " + worstPeriod)
     val worstFreq = 1000 / worstPeriod
     model.getNodes.foreach {
       node =>
@@ -70,7 +69,7 @@ class ConsumptionFitnessFunction extends FitnessFunction {
 
         }
     }
-    println("Worse consumption = " + result)
+    //println("Worse consumption = " + result)
     result
   }
 

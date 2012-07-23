@@ -1,0 +1,32 @@
+
+/*
+ * Example of a collaborative editing using Virtual Organization
+ *
+ */
+ 
+package fr.inria.fr.inria.hocl.tests.vo;
+
+let publish = replace  globalproduct::int, "ACCEPTING", "ACCEPTING"
+    	      	   by  "PUBLISHED":globalproduct
+in
+let accept = replace s::String:<"VALIDATING":product::int>
+    	          by s:<"VALIDATED">, "ACCEPTING"
+		  if VO.AgreeProduct(product)
+in
+
+let valid = replace s1::String:<"EDITED">, s2::String:<"EDITED">, globalproduct::int, "GENERATE", "GENERATE"
+    	         by s1:<"VALIDATING":globalproduct>, s2:<"VALIDATING":globalproduct>, globalproduct
+
+in
+
+let merge = replace s::String:<"EDITING":product::int>, globalproduct::int
+    	    	     by s:<"EDITED">, product+globalproduct, "GENERATE"
+		     if VO.FinishProduct(product)
+in
+let edit = replace s::String:<"INIT">, globalproduct::int
+                by s:<"EDITING":globalproduct>, globalproduct
+in
+<
+"VOM1":<"INIT">,"VOM2":<"INIT">, 1, edit, merge, valid, accept, publish
+>
+

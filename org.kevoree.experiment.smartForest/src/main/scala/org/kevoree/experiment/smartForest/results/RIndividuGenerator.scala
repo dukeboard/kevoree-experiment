@@ -1,9 +1,9 @@
 package org.kevoree.experiment.smartForest.results
 
 import org.kevoree.framework.KevoreeXmiHelper
-import scala.collection.JavaConversions._
 import java.io.{File, FileWriter}
 import org.kevoree.ContainerRoot
+import org.kevoree.experiment.smartForest.references.ModelGenerator
 
 /**
  * User: ffouquet
@@ -13,7 +13,10 @@ import org.kevoree.ContainerRoot
 
 object RIndividuGenerator extends App {
 
-  val model = KevoreeXmiHelper.load("homega-homega-generated/models/Models402")
+  val model = KevoreeXmiHelper.load("/Users/duke/Documents/dev/dukeboard/kevoree-experiment/org.kevoree.experiment.smartForest/MacBook-Pro-de-duke.local-generated/kevoreeIndividualModel.kev")
+
+ // val model = ModelGenerator.generateForest(12)
+
   generateIndividualRRepresentation(model)
 
   def generateIndividualRRepresentation(model: ContainerRoot) = {
@@ -24,9 +27,9 @@ object RIndividuGenerator extends App {
         var nb = 0
         node.getComponents.foreach {
           component =>
-            component.getTypeDefinition.getDictionaryType.getAttributes.find(att => att.getName == "period") match {
+            component.getTypeDefinition.getDictionaryType.get.getAttributes.find(att => att.getName == "period") match {
               case Some(att) => {
-                avgLocalFreq = avgLocalFreq + Integer.parseInt(component.getDictionary.getValues.find(dv => dv.getAttribute == att).get.getValue)
+                avgLocalFreq = avgLocalFreq + Integer.parseInt(component.getDictionary.get.getValues.find(dv => dv.getAttribute == att).get.getValue)
                 nb = nb + 1
               }
               case None =>

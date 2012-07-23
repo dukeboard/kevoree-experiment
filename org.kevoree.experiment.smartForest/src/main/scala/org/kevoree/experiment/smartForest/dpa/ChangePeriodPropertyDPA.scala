@@ -1,11 +1,10 @@
 package org.kevoree.experiment.smartForest.dpa
 
 import org.kevoree.library.tools.dpa.DPA
-import java.util.Map
 import org.kevoree.{ContainerRoot, NamedElement}
 import org.kevoree.tools.marShell.ast.{UpdateDictionaryStatement, TransactionalBloc, Script}
 import ec.util.MersenneTwisterFast
-import scala.collection.JavaConversions._
+import java.util.{HashMap, Map}
 
 /**
  * User: ffouquet
@@ -42,8 +41,10 @@ class ChangePeriodPropertyDPA extends DPA {
   def getASTScript(map: Map[String, NamedElement]): Script = {
     val props = new java.util.Properties()
     val newIndex = random.nextInt(PeriodValues.values.size)
-
     props.put(ChangePeriodPropertyDPAO.getPeriodPropertyName, PeriodValues.values(newIndex).toString)
+
+    val propsAll = new HashMap[String,java.util.Properties]()
+    propsAll.put("*",props)
 
     Script(
       List(
@@ -51,7 +52,7 @@ class ChangePeriodPropertyDPA extends DPA {
           List(
             UpdateDictionaryStatement(map.get(ChangePeriodPropertyDPAO.getComponentName).getName,
               Some(map.get(ChangePeriodPropertyDPAO.getNodeName).getName),
-              props)
+              propsAll)
           )
         )
       )

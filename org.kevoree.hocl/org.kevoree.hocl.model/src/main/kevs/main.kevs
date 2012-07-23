@@ -1,0 +1,67 @@
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.javaseNode/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-BETA1"
+//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.webserver/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nioChannels/1.7.0-BETA1"
+//merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.nanohttp/1.7.0-BETA1"
+merge "mvn:org.kevoree.library.javase/org.kevoree.library.javase.gossiperNetty/1.7.0-BETA1"
+merge "mvn:org.kevoree.hocl/org.kevoree.hocl.scubeDemo/1.0.0-SNAPSHOT"
+
+// add MiniCloudNode to start from the editor
+//merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/{kevoree.version}"
+merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.minicloud/1.7.0-BETA1"
+addNode node0 : MiniCloudNode //{logLevel = "DEBUG"}
+
+// add a sync group to only push on the minicloud node
+addGroup sync : NanoRestGroup
+addToGroup sync node0
+updateDictionary sync {port="8000"}@node0
+
+// add Node
+addNode nodeScube0 : JavaSENode //{logLevel = "DEBUG"}
+addNode nodeScube1 : JavaSENode //{logLevel = "DEBUG"}
+//addNode nodeScube2 : JavaSENode
+
+// add and configuration Group
+addGroup HOCLGroup : NettyGossiperGroup {mergeModel="true"}
+addToGroup HOCLGroup nodeScube0
+addToGroup HOCLGroup nodeScube1
+
+//addToGroup HOCLGroup nodeScube2
+updateDictionary HOCLGroup  {port="11000",http_port="12000"}@nodeScube0,{port="11001",http_port="12001"}@nodeScube1
+
+// add miniCloudNode on HOCL group
+addToGroup HOCLGroup node0
+updateDictionary HOCLGroup {port="11100",http_port="12100"}@node0
+
+// add Components
+addComponent chemical@node0 : ScubeCase1
+addComponent page1@nodeScube1 : HelloWorldPage {urlpattern="/page"}
+//addComponent page2@nodeScube0 : HelloWorldPage {urlpattern="/page"}
+addComponent webserver@nodeScube0 : WebServer {port="8080", timeout="5000"}
+//addComponent page2@nodeScube2 : HelloWorldPage {urlpattern="/page"}
+
+//addComponent page4@nodeScube1 : HelloWorldPage {urlpattern="/page"}
+
+//Add Channels
+addChannel requestChannel : NioRoundRobin
+addChannel responseChannel : NioChannel
+
+// bind Channels and Components
+bind webserver.handler@nodeScube0=> requestChannel
+bind page1.request@nodeScube1 => requestChannel
+//bind page2.request@nodeScube1 => requestChannel
+bind webserver.response@nodeScube0 => responseChannel
+bind page1.content@nodeScube1 => responseChannel
+//bind page2.content@nodeScube1 => responseChannel
+
+// update Channels attributes
+updateDictionary requestChannel  {port="9100"}@nodeScube0
+updateDictionary requestChannel  {port="9101"}@nodeScube1
+updateDictionary responseChannel  {port="9110"}@nodeScube0
+updateDictionary responseChannel  {port="9111"}@nodeScube1
+
+
+addChild nodeScube0 @ node0
+addChild nodeScube1 @ node0
+//addChild nodeScube2 @ node0
+

@@ -1,0 +1,105 @@
+import nemf.packages.rbac.rbac;
+import nemf.ecore.datatypes;
+import datatypes;
+
+machine policyInfo {
+	 
+	 //allows to list all users
+	 pattern user(U) = {
+	 	User(U); 
+	 }
+	 
+	 //allows to list all roles
+	 pattern role(R) = {
+	 	Role(R); 
+	 }
+	 
+	 //allows to list all sessions
+	 pattern session(S) = {
+	 	Session(S); 
+	 }
+	 
+	 //allows to list all permission
+	 pattern permission(P) = {
+	 	Permission(P); 
+	 }
+	 
+	  //allows to list all users
+	 pattern object(OB) = {
+	 	Resource(OB); 
+	 }
+	 
+	 //list user-role assignment
+	 pattern userRoleAssignment(USER,ROLE) ={
+	 	User(USER);
+	 	Role(ROLE);
+	 	User.assignedRoles(REL,USER,ROLE);	
+	 }
+	 
+	 //list role-permission assignment
+	 pattern RolePermissionAssignment(ROLE,PERM) ={
+	 	Role(ROLE);
+	 	Permission(PERM);
+	 	Role.permissions(REL,ROLE,PERM);	
+	 }
+	 
+	 //list permission-operation assignment
+	 pattern PermissionOperationAssignment(PERM,OPE) ={
+	 	Permission(PERM);
+	 	Operation(OPE);
+	 	Permission.operations(REL,PERM,OPE);	
+	 }
+	 
+	 //list permission-operation assignment
+	 pattern OperationObjectAssignment(PERM,OPE,OBJ) ={
+	 	Permission(PERM);
+	 	Operation(OPE);
+	 	Resource(OBJ);
+	 	Permission.operations(REL,PERM,OPE);
+	 	Operation.resources(REL2,OPE,OBJ);	
+	 }
+	 
+	 //allows to list user->operation
+	 pattern userOperation(USER,OPERATIONNAME) = {
+	 	User(USER);
+	 	Role(ROLE);
+	 	Permission(PERMISSION);
+	 	Operation(OPERATION);
+	 	PolicyElement.name(R,OPERATION,OPERATIONNAME);			
+	 	User.assignedRoles(UR,USER,ROLE);
+	 	Role.permissions(RP,ROLE,PERMISSION);
+	 	Permission.operations(PO,PERMISSION,OPERATION);
+	 }
+	 
+	 //allows to list reules under the form of user->operation->resource
+	 pattern userRule(USER,OPERATION,OBJECT) = {
+	 	User(USER);
+	 	Role(ROLE);
+	 	Permission(PERMISSION);
+	 	Operation(OPERATION);
+	 	Resource(OBJECT);
+	 	
+	 	User.assignedRoles(UR,USER,ROLE);
+	 	Role.permissions(RP,ROLE,PERMISSION);
+	 	Permission.operations(PO,PERMISSION,OPERATION);
+	 	Operation.resources(OR,OPERATION,OBJECT);
+	 }
+	 
+	//allows to list rule under the form of  user->role->permission->operation->resource (rule)
+	//here it may be interesting to detect  what are the redundant user rule(user->operation->object)
+	 pattern userFullRule(USER,ROLE,PERMISSION,OPERATION,OBJECT) = {
+	 	User(USER);
+	 	Role(ROLE);
+	 	Permission(PERMISSION);
+	 	Operation(OPERATION);
+	 	Resource(OBJECT);	 	
+	 	User.assignedRoles(UR,USER,ROLE);
+	 	Role.permissions(RP,ROLE,PERMISSION);
+	 	Permission.operations(PO,PERMISSION,OPERATION);
+	 	Operation.resources(OR,OPERATION,OBJECT);
+	 }
+	
+	 
+	
+	
+}

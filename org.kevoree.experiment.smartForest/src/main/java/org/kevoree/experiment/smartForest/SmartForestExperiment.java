@@ -5,9 +5,8 @@ import ch.qos.logback.classic.Logger;
 import org.kevoree.ContainerRoot;
 import org.kevoree.experiment.smartForest.experiment.SmartForestIndividual;
 import org.kevoree.experiment.smartForest.model.Generator;
+import org.kevoree.framework.KevoreeXmiHelper;
 import org.kevoree.library.reasoner.ecj.KevoreeMultipleGeneticAlgorithm;
-import org.kevoree.tools.marShell.parser.ParserUtil;
-
 import org.slf4j.LoggerFactory;
 
 
@@ -16,12 +15,12 @@ import java.net.InetAddress;
 import java.util.*;
 
 public class SmartForestExperiment {
-    public final static int forestWidth = 20;
-    public final static int generationsForSingle = 50;
-    public final static int populationsForSingle = 100;
-    public final static int generationsForMulti = 50;
-    public final static int populationsForMulti = 100;
-    public final static int elite = 0;
+    public static int forestWidth = 10;
+    public static int generationsForSingle = 100;
+    public static int populationsForSingle = 100;
+    public static int generationsForMulti = 50;
+    public static int populationsForMulti = 100;
+    public static int elite = 0;
 
     public final static String paramsSingleFitnessSourceFile = "SmartForestSingleFitnessCrossOver.params";
     public final static String paramsMultiFitnessSourceFile = "SmartForestMultiCrossOver.params";
@@ -29,10 +28,9 @@ public class SmartForestExperiment {
     public final static String individualBaseModel = "kevoreeIndividualModel.kev";
 
     public static String folderToStoreTempFile = "generated";
-    private static long initTime;
 
     private static final ClassLoader classLoader = SmartForestExperiment.class.getClassLoader();
-
+    private static long initTime;
 
     public static void main(String[] args){
 
@@ -41,7 +39,7 @@ public class SmartForestExperiment {
         // initialization of the architecture : We are starting with an architecture with all components on all nodes
         ContainerRoot myModel = Generator.generateForest(forestWidth);
         // Pass it to the SmartForestIndividual
-        ParserUtil.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+        KevoreeXmiHelper.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
 
         // Initialize parameters to match with the experiment
         Map<String,String> myProperties = new HashMap<String,String>();
@@ -62,29 +60,26 @@ public class SmartForestExperiment {
         // End of single optimization
 
         // Beginning of multi axial optimization
-//        initExperiment();
-//        ParserUtil.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
-//        myProperties = new HashMap<String,String>();
-//        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
-//        myProperties.put("generations = 100", "generations = " + generationsForMulti);
-//        myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
-//        myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
-//        myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
-//        myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
-//        myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
-//        initializeParams(paramsMultiFitnessSourceFile, paramsTargetFile, myProperties);
-//
-//        //Start the experiment
-//        kmga = new KevoreeMultipleGeneticAlgorithm ();
-//        kmga.start();
-//        kmga.clean();
+        initExperiment();
+        KevoreeXmiHelper.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+        myProperties = new HashMap<String,String>();
+        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
+        myProperties.put("generations = 100", "generations = " + generationsForMulti);
+        myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
+        myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
+        myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
+        myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
+        myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
+        initializeParams(paramsMultiFitnessSourceFile, paramsTargetFile, myProperties);
 
-
-        collectStatistics();
+        //Start the experiment
+        kmga = new KevoreeMultipleGeneticAlgorithm ();
+        kmga.start();
+        kmga.clean();
     }
 
-    private static void collectStatistics() {
-        System.out.println("time="+(System.currentTimeMillis()-initTime)+"ms");
+    public static Long collectStatistics() {
+        return (System.currentTimeMillis()-initTime);
     }
 
     private static void initializeParams(String sourceFile, String targetFile, Map<String,String> myProperties) {
@@ -118,13 +113,17 @@ public class SmartForestExperiment {
 
     }
 
-    private static void initExperiment() {
-        initTime = System.currentTimeMillis();
 
+    public static void initTimeStat(){
+        initTime = System.currentTimeMillis();
+    }
+
+    private static void initExperiment() {
+        
         // initialize : logger are quiet, old statistic files are deleted and the folder to store statistic file is prefixed byt the computer name
         Logger root = (Logger)LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
         root.setLevel(Level.OFF); //change to off
-        folderToStoreTempFile = getComputerFullName() + "-" + folderToStoreTempFile;
+        folderToStoreTempFile = getComputerFullName() + "-generated";
         // clean and create the temp folder
         File generatedDirectory = new File(folderToStoreTempFile);
         if (generatedDirectory.exists() && generatedDirectory.isDirectory()){

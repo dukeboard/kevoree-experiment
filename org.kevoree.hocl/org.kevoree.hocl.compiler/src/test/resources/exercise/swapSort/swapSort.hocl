@@ -1,0 +1,10 @@
+package fr.inria.fr.inria.hocl.exercise.swapSort;
+
+let swap =
+  replace  i::int:x::int, j::int:y::int
+       by  i:y, j:x
+       if  i< j && x > y
+in
+<
+	swap,1:5,2:2,3:8,4:6,5:7,6:9,7:3,8:1,9:10,10:4
+>

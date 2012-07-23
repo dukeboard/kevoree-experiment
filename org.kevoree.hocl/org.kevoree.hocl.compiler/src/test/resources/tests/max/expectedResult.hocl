@@ -1,0 +1,5 @@
+
+package fr.inria.fr.inria.hocl.tests.max;
+
+let max = replace x::int, y::int by x if x >= y in
+<max,9>

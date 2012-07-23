@@ -1,0 +1,22 @@
+
+/*
+ * Ecample of an NP-complete problem: the n-queen problem
+ *
+ * Find the positions of n queens on a checkboard of size n such
+ * that no queen can capture another one. In other words, for each
+ * queen on the checkboard there is no other queen on the same line,
+ * or the same column, or the same diagonal.
+ *
+ *  In this program, we consider one queen by line (so no conflict on
+ *  one line). Queens are represented by pairs "Ri":c where "Ri" is her
+ *  name, and c her vertical position (column).
+ *
+ */
+ 
+package fr.inria.fr.inria.hocl.tests.queensFour;
+ 
+// expected result: in fact several possibilities exist but since it
+//  is a deterministic interpreter it always find this solution
+
+<"R1":2, "R2":4, "R3":1, "R4":3>
+

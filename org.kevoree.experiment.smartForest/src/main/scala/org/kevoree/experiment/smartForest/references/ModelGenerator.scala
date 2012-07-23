@@ -3,16 +3,13 @@ package org.kevoree.experiment.smartForest.references
 import java.net.{URLDecoder, URL}
 import org.kevoree.tools.marShell.parser.KevsParser
 import org.kevoree.tools.marShell.interpreter.KevsInterpreterContext
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
-import org.kevoree.{KevoreePackage, ContainerRoot}
-import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.ecore.xmi.{XMLResource, XMIResource}
 import org.kevoree.tools.marShell.interpreter.KevsInterpreterAspects._
 import org.kevoree.experiment.smartForest.SmartForestExperiment
 
 import org.kevoree.experiment.smartForest.dpa.{PeriodValues, ChangePeriodPropertyDPAO}
 import java.lang.Math
+import org.kevoree.ContainerRoot
+import org.kevoree.framework.KevoreeXmiHelper
 
 /**
  * User: ffouquet
@@ -23,22 +20,12 @@ import java.lang.Math
 object ModelGenerator {
 
   val parser: KevsParser = new KevsParser
-  val superNodesIndices = List((0, 0), (0, SmartForestExperiment.forestWidth - 1), (SmartForestExperiment.forestWidth - 1, 0), (SmartForestExperiment.forestWidth - 1, SmartForestExperiment.forestWidth - 1))
+  var superNodesIndices = List((0, 0), (0, SmartForestExperiment.forestWidth - 1), (SmartForestExperiment.forestWidth - 1, 0), (SmartForestExperiment.forestWidth - 1, SmartForestExperiment.forestWidth - 1))
+
 
   def generateForest(forestWidth: Int): ContainerRoot = {
-    var url: URL = null
-    var path: String = ""
-    try {
-      url = this.getClass.getClassLoader.getResource("defaultLibrary.kev")
-      path = URLDecoder.decode(url.toString, "UTF-8")
-    }
-    catch {
-      case e: Exception => {
-        e.printStackTrace()
-      }
-    }
-
-    val myModel: ContainerRoot = load(path)
+    superNodesIndices = List((0, 0), (0, forestWidth - 1), (forestWidth - 1, 0), (forestWidth - 1, forestWidth - 1))
+    val myModel: ContainerRoot = KevoreeXmiHelper.loadStream(this.getClass.getClassLoader.getResourceAsStream("defaultLibrary.kev"));
 
     for (i <- 0 until (forestWidth * forestWidth)) {
       val scriptString: String = "tblock {\n addNode node" + i + ":ArduinoNode \n " +
@@ -76,7 +63,6 @@ object ModelGenerator {
           periodeResult = periode
         }
     }
-    //println("Distance = " + distance + ", periode = " + periodeResult)
     periodeResult
   }
 
@@ -95,16 +81,6 @@ object ModelGenerator {
     minDistance
   }
 
-  def load(uri: String): ContainerRoot = {
-    val rs = new ResourceSetImpl();
-    rs.getResourceFactoryRegistry.getExtensionToFactoryMap.put("kev", new XMIResourceFactoryImpl());
-    rs.getPackageRegistry.put(KevoreePackage.eNS_URI, KevoreePackage.eINSTANCE);
-    val res = rs.getResource(URI.createURI(uri), true);
-    res.asInstanceOf[XMIResource].getDefaultLoadOptions.put(XMLResource.OPTION_ENCODING, "UTF-8");
-    res.asInstanceOf[XMIResource].getDefaultSaveOptions.put(XMLResource.OPTION_ENCODING, "UTF-8");
-    val result = res.getContents.get(0);
-    result.asInstanceOf[ContainerRoot]
-  }
 
 
 }

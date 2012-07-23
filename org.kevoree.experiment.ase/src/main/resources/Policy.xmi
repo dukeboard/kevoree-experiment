@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rbac.rbac:Policy xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rbac.rbac="rbac.rbac" xsi:schemaLocation="rbac.rbac ../metamodel/rbac.ecore#//rbac">
+  <elements xsi:type="rbac.rbac:User" name="Gary" assignedRoles="//@elements.2"/>
+  <elements xsi:type="rbac.rbac:User" name="Boris" assignedRoles="//@elements.2 //@elements.3"/>
+  <elements xsi:type="rbac.rbac:Role" name="employee" permissions="//@elements.4"/>
+  <elements xsi:type="rbac.rbac:Role" name="rescuer" permissions="//@elements.5"/>
+  <elements xsi:type="rbac.rbac:Permission" name="consult">
+    <operations name="read" resources="//@elements.7"/>
+  </elements>
+  <elements xsi:type="rbac.rbac:Permission" name="admin">
+    <operations name="create" resources="//@elements.6"/>
+    <operations name="read" resources="//@elements.6"/>
+    <operations name="update" resources="//@elements.6"/>
+    <operations name="delete" resources="//@elements.6"/>
+  </elements>
+  <elements xsi:type="rbac.rbac:Resource" name="emergencyAddressBook"/>
+  <elements xsi:type="rbac.rbac:Resource" name="employeeAddressBook"/>
+</rbac.rbac:Policy>

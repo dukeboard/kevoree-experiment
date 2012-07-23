@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.kevoree.experiment.KevoreeAndIncQuery/src"
+    modelPluginID="org.kevoree.experiment.KevoreeAndIncQuery" modelName="CaresianCoordinateSystem"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>cartesianCoordinateSystem.ecore</foreignModel>
+  <genPackages prefix="Cartesiancoordinatesystem" disposableProviderFactory="true"
+      ecorePackage="cartesianCoordinateSystem.ecore#/">
+    <genClasses ecoreClass="cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/axes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/points"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/segments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/axeX"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/axeY"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/axeZ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/coeffX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/coeffY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//CartesianCoordinateSystem/coeffZ"/>
+    </genClasses>
+    <genClasses ecoreClass="cartesianCoordinateSystem.ecore#//Axis"/>
+    <genClasses ecoreClass="cartesianCoordinateSystem.ecore#//Point">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//Point/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//Point/y"/>
+    </genClasses>
+    <genClasses ecoreClass="cartesianCoordinateSystem.ecore#//Segment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cartesianCoordinateSystem.ecore#//Segment/a"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cartesianCoordinateSystem.ecore#//Segment/b"/>
+    </genClasses>
+    <genClasses ecoreClass="cartesianCoordinateSystem.ecore#//AxeX"/>
+    <genClasses ecoreClass="cartesianCoordinateSystem.ecore#//AxeY"/>
+    <genClasses ecoreClass="cartesianCoordinateSystem.ecore#//AxeZ"/>
+    <genClasses image="false" ecoreClass="cartesianCoordinateSystem.ecore#//Axe">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//Axe/length"/>
+    </genClasses>
+    <genClasses ecoreClass="cartesianCoordinateSystem.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//Element/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//Element/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cartesianCoordinateSystem.ecore#//Element/color"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

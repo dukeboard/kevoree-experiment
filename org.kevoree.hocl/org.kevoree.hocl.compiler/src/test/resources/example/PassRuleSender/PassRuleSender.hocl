@@ -1,0 +1,17 @@
+package fr.inria.fr.inria.hocl.example.PassRuleSender;
+
+let getMaxNumber=
+	replace x::int, y::int
+	by x
+	if x>y
+in
+
+let getMinNumber =
+	replace x::int, y::int
+	by x
+	if x<y
+in
+
+<
+	getMaxNumber,getMinNumber
+>

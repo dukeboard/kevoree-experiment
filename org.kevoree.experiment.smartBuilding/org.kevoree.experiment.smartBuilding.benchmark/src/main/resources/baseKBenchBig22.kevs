@@ -1,22 +1,30 @@
- {
-addRepo "http://maven.kevoree.org/libs-snapshot-local"
-addRepo "http://maven.kevoree.org/snapshots"
-addRepo "http://scala-tools.org/repo-releases"
-addRepo "http://maven.kevoree.org/release"
-addRepo "http://repo1.maven.org/maven2"
-addRepo "http://maven.restlet.org/"
-addRepo "http://repository.jboss.org/nexus/content/groups/public/"
-merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.serialCT/{kevoree.version}'
-merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.javaseNode/{kevoree.version}'
-merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.restChannels/{kevoree.version}'
-merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.gossiperNetty/{kevoree.version}'
-merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.fakeDomo/{kevoree.version}'
-merge 'mvn:org.kevoree.library.arduino/org.kevoree.library.arduino.nodeType/{kevoree.version}'
-merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.defaultChannels/{kevoree.version}'
-merge 'mvn:org.kevoree.library.arduino/org.kevoree.library.arduino.components/{kevoree.version}'
+{
+merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.components/{kevoree.version}'
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.nanohttp/{kevoree.version}'
+merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.groupType/{kevoree.version}'
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.javaseNode/{kevoree.version}'
+merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.nodeType/{kevoree.version}'
+merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.groupType/{kevoree.version}'
 addNode kbenchmark:ArduinoNode
 updateDictionary kbenchmark{boardTypeName="atmega328",incremental="false"}
- {
-}
-
+addComponent d@kbenchmark : PushButton {pin='12',period='100'}
+addComponent e@kbenchmark : DigitalLight {pin='9'}
+addComponent g@kbenchmark : DigitalLight {pin='10'}
+addComponent i@kbenchmark : Timer {period='200'}
+addChannel b : defMSG {}
+addChannel a : defMSG {}
+addChannel L35 : defMSG {}
+bind e.toggle@kbenchmark => b
+bind d.click@kbenchmark => a
+bind e.on@kbenchmark => a
+bind g.on@kbenchmark => a
+bind i.tick@kbenchmark => b
+bind d.release@kbenchmark => L35
+updateDictionary b
+updateDictionary a
+updateDictionary L35
+updateDictionary d@kbenchmark
+updateDictionary e@kbenchmark
+updateDictionary g@kbenchmark
+updateDictionary i@kbenchmark
 }

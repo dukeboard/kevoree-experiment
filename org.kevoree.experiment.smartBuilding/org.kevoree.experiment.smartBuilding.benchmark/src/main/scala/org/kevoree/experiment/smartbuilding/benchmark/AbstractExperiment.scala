@@ -52,7 +52,7 @@ abstract class AbstractExperiment {
     val newdirTarget: File = new File("arduinoGenerated" + knodeName + "/target")
     org.kevoree.library.arduinoNodeType.FileHelper.createAndCleanDirectory(newdirTarget)
     TargetDirectoryService.rootPath = newdirTarget.getAbsolutePath
-    node.deploy(kompare.kompare(KevoreeFactory.eINSTANCE.createContainerRoot, model, knodeName), knodeName,"uno")
+    node.deploy(kompare.kompare(KevoreeFactory.eINSTANCE.createContainerRoot, model, knodeName), knodeName,"atmega328")
     println("INIT_MS=" + (System.currentTimeMillis() - baseTime))
   }
 

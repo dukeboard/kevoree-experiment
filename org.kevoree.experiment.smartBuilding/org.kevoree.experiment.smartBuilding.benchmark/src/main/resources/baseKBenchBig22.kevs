@@ -1,0 +1,22 @@
+ {
+addRepo "http://maven.kevoree.org/libs-snapshot-local"
+addRepo "http://maven.kevoree.org/snapshots"
+addRepo "http://scala-tools.org/repo-releases"
+addRepo "http://maven.kevoree.org/release"
+addRepo "http://repo1.maven.org/maven2"
+addRepo "http://maven.restlet.org/"
+addRepo "http://repository.jboss.org/nexus/content/groups/public/"
+merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.serialCT/{kevoree.version}'
+merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.javaseNode/{kevoree.version}'
+merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.restChannels/{kevoree.version}'
+merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.gossiperNetty/{kevoree.version}'
+merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.fakeDomo/{kevoree.version}'
+merge 'mvn:org.kevoree.library.arduino/org.kevoree.library.arduino.nodeType/{kevoree.version}'
+merge 'mvn:org.kevoree.library.javase/org.kevoree.library.javase.defaultChannels/{kevoree.version}'
+merge 'mvn:org.kevoree.library.arduino/org.kevoree.library.arduino.components/{kevoree.version}'
+addNode kbenchmark:ArduinoNode
+updateDictionary kbenchmark{boardTypeName="atmega328",incremental="false"}
+ {
+}
+
+}

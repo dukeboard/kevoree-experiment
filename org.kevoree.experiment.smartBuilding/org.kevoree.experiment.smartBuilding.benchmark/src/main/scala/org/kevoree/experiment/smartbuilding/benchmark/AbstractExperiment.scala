@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
 import java.lang.StringBuffer
 import java.nio.charset.Charset
-import org.kevoree.extra.osgi.rxtx.{ContentListener, KevoreeSharedCom, TwoWayActors}
+import org.kevoree.extra.kserial.{ContentListener, KevoreeSharedCom}
 
 /**
  * User: ffouquet
@@ -36,30 +36,23 @@ abstract class AbstractExperiment {
     })
 
     val baseTime = System.currentTimeMillis()
-    val node: ArduinoNode = new ArduinoNode
+    val node: ArduinoNode = new ArduinoNode {
+      newdir = new File("arduinoGenerated" + knodeName)
+      if (!newdir.exists) {
+        newdir.mkdir
+      }
+      outputPath = newdir.getAbsolutePath
+    }
     node.getDictionary.put("boardTypeName", boardTypeName)
     node.getDictionary.put("boardPortName", boardPortName)
     node.getDictionary.put("incremental", "false")
     node.getDictionary.put("pmem", pmemType)
     node.getDictionary.put("psize", psize)
 
-
-    node.newdir = new File("arduinoGenerated" + knodeName)
-    if (!node.newdir.exists) {
-      node.newdir.mkdir
-    }
-    node.progress = new ArduinoGuiProgressBar {
-      override def endTask() {}
-
-      override def beginTask(s: String, i: java.lang.Integer) {}
-    }
     val newdirTarget: File = new File("arduinoGenerated" + knodeName + "/target")
     org.kevoree.library.arduinoNodeType.FileHelper.createAndCleanDirectory(newdirTarget)
-
     TargetDirectoryService.rootPath = newdirTarget.getAbsolutePath
-    node.outputPath = node.newdir.getAbsolutePath
-    node.deploy(kompare.kompare(KevoreeFactory.eINSTANCE.createContainerRoot(), model, knodeName), knodeName)
-
+    node.deploy(kompare.kompare(KevoreeFactory.eINSTANCE.createContainerRoot, model, knodeName), knodeName,"uno")
     println("INIT_MS=" + (System.currentTimeMillis() - baseTime))
   }
 

@@ -6,7 +6,7 @@ import org.kevoree.tools.marShell.ast.Script
 import org.kevoree.tools.marShellTransform.{AdaptationModelWrapper, KevScriptWrapper}
 import util.Random
 import org.kevoree.framework.KevoreeXmiHelper
-import org.kevoree.extra.osgi.rxtx.KevoreeSharedCom
+import org.kevoree.extra.kserial.KevoreeSharedCom
 
 /**
  * User: ffouquet
@@ -38,7 +38,6 @@ class Experiment5 extends AbstractExperiment {
   override def init() {
     super.initNode(knodeName, model)
     previousModel = model
-
   }
 
 
@@ -62,7 +61,7 @@ class Experiment5 extends AbstractExperiment {
   def doStep(modelA: ContainerRoot, modelB: ContainerRoot, i: Int) {
     val modelAtoB: AdaptationModel = kompare.kompare(modelA, modelB, knodeName)
     val baseScript: Script = KevScriptWrapper.miniPlanKevScript(AdaptationModelWrapper.generateScriptFromAdaptModel(modelAtoB))
-    val resultScript: String = KevScriptWrapper.generateKevScriptCompressed(baseScript)
+    val resultScript: String = KevScriptWrapper.generateKevScriptCompressed(baseScript,"kbenchmark")
     //println("ReconfSTEP=>" + resultScript)
     val randomToken = random.nextInt(9)
     println(resultScript)

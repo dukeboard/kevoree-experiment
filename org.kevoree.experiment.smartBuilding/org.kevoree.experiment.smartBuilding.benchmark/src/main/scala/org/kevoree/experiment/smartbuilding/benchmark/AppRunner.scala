@@ -6,13 +6,10 @@
 package org.kevoree.experiment.smartbuilding.benchmark
 
 import org.kevoree.experiment.smartbuilding.com.NativeLibUtil
-import org.kevoree.library.arduinoNodeType.utils.ArduinoHomeFinder
 import javax.swing.{JFrame}
-import org.kevoree.extra.osgi.rxtx.KevoreeSharedCom
+import org.kevoree.extra.kserial.KevoreeSharedCom
 
 object AppRunner extends App {
-
-  ArduinoHomeFinder.checkArduinoHome()
 
  // val expes = List(new Experiment1, new Experiment2, new Experiment3, new Experiment4, new Experiment5)
 

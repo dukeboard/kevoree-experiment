@@ -5,12 +5,12 @@ merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.nodeType/
 merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.groupType/{kevoree.version}'
 merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.components/{kevoree.version}'
 merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.groupType/{kevoree.version}'
-addNode kbenchmark:ArduinoNode
+addNode kbenchmark:ArduinoWirelessNode
 updateDictionary kbenchmark{boardTypeName="atmega328",incremental="false"}
 {
 addComponent e@kbenchmark : DigitalLight {pin='9'}
 addComponent i@kbenchmark : Timer {period='200'}
-addChannel b : LocalChannel {}
+addChannel b : defMSG {}
 bind e.toggle@kbenchmark => b
 bind i.tick@kbenchmark => b
 updateDictionary b

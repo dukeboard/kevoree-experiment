@@ -14,10 +14,9 @@ object AppRunner extends App {
  // val expes = List(new Experiment1, new Experiment2, new Experiment3, new Experiment4, new Experiment5)
 
   var expe = new Experiment5//expes(4)
- // expe.boardPortName = "/dev/tty.usbmodem411"
- // expe.boardTypeName = "mega2560"
- // expe.boardPortName = "/dev/tty.usbserial-A400g2se"
- // expe.boardTypeName = "atmega328"
+
+  expe.boardPortName = "*"
+  expe.boardTypeName = "atmega328"
 
   // expes.foreach{ expe =>
   runExperiment(expe);
@@ -34,11 +33,6 @@ object AppRunner extends App {
     frame.setSize(1024, 768);
     frame.setVisible(true);
     absExp.init()
-    NativeLibUtil.standaloneRxTx()
-
-
-
-
 
     absExp.runExperiment()
     KevoreeSharedCom.killAll()

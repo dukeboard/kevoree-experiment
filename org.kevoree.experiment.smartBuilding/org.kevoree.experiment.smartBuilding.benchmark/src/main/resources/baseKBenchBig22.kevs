@@ -5,7 +5,7 @@ merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.groupType
 merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.javaseNode/{kevoree.version}'
 merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.nodeType/{kevoree.version}'
 merge 'mvn:org.kevoree.corelibrary.arduino/org.kevoree.library.arduino.groupType/{kevoree.version}'
-addNode kbenchmark:ArduinoNode
+addNode kbenchmark:ArduinoWirelessNode
 updateDictionary kbenchmark{boardTypeName="atmega328",incremental="false"}
 addComponent d@kbenchmark : PushButton {pin='12',period='100'}
 addComponent e@kbenchmark : DigitalLight {pin='9'}

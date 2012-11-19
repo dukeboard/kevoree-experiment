@@ -12,6 +12,7 @@ import javax.imageio.ImageIO
 import java.lang.StringBuffer
 import java.nio.charset.Charset
 import org.kevoree.extra.kserial.{ContentListener, KevoreeSharedCom}
+import org.kevoree.tools.aether.framework.NodeTypeBootstrapHelper
 
 /**
  * User: ffouquet
@@ -23,8 +24,8 @@ abstract class AbstractExperiment {
 
   var kompare: KevoreeKompareBean = new KevoreeKompareBean
   var boardTypeName = "atmega328"
-  var boardPortName = "/dev/tty.usbserial-A400g2zz"
-  var pmemType = "EEPROM"
+  var boardPortName = "*"
+  var pmemType = "eeprom"
   var psize = "MAX"
 
   def initNode(knodeName: String, model: ContainerRoot) {
@@ -34,25 +35,24 @@ abstract class AbstractExperiment {
           interpetResult(indice,content)
       }
     })
-
+    val bs: NodeTypeBootstrapHelper = new NodeTypeBootstrapHelper
     val baseTime = System.currentTimeMillis()
-    val node: ArduinoNode = new ArduinoNode {
-      newdir = new File("arduinoGenerated" + knodeName)
-      if (!newdir.exists) {
-        newdir.mkdir
-      }
-      outputPath = newdir.getAbsolutePath
-    }
+
+
+    val node: ArduinoNode = new ArduinoNode
     node.getDictionary.put("boardTypeName", boardTypeName)
-    node.getDictionary.put("boardPortName", boardPortName)
     node.getDictionary.put("incremental", "false")
     node.getDictionary.put("pmem", pmemType)
     node.getDictionary.put("psize", psize)
+    node.setBootStrapperService(bs)
+    node.setForceUpdate(true)
+    node.startNode()
+
 
     val newdirTarget: File = new File("arduinoGenerated" + knodeName + "/target")
     org.kevoree.library.arduinoNodeType.FileHelper.createAndCleanDirectory(newdirTarget)
     TargetDirectoryService.rootPath = newdirTarget.getAbsolutePath
-    node.deploy(kompare.kompare(KevoreeFactory.eINSTANCE.createContainerRoot, model, knodeName), knodeName,"atmega328")
+    node.push("atmega328",model, knodeName)
     println("INIT_MS=" + (System.currentTimeMillis() - baseTime))
   }
 

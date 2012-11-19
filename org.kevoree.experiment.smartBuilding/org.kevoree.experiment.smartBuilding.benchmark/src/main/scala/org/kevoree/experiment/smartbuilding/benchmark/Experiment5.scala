@@ -7,6 +7,7 @@ import org.kevoree.tools.marShellTransform.{AdaptationModelWrapper, KevScriptWra
 import util.Random
 import org.kevoree.framework.KevoreeXmiHelper
 import org.kevoree.extra.kserial.KevoreeSharedCom
+import org.kevoree.experiment.smartbuilding.com.NativeLibUtil
 
 /**
  * User: ffouquet
@@ -18,22 +19,26 @@ class Experiment5 extends AbstractExperiment {
 
   val random = new Random
   var knodeName = "kbenchmark"
-  boardPortName = "/dev/tty.usbserial-A400g2zz"
+  boardPortName = "*"
   boardTypeName = "atmega328"
 
+  println("Begin read model")
 
   //STEP 0 : Init Base model
-  val modelBase = this.getClass.getClassLoader.getResource("baseKBenchBig21.kev").getPath
-  var model: ContainerRoot = KevoreeXmiHelper.load(modelBase)
-  val model2Path = this.getClass.getClassLoader.getResource("baseKBenchBig22.kev").getPath
-  var model2: ContainerRoot = KevoreeXmiHelper.load(model2Path)
-  val model3Path = this.getClass.getClassLoader.getResource("baseKBenchBig23.kev").getPath
-  var model3: ContainerRoot = KevoreeXmiHelper.load(model3Path)
-  val model4Path = this.getClass.getClassLoader.getResource("baseKBenchBig24.kev").getPath
-  var model4: ContainerRoot = KevoreeXmiHelper.load(model4Path)
+  val modelBase = this.getClass.getClassLoader.getResourceAsStream("baseKBenchBig21.kevs")
+  var model: ContainerRoot = NativeLibUtil.loadKevs(modelBase)
+  val model2Path = this.getClass.getClassLoader.getResourceAsStream("baseKBenchBig22.kevs")
+  var model2: ContainerRoot = NativeLibUtil.loadKevs(model2Path)
+  val model3Path = this.getClass.getClassLoader.getResourceAsStream("baseKBenchBig23.kevs")
+  var model3: ContainerRoot = NativeLibUtil.loadKevs(model3Path)
+  val model4Path = this.getClass.getClassLoader.getResourceAsStream("baseKBenchBig24.kevs")
+  var model4: ContainerRoot = NativeLibUtil.loadKevs(model4Path)
 
   val models = List(model, model2, model3, model4)
   var previousModel: ContainerRoot = null
+
+  println("Model ready")
+
 
   override def init() {
     super.initNode(knodeName, model)
@@ -62,7 +67,7 @@ class Experiment5 extends AbstractExperiment {
     val modelAtoB: AdaptationModel = kompare.kompare(modelA, modelB, knodeName)
     val baseScript: Script = KevScriptWrapper.miniPlanKevScript(AdaptationModelWrapper.generateScriptFromAdaptModel(modelAtoB))
     val resultScript: String = KevScriptWrapper.generateKevScriptCompressed(baseScript,"kbenchmark")
-    //println("ReconfSTEP=>" + resultScript)
+    println("ReconfSTEP=>" + resultScript)
     val randomToken = random.nextInt(9)
     println(resultScript)
 
@@ -70,12 +75,10 @@ class Experiment5 extends AbstractExperiment {
 
     addToRaw(i, "ssize", resultScript.size)
     SmartSensorsGUI.putSSIZEValue(i, resultScript.size)
-
-
   }
 
   def interpetResult(i: Int, s: String) {
-
+    println("Result=>"+s)
     try {
       s.split('\n').foreach {
         line =>
@@ -93,7 +96,6 @@ class Experiment5 extends AbstractExperiment {
             addToRaw(i, "DOWNTIME", Integer.parseInt(line.substring(2).trim()))
           }
       }
-
     } catch {
       case _@e => e.printStackTrace()
     }

@@ -66,7 +66,7 @@ public class KeyStore  implements IKeyStore
     }
 
     public boolean verifyPermission(ContainerRoot model,Permission permission){
-        if(permission.checkPermission(model.getAdaptationPrimitiveTypesForJ())){
+        if(permission.validateOperations(model.getAdaptationPrimitiveTypesForJ())){
           return  true;
         } else {
          return  false;

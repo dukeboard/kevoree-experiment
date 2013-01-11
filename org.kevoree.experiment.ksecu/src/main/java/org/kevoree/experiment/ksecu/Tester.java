@@ -29,12 +29,15 @@ public class Tester {
          // Poc
 
         // create a keyStore
-        org.kevoree.experiment.ksecu.KeyStore keyStore = new org.kevoree.experiment.ksecu.KeyStore();
+        KeyStore keyStore = new KeyStore();
         KeyPair kp = keyStore.generateKeys(512);
+
+        KeyPair kp2 = keyStore.generateKeys(512);
 
 
         //Adding permission  on Operation
-        org.kevoree.experiment.ksecu.Permission permissions = new org.kevoree.experiment.ksecu.Permission();
+        Permission permissions = new Permission();
+
         permissions.accept(Operation.UpdateFragmentBinding);
         permissions.accept(Operation.AddBinding);
         permissions.accept(Operation.RemoveBinding);
@@ -60,7 +63,9 @@ public class Tester {
         permissions.accept(Operation.AddType);
 
 
-        // todo Type operations
+        // accept type component instnace
+
+
 
 
 
@@ -86,6 +91,9 @@ public class Tester {
             }   else {
                 System.out.println("Adapation refusé");
             }
+        }else {
+            System.err.println("check of the signature fail");
+
         }
 
 

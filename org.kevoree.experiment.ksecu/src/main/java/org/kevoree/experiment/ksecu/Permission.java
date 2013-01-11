@@ -14,24 +14,26 @@ import java.util.List;
  */
 public class Permission {
 
-    private List<Operation> permission = new ArrayList<Operation>();
+    private List<Operation> operations = new ArrayList<Operation>();
 
     public List<Operation> getPermissions() {
-        return permission;
+        return operations;
     }
 
     public void accept(Operation o){
-        permission.add(o);
+        operations.add(o);
     }
 
 
-    public boolean  checkPermission(java.util.List<org.kevoree.AdaptationPrimitiveType> list){
+
+
+    public boolean validateOperations(java.util.List<org.kevoree.AdaptationPrimitiveType> list){
 
         for( AdaptationPrimitiveType adapation :  list)
         {
            boolean  found = false;
 
-            for(Object p : permission.toArray()){
+            for(Object p : operations.toArray()){
 
                 if(p.toString().equals(adapation.getName())){
 

@@ -26,13 +26,14 @@ public class Tester {
 
     public static void main(String argv[]) throws NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, IOException, SignatureException, InvalidKeySpecException {
 
-         // Poc
+
 
         // create a keyStore
         KeyStore keyStore = new KeyStore();
-        KeyPair kp = keyStore.generateKeys(512);
 
-        KeyPair kp2 = keyStore.generateKeys(512);
+
+
+        KeyPair kp = keyStore.generateKeys(512);
 
 
         //Adding permission  on Operation
@@ -60,14 +61,10 @@ public class Tester {
         permissions.accept(Operation.RemoveDeployUnit);
         permissions.accept(Operation.AddDeployUnit);
         permissions.accept(Operation.AddThirdParty);
-        permissions.accept(Operation.AddType);
+       // permissions.accept(Operation.AddType);
 
 
-        // accept type component instnace
-
-
-
-
+        // todo type component instnace
 
         //Associate a key with permissions
         keyStore.addKey(kp.getPublic(),permissions);
@@ -91,7 +88,8 @@ public class Tester {
             }   else {
                 System.out.println("Adapation refusé");
             }
-        }else {
+        }else
+        {
             System.err.println("check of the signature fail");
 
         }

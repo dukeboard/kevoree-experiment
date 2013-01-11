@@ -35,15 +35,17 @@ public class Permission {
 
             for(Object p : operations.toArray()){
 
-                if(p.toString().equals(adapation.getName())){
+                if(p.toString().equals(adapation.internalGetKey())){
 
                     found = true;
                     break;
                 }
 
             }
-            if(!found){
-                System.err.println("Refused --> "+adapation.getName());
+            if(!found)
+            {
+
+                System.err.println("Refused --> "+adapation.internalGetKey());
                 return false;
             }
 

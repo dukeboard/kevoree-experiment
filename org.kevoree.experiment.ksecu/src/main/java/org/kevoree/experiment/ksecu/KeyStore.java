@@ -1,9 +1,13 @@
 package org.kevoree.experiment.ksecu;
 
 import org.kevoree.ContainerRoot;
+import org.kevoree.kompare.KevoreeKompareBean;
+import org.kevoreeAdaptation.AdaptationModel;
+import org.kevoreeAdaptation.AdaptationPrimitive;
 
 import java.security.*;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,13 +20,13 @@ import java.util.HashMap;
 
 public class KeyStore  implements IKeyStore
 {
-    private HashMap<PublicKey, Permission> keys =new HashMap<PublicKey, Permission>();
+    private HashMap<PublicKey, Permissions> keys =new HashMap<PublicKey, Permissions>();
 
-    public HashMap<PublicKey, Permission> getKeys() {
+    public HashMap<PublicKey, Permissions> getKeys() {
         return keys;
     }
 
-    public void addKey(PublicKey key,Permission o){
+    public void addKey(PublicKey key,Permissions o){
         keys.put(key, o);
     }
 
@@ -65,12 +69,5 @@ public class KeyStore  implements IKeyStore
         return kp;
     }
 
-    public boolean verifyPermission(ContainerRoot model,Permission permission){
-        if(permission.validateOperations(model.getAdaptationPrimitiveTypesForJ())){
-          return  true;
-        } else {
-         return  false;
-        }
 
-    }
 }

@@ -4,9 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ksecu</groupId>
-    <artifactId>ksecu</artifactId>
+    <groupId>org.kevoree.experiment</groupId>
+    <artifactId>org.kevoree.experiment.ksecu</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+
+    <parent>
+        <artifactId>org.kevoree.experiment.root</artifactId>
+        <groupId>org.kevoree.experiment</groupId>
+        <version>1.2.0-SNAPSHOT</version>
+        <relativePath>../org.kevoree.experiment.root/pom.xml</relativePath>
+    </parent>
 
     <properties>
         <kevoree.version>1.9.0-SNAPSHOT</kevoree.version>
@@ -22,30 +30,89 @@
         </dependency>
 
 
-            <dependency>
-                <groupId>org.kevoree.tools</groupId>
-                <artifactId>org.kevoree.tools.javase.framework</artifactId>
-                <version>${kevoree.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.kevoree.tools</groupId>
-                <artifactId>org.kevoree.tools.annotation.api</artifactId>
-                <version>${kevoree.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.kevoree</groupId>
-                <artifactId>org.kevoree.kompare</artifactId>
-                <version>${kevoree.version}</version>
-                <type>bundle</type>
-            </dependency>
+        <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.modelsync</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.javase.framework</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.annotation.api</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.marShell</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.kevoree</groupId>
+            <artifactId>org.kevoree.kompare</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.kevoree.corelibrary.javase</groupId>
             <artifactId>org.kevoree.library.javase.javaseNode</artifactId>
-            <version>1.9.0-SNAPSHOT</version>
+            <version>${kevoree.version}</version>
         </dependency>
 
 
     </dependencies>
-    
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.kevoree.tools</groupId>
+                <artifactId>org.kevoree.tools.annotation.mavenplugin</artifactId>
+                <version>${kevoree.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <nodeTypeNames>JavaSENode</nodeTypeNames>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <repositories>
+        <repository>
+            <id>kevoree-libs-release-local</id>
+            <url>http://maven.kevoree.org/release</url>
+        </repository>
+        <repository>
+            <id>kevoree-snapshots</id>
+            <url>http://maven.kevoree.org/snapshots</url>
+        </repository>
+    </repositories>
+
+
+    <distributionManagement>
+        <repository>
+            <id>maven2.kevoree.release</id>
+            <url>http://maven.kevoree.org/archiva/repository/release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven2.kevoree.snapshots</id>
+            <url>http://maven.kevoree.org/archiva/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>

@@ -1,7 +1,17 @@
 package org.kevoree.experiment.ksecu;
 
+import org.kevoree.AdaptationPrimitiveType;
 import org.kevoree.ContainerRoot;
+import org.kevoree.KevoreeFactory;
+import org.kevoree.TypeDefinition;
+import org.kevoree.api.service.core.script.KevScriptEngineException;
+import org.kevoree.experiment.ksecu.utils.KevScriptLoader;
 import org.kevoree.framework.KevoreeXmiHelper;
+import org.kevoree.framework.osgi.KevoreeInstanceFactory;
+import org.kevoree.impl.TypeDefinitionImpl;
+import org.kevoree.kompare.JavaSePrimitive;
+import org.kevoreeAdaptation.AdaptationPrimitive;
+
 import java.io.*;
 import java.math.BigInteger;
 import java.security.*;
@@ -24,79 +34,85 @@ public class Tester {
 
 
 
-    public static void main(String argv[]) throws NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, IOException, SignatureException, InvalidKeySpecException {
+    public static void main(String argv[]) throws Exception {
+
+
+        SecurityManager  securityManager = new SecurityManager();
 
 
 
-        // create a keyStore
-        KeyStore keyStore = new KeyStore();
 
 
 
-        KeyPair kp = keyStore.generateKeys(512);
+        Permissions permissions =  securityManager.getPermissions("node0");
 
 
-        //Adding permission  on Operation
-        Permission permissions = new Permission();
+                /*
+        permissions.accept( JavaSePrimitive.UpdateType());
+        permissions.accept( JavaSePrimitive.UpdateDeployUnit());
+        permissions.accept( JavaSePrimitive.AddType());
+        permissions.accept( JavaSePrimitive.AddDeployUnit());
+        permissions.accept( JavaSePrimitive.AddThirdParty());
+        permissions.accept( JavaSePrimitive.RemoveThirdParty());
+        permissions.accept( JavaSePrimitive.RemoveType());
+        permissions.accept( JavaSePrimitive.RemoveDeployUnit());
+        permissions.accept( JavaSePrimitive.UpdateInstance());
 
-        permissions.accept(Operation.UpdateFragmentBinding);
-        permissions.accept(Operation.AddBinding);
-        permissions.accept(Operation.RemoveBinding);
-        permissions.accept(Operation.AddInstance);
-        permissions.accept(Operation.RemoveInstance);
-        permissions.accept(Operation.UpdateDictionaryInstance);
-        permissions.accept(Operation.UpdateBinding);
-        permissions.accept(Operation.RemoveThirdParty);
-        permissions.accept(Operation.RemoveNode);
-        permissions.accept(Operation.RemoveType);
-        permissions.accept(Operation.StartInstance);
-        permissions.accept(Operation.StopInstance);
-        permissions.accept(Operation.UpdateType);
-        permissions.accept(Operation.AddFragmentBinding);
-        permissions.accept(Operation.StartThirdParty);
-        permissions.accept(Operation.AddNode);
-        permissions.accept(Operation.UpdateDeployUnit);
-        permissions.accept(Operation.UpdateInstance);
-        permissions.accept(Operation.RemoveFragmentBinding);
-        permissions.accept(Operation.RemoveDeployUnit);
-        permissions.accept(Operation.AddDeployUnit);
-        permissions.accept(Operation.AddThirdParty);
-       // permissions.accept(Operation.AddType);
+        permissions.accept( JavaSePrimitive.UpdateBinding());
+        permissions.accept( JavaSePrimitive.UpdateDictionaryInstance());
+
+        permissions.accept( JavaSePrimitive.RemoveInstance());
+        permissions.accept( JavaSePrimitive.AddBinding());
+        permissions.accept( JavaSePrimitive.RemoveBinding());
+        permissions.accept( JavaSePrimitive.AddFragmentBinding());
+        permissions.accept( JavaSePrimitive.RemoveFragmentBinding());
+        permissions.accept( JavaSePrimitive.UpdateFragmentBinding());
+        permissions.accept( JavaSePrimitive.StartInstance());
+        permissions.accept( JavaSePrimitive.StopInstance());
+        permissions.accept( JavaSePrimitive.StartThirdParty());
+        permissions.accept( JavaSePrimitive.StartThirdParty());
+        permissions.accept( JavaSePrimitive.AddNode());
+        permissions.accept( JavaSePrimitive.RemoveNode());
+        */
+
+        TypeDefinition t = KevoreeFactory.createTypeDefinition();
+        t.setName("FakeConsole");
+        t.setBean("org.kevoree.library.FakeConsole");
+
+        permissions.accept( JavaSePrimitive.AddInstance(),t);
+        permissions.accept( JavaSePrimitive.StopInstance(),t);
+        permissions.accept( JavaSePrimitive.StartInstance(),t);
+        permissions.accept( JavaSePrimitive.UpdateDictionaryInstance(),t);
 
 
-        // todo type component instnace
 
-        //Associate a key with permissions
-        keyStore.addKey(kp.getPublic(),permissions);
 
         // read model and sign
-        byte[] model = load_file(Tester.class.getClassLoader().getResourceAsStream("simple_fake_console.kev"));
+        byte[] base_model = load_file(Tester.class.getClassLoader().getResourceAsStream("simple_fake_console.kev"));
+        byte[] new_model = load_file(Tester.class.getClassLoader().getResourceAsStream("target_simple_fake_console.kev"));
 
 
-        // get signature
-        byte[] signatureBytes = keyStore.getSignature(kp.getPrivate(),model);
 
+        ContainerRoot current_model = KevoreeXmiHelper.loadString(new String(base_model));
 
-        ContainerRoot current_model = KevoreeXmiHelper.loadString(new String(model));
+        ContainerRoot target_model = KevoreeXmiHelper.loadString(new String(new_model));
 
+        List<AdaptationPrimitive> result =  securityManager.verify("node0", current_model, target_model);
 
-        // verify signature
-        if(keyStore.verifySignature(signatureBytes,model)){
-            // verify permissions
-            if(keyStore.verifyPermission(current_model,permissions)){
-                System.out.println("Adapation accepté");
-            }   else {
-                System.out.println("Adapation refusé");
-            }
+        if(result.size() == 0)
+        {
+            System.out.println("accepted");
         }else
         {
-            System.err.println("check of the signature fail");
-
+            for(AdaptationPrimitive p : result)
+            {
+                System.out.println(p.getPrimitiveType().getName()+" "+p.getRef());
+            }
         }
 
 
 
-        System.exit(0);
+
 
 
 

@@ -37,7 +37,6 @@ public class CSecurityManager extends AbstractComponentType {
     {
         securityManager = new SecurityManager();
 
-        permissions = securityManager.getPermissions(getNodeName());
 
 
         TypeDefinition t = KevoreeFactory.createTypeDefinition();
@@ -60,20 +59,9 @@ public class CSecurityManager extends AbstractComponentType {
 
                     logger.info("Checking the permissions");
 
-                    List<AdaptationPrimitive> result =  securityManager.verify(getNodeName(), current_model, target);
 
-                    if(result.size() == 0)
-                    {
 
-                        logger.info("accepted");
-                    }else
-                    {
-                        for(AdaptationPrimitive p : result)
-                        {
-                           logger.error("Security policy "+p.getPrimitiveType().getName()+" "+p.getRef());
-                        }
-                        return false;
-                    }
+
 
                 }
 

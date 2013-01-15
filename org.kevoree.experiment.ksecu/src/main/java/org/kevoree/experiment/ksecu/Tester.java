@@ -1,25 +1,18 @@
 package org.kevoree.experiment.ksecu;
 
-import org.kevoree.AdaptationPrimitiveType;
-import org.kevoree.ContainerRoot;
+import org.kevoree.*;
+import org.kevoree.KSecurityModel.KSecurityModelFactory;
+import org.kevoree.KSecurityModel.KSecurityRoot;
+import org.kevoree.KSecurityModel.SecurityRule;
 import org.kevoree.KevoreeFactory;
-import org.kevoree.TypeDefinition;
-import org.kevoree.api.service.core.script.KevScriptEngineException;
-import org.kevoree.experiment.ksecu.utils.KevScriptLoader;
 import org.kevoree.framework.KevoreeXmiHelper;
-import org.kevoree.framework.osgi.KevoreeInstanceFactory;
-import org.kevoree.impl.TypeDefinitionImpl;
+import org.kevoree.impl.ComponentTypeImpl;
 import org.kevoree.kompare.JavaSePrimitive;
 import org.kevoreeAdaptation.AdaptationPrimitive;
+import scala.Option;
 
 import java.io.*;
 import java.math.BigInteger;
-import java.security.*;
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.security.KeyPair;
-import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,15 +29,45 @@ public class Tester {
 
     public static void main(String argv[]) throws Exception {
 
+        byte[] base_model = load_file(Tester.class.getClassLoader().getResourceAsStream("simple_fake_console.kev"));
+        byte[] new_model = load_file(Tester.class.getClassLoader().getResourceAsStream("target_simple_fake_console.kev"));
+        ContainerRoot current_model = KevoreeXmiHelper.loadString(new String(base_model));
+        ContainerRoot target_model = KevoreeXmiHelper.loadString(new String(new_model));
+
+
+
 
         SecurityManager  securityManager = new SecurityManager();
 
 
 
+        KSecurityRoot security_model = KSecurityModelFactory.createKSecurityRoot();
+
+
+        SecurityRule rule1 = KSecurityModelFactory.createSecurityRule();
+        rule1.setKElementQuery("typeDefinitions[FakeConsole]");
+
+        List<String>  primitiveTypes = new ArrayList<String>();
+
+        primitiveTypes.add(JavaSePrimitive.AddInstance());
+        primitiveTypes.add(JavaSePrimitive.StopInstance());
+        primitiveTypes.add(JavaSePrimitive.StartInstance());
+        primitiveTypes.add(JavaSePrimitive.UpdateDictionaryInstance());
+
+        rule1.setPrimitiveTypes(primitiveTypes);
+
+
+        security_model.addAuthorized(rule1);
 
 
 
-        Permissions permissions =  securityManager.getPermissions("node0");
+
+
+
+        securityManager.setSecurity_model(security_model);
+
+
+
 
 
                 /*
@@ -75,27 +98,10 @@ public class Tester {
         permissions.accept( JavaSePrimitive.RemoveNode());
         */
 
-        TypeDefinition t = KevoreeFactory.createTypeDefinition();
-        t.setName("FakeConsole");
-        t.setBean("org.kevoree.library.FakeConsole");
-
-        permissions.accept( JavaSePrimitive.AddInstance(),t);
-        permissions.accept( JavaSePrimitive.StopInstance(),t);
-        permissions.accept( JavaSePrimitive.StartInstance(),t);
-        permissions.accept( JavaSePrimitive.UpdateDictionaryInstance(),t);
 
 
 
 
-        // read model and sign
-        byte[] base_model = load_file(Tester.class.getClassLoader().getResourceAsStream("simple_fake_console.kev"));
-        byte[] new_model = load_file(Tester.class.getClassLoader().getResourceAsStream("target_simple_fake_console.kev"));
-
-
-
-        ContainerRoot current_model = KevoreeXmiHelper.loadString(new String(base_model));
-
-        ContainerRoot target_model = KevoreeXmiHelper.loadString(new String(new_model));
 
         List<AdaptationPrimitive> result =  securityManager.verify("node0", current_model, target_model);
 
@@ -106,7 +112,7 @@ public class Tester {
         {
             for(AdaptationPrimitive p : result)
             {
-                System.out.println(p.getPrimitiveType().getName()+" "+p.getRef());
+                System.out.println("ici "+p.getPrimitiveType().getName()+" "+p.getRef());
             }
         }
 

@@ -3,10 +3,10 @@ package org.kevoree.KSecurityModel;
 /**
  * Created by Ecore Model Generator.
  * @authors: Gregory NAIN, Fouquet Francois
- * Date: 15 janv. 13 Time: 15:42
+ * Date: 16 janv. 13 Time: 13:37
  * Meta-Model:NS_URI=null
  */
-trait SecurityRule extends org.kevoree.KSecurityModel.KSecurityModelContainer {
+trait KSecurityRule extends org.kevoree.KSecurityModel.KSecurityModelContainer {
    private var kElementQuery: java.lang.String = ""
 
    private var primitiveTypes: java.util.List[String] = _
@@ -19,11 +19,17 @@ trait SecurityRule extends org.kevoree.KSecurityModel.KSecurityModelContainer {
 
    private val authorized: scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KSecurityRoot] = new scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KSecurityRoot]()
 
-   private var allowed_java_cache: java.util.List[org.kevoree.KSecurityModel.PublicKeys] = null
+   private var allowed_java_cache: java.util.List[org.kevoree.KSecurityModel.KPublicKey] = null
 
-   private var allowed_scala_cache: scala.collection.immutable.List[org.kevoree.KSecurityModel.PublicKeys] = null
+   private var allowed_scala_cache: scala.collection.immutable.List[org.kevoree.KSecurityModel.KPublicKey] = null
 
-   private val allowed: scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.PublicKeys] = new scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.PublicKeys]()
+   private val allowed: scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KPublicKey] = new scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KPublicKey]()
+
+   private var acceptBinding_java_cache: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = null
+
+   private var acceptBinding_scala_cache: scala.collection.immutable.List[org.kevoree.KSecurityModel.KSecurityRule] = null
+
+   private val acceptBinding: scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KSecurityRule] = new scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KSecurityRule]()
 
    def getKElementQuery: java.lang.String = {
       kElementQuery
@@ -34,7 +40,7 @@ trait SecurityRule extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       this.kElementQuery = kElementQuery
    }
 
-   def getPrimitiveTypes: java.util.List[String]= {
+   def getPrimitiveTypes: java.util.List[String] = {
       primitiveTypes
    }
 
@@ -126,27 +132,27 @@ trait SecurityRule extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       this.authorized.clear()
    }
 
-   def getAllowed: List[org.kevoree.KSecurityModel.PublicKeys] = {
+   def getAllowed: List[org.kevoree.KSecurityModel.KPublicKey] = {
       if (allowed_scala_cache != null) {
          allowed_scala_cache
       } else {
-         val tempL: List[org.kevoree.KSecurityModel.PublicKeys] = allowed.toList
+         val tempL: List[org.kevoree.KSecurityModel.KPublicKey] = allowed.toList
          allowed_scala_cache = tempL
          tempL
       }
    }
-   def getAllowedForJ: java.util.List[org.kevoree.KSecurityModel.PublicKeys] = {
+   def getAllowedForJ: java.util.List[org.kevoree.KSecurityModel.KPublicKey] = {
       if (allowed_java_cache != null) {
          allowed_java_cache
       } else {
          import scala.collection.JavaConversions._
-         val tempL: java.util.List[org.kevoree.KSecurityModel.PublicKeys] = allowed.toList
+         val tempL: java.util.List[org.kevoree.KSecurityModel.KPublicKey] = allowed.toList
          allowed_java_cache = tempL
          tempL
       }
    }
 
-   def setAllowed(allowed: List[org.kevoree.KSecurityModel.PublicKeys]) {
+   def setAllowed(allowed: List[org.kevoree.KSecurityModel.KPublicKey]) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       if (allowed == null) throw new IllegalArgumentException("The list in parameter of the setter cannot be null. Use removeAll to empty a collection.")
       allowed_scala_cache = null
@@ -158,21 +164,21 @@ trait SecurityRule extends org.kevoree.KSecurityModel.KSecurityModelContainer {
 
    }
 
-   def addAllowed(allowed: org.kevoree.KSecurityModel.PublicKeys) {
+   def addAllowed(allowed: org.kevoree.KSecurityModel.KPublicKey) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       allowed_scala_cache = null
       allowed_java_cache = null
       this.allowed.append(allowed)
    }
 
-   def addAllAllowed(allowed: List[org.kevoree.KSecurityModel.PublicKeys]) {
+   def addAllAllowed(allowed: List[org.kevoree.KSecurityModel.KPublicKey]) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       allowed_scala_cache = null
       allowed_java_cache = null
       this.allowed.appendAll(allowed)
    }
 
-   def removeAllowed(allowed: org.kevoree.KSecurityModel.PublicKeys) {
+   def removeAllowed(allowed: org.kevoree.KSecurityModel.KPublicKey) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       allowed_scala_cache = null
       allowed_java_cache = null
@@ -187,15 +193,77 @@ trait SecurityRule extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       allowed_java_cache = null
       this.allowed.clear()
    }
+
+   def getAcceptBinding: List[org.kevoree.KSecurityModel.KSecurityRule] = {
+      if (acceptBinding_scala_cache != null) {
+         acceptBinding_scala_cache
+      } else {
+         val tempL: List[org.kevoree.KSecurityModel.KSecurityRule] = acceptBinding.toList
+         acceptBinding_scala_cache = tempL
+         tempL
+      }
+   }
+   def getAcceptBindingForJ: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = {
+      if (acceptBinding_java_cache != null) {
+         acceptBinding_java_cache
+      } else {
+         import scala.collection.JavaConversions._
+         val tempL: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = acceptBinding.toList
+         acceptBinding_java_cache = tempL
+         tempL
+      }
+   }
+
+   def setAcceptBinding(acceptBinding: List[org.kevoree.KSecurityModel.KSecurityRule]) {
+      if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
+      if (acceptBinding == null) throw new IllegalArgumentException("The list in parameter of the setter cannot be null. Use removeAll to empty a collection.")
+      acceptBinding_scala_cache = null
+      acceptBinding_java_cache = null
+      if (this.acceptBinding != acceptBinding) {
+         this.acceptBinding.clear()
+         this.acceptBinding.insertAll(0, acceptBinding)
+      }
+
+   }
+
+   def addAcceptBinding(acceptBinding: org.kevoree.KSecurityModel.KSecurityRule) {
+      if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
+      acceptBinding_scala_cache = null
+      acceptBinding_java_cache = null
+      this.acceptBinding.append(acceptBinding)
+   }
+
+   def addAllAcceptBinding(acceptBinding: List[org.kevoree.KSecurityModel.KSecurityRule]) {
+      if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
+      acceptBinding_scala_cache = null
+      acceptBinding_java_cache = null
+      this.acceptBinding.appendAll(acceptBinding)
+   }
+
+   def removeAcceptBinding(acceptBinding: org.kevoree.KSecurityModel.KSecurityRule) {
+      if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
+      acceptBinding_scala_cache = null
+      acceptBinding_java_cache = null
+      if (this.acceptBinding.size != 0 && this.acceptBinding.indexOf(acceptBinding) != -1) {
+         this.acceptBinding.remove(this.acceptBinding.indexOf(acceptBinding))
+      }
+   }
+
+   def removeAllAcceptBinding() {
+      if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
+      acceptBinding_scala_cache = null
+      acceptBinding_java_cache = null
+      this.acceptBinding.clear()
+   }
    def getClonelazy(subResult: java.util.IdentityHashMap[Object, Object]): Unit = {
-      val selfObjectClone = KSecurityModelFactory.createSecurityRule
+      val selfObjectClone = KSecurityModelFactory.createKSecurityRule
       selfObjectClone.setKElementQuery(this.getKElementQuery)
       selfObjectClone.setPrimitiveTypes(this.getPrimitiveTypes)
       selfObjectClone.setEndValidity(this.getEndValidity)
       subResult.put(this, selfObjectClone)
    }
-   def resolve(addrs: java.util.IdentityHashMap[Object, Object], readOnly: Boolean): SecurityRule = {
-      val clonedSelfObject = addrs.get(this).asInstanceOf[org.kevoree.KSecurityModel.SecurityRule]
+   def resolve(addrs: java.util.IdentityHashMap[Object, Object], readOnly: Boolean): KSecurityRule = {
+      val clonedSelfObject = addrs.get(this).asInstanceOf[org.kevoree.KSecurityModel.KSecurityRule]
       this.getEReference0.map { sub =>
          clonedSelfObject.setEReference0(Some(addrs.get(sub).asInstanceOf[org.kevoree.KSecurityModel.KSecurityRoot]))
       }
@@ -205,7 +273,11 @@ trait SecurityRule extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       }
 
       this.getAllowed.foreach { sub =>
-         clonedSelfObject.addAllowed(addrs.get(sub).asInstanceOf[org.kevoree.KSecurityModel.PublicKeys])
+         clonedSelfObject.addAllowed(addrs.get(sub).asInstanceOf[org.kevoree.KSecurityModel.KPublicKey])
+      }
+
+      this.getAcceptBinding.foreach { sub =>
+         clonedSelfObject.addAcceptBinding(addrs.get(sub).asInstanceOf[org.kevoree.KSecurityModel.KSecurityRule])
       }
 
       if (readOnly) { clonedSelfObject.setInternalReadOnly() }

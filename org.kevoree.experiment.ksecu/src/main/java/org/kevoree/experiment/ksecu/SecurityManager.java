@@ -1,21 +1,16 @@
 package org.kevoree.experiment.ksecu;
 
-import org.jboss.netty.channel.AbstractChannel;
-import org.kevoree.AdaptationPrimitiveType;
-import org.kevoree.ComponentInstance;
-import org.kevoree.ContainerRoot;
-import org.kevoree.DeployUnit;
-import org.kevoree.KSecurityModel.KSecurityRoot;
-import org.kevoree.KSecurityModel.SecurityRule;
-import org.kevoree.impl.ComponentTypeImpl;
+import org.kevoree.*;
+import org.kevoree.KSecurityModel.*;
+import org.kevoree.framework.KevoreeXmiHelper;
 import org.kevoree.kompare.KevoreeKompareBean;
 import org.kevoreeAdaptation.AdaptationModel;
 import org.kevoreeAdaptation.AdaptationPrimitive;
 
-import java.nio.channels.Channel;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -27,89 +22,124 @@ import java.util.List;
  */
 public class SecurityManager {
 
-    private KeyStore keyStore;
+   private KSecurityRoot model;
 
-    private KSecurityRoot security_model;
 
     public SecurityManager(){
-        keyStore = new KeyStore();
+        model = KSecurityModelFactory.createKSecurityRoot();
     }
 
-    public KeyStore getKeyStore() {
-        return keyStore;
+
+    public KSecurityRoot getModel() {
+        return model;
     }
 
-    public void setSecurity_model(KSecurityRoot security_model)
-    {
-        this.security_model = security_model;
+    public void setModel(KSecurityRoot model) {
+        this.model = model;
     }
 
-    public List<AdaptationPrimitive> verify(String nodeName,ContainerRoot current_model,ContainerRoot target_model ) throws SecurityException {
-        if(security_model == null)
+
+
+    public List<AdaptationPrimitive> verify(String nodeName,ContainerRoot current_model,SignedModel signed_model ) throws SecurityException, NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+
+        if(model == null)
         {
             throw new SecurityException("no security model");
         }
+        List<AdaptationPrimitive> adaptation_primitives_refused = new ArrayList<AdaptationPrimitive>();
+        ContainerRoot target_model = KevoreeXmiHelper.loadString(new String(signed_model.getModel()));
 
-        List<org.kevoree.KSecurityModel.SecurityRule> authorize_rules =            security_model.getAuthorizedForJ();
-        List<org.kevoree.KSecurityModel.SecurityRule> refused_rules =            security_model.getNo_authorizedForJ();
+        // clean rules
+        KSecurityRoot  model_cleaned=  SecurityHelper.filter_rules(signed_model, model);
 
-        List<AdaptationPrimitive> result = new ArrayList<AdaptationPrimitive>();
+        List<KSecurityRule> authorize_rules =    model_cleaned.getAuthorizedForJ();
+        List<KSecurityRule> refused_rules =      model_cleaned.getNo_authorizedForJ();
+
+
         KevoreeKompareBean kompareBean = new KevoreeKompareBean();
-        AdaptationModel adaptationModel = kompareBean.kompare(current_model, target_model, nodeName);
+        AdaptationModel adaptationModel = kompareBean.kompare(current_model,target_model, nodeName);
+
+
         for(AdaptationPrimitive p : adaptationModel.getAdaptationsForJ())
         {
-            if(p.getRef() instanceof ComponentInstance )
+
+
+            if(p.getRef() instanceof Instance)
             {
-                ComponentInstance instance =(ComponentInstance) p.getRef();
+                Instance instance =(Instance) p.getRef();
 
-                boolean  found_refused_rules = false;
-                boolean  found_authorize_rules = false;
+                boolean  found_in_refused_rules = false;
+                boolean  found_in_authorize_rules = false;
 
-               // check
-                for(SecurityRule rule :refused_rules)
+                // check in refused rules
+                for(KSecurityRule rule :refused_rules)
                 {
-                    Object ptr =   current_model.findByQuery( rule.getKElementQuery());
-                    if( ptr instanceof ComponentTypeImpl)
+                    Object ptr =   target_model.findByQuery( rule.getKElementQuery());
+                    rule.getAllowed();
+
+                    if( ptr instanceof TypeDefinition)
                     {
-                        ComponentTypeImpl componentType= (ComponentTypeImpl) ptr;
+                        TypeDefinition componentType= (TypeDefinition) ptr;
+                        if(instance.getTypeDefinition().getName().equals(componentType.getName()))
+                        {
+                            if(rule.getPrimitiveTypes().contains(p.getPrimitiveType().getName())){
+                                found_in_refused_rules = true;
 
-                        if(instance.getTypeDefinition().getName().equals(componentType.getName())){
-                            //ok
-                            found_refused_rules = true;
-
-                            // todo check primitives
+                            }
                         }
                     }
                 }
 
-                if(found_refused_rules)
+                if(found_in_refused_rules)
                 {
-                    if(!result.contains(p)){
-                        result.add(p);
+                    if(!adaptation_primitives_refused.contains(p))
+                    {
+                        adaptation_primitives_refused.add(p);
                     }
                 } else
-                {                             // todo check primitives
+                {
                     // this rules is not denied we check if is authorized
-                    for(SecurityRule rule :authorize_rules)
+                    for(KSecurityRule rule :authorize_rules)
                     {
-                        Object ptr =   current_model.findByQuery( rule.getKElementQuery());
 
-                        if( ptr instanceof ComponentTypeImpl)
+                        Object ptr =   target_model.findByQuery(rule.getKElementQuery());
+
+                        if( ptr instanceof TypeDefinition)
                         {
+                            TypeDefinition componentType= (TypeDefinition) ptr;
 
-                            ComponentTypeImpl componentType= (ComponentTypeImpl) ptr;
 
                             if(instance.getTypeDefinition().getName().equals(componentType.getName())){
-                                //ok
-                                found_authorize_rules = true;
+                                //check primitives access
+
+                                if(rule.getPrimitiveTypes().contains(p.getPrimitiveType().getName())){
+                                   /*  ports bindings
+                                    if(ptr instanceof ComponentType){
+                                        ComponentType c = (ComponentType)ptr;
+
+                                         for(PortTypeRef required_port : c.getRequiredForJ() ){
+
+                                                  System.out.println(required_port.getName()+" "+required_port.getRef());
+
+                                         }
+
+
+                                        for(PortTypeRef provided_port : c.getProvidedForJ() ){
+
+
+                                        }
+
+                                    }*/
+                                    found_in_authorize_rules = true;
+                                }
                             }
                         }
 
                     }
-                    if(!found_authorize_rules)
+                    if(!found_in_authorize_rules)
                     {
-                        if(!result.contains(p)){
-                            result.add(p);
+                        if(!adaptation_primitives_refused.contains(p)){
+                            adaptation_primitives_refused.add(p);
                         }
                     }
 
@@ -117,42 +147,18 @@ public class SecurityManager {
 
 
 
+            } else  if(p.getRef() instanceof MBinding){
+
+
+
 
 
             }
 
 
-
-          /*
-
-            if(p.getRef() instanceof ComponentInstance || p.getRef() instanceof ComponentInstance ){
-
-                ComponentInstance instance =(ComponentInstance) p.getRef();
-
-
-                    List<String>  operation = cluster_permissions.get(nodeName).getPermissions(instance.getTypeDefinition());
-
-                    if(!operation.contains(p.getPrimitiveType().getName())){
-
-                        if(!result.contains(p)){
-                            result.add(p);
-                        }
-                    }
-
-
-            }else if( p.getRef() instanceof AbstractChannel)
-            {
-                Channel d = (Channel)p.getRef();
-
-
-
-            } else {
-                //System.err.println("todo type "+p.getRef());
-            }
-               */
 
         }
-        return result;
+        return adaptation_primitives_refused;
 
     }
 }

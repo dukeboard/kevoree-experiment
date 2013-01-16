@@ -35,39 +35,6 @@ public class KeyStore  implements IKeyStore
     }
 
 
-    public byte[] getSignature(PrivateKey privateKey,byte []model) throws InvalidKeyException, NoSuchAlgorithmException, SignatureException {
-        Signature sig = Signature.getInstance("SHA1withRSA");
-        sig.initSign(privateKey);
-        sig.update(model);
-        return sig.sign();
-
-    }
-
-
-    public boolean verifySignature(byte[]signatureBytes ,byte []model) throws InvalidKeyException, NoSuchAlgorithmException, SignatureException {
-        Signature sig = Signature.getInstance("SHA1withRSA");
-        for(PublicKey key : getKeys().keySet())
-        {
-            sig.initVerify(key);
-            sig.update(model);
-            if(sig.verify(signatureBytes)){
-              return  true;
-
-            }
-
-        }
-        return false;
-
-    }
-
-
-    public KeyPair generateKeys(int size) throws NoSuchAlgorithmException{
-        // Generate a key
-        KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
-        kpg.initialize(size);
-        KeyPair kp = kpg.genKeyPair();
-        return kp;
-    }
 
 
 }

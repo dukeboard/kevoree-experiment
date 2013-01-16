@@ -3,7 +3,7 @@ package org.kevoree.KSecurityModel;
 /**
  * Created by Ecore Model Generator.
  * @authors: Gregory NAIN, Fouquet Francois
- * Date: 15 janv. 13 Time: 15:42
+ * Date: 16 janv. 13 Time: 13:37
  * Meta-Model:NS_URI=null
  */
 trait Primitives extends org.kevoree.KSecurityModel.KSecurityModelContainer {

@@ -3,44 +3,43 @@ package org.kevoree.KSecurityModel;
 /**
  * Created by Ecore Model Generator.
  * @authors: Gregory NAIN, Fouquet Francois
- * Date: 15 janv. 13 Time: 15:42
+ * Date: 16 janv. 13 Time: 13:37
  * Meta-Model:NS_URI=null
  */
 trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
+   private var no_authorized_java_cache: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = null
 
-   private var no_authorized_java_cache: java.util.List[org.kevoree.KSecurityModel.SecurityRule] = null
+   private var no_authorized_scala_cache: scala.collection.immutable.List[org.kevoree.KSecurityModel.KSecurityRule] = null
 
-   private var no_authorized_scala_cache: scala.collection.immutable.List[org.kevoree.KSecurityModel.SecurityRule] = null
+   private val no_authorized: scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KSecurityRule] = new scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KSecurityRule]()
 
-   private val no_authorized: scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.SecurityRule] = new scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.SecurityRule]()
+   private var authorized_java_cache: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = null
 
-   private var authorized_java_cache: java.util.List[org.kevoree.KSecurityModel.SecurityRule] = null
+   private var authorized_scala_cache: scala.collection.immutable.List[org.kevoree.KSecurityModel.KSecurityRule] = null
 
-   private var authorized_scala_cache: scala.collection.immutable.List[org.kevoree.KSecurityModel.SecurityRule] = null
+   private val authorized: scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KSecurityRule] = new scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.KSecurityRule]()
 
-   private val authorized: scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.SecurityRule] = new scala.collection.mutable.ListBuffer[org.kevoree.KSecurityModel.SecurityRule]()
-
-   def getNo_authorized: List[org.kevoree.KSecurityModel.SecurityRule] = {
+   def getNo_authorized: List[org.kevoree.KSecurityModel.KSecurityRule] = {
       if (no_authorized_scala_cache != null) {
          no_authorized_scala_cache
       } else {
-         val tempL: List[org.kevoree.KSecurityModel.SecurityRule] = no_authorized.toList
+         val tempL: List[org.kevoree.KSecurityModel.KSecurityRule] = no_authorized.toList
          no_authorized_scala_cache = tempL
          tempL
       }
    }
-   def getNo_authorizedForJ: java.util.List[org.kevoree.KSecurityModel.SecurityRule] = {
+   def getNo_authorizedForJ: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = {
       if (no_authorized_java_cache != null) {
          no_authorized_java_cache
       } else {
          import scala.collection.JavaConversions._
-         val tempL: java.util.List[org.kevoree.KSecurityModel.SecurityRule] = no_authorized.toList
+         val tempL: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = no_authorized.toList
          no_authorized_java_cache = tempL
          tempL
       }
    }
 
-   def setNo_authorized(no_authorized: List[org.kevoree.KSecurityModel.SecurityRule]) {
+   def setNo_authorized(no_authorized: List[org.kevoree.KSecurityModel.KSecurityRule]) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       if (no_authorized == null) throw new IllegalArgumentException("The list in parameter of the setter cannot be null. Use removeAll to empty a collection.")
       no_authorized_scala_cache = null
@@ -53,7 +52,7 @@ trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
 
    }
 
-   def addNo_authorized(no_authorized: org.kevoree.KSecurityModel.SecurityRule) {
+   def addNo_authorized(no_authorized: org.kevoree.KSecurityModel.KSecurityRule) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       no_authorized_scala_cache = null
       no_authorized_java_cache = null
@@ -61,7 +60,7 @@ trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       this.no_authorized.append(no_authorized)
    }
 
-   def addAllNo_authorized(no_authorized: List[org.kevoree.KSecurityModel.SecurityRule]) {
+   def addAllNo_authorized(no_authorized: List[org.kevoree.KSecurityModel.KSecurityRule]) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       no_authorized_scala_cache = null
       no_authorized_java_cache = null
@@ -71,7 +70,7 @@ trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       }
    }
 
-   def removeNo_authorized(no_authorized: org.kevoree.KSecurityModel.SecurityRule) {
+   def removeNo_authorized(no_authorized: org.kevoree.KSecurityModel.KSecurityRule) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       no_authorized_scala_cache = null
       no_authorized_java_cache = null
@@ -92,27 +91,27 @@ trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       this.no_authorized.clear()
    }
 
-   def getAuthorized: List[org.kevoree.KSecurityModel.SecurityRule] = {
+   def getAuthorized: List[org.kevoree.KSecurityModel.KSecurityRule] = {
       if (authorized_scala_cache != null) {
          authorized_scala_cache
       } else {
-         val tempL: List[org.kevoree.KSecurityModel.SecurityRule] = authorized.toList
+         val tempL: List[org.kevoree.KSecurityModel.KSecurityRule] = authorized.toList
          authorized_scala_cache = tempL
          tempL
       }
    }
-   def getAuthorizedForJ: java.util.List[org.kevoree.KSecurityModel.SecurityRule] = {
+   def getAuthorizedForJ: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = {
       if (authorized_java_cache != null) {
          authorized_java_cache
       } else {
          import scala.collection.JavaConversions._
-         val tempL: java.util.List[org.kevoree.KSecurityModel.SecurityRule] = authorized.toList
+         val tempL: java.util.List[org.kevoree.KSecurityModel.KSecurityRule] = authorized.toList
          authorized_java_cache = tempL
          tempL
       }
    }
 
-   def setAuthorized(authorized: List[org.kevoree.KSecurityModel.SecurityRule]) {
+   def setAuthorized(authorized: List[org.kevoree.KSecurityModel.KSecurityRule]) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       if (authorized == null) throw new IllegalArgumentException("The list in parameter of the setter cannot be null. Use removeAll to empty a collection.")
       authorized_scala_cache = null
@@ -125,7 +124,7 @@ trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
 
    }
 
-   def addAuthorized(authorized: org.kevoree.KSecurityModel.SecurityRule) {
+   def addAuthorized(authorized: org.kevoree.KSecurityModel.KSecurityRule) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       authorized_scala_cache = null
       authorized_java_cache = null
@@ -133,7 +132,7 @@ trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       this.authorized.append(authorized)
    }
 
-   def addAllAuthorized(authorized: List[org.kevoree.KSecurityModel.SecurityRule]) {
+   def addAllAuthorized(authorized: List[org.kevoree.KSecurityModel.KSecurityRule]) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       authorized_scala_cache = null
       authorized_java_cache = null
@@ -143,7 +142,7 @@ trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
       }
    }
 
-   def removeAuthorized(authorized: org.kevoree.KSecurityModel.SecurityRule) {
+   def removeAuthorized(authorized: org.kevoree.KSecurityModel.KSecurityRule) {
       if (isReadOnly()) { throw new Exception("This model is ReadOnly. Elements are not modifiable.") }
       authorized_scala_cache = null
       authorized_java_cache = null
@@ -178,11 +177,11 @@ trait KSecurityRoot extends org.kevoree.KSecurityModel.KSecurityModelContainer {
    def resolve(addrs: java.util.IdentityHashMap[Object, Object], readOnly: Boolean): KSecurityRoot = {
       val clonedSelfObject = addrs.get(this).asInstanceOf[org.kevoree.KSecurityModel.KSecurityRoot]
       this.getNo_authorized.foreach { sub =>
-         clonedSelfObject.addNo_authorized(addrs.get(sub).asInstanceOf[org.kevoree.KSecurityModel.SecurityRule])
+         clonedSelfObject.addNo_authorized(addrs.get(sub).asInstanceOf[org.kevoree.KSecurityModel.KSecurityRule])
       }
 
       this.getAuthorized.foreach { sub =>
-         clonedSelfObject.addAuthorized(addrs.get(sub).asInstanceOf[org.kevoree.KSecurityModel.SecurityRule])
+         clonedSelfObject.addAuthorized(addrs.get(sub).asInstanceOf[org.kevoree.KSecurityModel.KSecurityRule])
       }
 
       this.getNo_authorized.foreach { sub =>

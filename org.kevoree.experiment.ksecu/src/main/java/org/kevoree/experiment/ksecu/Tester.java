@@ -1,19 +1,17 @@
 package org.kevoree.experiment.ksecu;
 
 import org.kevoree.*;
-import org.kevoree.KSecurityModel.KSecurityModelFactory;
-import org.kevoree.KSecurityModel.KSecurityRoot;
-import org.kevoree.KSecurityModel.SecurityRule;
-import org.kevoree.KevoreeFactory;
+import org.kevoree.KSecurityModel.*;
 import org.kevoree.framework.KevoreeXmiHelper;
-import org.kevoree.impl.ComponentTypeImpl;
 import org.kevoree.kompare.JavaSePrimitive;
 import org.kevoreeAdaptation.AdaptationPrimitive;
-import scala.Option;
 
 import java.io.*;
 import java.math.BigInteger;
+import java.security.KeyPair;
+import java.security.PrivateKey;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -24,50 +22,6 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class Tester {
-
-
-
-    public static void main(String argv[]) throws Exception {
-
-        byte[] base_model = load_file(Tester.class.getClassLoader().getResourceAsStream("simple_fake_console.kev"));
-        byte[] new_model = load_file(Tester.class.getClassLoader().getResourceAsStream("target_simple_fake_console.kev"));
-        ContainerRoot current_model = KevoreeXmiHelper.loadString(new String(base_model));
-        ContainerRoot target_model = KevoreeXmiHelper.loadString(new String(new_model));
-
-
-
-
-        SecurityManager  securityManager = new SecurityManager();
-
-
-
-        KSecurityRoot security_model = KSecurityModelFactory.createKSecurityRoot();
-
-
-        SecurityRule rule1 = KSecurityModelFactory.createSecurityRule();
-        rule1.setKElementQuery("typeDefinitions[FakeConsole]");
-
-        List<String>  primitiveTypes = new ArrayList<String>();
-
-        primitiveTypes.add(JavaSePrimitive.AddInstance());
-        primitiveTypes.add(JavaSePrimitive.StopInstance());
-        primitiveTypes.add(JavaSePrimitive.StartInstance());
-        primitiveTypes.add(JavaSePrimitive.UpdateDictionaryInstance());
-
-        rule1.setPrimitiveTypes(primitiveTypes);
-
-
-        security_model.addAuthorized(rule1);
-
-
-
-
-
-
-        securityManager.setSecurity_model(security_model);
-
-
-
 
 
                 /*
@@ -103,7 +57,75 @@ public class Tester {
 
 
 
-        List<AdaptationPrimitive> result =  securityManager.verify("node0", current_model, target_model);
+
+    public static void main(String argv[]) throws Exception
+    {
+
+        ContainerRoot current_model = KevoreeXmiHelper.loadStream(Tester.class.getClassLoader().getResourceAsStream("empty_node.kev"));
+        ContainerRoot target_model = KevoreeXmiHelper.loadStream(Tester.class.getClassLoader().getResourceAsStream("random_nio_grapher_group.kev"));
+
+
+        SecurityManager  securityManager = new SecurityManager();
+
+
+        KeyPair key1 =  SecurityHelper.generateKeys(512);
+
+        // insert
+        KPublicKey kkey = KSecurityModelFactory.createKPublicKey();
+        kkey.setKey(key1.getPublic());
+
+
+
+
+        SignedModel modelsigned =   SecurityHelper.createSignedModel(target_model, Arrays.asList(key1.getPrivate())) ;
+
+
+
+        KSecurityRule rule1 = KSecurityModelFactory.createKSecurityRule();
+        rule1.setKElementQuery("typeDefinitions[FakeConsole]");
+        rule1.setPrimitiveTypes(  Arrays.asList(JavaSePrimitive.AddInstance(),JavaSePrimitive.StopInstance(),JavaSePrimitive.AddInstance(),JavaSePrimitive.StartInstance(),JavaSePrimitive.StopInstance() ,JavaSePrimitive.AddFragmentBinding(),JavaSePrimitive.UpdateDictionaryInstance()));
+        rule1.addAllowed(kkey);
+
+
+
+        KSecurityRule rule2 = KSecurityModelFactory.createKSecurityRule();
+        rule2.setKElementQuery("typeDefinitions[BasicGroup]");
+        rule2.setPrimitiveTypes(             Arrays.asList(JavaSePrimitive.AddInstance(),JavaSePrimitive.StopInstance(),JavaSePrimitive.AddInstance(),JavaSePrimitive.StartInstance(),JavaSePrimitive.StopInstance() ,JavaSePrimitive.AddFragmentBinding(),JavaSePrimitive.UpdateDictionaryInstance()));
+
+        rule2.addAllowed(kkey );
+
+
+        KSecurityRule rule3 = KSecurityModelFactory.createKSecurityRule();
+
+        rule3.setKElementQuery("typeDefinitions[NioChannel]");
+
+        rule3.setPrimitiveTypes(   Arrays.asList(JavaSePrimitive.AddInstance(),JavaSePrimitive.StopInstance(),JavaSePrimitive.AddInstance(),JavaSePrimitive.StartInstance(),JavaSePrimitive.StopInstance() ,JavaSePrimitive.AddFragmentBinding(),JavaSePrimitive.UpdateDictionaryInstance()));
+        rule3.addAllowed(kkey );
+
+
+
+
+        KSecurityRule rule4 = KSecurityModelFactory.createKSecurityRule();
+
+        rule4.setKElementQuery("typeDefinitions[Grapher]");
+
+        rule4.setPrimitiveTypes(  Arrays.asList(JavaSePrimitive.AddInstance(),JavaSePrimitive.StopInstance(),JavaSePrimitive.AddInstance(),JavaSePrimitive.StartInstance(),JavaSePrimitive.StopInstance() ,JavaSePrimitive.AddFragmentBinding(),JavaSePrimitive.UpdateDictionaryInstance()));
+        rule4.addAllowed(kkey );
+
+
+        rule3.addAcceptBinding(rule4);
+
+
+
+        securityManager.getModel().addAuthorized(rule1);
+        securityManager.getModel().addAuthorized(rule2);
+        securityManager.getModel().addAuthorized(rule3);
+        securityManager.getModel().addNo_authorized(rule4);
+
+
+
+
+        List<AdaptationPrimitive> result =  securityManager.verify("node0", current_model, modelsigned);
 
         if(result.size() == 0)
         {
@@ -112,7 +134,7 @@ public class Tester {
         {
             for(AdaptationPrimitive p : result)
             {
-                System.out.println("ici "+p.getPrimitiveType().getName()+" "+p.getRef());
+                System.err.println("ERROR "+p.getPrimitiveType().getName()+" "+((Instance)p.getRef()).getName());
             }
         }
 
@@ -160,4 +182,6 @@ public class Tester {
 
         return toByteArray(tab);
     }
+
 }
+

@@ -46,6 +46,7 @@ public class SecurityManager {
         {
             throw new SecurityException("no security model");
         }
+
         List<AdaptationPrimitive> adaptation_primitives_refused = new ArrayList<AdaptationPrimitive>();
         ContainerRoot target_model = KevoreeXmiHelper.loadString(new String(signed_model.getModel()));
 
@@ -59,11 +60,8 @@ public class SecurityManager {
         KevoreeKompareBean kompareBean = new KevoreeKompareBean();
         AdaptationModel adaptationModel = kompareBean.kompare(current_model,target_model, nodeName);
 
-
         for(AdaptationPrimitive p : adaptationModel.getAdaptationsForJ())
         {
-
-
             if(p.getRef() instanceof Instance)
             {
                 Instance instance =(Instance) p.getRef();

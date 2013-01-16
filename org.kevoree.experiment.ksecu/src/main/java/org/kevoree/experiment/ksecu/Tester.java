@@ -125,7 +125,7 @@ public class Tester {
 
 
 
-        List<AdaptationPrimitive> result =  securityManager.verify("node0", current_model, modelsigned);
+        List<AdaptationPrimitive> result =  securityManager.verify("node1", current_model, modelsigned);
 
         if(result.size() == 0)
         {

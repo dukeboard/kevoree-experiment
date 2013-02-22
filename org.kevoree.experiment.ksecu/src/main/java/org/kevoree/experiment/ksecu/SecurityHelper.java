@@ -54,7 +54,6 @@ public class SecurityHelper {
 
         for(KSecurityRule r : security_model.getAuthorizedForJ())
         {
-
             for(KPublicKey k :r.getAllowedForJ())
             {
                 boolean  found = false;

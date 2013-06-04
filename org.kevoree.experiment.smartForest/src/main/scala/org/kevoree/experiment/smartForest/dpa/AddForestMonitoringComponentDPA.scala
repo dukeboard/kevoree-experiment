@@ -3,6 +3,7 @@ package org.kevoree.experiment.smartForest.dpa
 import ec.util.MersenneTwisterFast
 import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.{ContainerRoot, NamedElement, ComponentType}
+import scala.collection.JavaConversions._
 
 import org.kevoree.tools.marShell.ast.{ComponentInstanceID, AddComponentInstanceStatment, TransactionalBloc, Script}
 

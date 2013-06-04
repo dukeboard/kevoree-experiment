@@ -4,6 +4,7 @@ package org.kevoree.experiment.smartForest.fitness
 import org.kevoree.ContainerNode
 import org.kevoree.ContainerRoot
 import org.kevoree.experiment.smartForest.SmartForestExperiment
+import scala.collection.JavaConversions._
 
 /**
  * User: ffouquet
@@ -26,7 +27,7 @@ class DensityFitnessFunction extends FitnessFunction {
     if (worseDensity == 0.0) worseDensity = evaluateWorseDensity(model)
     var densityV = 0.0;
     for (i <- 0 until model.getNodes.size) {
-      val myNode = model.getNodes(i);
+      val myNode = model.getNodes.get(i);
       if (!containsInstance(myNode, tempSensor)) {
         densityV += density(model, tempSensor, i)
       }
@@ -76,7 +77,7 @@ class DensityFitnessFunction extends FitnessFunction {
     i += diffI
     j += diffJ
     val newIndice: Int = i * SmartForestExperiment.forestWidth + j
-    val myNode: ContainerNode = myModel.getNodes(newIndice)
+    val myNode: ContainerNode = myModel.getNodes.get(newIndice)
     if (containsInstance(myNode, myType)) {
       count += 1
       1

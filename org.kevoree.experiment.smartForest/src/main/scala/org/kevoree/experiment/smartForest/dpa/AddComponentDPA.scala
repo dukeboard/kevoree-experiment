@@ -1,13 +1,12 @@
 package org.kevoree.experiment.smartForest.dpa
 
 import org.kevoree.library.tools.dpa.DPA
-import java.util.ArrayList
 import org.kevoree.{ContainerRoot, NamedElement, ComponentType}
-
 import org.kevoree.tools.marShell.ast.TransactionalBloc._
 import org.kevoree.tools.marShell.ast.AddComponentInstanceStatment._
 import org.kevoree.tools.marShell.ast.ComponentInstanceID._
 import org.kevoree.tools.marShell.ast.{ComponentInstanceID, AddComponentInstanceStatment, TransactionalBloc, Script}
+import scala.collection.JavaConversions._
 
 /**
  * User: ffouquet

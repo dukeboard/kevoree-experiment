@@ -25,7 +25,7 @@ object ModelGenerator {
 
   def generateForest(forestWidth: Int): ContainerRoot = {
     superNodesIndices = List((0, 0), (0, forestWidth - 1), (forestWidth - 1, 0), (forestWidth - 1, forestWidth - 1))
-    val myModel: ContainerRoot = KevoreeXmiHelper.loadStream(this.getClass.getClassLoader.getResourceAsStream("defaultLibrary.kev"));
+    val myModel: ContainerRoot = KevoreeXmiHelper.instance$.loadStream(this.getClass.getClassLoader.getResourceAsStream("defaultLibrary.kev"));
 
     for (i <- 0 until (forestWidth * forestWidth)) {
       val scriptString: String = "tblock {\n addNode node" + i + ":ArduinoNode \n " +

@@ -10,6 +10,7 @@ import org.kevoree.tools.marShell.ast.ComponentInstanceID._
 import org.kevoree.tools.marShell.ast.UpdateDictionaryStatement._
 import org.kevoree.tools.marShell.ast._
 import java.util.HashMap
+import scala.collection.JavaConversions._
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,8 +33,8 @@ object SmartForestIndividualHelper {
     val updatePeriodList = new java.util.ArrayList[java.util.Map[String, NamedElement]]
     (0 until ki.myModel.getNodes.size).foreach { i =>
       {
-        val myNode: ContainerNode = ki.myModel.getNodes(i)
-        val otherNode: ContainerNode = ki.myModel.getNodes(i)
+        val myNode: ContainerNode = ki.myModel.getNodes.get(i)
+        val otherNode: ContainerNode = ki.myModel.getNodes.get(i)
         myNode.getComponents.foreach{ ci =>
           if (!containsInstance(otherNode, ci.getTypeDefinition.getName)) {
             val myMap = new java.util.HashMap[String, NamedElement]
@@ -42,11 +43,11 @@ object SmartForestIndividualHelper {
             removeList.add(myMap.asInstanceOf[java.util.Map[String, NamedElement]])
           } else {
             val otherComp = getInstance(otherNode, ci.getTypeDefinition.getName)
-            val myValue = ci.getDictionary.get.getValues.find {
+            val myValue = ci.getDictionary.getValues.find {
               dv =>
                 dv.getAttribute.getName == ChangePeriodPropertyDPAO.periodPropertyName
             }.get
-            val hisValue = otherComp.getDictionary.get.getValues.find {
+            val hisValue = otherComp.getDictionary.getValues.find {
               dv =>
                 dv.getAttribute.getName == ChangePeriodPropertyDPAO.periodPropertyName
             }.get
@@ -87,7 +88,7 @@ object SmartForestIndividualHelper {
 
   def copyComponent(componentInstance : NamedElement, sourceNode: NamedElement, targetNode: NamedElement): Script = {
     val props = new java.util.Properties()
-    val dv = componentInstance.asInstanceOf[ComponentInstance].getDictionary.get.getValues.find{ dv =>
+    val dv = componentInstance.asInstanceOf[ComponentInstance].getDictionary.getValues.find{ dv =>
       dv.getAttribute.getName == ChangePeriodPropertyDPAO.getPeriodPropertyName
     }.get
     props.put(ChangePeriodPropertyDPAO.getPeriodPropertyName, dv.getValue)

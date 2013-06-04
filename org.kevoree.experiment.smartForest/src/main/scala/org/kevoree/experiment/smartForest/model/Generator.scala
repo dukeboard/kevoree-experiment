@@ -31,7 +31,7 @@ object Generator {
       }
     }
 
-    val myModel: ContainerRoot = KevoreeXmiHelper.load(path)
+    val myModel: ContainerRoot = KevoreeXmiHelper.instance$.load(path)
 
     for (i <- 0 until (forestWidth * forestWidth)) {
       val scriptString: String = "tblock {\n addNode node" + i + ":ArduinoNode \n }"

@@ -2,7 +2,7 @@ package org.kevoree.experiment.smartForest.dpa
 
 import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.{ContainerRoot, NamedElement}
-import java.util.{HashMap, ArrayList, Map}
+import java.util.{HashMap, Map}
 import org.kevoree.tools.marShell.ast.{ComponentInstanceID, RemoveComponentInstanceStatment, TransactionalBloc, Script}
 
 /**
@@ -21,6 +21,7 @@ class RemoveComponentDPA extends DPA {
   final val templateScript: String = "tblock { \n" + "  removeComponent ${component}@${node}\n" + "}"
 
   def applyPointcut(myModel: ContainerRoot): java.util.List[Map[String, NamedElement]] = {
+    import scala.collection.JavaConversions._
     val results: java.util.List[Map[String, NamedElement]] = new java.util.ArrayList[Map[String, NamedElement]]()
     for (containerNode <- myModel.getNodes) {
       for (componentInstance <- containerNode.getComponents) {

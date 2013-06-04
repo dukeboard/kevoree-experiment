@@ -4,6 +4,7 @@ import org.kevoree.ContainerRoot
 import collection.immutable.HashMap
 import java.lang.Double
 import org.kevoree.experiment.smartForest.dpa.{PeriodValues, ChangePeriodPropertyDPAO}
+import scala.collection.JavaConversions._
 
 /**
  * User: ffouquet
@@ -36,11 +37,11 @@ class ConsumptionFitnessFunction extends FitnessFunction {
       node =>
         node.getComponents.foreach {
           compo =>
-            if (compo.getDictionary.isEmpty) {
+            if (compo.getDictionary == null) {
 
               return 0l
             }
-            compo.getDictionary.get.getValues.find(v => v.getAttribute.getName == ChangePeriodPropertyDPAO.periodPropertyName) match {
+            compo.getDictionary.getValues.find(v => v.getAttribute.getName == ChangePeriodPropertyDPAO.periodPropertyName) match {
               case Some(property) => {
                 val period =  Integer.parseInt(property.getValue)
                 val freq = 1000 /  period

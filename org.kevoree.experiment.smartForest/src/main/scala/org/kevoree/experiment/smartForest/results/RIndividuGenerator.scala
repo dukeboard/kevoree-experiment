@@ -3,7 +3,6 @@ package org.kevoree.experiment.smartForest.results
 import org.kevoree.framework.KevoreeXmiHelper
 import java.io.{File, FileWriter}
 import org.kevoree.ContainerRoot
-import org.kevoree.experiment.smartForest.references.ModelGenerator
 
 /**
  * User: ffouquet
@@ -13,7 +12,7 @@ import org.kevoree.experiment.smartForest.references.ModelGenerator
 
 object RIndividuGenerator extends App {
 
-  val model = KevoreeXmiHelper.load("/Users/duke/Documents/dev/dukeboard/kevoree-experiment/org.kevoree.experiment.smartForest/MacBook-Pro-de-duke.local-generated/kevoreeIndividualModel.kev")
+  val model = KevoreeXmiHelper.instance$.load("/Users/duke/Documents/dev/dukeboard/kevoree-experiment/org.kevoree.experiment.smartForest/MacBook-Pro-de-duke.local-generated/kevoreeIndividualModel.kev")
 
  // val model = ModelGenerator.generateForest(12)
 
@@ -21,15 +20,16 @@ object RIndividuGenerator extends App {
 
   def generateIndividualRRepresentation(model: ContainerRoot) = {
     var avgFreq = List[String]()
+    import scala.collection.JavaConversions._
     model.getNodes.foreach {
       node =>
         var avgLocalFreq = 0
         var nb = 0
         node.getComponents.foreach {
           component =>
-            component.getTypeDefinition.getDictionaryType.get.getAttributes.find(att => att.getName == "period") match {
+            component.getTypeDefinition.getDictionaryType.getAttributes.find(att => att.getName == "period") match {
               case Some(att) => {
-                avgLocalFreq = avgLocalFreq + Integer.parseInt(component.getDictionary.get.getValues.find(dv => dv.getAttribute == att).get.getValue)
+                avgLocalFreq = avgLocalFreq + Integer.parseInt(component.getDictionary.getValues.find(dv => dv.getAttribute == att).get.getValue)
                 nb = nb + 1
               }
               case None =>

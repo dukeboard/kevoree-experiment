@@ -4,17 +4,16 @@ import org.kevoree.library.tools.dpa.DPA
 import org.kevoree.tools.marShell.interpreter.{KevsInterpreterAspects, KevsInterpreterContext}
 import ec.util.Parameter
 import org.kevoree.kompare.KevoreeKompareBean
-import org.kevoreeAdaptation.AdaptationModel
 import java.io.File
-import org.kevoree.tools.marShell.parser.ParserUtil
 import org.kevoree.library.reasoner.ecj.KevoreeDefaults
 import ec.{Individual, EvolutionState}
 import org.kevoree.framework.KevoreeXmiHelper
 import org.kevoree.cloner.ModelCloner
-import org.kevoree.{KevoreeFactory, ContainerRoot}
+import org.kevoree.{ContainerRoot}
 import org.kevoree.experiment.smartForest.references.ModelGenerator
 import org.kevoree.experiment.smartForest.results.RIndividuGenerator
 import org.kevoree.experiment.smartForest.{SmartForestExperiment, InitParam}
+import org.kevoreeadaptation.AdaptationModel
 
 /**
  * Created by IntelliJ IDEA.
@@ -84,7 +83,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
     var initVar = System.getProperty("INIT_VAR")
     initVar match {
       case "EMPTY_INIT" => {
-        myModel = KevoreeXmiHelper.loadStream(this.getClass.getClassLoader.getResourceAsStream("defaultLibrary.kev"))
+        myModel = KevoreeXmiHelper.instance$.loadStream(this.getClass.getClassLoader.getResourceAsStream("defaultLibrary.kev"))
       }
       case "FULL_INIT" => {
         myModel = ModelGenerator.generateForest(SmartForestExperiment.forestWidth)
@@ -111,7 +110,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
         }
 
 
-        if /*(isFirst) {
+        /*if (isFirst) {
           var cumul = 0f
 
           val confidenceScore = SmartForestFitnessEvaluatorO.getConfidenceFitnessFunction.evaluate(myModel)
@@ -174,6 +173,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
       return false
     }
     val kkb = new KevoreeKompareBean
+    import scala.collection.JavaConversions._
     myModel.getNodes.foreach {
       cn =>
         val am = kkb.kompare(myModel, ind.asInstanceOf[KevoreeIndividualAbstract].myModel, cn.getName)
@@ -190,6 +190,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
 
   override def size: Long = {
     var count: Int = 0
+    import scala.collection.JavaConversions._
     myModel.getNodes.foreach {
       cn =>
         count += cn.getComponents.size
@@ -198,7 +199,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
   }
 
   override def setup(state: EvolutionState, base: Parameter): Unit = {
-    myModel = KevoreeXmiHelper.load(baseModelPath)
+    myModel = KevoreeXmiHelper.instance$.load(baseModelPath)
     model_path = state.parameters.getString(base.push(FOLDER_TO_STORE_MODELS), null)
 
     var stat: File = new File(model_path)
@@ -222,6 +223,7 @@ abstract class KevoreeIndividualAbstract extends Individual {
   override def distanceTo(otherInd: Individual): Double = {
     var result: Double = 0.0
     val kkb = new KevoreeKompareBean
+    import scala.collection.JavaConversions._
     myModel.getNodes.foreach {
       cn =>
         val am: AdaptationModel = kkb.kompare(myModel, (otherInd.asInstanceOf[KevoreeIndividualAbstract]).myModel, cn.getName)

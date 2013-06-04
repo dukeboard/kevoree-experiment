@@ -39,7 +39,7 @@ public class SmartForestExperiment {
         // initialization of the architecture : We are starting with an architecture with all components on all nodes
         ContainerRoot myModel = Generator.generateForest(forestWidth);
         // Pass it to the SmartForestIndividual
-        KevoreeXmiHelper.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+        KevoreeXmiHelper.instance$.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
 
         // Initialize parameters to match with the experiment
         Map<String,String> myProperties = new HashMap<String,String>();
@@ -61,7 +61,7 @@ public class SmartForestExperiment {
 
         // Beginning of multi axial optimization
         initExperiment();
-        KevoreeXmiHelper.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+        KevoreeXmiHelper.instance$.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
         myProperties = new HashMap<String,String>();
         myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
         myProperties.put("generations = 100", "generations = " + generationsForMulti);

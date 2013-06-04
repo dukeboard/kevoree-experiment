@@ -1,0 +1,6 @@
+merge "mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.ec2/{kevoree.version}"
+merge "mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.nanohttp/{kevoree.version}"
+
+addNode node0 : Ec2Node { endPointUrl = 'http://ec2.us-east-1.amazonaws.com', AWSCredentials = '/home/edaubert/workspace/kevoree-library/sky/org.kevoree.library.javase.ec2/AwsCredentials.properties', imgName = 'ami-7539b41c'}
+addGroup sync : NanoRestGroup
+addToGroup sync node0

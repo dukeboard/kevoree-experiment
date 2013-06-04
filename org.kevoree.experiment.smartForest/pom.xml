@@ -66,11 +66,6 @@
             <version>${kevoree.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.kevoree.tools</groupId>
-            <artifactId>org.kevoree.tools.dpa</artifactId>
-            <version>${kevoree.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.kevoree.extra</groupId>
             <artifactId>org.kevoree.extra.ecj</artifactId>
             <version>20</version>

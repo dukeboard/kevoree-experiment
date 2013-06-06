@@ -18,14 +18,14 @@
         <module>./sky/org.kevoree.library.sky.root</module>
     </modules>
 
-    <distributionManagement>
+    <repositories>
         <repository>
             <id>maven2.kevoree.release</id>
             <url>http://maven.kevoree.org/archiva/repository/release/</url>
         </repository>
-        <snapshotRepository>
+        <repository>
             <id>maven2.kevoree.snapshots</id>
             <url>http://maven.kevoree.org/archiva/repository/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+        </repository>
+    </repositories>
 </project>

@@ -121,18 +121,19 @@ public class Ec2Node extends AbstractIaaSNode {
 //            try {
             //boolean created = ec2Create(iaasModel);
             System.out.println("--> Kevoree Node is starting ...");
-            try {
-                String ipNode = runEc2Instance(iaasModel);
-                if (ipNode != null){
-                    System.out.println("--> Public IP Address = " + ipNode);
-                    return true;
-                }
-                else return false;
-            } catch (Exception e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                return false;
-
-            }
+            argsCatching();
+//            try {
+//                String ipNode = runEc2Instance(iaasModel);
+//                if (ipNode != null){
+//                    System.out.println("--> Public IP Address = " + ipNode);
+//                    return true;
+//                }
+//                else return false;
+//            } catch (Exception e) {
+//                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//                return false;
+//
+//            }
             //System.out.println(waitForTransitionCompletion());
             //return created;
             /*} catch (java.io.IOException e) {
@@ -140,6 +141,7 @@ public class Ec2Node extends AbstractIaaSNode {
                 e.printStackTrace();
                 return false;
             }*/
+            return true;
         }
 
         @Override
@@ -148,6 +150,15 @@ public class Ec2Node extends AbstractIaaSNode {
             return false;
             //boolean stopInstance = terminateEc2InstanceByID()
         }
+
+        // Test arguments catching from DictionaryAttributes at the starting
+        public void argsCatching(){
+           System.out.println("endPointUrl"+this.iaasNode.getDictionary().get("endPointUrl").toString());
+           System.out.println("imageID ="+this.iaasNode.getDictionary().get("imageID").toString());
+           System.out.println("keyPairName = "+this.iaasNode.getDictionary().get("keyPairName").toString());
+
+        }
+
 
         public String runEc2Instance(ContainerRoot iaasModel) throws Exception {
             //NOTE: ask to use log of Kevoree

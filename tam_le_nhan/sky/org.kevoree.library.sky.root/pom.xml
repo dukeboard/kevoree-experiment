@@ -23,7 +23,8 @@
 
 	<modules>
 		<module>../org.kevoree.library.javase.ec2</module>
-	</modules>
+        <module>../org.kevoree.library.sky.softwareInstaller</module>
+    </modules>
 
 	<dependencies>
 		<dependency>

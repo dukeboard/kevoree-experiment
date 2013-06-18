@@ -121,11 +121,26 @@ public class Ec2Node extends AbstractIaaSNode {
 //            try {
             //boolean created = ec2Create(iaasModel);
             System.out.println("--> Kevoree Node is starting ...");
+            //argsCatching();
             try {
                 String ipNode = runEc2Instance(iaasModel);
                 if (ipNode != null){
                     System.out.println("--> Public IP Address = " + ipNode);
-                    return true;
+
+                    // add ip on model
+                    ModelCloner cloner = new ModelCloner();
+                    ContainerRoot newModel = cloner.clone(childBootStrapModel);
+                    KevScriptEngine kengine = iaasNode.getKevScriptEngineFactory().createKevScriptEngine(newModel);
+                    kengine.addVariable("ip", ipNode);
+                    //kengine.addVariable("dnsName", dnsName);
+                    kengine.addVariable("ipKey", Constants.instance$.getKEVOREE_PLATFORM_REMOTE_NODE_IP());
+                    kengine.addVariable("nodeName", nodeName());
+
+                    kengine.append("network {nodeName} { '{ipKey}' = '{ip}' }:ipv4/100");
+                    //kengine.append("network {nodeName} { '{ipKey}' = '{dnsName}' }:dns/100");
+                    newModel = kengine.interpret();
+                    return sendModel(newModel);
+                    //return true;
                 }
                 else return false;
             } catch (Exception e) {
@@ -140,6 +155,7 @@ public class Ec2Node extends AbstractIaaSNode {
                 e.printStackTrace();
                 return false;
             }*/
+            //return true;
         }
 
         @Override
@@ -148,6 +164,15 @@ public class Ec2Node extends AbstractIaaSNode {
             return false;
             //boolean stopInstance = terminateEc2InstanceByID()
         }
+
+        // Test arguments catching from DictionaryAttributes at the starting
+        public void argsCatching(){
+           System.out.println("endPointUrl"+this.iaasNode.getDictionary().get("endPointUrl").toString());
+           System.out.println("imageID ="+this.iaasNode.getDictionary().get("imageID").toString());
+           System.out.println("keyPairName = "+this.iaasNode.getDictionary().get("keyPairName").toString());
+
+        }
+
 
         public String runEc2Instance(ContainerRoot iaasModel) throws Exception {
             //NOTE: ask to use log of Kevoree
@@ -191,7 +216,11 @@ public class Ec2Node extends AbstractIaaSNode {
             boolean done = false;
             while (!done) {
                 try {
+                    try{
                     Thread.sleep(2000);
+                    }catch (InterruptedException ex){
+                       // Thread.currentThread().interrupt();
+                    }
 
                     DescribeInstancesRequest describeInstancesRequest = new DescribeInstancesRequest();
                     describeInstancesRequest.withInstanceIds(instanceId);
@@ -239,7 +268,7 @@ public class Ec2Node extends AbstractIaaSNode {
                     try {
                         Thread.sleep(5000);
                     } catch (InterruptedException e) {
-
+                       // Thread.currentThread().interrupt();
                     }
                         iaasNode.getModelService().atomicUpdateModel(model);
                 }

@@ -20,6 +20,7 @@ import org.kevoree.library.sky.api.KevoreeNodeRunner;
 import org.kevoree.library.sky.api.nodeType.AbstractIaaSNode;
 import org.kevoree.framework.Constants;
 
+import org.kevoree.library.sky.api.nodeType.HostNode;
 import org.kevoree.library.utils.AmazonEc2Utils;
 import org.kevoree.library.utils.SSHUtils;
 
@@ -48,6 +49,10 @@ import java.util.*;
         @DictionaryAttribute(name = "securityGroup", defaultValue = "quicklaunch-1", optional = false),
         @DictionaryAttribute(name = "userName", defaultValue = "ubuntu", optional = false)
 
+})
+@PrimitiveCommands(value = {
+        @PrimitiveCommand(name = HostNode.ADD_NODE, maxTime = 180000),      // set timeout for adding a node in 3 minutes
+        @PrimitiveCommand(name = HostNode.REMOVE_NODE, maxTime = 60000)     // set timeout for removing a node in 1 minutes
 })
 public class Ec2Node extends AbstractIaaSNode {
 
@@ -141,9 +146,10 @@ public class Ec2Node extends AbstractIaaSNode {
                     SSHUtils.sshRemoteCommand(session,"sudo cp config /etc/kevoree/config");
 
                     // Update current Kevoree model to the node
-                    String mfilePath = "model"+nodeName()+".xmi";
-                    KevoreeXmiHelper.instance$.save(mfilePath,childBootStrapModel);
-                    SSHUtils.scpByChannel(session,mfilePath,"bootmodel");
+                    File file = File.createTempFile("model", ".xmi");
+                    //String mfilePath = "model"+nodeName()+".xmi";
+                    KevoreeXmiHelper.instance$.save(file.getAbsolutePath(),childBootStrapModel);
+                    SSHUtils.scpByChannel(session,file.getAbsolutePath(),"bootmodel");
                     SSHUtils.sshRemoteCommand(session,"sudo cp bootmodel /etc/kevoree/bootmodel");
                     // restart Kevoree service at the node
                     SSHUtils.sshRemoteCommand(session,"sudo service kevoree start");
@@ -511,9 +517,10 @@ public class Ec2Node extends AbstractIaaSNode {
             }
         }
 
-        public File createKevoreeConfigFile(String noteName) {
-            String filename = "config";
-            File fstream = new File(filename);
+        public File createKevoreeConfigFile(String noteName) throws IOException {
+
+            File fstream = File.createTempFile("config","");
+            //File fstream = new File("config");
             try{
                 // Create file
                 PrintStream out = new PrintStream(new FileOutputStream(fstream));

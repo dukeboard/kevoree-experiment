@@ -8,7 +8,6 @@ import com.amazonaws.auth.PropertiesCredentials;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
 import com.amazonaws.services.ec2.model.*;
-import com.jcraft.jsch.Session;
 import org.kevoree.ContainerNode;
 import org.kevoree.ContainerRoot;
 import org.kevoree.annotation.*;
@@ -21,7 +20,6 @@ import org.kevoree.library.sky.api.nodeType.AbstractIaaSNode;
 import org.kevoree.framework.Constants;
 
 import org.kevoree.library.utils.AmazonEc2Utils;
-import org.kevoree.library.utils.SSHUtils;
 
 import java.io.*;
 import java.net.URL;
@@ -44,9 +42,8 @@ import java.util.*;
         @DictionaryAttribute(name = "imageID", defaultValue = "debian.img", optional = false),
         @DictionaryAttribute(name = "instanceName", defaultValue = "Ubuntu", optional = false),
         @DictionaryAttribute(name = "instanceType", defaultValue = "m1.small", optional = false),
-        @DictionaryAttribute(name = "keyPairPath", defaultValue = "/TamLN-INRIA/AmazonEC2/seckey/ubuntu.pem", optional = false),
-        @DictionaryAttribute(name = "securityGroup", defaultValue = "quicklaunch-1", optional = false),
-        @DictionaryAttribute(name = "userName", defaultValue = "ubuntu", optional = false)
+        @DictionaryAttribute(name = "keyPairName", defaultValue = "ubuntu", optional = false),
+        @DictionaryAttribute(name = "securityGroup", defaultValue = "quicklaunch-1", optional = false)
 
 })
 public class Ec2Node extends AbstractIaaSNode {
@@ -121,41 +118,21 @@ public class Ec2Node extends AbstractIaaSNode {
 
         @Override
         public boolean startNode(ContainerRoot iaasModel, ContainerRoot childBootStrapModel) {
-
+//            try {
+            //boolean created = ec2Create(iaasModel);
+            System.out.println("--> Kevoree Node is starting ...");
+            //argsCatching();
             try {
-                String dnsNode = runEc2Instance(iaasModel);
-                if (dnsNode != null){
-                    System.out.println("EC2 Instance is running at the host: " + dnsNode);
-                    String userName = this.iaasNode.getDictionary().get("userName").toString();
-                    String privateKey = this.iaasNode.getDictionary().get("keyPairPath").toString();
-                    Session session = SSHUtils.createSSHSession(userName, privateKey, dnsNode);
-                    // stop Kevoree service running on the node
-                    SSHUtils.sshRemoteCommand(session,"sudo service kevoree stop");
-                    // delete old config file of Kevoree on the node
-                    SSHUtils.sshRemoteCommand(session,"sudo rm /etc/kevoree/config");
-
-                    File kconfigFile = createKevoreeConfigFile(nodeName());
-                    // copy new config file of Kevoree to home directory of the node
-                    SSHUtils.scpByChannel(session,kconfigFile.getAbsolutePath(),"config");
-                    // new config file to /etc/kevoree/config at the node
-                    SSHUtils.sshRemoteCommand(session,"sudo cp config /etc/kevoree/config");
-
-                    // Update current Kevoree model to the node
-                    String mfilePath = "model"+nodeName()+".xmi";
-                    KevoreeXmiHelper.instance$.save(mfilePath,childBootStrapModel);
-                    SSHUtils.scpByChannel(session,mfilePath,"bootmodel");
-                    SSHUtils.sshRemoteCommand(session,"sudo cp bootmodel /etc/kevoree/bootmodel");
-                    // restart Kevoree service at the node
-                    SSHUtils.sshRemoteCommand(session,"sudo service kevoree start");
-                    session.disconnect();
+                String ipNode = runEc2Instance(iaasModel);
+                if (ipNode != null){
+                    System.out.println("--> Public IP Address = " + ipNode);
 
                     // add ip on model
                     ModelCloner cloner = new ModelCloner();
                     ContainerRoot newModel = cloner.clone(childBootStrapModel);
                     KevScriptEngine kengine = iaasNode.getKevScriptEngineFactory().createKevScriptEngine(newModel);
-                    //String instanceId = id2dns.get()
-                    kengine.addVariable("ip", dnsNode); //use public dns instead of public ip
-                    kengine.addVariable("dnsName", dnsNode);
+                    kengine.addVariable("ip", ipNode);
+                    //kengine.addVariable("dnsName", dnsName);
                     kengine.addVariable("ipKey", Constants.instance$.getKEVOREE_PLATFORM_REMOTE_NODE_IP());
                     kengine.addVariable("nodeName", nodeName());
 
@@ -185,24 +162,25 @@ public class Ec2Node extends AbstractIaaSNode {
         @Override
         public boolean stopNode() {
             // TODO stop and remove the VM on AMazaon EC2
-            //return false;
-            boolean stopNodeStatus = false;
-            try {
-                stopNodeStatus = terminateEc2InstanceByID(ec2InstanceId);
-                return stopNodeStatus;
-            } catch (Exception e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                return stopNodeStatus;
-            }
+            return false;
+            //boolean stopInstance = terminateEc2InstanceByID()
         }
 
-        // run an EC2 Instance and return a public DSN of the running instance.
+        // Test arguments catching from DictionaryAttributes at the starting
+        public void argsCatching(){
+           System.out.println("endPointUrl"+this.iaasNode.getDictionary().get("endPointUrl").toString());
+           System.out.println("imageID ="+this.iaasNode.getDictionary().get("imageID").toString());
+           System.out.println("keyPairName = "+this.iaasNode.getDictionary().get("keyPairName").toString());
+
+        }
+
+
         public String runEc2Instance(ContainerRoot iaasModel) throws Exception {
             //NOTE: ask to use log of Kevoree
             //logger.log(Level.INFO,"Running new instance..");
             System.out.println("--> Running new instance ...");
             String imageID = this.iaasNode.getDictionary().get("imageID").toString();
-            String keyName = getKeyPairName(this.iaasNode.getDictionary().get("keyPairPath").toString());
+            String keyName = this.iaasNode.getDictionary().get("keyPairName").toString();
             String secGroup = this.iaasNode.getDictionary().get("securityGroup").toString();
             String instanceType = this.iaasNode.getDictionary().get("instanceType").toString();
             ContainerNode node = iaasModel.findNodesByID(nodeName())        ;
@@ -256,9 +234,8 @@ public class Ec2Node extends AbstractIaaSNode {
                         instanceIp = instance.getPublicIpAddress();
                         dnsName = instance.getPublicDnsName();
                         System.out.println("DSN: "+dnsName);
-                        id2ip.put(instanceId, instanceIp);
+                        id2ip.put(instanceId,instanceIp);
                         id2dns.put(instanceId,dnsName);
-                        ec2InstanceId = instanceId;
                         done = true;
                     }
                 } catch (Exception e) {
@@ -299,7 +276,7 @@ public class Ec2Node extends AbstractIaaSNode {
                         //iaasNode.getModelService().atomicUpdateModel(model);
                 }
             }                                                              .start();
-            return dnsName;
+            return instanceIp;
         }
 
         /**
@@ -328,7 +305,7 @@ public class Ec2Node extends AbstractIaaSNode {
                 return false;
             }
         }
-        public boolean terminateEc2InstanceByID(String instanceId)throws Exception{
+        private boolean terminateEc2InstanceByID(String instanceId){
             try{
                 //logger.log(Level.INFO,"Terminating instance with IP: " + instanceIp + "..");
                 System.out.println("Terminating instance with InstanceID: " + instanceId + "..");
@@ -337,7 +314,6 @@ public class Ec2Node extends AbstractIaaSNode {
                 TerminateInstancesRequest terminateInstancesRequest = new TerminateInstancesRequest();
                 terminateInstancesRequest.withInstanceIds(instanceId);
                 ec2.terminateInstances(terminateInstancesRequest);
-                waitFor(instanceId,"terminated");
                 id2ip.remove(instanceId);
                 //logger.log(Level.INFO,"Terminated instance successfully.");
                 System.out.println("Terminated instance successfully.");
@@ -348,36 +324,6 @@ public class Ec2Node extends AbstractIaaSNode {
                 System.out.println("--> Error while terminating the instance with InstanceID: "+instanceId);
                 return false;
             }
-        }
-
-        private void waitFor(String instanceID, String status) throws Exception {
-            boolean done = false;
-            while (!done) {
-                try {
-                    try{
-                        Thread.sleep(2000);
-                    }catch (InterruptedException ex){
-                        // Thread.currentThread().interrupt();
-                    }
-
-                    DescribeInstancesRequest describeInstancesRequest = new DescribeInstancesRequest();
-                    describeInstancesRequest.withInstanceIds(instanceID);
-                    DescribeInstancesResult describeInstancesResult = ec2.describeInstances(describeInstancesRequest);
-
-                    Instance instance = describeInstancesResult.getReservations().get(0).getInstances().get(0);
-                    //logger.log(Level.INFO,"Current instance state: " + instance.getState().getName() + "..");
-                    System.out.println("--> Current instance state: " + instance.getState().getName() + "..");
-                    if (instance.getState().getName().equals(status)) {
-                        done = true;
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    //logger.log(Level.SEVERE,"Error while waiting for instance to become running!" );
-                    System.out.println("--> Error while waiting for instance to become "+status+" !");
-                    throw e;
-                }
-            }
-
         }
 
         private boolean ec2Launch(ContainerRoot iaasModel) {
@@ -511,30 +457,6 @@ public class Ec2Node extends AbstractIaaSNode {
             }
         }
 
-        public File createKevoreeConfigFile(String noteName) {
-            String filename = "config";
-            File fstream = new File(filename);
-            try{
-                // Create file
-                PrintStream out = new PrintStream(new FileOutputStream(fstream));
-                out.println("KEVOREE_VERSION=2.0.0-SNAPSHOT");
-                out.println("NODE_NAME="+noteName);
-                out.println("PING_PORT=9999");
-                out.println("PING_TIMEOUT=3000");
-                //Close the output stream
-                out.close();
-            }catch (Exception e){//Catch exception if any
-                System.err.println("Error: " + e.getMessage());
-            }
-            return fstream;
-        }
-
-
-        // extract KeyPairName from the file path of keypair
-        // e.g. Keypair file path = "/TamLN-INRIA/AmazonEC2/seckey/ubuntu.pem"  --> KeyPairName=ubuntu
-        private String getKeyPairName(String filePath){
-            return filePath.substring(filePath.lastIndexOf('/')+1,filePath.lastIndexOf('.'));
-        }
         private boolean waitRunning(int timeout) {
             System.out.println("* ec2 waitRunning()");
             String res = "";

@@ -1,0 +1,2721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.kevoree:ContainerRoot xmlns:org.kevoree="http://kevoree/1.0" xmlns:xsi="http://wwww.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI">
+<nodes xsi:type="org.kevoree:ContainerNode" name="node43" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor3243" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9438" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9211" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node42" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor16988" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor11975" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13375" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node45" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor2566" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9400" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9442" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node44" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9278" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9293" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9420" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node47" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor473" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor6785" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor474" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node46" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9441" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9385" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9284" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node49" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9213" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor11974" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor2569" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node48" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9382" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor5123" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9464" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node86" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9410" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor8266" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9321" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node87" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor2567" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9175" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor3601" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node88" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9421" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor8265" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9388" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node89" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9356" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9251" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor11062" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node41" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9343" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor14178" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor17745" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node40" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9429" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9460" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9386" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node90" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor13930" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor5126" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13692" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node31" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor15243" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor4448" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9301" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node32" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9439" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor15583" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor5961" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node92" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9521" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor10646" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor14180" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node33" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9263" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9319" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor14403" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node91" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9302" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9299" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9224" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node34" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor5959" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9336" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9199" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node94" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9245" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor3597" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor5125" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node35" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor5511" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9397" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor2638" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node93" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor7627" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor16624" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9341" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node36" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9228" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9432" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9297" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node37" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor10426" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9364" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9450" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node96" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13161" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor7495" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor11831" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node95" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9347" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9287" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor14182" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node38" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9205" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9330" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9291" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node39" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9195" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor7626" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor7184" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node50" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9185" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor3146" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor18101" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node51" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9366" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9313" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9461" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node52" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9184" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor6615" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9024" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node56" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9447" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor3244" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9246" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node55" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9345" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor472" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13691" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node54" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9255" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9178" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor5748" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node53" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9457" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9329" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9249" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node1" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9871" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor1731" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor10861" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node0" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9214" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9223" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9377" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node59" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor15242" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor18366" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9282" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node58" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor1403" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9233" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9285" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node57" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor1969" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9300" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9200" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node99" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor3148" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9423" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor13931" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node97" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9243" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor12689" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9332" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node98" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9359" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor6617" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9288" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node30" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor3988" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9374" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor14179" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node22" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor18421" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9312" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9256" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node23" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor13374" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor14185" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9190" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node20" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9408" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor14405" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor5003" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node21" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9267" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor2565" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9180" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node26" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9407" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9221" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9294" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node27" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor14520" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9242" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor14523" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node24" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor10860" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor7314" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9317" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node25" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13688" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor4191" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9191" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node4" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9215" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor15578" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9270" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node5" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9206" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9398" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9376" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node2" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9431" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9295" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor6177" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node28" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor13126" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor1970" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9380" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node3" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9394" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor1732" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node29" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor15582" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9434" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9309" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node8" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor15448" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor18365" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor10007" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node62" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9435" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor13160" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor11830" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node9" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor6174" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9311" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor2635" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node63" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13530" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9323" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor17250" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node6" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9430" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor2570" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node60" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor13932" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor648" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor6173" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node7" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor14521" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9202" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9404" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node61" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor6616" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor7628" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9426" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node69" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9338" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9405" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9239" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node68" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor4192" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor6618" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor14519" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node65" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9216" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9446" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9337" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node64" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9425" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9179" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9324" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node67" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13933" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9415" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor13128" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node66" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9419" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9286" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor18420" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node13" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9449" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9220" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor15579" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node14" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor10862" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor11739" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9325" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node15" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9027" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor10642" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor1085" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node16" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9424" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor7959" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9413" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node10" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13376" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9453" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9261" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node11" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9306" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor11484" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9416" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node12" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor8544" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9229" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor10428" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node71" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9250" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9292" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9370" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node72" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9396" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor7496" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor6176" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node73" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9207" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9458" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor1967" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node74" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9384" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9189" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9226" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node17" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor13373" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor14184" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9296" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node18" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor15244" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9440" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9247" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node19" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9219" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9433" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor15004" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node70" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor10645" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9193" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor12687" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node79" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9422" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor7957" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13158" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node78" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9326" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9320" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9463" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node77" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9409" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor17086" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor6786" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node76" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor18718" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor5509" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor7183" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node75" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9266" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="200" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor15581" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9201" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node84" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9025" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor60" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor18717" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node85" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9290" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor4447" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="400" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor14524" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="500" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node82" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9378" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor14404" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor15584" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node83" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor12690" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9340" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor6984" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="300" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node80" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9026" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="100" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor9257" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor16180" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<nodes xsi:type="org.kevoree:ContainerNode" name="node81" typeDefinition="//@typeDefinitions.14">
+<components xsi:type="org.kevoree:ComponentInstance" name="TempSensor13531" typeDefinition="//@typeDefinitions.12">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.12/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="SmokeSensor9349" typeDefinition="//@typeDefinitions.13">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.13/@required.0">
+</required>
+</components>
+<components xsi:type="org.kevoree:ComponentInstance" name="HumiditySensor9372" typeDefinition="//@typeDefinitions.9">
+<dictionary>
+<values xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</values>
+</dictionary>
+<required xsi:type="org.kevoree:Port" portTypeRef="//@typeDefinitions.9/@required.0">
+</required>
+</components>
+</nodes>
+<typeDefinitions xsi:type="org.kevoree:NodeType" name="AndroidNode">
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="Switch" factoryBean="org.kevoree.experiment.smartbuilding.SwitchFactory" bean="org.kevoree.experiment.smartbuilding.Switch" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.1">
+<required xsi:type="org.kevoree:PortTypeRef" name="click" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+<required xsi:type="org.kevoree:PortTypeRef" name="release" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ChannelType" name="SerialCom" factoryBean="org.kevoree.experiment.smartbuilding.SerialComFactory" bean="org.kevoree.experiment.smartbuilding.SerialCom" startMethod="lifeCycle" stopMethod="lifeCycle" lowerBindings="0" upperBindings="0" lowerFragments="0" upperFragments="0" deployUnits="//@deployUnits.2 //@deployUnits.1">
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ChannelType" name="LBroadC" factoryBean="org.kevoree.experiment.smartbuilding.LBroadCFactory" bean="org.kevoree.experiment.smartbuilding.LBroadC" startMethod="lifeCycle" stopMethod="lifeCycle" lowerBindings="0" upperBindings="0" lowerFragments="0" upperFragments="0" deployUnits="//@deployUnits.1 //@deployUnits.0">
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ChannelType" name="IPMultiCast" factoryBean="org.kevoree.experiment.smartbuilding.IPMultiCastFactory" bean="org.kevoree.experiment.smartbuilding.IPMultiCast" startMethod="lifeCycle" stopMethod="lifeCycle" lowerBindings="0" upperBindings="0" lowerFragments="0" upperFragments="0" deployUnits="//@deployUnits.2 //@deployUnits.0">
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="FloorAlarm" factoryBean="org.kevoree.experiment.smartbuilding.FloorAlarmFactory" bean="org.kevoree.experiment.smartbuilding.FloorAlarm" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.0">
+<required xsi:type="org.kevoree:PortTypeRef" name="forward" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+</required>
+<provided xsi:type="org.kevoree:PortTypeRef" name="sdata" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+<mappings xsi:type="org.kevoree:PortTypeMapping" beanMethodName="trigger" serviceMethodName="process">
+</mappings>
+</provided>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="GlobalAlarm" factoryBean="org.kevoree.experiment.smartbuilding.GlobalAlarmFactory" bean="org.kevoree.experiment.smartbuilding.GlobalAlarm" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.0">
+<provided xsi:type="org.kevoree:PortTypeRef" name="sdata" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+<mappings xsi:type="org.kevoree:PortTypeMapping" beanMethodName="trigger" serviceMethodName="process">
+</mappings>
+</provided>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="EmergencyLog" factoryBean="org.kevoree.experiment.smartbuilding.EmergencyLogFactory" bean="org.kevoree.experiment.smartbuilding.EmergencyLog" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.2 //@deployUnits.1 //@deployUnits.0">
+<required xsi:type="org.kevoree:PortTypeRef" name="forward" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+</required>
+<provided xsi:type="org.kevoree:PortTypeRef" name="sdata" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+<mappings xsi:type="org.kevoree:PortTypeMapping" beanMethodName="trigger" serviceMethodName="process">
+</mappings>
+</provided>
+<provided xsi:type="org.kevoree:PortTypeRef" name="synch" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+<mappings xsi:type="org.kevoree:PortTypeMapping" beanMethodName="trigger" serviceMethodName="process">
+</mappings>
+</provided>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="MotionSensor" factoryBean="org.kevoree.experiment.smartbuilding.MotionSensorFactory" bean="org.kevoree.experiment.smartbuilding.MotionSensor" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.1">
+<required xsi:type="org.kevoree:PortTypeRef" name="out" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="HumiditySensor" factoryBean="org.kevoree.experiment.smartbuilding.HumiditySensorFactory" bean="org.kevoree.experiment.smartbuilding.HumiditySensor" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.1">
+<dictionaryType>
+<attributes xsi:type="org.kevoree:DictionaryAttribute" name="period" optional="true" state="false" fragmentDependant="false">
+</attributes>
+<defaultValues xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.9/@dictionaryType/@attributes.0">
+</defaultValues>
+</dictionaryType>
+<required xsi:type="org.kevoree:PortTypeRef" name="value" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="BuildingTempMap" factoryBean="org.kevoree.experiment.smartbuilding.BuildingTempMapFactory" bean="org.kevoree.experiment.smartbuilding.BuildingTempMap" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.2">
+<provided xsi:type="org.kevoree:PortTypeRef" name="datas" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+<mappings xsi:type="org.kevoree:PortTypeMapping" beanMethodName="trigger" serviceMethodName="process">
+</mappings>
+</provided>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ChannelType" name="GossipRF" factoryBean="org.kevoree.experiment.smartbuilding.GossipRFFactory" bean="org.kevoree.experiment.smartbuilding.GossipRF" startMethod="lifeCycle" stopMethod="lifeCycle" lowerBindings="0" upperBindings="0" lowerFragments="0" upperFragments="0" deployUnits="//@deployUnits.1">
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="TempSensor" factoryBean="org.kevoree.experiment.smartbuilding.TempSensorFactory" bean="org.kevoree.experiment.smartbuilding.TempSensor" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.1">
+<dictionaryType>
+<attributes xsi:type="org.kevoree:DictionaryAttribute" name="period" optional="true" state="false" fragmentDependant="false">
+</attributes>
+<defaultValues xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.12/@dictionaryType/@attributes.0">
+</defaultValues>
+</dictionaryType>
+<required xsi:type="org.kevoree:PortTypeRef" name="value" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="SmokeSensor" factoryBean="org.kevoree.experiment.smartbuilding.SmokeSensorFactory" bean="org.kevoree.experiment.smartbuilding.SmokeSensor" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.1">
+<dictionaryType>
+<attributes xsi:type="org.kevoree:DictionaryAttribute" name="period" optional="true" state="false" fragmentDependant="false">
+</attributes>
+<defaultValues xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.13/@dictionaryType/@attributes.0">
+</defaultValues>
+</dictionaryType>
+<required xsi:type="org.kevoree:PortTypeRef" name="value" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:NodeType" name="ArduinoNode">
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="Light" factoryBean="org.kevoree.experiment.smartbuilding.LightFactory" bean="org.kevoree.experiment.smartbuilding.Light" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.1">
+<provided xsi:type="org.kevoree:PortTypeRef" name="off" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+<mappings xsi:type="org.kevoree:PortTypeMapping" beanMethodName="trigger" serviceMethodName="process">
+</mappings>
+</provided>
+<provided xsi:type="org.kevoree:PortTypeRef" name="on" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+<mappings xsi:type="org.kevoree:PortTypeMapping" beanMethodName="trigger" serviceMethodName="process">
+</mappings>
+</provided>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:NodeType" name="JavaSENode">
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="LightSensor" factoryBean="org.kevoree.experiment.smartbuilding.LightSensorFactory" bean="org.kevoree.experiment.smartbuilding.LightSensor" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.1">
+<dictionaryType>
+<attributes xsi:type="org.kevoree:DictionaryAttribute" name="period" optional="true" state="false" fragmentDependant="false">
+</attributes>
+<defaultValues xsi:type="org.kevoree:DictionaryValue" value="10" attribute="//@typeDefinitions.17/@dictionaryType/@attributes.0">
+</defaultValues>
+</dictionaryType>
+<required xsi:type="org.kevoree:PortTypeRef" name="value" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:ComponentType" name="LuxOrch" factoryBean="org.kevoree.experiment.smartbuilding.LuxOrchFactory" bean="org.kevoree.experiment.smartbuilding.LuxOrch" startMethod="lifeCycle" stopMethod="lifeCycle" deployUnits="//@deployUnits.1">
+<required xsi:type="org.kevoree:PortTypeRef" name="off" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+<required xsi:type="org.kevoree:PortTypeRef" name="on" optional="false" noDependency="true" ref="//@typeDefinitions.19">
+</required>
+<provided xsi:type="org.kevoree:PortTypeRef" name="sdata" optional="false" noDependency="false" ref="//@typeDefinitions.19">
+<mappings xsi:type="org.kevoree:PortTypeMapping" beanMethodName="trigger" serviceMethodName="process">
+</mappings>
+</provided>
+</typeDefinitions>
+<typeDefinitions xsi:type="org.kevoree:MessagePortType" name="org.kevoree.framework.MessagePort" synchrone="false">
+</typeDefinitions>
+<repositories xsi:type="org.kevoree:Repository" url="http://scala-tools.org/repo-releases">
+</repositories>
+<repositories xsi:type="org.kevoree:Repository" url="http://maven.kevoree.org/release">
+</repositories>
+<repositories xsi:type="org.kevoree:Repository" url="http://repo1.maven.org/maven2">
+</repositories>
+<repositories xsi:type="org.kevoree:Repository" url="http://maven.kevoree.org/snapshots">
+</repositories>
+<libraries xsi:type="org.kevoree:TypeLibrary" name="SmartBuilding" subTypes="//@typeDefinitions.1 //@typeDefinitions.2 //@typeDefinitions.3 //@typeDefinitions.4 //@typeDefinitions.5 //@typeDefinitions.6 //@typeDefinitions.7 //@typeDefinitions.8 //@typeDefinitions.9 //@typeDefinitions.10 //@typeDefinitions.11 //@typeDefinitions.12 //@typeDefinitions.13 //@typeDefinitions.15 //@typeDefinitions.17 //@typeDefinitions.18">
+</libraries>
+<deployUnits xsi:type="org.kevoree:DeployUnit" groupName="org.kevoree.experiment.smartBuilding" unitName="org.kevoree.experiment.smartBuilding.javase" version="1.2.0-SNAPSHOT" hashcode="201106161317183" targetNodeType="//@typeDefinitions.16">
+</deployUnits>
+<deployUnits xsi:type="org.kevoree:DeployUnit" groupName="org.kevoree.experiment.smartBuilding" unitName="org.kevoree.experiment.smartBuilding.arduino" version="1.2.0-SNAPSHOT" hashcode="201107261819657" targetNodeType="//@typeDefinitions.14">
+</deployUnits>
+<deployUnits xsi:type="org.kevoree:DeployUnit" groupName="org.kevoree.experiment.smartBuilding" unitName="org.kevoree.experiment.smartBuilding.android" version="1.2.0-SNAPSHOT" hashcode="201106161317748" targetNodeType="//@typeDefinitions.0">
+</deployUnits>
+</org.kevoree:ContainerRoot>

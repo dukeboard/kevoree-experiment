@@ -33,53 +33,84 @@ public class SmartForestExperiment {
     private static long initTime;
 
     public static void main(String[] args){
+        for(int l=0; l<85; l++){
+            initExperiment();
 
-        initExperiment();
+            // initialization of the architecture : We are starting with an architecture with all components on all nodes
+            ContainerRoot myModel = Generator.generateForest(forestWidth);
+            // Pass it to the SmartForestIndividual
+            KevoreeXmiHelper.instance$.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
 
-        // initialization of the architecture : We are starting with an architecture with all components on all nodes
-        ContainerRoot myModel = Generator.generateForest(forestWidth);
-        // Pass it to the SmartForestIndividual
-        KevoreeXmiHelper.instance$.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+            // Initialize parameters to match with the experiment
+            Map<String,String> myProperties = new HashMap<String,String>();
+            myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForSingle);
+            myProperties.put("generations = 100", "generations = " + generationsForSingle);
+            myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
+            myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
+            myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
+            myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
+            myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
+            initializeParams(paramsSingleFitnessSourceFile, paramsTargetFile, myProperties);
 
-        // Initialize parameters to match with the experiment
-        Map<String,String> myProperties = new HashMap<String,String>();
-        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForSingle);
-        myProperties.put("generations = 100", "generations = " + generationsForSingle);
-        myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
-        myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
-        myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
-        myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
-        myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
-        initializeParams(paramsSingleFitnessSourceFile, paramsTargetFile, myProperties);
+            //Start the experiment
+            KevoreeMultipleGeneticAlgorithm kmga = new KevoreeMultipleGeneticAlgorithm ();
+            kmga.start();
+            myModel = ((SmartForestIndividual)kmga.getCurrentState().population.subpops[0].individuals[0]).myModel();
+            kmga.clean();
+            // End of single optimization
 
-        //Start the experiment
-        KevoreeMultipleGeneticAlgorithm kmga = new KevoreeMultipleGeneticAlgorithm ();
-        kmga.start();
-        myModel = ((SmartForestIndividual)kmga.getCurrentState().population.subpops[0].individuals[0]).myModel();
-        kmga.clean();
-        // End of single optimization
+            // Beginning of multi axial optimization
+            initExperiment();
+            KevoreeXmiHelper.instance$.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
+            myProperties = new HashMap<String,String>();
+            myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
+            myProperties.put("generations = 100", "generations = " + generationsForMulti);
+            myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
+            myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
+            myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
+            myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
+            myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
+            initializeParams(paramsMultiFitnessSourceFile, paramsTargetFile, myProperties);
 
-        // Beginning of multi axial optimization
-        initExperiment();
-        KevoreeXmiHelper.instance$.save(folderToStoreTempFile + File.separator + individualBaseModel, myModel);
-        myProperties = new HashMap<String,String>();
-        myProperties.put("pop.subpop.0.size = 100", "pop.subpop.0.size = " + populationsForMulti);
-        myProperties.put("generations = 100", "generations = " + generationsForMulti);
-        myProperties.put("breed.elite.0 = 100", "breed.elite.0 = " + elite);
-        myProperties.put("stat.file = $out.stat", "stat.file = " + "classicStat.stat");
-        myProperties.put("stat.front = $front.stat", "stat.front = " + "front.stat");
-        myProperties.put("stat.child.0.file = $out2.stat", "stat.child.0.file = " + "completeStat.stat");
-        myProperties.put("pop.subpop.0.species.ind.models-folder = models", "pop.subpop.0.species.ind.models-folder = " + folderToStoreTempFile + "/models");
-        initializeParams(paramsMultiFitnessSourceFile, paramsTargetFile, myProperties);
+            //Start the experiment
+            kmga = new KevoreeMultipleGeneticAlgorithm ();
+            kmga.start();
+            kmga.clean();
 
-        //Start the experiment
-        kmga = new KevoreeMultipleGeneticAlgorithm ();
-        kmga.start();
-        kmga.clean();
+            System.out.println(calculateFinalBestValue());
+        }
     }
 
     public static Long collectStatistics() {
         return (System.currentTimeMillis()-initTime);
+    }
+
+    private static Float calculateFinalBestValue(){
+        float max = 0;
+        try{
+            File f =  new File("C:\\Users\\jbourcie\\Documents\\GitHub\\kevoree-experiment\\org.kevoree.experiment.root\\homega-generated\\front.stat");
+
+           // InputStream ips=classLoader.getResourceAsStream(folderToStoreTempFile + File.separator + "front.stat");
+            InputStreamReader ipsr=new InputStreamReader(new FileInputStream(f));
+            BufferedReader br=new BufferedReader(ipsr);
+            String line;
+
+            while ((line=br.readLine())!=null){
+                String[] fitnesses = line.split(" ");
+                float globalFitness = 300;
+                for (int i=0; i<fitnesses.length; i++){
+                    globalFitness = globalFitness - new Float(fitnesses[i]);
+                }
+                if (globalFitness > max){
+                    max = globalFitness;
+                }
+            }
+            br.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return max;
     }
 
     private static void initializeParams(String sourceFile, String targetFile, Map<String,String> myProperties) {

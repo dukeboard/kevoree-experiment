@@ -1,13 +1,13 @@
 package org.kevoree.library.ec2;
 
 import org.kevoree.*;
-import org.kevoree.annotation.*;
 import org.kevoree.annotation.DictionaryAttribute;
 import org.kevoree.annotation.DictionaryType;
+import org.kevoree.annotation.*;
 import org.kevoree.annotation.NodeType;
 import org.kevoree.api.service.core.handler.ModelListener;
 import org.kevoree.framework.KevoreePropertyHelper;
-import org.kevoree.library.sky.api.nodeType.PJavaSENode;
+import org.kevoree.library.sky.api.PJavaSENode;
 
 /**
  * User: Erwan Daubert - erwan.daubert@gmail.com
@@ -26,6 +26,7 @@ public class PEc2Node extends PJavaSENode implements ModelListener {
 
     @Start
     public void startNode() {
+        super.startNode();
         // register this instance as an modelListener instance:
         // //each "interaction" with the Kevoree Core (which manipulates the model) will trigger this instance
               getModelService().registerModelListener(this);

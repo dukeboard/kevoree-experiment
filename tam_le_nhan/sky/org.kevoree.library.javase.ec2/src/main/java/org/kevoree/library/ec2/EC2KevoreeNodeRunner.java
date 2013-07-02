@@ -12,7 +12,7 @@ import org.kevoree.cloner.ModelCloner;
 import org.kevoree.framework.Constants;
 import org.kevoree.framework.KevoreePropertyHelper;
 import org.kevoree.framework.KevoreeXmiHelper;
-import org.kevoree.library.sky.api.KevoreeNodeRunner;
+import org.kevoree.library.sky.api.execution.KevoreeNodeRunner;
 import org.kevoree.library.utils.SSHUtils;
 
 import java.io.*;
@@ -60,7 +60,7 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
                 // delete old config file of Kevoree on the node
                 SSHUtils.sshRemoteCommand(session,"sudo rm /etc/kevoree/config");
 
-                File kconfigFile = createKevoreeConfigFile(nodeName());
+                File kconfigFile = createKevoreeConfigFile(getNodeName());
                 // copy new config file of Kevoree to home directory of the node
                 SSHUtils.scpByChannel(session,kconfigFile.getAbsolutePath(),"config");
                 // new config file to /etc/kevoree/config at the node
@@ -84,7 +84,7 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
                 kengine.addVariable("ip", dnsNode); //use public dns instead of public ip
                 kengine.addVariable("dnsName", dnsNode);
                 kengine.addVariable("ipKey", Constants.instance$.getKEVOREE_PLATFORM_REMOTE_NODE_IP());
-                kengine.addVariable("nodeName", nodeName());
+                kengine.addVariable("nodeName", getNodeName());
 
                 kengine.append("network {nodeName} { '{ipKey}' = '{ip}' }:ipv4/100");
                 //kengine.append("network {nodeName} { '{ipKey}' = '{dnsName}' }:dns/100");
@@ -144,7 +144,7 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
         String keyName = getKeyPairName(this.iaasNode.getDictionary().get("keyPairPath").toString());
         String secGroup = this.iaasNode.getDictionary().get("securityGroup").toString();
         String instanceType = this.iaasNode.getDictionary().get("instanceType").toString();
-        ContainerNode node = iaasModel.findNodesByID(nodeName())        ;
+        ContainerNode node = iaasModel.findNodesByID(getNodeName())        ;
         // Get the value of DictionaryAttribute "imageName" from the node (e.g. PEc2Node)
         // which is deployed in this EC2Node
         String knodeName = KevoreePropertyHelper.instance$.getProperty(node, "imageName", false, "")    ;
@@ -219,7 +219,7 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
         kengine.addVariable("ip", instanceIp);
         kengine.addVariable("dnsName", dnsName);
         kengine.addVariable("ipKey", Constants.instance$.getKEVOREE_PLATFORM_REMOTE_NODE_IP());
-        kengine.addVariable("nodeName", nodeName());
+        kengine.addVariable("nodeName", getNodeName());
 
         kengine.append("network {nodeName} { '{ipKey}' = '{ip}' }:ipv4/100");
         kengine.append("network {nodeName} { '{ipKey}' = '{dnsName}' }:dns/100");
@@ -323,7 +323,7 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
 
         System.out.println("--> EC2 Instance is launching ...");
         if (ec2 != null) {
-            ContainerNode node = iaasModel.findNodesByID(nodeName())        ;
+            ContainerNode node = iaasModel.findNodesByID(getNodeName())        ;
             String instanceName = KevoreePropertyHelper.instance$.getProperty(node, "instanceName", false, "")    ;
             // test if imgName is not null
             // if it's null then ze use the one define in this node
@@ -375,7 +375,7 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
         // TODO add ssh key to be able to connect to the VM
         // How to define key pair ?
         if (ec2 != null) {
-            ContainerNode node = iaasModel.findNodesByID(nodeName())        ;
+            ContainerNode node = iaasModel.findNodesByID(getNodeName())        ;
             String imgName = KevoreePropertyHelper.instance$.getProperty(node, "imgName", false, "")    ;
             // test if imgName is not null
             // if it's null then ze use the one define in this node

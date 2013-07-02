@@ -34,7 +34,7 @@ import java.util.TreeMap;
 @DictionaryType({
         @DictionaryAttribute(name = "endPointUrl", /*defaultValue = "https://192.168.100.162:8444", */optional = false),
         @DictionaryAttribute(name = "AWSCredentials", /*defaultValue = "AwsCredentials.properties",*/optional = false),
-        @DictionaryAttribute(name = "imageID", defaultValue = "debian.img", optional = false),
+        @DictionaryAttribute(name = "imageID", defaultValue = "ami-62cab80b", optional = false),
         @DictionaryAttribute(name = "instanceName", defaultValue = "Ubuntu", optional = false),
         @DictionaryAttribute(name = "instanceType", defaultValue = "m1.small", optional = false),
         @DictionaryAttribute(name = "keyPairPath", defaultValue = "/TamLN-INRIA/AmazonEC2/seckey/ubuntu.pem", optional = false),

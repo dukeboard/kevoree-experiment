@@ -36,8 +36,8 @@ public class SSHUtils {
             UserInfo ui = new SshUser();
             session.setUserInfo(ui);
             session.connect();
-            if (session.isConnected()) System.out.print("Connected to the remote host: "+targetHostName);
-            else  System.out.print("Cannot connect to the remote host: "+targetHostName);
+            if (session.isConnected()) System.out.println("Connected to the remote host: "+targetHostName);
+            else  System.out.println("Cannot connect to the remote host: "+targetHostName);
             String command = "scp -p -t  " + targetFileName;
             Channel channel = session.openChannel("exec");
             ((ChannelExec) channel).setCommand(command);
@@ -107,7 +107,7 @@ public class SSHUtils {
             UserInfo ui = new SshUser();
             session.setUserInfo(ui);
             session.connect();
-            System.out.print("Connected to the remote host: "+remoteHostName);
+            System.out.println("Connected to the remote host: "+remoteHostName);
 //            Channel channel = session.openChannel("exec");
 //            System.out.print("A channel is created");
 
@@ -141,7 +141,7 @@ public class SSHUtils {
     public static void scpByChannel(Session session, String sourcePath, String targetFileName)throws IOException {
         try {
             Channel channel = session.openChannel("exec");
-            System.out.print("A channel is created");
+            System.out.println("A channel is created");
             String command = "scp -p -t  " + targetFileName;
             ((ChannelExec) channel).setCommand(command);
 
@@ -211,7 +211,7 @@ public class SSHUtils {
             session.connect();
 
             Channel channel = session.openChannel("exec");
-
+            System.out.println(" ... Executing command: "+command);
             ((ChannelExec) channel).setCommand(command);
             ((ChannelExec) channel).setErrStream(System.out);
             InputStream in = channel.getInputStream();
@@ -252,7 +252,7 @@ public class SSHUtils {
     public static boolean sshRemoteCommand(Session session, String command) throws IOException {
         try {
             Channel channel = session.openChannel("exec");
-            System.out.print("A channel is created");
+            System.out.println("A channel is created");
             ((ChannelExec) channel).setCommand(command);
             ((ChannelExec) channel).setErrStream(System.out);
             InputStream in = channel.getInputStream();

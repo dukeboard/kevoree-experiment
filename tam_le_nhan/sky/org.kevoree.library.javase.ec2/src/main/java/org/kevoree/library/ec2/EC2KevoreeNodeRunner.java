@@ -55,9 +55,13 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
                 String userName = this.iaasNode.getDictionary().get("userName").toString();
                 String privateKey = this.iaasNode.getDictionary().get("keyPairPath").toString();
                 Session session = SSHUtils.createSSHSession(userName, privateKey, dnsNode);
+                System.out.println(" ... Updating file /etc/hostname = " + dnsNode);
+                SSHUtils.sshRemoteCommand(session,"sudo hostname "+dnsNode);
                 // stop Kevoree service running on the node
+                System.out.println(" ... Stopping Kevoree-watchdog");
                 SSHUtils.sshRemoteCommand(session,"sudo service kevoree stop");
                 // delete old config file of Kevoree on the node
+                System.out.println(" ... Updating Kevoree config file at: /etc/kevoree/config");
                 SSHUtils.sshRemoteCommand(session,"sudo rm /etc/kevoree/config");
 
                 File kconfigFile = createKevoreeConfigFile(getNodeName());
@@ -67,13 +71,17 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
                 SSHUtils.sshRemoteCommand(session,"sudo cp config /etc/kevoree/config");
 
                 // Update current Kevoree model to the node
+                System.out.println(" ... Updating Kevoree bootmodel to the remote host: "+dnsNode);
                 File file = File.createTempFile("model", ".xmi");
                 //String mfilePath = "model"+nodeName()+".xmi";
                 KevoreeXmiHelper.instance$.save(file.getAbsolutePath(),childBootStrapModel);
                 SSHUtils.scpByChannel(session,file.getAbsolutePath(),"bootmodel");
                 SSHUtils.sshRemoteCommand(session,"sudo cp bootmodel /etc/kevoree/bootmodel");
                 // restart Kevoree service at the node
+                System.out.println(" ... Starting Kevoree-watchdog");
                 SSHUtils.sshRemoteCommand(session,"sudo service kevoree start");
+                System.out.println(" ... Kevoree-watchdog is running");
+                SSHUtils.sshRemoteCommand(session,"sudo service kevoree status");
                 session.disconnect();
 
                 // add ip on model
@@ -450,6 +458,7 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
         }
     }
 
+    // create a new kevoree config file and replace the old file: "/etc/kevoree/config" at the remote host
     public File createKevoreeConfigFile(String noteName) throws IOException {
 
         File fstream = File.createTempFile("config","");
@@ -469,6 +478,23 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
         return fstream;
     }
 
+    // create a new hostname file with the public DSN of current EC2 instance
+    // and replace the old file: "/etc/hostname" at the remote host
+    public File createHostNameFile(String dns) throws IOException {
+
+        File fstream = File.createTempFile("hostname","");
+        //File fstream = new File("config");
+        try{
+            // Create file
+            PrintStream out = new PrintStream(new FileOutputStream(fstream));
+            out.println(dns);
+            //Close the output stream
+            out.close();
+        }catch (Exception e){//Catch exception if any
+            System.err.println("Error: " + e.getMessage());
+        }
+        return fstream;
+    }
 
     // extract KeyPairName from the file path of keypair
     // e.g. Keypair file path = "/TamLN-INRIA/AmazonEC2/seckey/ubuntu.pem"  --> KeyPairName=ubuntu

@@ -52,13 +52,36 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
             String dnsNode = runEc2Instance(iaasModel);
             if (dnsNode != null){
                 System.out.println("EC2 Instance is running at the host: " + dnsNode);
+
+                DescribeInstanceStatusRequest describeInstanceRequest = new DescribeInstanceStatusRequest().withInstanceIds(ec2InstanceId);
+                DescribeInstanceStatusResult describeInstanceResult = ec2.describeInstanceStatus(describeInstanceRequest);
+                List<InstanceStatus> state = describeInstanceResult.getInstanceStatuses();
+                while (state.size() < 1) {
+                    // Do nothing, just wait, have thread sleep if needed
+                    describeInstanceResult = ec2.describeInstanceStatus(describeInstanceRequest);
+                    state = describeInstanceResult.getInstanceStatuses();
+                }
+                String status = state.get(0).getInstanceState().getName();
+                System.out.println("--> InstanceStatus: "+status);
+                status = state.get(0).getSystemStatus().getStatus();
+                System.out.println("--> InstanceSystemStatus: "+status);
+
+
                 String userName = this.iaasNode.getDictionary().get("userName").toString();
                 String privateKey = this.iaasNode.getDictionary().get("keyPairPath").toString();
+                System.out.println("Connecting to the remote host by username="+userName+"; privateKey="+privateKey);
                 Session session = SSHUtils.createSSHSession(userName, privateKey, dnsNode);
                 System.out.println(" ... Updating file /etc/hostname = " + dnsNode);
                 SSHUtils.sshRemoteCommand(session,"sudo hostname "+dnsNode);
                 // stop Kevoree service running on the node
                 System.out.println(" ... Stopping Kevoree-watchdog");
+                while(SSHUtils.sshRemoteCommandStr(session,"sudo service kevoree status").matches("stopped")){
+                    try{
+                        Thread.sleep(100);
+                    }catch (InterruptedException ex){
+                        // Thread.currentThread().interrupt();
+                    }
+                }
                 SSHUtils.sshRemoteCommand(session,"sudo service kevoree stop");
                 // delete old config file of Kevoree on the node
                 System.out.println(" ... Updating Kevoree config file at: /etc/kevoree/config");
@@ -143,6 +166,19 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
         return true;
     }
 
+    public boolean checkInstanceStatus(String instanceId){
+        DescribeInstanceStatusRequest describeInstanceRequest = new DescribeInstanceStatusRequest().withInstanceIds(instanceId);
+        DescribeInstanceStatusResult describeInstanceResult = ec2.describeInstanceStatus(describeInstanceRequest);
+        List<InstanceStatus> state = describeInstanceResult.getInstanceStatuses();
+        while (state.size() < 1) {
+            // Do nothing, just wait, have thread sleep if needed
+            describeInstanceResult = ec2.describeInstanceStatus(describeInstanceRequest);
+            state = describeInstanceResult.getInstanceStatuses();
+        }
+        String status = state.get(0).getInstanceState().getName();
+        return status.equals("ok");
+    }
+
     // run an EC2 Instance and return a public DSN of the running instance.
     public String runEc2Instance(ContainerRoot iaasModel) throws Exception {
         //NOTE: ask to use log of Kevoree
@@ -191,7 +227,6 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
                 }catch (InterruptedException ex){
                     // Thread.currentThread().interrupt();
                 }
-
                 DescribeInstancesRequest describeInstancesRequest = new DescribeInstancesRequest();
                 describeInstancesRequest.withInstanceIds(instanceId);
                 DescribeInstancesResult describeInstancesResult = ec2.describeInstances(describeInstancesRequest);

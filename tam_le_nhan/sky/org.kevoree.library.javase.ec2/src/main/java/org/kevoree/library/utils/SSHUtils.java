@@ -10,11 +10,7 @@ package org.kevoree.library.utils;
  */
 
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
@@ -204,6 +200,12 @@ public class SSHUtils {
         try {
             File file = new File(keyPath);
             JSch jsch = new JSch();
+            InputStream in = null;
+            InputStream err = null;
+            String sb = "";
+            String s = "";
+            BufferedReader inReader = null;
+            BufferedReader errReader = null;
             jsch.addIdentity(file.getAbsolutePath());
             Session session = jsch.getSession(userName, dnsName, 22);
             UserInfo ui = new SshUser();
@@ -214,30 +216,37 @@ public class SSHUtils {
             System.out.println(" ... Executing command: "+command);
             ((ChannelExec) channel).setCommand(command);
             ((ChannelExec) channel).setErrStream(System.out);
-            InputStream in = channel.getInputStream();
+            in = channel.getInputStream();
             channel.connect();
-            byte[] tmp = new byte[1024];
-            while (true) {
-                while (in.available() > 0) {
-                    int i = in.read(tmp, 0, 1024);
-                    if (i < 0)
-                        break;
-                    // Show the output
-                    System.out.print(new String(tmp, 0, i));
-                }
-                if (channel.isClosed()) {
-                    System.out.println("channel exit-status: "+channel.getExitStatus());
-                    if (channel.getExitStatus() != 0) {
-                        return false;
-                    }
+            int exitCode = 0;
+            while(true) {
+                if(channel.isClosed()){
+                    exitCode = channel.getExitStatus();
                     break;
                 }
                 try {
                     Thread.sleep(1000);
-                } catch (InterruptedException ee) {
-                    Thread.currentThread().interrupt();
+                } catch (InterruptedException ie) {
                 }
             }
+            inReader = new BufferedReader(new InputStreamReader(in));
+            errReader = new BufferedReader(new InputStreamReader(err));
+
+            if (exitCode != 0) {
+                while ((s = errReader.readLine()) != null) {
+                    //sb.append(s).append("\n");
+                    System.out.print("--> Error "+s+"\n");
+
+                }
+                //status.setData(sb.toString());
+            } else {
+                while ((s = inReader.readLine()) != null) {
+                    //sb.append(s).append("\n");
+                    sb = sb +s+"\n";
+                }
+                System.out.print(sb.toString());
+            }
+
             channel.disconnect();
             session.disconnect();
         } catch (JSchException e) {
@@ -251,33 +260,48 @@ public class SSHUtils {
     // execute a command at the SSH remote host by a created ssh channel
     public static boolean sshRemoteCommand(Session session, String command) throws IOException {
         try {
+            InputStream in = null;
+            InputStream err = null;
+            String sb = "";
+            String s = "";
+            BufferedReader inReader = null;
+            BufferedReader errReader = null;
             Channel channel = session.openChannel("exec");
-            System.out.println("A channel is created");
+            System.out.println("--> A channel is established");
+            System.out.println("--> Executing the command:  "+command);
             ((ChannelExec) channel).setCommand(command);
-            ((ChannelExec) channel).setErrStream(System.out);
-            InputStream in = channel.getInputStream();
+            ((ChannelExec) channel).setErrStream(System.err);
+            in = channel.getInputStream();
+            err = ((ChannelExec)channel).getErrStream();
             channel.connect();
-            byte[] tmp = new byte[1024];
-            while (true) {
-                while (in.available() > 0) {
-                    int i = in.read(tmp, 0, 1024);
-                    if (i < 0)
-                        break;
-                    // show the output
-                    System.out.print(new String(tmp, 0, i));
-                }
-                if (channel.isClosed()) {
-                    System.out.println("channel exit-status: "+channel.getExitStatus());
-                    if (channel.getExitStatus() != 0) {
-                        return false;
-                    }
+
+            int exitCode = 0;
+            while(true) {
+                if(channel.isClosed()){
+                    exitCode = channel.getExitStatus();
                     break;
                 }
                 try {
                     Thread.sleep(1000);
-                } catch (InterruptedException ee) {
-                    Thread.currentThread().interrupt();
+                } catch (InterruptedException ie) {
                 }
+            }
+            inReader = new BufferedReader(new InputStreamReader(in));
+            errReader = new BufferedReader(new InputStreamReader(err));
+
+            if (exitCode != 0) {
+                while ((s = errReader.readLine()) != null) {
+                    //sb.append(s).append("\n");
+                    System.out.print("--> Error "+s+"\n");
+
+                }
+                //status.setData(sb.toString());
+            } else {
+                while ((s = inReader.readLine()) != null) {
+                    //sb.append(s).append("\n");
+                    sb = sb +s+"\n";
+                }
+                System.out.print(sb.toString());
             }
             channel.disconnect();
             //session.disconnect();
@@ -287,7 +311,60 @@ public class SSHUtils {
         }
         return true;
     }
+    public static String sshRemoteCommandStr(Session session, String command) throws IOException {
+        InputStream in = null;
+        InputStream err = null;
+        String sb = "";
+        String s = "";
+        BufferedReader inReader = null;
+        BufferedReader errReader = null;
+        try {
 
+            Channel channel = session.openChannel("exec");
+            System.out.println("--> A channel is established");
+            System.out.println("--> Executing the command:  "+command);
+            ((ChannelExec) channel).setCommand(command);
+            ((ChannelExec) channel).setErrStream(System.err);
+            in = channel.getInputStream();
+            err = ((ChannelExec)channel).getErrStream();
+            channel.connect();
+
+            int exitCode = 0;
+            while(true) {
+                if(channel.isClosed()){
+                    exitCode = channel.getExitStatus();
+                    break;
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ie) {
+                }
+            }
+            inReader = new BufferedReader(new InputStreamReader(in));
+            errReader = new BufferedReader(new InputStreamReader(err));
+
+            if (exitCode != 0) {
+                while ((s = errReader.readLine()) != null) {
+                    //sb.append(s).append("\n");
+                    System.out.print("--> Error "+s+"\n");
+
+                }
+                //status.setData(sb.toString());
+            } else {
+                while ((s = inReader.readLine()) != null) {
+                    //sb.append(s).append("\n");
+                    sb = sb +s+"\n";
+                }
+                System.out.print(sb.toString());
+            }
+            channel.disconnect();
+            //session.disconnect();
+        } catch (JSchException e) {
+            //return false;
+            // throw new IOException("Unable to ssh into master", e);
+        }
+        return sb;
+    }
     // get a keypair name from a keypair path
     public String getKeyPairName(String filePath){
         return filePath.substring(filePath.lastIndexOf('/')+1,filePath.lastIndexOf('.'));
@@ -361,6 +438,9 @@ public class SSHUtils {
         return b;
     }
 
+    public static boolean matchedStr(String str1, String str2){
+        return str1.matches(str2);
+    }
     // testing
     public static void main(String args[]) throws IOException, JSchException {
         String sourceFile ="/TamLN-INRIA/Kevoree/kevoree-experiment.git/tam_le_nhan/sky/org.kevoree.library.sshutils/shellscript.sh";
@@ -369,8 +449,12 @@ public class SSHUtils {
         //scp("ubuntu",keyPath2,"/TamLN-INRIA/AmazonEC2/seckey/ubuntu.pem","ec2-23-20-221-41.compute-1.amazonaws.com","ubuntu.pem");
 
         //sshRemoteCommand("ubuntu",keyPath2,"ec2-23-20-221-41.compute-1.amazonaws.com","mkdir testDir");
-        Session session = createSSHSession("ubuntu",keyPath2,"ec2-23-20-221-41.compute-1.amazonaws.com");
-        sshRemoteCommand(session,"dpkg --get-selections >> installedList.txt");
+        Session session = createSSHSession("ubuntu",keyPath2,"ec2-23-20-128-84.compute-1.amazonaws.com");
+        sshRemoteCommand(session,"hostname");
+        String outStr = sshRemoteCommandStr(session,"sudo service kevoree status");
+        System.out.println(outStr);
+        if (matchedStr(outStr,"stopped")) System.out.println("Kevoree is stopped!");
+        else System.out.println("Kevoree is running!");
         session.disconnect();
 
 

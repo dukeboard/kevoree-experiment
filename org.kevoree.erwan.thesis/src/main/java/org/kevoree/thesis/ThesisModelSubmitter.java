@@ -37,8 +37,8 @@ public class ThesisModelSubmitter extends AbstractComponentType {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    KevoreeXmiHelper.save(ThesisModelSubmitter.this.getDictionary().get("model").toString() + "-base.kev", getModelService().getLastModel());
-                    ContainerRoot model = KevoreeXmiHelper.load(ThesisModelSubmitter.this.getDictionary().get("model").toString());
+                    KevoreeXmiHelper.instance$.save(ThesisModelSubmitter.this.getDictionary().get("model").toString() + "-base.kev", getModelService().getLastModel());
+                    ContainerRoot model = KevoreeXmiHelper.instance$.load(ThesisModelSubmitter.this.getDictionary().get("model").toString());
                     try {
                         logger.warn("[TIME] ThesisModelSubmitter submit model: {}", System.currentTimeMillis());
 //					ThesisModelSubmitter.this.getPortByName("deploy", PaaSManagerService.class).initialize("edaubert", model);
@@ -73,7 +73,7 @@ public class ThesisModelSubmitter extends AbstractComponentType {
                 break;
             } catch (Exception e) {
                 logger.warn("Error while try to update the IaaS configuration due to {}, try number {}", e.getMessage(), i);
-                KevoreeXmiHelper.save(ThesisModelSubmitter.this.getDictionary().get("model").toString() + "-try" + i + ".kev", getModelService().getLastModel());
+                KevoreeXmiHelper.instance$.save(ThesisModelSubmitter.this.getDictionary().get("model").toString() + "-try" + i + ".kev", getModelService().getLastModel());
             }
         }
         if (!created) {

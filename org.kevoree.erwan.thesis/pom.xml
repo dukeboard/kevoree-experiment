@@ -9,7 +9,7 @@
     <version>1.0</version>
 
     <properties>
-        <kevoree.version>1.9.0</kevoree.version>
+        <kevoree.version>2.0.0-SNAPSHOT</kevoree.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -29,11 +29,7 @@
             <artifactId>org.kevoree.tools.marShell</artifactId>
             <version>${kevoree.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.kevoree.tools</groupId>
-            <artifactId>org.kevoree.tools.aether.framework.pack</artifactId>
-            <version>${kevoree.version}</version>
-        </dependency>
+
         <dependency>
             <groupId>org.kevoree.corelibrary.sky</groupId>
             <artifactId>org.kevoree.library.sky.provider.api</artifactId>
@@ -126,24 +122,23 @@
 
     <repositories>
         <repository>
-            <id>kevoree-release</id>
-            <url>http://maven.kevoree.org/release</url>
+            <id>kevoree-oss</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
         <repository>
-            <id>kevoree-snapshots</id>
-            <url>http://maven.kevoree.org/snapshots</url>
+            <id>jetbrains-release</id>
+            <url>http://repository.jetbrains.com/all</url>
         </repository>
     </repositories>
 
     <pluginRepositories>
         <pluginRepository>
-            <id>plugin.kevoree-github</id>
-            <url>http://maven.kevoree.org/release</url>
+            <id>jetbrains-release</id>
+            <url>http://repository.jetbrains.com/all</url>
         </pluginRepository>
         <pluginRepository>
-            <id>plugin.kevoree-snapshots</id>
-            <url>http://maven.kevoree.org/snapshots</url>
+            <id>plugin.kevoree-oss</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
-
 </project>

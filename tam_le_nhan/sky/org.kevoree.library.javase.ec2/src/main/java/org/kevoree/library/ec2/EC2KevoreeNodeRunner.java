@@ -49,6 +49,7 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
     @Override
     public boolean startNode(ContainerRoot iaasModel, ContainerRoot childBootStrapModel) {
         try {
+            if (ec2InstanceId == null) {
             String dnsNode = runEc2Instance(iaasModel);
             if (dnsNode != null){
                 System.out.println("EC2 Instance is running at the host: " + dnsNode);
@@ -125,6 +126,11 @@ public class EC2KevoreeNodeRunner extends KevoreeNodeRunner {
                 return true;
             }
             else return false;
+            } else {
+                // TODO we need to check if the instance is already started
+                System.out.println("The node is already started!");
+                return true;
+            }
         } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             return false;

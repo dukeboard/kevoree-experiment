@@ -6,7 +6,6 @@ import com.amazonaws.auth.PropertiesCredentials;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
 import org.kevoree.annotation.*;
-import org.kevoree.kompare.JavaSePrimitive;
 import org.kevoree.library.defaultNodeTypes.JavaSENode;
 import org.kevoree.library.sky.api.CloudNode;
 import org.kevoree.library.sky.api.IaaSNode;
@@ -45,7 +44,8 @@ import java.util.TreeMap;
 @PrimitiveCommands(value = {
         @PrimitiveCommand(name = CloudNode.ADD_NODE, maxTime = 180000),
         @PrimitiveCommand(name = "StartInstance", maxTime = 180000), // set timeout for adding a node in 3 minutes
-        @PrimitiveCommand(name = CloudNode.REMOVE_NODE, maxTime = 60000)     // set timeout for removing a node in 1 minutes
+        @PrimitiveCommand(name = CloudNode.REMOVE_NODE, maxTime = 60000),     // set timeout for removing a node in 1 minutes
+        @PrimitiveCommand(name = "StopInstance", maxTime = 60000)
 })
 public class Ec2Node extends JavaSENode implements IaaSNode {
     private static final Logger logger = LoggerFactory.getLogger(Ec2Node.class);

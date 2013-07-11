@@ -2,15 +2,15 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.kevoree.library.sky</groupId>
-	<artifactId>org.kevoree.library.sky.root</artifactId>
+    <groupId>org.kevoree.tam.sky</groupId>
+	<artifactId>org.kevoree.tam.sky.root</artifactId>
 	<packaging>pom</packaging>
-	<name>Kevoree :: Library :: Sky :: Root</name>
+	<name>Kevoree :: Library :: Tam :: Sky :: Root</name>
 	<version>2.0.0-SNAPSHOT</version>
 
 	<parent>
-		<artifactId>org.kevoree.library</artifactId>
-		<groupId>org.kevoree.library</groupId>
+		<artifactId>org.kevoree.tam.root</artifactId>
+		<groupId>org.kevoree.tam</groupId>
 		<version>2.0.0-SNAPSHOT</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
@@ -52,34 +52,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>net.alchim31.maven</groupId>
-				<artifactId>scala-maven-plugin</artifactId>
-				<version>3.1.0</version>
-				<executions>
-					<execution>
-						<id>scala-compile-first</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>add-source</goal>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>scala-test-compile</id>
-						<phase>process-test-resources</phase>
-						<goals>
-							<goal>testCompile</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<jvmArgs>
-						<jvmArg>-Xms64m</jvmArg>
-						<jvmArg>-Xmx1024m</jvmArg>
-					</jvmArgs>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.kevoree.tools</groupId>
 				<artifactId>org.kevoree.tools.annotation.mavenplugin</artifactId>
 				<version>${kevoree.version}</version>
@@ -97,18 +69,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Java compiler plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-			</plugin>
-
 			<plugin>
 				<groupId>org.kevoree.platform</groupId>
 				<artifactId>org.kevoree.platform.mavenrunner</artifactId>

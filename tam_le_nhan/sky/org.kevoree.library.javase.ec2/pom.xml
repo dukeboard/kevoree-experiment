@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>org.kevoree.library.sky.ec2</artifactId>
+    <artifactId>org.kevoree.tam.sky.ec2</artifactId>
     <name>Kevoree :: Library :: Sky :: EC2</name>
 
     <parent>
-        <artifactId>org.kevoree.library.sky.root</artifactId>
-        <groupId>org.kevoree.library.sky</groupId>
+        <artifactId>org.kevoree.tam.sky.root</artifactId>
+        <groupId>org.kevoree.tam.sky</groupId>
         <version>2.0.0-SNAPSHOT</version>
         <relativePath>../org.kevoree.library.sky.root/pom.xml</relativePath>
     </parent>

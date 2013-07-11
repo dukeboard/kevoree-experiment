@@ -1,4 +1,4 @@
-merge "mvn:org.kevoree.library.sky/org.kevoree.library.sky.ec2/2.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.tam.sky/org.kevoree.tam.sky.ec2/2.0.0-SNAPSHOT"
 merge "mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.jexxus/2.0.0-SNAPSHOT"
 
 addNode node0 : Ec2Node { endPointUrl = 'http://ec2.us-east-1.amazonaws.com', AWSCredentials = '/TamLN-INRIA/EC2info/AwsCredentials.properties', imageID = 'ami-62cab80b'}

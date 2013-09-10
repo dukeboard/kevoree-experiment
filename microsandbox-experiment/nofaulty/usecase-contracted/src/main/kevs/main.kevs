@@ -1,0 +1,53 @@
+addRepo "http://maven.kevoree.org/release"
+addRepo "http://maven.kevoree.org/snapshots"
+addRepo "http://maven.kevoree.org/daum/release"
+addRepo "http://maven.kevoree.org/daum/snapshots"
+addRepo "http://repo.maven.apache.org/maven2"
+addRepo "http://repo.typesafe.com/typesafe/releases/"
+
+merge 'mvn:org.kevoree.microsandbox/org.kevoree.microsandbox.javasenode/{kevoree.microsandbox.version}'
+merge 'mvn:org.kevoree.microsandbox.experiment/usecase-contracted/{project.version}'
+
+addNode node0:MonitoredNode { logLevel = "INFO", coreLogLevel = "INFO"}
+
+addComponent WsServer650@node0 : WsServerContracted {port='8092'}
+addComponent SprayWebS142@node0 : WebbitHTTPServerContracted {port='9500'}
+
+addComponent Resources407@node0 : ResourcesPageContracted {urlPattern='/media/', patternToRemove = '/media/'}
+addComponent FollowMan511@node0 : FollowManagerContracted {urlPattern='/',current='jed'}
+
+addComponent javaFXWebBrowser@node0 : JavaFXWebBrowserContracted
+addComponent websockletJavaFXHandler@node0 : WebSocketClientHandlerContracted
+
+addComponent  videoDisplay@node0 : JavaFXVideoDisplayContracted
+// TODO this component must be located on another node
+addComponent mediaSender@node0 : FakeCopterMediaSenderContracted { url = 'file:///home/edaubert/Vidéos/BigBuckBunny_640x360.m4v'}
+
+addChannel channelMediaSender : defMSGContracted
+
+addChannel defSERVIC618 : defSERVICEContracted
+addChannel defMSG472 : defMSGContracted
+addChannel defMSG222 : defMSGContracted
+addChannel webSocketHandlerMessage : defMSGContracted
+
+bind mediaSender.media@node0 => channelMediaSender
+bind videoDisplay.media@node0 => channelMediaSender
+
+
+bind SprayWebS142.request@node0 => defMSG472
+bind SprayWebS142.response@node0 => defMSG222
+
+bind FollowMan511.request@node0 => defMSG472
+bind FollowMan511.content@node0 => defMSG222
+
+bind Resources407.request@node0 => defMSG472
+bind Resources407.content@node0 => defMSG222
+
+bind WsServer650.service@node0 => defSERVIC618
+bind FollowMan511.ws@node0 => defSERVIC618
+
+bind javaFXWebBrowser.handle@node0 => webSocketHandlerMessage
+bind websockletJavaFXHandler.handle@node0 => webSocketHandlerMessage
+
+addGroup group1208104496:BasicGroupContracted
+addToGroup group1208104496 node0

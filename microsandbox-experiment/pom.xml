@@ -4,20 +4,48 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.kevoree.microsandbox</groupId>
+    <groupId>org.kevoree.microsandbox.experiment</groupId>
     <artifactId>microsandbox.experiment</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <modules>
         <module>nofaulty</module>
+        <module>faulty-cpu</module>
+        <module>faulty-memory</module>
+        <!--<module>faulty-interaction</module>-->
+        <module>experiment-scripts</module>
     </modules>
 
     <properties>
         <kevoree.version>2.0.12</kevoree.version>
         <kevoree.corelibrary.version>2.0.4</kevoree.corelibrary.version>
         <kevoree.microsandbox.version>1.0-SNAPSHOT</kevoree.microsandbox.version>
+        <kotlin.version>0.6.31</kotlin.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.javase.framework</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kevoree.tools</groupId>
+            <artifactId>org.kevoree.tools.annotation.api</artifactId>
+            <version>${kevoree.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kevoree.corelibrary.javase</groupId>
+            <artifactId>org.kevoree.library.javase.javaseNode</artifactId>
+            <version>${kevoree.corelibrary.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kevoree.microsandbox</groupId>
+            <artifactId>org.kevoree.microsandbox.api</artifactId>
+            <version>${kevoree.microsandbox.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -60,6 +88,14 @@
         <repository>
             <id>kevoree-oss</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>kevoree-release</id>
+            <url>http://maven.kevoree.org/release</url>
+        </repository>
+        <repository>
+            <id>kevoree-snapshots</id>
+            <url>http://maven.kevoree.org/snapshots</url>
         </repository>
     </repositories>
 

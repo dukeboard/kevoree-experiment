@@ -5,30 +5,43 @@ addRepo "http://maven.kevoree.org/daum/snapshots"
 addRepo "http://repo.maven.apache.org/maven2"
 addRepo "http://repo.typesafe.com/typesafe/releases/"
 
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.defaultChannels/{kevoree.corelibrary.version}'
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.jexxus/{kevoree.corelibrary.version}'
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.javaseNode/{kevoree.corelibrary.version}'
+
 merge 'mvn:org.kevoree.microsandbox/org.kevoree.microsandbox.javasenode/{kevoree.microsandbox.version}'
-merge 'mvn:org.kevoree.microsandbox.experiment/usecase-contracted/{project.version}'
+merge 'mvn:org.kevoree.microsandbox/org.kevoree.microsandbox.monitoring/{kevoree.microsandbox.version}'
+
+merge "mvn:org.kevoree.microsandbox.experiment/followManager/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/followResource/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/videoViewer/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/webBrowser/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/wsServer/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/webbitHTTPServer/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/webSocketClientHandler/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/copter-video/1.0.0-SNAPSHOT"
 
 addNode node0:MonitoredNode { logLevel = "INFO", coreLogLevel = "INFO"}
 
-addComponent WsServer650@node0 : WsServerContracted {port='8092'}
-addComponent SprayWebS142@node0 : WebbitHTTPServerContracted {port='9500'}
+addComponent WsServer650@node0 : WsServer {port='8092'}
+addComponent SprayWebS142@node0 : WebbitHTTPServer {port='9500'}
 
-addComponent Resources407@node0 : ResourcesPageContracted {urlPattern='/media/', patternToRemove = '/media/'}
-addComponent FollowMan511@node0 : FollowManagerContracted {urlPattern='/',current='jed'}
+addComponent Resources407@node0 : ResourcesPage {urlPattern='/media/', patternToRemove = '/media/'}
+addComponent FollowMan511@node0 : FollowManager {urlPattern='/',current='jed'}
 
-addComponent javaFXWebBrowser@node0 : JavaFXWebBrowserContracted
-addComponent websockletJavaFXHandler@node0 : WebSocketClientHandlerContracted
+addComponent javaFXWebBrowser@node0 : JavaFXWebBrowser
+addComponent websockletJavaFXHandler@node0 : WebSocketClientHandler
 
-addComponent  videoDisplay@node0 : JavaFXVideoDisplayContracted
+addComponent  videoDisplay@node0 : JavaFXVideoDisplay
 // TODO this component must be located on another node
-addComponent mediaSender@node0 : FakeCopterMediaSenderContracted { url = 'file:///home/edaubert/Vidéos/BigBuckBunny_640x360.m4v'}
+addComponent mediaSender@node0 : FakeCopterMediaSender { url = 'file:///home/edaubert/Vidéos/BigBuckBunny_640x360.m4v'}
 
-addChannel channelMediaSender : defMSGContracted
+addChannel channelMediaSender : defMSG
 
-addChannel defSERVIC618 : defSERVICEContracted
-addChannel defMSG472 : defMSGContracted
-addChannel defMSG222 : defMSGContracted
-addChannel webSocketHandlerMessage : defMSGContracted
+addChannel defSERVIC618 : defSERVICE
+addChannel defMSG472 : defMSG
+addChannel defMSG222 : defMSG
+addChannel webSocketHandlerMessage : defMSG
 
 bind mediaSender.media@node0 => channelMediaSender
 bind videoDisplay.media@node0 => channelMediaSender
@@ -49,5 +62,5 @@ bind FollowMan511.ws@node0 => defSERVIC618
 bind javaFXWebBrowser.handle@node0 => webSocketHandlerMessage
 bind websockletJavaFXHandler.handle@node0 => webSocketHandlerMessage
 
-addGroup group1208104496:BasicGroupContracted
+addGroup group1208104496:BasicGroup
 addToGroup group1208104496 node0

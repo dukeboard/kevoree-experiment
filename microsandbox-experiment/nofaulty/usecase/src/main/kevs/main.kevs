@@ -9,11 +9,14 @@ merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.defaultChan
 merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.jexxus/{kevoree.corelibrary.version}'
 merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.javaseNode/{kevoree.corelibrary.version}'
 
-merge "mvn:org.kevoree.komponents/http-webbit/1.0.0-SNAPSHOT"
-merge 'mvn:org.kevoree.komponents/javafx/1.0.0-SNAPSHOT'
-
-merge 'mvn:org.kevoree.microsandbox/firefighter-map/2.0.0-SNAPSHOT'
-merge 'mvn:org.kevoree.microsandbox.experiment/copter-video/1.0-SNAPSHOT'
+merge "mvn:org.kevoree.microsandbox.experiment/followManager/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/followResource/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/videoViewer/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/webBrowser/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/wsServer/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/webbitHTTPServer/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/webSocketClientHandler/1.0.0-SNAPSHOT"
+merge "mvn:org.kevoree.microsandbox.experiment/copter-video/1.0.0-SNAPSHOT"
 
 addNode node0:JavaSENode { logLevel = "FINE", coreLogLevel = "FINE"}
 

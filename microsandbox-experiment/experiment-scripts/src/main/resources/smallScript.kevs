@@ -1,0 +1,82 @@
+
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.defaultChannels/{kevoree.corelibrary.version}'
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.jexxus/{kevoree.corelibrary.version}'
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.camel/{kevoree.corelibrary.version}'
+
+merge "mvn:org.kevoree.microsandbox.experiment/copter-video/{experiment.version}"
+
+merge "mvn:org.kevoree.microsandbox.experiment/followManager/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment/followResource/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment/videoViewer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment/webBrowser/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment/wsServer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment/webbitHTTPServer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment/webSocketClientHandler/{experiment.version}"
+
+merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/followManager/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/followResource/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/videoViewer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/webBrowser/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/wsServer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/webbitHTTPServer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/webSocketClientHandler/{experiment.version}"
+
+merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/followManager/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/followResource/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/videoViewer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webBrowser/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/wsServer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webbitHTTPServer/{experiment.version}"
+merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webSocketClientHandler/{experiment.version}"
+
+// merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/followManager/{experiment.version}"
+// merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/followResource/{experiment.version}"
+// merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/videoViewer/{experiment.version}"
+// merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/webBrowser/{experiment.version}"
+// merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/wsServer/{experiment.version}"
+// merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/webbitHTTPServer/{experiment.version}"
+// merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/webSocketClientHandler/{experiment.version}"
+
+// TODO this component must be located on another node + replace the url by a http one
+addComponent mediaSender@node0 : FakeCopterMediaSender { url = 'file:///home/edaubert/Vidéos/BigBuckBunny_640x360.m4v'}
+
+addComponent WsServer650@monitoredNode : WsServer {port='8092'}
+addComponent SprayWebS142@monitoredNode : WebbitHTTPServer {port='9500'}
+
+addComponent Resources407@monitoredNode : ResourcesPage {urlPattern='/media/', patternToRemove = '/media/'}
+addComponent FollowMan511@monitoredNode : FollowManager {urlPattern='/',current='jed'}
+
+addComponent javaFXWebBrowser@monitoredNode : JavaFXWebBrowser
+addComponent websockletJavaFXHandler@monitoredNode : WebSocketClientHandler
+
+addComponent  videoDisplay@monitoredNode : JavaFXVideoDisplay
+
+addChannel channelMediaSender : CamelNetty
+
+addChannel defSERVIC618 : defSERVICE
+addChannel defMSG472 : defMSG
+addChannel defMSG222 : defMSG
+addChannel webSocketHandlerMessage : defMSG
+
+bind mediaSender.media@node0 => channelMediaSender
+bind videoDisplay.media@monitoredNode => channelMediaSender
+
+bind SprayWebS142.request@monitoredNode => defMSG472
+bind SprayWebS142.response@monitoredNode => defMSG222
+
+bind FollowMan511.request@monitoredNode => defMSG472
+bind FollowMan511.content@monitoredNode => defMSG222
+
+bind Resources407.request@monitoredNode => defMSG472
+bind Resources407.content@monitoredNode => defMSG222
+
+bind WsServer650.service@monitoredNode => defSERVIC618
+bind FollowMan511.ws@monitoredNode => defSERVIC618
+
+bind javaFXWebBrowser.handle@monitoredNode => webSocketHandlerMessage
+bind websockletJavaFXHandler.handle@monitoredNode => webSocketHandlerMessage
+
+updateDictionary channelMediaSender{port = "10000"}@node0,{port = "10001"}@monitoredNode
+
+addGroup group1208104496:BasicGroup
+addToGroup group1208104496 node0

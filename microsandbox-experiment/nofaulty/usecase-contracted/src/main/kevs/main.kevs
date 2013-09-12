@@ -28,8 +28,10 @@ addNode node0:MonitoredNode {
 }
 
 
+
 //////// components to build the contracts
-addComponent RecordingComponent0@node0 : ForContractInformationRetrieverComponent
+addComponent RecordingComponent0@node0 :
+ForContractInformationRetrieverComponent
 
 addComponent ThresholdCalculator@node0 : MeasuringCPUUsage
 
@@ -51,21 +53,38 @@ bind RecordingComponent0.output@node0 => components_channel
 bind ContractCreator0.componentProcessor@node0 => components_channel
 //////////
 
+
 addComponent WsServer650@node0 : WsServer {
     port='8092',
     cpu_wall_time='1'
 }
-addComponent SprayWebS142@node0 : WebbitHTTPServer {port='9500'}
+addComponent SprayWebS142@node0 : WebbitHTTPServer {
+    port='9500',
+    cpu_wall_time='1'
+}
 
-addComponent Resources407@node0 : ResourcesPage {urlPattern='/media/', patternToRemove = '/media/'}
-addComponent FollowMan511@node0 : FollowManager {urlPattern='/',current='jed'}
+addComponent Resources407@node0 : ResourcesPage {
+    urlPattern='/media/', patternToRemove = '/media/',
+    cpu_wall_time='1'
+}
+addComponent FollowMan511@node0 : FollowManager {
+    urlPattern='/',current='jed',
+    cpu_wall_time='1'
+}
 
-addComponent javaFXWebBrowser@node0 : JavaFXWebBrowser
-addComponent websockletJavaFXHandler@node0 : WebSocketClientHandler
+addComponent javaFXWebBrowser@node0 : JavaFXWebBrowser {
+    cpu_wall_time='1'
+}
+addComponent websockletJavaFXHandler@node0 : WebSocketClientHandler{
+    cpu_wall_time='1'
+}
 
-addComponent  videoDisplay@node0 : JavaFXVideoDisplay
+addComponent  videoDisplay@node0 : JavaFXVideoDisplay {
+    cpu_wall_time='1'
+}
+
 // TODO this component must be located on another node
-addComponent mediaSender@node0 : FakeCopterMediaSender { url = 'file:///home/edaubert/Vidéos/BigBuckBunny_640x360.m4v'}
+addComponent mediaSender@node0 : FakeCopterMediaSender { url = 'http://download.oracle.com/otndocs/products/javafx/JavaRap/prog_index.m3u8'}
 
 addChannel channelMediaSender : defMSG
 

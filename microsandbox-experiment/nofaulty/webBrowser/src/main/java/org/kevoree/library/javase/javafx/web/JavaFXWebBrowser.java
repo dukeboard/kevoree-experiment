@@ -21,7 +21,10 @@ import org.kevoree.annotation.*;
 import org.kevoree.api.service.core.handler.ModelListener;
 import org.kevoree.framework.AbstractComponentType;
 import org.kevoree.library.javase.javafx.layout.SingleWindowLayout;
+import org.kevoree.microsandbox.api.contract.CPUContracted;
 import org.kevoree.microsandbox.api.contract.FullContracted;
+import org.kevoree.microsandbox.api.contract.MemoryContracted;
+import org.kevoree.microsandbox.api.contract.ThroughputContracted;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +47,7 @@ import java.util.List;
         @ProvidedPort(name = "handle", type = PortType.MESSAGE)
 })
 @ComponentType
-public class JavaFXWebBrowser extends AbstractComponentType implements FullContracted {
+public class JavaFXWebBrowser extends AbstractComponentType implements MemoryContracted, CPUContracted, ThroughputContracted {
 
     private Stage localWindow;
     private Tab tab;

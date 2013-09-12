@@ -5,7 +5,10 @@ import org.java_websocket.handshake.ServerHandshake;
 import org.kevoree.annotation.*;
 import org.kevoree.framework.AbstractComponentType;
 import org.kevoree.framework.MessagePort;
+import org.kevoree.microsandbox.api.contract.CPUContracted;
 import org.kevoree.microsandbox.api.contract.FullContracted;
+import org.kevoree.microsandbox.api.contract.MemoryContracted;
+import org.kevoree.microsandbox.api.contract.ThroughputContracted;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -26,7 +29,7 @@ import java.net.URISyntaxException;
         @RequiredPort(name = "handle", type = PortType.MESSAGE, optional = false, needCheckDependency = true)
 })
 @ComponentType
-public class WebSocketClientHandler extends AbstractComponentType implements FullContracted {
+public class WebSocketClientHandler extends AbstractComponentType implements MemoryContracted, CPUContracted, ThroughputContracted {
 
     final String scriptOnOpen = "showMessage('Connected!')";
     final String scriptOnClose = "showMessage('Lost connection')";

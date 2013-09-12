@@ -21,9 +21,40 @@ merge "mvn:org.kevoree.microsandbox.experiment/webbitHTTPServer/1.0.0-SNAPSHOT"
 merge "mvn:org.kevoree.microsandbox.experiment/webSocketClientHandler/1.0.0-SNAPSHOT"
 merge "mvn:org.kevoree.microsandbox.experiment/copter-video/1.0.0-SNAPSHOT"
 
-addNode node0:MonitoredNode { logLevel = "INFO", coreLogLevel = "INFO"}
+addNode node0:MonitoredNode {
+    logLevel = "INFO", coreLogLevel = "INFO",
+    availability_memory='150000000',
+    availability_instr='200000000'
+}
 
-addComponent WsServer650@node0 : WsServer {port='8092'}
+
+//////// components to build the contracts
+addComponent RecordingComponent0@node0 : ForContractInformationRetrieverComponent
+
+addComponent ThresholdCalculator@node0 : MeasuringCPUUsage
+
+addComponent ContractCreator0@node0 : ContractCreatorComponent {
+    kevs_file = '/home/edaubert/contracts.kevs'
+}
+
+addChannel cpu_channel : defMSG
+addChannel mem_channel : defMSG
+addChannel components_channel : defMSG
+
+bind ThresholdCalculator.maximumCPU@node0 => cpu_channel
+bind ContractCreator0.CPUThreshold@node0 => cpu_channel
+
+bind ThresholdCalculator.maximumMem@node0 => mem_channel
+bind ContractCreator0.MemThreshold@node0 => mem_channel
+
+bind RecordingComponent0.output@node0 => components_channel
+bind ContractCreator0.componentProcessor@node0 => components_channel
+//////////
+
+addComponent WsServer650@node0 : WsServer {
+    port='8092',
+    cpu_wall_time='1'
+}
 addComponent SprayWebS142@node0 : WebbitHTTPServer {port='9500'}
 
 addComponent Resources407@node0 : ResourcesPage {urlPattern='/media/', patternToRemove = '/media/'}

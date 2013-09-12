@@ -4,7 +4,10 @@ package org.daum.library.javase.copterManager.ws;
 import org.kevoree.annotation.*;
 import org.kevoree.framework.AbstractComponentType;
 import org.kevoree.log.Log;
+import org.kevoree.microsandbox.api.contract.CPUContracted;
 import org.kevoree.microsandbox.api.contract.FullContracted;
+import org.kevoree.microsandbox.api.contract.MemoryContracted;
+import org.kevoree.microsandbox.api.contract.ThroughputContracted;
 import org.webbitserver.BaseWebSocketHandler;
 import org.webbitserver.WebServer;
 import org.webbitserver.WebServers;
@@ -27,7 +30,7 @@ import java.util.concurrent.ExecutionException;
 @Provides({
         @ProvidedPort(name = "service", type = PortType.SERVICE, className = WsHandler.class)
 })
-public class WsServer extends AbstractComponentType implements WsHandler, FullContracted {
+public class WsServer extends AbstractComponentType implements WsHandler, MemoryContracted, CPUContracted, ThroughputContracted {
 
     private WebServer webServer;
 

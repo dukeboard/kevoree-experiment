@@ -5,7 +5,10 @@ import org.kevoree.framework.MessagePort;
 import org.kevoree.library.javase.http.api.AbstractHTTPServer;
 import org.kevoree.library.javase.http.api.HTTPOperationTuple;
 import org.kevoree.log.Log;
+import org.kevoree.microsandbox.api.contract.CPUContracted;
 import org.kevoree.microsandbox.api.contract.FullContracted;
+import org.kevoree.microsandbox.api.contract.MemoryContracted;
+import org.kevoree.microsandbox.api.contract.ThroughputContracted;
 import org.webbitserver.WebServer;
 import org.webbitserver.WebServers;
 
@@ -30,7 +33,7 @@ import java.util.concurrent.TimeoutException;
 /*@Provides({
         @ProvidedPort(name = "errorResponse", type = PortType.MESSAGE*//*, messageType = HTTPOperationTuple.class.getName()*//*)
 })*/
-public class WebbitHTTPServer extends AbstractHTTPServer implements FullContracted {
+public class WebbitHTTPServer extends AbstractHTTPServer implements MemoryContracted, CPUContracted, ThroughputContracted {
     private int port;
     WebServer server;
     private WebbitHTTPHandler handler;

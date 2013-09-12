@@ -5,7 +5,10 @@ import org.daum.library.javase.copterManager.cache.MemCache;
 import org.kevoree.annotation.ComponentType;
 import org.kevoree.library.javase.http.api.AbstractParentHTTPHandler;
 import org.kevoree.library.javase.http.api.HTTPHelper;
+import org.kevoree.microsandbox.api.contract.CPUContracted;
 import org.kevoree.microsandbox.api.contract.FullContracted;
+import org.kevoree.microsandbox.api.contract.MemoryContracted;
+import org.kevoree.microsandbox.api.contract.ThroughputContracted;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +24,7 @@ import java.io.OutputStream;
  */
 
 @ComponentType
-public class ResourcesPage extends AbstractParentHTTPHandler implements FullContracted {
+public class ResourcesPage extends AbstractParentHTTPHandler implements MemoryContracted, CPUContracted, ThroughputContracted {
 
    /* @Override
     public KevoreeHttpResponse process(KevoreeHttpRequest kevoreeHttpRequest, KevoreeHttpResponse kevoreeHttpResponse)

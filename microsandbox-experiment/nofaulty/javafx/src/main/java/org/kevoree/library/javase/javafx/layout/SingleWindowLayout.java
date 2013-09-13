@@ -21,7 +21,7 @@ public class SingleWindowLayout {
     private static SingleWindowLayout instance = null;
     private static boolean isJavaFXInitialized = false;
 
-    public static SingleWindowLayout getInstance() {
+    public synchronized static SingleWindowLayout getInstance() {
         if (instance == null) {
             instance = new SingleWindowLayout();
         }
@@ -29,47 +29,57 @@ public class SingleWindowLayout {
     }
 
     private Stage window;
-    private BorderPane borderPane;
     private TabPane tabPane;
 
-    public static void initJavaFX() {
+    public Stage getStage() {
+        return window;
+    }
+
+    public static synchronized void initJavaFX() {
         if (!isJavaFXInitialized) {
             new JFXPanel(); // initializes JavaFX environment to avoid "java.lang.IllegalStateException: Toolkit not initialized"
             isJavaFXInitialized = true;
         }
     }
 
-    private void initWindow() {
-        window = new Stage();
-        StackPane root = new StackPane();
-        window.setScene(new Scene(root));
-        borderPane = new BorderPane();
-        borderPane.setPrefSize(1024, 768);
-        tabPane = new TabPane();
-        tabPane.setPrefSize(1024, 768);
-        tabPane.setSide(Side.TOP);
-        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+    private synchronized void initWindow() {
+        if (window == null) {
+            window = new Stage();
+            StackPane root = new StackPane();
+            window.setScene(new Scene(root));
+            BorderPane borderPane = new BorderPane();
+            borderPane.setPrefSize(1024, 768);
+            tabPane = new TabPane();
+            tabPane.setPrefSize(1024, 768);
+            tabPane.setSide(Side.TOP);
+            tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
 
-        borderPane.setCenter(tabPane);
-        root.getChildren().add(borderPane);
-        window.show();
+            borderPane.setCenter(tabPane);
+            root.getChildren().add(borderPane);
+            window.show();
 //                    TODO localFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-
-    }
-
-    private void releaseWindow() {
-        // TODO
-    }
-
-    public void addTab(Tab tab) {
-        if (tabPane == null || tabPane.getTabs().size() <= 0) {
-            initWindow();
         }
-        tabPane.getTabs().add(tab);
+
     }
 
-    public void removeTab(Tab tab) {
-        if (tabPane != null && tabPane.getTabs().size() > 0) {
+    private synchronized void releaseWindow() {
+        window.close();
+        window = null;
+        // TODO need more stuff to release JavaFX ?
+    }
+
+    public synchronized void addTab(final Tab tab) {
+        if (tab != null) {
+            if (window == null) {
+                initWindow();
+            }
+            tabPane.getTabs().add(tab);
+        }
+
+    }
+
+    public synchronized void removeTab(final Tab tab) {
+        if (tab != null && window != null) {
             tabPane.getTabs().remove(tab);
             if (tabPane.getTabs().size() <= 0) {
                 releaseWindow();

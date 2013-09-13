@@ -18,16 +18,14 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import org.kevoree.ContainerRoot;
 import org.kevoree.annotation.*;
-import org.kevoree.api.service.core.handler.ModelListener;
 import org.kevoree.framework.AbstractComponentType;
+import org.kevoree.framework.service.handler.ModelListenerAdapter;
 import org.kevoree.library.javase.javafx.layout.SingleWindowLayout;
 import org.kevoree.microsandbox.api.contract.CPUContracted;
-import org.kevoree.microsandbox.api.contract.FullContracted;
 import org.kevoree.microsandbox.api.contract.MemoryContracted;
 import org.kevoree.microsandbox.api.contract.ThroughputContracted;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -53,71 +51,34 @@ public class JavaFXWebBrowser extends AbstractComponentType implements MemoryCon
     private Tab tab;
     //    private BorderPane root;
     private WebView webView;
+    private WebEngine webEngine;
 
     private String url;
 
     private boolean initialized;
-    private List<String> messagesToHandle;
+    private final List<String> messagesToHandle = new ArrayList<String>();
+    private final Object wait = new Object();
 
     @Start
-    public void start() {
-        initialized = false;
-        messagesToHandle = new ArrayList<String>();
+    public void start() throws InterruptedException {
+        synchronized (messagesToHandle) {
+            initialized = false;
+        }
         url = getDictionary().get("url").toString();
 
-        getModelService().registerModelListener(new ModelListener() {
-            private boolean first = true;
-
-            @Override
-            public boolean preUpdate(ContainerRoot currentModel, ContainerRoot proposedModel) {
-                return true;
-            }
-
-            @Override
-            public boolean initUpdate(ContainerRoot currentModel, ContainerRoot proposedModel) {
-                return true;
-            }
-
-            @Override
-            public boolean afterLocalUpdate(ContainerRoot currentModel, ContainerRoot proposedModel) {
-                return true;
-            }
-
+        getModelService().registerModelListener(new ModelListenerAdapter() {
             @Override
             public void modelUpdated() {
-                if (first) {
-                    first = false;
-                    initializeWebBrowser();
-                    getModelService().unregisterModelListener(this);
-                }
             }
 
             @Override
-            public void preRollback(ContainerRoot currentModel, ContainerRoot proposedModel) {
+            public void preRollback(ContainerRoot containerRoot, ContainerRoot containerRoot2) {
             }
 
             @Override
-            public void postRollback(ContainerRoot currentModel, ContainerRoot proposedModel) {
+            public void postRollback(ContainerRoot containerRoot, ContainerRoot containerRoot2) {
             }
         });
-    }
-
-    @Stop
-    public void stop() {
-        // TODO unload javafx stuff
-        if (Boolean.valueOf((String) getDictionary().get("singleFrame"))) {
-            SingleWindowLayout.getInstance().removeTab(tab);
-        } else {
-            localWindow.hide();
-        }
-    }
-
-    @Update
-    public void update() {
-
-    }
-
-    private void initializeWebBrowser() {
         SingleWindowLayout.initJavaFX();
         Platform.runLater(new Runnable() {
             @Override
@@ -137,8 +98,60 @@ public class JavaFXWebBrowser extends AbstractComponentType implements MemoryCon
                     localWindow.show();
 //                    TODO localFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 }
+                synchronized (wait) {
+                    wait.notify();
+                }
             }
         });
+        synchronized (wait) {
+            wait.wait();
+        }
+        getModelService().registerModelListener(new ModelListenerAdapter() {
+            @Override
+            public void modelUpdated() {
+
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        webEngine.load(url);
+                    }
+                });
+            }
+
+            @Override
+            public void preRollback(ContainerRoot containerRoot, ContainerRoot containerRoot2) {
+            }
+
+            @Override
+            public void postRollback(ContainerRoot containerRoot, ContainerRoot containerRoot2) {
+            }
+        });
+    }
+
+    @Stop
+    public void stop() throws InterruptedException {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                // TODO unload javafx stuff
+                if (Boolean.valueOf((String) getDictionary().get("singleFrame"))) {
+                    SingleWindowLayout.getInstance().removeTab(tab);
+                } else {
+                    localWindow.hide();
+                }
+                synchronized (wait) {
+                    wait.notify();
+                }
+            }
+        });
+        synchronized (wait) {
+            wait.wait();
+        }
+    }
+
+    @Update
+    public void update() {
+
     }
 
     @Port(name = "handle")
@@ -147,10 +160,12 @@ public class JavaFXWebBrowser extends AbstractComponentType implements MemoryCon
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    if (initialized) {
-                        webView.getEngine().executeScript((String) msg);
-                    } else {
-                        messagesToHandle.add((String) msg);
+                    synchronized (messagesToHandle) {
+                        if (initialized) {
+                            webView.getEngine().executeScript((String) msg);
+                        } else {
+                            messagesToHandle.add((String) msg);
+                        }
                     }
                 }
             });
@@ -161,8 +176,7 @@ public class JavaFXWebBrowser extends AbstractComponentType implements MemoryCon
 
         webView = new WebView();
 
-        final WebEngine webEngine = webView.getEngine();
-        webEngine.load(url);
+        webEngine = webView.getEngine();
 
         final TextField locationField = new TextField(url);
         webEngine.locationProperty().addListener(new ChangeListener<String>() {
@@ -196,16 +210,19 @@ public class JavaFXWebBrowser extends AbstractComponentType implements MemoryCon
 
         Scene scene = new Scene(vBox);
 
-        initialized = true;
         webEngine.getLoadWorker().stateProperty().addListener(
                 new ChangeListener<State>() {
                     @Override
                     public void changed(ObservableValue<? extends State> ov,
                                         State oldState, State newState) {
                         if (newState == State.SUCCEEDED) {
-                            initialized = true;
-                            for (String message : messagesToHandle) {
-                                webView.getEngine().executeScript(message);
+
+                            synchronized (messagesToHandle) {
+                                initialized = true;
+                                for (String message : messagesToHandle) {
+                                    webView.getEngine().executeScript(message);
+                                }
+                                messagesToHandle.clear();
                             }
                             webEngine.getLoadWorker().stateProperty().removeListener(this);
                         }
@@ -214,11 +231,5 @@ public class JavaFXWebBrowser extends AbstractComponentType implements MemoryCon
         );
 
         return scene;
-    }
-
-    private void startOutOfKevoree() {
-        messagesToHandle = new ArrayList<String>();
-        url = getDictionary().get("url").toString();
-        initializeWebBrowser();
     }
 }

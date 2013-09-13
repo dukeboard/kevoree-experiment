@@ -11,13 +11,17 @@ import java.io.File
  * @version 1.0
  */
 
-fun main(args : Array<String>) {
+fun main(args: Array<String>) {
     val folder = File("/home/edaubert/microsandbox")
     if (!folder.exists() || (folder.isFile() && folder.delete())) {
         folder.mkdirs()
     }
 
-    ScriptGeneratorSmallFaulty().generate(folder.getAbsolutePath(), "FaultyCPU")
+    val generatorSmall = ScriptGeneratorSmallFaulty()
 
-    ScriptGeneratorSmallFaulty().generate(folder.getAbsolutePath(), "FaultyMemory")
+    generatorSmall.generateDefault(folder.getAbsolutePath())
+
+    generatorSmall.generate(folder.getAbsolutePath(), "FaultyCPU")
+
+//    generatorSmall.generate(folder.getAbsolutePath(), "FaultyMemory")
 }

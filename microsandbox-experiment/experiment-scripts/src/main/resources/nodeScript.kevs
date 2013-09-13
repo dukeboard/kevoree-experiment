@@ -10,17 +10,7 @@ merge 'mvn:org.kevoree.microsandbox/org.kevoree.microsandbox.javasenode/{kevoree
 merge 'mvn:org.kevoree.microsandbox/org.kevoree.microsandbox.monitoring/{kevoree.microsandbox.version}'
 
 
-addNode node0 : MiniCloudNode { coreLogLevel="WARN",logLevel="WARN"}
+addNode node0 : JavaSENode { coreLogLevel="WARN",logLevel="WARN"}
 
 // TODO specify availability memory/cpu...
-addNode monitoredNode:MonitoredNode { logLevel = "INFO", coreLogLevel = "INFO"}
-
-addChild monitoredNode@node0
-
-addComponent monitoringComponent@monitoredNode : MonitoringComponent {
-    memory_threshold='65', // TODO specifiy good value
-    cpu_threshold='10', // TODO specifiy good value
-    net_in_threshold='80', // TODO specifiy good value
-    net_out_threshold='80', // TODO specifiy good value
-    componentRankFunction = 'model_history'
-}
+addNode monitoredNode:MonitoredNode {logLevel = "INFO", coreLogLevel = "INFO"}

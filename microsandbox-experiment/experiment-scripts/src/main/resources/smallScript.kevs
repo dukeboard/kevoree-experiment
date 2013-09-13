@@ -1,6 +1,6 @@
 
 merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.defaultChannels/{kevoree.corelibrary.version}'
-merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.jexxus/{kevoree.corelibrary.version}'
+merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.basicGossiper/{kevoree.corelibrary.version}'
 merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.camel/{kevoree.corelibrary.version}'
 
 merge "mvn:org.kevoree.microsandbox.experiment/copter-video/{experiment.version}"
@@ -21,13 +21,13 @@ merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/wsServer/{experiment.ve
 merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/webbitHTTPServer/{experiment.version}"
 merge "mvn:org.kevoree.microsandbox.experiment.fault.cpu/webSocketClientHandler/{experiment.version}"
 
-merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/followManager/{experiment.version}"
-merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/followResource/{experiment.version}"
-merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/videoViewer/{experiment.version}"
-merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webBrowser/{experiment.version}"
-merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/wsServer/{experiment.version}"
-merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webbitHTTPServer/{experiment.version}"
-merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webSocketClientHandler/{experiment.version}"
+//merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/followManager/{experiment.version}"
+//merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/followResource/{experiment.version}"
+//merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/videoViewer/{experiment.version}"
+//merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webBrowser/{experiment.version}"
+//merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/wsServer/{experiment.version}"
+//merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webbitHTTPServer/{experiment.version}"
+//merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webSocketClientHandler/{experiment.version}"
 
 // merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/followManager/{experiment.version}"
 // merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/followResource/{experiment.version}"
@@ -37,19 +37,51 @@ merge "mvn:org.kevoree.microsandbox.experiment.fault.memory/webSocketClientHandl
 // merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/webbitHTTPServer/{experiment.version}"
 // merge "mvn:org.kevoree.microsandbox.experiment.fault.interaction/webSocketClientHandler/{experiment.version}"
 
-// TODO this component must be located on another node + replace the url by a http one
-addComponent mediaSender@node0 : FakeCopterMediaSender { url = 'file:///home/edaubert/Vidéos/BigBuckBunny_640x360.m4v'}
+// this component is not located to the monitored node
+addComponent mediaSender@node0 : FakeCopterMediaSender { url = 'http://download.oracle.com/otndocs/products/javafx/JavaRap/prog_index.m3u8'}
 
-addComponent WsServer650@monitoredNode : WsServer {port='8092'}
-addComponent SprayWebS142@monitoredNode : WebbitHTTPServer {port='9500'}
+addComponent WsServer650@monitoredNode : WsServer {
+    port='8092',
+    cpu_wall_time = '258',
+    memory_max_size = '0',
+    throughput_msg_per_second='all=0;service=0'
+}
+addComponent SprayWebS142@monitoredNode : WebbitHTTPServer {
+    port='9500',
+	cpu_wall_time = '3157',
+	memory_max_size = '1208',
+	throughput_msg_per_second='all=0;response=0'
+}
 
-addComponent Resources407@monitoredNode : ResourcesPage {urlPattern='/media/', patternToRemove = '/media/'}
-addComponent FollowMan511@monitoredNode : FollowManager {urlPattern='/',current='jed'}
+addComponent Resources407@monitoredNode : ResourcesPage {
+    urlPattern='/media/', patternToRemove = '/media/',
+	cpu_wall_time = '4888440',
+	memory_max_size = '0',
+	throughput_msg_per_second='all=0;request=0'
+}
+addComponent FollowMan511@monitoredNode : FollowManager {
+    urlPattern='/',current='jed',
+	cpu_wall_time = '460',
+	memory_max_size = '40',
+	throughput_msg_per_second='all=0;request=0;followmeuser=0'
+}
 
-addComponent javaFXWebBrowser@monitoredNode : JavaFXWebBrowser
-addComponent websockletJavaFXHandler@monitoredNode : WebSocketClientHandler
+addComponent javaFXWebBrowser@monitoredNode : JavaFXWebBrowser {
+	cpu_wall_time = '138',
+	memory_max_size = '0',
+	throughput_msg_per_second='all=0;handle=0'
+}
+addComponent websockletJavaFXHandler@monitoredNode : WebSocketClientHandler {
+	cpu_wall_time = '130',
+	memory_max_size = '72',
+	throughput_msg_per_second='all=0'
+}
 
-addComponent  videoDisplay@monitoredNode : JavaFXVideoDisplay
+addComponent  videoDisplay@monitoredNode : JavaFXVideoDisplay {
+	cpu_wall_time = '225',
+	memory_max_size = '72',
+	throughput_msg_per_second='all=0;media=0'
+}
 
 addChannel channelMediaSender : CamelNetty
 
@@ -78,5 +110,8 @@ bind websockletJavaFXHandler.handle@monitoredNode => webSocketHandlerMessage
 
 updateDictionary channelMediaSender{port = "10000"}@node0,{port = "10001"}@monitoredNode
 
-addGroup group1208104496:BasicGroup
-addToGroup group1208104496 node0
+addGroup sync:BasicGossiperGroup
+addToGroup sync node0
+addToGroup sync monitoredNode
+
+updateDictionary sync{port = "8000"}@node0,{port = "8001"}@monitoredNode

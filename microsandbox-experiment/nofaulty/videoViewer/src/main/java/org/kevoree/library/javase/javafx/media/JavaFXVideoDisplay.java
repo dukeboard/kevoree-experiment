@@ -48,14 +48,14 @@ public class JavaFXVideoDisplay extends AbstractComponentType implements MemoryC
     // when the user select one the media, this one is played
     private String mediaUrl;
 
+    private final Object wait = new Object();
+
     @Start
     public void start() throws InterruptedException {
-        final Object wait = new Object();
         SingleWindowLayout.initJavaFX();
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                // This method is invoked on JavaFX thread
                 if (Boolean.valueOf((String) getDictionary().get("singleFrame"))) {
                     tab = new Tab();
                     tab.setText(getName());
@@ -122,7 +122,6 @@ public class JavaFXVideoDisplay extends AbstractComponentType implements MemoryC
 
     @Stop
     public void stop() throws InterruptedException {
-        final Object wait = new Object();
         Platform.runLater(new Runnable() {
             @Override
             public void run() {

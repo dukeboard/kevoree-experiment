@@ -79,6 +79,7 @@ public class JavaFXWebBrowser extends AbstractComponentType implements MemoryCon
             public void postRollback(ContainerRoot containerRoot, ContainerRoot containerRoot2) {
             }
         });
+
         SingleWindowLayout.initJavaFX();
         Platform.runLater(new Runnable() {
             @Override

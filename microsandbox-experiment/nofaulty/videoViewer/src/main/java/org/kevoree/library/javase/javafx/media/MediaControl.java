@@ -59,13 +59,13 @@ public class MediaControl extends BorderPane {
     private Duration duration;
     private Slider timeSlider;
     private Label playTime;
-    private CheckBox repeatBox;  
+    private CheckBox repeatBox;
     private Slider volumeSlider;
     private HBox mediaBar;
 
     @Override
     protected void layoutChildren() {
-       
+
         if (mediaView != null && getBottom() != null) {
             mediaView.setFitWidth(getWidth());
             mediaView.setFitHeight(getHeight() - getBottom().prefHeight(-1));
@@ -105,12 +105,12 @@ public class MediaControl extends BorderPane {
     @Override
     protected double computeMaxHeight(double width) {
         return Double.MAX_VALUE;
-    } 
-    
+    }
+
     public MediaControl(final MediaPlayer mp) {
         this.mp = mp;
         setId("mediaControl");
-        
+
         mediaView = new MediaView(mp);
         Pane mvPane = new Pane();
         mvPane.getChildren().add(mediaView);
@@ -191,14 +191,14 @@ public class MediaControl extends BorderPane {
         mp.setOnEndOfMedia(new Runnable() {
 
             public void run() {
-               if (repeatBox.isSelected()) {
+                if (repeatBox.isSelected()) {
                     mp.seek(mp.getStartTime());
                 } else {
                     playButton.setText(">");
                     stopRequested = true;
                     atEndOfMedia = true;
-               
-                  
+
+
                 }
             }
         });
@@ -255,7 +255,7 @@ public class MediaControl extends BorderPane {
             }
         });
         mediaBar.getChildren().add(volumeSlider);
-        
+
         Label repeatLabel = new Label("  Loop: ");
         repeatLabel.setPrefWidth(50);
         repeatLabel.setMinWidth(25);
@@ -264,7 +264,7 @@ public class MediaControl extends BorderPane {
         repeatBox = new CheckBox();
         repeatBox.setSelected(true);
         mediaBar.getChildren().add(repeatBox);
-       
+
         setBottom(mediaBar);
     }
 
@@ -288,40 +288,44 @@ public class MediaControl extends BorderPane {
     }
 
     private static String formatTime(Duration elapsed, Duration duration) {
-        int intElapsed = (int) Math.floor(elapsed.toSeconds());
-        int elapsedHours = intElapsed / (60 * 60);
-        if (elapsedHours > 0) {
-            intElapsed -= elapsedHours * 60 * 60;
-        }
-        int elapsedMinutes = intElapsed / 60;
-        int elapsedSeconds = intElapsed - elapsedHours * 60 * 60 - elapsedMinutes * 60;
-
-        if (duration.greaterThan(Duration.ZERO)) {
-            int intDuration = (int) Math.floor(duration.toSeconds());
-            int durationHours = intDuration / (60 * 60);
-            if (durationHours > 0) {
-                intDuration -= durationHours * 60 * 60;
+        if (elapsed != null && duration != null) {
+            int intElapsed = (int) Math.floor(elapsed.toSeconds());
+            int elapsedHours = intElapsed / (60 * 60);
+            if (elapsedHours > 0) {
+                intElapsed -= elapsedHours * 60 * 60;
             }
-            int durationMinutes = intDuration / 60;
-            int durationSeconds = intDuration - durationHours * 60 * 60 - durationMinutes * 60;
+            int elapsedMinutes = intElapsed / 60;
+            int elapsedSeconds = intElapsed - elapsedHours * 60 * 60 - elapsedMinutes * 60;
 
-            if (durationHours > 0) {
-                return String.format("%d:%02d:%02d/%d:%02d:%02d",
-                        elapsedHours, elapsedMinutes, elapsedSeconds,
-                        durationHours, durationMinutes, durationSeconds);
+            if (duration.greaterThan(Duration.ZERO)) {
+                int intDuration = (int) Math.floor(duration.toSeconds());
+                int durationHours = intDuration / (60 * 60);
+                if (durationHours > 0) {
+                    intDuration -= durationHours * 60 * 60;
+                }
+                int durationMinutes = intDuration / 60;
+                int durationSeconds = intDuration - durationHours * 60 * 60 - durationMinutes * 60;
+
+                if (durationHours > 0) {
+                    return String.format("%d:%02d:%02d/%d:%02d:%02d",
+                            elapsedHours, elapsedMinutes, elapsedSeconds,
+                            durationHours, durationMinutes, durationSeconds);
+                } else {
+                    return String.format("%02d:%02d/%02d:%02d",
+                            elapsedMinutes, elapsedSeconds,
+                            durationMinutes, durationSeconds);
+                }
             } else {
-                return String.format("%02d:%02d/%02d:%02d",
-                        elapsedMinutes, elapsedSeconds,
-                        durationMinutes, durationSeconds);
+                if (elapsedHours > 0) {
+                    return String.format("%d:%02d:%02d",
+                            elapsedHours, elapsedMinutes, elapsedSeconds);
+                } else {
+                    return String.format("%02d:%02d",
+                            elapsedMinutes, elapsedSeconds);
+                }
             }
         } else {
-            if (elapsedHours > 0) {
-                return String.format("%d:%02d:%02d",
-                        elapsedHours, elapsedMinutes, elapsedSeconds);
-            } else {
-                return String.format("%02d:%02d",
-                        elapsedMinutes, elapsedSeconds);
-            }
+            return "";
         }
     }
 }

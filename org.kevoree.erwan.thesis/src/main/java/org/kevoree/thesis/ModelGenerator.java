@@ -3,14 +3,14 @@ package org.kevoree.thesis;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import org.kevoree.ContainerRoot;
-import org.kevoree.KevoreeFactory;
 import org.kevoree.annotation.ComponentType;
 import org.kevoree.annotation.Library;
 import org.kevoree.api.service.core.script.KevScriptEngine;
 import org.kevoree.api.service.core.script.KevScriptEngineException;
-import org.kevoree.cloner.ModelCloner;
+import org.kevoree.cloner.DefaultModelCloner;
 import org.kevoree.framework.KevoreeXmiHelper;
 import org.kevoree.impl.DefaultKevoreeFactory;
+import org.kevoree.serializer.JSONModelSerializer;
 import org.kevoree.tools.aether.framework.NodeTypeBootstrapHelper;
 import org.kevoree.tools.marShell.KevScriptOfflineEngine;
 import org.slf4j.LoggerFactory;
@@ -33,11 +33,11 @@ public class ModelGenerator {
         Logger root = (Logger) LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME);
         root.setLevel(Level.WARN);
 
-        String folder = "/tmp/gen";
+        String folder = "/home/edaubert/";
 
         // 1
-//        generateKevScript(folder + "thesis_validation5-3.kevs", 5, 3, false);
-//        generateModel(folder + "thesis_validation5-3.kevs", folder + "thesis_validation5-3.kev");
+        generateKevScript(folder + "thesis_validation5-3.kevs", 1000, 250, false);
+        generateModel(folder + "thesis_validation5-3.kevs", folder + "thesis_validation5-3.kev");
 //        load(folder + "thesis_validation5-3.kev");
 
         // 2
@@ -76,8 +76,8 @@ public class ModelGenerator {
 //        load(folder + "thesis_validation5000-400000.kev");
 
         // 9
-        generateKevScript(folder + "/thesis_validation99995-0.kevs", 1, 0, true);
-       generateModel(folder + "/thesis_validation99995-0.kevs", folder + "thesis_validation99995-0.kev");
+//        generateKevScript(folder + "/thesis_validation99995-0.kevs", 1, 0, true);
+//       generateModel(folder + "/thesis_validation99995-0.kevs", folder + "thesis_validation99995-0.kev");
 //        load(folder + "thesis_validation10000-400000.kev");
 
         // 10
@@ -95,9 +95,9 @@ public class ModelGenerator {
         System.out.println("starting to load model: " + System.currentTimeMillis());
         models[0] = KevoreeXmiHelper.instance$.load(model);
         System.out.println("first model loaded: " + System.currentTimeMillis());
-        ModelCloner cloner = new ModelCloner();
+        DefaultModelCloner cloner = new DefaultModelCloner();
         for (int i = 1; i < 5; i++) {
-            models[i] = cloner.clone(models[0]);
+            models[i] = (ContainerRoot)cloner.clone(models[0]);
         }
         System.out.println("finishing to load model: " + System.currentTimeMillis());
         while (true) {
@@ -121,9 +121,22 @@ public class ModelGenerator {
                 line = fileStream.readLine();
             }
 
-            System.out.println("starting to generate model: " + System.currentTimeMillis());
+            /*System.out.println("starting to generate model: " + System.currentTimeMillis());
             KevoreeXmiHelper.instance$.save(storageModel, kengine.interpret());
-            System.out.println("finishing to generate model: " + System.currentTimeMillis());
+            System.out.println("finishing to generate model: " + System.currentTimeMillis());*/
+
+
+            JSONModelSerializer serializer = new JSONModelSerializer();
+            File fp = new File(storageModel);
+            FileOutputStream fop = new FileOutputStream(fp);
+
+
+            serializer.serializeToStream(kengine.interpret(),fop);
+
+            fop.flush();
+            fop.close();
+
+            System.out.println(fp.getAbsolutePath());
         } catch (KevScriptEngineException e) {
             System.err.println("Unable to save the generated model");
             e.printStackTrace();
@@ -138,24 +151,48 @@ public class ModelGenerator {
         System.out.println("Building model...");
         KevScriptEngine kengine = new KevScriptOfflineEngine(defaultKevoreeFactory.createContainerRoot(), new NodeTypeBootstrapHelper());
 
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.jails/"+defaultKevoreeFactory.getVersion()+"'");
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.basicGossiper/"+defaultKevoreeFactory.getVersion()+"'");
+        kengine.append("merge 'mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.jails/2.0.6-SNAPSHOT'");
+        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.basicGossiper/2.0.6-SNAPSHOT'");
 
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.defaultChannels/"+defaultKevoreeFactory.getVersion()+"'");
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.p2pSock/"+defaultKevoreeFactory.getVersion()+"'");
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.nioChannels/"+defaultKevoreeFactory.getVersion()+"'");
+        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.defaultChannels/2.0.6-SNAPSHOT'");
+        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.p2pSock/2.0.6-SNAPSHOT'");
+        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.nioChannels/2.0.6-SNAPSHOT'");
 
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.webserver.api/"+defaultKevoreeFactory.getVersion()+"'");
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.webserver.tjws/"+defaultKevoreeFactory.getVersion()+"'");
+        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.webserver.api/2.0.6-SNAPSHOT'");
+        kengine.append("merge 'mvn:org.kevoree.corelibrary.javase/org.kevoree.library.javase.webserver.tjws/2.0.6-SNAPSHOT'");
 
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.provider/"+defaultKevoreeFactory.getVersion()+"'");
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.provider.web/"+defaultKevoreeFactory.getVersion()+"'");
-        kengine.append("merge 'mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.minicloud/"+defaultKevoreeFactory.getVersion()+"'");
+//        kengine.append("merge 'mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.provider/2.0.6-SNAPSHOT'");
+//        kengine.append("merge 'mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.provider.web/2.0.6-SNAPSHOT'");
+//        kengine.append("merge 'mvn:org.kevoree.corelibrary.sky/org.kevoree.library.sky.minicloud/2.0.6-SNAPSHOT'");
 
         kengine.append("addNode atmosphere : JavaSENode");
 
-        kengine.append("network atmosphere => atmosphere { 'KEVOREE.remote.node.ip'= '127.0.0.1'}");
+//        kengine.append("network atmosphere => atmosphere { 'KEVOREE.remote.node.ip'= '127.0.0.1'}");
 
+        kengine.append("addNode atmosphere : JavaSENode");
+        //{role='host/container', VMARGS = '-Xmx1024m -XX:MaxPermSize=512m', logLevel='INFO'}
+        kengine.append("addNode fog1 : JailNode {inet='alc0', subnet='10.0.1.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog2 : JailNode {inet='alc0', subnet='10.0.2.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog3 : JailNode {inet='alc0', subnet='10.0.3.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog4 : JailNode {inet='alc0', subnet='10.0.4.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog5 : JailNode {inet='alc0', subnet='10.0.5.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog6 : JailNode {inet='alc0', subnet='10.0.6.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog7 : JailNode {inet='alc0', subnet='10.0.7.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog8 : JailNode {inet='alc0', subnet='10.0.8.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog9 : JailNode {inet='alc0', subnet='10.0.9.0', mask='24', logLevel='INFO'}");
+        kengine.append("addNode fog10 : JailNode {inet='alc0', subnet='10.0.10.0', mask='24', logLevel='INFO'}");
+
+        kengine.append("network atmosphere => atmosphere { 'KEVOREE.remote.node.ip'= '127.0.0.1'}");
+        kengine.append("network fog1 => fog1 { 'KEVOREE.remote.node.ip'= '10.0.1.1'}");
+        kengine.append("network fog2 => fog2 { 'KEVOREE.remote.node.ip'= '10.0.2.1'}");
+        kengine.append("network fog3 => fog3 { 'KEVOREE.remote.node.ip'= '10.0.3.1'}");
+        kengine.append("network fog4 => fog4 { 'KEVOREE.remote.node.ip'= '10.0.4.1'}");
+        kengine.append("network fog5 => fog5 { 'KEVOREE.remote.node.ip'= '10.0.5.1'}");
+        kengine.append("network fog6 => fog6 { 'KEVOREE.remote.node.ip'= '10.0.6.1'}");
+        kengine.append("network fog7 => fog7 { 'KEVOREE.remote.node.ip'= '10.0.7.1'}");
+        kengine.append("network fog8 => fog8 { 'KEVOREE.remote.node.ip'= '10.0.8.1'}");
+        kengine.append("network fog9 => fog9 { 'KEVOREE.remote.node.ip'= '10.0.9.1'}");
+        kengine.append("network fog10 => fog10 { 'KEVOREE.remote.node.ip'= '10.0.10.1'}");
 
         kengine.append("addGroup sync : BasicGossiperGroup");
 
@@ -163,7 +200,7 @@ public class ModelGenerator {
 
 
 
-        kengine.append("addComponent webServer@atmosphere :KTinyWebServer {port = '8080', timeout = '5000'}");
+      /*  kengine.append("addComponent webServer@atmosphere :KTinyWebServer {port = '8080', timeout = '5000'}");
         kengine.append("addComponent iaasPage@atmosphere : IaaSKloudResourceManagerPage { urlpattern='/iaas'}");
         kengine.append("addComponent iaasManager@atmosphere :IaaSKloudManager");
 
@@ -194,7 +231,7 @@ public class ModelGenerator {
         kengine.append("updateDictionary chan2 { port = '16000'}@atmosphere");
 
         kengine.append("merge 'mvn:org.kevoree.thesis/org.kevoree.thesis/1.0'");
-        kengine.append("addComponent modelSubmitter@atmosphere :ThesisModelSubmitter");
+        kengine.append("addComponent modelSubmitter@atmosphere :ThesisModelSubmitter");*/
 
 
         for (int i = 0; i < nbNode; i++) {
@@ -214,13 +251,13 @@ public class ModelGenerator {
             kengine.addVariable("componentName", "c" + i);
             kengine.addVariable("nodeName", "childNode" + ((i % nbNode)));
             kengine.append("addComponent {componentName}@{nodeName} :HelloWorldPage");
-            kengine.append("bind {componentName}.content@{nodeName} => chan1");
-            kengine.append("bind {componentName}.request@{nodeName} => chan2");
+//            kengine.append("bind {componentName}.content@{nodeName} => chan1");
+//            kengine.append("bind {componentName}.request@{nodeName} => chan2");
         }
 
         System.out.println("Components are built.");
 
-        if (nbComponent > 0) {
+       /* if (nbComponent > 0) {
         for (int i = 0; i < nbNode; i++) {
             chanPort1++;
             chanPort2++;
@@ -233,7 +270,7 @@ public class ModelGenerator {
 
         System.out.println("Channels are updated.");
 
-        }
+        }*/
 
         try {
             byte[] bytes = kengine.getScript().getBytes("UTF-8");

@@ -9,7 +9,8 @@
     <version>1.0</version>
 
     <properties>
-        <kevoree.version>2.0.0-SNAPSHOT</kevoree.version>
+        <kevoree.version>2.1-SNAPSHOT</kevoree.version>
+        <kevoree.corelibrary.version>2.0.6-SNAPSHOT</kevoree.corelibrary.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -33,7 +34,7 @@
         <dependency>
             <groupId>org.kevoree.corelibrary.sky</groupId>
             <artifactId>org.kevoree.library.sky.provider.api</artifactId>
-            <version>${kevoree.version}</version>
+            <version>${kevoree.corelibrary.version}</version>
         </dependency>
 
         <dependency>

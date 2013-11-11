@@ -41,7 +41,7 @@ public class ModelHelper {
         return nodes;
     }
 
-    private static boolean isIaaSNode(ContainerNode node) {
+    public  static boolean isIaaSNode(ContainerNode node) {
         return isIaaSNodeTypeDefinition((NodeType) node.getTypeDefinition());
     }
 
@@ -71,7 +71,7 @@ public class ModelHelper {
         return nodes;
     }
 
-    private static boolean isPaaSNode(ContainerNode node) {
+    public static boolean isPaaSNode(ContainerNode node) {
         return isPaaSNodeTypeDefinition((NodeType) node.getTypeDefinition());
     }
 
